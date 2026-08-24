@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyntlo | AI Growth Operations Platform</title>
+    <meta name="description" content="Kyntlo unifies CRM, funnels, omnichannel conversations, booking, and AI automation into one kinetic growth engine.">
+    <link rel="canonical" href="https://kyntlo.ai/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kyntlo">
+    <meta property="og:title" content="Kyntlo | AI Growth Operations Platform">
+    <meta property="og:description" content="Kyntlo unifies CRM, funnels, omnichannel conversations, booking, and AI automation into one kinetic growth engine.">
+    <meta property="og:url" content="https://kyntlo.ai/">
+    <meta property="og:image" content="https://kyntlo.ai/assets/og-kyntlo-preview.png">
+    <meta property="og:image:alt" content="Kyntlo logo and AI Growth Operations Platform preview">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kyntlo | AI Growth Operations Platform">
+    <meta name="twitter:description" content="Kyntlo unifies CRM, funnels, omnichannel conversations, booking, and AI automation into one kinetic growth engine.">
+    <meta name="twitter:image" content="https://kyntlo.ai/assets/og-kyntlo-preview.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css" rel="stylesheet">
+    <script src="assets/site-shell.js" defer></script>
+    <script src="assets/currency-pricing.js" defer></script>
+    <style>
+        :root {
+            --bg: #07050f;
+            --bg-raise: #0c0918;
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-strong: rgba(255, 255, 255, 0.07);
+            --line: rgba(255, 255, 255, 0.09);
+            --ink: #f5f3fa;
+            --muted: #a49fb8;
+            --brand-pink: #f20089;
+            --brand-purple: #6d00c1;
+            --brand-hot: #ff1aa3;
+            --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            --gradient-animated: linear-gradient(-45deg, #f20089, #6d00c1, #ff1aa3, #851ada);
+            --font-display: 'Space Grotesk', 'Inter', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+        section { padding: 110px 0; position: relative; }
+
+        /* ---------- Ambient aurora ---------- */
+        .aurora { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+        .aurora span { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.35; }
+        .aurora span:nth-child(1) { top: -220px; left: -160px; width: 640px; height: 640px; background: var(--brand-purple); animation: drift 22s ease-in-out infinite alternate; }
+        .aurora span:nth-child(2) { top: 30%; right: -260px; width: 560px; height: 560px; background: var(--brand-pink); opacity: 0.22; animation: drift 26s ease-in-out infinite alternate-reverse; }
+        .aurora span:nth-child(3) { bottom: -280px; left: 30%; width: 620px; height: 620px; background: #3a0d7a; animation: drift 30s ease-in-out infinite alternate; }
+        @keyframes drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(70px, 50px, 0) scale(1.12); } }
+
+        /* ---------- Shared type ---------- */
+        .kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brand-hot); margin-bottom: 18px; }
+        .kicker::before { content: ''; width: 26px; height: 1px; background: var(--gradient-kinetic); }
+        .section-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4.4vw, 3.4rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 18px; }
+        .section-sub { color: var(--muted); font-size: 1.15rem; max-width: 680px; line-height: 1.75; }
+        .center { text-align: center; }
+        .center .section-sub { margin-left: auto; margin-right: auto; }
+        .text-gradient { background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* ---------- Buttons ---------- */
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 36px; border-radius: 999px; font-weight: 700; font-size: 1.02rem; border: none; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .btn-kinetic { background: var(--gradient-animated); background-size: 240% 240%; animation: shiftBg 4s ease infinite; color: #fff !important; box-shadow: 0 12px 34px rgba(242, 0, 137, 0.35); }
+        .btn-kinetic:hover { transform: translateY(-3px); box-shadow: 0 20px 48px rgba(242, 0, 137, 0.45); }
+        .btn-ghost { background: var(--glass); color: var(--ink); border: 1px solid var(--line); backdrop-filter: blur(10px); }
+        .btn-ghost:hover { transform: translateY(-3px); border-color: rgba(242, 0, 137, 0.55); box-shadow: 0 14px 30px rgba(109, 0, 193, 0.3); }
+        @keyframes shiftBg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        /* ---------- Reveal animations ---------- */
+        .reveal { opacity: 0; transform: translateY(38px); transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.is-in { opacity: 1; transform: translateY(0); }
+        .reveal-d1 { transition-delay: 0.12s; }
+        .reveal-d2 { transition-delay: 0.24s; }
+        .reveal-d3 { transition-delay: 0.36s; }
+
+        /* ---------- Hero ---------- */
+        .hero { padding: 140px 0 90px; text-align: center; overflow: hidden; }
+        #ai-canvas { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px; border-radius: 999px; background: var(--glass); border: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 30px; backdrop-filter: blur(8px); }
+        .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-hot); box-shadow: 0 0 0 0 rgba(255, 26, 163, 0.7); animation: ping 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(255, 26, 163, 0.6); } 70% { box-shadow: 0 0 0 12px rgba(255, 26, 163, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 26, 163, 0); } }
+        .hero h1 { font-family: var(--font-display); font-size: clamp(2.9rem, 6.8vw, 5.4rem); line-height: 1.03; letter-spacing: -0.04em; font-weight: 700; max-width: 950px; margin: 0 auto 26px; }
+        .hero p.lead { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); max-width: 720px; margin: 0 auto 40px; line-height: 1.75; }
+        .hero-ctas { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+        .hero-note { margin-top: 18px; font-size: 0.88rem; color: var(--muted); font-family: var(--font-mono); letter-spacing: 0.04em; }
+
+        /* Hero showcase: dashboard + live ops feed */
+        .hero-showcase { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 22px; margin-top: 74px; text-align: left; align-items: stretch; }
+        .browser-window { position: relative; border-radius: 20px; border: 1px solid var(--line); background: var(--bg-raise); overflow: hidden; box-shadow: 0 50px 120px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(242, 0, 137, 0.06); }
+        .browser-window::before { content: ''; position: absolute; inset: -1px; border-radius: 21px; padding: 1px; background: linear-gradient(135deg, rgba(242, 0, 137, 0.55), transparent 40%, transparent 60%, rgba(109, 0, 193, 0.55)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+        .browser-header { display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 16px; background: rgba(255, 255, 255, 0.03); border-bottom: 1px solid var(--line); }
+        .browser-header span { width: 11px; height: 11px; border-radius: 50%; }
+        .browser-header .r { background: #ff5f56; } .browser-header .y { background: #ffbd2e; } .browser-header .g { background: #27c93f; }
+        .browser-header .url { flex: 1; margin-left: 10px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); background: rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 5px 12px; text-align: center; }
+        .browser-window img { display: block; width: 100%; }
+
+        .ops-feed { display: flex; flex-direction: column; border-radius: 20px; border: 1px solid var(--line); background: rgba(12, 9, 24, 0.85); backdrop-filter: blur(14px); overflow: hidden; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5); }
+        .ops-feed__head { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+        .ops-feed__head .live { display: inline-flex; align-items: center; gap: 8px; color: var(--brand-hot); }
+        .ops-feed__head .live::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--brand-hot); animation: ping 1.8s infinite; }
+        .ops-feed__body { flex: 1; padding: 18px 20px; font-family: var(--font-mono); font-size: 0.82rem; line-height: 2.1; color: #cfc9e2; min-height: 260px; }
+        .ops-feed__body .op { display: block; opacity: 0; transform: translateY(8px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .ops-feed__body .op.is-in { opacity: 1; transform: translateY(0); }
+        .ops-feed__body .op b { color: var(--brand-hot); font-weight: 700; }
+        .ops-feed__body .op .ok { color: #35e0a1; }
+        .ops-feed__foot { padding: 14px 20px; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--muted); }
+        .ops-feed__foot strong { color: var(--ink); font-family: var(--font-mono); }
+
+        /* ---------- Integrations marquee ---------- */
+        .integrations { position: relative; padding: 96px 0 100px; text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: linear-gradient(180deg, rgba(255, 255, 255, 0.022), transparent 55%); overflow: hidden; }
+        .integrations::before { content: ''; position: absolute; top: -180px; left: 50%; transform: translateX(-50%); width: min(1000px, 120vw); height: 420px; background: radial-gradient(closest-side, rgba(242, 0, 137, 0.12), rgba(109, 0, 193, 0.06) 55%, transparent); pointer-events: none; }
+        .integrations__head { position: relative; z-index: 2; max-width: 720px; margin: 0 auto 46px; padding: 0 24px; }
+        .integrations__kicker { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brand-hot); }
+        .integrations__kicker::before, .integrations__kicker::after { content: ''; width: 26px; height: 1px; background: var(--gradient-kinetic); }
+        .integrations h2 { font-family: var(--font-display); font-size: clamp(1.9rem, 3.8vw, 2.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 14px; }
+        .integrations h2 .text-gradient { background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .integrations__sub { color: var(--muted); font-size: 1.06rem; line-height: 1.7; }
+        .integrations__count { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); font-size: 0.84rem; font-weight: 650; color: var(--muted); }
+        .integrations__count b { color: #fff; }
+
+        .marquee-rows { position: relative; z-index: 2; display: grid; gap: 16px; }
+        .marquee { position: relative; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); }
+        .marquee-track { display: flex; align-items: center; gap: 16px; width: max-content; animation: scrollX 52s linear infinite; will-change: transform; }
+        .marquee--rtl .marquee-track { animation-direction: reverse; }
+        .marquee--slow .marquee-track { animation-duration: 66s; }
+        .marquee-rows:hover .marquee-track { animation-play-state: paused; }
+
+        /* white plates so every logo keeps its own brand colours */
+        .logo-tile { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 172px; height: 78px; padding: 15px 22px; border-radius: 16px; background: #ffffff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.38); transition: transform 0.32s cubic-bezier(0.34, 1.4, 0.5, 1), box-shadow 0.32s ease; }
+        .logo-tile img { max-width: 100%; max-height: 36px; width: auto; height: auto; object-fit: contain; display: block; transition: transform 0.32s cubic-bezier(0.34, 1.4, 0.5, 1); }
+        .logo-tile:hover { transform: translateY(-6px) scale(1.07); box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(242, 0, 137, 0.28); }
+        .logo-tile:hover img { transform: scale(1.07); }
+        @keyframes scrollX { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        @media (max-width: 640px) {
+            .integrations { padding: 74px 0 78px; }
+            .integrations__head { margin-bottom: 34px; }
+            .logo-tile { width: 136px; height: 64px; padding: 11px 15px; border-radius: 13px; }
+            .logo-tile img { max-height: 27px; }
+            .marquee-rows { gap: 12px; }
+            .marquee-track { gap: 12px; }
+        }
+        @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+        /* ---------- About / stats ---------- */
+        .about-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 70px; align-items: center; }
+        .about-points { list-style: none; margin-top: 28px; }
+        .about-points li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; color: var(--ink); font-weight: 500; font-size: 1.05rem; }
+        .about-points .spark { color: var(--brand-hot); font-size: 1.2rem; line-height: 1.5; }
+        .stat-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .stat-card { padding: 30px 26px; border-radius: 20px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); transition: transform 0.3s ease, border-color 0.3s ease; }
+        .stat-card:hover { transform: translateY(-6px); border-color: rgba(242, 0, 137, 0.45); }
+        .stat-card .num { font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; letter-spacing: -0.03em; background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-card .lbl { margin-top: 6px; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+
+        /* ---------- Features ---------- */
+        .features-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 56px; }
+        .feature-card { position: relative; padding: 34px 28px; border-radius: 22px; border: 1px solid var(--line); background: var(--glass); overflow: hidden; transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease; }
+        .feature-card::after { content: ''; position: absolute; top: -60%; right: -40%; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(242, 0, 137, 0.16), transparent 65%); opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+        .feature-card:hover { transform: translateY(-8px); border-color: rgba(242, 0, 137, 0.4); box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5); }
+        .feature-card:hover::after { opacity: 1; }
+        .feature-icon { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 15px; background: linear-gradient(135deg, rgba(242, 0, 137, 0.16), rgba(109, 0, 193, 0.16)); border: 1px solid rgba(242, 0, 137, 0.28); margin-bottom: 22px; }
+        .feature-icon svg { width: 24px; height: 24px; }
+        .feature-card h3 { font-family: var(--font-display); font-size: 1.22rem; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 10px; }
+        .feature-card p { color: var(--muted); font-size: 0.97rem; line-height: 1.7; }
+        .feature-tag { position: absolute; top: 24px; right: 24px; font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-hot); border: 1px solid rgba(255, 26, 163, 0.35); border-radius: 999px; padding: 4px 10px; }
+
+        /* ---------- Replacement matrix ---------- */
+        .matrix { margin-top: 54px; border-radius: 24px; border: 1px solid var(--line); background: rgba(12, 9, 24, 0.7); backdrop-filter: blur(12px); overflow: hidden; }
+        .matrix-row, .matrix-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) 96px; gap: 16px; align-items: center; padding: 15px 24px; }
+        .matrix-head { background: rgba(255, 255, 255, 0.03); border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+        .matrix-row { border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: background 0.25s ease; }
+        .matrix-row:last-child { border-bottom: 0; }
+        .matrix-row:hover { background: rgba(242, 0, 137, 0.05); }
+        .matrix-row strong { font-size: 0.98rem; font-weight: 700; }
+        .matrix-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .tool-badge { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #fff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); transition: transform 0.28s cubic-bezier(0.34, 1.4, 0.5, 1), box-shadow 0.28s ease; cursor: default; }
+        .tool-badge img { width: 26px; height: 26px; object-fit: contain; display: block; }
+        .tool-badge:hover { transform: translateY(-4px) scale(1.12); box-shadow: 0 12px 28px rgba(242, 0, 137, 0.4), 0 0 0 3px rgba(242, 0, 137, 0.28); }
+        .tool-badge__tip { position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%) translateY(4px); padding: 5px 11px; border-radius: 8px; background: #16101f; border: 1px solid rgba(255, 255, 255, 0.12); color: #f5f3fa; font-size: 0.7rem; font-weight: 650; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.24s ease, transform 0.24s ease; z-index: 6; }
+        .tool-badge:hover .tool-badge__tip { opacity: 1; transform: translateX(-50%) translateY(0); }
+        
+        .tool-chip { display: inline-flex; align-items: center; height: 42px; padding: 0 15px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.06); color: #cfc9dd; font-size: 0.78rem; font-weight: 650; white-space: nowrap; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+        
+        .tool-chip:hover { border-color: rgba(242, 0, 137, 0.5); background: rgba(255, 255, 255, 0.1); color: #fff; transform: translateY(-2px); }
+        .matrix-check { justify-self: center; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, rgba(242, 0, 137, 0.2), rgba(109, 0, 193, 0.2)); border: 1px solid rgba(242, 0, 137, 0.45); color: var(--brand-hot); font-weight: 800; }
+        .matrix-total { background: linear-gradient(90deg, rgba(242, 0, 137, 0.1), rgba(109, 0, 193, 0.1)); }
+        .matrix-total .matrix-check { width: auto; border-radius: 999px; padding: 6px 16px; font-family: var(--font-display); font-size: 1rem; white-space: nowrap; }
+
+        /* ---------- Pricing ---------- */
+        #pricing { background: linear-gradient(180deg, transparent, rgba(109, 0, 193, 0.06) 30%, transparent); }
+        .pricing-trust { display: flex; justify-content: center; flex-wrap: wrap; gap: 26px; margin: 26px 0 10px; font-size: 0.9rem; color: var(--muted); }
+        .pricing-trust span { display: inline-flex; align-items: center; gap: 8px; }
+        .pricing-trust b { color: var(--brand-hot); }
+        .pricing-section-container { padding-top: 30px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: stretch; padding-top: 34px; }
+        .pricing-card { display: flex; flex-direction: column; position: relative; min-width: 0; border-radius: 26px; background: #ffffff; color: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.35); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); overflow: hidden; transition: transform 0.32s ease, box-shadow 0.32s ease; }
+        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 40px 100px rgba(242, 0, 137, 0.25); }
+        .pricing-card.premium { overflow: visible; border: 2px solid transparent; background: linear-gradient(#ffffff, #ffffff) padding-box, var(--gradient-animated) border-box; background-size: 100% 100%, 300% 300%; animation: shiftBg 5s ease infinite; box-shadow: 0 0 0 6px rgba(242, 0, 137, 0.1), 0 40px 100px rgba(242, 0, 137, 0.42); z-index: 2; }
+        .pricing-card.premium:hover { transform: translateY(-12px); }
+        .pricing-card.premium .package-button { border-color: transparent; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3s ease infinite; color: #fff !important; box-shadow: 0 14px 34px rgba(242, 0, 137, 0.35); }
+        .pricing-card.premium .package-button:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(242, 0, 137, 0.5); }
+        .pricing-badge { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 5; display: inline-flex; align-items: center; padding: 10px 24px; border-radius: 999px; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3.4s ease infinite; color: #fff; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 16px 34px rgba(242, 0, 137, 0.4); border: 4px solid var(--bg); }
+        .pricing-header { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 40px 24px 24px; text-align: center; background: #f8f9fc; border-bottom: 1px solid #ecedf3; min-height: 234px; }
+        .pricing-card.premium .pricing-header { padding-top: 46px; background: linear-gradient(180deg, rgba(109, 0, 193, 0.08), rgba(242, 0, 137, 0.04)); }
+        .plan-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #6b6b78; margin-bottom: 8px; }
+        .pricing-card.premium .plan-name { color: var(--brand-purple); }
+        .pricing-price { font-family: var(--font-display); font-size: clamp(1.9rem, 2.4vw, 2.5rem); font-weight: 700; color: #14141c; letter-spacing: -0.04em; line-height: 1; margin-bottom: 12px; min-height: 1.15em; }
+        .pricing-price span { font-size: 1rem; color: #6b6b78; font-weight: 600; }
+        .tax-label { display: none; }
+        .plan-desc { font-size: 0.9rem; color: #5a5a64; line-height: 1.55; min-height: 64px; }
+        .pricing-body { display: flex; flex-direction: column; flex: 1; padding: 26px 24px; }
+        .pricing-features { list-style: none; flex: 1; margin-bottom: 18px; }
+        .pricing-features li { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 13px; font-size: 0.88rem; color: #5a5a64; }
+        .pricing-features li b { display: block; color: #14141c; font-size: 0.93rem; margin-bottom: 1px; }
+        .check-icon { color: var(--brand-pink); flex-shrink: 0; margin-top: 1px; font-size: 1rem; }
+        .pricing-excludes { margin-top: 6px; padding-top: 14px; border-top: 1px dashed #e2e4ea; }
+        .pricing-excludes h4 { font-size: 0.72rem; letter-spacing: 0.1em; color: #8a8a96; margin-bottom: 10px; text-transform: uppercase; }
+        .pricing-excludes ul { list-style: none; }
+        .pricing-excludes li { display: flex; gap: 8px; margin-bottom: 7px; font-size: 0.82rem; color: #8a8a96; }
+        .cross-icon { color: #ff5f56; flex-shrink: 0; }
+        .package-button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; margin-top: auto; padding: 15px 18px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; white-space: nowrap; line-height: 1.2; text-align: center; border: 2px solid rgba(109, 0, 193, 0.28); background: #fff; color: var(--brand-purple) !important; transition: all 0.28s ease; }
+        .package-button:hover { border-color: transparent; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3s ease infinite; color: #fff !important; transform: translateY(-3px); box-shadow: 0 14px 32px rgba(109, 0, 193, 0.35); }
+
+        /* Customized (build-your-own) card */
+        .pricing-card.custom { background: linear-gradient(160deg, #16102b, #0d0a1c 60%); color: var(--ink); border: 1px solid rgba(242, 0, 137, 0.35); }
+        .pricing-card.custom::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(circle at 82% 6%, rgba(242, 0, 137, 0.2), transparent 42%); pointer-events: none; }
+        .pricing-card.custom .pricing-header { background: transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .pricing-card.custom .plan-name { color: var(--brand-hot); }
+        .pricing-card.custom .pricing-price { color: #fff; }
+        .pricing-card.custom .pricing-price span { color: var(--muted); }
+        .pricing-card.custom .plan-desc { color: var(--muted); }
+        .pricing-card.custom .tax-label { display: none; }
+        .pricing-card.custom .pricing-features li { color: var(--muted); }
+        .pricing-card.custom .pricing-features li b { color: #fff; }
+        .pricing-card.custom .package-button { background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3.4s ease infinite; border-color: transparent; color: #fff !important; box-shadow: 0 14px 34px rgba(242, 0, 137, 0.35); }
+        .pricing-card.custom .package-button:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(242, 0, 137, 0.5); }
+
+        .all-plans-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 46px auto 0; max-width: 980px; }
+        .all-plans-strip span { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--glass); font-size: 0.85rem; color: var(--muted); }
+        .all-plans-strip b { color: var(--brand-hot); }
+
+        /* Usage accordion */
+        .usage-accordion-wrapper { max-width: 920px; margin: 60px auto 0; border-radius: 20px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); overflow: hidden; }
+        .usage-accordion-btn { width: 100%; padding: 24px 30px; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-display); font-size: 1.12rem; font-weight: 700; color: var(--ink); cursor: pointer; transition: background 0.3s ease; }
+        .usage-accordion-btn:hover { background: rgba(242, 0, 137, 0.05); }
+        .usage-accordion-icon { color: var(--brand-hot); font-size: 1.3rem; transition: transform 0.3s ease; }
+        .usage-accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+        .usage-accordion-content.active { max-height: 3200px; }
+        .usage-accordion-inner { padding: 8px 28px 30px; border-top: 1px solid var(--line); }
+        .usage-note { text-align: center; color: var(--muted); margin: 20px 0 26px; font-size: 0.95rem; }
+        .usage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+        .usage-item { display: flex; flex-direction: column; padding: 20px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); transition: transform 0.28s ease, border-color 0.28s ease; }
+        .usage-item:hover { transform: translateY(-4px); border-color: rgba(242, 0, 137, 0.4); }
+        .usage-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 6px; }
+        .usage-desc { flex: 1; color: var(--muted); font-size: 0.84rem; line-height: 1.55; margin-bottom: 12px; }
+        .usage-cost { align-self: flex-start; font-family: var(--font-mono); font-weight: 700; font-size: 0.8rem; color: var(--brand-hot); background: rgba(242, 0, 137, 0.08); border: 1px dashed rgba(242, 0, 137, 0.35); border-radius: 8px; padding: 7px 12px; }
+
+        /* ---------- Testimonials ---------- */
+        .testimonials { background: linear-gradient(180deg, transparent, rgba(242, 0, 137, 0.04) 40%, transparent); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 56px; }
+        .testimonial-card { position: relative; display: flex; flex-direction: column; padding: 32px 28px; border-radius: 22px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease; }
+        .testimonial-card:hover { transform: translateY(-8px); border-color: rgba(242, 0, 137, 0.4); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); }
+        .testimonial-card.featured { grid-column: span 2; background: linear-gradient(150deg, rgba(242, 0, 137, 0.1), rgba(109, 0, 193, 0.1)); border: 1px solid rgba(242, 0, 137, 0.35); }
+        .testimonial-card .quote-mark { position: absolute; top: 20px; right: 26px; font-family: var(--font-display); font-size: 4rem; line-height: 1; background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.55; }
+        .stars { display: flex; gap: 3px; margin-bottom: 16px; }
+        .stars svg { width: 16px; height: 16px; fill: #ffbf3c; }
+        .testimonial-card blockquote { flex: 1; font-size: 1rem; line-height: 1.75; color: #d9d4e8; margin-bottom: 24px; }
+        .testimonial-card.featured blockquote { font-size: 1.18rem; color: #efeaf8; }
+        .testimonial-person { display: flex; align-items: center; gap: 14px; }
+        .testimonial-person img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid transparent; background: var(--gradient-kinetic) border-box; box-shadow: 0 10px 26px rgba(242, 0, 137, 0.35); transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.5, 1); }
+        .testimonial-card:hover .testimonial-person img { transform: scale(1.12) rotate(-3deg); }
+        .testimonial-person .who strong { display: block; font-size: 0.98rem; }
+        .testimonial-person .who span { font-size: 0.82rem; color: var(--muted); }
+        .testimonials-disclaimer { margin-top: 26px; text-align: center; font-size: 0.78rem; color: rgba(164, 159, 184, 0.6); font-family: var(--font-mono); letter-spacing: 0.06em; }
+
+        /* ---------- Demo / CTA ---------- */
+        .demo-section { padding: 110px 0; }
+        .demo-shell { border-radius: 30px; padding: 70px 40px 50px; text-align: center; background: linear-gradient(150deg, rgba(242, 0, 137, 0.16), rgba(109, 0, 193, 0.18)); border: 1px solid rgba(242, 0, 137, 0.3); position: relative; overflow: hidden; }
+        .demo-shell::before { content: ''; position: absolute; top: -160px; left: 50%; transform: translateX(-50%); width: 700px; height: 380px; background: radial-gradient(closest-side, rgba(255, 26, 163, 0.25), transparent); pointer-events: none; }
+        .demo-shell h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.03em; margin-bottom: 16px; position: relative; }
+        .demo-shell p { color: #d9d4e8; max-width: 620px; margin: 0 auto 30px; font-size: 1.12rem; position: relative; }
+        .calendar-container { position: relative; margin-top: 28px; border-radius: 20px; overflow: hidden; background: #fff; min-height: 700px; }
+        .calendar-container iframe { display: block; width: 100%; min-height: 700px; border: 0; }
+
+
+        /* ---------- Intro sequence ---------- */
+        .kyn-intro { position: fixed; inset: 0; z-index: 100002; display: grid; place-items: center; background: radial-gradient(circle at 50% 45%, rgba(242, 0, 137, 0.14), transparent 45%), radial-gradient(circle at 22% 80%, rgba(109, 0, 193, 0.14), transparent 42%), #05030b; transition: opacity 0.6s ease, visibility 0.6s ease; }
+        .kyn-intro.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+        .kyn-intro__stage { display: grid; place-items: center; gap: 22px; text-align: center; }
+        .kyn-intro__logo { position: relative; width: min(320px, 64vw); opacity: 0; transform: scale(0.82); filter: brightness(0) invert(1) drop-shadow(0 0 0 rgba(242, 0, 137, 0)); animation: introLogo 1.35s cubic-bezier(0.2, 0.9, 0.25, 1.2) 0.15s forwards; }
+        @keyframes introLogo { 0% { opacity: 0; transform: scale(0.82) translateY(14px); } 55% { opacity: 1; } 100% { opacity: 1; transform: scale(1) translateY(0); filter: brightness(0) invert(1) drop-shadow(0 22px 55px rgba(242, 0, 137, 0.55)); } }
+        .kyn-intro__sweep { position: absolute; inset: -20% -8%; background: linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, 0.85) 50%, transparent 58%); mix-blend-mode: overlay; transform: translateX(-120%); animation: introSweep 0.9s ease 1.05s forwards; pointer-events: none; }
+        @keyframes introSweep { to { transform: translateX(120%); } }
+        .kyn-intro__tag { font-family: var(--font-mono); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.34em; text-transform: uppercase; color: var(--muted); opacity: 0; animation: introFade 0.7s ease 1.25s forwards; }
+        .kyn-intro__tag b { background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .kyn-intro__bar { width: 210px; height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); overflow: hidden; opacity: 0; animation: introFade 0.5s ease 0.6s forwards; }
+        .kyn-intro__bar::before { content: ''; display: block; height: 100%; width: 100%; border-radius: inherit; background: var(--gradient-kinetic); transform: scaleX(0); transform-origin: left; animation: introBar 1.7s cubic-bezier(0.6, 0.05, 0.25, 1) 0.35s forwards; }
+        @keyframes introBar { to { transform: scaleX(1); } }
+        @keyframes introFade { to { opacity: 1; } }
+        .kyn-intro__skip { position: absolute; bottom: 34px; right: 38px; padding: 9px 20px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); color: var(--muted); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: color 0.25s ease, border-color 0.25s ease; }
+        .kyn-intro__skip:hover { color: #fff; border-color: rgba(242, 0, 137, 0.5); }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1100px) {
+            .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .testimonials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .testimonial-card.featured { grid-column: span 2; }
+            .hero-showcase { grid-template-columns: 1fr; }
+            .ops-feed__body { min-height: 200px; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 80px 0; }
+            .hero { padding: 100px 0 70px; }
+            .about-grid { grid-template-columns: 1fr; gap: 46px; }
+            .features-grid, .testimonials-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .testimonial-card.featured { grid-column: span 1; }
+            .stat-panel { grid-template-columns: 1fr 1fr; }
+            .matrix-head { display: none; }
+            .matrix-row { grid-template-columns: 1fr; gap: 10px; padding: 18px 20px; }
+            .matrix-check { justify-self: start; }
+            .demo-shell { padding: 54px 22px 36px; }
+            .hero-ctas .btn { width: 100%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+            .reveal { opacity: 1; transform: none; }
+            #ai-canvas { display: none; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+
+    <div class="kyn-intro" id="kynIntro" aria-hidden="true" hidden>
+        <div class="kyn-intro__stage">
+            <div style="position: relative;">
+                <img class="kyn-intro__logo" src="assets/kyntlo-logo-cropped.png" alt="">
+                <span class="kyn-intro__sweep"></span>
+            </div>
+            <div class="kyn-intro__bar"></div>
+            <p class="kyn-intro__tag">The <b>AI</b> Growth Operations Platform</p>
+        </div>
+        <button class="kyn-intro__skip" type="button" id="kynIntroSkip">Skip intro</button>
+    </div>
+
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <nav></nav>
+
+    <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <canvas id="ai-canvas" aria-hidden="true"></canvas>
+        <div class="container">
+            <div class="hero-badge reveal"><span class="dot"></span> KYNTLO&nbsp;AI&nbsp;·&nbsp;GROWTH OPERATIONS ONLINE</div>
+            <h1 class="reveal reveal-d1">The AI engine behind <span class="text-gradient">unstoppable growth</span></h1>
+            <p class="lead reveal reveal-d2">Kyntlo unifies CRM, funnels, omnichannel conversations, booking, and AI automation into one kinetic operating system — so your team moves faster than the market.</p>
+            <div class="hero-ctas reveal reveal-d3">
+                <a href="trial.html" class="btn btn-kinetic">Start Free Trial</a>
+                <a href="#book-demo" class="btn btn-ghost">Book a Live Demo</a>
+            </div>
+            <p class="hero-note reveal reveal-d3">14-day free trial · No setup fees · Cancel anytime</p>
+
+            <div class="hero-showcase reveal reveal-d3">
+                <div class="browser-window">
+                    <div class="browser-header">
+                        <span class="r"></span><span class="y"></span><span class="g"></span>
+                        <div class="url">hub.kyntlo.ai — command center</div>
+                    </div>
+                    <img src="assets/dashboard-kyntlo-interface.png" alt="Kyntlo dashboard interface showing pipeline, conversations, and reporting">
+                </div>
+                <aside class="ops-feed" aria-label="Live AI operations feed (illustrative)">
+                    <div class="ops-feed__head"><span>kyntlo.ops</span><span class="live">LIVE</span></div>
+                    <div class="ops-feed__body" id="opsFeed"></div>
+                    <div class="ops-feed__foot">AI actions executed today: <strong id="opsCounter">0</strong></div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= INTEGRATIONS ================= -->
+    <div class="integrations">
+        <div class="integrations__head">
+            <p class="integrations__kicker">Integrations</p>
+            <h2>Plays perfectly with <span class="text-gradient">your stack</span></h2>
+            <p class="integrations__sub">Kyntlo slots into the tools you already run — payments, messaging, commerce, accounting and automation — so nothing gets left behind in the move.</p>
+            <span class="integrations__count"><b>32+</b> native and automation-ready integrations</span>
+        </div>
+        <div class="marquee-rows">
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span class="logo-tile"><img src="assets/integration-logos/google.png" alt="Google"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/slack.png" alt="Slack"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/facebook.png" alt="Facebook"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/instagram.png" alt="Instagram"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/whatsapp.png" alt="WhatsApp"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/tiktok.png" alt="TikTok"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/linkedin.png" alt="LinkedIn"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/teams.png" alt="Microsoft Teams"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/zoom.png" alt="Zoom"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/outlook.png" alt="Outlook"></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/google.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/slack.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/facebook.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/instagram.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/whatsapp.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/tiktok.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/linkedin.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/teams.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/zoom.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/outlook.png" alt=""></span>
+                </div>
+            </div>
+            <div class="marquee marquee--rtl">
+                <div class="marquee-track">
+                    <span class="logo-tile"><img src="assets/integration-logos/stripe.png" alt="Stripe"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/paypal.png" alt="PayPal"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/square.png" alt="Square"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/razorpay.png" alt="Razorpay"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/authorizenet.png" alt="Authorize.net"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/nmi.png" alt="NMI"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/shopify.png" alt="Shopify"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/woocommerce.png" alt="WooCommerce"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/quickbooks.png" alt="QuickBooks"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/xero.png" alt="Xero"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/wave.png" alt="Wave"></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/stripe.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/paypal.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/square.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/razorpay.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/authorizenet.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/nmi.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/shopify.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/woocommerce.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/quickbooks.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/xero.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/wave.png" alt=""></span>
+                </div>
+            </div>
+            <div class="marquee marquee--slow">
+                <div class="marquee-track">
+                    <span class="logo-tile"><img src="assets/integration-logos/zapier.png" alt="Zapier"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/pabbly.png" alt="Pabbly"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/wordpress.png" alt="WordPress"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/notion.png" alt="Notion"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/printful.png" alt="Printful"></span>
+                    <span class="logo-tile"><img src="assets/integration-logos/mailgun.png" alt="Mailgun"></span>
+                    <span class="logo-tile"><img src="assets/platform-logos/twilio.png" alt="Twilio"></span>
+                    <span class="logo-tile"><img src="assets/platform-logos/klaviyo.png" alt="Klaviyo"></span>
+                    <span class="logo-tile"><img src="assets/platform-logos/activecampaign.png" alt="ActiveCampaign"></span>
+                    <span class="logo-tile"><img src="assets/platform-logos/constantcontact.png" alt="Constant Contact"></span>
+                    <span class="logo-tile"><img src="assets/platform-logos/jotform.png" alt="Jotform"></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/zapier.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/pabbly.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/wordpress.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/notion.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/printful.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/integration-logos/mailgun.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/platform-logos/twilio.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/platform-logos/klaviyo.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/platform-logos/activecampaign.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/platform-logos/constantcontact.png" alt=""></span>
+                    <span class="logo-tile" aria-hidden="true"><img src="assets/platform-logos/jotform.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+        <div class="container about-grid">
+            <div class="reveal">
+                <p class="kicker">The Platform</p>
+                <h2 class="section-title">One command center for <span class="text-gradient">modern scale</span></h2>
+                <p class="section-sub">Kyntlo is built for businesses and agencies that refuse to be slowed down by fragmented tools. Every lead, message, booking, and campaign lives in one intelligent workspace — with AI working quietly in the background.</p>
+                <ul class="about-points">
+                    <li><span class="spark">✦</span> Unified pipeline visibility across every service you sell</li>
+                    <li><span class="spark">✦</span> One omnichannel inbox for email, chat, SMS, and WhatsApp</li>
+                    <li><span class="spark">✦</span> AI that qualifies, replies, books, and follows up for you</li>
+                </ul>
+            </div>
+            <div class="stat-panel">
+                <div class="stat-card reveal"><div class="num" data-count="9" data-suffix="+">0</div><div class="lbl">Tool categories replaced by one platform</div></div>
+                <div class="stat-card reveal reveal-d1"><div class="num" data-count="2488" data-prefix="$" data-suffix="+">0</div><div class="lbl">Typical monthly stack cost Kyntlo replaces</div></div>
+                <div class="stat-card reveal reveal-d2"><div class="num" data-count="14">0</div><div class="lbl">Days of free trial on every plan</div></div>
+                <div class="stat-card reveal reveal-d3"><div class="num" data-count="1">0</div><div class="lbl">Login, invoice, and source of truth</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section id="features">
+        <div class="container">
+            <div class="center reveal">
+                <p class="kicker" style="justify-content:center;">AI Features</p>
+                <h2 class="section-title">Engineered with <span class="text-gradient">intelligence</span></h2>
+                <p class="section-sub">Sophisticated AI designed to work quietly in the background, amplifying everything your team does.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <span class="feature-tag">AI</span>
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk1)" stroke-width="1.8" stroke-linecap="round"><defs><linearGradient id="gk1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2z"/></svg></div>
+                    <h3>Kinetic CRM &amp; Pipelines</h3>
+                    <p>Track leads effortlessly. Predictive scoring surfaces the hottest opportunities and suggests the exact next action to convert prospects into clients.</p>
+                </div>
+                <div class="feature-card reveal reveal-d1">
+                    <span class="feature-tag">AI</span>
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><path d="M21 12a8 8 0 0 1-8 8H4l2.2-2.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></div>
+                    <h3>AI Conversations</h3>
+                    <p>Instagram, Facebook, SMS, and email converge into one elegant inbox. AI auto-drafts intelligent replies so no lead ever waits.</p>
+                </div>
+                <div class="feature-card reveal reveal-d2">
+                    <span class="feature-tag">AI</span>
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3.5"/></svg></div>
+                    <h3>Voice AI Receptionist</h3>
+                    <p>Answer, qualify, and route calls with voice AI — plus instant missed-call text-back so a busy line never costs you a customer.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><path d="M4 4h16l-6 8v6l-4 2v-8L4 4z"/></svg></div>
+                    <h3>High-Velocity Funnels</h3>
+                    <p>A pristine drag-and-drop builder for sites and funnels, with AI-assisted copy generation to launch campaigns in record time.</p>
+                </div>
+                <div class="feature-card reveal reveal-d1">
+                    <span class="feature-tag">AI</span>
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M9 14.5l2 2 4-4"/></svg></div>
+                    <h3>Smart Booking Bots</h3>
+                    <p>Eliminate scheduling friction. A conversational bot chats with leads, locks them into your calendar, and fights no-shows with automatic reminders.</p>
+                </div>
+                <div class="feature-card reveal reveal-d2">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></div>
+                    <h3>Automation &amp; Reporting</h3>
+                    <p>Design complex logic in a beautiful visual builder, then watch one operational view show your team exactly what needs attention next.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= COMPARE ================= -->
+    <section id="compare">
+        <div class="container">
+            <div class="center reveal">
+                <p class="kicker" style="justify-content:center;">Consolidation</p>
+                <h2 class="section-title">The cost of <span class="text-gradient">fragmentation</span></h2>
+                <p class="section-sub">Stop overpaying for disjointed software. See exactly what Kyntlo replaces — and what that stack was really costing you.</p>
+            </div>
+
+            <div class="matrix reveal" aria-label="Tools Kyntlo replaces">
+                <div class="matrix-head"><span>Capability</span><span>Replaces</span><span style="justify-self:center;">Kyntlo</span></div>
+                <div class="matrix-row"><strong>CRM &amp; pipeline management</strong><div class="matrix-tools"><span class="tool-badge" title="Pipedrive"><img src="assets/platform-icons/pipedrive.png" alt="Pipedrive" loading="lazy"><span class="tool-badge__tip">Pipedrive</span></span><span class="tool-badge" title="Salesforce"><img src="assets/platform-icons/salesforce.png" alt="Salesforce" loading="lazy"><span class="tool-badge__tip">Salesforce</span></span><span class="tool-chip">HubSpot</span></div><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Unlimited sales funnels</strong><div class="matrix-tools"><span class="tool-badge" title="ClickFunnels"><img src="assets/platform-icons/clickfunnels.png" alt="ClickFunnels" loading="lazy"><span class="tool-badge__tip">ClickFunnels</span></span><span class="tool-badge" title="Leadpages"><img src="assets/platform-icons/leadpages.png" alt="Leadpages" loading="lazy"><span class="tool-badge__tip">Leadpages</span></span><span class="tool-badge" title="Unbounce"><img src="assets/platform-icons/unbounce.png" alt="Unbounce" loading="lazy"><span class="tool-badge__tip">Unbounce</span></span></div><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Website builder</strong><div class="matrix-tools"><span class="tool-badge" title="WordPress"><img src="assets/platform-icons/wordpress.png" alt="WordPress" loading="lazy"><span class="tool-badge__tip">WordPress</span></span><span class="tool-chip">Wix</span><span class="tool-chip">Squarespace</span></div><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Surveys &amp; forms</strong><div class="matrix-tools"><span class="tool-badge" title="Jotform"><img src="assets/platform-icons/jotform.png" alt="Jotform" loading="lazy"><span class="tool-badge__tip">Jotform</span></span><span class="tool-chip">Typeform</span><span class="tool-chip">Google Forms</span></div><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Email marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Constant Contact"><img src="assets/platform-icons/constantcontact.png" alt="Constant Contact" loading="lazy"><span class="tool-badge__tip">Constant Contact</span></span><span class="tool-chip">ActiveCampaign</span><span class="tool-chip">Mailchimp</span></div><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>2-way SMS marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Twilio"><img src="assets/platform-icons/twilio.png" alt="Twilio" loading="lazy"><span class="tool-badge__tip">Twilio</span></span><span class="tool-badge" title="Klaviyo"><img src="assets/platform-icons/klaviyo.png" alt="Klaviyo" loading="lazy"><span class="tool-badge__tip">Klaviyo</span></span><span class="tool-chip">SimpleTexting</span></div><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Booking &amp; appointments</strong><div class="matrix-tools"><span class="tool-badge" title="Acuity"><img src="assets/platform-icons/acuity.png" alt="Acuity" loading="lazy"><span class="tool-badge__tip">Acuity</span></span><span class="tool-chip">Calendly</span><span class="tool-chip">Google Calendar</span></div><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Workflow automations</strong><div class="matrix-tools"><span class="tool-badge" title="Zapier"><img src="assets/platform-icons/zapier.png" alt="Zapier" loading="lazy"><span class="tool-badge__tip">Zapier</span></span><span class="tool-badge" title="Pabbly"><img src="assets/platform-icons/pabbly.png" alt="Pabbly" loading="lazy"><span class="tool-badge__tip">Pabbly</span></span><span class="tool-chip">Make</span></div><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Reputation management</strong><div class="matrix-tools"><span class="tool-badge" title="Birdeye"><img src="assets/platform-icons/birdeye.png" alt="Birdeye" loading="lazy"><span class="tool-badge__tip">Birdeye</span></span><span class="tool-badge" title="Podium"><img src="assets/platform-icons/podium.png" alt="Podium" loading="lazy"><span class="tool-badge__tip">Podium</span></span><span class="tool-chip">Grade.us</span></div><span class="matrix-check">✓</span></div>
+                <div class="matrix-row matrix-total"><strong>Overall platform cost</strong><div class="matrix-tools"><span class="tool-chip">$2,488+ monthly stack</span></div><span class="matrix-check">from $45</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
+    <section id="pricing">
+        <div class="container">
+            <div class="center reveal">
+                <p class="kicker" style="justify-content:center;">Pricing</p>
+                <h2 class="section-title">One platform. One invoice. <span class="text-gradient">Every growth tool you need.</span></h2>
+                <p class="section-sub">Start where you are, upgrade when you're ready — or build a plan that's entirely your own. Every plan starts with a 14-day free trial.</p>
+                <div class="pricing-trust">
+                    <span><b>✦</b> 14-day free trial</span>
+                    <span><b>✦</b> No setup fees</span>
+                    <span><b>✦</b> Cancel anytime</span>
+                    <span><b>✦</b> Wholesale usage rates, no markup</span>
+                </div>
+            </div>
+
+            <div class="pricing-section-container">
+                <div class="pricing-grid">
+
+                    <div class="pricing-card reveal" data-package="starter">
+                        <div class="pricing-header">
+                            <div class="plan-name">Starter</div>
+                            <div class="pricing-price"><span class="price-lockup"><span class="price-now">$90</span><span class="price-per">/mo</span></span></div>
+                            <div class="tax-label">Plus Taxes</div>
+                            <div class="plan-desc">Launch CRM, booking, and lead capture.</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><span class="check-icon">✦</span> <div><b>CRM Contacts &amp; Opportunities</b> Manage every lead and customer.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>1 Pipeline</b> A simple lead-to-booking flow.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Funnels &amp; Pages</b> Capture leads from any traffic source.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Forms &amp; Surveys</b> Collect inquiries and qualification data.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Calendar Booking</b> Let clients book appointments.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Live Chat Widget</b> Capture website conversations.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Basic Email Campaigns</b> Send simple broadcasts.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Up to 3 Users</b> Small team access.</div></li>
+                            </ul>
+                            <div class="pricing-excludes">
+                                <h4>Not Included</h4>
+                                <ul>
+                                    <li><span class="cross-icon">✕</span> Workflow automation</li>
+                                    <li><span class="cross-icon">✕</span> SMS and WhatsApp access</li>
+                                    <li><span class="cross-icon">✕</span> AI chatbot &amp; missed-call text-back</li>
+                                    <li><span class="cross-icon">✕</span> Reputation Manager</li>
+                                </ul>
+                            </div>
+                            <a href="checkout.html?package=starter&billing=quarterly" class="package-button">Start Free Trial</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card reveal reveal-d1" data-package="growth">
+                        <div class="pricing-header">
+                            <div class="plan-name">Growth</div>
+                            <div class="pricing-price"><span class="price-lockup"><span class="price-now">$270</span><span class="price-per">/mo</span></span></div>
+                            <div class="tax-label">Plus Taxes</div>
+                            <div class="plan-desc">Automate follow-up and convert more bookings.</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><span class="check-icon">✦</span> <div><b>Everything in Starter</b> Full access to Starter features.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>2–3 Pipelines</b> Manage multiple services or lead flows.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Workflow Automation</b> Automate follow-ups and internal tasks.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Appointment Reminders</b> Reduce no-shows automatically.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Full Omnichannel Inbox</b> Email, chat, SMS, and WhatsApp together.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Basic AI Chatbot</b> Automated replies and FAQs.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Up to 10 Users</b> Team collaboration.</div></li>
+                            </ul>
+                            <div class="pricing-excludes">
+                                <h4>Not Included</h4>
+                                <ul>
+                                    <li><span class="cross-icon">✕</span> Advanced AI chatbot &amp; Sales Agent</li>
+                                    <li><span class="cross-icon">✕</span> Voice AI / Voice Receptionist</li>
+                                    <li><span class="cross-icon">✕</span> Memberships or courses</li>
+                                    <li><span class="cross-icon">✕</span> Advanced reporting &amp; attribution</li>
+                                </ul>
+                            </div>
+                            <a href="checkout.html?package=growth&billing=quarterly" class="package-button">Start Free Trial</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card premium reveal reveal-d2" data-package="pro">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <div class="plan-name">Pro</div>
+                            <div class="pricing-price"><span class="price-lockup"><span class="price-now">$490</span><span class="price-per">/mo</span></span></div>
+                            <div class="tax-label">Plus Taxes</div>
+                            <div class="plan-desc">AI, reviews, analytics, and reactivation in one growth system.</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><span class="check-icon">✦</span> <div><b>Everything in Growth</b> The fully unlocked ecosystem.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Unlimited AI Usage</b> Every AI feature across the platform — chat, content, voice, workflows — with no caps.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Unlimited Pipelines</b> Support every service and process.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Missed Call Text-Back</b> Auto-respond to missed calls.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Advanced AI Chatbot</b> Smarter multi-step conversations.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Voice AI Access</b> Voice workflows and receptionist-style routing.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Reputation Manager</b> Request and monitor customer reviews.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Reactivation Campaigns</b> Bring inactive clients back.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Memberships / Courses</b> Sell programs and subscriptions.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Call Tracking &amp; Recording</b> Track call conversions natively.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Advanced Analytics</b> Monitor performance and trends.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Premium Workflow Actions</b> Advanced automation for complex journeys.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Up to 25 Users</b> Larger team access.</div></li>
+                            </ul>
+                            <a href="checkout.html?package=pro&billing=quarterly" class="package-button">Start Free Trial</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card custom reveal reveal-d3" data-package="custom">
+                        <div class="pricing-header">
+                            <div class="plan-name">Customized</div>
+                            <div class="pricing-price"><span class="price-lockup"><span class="price-now" style="background: linear-gradient(135deg, #ff1aa3, #b06bff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Let's Talk</span></span><span class="price-meta"><span class="price-tax">Built around you</span></span></div>
+                            <div class="plan-desc">Make the plan your own — choose exactly which features you want, nothing you don't.</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><span class="check-icon">✦</span> <div><b>Pick Your Features</b> Hand-select CRM, AI, voice, funnels, reviews — only what you'll actually use.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Custom Limits</b> Users, pipelines, brands, and volumes sized to your operation.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Multi-Brand Ready</b> Run multiple brands or branches from one account.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Custom Integrations &amp; Dev</b> Scoped custom workflows and integrations.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Human Campaign Management</b> Scoped campaign execution support.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Dedicated Onboarding</b> A specialist configures your workspace with you.</div></li>
+                                <li><span class="check-icon">✦</span> <div><b>Tailored Pricing</b> Pay for your feature mix — not a one-size bundle.</div></li>
+                            </ul>
+                            <a href="contact.html#contact-form" class="package-button">Contact Sales</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="all-plans-strip reveal">
+                <span><b>✦</b> Every plan includes secure hosting</span>
+                <span><b>✦</b> Guided onboarding</span>
+                <span><b>✦</b> Upgrade or downgrade anytime</span>
+                <span><b>✦</b> Support from the Kyntlo team</span>
+            </div>
+
+            <div class="usage-accordion-wrapper reveal">
+                <button class="usage-accordion-btn" id="usageAccordionBtn" type="button" aria-expanded="false" aria-controls="usageAccordionContent">
+                    <span>View Wholesale Usage Costs &amp; Add-ons</span>
+                    <span class="usage-accordion-icon" aria-hidden="true">↓</span>
+                </button>
+                <div class="usage-accordion-content" id="usageAccordionContent">
+                    <div class="usage-accordion-inner">
+                        <p class="usage-note">Pay only for the telecom and AI resources you actually use. No markup.</p>
+                        <div class="usage-grid">
+                            <div class="usage-item"><div class="usage-title">Email Infrastructure</div><div class="usage-desc">Send unlimited emails to unlimited contacts with no list-size fees.</div><div class="usage-cost">$0.00135 / email</div></div>
+                            <div class="usage-item"><div class="usage-title">Email Verification</div><div class="usage-desc">Automatically check and recheck addresses every 90 days.</div><div class="usage-cost">$0.005 / email</div></div>
+                            <div class="usage-item"><div class="usage-title">SMS Messaging</div><div class="usage-desc">Send SMS messages to your list to close deals faster.</div><div class="usage-cost">$0.0158 / segment</div></div>
+                            <div class="usage-item"><div class="usage-title">Making Calls</div><div class="usage-desc">Make calls in the system to track and manage all call activity.</div><div class="usage-cost">$0.028 / min</div></div>
+                            <div class="usage-item"><div class="usage-title">Receiving Calls</div><div class="usage-desc">Track who is calling and view call data for each customer.</div><div class="usage-cost">$0.017 / min</div></div>
+                            <div class="usage-item"><div class="usage-title">Premium Triggers</div><div class="usage-desc">Skip complex Zapier setups. Connect directly to Google Sheets or webhooks.</div><div class="usage-cost">$0.02 / action</div></div>
+                            <div class="usage-item"><div class="usage-title">Content AI</div><div class="usage-desc">Use AI to write high-converting copy and generate AI images.</div><div class="usage-cost">$0.18 / 1k words</div></div>
+                            <div class="usage-item"><div class="usage-title">Conversation AI</div><div class="usage-desc">Automate and enhance customer interactions naturally.</div><div class="usage-cost">$0.04 / message</div></div>
+                            <div class="usage-item"><div class="usage-title">Funnels AI</div><div class="usage-desc">Simplify funnel creation with effective, customized designs.</div><div class="usage-cost">$1.98 / funnel</div></div>
+                            <div class="usage-item"><div class="usage-title">Reviews AI</div><div class="usage-desc">Automate customer feedback and save time on review management.</div><div class="usage-cost">$0.16 / response</div></div>
+                            <div class="usage-item"><div class="usage-title">Workflow AI</div><div class="usage-desc">Automate complex processes with AI-powered workflows.</div><div class="usage-cost">$0.06 / execution</div></div>
+                            <div class="usage-item"><div class="usage-title">Workflow Pro Plan</div><div class="usage-desc">10,000 premium workflow executions, up to 60% cheaper.</div><div class="usage-cost">$14.99 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Ad Manager</div><div class="usage-desc">Launch and manage ad campaigns easily with proven templates.</div><div class="usage-cost">$29 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Auto-Complete Address</div><div class="usage-desc">Fills in details to speed up checkout for a smoother experience.</div><div class="usage-cost">$0.0044 / search</div></div>
+                            <div class="usage-item"><div class="usage-title">Branded Client App</div><div class="usage-desc">Launch your own branded iOS and Android app with no coding.</div><div class="usage-cost">$79 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Dedicated IP</div><div class="usage-desc">Secure your sending reputation for better email deliverability.</div><div class="usage-cost">$88.50 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Domain Purchase</div><div class="usage-desc">Find and register the perfect domain for your business.</div><div class="usage-cost">$13 / domain</div></div>
+                            <div class="usage-item"><div class="usage-title">WhatsApp Integration</div><div class="usage-desc">Integrate WhatsApp to seamlessly send and receive messages.</div><div class="usage-cost">$29.99 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">WordPress Hosting</div><div class="usage-desc">Seamlessly integrate WordPress to build and manage sites.</div><div class="usage-cost">$14.99 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Yext Listings</div><div class="usage-desc">Keep business listings accurate across multiple platforms.</div><div class="usage-cost">$75 / month</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="center reveal">
+                <p class="kicker" style="justify-content:center;">Customer Stories</p>
+                <h2 class="section-title">Trusted by operators who want <span class="text-gradient">cleaner growth</span></h2>
+                <p class="section-sub">The kind of operational outcomes Kyntlo is designed to deliver — from agencies, clinics, and multi-location brands.</p>
+            </div>
+            <div class="testimonials-grid">
+                <article class="testimonial-card featured reveal">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <div class="stars" aria-label="5 out of 5 stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
+                    </div>
+                    <blockquote>Kyntlo replaced the messy middle between marketing and sales. Leads, bookings, and follow-up now run in one operating rhythm — and for the first time, the whole team works from a single source of truth. We finally know exactly which opportunities need attention.</blockquote>
+                    <div class="testimonial-person">
+                        <img src="assets/avatars/adam.jpg" alt="Portrait of Adam Miller" width="56" height="56" loading="lazy" decoding="async">
+                        <div class="who"><strong>Adam Miller</strong><span>Founder, Growth Advisory Studio</span></div>
+                    </div>
+                </article>
+                <article class="testimonial-card reveal reveal-d1">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <div class="stars" aria-label="5 out of 5 stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
+                    </div>
+                    <blockquote>The biggest win was consistency. Forms, reminders, inbox activity, and pipeline stages stopped living in separate places.</blockquote>
+                    <div class="testimonial-person">
+                        <img src="assets/avatars/sofia.jpg" alt="Portrait of Sofia Romano" width="56" height="56" loading="lazy" decoding="async">
+                        <div class="who"><strong>Sofia Romano</strong><span>Operations Lead, Multi-Location Clinic</span></div>
+                    </div>
+                </article>
+                <article class="testimonial-card reveal">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <div class="stars" aria-label="5 out of 5 stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
+                    </div>
+                    <blockquote>Missed calls used to mean lost covers. Now every one gets an instant text back, and bookings and reviews run themselves.</blockquote>
+                    <div class="testimonial-person">
+                        <img src="assets/avatars/jonas.jpg" alt="Portrait of Jonas Keller" width="56" height="56" loading="lazy" decoding="async">
+                        <div class="who"><strong>Jonas Keller</strong><span>Owner, Multi-Site Restaurant Group</span></div>
+                    </div>
+                </article>
+                <article class="testimonial-card reveal reveal-d1">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <div class="stars" aria-label="5 out of 5 stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
+                    </div>
+                    <blockquote>Enquiries, site visits, and proposals finally sit in one pipeline. The quarterly plan gave us runway to set it up properly.</blockquote>
+                    <div class="testimonial-person">
+                        <img src="assets/avatars/laura.jpg" alt="Portrait of Laura Bennett" width="56" height="56" loading="lazy" decoding="async">
+                        <div class="who"><strong>Laura Bennett</strong><span>Director, Property &amp; Design Studio</span></div>
+                    </div>
+                </article>
+                <article class="testimonial-card reveal reveal-d2">
+                    <span class="quote-mark" aria-hidden="true">"</span>
+                    <div class="stars" aria-label="5 out of 5 stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
+                    </div>
+                    <blockquote>Our AI chatbot answers within seconds and books the call before a competitor even replies. That speed is the whole game.</blockquote>
+                    <div class="testimonial-person">
+                        <img src="assets/avatars/nadine.jpg" alt="Portrait of Nadine Davis" width="56" height="56" loading="lazy" decoding="async">
+                        <div class="who"><strong>Nadine Davis</strong><span>Head of Customer Acquisition, Home Services</span></div>
+                    </div>
+                </article>
+            </div>
+            <p class="testimonials-disclaimer">Illustrative customer stories representing typical Kyntlo outcomes.</p>
+        </div>
+    </section>
+
+    <!-- ================= DEMO ================= -->
+    <section id="book-demo" class="demo-section">
+        <div class="container">
+            <div class="demo-shell reveal">
+                <h2>Ready to <span class="text-gradient">systemize?</span></h2>
+                <p>Schedule a dedicated onboarding and strategy session with the Kyntlo team and see the platform running on your use case.</p>
+                <a href="trial.html" class="btn btn-kinetic">Start Free Trial Instead</a>
+                <div class="calendar-container">
+                    <iframe src="https://links.kyntlo.ai/widget/booking/BRMtQSYpjswqT1ItfLv2" allow="payment" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="BRMtQSYpjswqT1ItfLv2_1787440446544" title="Book a Kyntlo demo"></iframe>
+                    <script src="https://links.kyntlo.ai/js/form_embed.js" type="text/javascript"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer></footer>
+
+    <script>
+        (function () {
+            "use strict";
+            const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+            /* ---------- Intro sequence (once per session) ---------- */
+            const intro = document.getElementById("kynIntro");
+            if (intro) {
+                let played = false;
+                try { played = sessionStorage.getItem("kyntloIntroPlayed") === "1"; } catch (e) { played = false; }
+                if (played || reduceMotion) {
+                    intro.remove();
+                } else {
+                    intro.hidden = false;
+                    document.documentElement.style.overflow = "hidden";
+                    const finish = () => {
+                        intro.classList.add("is-done");
+                        document.documentElement.style.overflow = "";
+                        try { sessionStorage.setItem("kyntloIntroPlayed", "1"); } catch (e) { /* optional */ }
+                        window.setTimeout(() => intro.remove(), 700);
+                    };
+                    const timer = window.setTimeout(finish, 2600);
+                    const skip = document.getElementById("kynIntroSkip");
+                    if (skip) skip.addEventListener("click", () => { window.clearTimeout(timer); finish(); });
+                }
+            }
+
+            /* ---------- Scroll reveal ---------- */
+            const revealEls = document.querySelectorAll(".reveal");
+            if ("IntersectionObserver" in window && !reduceMotion) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-in");
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+                revealEls.forEach((el) => io.observe(el));
+            } else {
+                revealEls.forEach((el) => el.classList.add("is-in"));
+            }
+
+            /* ---------- Stat counters ---------- */
+            function animateCount(el) {
+                const target = parseInt(el.dataset.count, 10) || 0;
+                const prefix = el.dataset.prefix || "";
+                const suffix = el.dataset.suffix || "";
+                if (reduceMotion) {
+                    el.textContent = prefix + target.toLocaleString("en-US") + suffix;
+                    return;
+                }
+                const duration = 1400;
+                const start = performance.now();
+                function tick(now) {
+                    const p = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - p, 3);
+                    el.textContent = prefix + Math.round(target * eased).toLocaleString("en-US") + suffix;
+                    if (p < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            }
+            const nums = document.querySelectorAll(".stat-card .num");
+            if ("IntersectionObserver" in window) {
+                const numIo = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            animateCount(entry.target);
+                            numIo.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.6 });
+                nums.forEach((el) => numIo.observe(el));
+            } else {
+                nums.forEach(animateCount);
+            }
+
+            /* ---------- Live ops feed (illustrative) ---------- */
+            const feed = document.getElementById("opsFeed");
+            const counter = document.getElementById("opsCounter");
+            if (feed && counter) {
+                const ops = [
+                    '<b>ai.qualify</b> — new lead scored 92/100 <span class="ok">✓</span>',
+                    '<b>ai.reply</b> — Instagram DM answered in 4s <span class="ok">✓</span>',
+                    '<b>ai.book</b> — demo scheduled, Thu 14:00 <span class="ok">✓</span>',
+                    '<b>ai.recover</b> — missed call → text-back sent <span class="ok">✓</span>',
+                    '<b>ai.write</b> — follow-up email drafted <span class="ok">✓</span>',
+                    '<b>workflow</b> — 3-step nurture sequence fired <span class="ok">✓</span>',
+                    '<b>ai.review</b> — 5★ review request delivered <span class="ok">✓</span>',
+                    '<b>pipeline</b> — opportunity moved to "Won" <span class="ok">✓</span>'
+                ];
+                let idx = 0;
+                let total = 0;
+                const maxLines = 7;
+                function pushOp() {
+                    const line = document.createElement("span");
+                    line.className = "op";
+                    line.innerHTML = "▸ " + ops[idx % ops.length];
+                    feed.appendChild(line);
+                    requestAnimationFrame(() => line.classList.add("is-in"));
+                    while (feed.children.length > maxLines) feed.removeChild(feed.firstChild);
+                    idx += 1;
+                    total += 1;
+                    counter.textContent = total.toLocaleString("en-US");
+                }
+                if (reduceMotion) {
+                    for (let i = 0; i < 6; i++) pushOp();
+                } else {
+                    pushOp();
+                    setInterval(pushOp, 2200);
+                }
+            }
+
+            /* ---------- Neural particle canvas ---------- */
+            const canvas = document.getElementById("ai-canvas");
+            const heroSection = document.querySelector(".hero");
+            if (canvas && heroSection && !reduceMotion) {
+                const ctx = canvas.getContext("2d", { alpha: true });
+                let width = 0, height = 0, dpr = 1;
+                let mouseX = -9999, mouseY = -9999;
+                let running = false, rafId = 0, lastTime = 0;
+                const particles = [];
+
+                const LINK_DIST = 132;
+                const LINK_DIST_SQ = LINK_DIST * LINK_DIST;
+                const MOUSE_DIST = 190;
+                const MOUSE_DIST_SQ = MOUSE_DIST * MOUSE_DIST;
+
+                /* crisp on retina: scale the backing store, draw in CSS pixels */
+                function resizeCanvas() {
+                    const prevW = width || heroSection.offsetWidth;
+                    const prevH = height || heroSection.offsetHeight;
+                    dpr = Math.min(window.devicePixelRatio || 1, 2);
+                    width = heroSection.offsetWidth;
+                    height = heroSection.offsetHeight;
+                    canvas.width = Math.round(width * dpr);
+                    canvas.height = Math.round(height * dpr);
+                    canvas.style.width = width + "px";
+                    canvas.style.height = height + "px";
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                    /* keep particles proportionally placed instead of bunching up */
+                    if (particles.length && prevW && prevH) {
+                        const sx = width / prevW, sy = height / prevH;
+                        for (const p of particles) { p.x *= sx; p.y *= sy; }
+                    }
+                }
+
+                let resizeTimer = 0;
+                window.addEventListener("resize", function () {
+                    window.clearTimeout(resizeTimer);
+                    resizeTimer = window.setTimeout(resizeCanvas, 150);
+                });
+                resizeCanvas();
+
+                /* track the pointer only while it is over the hero */
+                heroSection.addEventListener("pointermove", function (e) {
+                    const rect = heroSection.getBoundingClientRect();
+                    mouseX = e.clientX - rect.left;
+                    mouseY = e.clientY - rect.top;
+                }, { passive: true });
+                heroSection.addEventListener("pointerleave", function () {
+                    mouseX = -9999; mouseY = -9999;
+                }, { passive: true });
+
+                const count = width > 1100 ? 58 : (width > 700 ? 40 : 24);
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.26,
+                        vy: (Math.random() - 0.5) * 0.26,
+                        r: Math.random() * 1.6 + 0.7
+                    });
+                }
+
+                function frame(now) {
+                    if (!running) return;
+                    /* delta-time so speed is identical on 60Hz and 120Hz screens */
+                    const dt = Math.min((now - lastTime) / 16.667 || 1, 3);
+                    lastTime = now;
+
+                    ctx.clearRect(0, 0, width, height);
+
+                    for (let i = 0; i < particles.length; i++) {
+                        const p = particles[i];
+                        p.x += p.vx * dt;
+                        p.y += p.vy * dt;
+                        if (p.x < 0) { p.x = 0; p.vx = Math.abs(p.vx); }
+                        else if (p.x > width) { p.x = width; p.vx = -Math.abs(p.vx); }
+                        if (p.y < 0) { p.y = 0; p.vy = Math.abs(p.vy); }
+                        else if (p.y > height) { p.y = height; p.vy = -Math.abs(p.vy); }
+
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                        ctx.fillStyle = "rgba(255, 26, 163, 0.5)";
+                        ctx.fill();
+
+                        /* squared distance — no sqrt in the hot loop */
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const q = particles[j];
+                            const dx = p.x - q.x, dy = p.y - q.y;
+                            const dsq = dx * dx + dy * dy;
+                            if (dsq < LINK_DIST_SQ) {
+                                const t = 1 - dsq / LINK_DIST_SQ;
+                                ctx.beginPath();
+                                ctx.strokeStyle = "rgba(133, 26, 218, " + (0.32 * t).toFixed(3) + ")";
+                                ctx.lineWidth = 1;
+                                ctx.moveTo(p.x, p.y);
+                                ctx.lineTo(q.x, q.y);
+                                ctx.stroke();
+                            }
+                        }
+
+                        const dmx = p.x - mouseX, dmy = p.y - mouseY;
+                        const dmsq = dmx * dmx + dmy * dmy;
+                        if (dmsq < MOUSE_DIST_SQ) {
+                            const t = 1 - dmsq / MOUSE_DIST_SQ;
+                            ctx.beginPath();
+                            ctx.strokeStyle = "rgba(242, 0, 137, " + (0.45 * t).toFixed(3) + ")";
+                            ctx.lineWidth = 1;
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(mouseX, mouseY);
+                            ctx.stroke();
+                            /* gentle drift toward the cursor, not a yank */
+                            p.x -= dmx * 0.0022 * dt;
+                            p.y -= dmy * 0.0022 * dt;
+                        }
+                    }
+                    rafId = requestAnimationFrame(frame);
+                }
+
+                function start() {
+                    if (running) return;
+                    running = true;
+                    lastTime = performance.now();
+                    rafId = requestAnimationFrame(frame);
+                }
+                function stop() {
+                    running = false;
+                    if (rafId) cancelAnimationFrame(rafId);
+                    rafId = 0;
+                }
+
+                /* only animate while the hero is actually on screen */
+                if ("IntersectionObserver" in window) {
+                    new IntersectionObserver(function (entries) {
+                        entries[0].isIntersecting ? start() : stop();
+                    }, { threshold: 0.01 }).observe(heroSection);
+                } else {
+                    start();
+                }
+                document.addEventListener("visibilitychange", function () {
+                    document.hidden ? stop() : start();
+                });
+            }
+
+            /* ---------- Usage accordion ---------- */
+            const accordionBtn = document.getElementById("usageAccordionBtn");
+            const accordionContent = document.getElementById("usageAccordionContent");
+            if (accordionBtn && accordionContent) {
+                const icon = accordionBtn.querySelector(".usage-accordion-icon");
+                accordionBtn.addEventListener("click", () => {
+                    accordionContent.classList.toggle("active");
+                    const isOpen = accordionContent.classList.contains("active");
+                    accordionBtn.setAttribute("aria-expanded", String(isOpen));
+                    if (icon) icon.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

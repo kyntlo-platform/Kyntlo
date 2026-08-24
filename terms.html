@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | Kyntlo</title>
+    <meta name="description" content="Read the Kyntlo Terms of Use for website access, platform subscriptions, account responsibilities, billing, acceptable use, and service limitations.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css" rel="stylesheet">
+    <script src="assets/site-shell.js" defer></script>
+    <style>
+        :root {
+            --surface-light: rgba(255, 255, 255, 0.03);
+            --bg-color: #07050f;
+            --surface-color: rgba(255, 255, 255, 0.04);
+            --text-main: #f5f3fa;
+            --text-muted: #a49fb8;
+            --border-color: rgba(255, 255, 255, 0.09);
+            --brand-pink: #f20089;
+            --brand-purple: #6d00c1;
+            --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+        }
+
+        html { background: var(--bg-color); }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .legal-header {
+            padding: 96px 0 62px;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--surface-color);
+            text-align: center;
+        }
+
+        .legal-header h1 {
+            margin-bottom: 14px;
+            background: var(--gradient-kinetic);
+            background-clip: text;
+            color: transparent;
+            font-size: clamp(2.6rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.08;
+        }
+
+        .legal-header p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 1.08rem;
+        }
+
+        .legal-layout {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: 56px;
+            padding: 72px 20px 100px;
+        }
+
+
+
+
+        .legal-content {
+            max-width: 860px;
+        }
+
+        .legal-card {
+            margin-bottom: 26px;
+            padding: 34px;
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            background: var(--surface-light);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .legal-card h2 {
+            margin-bottom: 16px;
+            color: var(--text-main);
+            font-size: 1.58rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .legal-card p,
+        .legal-card li {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            line-height: 1.78;
+        }
+
+        .legal-card p {
+            margin-bottom: 14px;
+        }
+
+        .legal-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-card ul {
+            margin: 10px 0 0 22px;
+        }
+
+        .legal-card li {
+            margin-bottom: 10px;
+        }
+
+        .legal-card b {
+            color: var(--text-main);
+        }
+
+        .notice {
+            border-color: rgba(109, 0, 193, 0.24);
+            background: rgba(109, 0, 193, 0.045);
+        }
+
+        @media (max-width: 900px) {
+            .legal-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding-top: 54px;
+            }
+
+            .legal-toc {
+                position: static;
+            }
+        }
+    
+        /* ---------- Animated legal TOC (scroll-spy) ---------- */
+        html { scroll-behavior: smooth; }
+        .legal-card, .legal-content section[id] { scroll-margin-top: 130px; }
+
+        .legal-toc {
+            position: sticky;
+            top: 112px;
+            align-self: start;
+            padding: 24px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .legal-toc h2 {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .legal-toc a {
+            position: relative;
+            display: block;
+            margin-bottom: 4px;
+            padding: 10px 14px 10px 18px;
+            border-radius: 11px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.35;
+            transition: color 0.28s ease, background 0.28s ease, transform 0.28s cubic-bezier(0.34, 1.4, 0.5, 1), padding-left 0.28s ease;
+        }
+
+        .legal-toc a::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 50%;
+            width: 3px;
+            height: 0;
+            border-radius: 3px;
+            background: linear-gradient(180deg, #f20089, #6d00c1);
+            transform: translateY(-50%);
+            transition: height 0.32s cubic-bezier(0.34, 1.4, 0.5, 1);
+        }
+
+        .legal-toc a:hover,
+        .legal-toc a:focus-visible {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(3px);
+        }
+
+        .legal-toc a:hover::before,
+        .legal-toc a:focus-visible::before { height: 42%; }
+
+        .legal-toc a.is-active {
+            color: #fff;
+            background: linear-gradient(90deg, rgba(242, 0, 137, 0.16), rgba(109, 0, 193, 0.06));
+            padding-left: 22px;
+        }
+
+        .legal-toc a.is-active::before { height: 62%; box-shadow: 0 0 14px rgba(242, 0, 137, 0.7); }
+
+        .legal-toc__progress {
+            height: 3px;
+            margin-top: 16px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        .legal-toc__progress span {
+            display: block;
+            height: 100%;
+            width: 0%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #f20089, #6d00c1);
+            transition: width 0.18s linear;
+        }
+
+        /* section reveal */
+        .legal-card {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .legal-card.is-in { opacity: 1; transform: translateY(0); }
+        .legal-card.is-target { border-color: rgba(242, 0, 137, 0.45); box-shadow: 0 0 0 1px rgba(242, 0, 137, 0.18), 0 22px 60px rgba(0, 0, 0, 0.4); }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .legal-card { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <nav></nav>
+
+    <header class="legal-header">
+        <div class="container">
+            <h1>Terms of Use</h1>
+            <p>Last updated: June 17, 2026. These terms govern use of the Kyntlo website, demo booking experience, and platform services.</p>
+        </div>
+    </header>
+
+    <main class="container legal-layout">
+        <aside class="legal-toc" aria-label="Terms sections">
+            <h2>Sections</h2>
+            <a href="#agreement">Agreement</a>
+            <a href="#services">Services</a>
+            <a href="#accounts">Accounts</a>
+            <a href="#billing">Billing</a>
+            <a href="#acceptable-use">Acceptable Use</a>
+            <a href="#customer-data">Customer Data</a>
+            <a href="#third-party">Third Parties</a>
+            <a href="#limitations">Limitations</a>
+            <a href="#contact">Contact</a>
+        </aside>
+
+        <div class="legal-content">
+            <section class="legal-card notice" id="agreement">
+                <h2>1. Agreement to These Terms</h2>
+                <p>By accessing the Kyntlo website, booking a demo, creating an account, using the platform, or authorizing another person to use Kyntlo on your behalf, you agree to these Terms of Use.</p>
+                <p>For these terms, "Kyntlo," "we," "us," and "our" refers to Kyntlo for Artificial Intelligence Tools, located at Building Lotus2 North90, After Chill Out Lotus, Cairo Governorate 11234, Egypt.</p>
+                <p>If you accept these terms for a company or other organization, you represent that you have authority to bind that organization. If a written order form, subscription agreement, or signed contract applies to your account, that document controls if it conflicts with these terms.</p>
+            </section>
+
+            <section class="legal-card" id="services">
+                <h2>2. Kyntlo Services</h2>
+                <p>Kyntlo provides a business growth operations platform that may include CRM, pipelines, conversations, booking, funnels, forms, surveys, automation, reporting, reputation tools, AI-enabled features, and related services. Specific capabilities depend on the selected plan, account configuration, usage services, third-party approvals, and add-ons.</p>
+                <p>Kyntlo may improve, modify, suspend, or discontinue features from time to time. We aim to give reasonable notice when a material change affects paid customers, but some changes may be required quickly for security, legal, provider, or reliability reasons.</p>
+            </section>
+
+            <section class="legal-card" id="accounts">
+                <h2>3. Accounts and Responsibilities</h2>
+                <p>You are responsible for maintaining accurate account information, protecting login credentials, assigning appropriate user permissions, and supervising activity within your workspace.</p>
+                <ul>
+                    <li>You must use Kyntlo only for lawful business purposes.</li>
+                    <li>You are responsible for the contacts, campaigns, content, messages, automations, and data processed through your account.</li>
+                    <li>You must obtain any required consent or authorization before sending messages, collecting data, recording calls, using AI features, or connecting third-party services.</li>
+                    <li>You must promptly notify Kyntlo if you suspect unauthorized account access or security misuse.</li>
+                </ul>
+            </section>
+
+            <section class="legal-card" id="billing">
+                <h2>4. Subscriptions, Usage, and Billing</h2>
+                <p>Kyntlo plans may include recurring subscription fees, usage-based charges, add-ons, setup services, and third-party provider costs. Pricing, included limits, and plan features are shown on the website, order form, or account documentation at the time of purchase.</p>
+                <p>By providing a payment method, you authorize Kyntlo and its payment processors to charge recurring subscription fees, applicable taxes, usage charges, add-ons, and other agreed amounts. Usage-based charges may include communications, AI executions, telecom minutes, SMS segments, email services, verification services, numbers, domains, or other enabled services.</p>
+                <p>If your account uses a wallet, credit balance, or auto-recharge arrangement, you authorize applicable top-ups or charges according to the thresholds, limits, and billing settings approved for your account. You are responsible for monitoring usage and maintaining sufficient balance to avoid service interruption.</p>
+                <p>Late, failed, disputed, or reversed payments may result in account restriction, suspension, loss of feature access, or termination. Cancellation and refund handling is described in the Refund Policy.</p>
+            </section>
+
+            <section class="legal-card" id="acceptable-use">
+                <h2>5. Acceptable Use</h2>
+                <p>You may not use Kyntlo to:</p>
+                <ul>
+                    <li>Violate laws, regulations, platform rules, carrier rules, advertising rules, privacy rules, or third-party rights.</li>
+                    <li>Send spam, unlawful marketing, deceptive messages, phishing content, malware, abusive content, or unauthorized communications.</li>
+                    <li>Collect, upload, or process sensitive information unless you have a lawful basis and appropriate safeguards.</li>
+                    <li>Bypass security, usage limits, billing controls, or provider requirements.</li>
+                    <li>Interfere with service performance, scrape the website, reverse engineer the platform, or attempt unauthorized access.</li>
+                    <li>Use AI-enabled features to create unlawful, misleading, discriminatory, harmful, or infringing content.</li>
+                </ul>
+                <p>Kyntlo may suspend or restrict access when we believe an account creates legal, security, deliverability, billing, provider, or platform risk.</p>
+            </section>
+
+            <section class="legal-card" id="customer-data">
+                <h2>6. Customer Data and Content</h2>
+                <p>You retain ownership of the business data, customer records, campaign content, uploaded files, and communications you submit to Kyntlo. You grant Kyntlo the rights needed to host, process, transmit, display, troubleshoot, secure, and otherwise operate the services for your account.</p>
+                <p>You are responsible for the accuracy, legality, and quality of your data and content. Kyntlo is not responsible for customer instructions, campaign claims, message recipients, consent records, third-party lists, or business decisions made using platform outputs.</p>
+                <p>Use of personal information is also governed by the Privacy Policy and any applicable data processing terms agreed with Kyntlo.</p>
+            </section>
+
+            <section class="legal-card" id="third-party">
+                <h2>7. Third-Party Services and Integrations</h2>
+                <p>Kyntlo may connect with third-party services such as payment processors, messaging providers, email providers, calendar tools, domain services, analytics tools, AI providers, social platforms, and other integrations. Third-party services may have separate terms, fees, approvals, policies, limits, and availability.</p>
+                <p>Kyntlo is not responsible for third-party outages, policy changes, rejected approvals, account restrictions, carrier filtering, deliverability decisions, platform suspensions, or pricing changes imposed by external providers.</p>
+            </section>
+
+            <section class="legal-card">
+                <h2>8. AI-Enabled Features</h2>
+                <p>AI-enabled tools may generate content, summaries, suggested responses, workflow assistance, or sales support. Outputs may be inaccurate, incomplete, or inappropriate for a particular use. You are responsible for reviewing outputs before publishing, sending, relying on, or using them in customer-facing workflows.</p>
+                <p>You must not use AI-enabled features in a way that violates law, privacy obligations, intellectual property rights, advertising rules, employment rules, financial rules, medical rules, or other regulated decision-making obligations.</p>
+            </section>
+
+            <section class="legal-card" id="limitations">
+                <h2>9. Service Availability and Limitations</h2>
+                <p>Kyntlo works to provide a reliable platform, but we do not guarantee uninterrupted, error-free, or always-available service. Scheduled maintenance, emergency maintenance, third-party provider issues, internet failures, carrier filtering, payment failures, or customer configuration errors may affect access or delivery.</p>
+                <p>To the maximum extent permitted by law, Kyntlo is provided without warranties that are not expressly stated in a written agreement. Kyntlo will not be liable for indirect, incidental, special, consequential, punitive, or lost-profit damages arising from use of the services.</p>
+                <p>Where liability cannot be excluded, Kyntlo's aggregate liability is limited to the amount paid for the affected services during the period allowed by applicable law or the written agreement controlling the account.</p>
+            </section>
+
+            <section class="legal-card">
+                <h2>10. Termination</h2>
+                <p>You may stop using Kyntlo or cancel your subscription according to the Refund Policy and any applicable order form. Kyntlo may suspend or terminate access for non-payment, legal risk, security risk, provider requirements, material breach, or misuse of the platform.</p>
+                <p>After termination, access to the workspace may be disabled. Customer data export, deletion, or retention will be handled according to account status, technical feasibility, legal obligations, and any applicable written agreement.</p>
+            </section>
+
+            <section class="legal-card">
+                <h2>11. Governing Terms and Disputes</h2>
+                <p>Any governing-law, venue, arbitration, or dispute-resolution terms in an applicable order form or written agreement will control. If no separate agreement applies, disputes will be handled according to applicable law and mandatory protections that cannot be waived.</p>
+            </section>
+
+            <section class="legal-card">
+                <h2>12. Changes to These Terms</h2>
+                <p>Kyntlo may update these Terms of Use from time to time. The updated version will be posted on this page with a revised "Last updated" date. Continued use of Kyntlo after updates become effective means you accept the revised terms.</p>
+            </section>
+
+            <section class="legal-card" id="contact">
+                <h2>13. Contact</h2>
+                <p>For questions about these terms, contact Kyntlo for Artificial Intelligence Tools at <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a>.</p>
+                <p>Postal address: Building Lotus2 North90, After Chill Out Lotus, Cairo Governorate 11234, Egypt. Map location: <a href="https://maps.app.goo.gl/HZmYLkkVSMSWCZJF6" target="_blank" rel="noopener noreferrer">Google Maps</a>.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        (function () {
+            "use strict";
+            const toc = document.querySelector(".legal-toc");
+            if (!toc) return;
+            const links = [...toc.querySelectorAll('a[href^="#"]')];
+            const sections = links
+                .map(a => document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1))))
+                .filter(Boolean);
+            if (!sections.length) return;
+
+            const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            /* progress bar */
+            const bar = document.createElement("div");
+            bar.className = "legal-toc__progress";
+            bar.innerHTML = "<span></span>";
+            toc.appendChild(bar);
+            const fill = bar.firstElementChild;
+
+            function setActive(id) {
+                links.forEach(a => a.classList.toggle("is-active", a.getAttribute("href") === "#" + id));
+            }
+
+            /* scroll-spy: highlight the section nearest the top of the viewport */
+            let offsets = [];
+            function measure() { offsets = sections.map(s => s.offsetTop); }
+            measure();
+            window.addEventListener("resize", measure);
+
+            function sync() {
+                const y = window.scrollY + 150;
+                let current = sections[0];
+                for (let i = 0; i < sections.length; i++) {
+                    if (offsets[i] <= y) current = sections[i];
+                }
+                setActive(current.id);
+                const doc = document.documentElement;
+                const pct = doc.scrollHeight > doc.clientHeight
+                    ? (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100 : 0;
+                fill.style.width = Math.min(100, Math.max(0, pct)) + "%";
+            }
+            let rafTicking = false;
+            function onScroll() {
+                if (rafTicking) return;
+                rafTicking = true;
+                window.requestAnimationFrame(function () { rafTicking = false; sync(); });
+            }
+            window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", onScroll);
+            sync();
+
+            /* smooth scroll that clears the sticky nav, then flags the target */
+            links.forEach(a => a.addEventListener("click", (e) => {
+                const target = document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1)));
+                if (!target) return;
+                e.preventDefault();
+                const top = target.getBoundingClientRect().top + window.scrollY - 118;
+                window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
+                history.replaceState(null, "", a.getAttribute("href"));
+                setActive(target.id);
+                document.querySelectorAll(".legal-card.is-target").forEach(c => c.classList.remove("is-target"));
+                target.classList.add("is-target");
+                window.setTimeout(() => target.classList.remove("is-target"), 1600);
+            }));
+
+            /* reveal cards on scroll */
+            const cards = document.querySelectorAll(".legal-card");
+            if ("IntersectionObserver" in window && !reduce) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(en => {
+                        if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
+                    });
+                }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+                cards.forEach(c => io.observe(c));
+            } else {
+                cards.forEach(c => c.classList.add("is-in"));
+            }
+
+            /* deep link on load */
+            if (location.hash) {
+                const t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+                if (t) window.setTimeout(() => {
+                    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 118, behavior: "auto" });
+                    sync();
+                }, 60);
+            }
+        })();
+    </script>
+</body>
+</html>

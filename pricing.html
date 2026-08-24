@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Kyntlo</title>
+    <meta name="description" content="Simple, transparent Kyntlo pricing. Start with a 14-day free trial, upgrade anytime, or build a fully customized plan with our sales team.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css" rel="stylesheet">
+    <script src="assets/site-shell.js" defer></script>
+    <script src="assets/currency-pricing.js" defer></script>
+    <style>
+        :root {
+            --bg-color: #07050f;
+            --surface-color: rgba(255, 255, 255, 0.04);
+            --text-main: #f5f3fa;
+            --text-muted: #a49fb8;
+            --border-color: rgba(255, 255, 255, 0.09);
+            --brand-pink: #f20089;
+            --brand-purple: #6d00c1;
+            --brand-hot: #ff1aa3;
+            --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            --gradient-animated: linear-gradient(-45deg, #f20089, #6d00c1, #ff1aa3, #851ada);
+            --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 24px 64px rgba(109, 0, 193, 0.18);
+            --font-display: 'Space Grotesk', 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg-color); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+        @keyframes shiftBg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { opacity: 0; animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+
+        .kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brand-pink); margin-bottom: 16px; }
+        .kicker::before, .kicker::after { content: ''; width: 24px; height: 1px; background: var(--gradient-kinetic); }
+
+        .btn-kinetic { display: inline-flex; align-items: center; justify-content: center; padding: 15px 34px; border-radius: 999px; font-weight: 700; font-size: 1rem; border: none; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 4s ease infinite; color: #fff !important; box-shadow: 0 12px 30px rgba(242, 0, 137, 0.3); transition: transform 0.26s ease, box-shadow 0.26s ease; }
+        .btn-kinetic:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(242, 0, 137, 0.4); }
+
+        /* ---------- Header ---------- */
+        .page-header { padding: 92px 0 56px; text-align: center; background: transparent; border-bottom: 1px solid var(--border-color); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: -55%; left: 50%; transform: translateX(-50%); width: 100vw; height: 640px; background: radial-gradient(circle, rgba(242, 0, 137, 0.12) 0%, rgba(109, 0, 193, 0.07) 40%, transparent 70%); pointer-events: none; }
+        .page-title { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.06; margin-bottom: 18px; position: relative; }
+        .page-title .text-gradient { background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-subtitle { font-size: 1.18rem; color: var(--text-muted); max-width: 720px; margin: 0 auto; position: relative; line-height: 1.75; }
+        .pricing-trust { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 28px; margin-top: 28px; font-size: 0.92rem; color: var(--text-muted); position: relative; }
+        .pricing-trust span { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+        .pricing-trust b { color: var(--brand-pink); }
+
+        /* ---------- Pricing grid ---------- */
+        .pricing-section-container { padding: 60px 0 20px; background: linear-gradient(180deg, transparent, rgba(109, 0, 193, 0.06) 45%, transparent); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: stretch; padding-top: 34px; margin-bottom: 30px; }
+        .pricing-card { display: flex; flex-direction: column; position: relative; min-width: 0; border-radius: 26px; background: #ffffff; color: #14141c; border: 1px solid rgba(255, 255, 255, 0.35); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); overflow: hidden; transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease; }
+        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 40px 100px rgba(242, 0, 137, 0.25); }
+        .pricing-card.premium { overflow: visible; border: 2px solid transparent; background: linear-gradient(#ffffff, #ffffff) padding-box, var(--gradient-animated) border-box; background-size: 100% 100%, 300% 300%; animation: shiftBg 5s ease infinite; box-shadow: 0 0 0 6px rgba(242, 0, 137, 0.1), 0 40px 100px rgba(242, 0, 137, 0.42); z-index: 2; }
+        .pricing-card.premium:hover { transform: translateY(-12px); }
+        .pricing-card.premium .package-button { border-color: transparent; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3s ease infinite; color: #fff !important; box-shadow: 0 14px 34px rgba(242, 0, 137, 0.35); }
+        .pricing-card.premium .package-button:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(242, 0, 137, 0.5); }
+        .pricing-badge { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 5; display: inline-flex; align-items: center; padding: 10px 24px; border-radius: 999px; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3.4s ease infinite; color: #fff; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 16px 32px rgba(242, 0, 137, 0.4); border: 4px solid var(--bg-color); }
+        .pricing-header { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 40px 24px 24px; text-align: center; background: #f8f9fc; border-bottom: 1px solid #ecedf3; min-height: 234px; }
+        .pricing-card.premium .pricing-header { padding-top: 46px; background: linear-gradient(180deg, rgba(109, 0, 193, 0.08), rgba(242, 0, 137, 0.04)); border-radius: 24px 24px 0 0; }
+        .plan-name { font-family: var(--font-display); font-size: 1.02rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #6b6b78; margin-bottom: 8px; }
+        .pricing-card.premium .plan-name { color: var(--brand-purple); }
+        .pricing-price { font-family: var(--font-display); font-size: clamp(1.9rem, 2.4vw, 2.5rem); font-weight: 700; color: #14141c; letter-spacing: -0.04em; line-height: 1; margin-bottom: 12px; min-height: 1.15em; }
+        .pricing-price span { font-size: 1rem; color: #6b6b78; font-weight: 600; }
+        .tax-label { display: none; }
+        .plan-desc { font-size: 0.9rem; color: #5a5a64; line-height: 1.55; min-height: 64px; }
+        .pricing-body { display: flex; flex-direction: column; flex: 1; padding: 26px 24px; }
+        .pricing-features { list-style: none; flex: 1; margin-bottom: 18px; }
+        .pricing-features li { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 13px; font-size: 0.88rem; color: #5a5a64; }
+        .pricing-features li b { display: block; color: #14141c; font-size: 0.93rem; margin-bottom: 1px; }
+        .check-icon { color: var(--brand-pink); flex-shrink: 0; margin-top: 1px; }
+        .pricing-excludes { margin-top: 6px; padding-top: 14px; border-top: 1px dashed #e2e4ea; }
+        .pricing-excludes h4 { font-size: 0.72rem; letter-spacing: 0.1em; color: #8a8a96; margin-bottom: 10px; text-transform: uppercase; }
+        .pricing-excludes ul { list-style: none; }
+        .pricing-excludes li { display: flex; gap: 8px; margin-bottom: 7px; font-size: 0.82rem; color: #8a8a96; }
+        .cross-icon { color: #ff5f56; flex-shrink: 0; }
+        .package-button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; margin-top: auto; padding: 15px 18px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; white-space: nowrap; line-height: 1.2; text-align: center; border: 2px solid rgba(109, 0, 193, 0.28); background: #fff; color: var(--brand-purple) !important; transition: all 0.28s ease; }
+        .package-button:hover { border-color: transparent; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3s ease infinite; color: #fff !important; transform: translateY(-3px); box-shadow: 0 14px 32px rgba(109, 0, 193, 0.3); }
+
+        /* Customized card */
+        .pricing-card.custom { background: linear-gradient(160deg, #16102b, #0d0a1c 60%); color: #f5f3fa; border: 1px solid rgba(242, 0, 137, 0.4); }
+        .pricing-card.custom::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(circle at 82% 6%, rgba(242, 0, 137, 0.2), transparent 42%); pointer-events: none; }
+        .pricing-card.custom .pricing-header { background: transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .pricing-card.custom .plan-name { color: var(--brand-hot); }
+        .pricing-card.custom .pricing-price { color: #fff; }
+        .pricing-card.custom .pricing-price span { color: #a49fb8; }
+        .pricing-card.custom .plan-desc { color: #a49fb8; }
+        .pricing-card.custom .tax-label { display: none; }
+        .pricing-card.custom .pricing-features li { color: #a49fb8; }
+        .pricing-card.custom .pricing-features li b { color: #fff; }
+        .pricing-card.custom .package-button { background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3.4s ease infinite; border-color: transparent; color: #fff !important; box-shadow: 0 14px 34px rgba(242, 0, 137, 0.3); }
+        .pricing-card.custom .package-button:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(242, 0, 137, 0.45); }
+
+        /* ---------- ROI band ---------- */
+        .roi-band { max-width: 1152px; margin: 8px auto 0; padding: 30px 34px; border-radius: 24px; background: linear-gradient(150deg, rgba(242, 0, 137, 0.12), rgba(109, 0, 193, 0.14)), rgba(255, 255, 255, 0.02); border: 1px solid rgba(242, 0, 137, 0.28); color: #fff; display: grid; grid-template-columns: minmax(0, 1.5fr) auto; gap: 24px; align-items: center; }
+        .roi-band h2 { font-family: var(--font-display); font-size: clamp(1.3rem, 2.4vw, 1.7rem); letter-spacing: -0.02em; line-height: 1.25; }
+        .roi-band h2 b { background: linear-gradient(135deg, #ff1aa3, #b06bff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .roi-band p { color: #b6b6c2; font-size: 0.95rem; margin-top: 6px; }
+
+        /* ---------- All plans include ---------- */
+        .all-plans-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 40px auto 0; max-width: 1000px; }
+        .all-plans-strip span { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 999px; border: 1px solid var(--border-color); background: var(--surface-color); font-size: 0.86rem; color: var(--text-muted); font-weight: 600; backdrop-filter: blur(8px); }
+        .all-plans-strip b { color: var(--brand-pink); }
+
+        /* ---------- Usage accordion ---------- */
+        .usage-accordion-wrapper { max-width: 920px; margin: 54px auto 0; border-radius: 20px; border: 1px solid var(--border-color); background: var(--surface-color); backdrop-filter: blur(10px); overflow: hidden; }
+        .usage-accordion-btn { width: 100%; padding: 24px 30px; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-display); font-size: 1.12rem; font-weight: 700; color: var(--text-main); cursor: pointer; transition: background 0.3s ease; }
+        .usage-accordion-btn:hover { background: rgba(242, 0, 137, 0.06); }
+        .usage-accordion-icon { color: var(--brand-pink); font-size: 1.3rem; transition: transform 0.3s ease; }
+        .usage-accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+        .usage-accordion-content.active { max-height: 3200px; }
+        .usage-accordion-inner { padding: 8px 28px 30px; border-top: 1px solid var(--border-color); }
+        .usage-note { text-align: center; color: var(--text-muted); margin: 20px 0 26px; font-size: 0.95rem; }
+        .usage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+        .usage-item { display: flex; flex-direction: column; padding: 20px; border-radius: 16px; border: 1px solid var(--border-color); background: rgba(255, 255, 255, 0.03); transition: transform 0.28s ease, border-color 0.28s ease; }
+        .usage-item:hover { transform: translateY(-4px); border-color: rgba(242, 0, 137, 0.4); }
+        .usage-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 6px; }
+        .usage-desc { flex: 1; color: var(--text-muted); font-size: 0.84rem; line-height: 1.55; margin-bottom: 12px; }
+        .usage-cost { align-self: flex-start; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; color: var(--brand-hot); background: rgba(242, 0, 137, 0.08); border: 1px dashed rgba(242, 0, 137, 0.35); border-radius: 8px; padding: 7px 12px; }
+
+        /* ---------- Guidance ---------- */
+        .pricing-guidance { padding: 90px 0; }
+        .guidance-title { font-family: var(--font-display); max-width: 800px; margin: 0 auto 16px; font-size: clamp(1.9rem, 3.8vw, 2.7rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; text-align: center; }
+        .guidance-subtitle { max-width: 740px; margin: 0 auto 42px; color: var(--text-muted); font-size: 1.06rem; line-height: 1.75; text-align: center; }
+        .guidance-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-bottom: 46px; }
+        .guidance-card { padding: 26px; border: 1px solid var(--border-color); border-radius: 20px; background: var(--surface-color); backdrop-filter: blur(8px); transition: transform 0.28s ease, border-color 0.28s ease; }
+        .guidance-card:hover { transform: translateY(-6px); border-color: rgba(242, 0, 137, 0.35); }
+        .guidance-card h3 { font-family: var(--font-display); margin-bottom: 10px; font-size: 1.08rem; font-weight: 700; }
+        .guidance-card h3 span { color: var(--brand-pink); margin-right: 6px; }
+        .guidance-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.68; }
+        .billing-panel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 30px; border-radius: 24px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); }
+        .billing-panel article { padding: 6px; }
+        .billing-panel h3 { margin-bottom: 10px; color: #fff; font-size: 1.08rem; font-family: var(--font-display); }
+        .billing-panel h3 small { display: inline-block; margin-left: 10px; padding: 3px 10px; border-radius: 999px; background: rgba(255, 26, 163, 0.15); border: 1px solid rgba(255, 26, 163, 0.4); color: #ff1aa3; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; }
+        .billing-panel p { color: #b6b6c2; font-size: 0.95rem; line-height: 1.7; }
+
+        /* ---------- FAQ ---------- */
+        .pricing-faq { padding: 0 0 90px; }
+        .faq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; max-width: 1000px; margin: 0 auto; }
+        .faq-card { padding: 24px 26px; border: 1px solid var(--border-color); border-radius: 18px; background: var(--surface-color); backdrop-filter: blur(8px); }
+        .faq-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .faq-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; }
+
+        /* ---------- Final CTA ---------- */
+        .final-cta { margin: 0 24px 90px; }
+        .final-cta__inner { max-width: 1152px; margin: 0 auto; padding: 60px 40px; border-radius: 28px; text-align: center; background: linear-gradient(150deg, rgba(242, 0, 137, 0.1), rgba(109, 0, 193, 0.12)), #14101f; color: #fff; position: relative; overflow: hidden; }
+        .final-cta__inner::before { content: ''; position: absolute; top: -160px; left: 50%; transform: translateX(-50%); width: 640px; height: 340px; background: radial-gradient(closest-side, rgba(255, 26, 163, 0.28), transparent); pointer-events: none; }
+        .final-cta h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.6rem); letter-spacing: -0.03em; margin-bottom: 12px; position: relative; }
+        .final-cta p { color: #cfc9e2; max-width: 560px; margin: 0 auto 28px; font-size: 1.08rem; position: relative; }
+        .final-cta .cta-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; }
+        .btn-outline-light { display: inline-flex; align-items: center; justify-content: center; padding: 15px 34px; border-radius: 999px; font-weight: 700; font-size: 1rem; background: transparent; color: #fff !important; border: 1px solid rgba(255, 255, 255, 0.35); transition: all 0.28s ease; }
+        .btn-outline-light:hover { border-color: var(--brand-hot); transform: translateY(-3px); box-shadow: 0 14px 30px rgba(242, 0, 137, 0.25); }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1100px) {
+            .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .guidance-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .roi-band { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+        }
+        @media (max-width: 768px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-header { min-height: auto; }
+            .guidance-grid, .billing-panel, .faq-grid { grid-template-columns: 1fr; }
+            .billing-panel { padding: 24px; }
+            .usage-accordion-btn { flex-direction: column; text-align: center; }
+            .final-cta { margin: 0 16px 70px; }
+            .final-cta__inner { padding: 46px 22px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+            .animate-fade-up { opacity: 1; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <nav></nav>
+
+    <header class="page-header">
+        <div class="container animate-fade-up">
+            <p class="kicker">Pricing</p>
+            <h1 class="page-title">One platform. One invoice.<br><span class="text-gradient">Every growth tool you need.</span></h1>
+            <p class="page-subtitle">Replace a $2,488+/mo stack of disconnected tools with one AI-powered growth engine — starting at $45/mo. Pick a plan below, or build one that's entirely your own.</p>
+            <div class="pricing-trust">
+                <span><b>✦</b> 14-day free trial</span>
+                <span><b>✦</b> No setup fees</span>
+                <span><b>✦</b> Cancel anytime</span>
+                <span><b>✦</b> Wholesale usage rates, no markup</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="pricing-section-container animate-fade-up" style="animation-delay: 0.15s;">
+        <div class="container">
+            <div class="pricing-grid">
+
+                <div class="pricing-card" data-package="starter">
+                    <div class="pricing-header">
+                        <div class="plan-name">Starter</div>
+                        <div class="pricing-price"><span class="price-lockup"><span class="price-now">$90</span><span class="price-per">/mo</span></span></div>
+                        <div class="tax-label">Plus Taxes</div>
+                        <div class="plan-desc">Launch CRM, booking, and lead capture.</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><span class="check-icon">✦</span> <div><b>CRM Contacts &amp; Opportunities</b> Manage every lead and customer.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>1 Pipeline</b> A simple lead-to-booking flow.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Funnels &amp; Pages</b> Capture leads from any traffic source.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Forms &amp; Surveys</b> Collect inquiries and qualification data.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Calendar Booking</b> Let clients book appointments.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Live Chat Widget</b> Capture website conversations.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Basic Email Campaigns</b> Send simple broadcasts.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Up to 3 Users</b> Small team access.</div></li>
+                        </ul>
+                        <div class="pricing-excludes">
+                            <h4>Not Included</h4>
+                            <ul>
+                                <li><span class="cross-icon">✕</span> Workflow automation</li>
+                                <li><span class="cross-icon">✕</span> SMS and WhatsApp access</li>
+                                <li><span class="cross-icon">✕</span> AI chatbot &amp; missed-call text-back</li>
+                                <li><span class="cross-icon">✕</span> Reputation Manager</li>
+                            </ul>
+                        </div>
+                        <a href="checkout.html?package=starter&billing=quarterly" class="package-button">Start Free Trial</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card" data-package="growth">
+                    <div class="pricing-header">
+                        <div class="plan-name">Growth</div>
+                        <div class="pricing-price"><span class="price-lockup"><span class="price-now">$270</span><span class="price-per">/mo</span></span></div>
+                        <div class="tax-label">Plus Taxes</div>
+                        <div class="plan-desc">Automate follow-up and convert more bookings.</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><span class="check-icon">✦</span> <div><b>Everything in Starter</b> Full access to Starter features.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>2–3 Pipelines</b> Manage multiple services or lead flows.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Workflow Automation</b> Automate follow-ups and internal tasks.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Appointment Reminders</b> Reduce no-shows automatically.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Full Omnichannel Inbox</b> Email, chat, SMS, and WhatsApp together.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Basic AI Chatbot</b> Automated replies and FAQs.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Up to 10 Users</b> Team collaboration.</div></li>
+                        </ul>
+                        <div class="pricing-excludes">
+                            <h4>Not Included</h4>
+                            <ul>
+                                <li><span class="cross-icon">✕</span> Advanced AI chatbot &amp; Sales Agent</li>
+                                <li><span class="cross-icon">✕</span> Voice AI / Voice Receptionist</li>
+                                <li><span class="cross-icon">✕</span> Memberships or courses</li>
+                                <li><span class="cross-icon">✕</span> Advanced reporting &amp; attribution</li>
+                            </ul>
+                        </div>
+                        <a href="checkout.html?package=growth&billing=quarterly" class="package-button">Start Free Trial</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card premium" data-package="pro">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <div class="plan-name">Pro</div>
+                        <div class="pricing-price"><span class="price-lockup"><span class="price-now">$490</span><span class="price-per">/mo</span></span></div>
+                        <div class="tax-label">Plus Taxes</div>
+                        <div class="plan-desc">Unlimited AI, reviews, analytics, and reactivation in one growth system.</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><span class="check-icon">✦</span> <div><b>Everything in Growth</b> The fully unlocked ecosystem.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Unlimited AI Usage</b> Every AI feature across the platform — chat, content, voice, workflows — with no caps.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Unlimited Pipelines</b> Support every service and process.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Missed Call Text-Back</b> Auto-respond to missed calls.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Advanced AI Chatbot</b> Smarter multi-step conversations.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Voice AI Access</b> Voice workflows and receptionist-style routing.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Reputation Manager</b> Request and monitor customer reviews.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Reactivation Campaigns</b> Bring inactive clients back.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Memberships / Courses</b> Sell programs and subscriptions.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Call Tracking &amp; Recording</b> Track call conversions natively.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Advanced Analytics</b> Monitor performance and trends.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Premium Workflow Actions</b> Advanced automation for complex journeys.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Up to 25 Users</b> Larger team access.</div></li>
+                        </ul>
+                        <a href="checkout.html?package=pro&billing=quarterly" class="package-button">Start Free Trial</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card custom" data-package="custom">
+                    <div class="pricing-header">
+                        <div class="plan-name">Customized</div>
+                        <div class="pricing-price"><span class="price-lockup"><span class="price-now" style="background: linear-gradient(135deg, #ff1aa3, #b06bff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Let's Talk</span></span><span class="price-meta"><span class="price-tax">Built around you</span></span></div>
+                        <div class="plan-desc">Make the plan your own — choose exactly which features you want, nothing you don't.</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><span class="check-icon">✦</span> <div><b>Pick Your Features</b> Hand-select CRM, AI, voice, funnels, reviews — only what you'll actually use.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Custom Limits</b> Users, pipelines, brands, and volumes sized to your operation.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Multi-Brand Ready</b> Run multiple brands or branches from one account.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Custom Integrations &amp; Dev</b> Scoped custom workflows and integrations.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Human Campaign Management</b> Scoped campaign execution support.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Dedicated Onboarding</b> A specialist configures your workspace with you.</div></li>
+                            <li><span class="check-icon">✦</span> <div><b>Tailored Pricing</b> Pay for your feature mix — not a one-size bundle.</div></li>
+                        </ul>
+                        <a href="contact.html#contact-form" class="package-button">Contact Sales</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="roi-band">
+                <div>
+                    <h2>The math is simple: <b>$2,488+/mo of separate tools</b> becomes one platform from $45/mo.</h2>
+                    <p>CRM, funnels, email, SMS, booking, automations, and reputation — consolidated into one invoice.</p>
+                </div>
+                <a href="compare.html" class="btn-kinetic">See What Kyntlo Replaces</a>
+            </div>
+
+            <div class="all-plans-strip">
+                <span><b>✦</b> Every plan includes secure hosting</span>
+                <span><b>✦</b> Guided onboarding</span>
+                <span><b>✦</b> Upgrade or downgrade anytime</span>
+                <span><b>✦</b> Support from the Kyntlo team</span>
+            </div>
+
+            <div class="usage-accordion-wrapper">
+                <button class="usage-accordion-btn" id="usageAccordionBtn" type="button" aria-expanded="false" aria-controls="usageAccordionContent">
+                    <span>View Wholesale Usage Costs &amp; Add-ons</span>
+                    <span class="usage-accordion-icon" aria-hidden="true">↓</span>
+                </button>
+                <div class="usage-accordion-content" id="usageAccordionContent">
+                    <div class="usage-accordion-inner">
+                        <p class="usage-note">Pay only for the telecom and AI resources you actually use. No markup.</p>
+                        <div class="usage-grid">
+                            <div class="usage-item"><div class="usage-title">Email Infrastructure</div><div class="usage-desc">Send unlimited emails to unlimited contacts with no list-size fees.</div><div class="usage-cost">$0.00135 / email</div></div>
+                            <div class="usage-item"><div class="usage-title">Email Verification</div><div class="usage-desc">Automatically check and recheck addresses every 90 days.</div><div class="usage-cost">$0.005 / email</div></div>
+                            <div class="usage-item"><div class="usage-title">SMS Messaging</div><div class="usage-desc">Send SMS messages to your list to close deals faster.</div><div class="usage-cost">$0.0158 / segment</div></div>
+                            <div class="usage-item"><div class="usage-title">Making Calls</div><div class="usage-desc">Make calls in the system to track and manage all call activity.</div><div class="usage-cost">$0.028 / min</div></div>
+                            <div class="usage-item"><div class="usage-title">Receiving Calls</div><div class="usage-desc">Track who is calling and view call data for each customer.</div><div class="usage-cost">$0.017 / min</div></div>
+                            <div class="usage-item"><div class="usage-title">Premium Triggers</div><div class="usage-desc">Skip complex Zapier setups. Connect directly to Google Sheets or webhooks.</div><div class="usage-cost">$0.02 / action</div></div>
+                            <div class="usage-item"><div class="usage-title">Content AI</div><div class="usage-desc">Use AI to write high-converting copy and generate AI images.</div><div class="usage-cost">$0.18 / 1k words</div></div>
+                            <div class="usage-item"><div class="usage-title">Conversation AI</div><div class="usage-desc">Automate and enhance customer interactions naturally.</div><div class="usage-cost">$0.04 / message</div></div>
+                            <div class="usage-item"><div class="usage-title">Funnels AI</div><div class="usage-desc">Simplify funnel creation with effective, customized designs.</div><div class="usage-cost">$1.98 / funnel</div></div>
+                            <div class="usage-item"><div class="usage-title">Reviews AI</div><div class="usage-desc">Automate customer feedback and save time on review management.</div><div class="usage-cost">$0.16 / response</div></div>
+                            <div class="usage-item"><div class="usage-title">Workflow AI</div><div class="usage-desc">Automate complex processes with AI-powered workflows.</div><div class="usage-cost">$0.06 / execution</div></div>
+                            <div class="usage-item"><div class="usage-title">Workflow Pro Plan</div><div class="usage-desc">10,000 premium workflow executions, up to 60% cheaper.</div><div class="usage-cost">$14.99 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Ad Manager</div><div class="usage-desc">Launch and manage ad campaigns easily with proven templates.</div><div class="usage-cost">$29 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Auto-Complete Address</div><div class="usage-desc">Fills in details to speed up checkout for a smoother experience.</div><div class="usage-cost">$0.0044 / search</div></div>
+                            <div class="usage-item"><div class="usage-title">Branded Client App</div><div class="usage-desc">Launch your own branded iOS and Android app with no coding.</div><div class="usage-cost">$79 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Dedicated IP</div><div class="usage-desc">Secure your sending reputation for better email deliverability.</div><div class="usage-cost">$88.50 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Domain Purchase</div><div class="usage-desc">Find and register the perfect domain for your business.</div><div class="usage-cost">$13 / domain</div></div>
+                            <div class="usage-item"><div class="usage-title">WhatsApp Integration</div><div class="usage-desc">Integrate WhatsApp to seamlessly send and receive messages.</div><div class="usage-cost">$29.99 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">WordPress Hosting</div><div class="usage-desc">Seamlessly integrate WordPress to build and manage sites.</div><div class="usage-cost">$14.99 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Yext Listings</div><div class="usage-desc">Keep business listings accurate across multiple platforms.</div><div class="usage-cost">$75 / month</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="pricing-guidance" aria-labelledby="pricing-guidance-title">
+            <div class="container">
+                <h2 class="guidance-title" id="pricing-guidance-title">Which plan is right for you?</h2>
+                <p class="guidance-subtitle">The best plan depends on how many people use the workspace, how many leads you manage, which channels you need, and how much of the work you want AI to take off your plate.</p>
+
+                <div class="guidance-grid">
+                    <article class="guidance-card">
+                        <h3><span>01</span>Starter</h3>
+                        <p>You're getting organized. You need CRM, lead capture, booking, and a small number of users before adding deeper automation.</p>
+                    </article>
+                    <article class="guidance-card">
+                        <h3><span>02</span>Growth</h3>
+                        <p>You're losing leads to slow follow-up. You need multiple pipelines, an omnichannel inbox, and workflow automation to stay consistent.</p>
+                    </article>
+                    <article class="guidance-card">
+                        <h3><span>03</span>Pro</h3>
+                        <p>You're ready for AI everywhere. Voice AI, advanced chatbot, reviews, reactivation, call tracking, and deep reporting in one system.</p>
+                    </article>
+                    <article class="guidance-card">
+                        <h3><span>04</span>Customized</h3>
+                        <p>Your operation doesn't fit a box. Choose your own features, limits, and services with our team — and pay only for what you pick.</p>
+                    </article>
+                </div>
+
+                <div class="billing-panel" aria-label="Billing options">
+                    <article>
+                        <h3>Monthly</h3>
+                        <p>Pay month to month at the standard package price. Best when you want maximum flexibility before committing to a longer billing period.</p>
+                    </article>
+                    <article>
+                        <h3>Quarterly <small>50% off first quarter</small></h3>
+                        <p>Get 50% off your first 3 months — enough runway to set up properly, train the team, and see momentum. After the first quarter, the package renews at the original monthly price plus taxes.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-faq" aria-label="Pricing questions">
+            <div class="container">
+                <div class="faq-grid">
+                    <article class="faq-card">
+                        <h3>Can I switch plans later?</h3>
+                        <p>Yes. Upgrade or downgrade at any time — your workspace, contacts, and automations move with you.</p>
+                    </article>
+                    <article class="faq-card">
+                        <h3>How does the Customized plan work?</h3>
+                        <p>Tell our sales team which features, limits, and services you need. We scope a plan around your operation and quote a price for exactly that mix — nothing more.</p>
+                    </article>
+                    <article class="faq-card">
+                        <h3>What are usage costs?</h3>
+                        <p>Telecom and AI resources (SMS, calls, emails, AI messages) are billed at wholesale rates with no markup, on top of your plan. You only pay for what you use.</p>
+                    </article>
+                    <article class="faq-card">
+                        <h3>Is there a free trial?</h3>
+                        <p>Every standard plan starts with a 14-day free trial — no setup fees, cancel anytime. See our <a href="refund.html" style="color: var(--brand-hot); font-weight: 700;">refund policy</a> for details.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="final-cta__inner">
+                <h2>Stop paying for ten tools that don't talk to each other.</h2>
+                <p>Start your 14-day free trial today — or talk to sales about a plan built entirely around your business.</p>
+                <div class="cta-row">
+                    <a href="trial.html" class="btn-kinetic">Start Free Trial</a>
+                    <a href="contact.html#contact-form" class="btn-outline-light">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        (function () {
+            "use strict";
+            const accordionBtn = document.getElementById("usageAccordionBtn");
+            const accordionContent = document.getElementById("usageAccordionContent");
+            if (accordionBtn && accordionContent) {
+                const icon = accordionBtn.querySelector(".usage-accordion-icon");
+                accordionBtn.addEventListener("click", () => {
+                    accordionContent.classList.toggle("active");
+                    const isOpen = accordionContent.classList.contains("active");
+                    accordionBtn.setAttribute("aria-expanded", String(isOpen));
+                    if (icon) icon.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

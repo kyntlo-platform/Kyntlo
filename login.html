@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Kyntlo</title>
+    <meta name="description" content="Sign in to your Kyntlo account through the Kyntlo Hub.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css" rel="stylesheet">
+    <script src="assets/site-shell.js" defer></script>
+    <style>
+        :root {
+            --bg-color: #07050f;
+            --surface-light: rgba(255, 255, 255, 0.03);
+            --auth-bg: #07050f;
+            --auth-text: #f5f3fa;
+            --auth-muted: #a49fb8;
+            --auth-border: rgba(255, 255, 255, 0.1);
+            --brand-pink: #f20089;
+            --brand-purple: #6d00c1;
+            --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+        }
+
+        html { background: var(--bg-color); }
+
+        body {
+            min-height: 100vh;
+            background: var(--auth-bg);
+            color: var(--auth-text);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .auth-shell {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .auth-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            min-height: 96px;
+            padding: 22px 28px;
+            border-bottom: 1px solid rgba(21, 32, 51, 0.08);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(14px);
+        }
+
+        .auth-brand img {
+            display: block;
+            width: auto;
+            height: 48px;
+        }
+
+        .auth-main {
+            flex: 1;
+            display: grid;
+            place-items: center;
+            padding: 72px 20px;
+        }
+
+        .auth-card {
+            width: min(100%, 690px);
+            padding: clamp(34px, 5vw, 66px);
+            border-radius: 8px;
+            background: var(--surface-light);
+            box-shadow: 0 26px 80px rgba(21, 32, 51, 0.08);
+        }
+
+        .auth-card h1 {
+            margin-bottom: 42px;
+            color: var(--text-main);
+            font-size: clamp(2rem, 5vw, 2.7rem);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .auth-form {
+            max-width: 464px;
+            margin: 0 auto;
+        }
+
+        .field {
+            margin-bottom: 24px;
+        }
+
+        .field label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .field input {
+            width: 100%;
+            height: 50px;
+            padding: 0 16px;
+            border: 1px solid #cfd8e3;
+            border-radius: 6px;
+            color: var(--auth-text);
+            font-size: 1rem;
+            box-shadow: inset 0 1px 2px rgba(16, 24, 40, 0.04);
+        }
+
+        .field input:focus {
+            border-color: var(--brand-purple);
+            outline: 3px solid rgba(109, 0, 193, 0.12);
+        }
+
+        .password-row {
+            position: relative;
+        }
+
+        .password-row button {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            border: 0;
+            background: transparent;
+            color: #98a2b3;
+            font-weight: 800;
+            transform: translateY(-50%);
+        }
+
+        .forgot-link {
+            display: block;
+            margin-top: 8px;
+            color: var(--brand-pink);
+            font-size: 0.86rem;
+            font-weight: 800;
+            text-align: right;
+        }
+
+        .primary-button {
+            width: 100%;
+            min-height: 50px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .primary-button {
+            margin-top: 8px;
+            border: 0;
+            background: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            color: #fff;
+        }
+
+        .auth-footer-text {
+            margin-top: 36px;
+            color: #5b6678;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .auth-footer-text a {
+            color: var(--brand-pink);
+            font-weight: 800;
+        }
+
+        .auth-notice {
+            display: none;
+            margin: 22px auto 0;
+            max-width: 464px;
+            padding: 14px 16px;
+            border: 1px solid rgba(109, 0, 193, 0.18);
+            border-radius: 10px;
+            background: rgba(109, 0, 193, 0.06);
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .auth-notice.is-visible {
+            display: block;
+        }
+
+        @media (max-width: 680px) {
+            .auth-topbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .auth-card {
+                padding: 32px 22px;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <nav hidden></nav>
+    <div class="auth-shell">
+        <header class="auth-topbar">
+            <a class="auth-brand" href="index.html" aria-label="Kyntlo home">
+                <img src="assets/kyntlo-logo-cropped.png" alt="Kyntlo">
+            </a>
+        </header>
+
+        <main class="auth-main">
+            <section class="auth-card" aria-labelledby="login-title">
+                <h1 id="login-title">Sign into your account</h1>
+                <form class="auth-form" id="loginForm">
+                    <div class="field">
+                        <label for="loginEmail">Email</label>
+                        <input id="loginEmail" name="email" type="email" autocomplete="email" placeholder="Your email address" required>
+                    </div>
+                    <div class="field">
+                        <label for="loginPassword">Password</label>
+                        <div class="password-row">
+                            <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="The password you picked" required>
+                            <button type="button" id="togglePassword" aria-label="Show password">show</button>
+                        </div>
+                        <a class="forgot-link" href="mailto:Support@Kyntlo.ai?subject=Kyntlo%20password%20reset">Forgot password?</a>
+                    </div>
+                    <button class="primary-button" type="submit">Sign in</button>
+
+                </form>
+
+                <p class="auth-footer-text">
+                    By signing in you agree to our <a href="terms.html">Terms of Use</a>. New to Kyntlo? <a href="get-started.html">Get Started</a>.
+                </p>
+                <p class="auth-notice" id="authNotice">Opening the Kyntlo Hub. If your browser does not redirect, visit https://hub.kyntlo.ai/.</p>
+            </section>
+        </main>
+    </div>
+    <footer hidden></footer>
+
+    <script>
+        const password = document.getElementById("loginPassword");
+        const togglePassword = document.getElementById("togglePassword");
+        const notice = document.getElementById("authNotice");
+
+        togglePassword.addEventListener("click", function () {
+            const isPassword = password.type === "password";
+            password.type = isPassword ? "text" : "password";
+            togglePassword.textContent = isPassword ? "hide" : "show";
+        });
+
+        function openKyntloHub(event) {
+            event.preventDefault();
+            notice.classList.add("is-visible");
+            window.location.href = "https://hub.kyntlo.ai/";
+        }
+
+        document.getElementById("loginForm").addEventListener("submit", openKyntloHub);
+    </script>
+</body>
+</html>

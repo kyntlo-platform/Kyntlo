@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Free Trial | Kyntlo</title>
+    <meta name="description" content="Start your 14-day Kyntlo free trial. Choose a package, create your workspace, and explore everything free for 14 days. Cancel anytime before the trial ends.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kyntlo">
+    <meta property="og:title" content="Start Free Trial | Kyntlo">
+    <meta property="og:description" content="Choose a package and start your 14-day Kyntlo free trial. Cancel anytime before the trial ends.">
+    <meta property="og:url" content="https://kyntlo.ai/trial">
+    <meta property="og:image" content="https://kyntlo.ai/assets/og-kyntlo-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css" rel="stylesheet">
+    <script src="assets/site-shell.js" defer></script>
+    <script src="assets/currency-pricing.js" defer></script>
+    <style>
+        :root {
+            --bg-color: #07050f;
+            --surface-color: rgba(255, 255, 255, 0.04);
+            --surface-light: rgba(255, 255, 255, 0.03);
+            --text-main: #f5f3fa;
+            --text-muted: #a49fb8;
+            --border-color: rgba(255, 255, 255, 0.09);
+            --brand-pink: #f20089;
+            --brand-purple: #6d00c1;
+            --brand-hot: #ff1aa3;
+            --green: #35e0a1;
+            --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            --gradient-animated: linear-gradient(-45deg, #f20089, #6d00c1, #ff1aa3, #851ada);
+            --font-display: 'Space Grotesk', 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; background: var(--bg-color); }
+        body { background: var(--bg-color); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+        @keyframes shiftBg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        .trial-hero { position: relative; padding: 96px 0 46px; text-align: center; overflow: hidden; }
+        .trial-hero::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 100vw; height: 620px; background: radial-gradient(circle, rgba(242, 0, 137, 0.13), rgba(109, 0, 193, 0.07) 45%, transparent 70%); pointer-events: none; }
+        .kicker { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brand-hot); }
+        .kicker::before, .kicker::after { content: ''; width: 24px; height: 1px; background: var(--gradient-kinetic); }
+        .trial-hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 4.8vw, 3.4rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 16px; }
+        .trial-hero h1 span { background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .trial-hero p.lead { max-width: 640px; margin: 0 auto; color: var(--text-muted); font-size: 1.12rem; line-height: 1.75; }
+
+        .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; max-width: 1000px; margin: 44px auto 0; }
+        .step { position: relative; padding: 26px 24px; border: 1px solid var(--border-color); border-radius: 20px; background: var(--surface-color); backdrop-filter: blur(10px); text-align: left; }
+        .step.is-active { border-color: rgba(242, 0, 137, 0.45); box-shadow: 0 0 0 1px rgba(242, 0, 137, 0.15), 0 24px 60px rgba(0, 0, 0, 0.45); }
+        .step__num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; margin-bottom: 14px; border-radius: 11px; background: var(--gradient-kinetic); color: #fff; font-family: var(--font-mono); font-weight: 700; font-size: 0.85rem; }
+        .step h3 { font-family: var(--font-display); font-size: 1.06rem; margin-bottom: 7px; }
+        .step p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.65; }
+        .step p b { color: #fff; }
+
+        .promise { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 1000px; margin: 30px auto 0; }
+        .promise span { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--border-color); background: var(--surface-color); font-size: 0.88rem; font-weight: 600; color: var(--text-muted); }
+        .promise b { color: var(--green); }
+
+        .pricing-section-container { padding: 62px 0 30px; }
+        .section-head { text-align: center; max-width: 700px; margin: 0 auto 10px; }
+        .section-head h2 { font-family: var(--font-display); font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 12px; }
+        .section-head p { color: var(--text-muted); font-size: 1.02rem; }
+
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; max-width: 1060px; margin: 0 auto 26px; }
+        .pricing-card { display: flex; flex-direction: column; position: relative; min-width: 0; border-radius: 26px; background: #ffffff; color: #14141c; border: 1px solid rgba(255, 255, 255, 0.35); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); overflow: hidden; transition: transform 0.32s ease, box-shadow 0.32s ease; }
+        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 40px 100px rgba(242, 0, 137, 0.25); }
+        .pricing-card.premium { overflow: visible; border: 2px solid transparent; background: linear-gradient(#ffffff, #ffffff) padding-box, var(--gradient-animated) border-box; background-size: 100% 100%, 300% 300%; animation: shiftBg 5s ease infinite; box-shadow: 0 0 0 6px rgba(242, 0, 137, 0.1), 0 40px 100px rgba(242, 0, 137, 0.42); z-index: 2; }
+        .pricing-card.premium:hover { transform: translateY(-12px); }
+        .pricing-badge { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 5; display: inline-flex; padding: 10px 24px; border-radius: 999px; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3.4s ease infinite; color: #fff; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 16px 32px rgba(242, 0, 137, 0.4); border: 4px solid var(--bg-color); }
+        .pricing-header { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 40px 24px 24px; text-align: center; background: #f8f9fc; border-bottom: 1px solid #ecedf3; min-height: 234px; }
+        .pricing-card.premium .pricing-header { padding-top: 46px; background: linear-gradient(180deg, rgba(109, 0, 193, 0.08), rgba(242, 0, 137, 0.04)); border-radius: 24px 24px 0 0; }
+        .plan-name { font-family: var(--font-display); font-size: 1.02rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #6b6b78; margin-bottom: 8px; }
+        .pricing-card.premium .plan-name { color: var(--brand-purple); }
+        .pricing-price { font-family: var(--font-display); font-weight: 700; color: #14141c; margin-bottom: 12px; min-height: 1.15em; }
+        .plan-desc { font-size: 0.9rem; color: #5a5a64; line-height: 1.55; min-height: 64px; }
+        .pricing-body { display: flex; flex-direction: column; flex: 1; padding: 26px 24px; }
+        .pricing-features { list-style: none; flex: 1; margin-bottom: 18px; }
+        .pricing-features li { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 0.88rem; color: #5a5a64; }
+        .pricing-features li b { color: #14141c; }
+        .check-icon { color: var(--brand-pink); flex-shrink: 0; }
+        .package-button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; margin-top: auto; padding: 15px 18px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; white-space: nowrap; line-height: 1.2; text-align: center; border: 2px solid rgba(109, 0, 193, 0.28); background: #fff; color: var(--brand-purple) !important; transition: all 0.28s ease; }
+        .package-button:hover { border-color: transparent; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3s ease infinite; color: #fff !important; transform: translateY(-3px); box-shadow: 0 14px 32px rgba(109, 0, 193, 0.3); }
+        .pricing-card.premium .package-button { border-color: transparent; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 3s ease infinite; color: #fff !important; box-shadow: 0 14px 34px rgba(242, 0, 137, 0.35); }
+
+        .billing-note { max-width: 900px; margin: 8px auto 0; padding: 26px 30px; border-radius: 22px; border: 1px solid rgba(53, 224, 161, 0.3); background: linear-gradient(135deg, rgba(53, 224, 161, 0.08), rgba(109, 0, 193, 0.06)); }
+        .billing-note h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .billing-note h3 span { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: rgba(53, 224, 161, 0.18); color: var(--green); font-size: 0.8rem; }
+        .billing-note ul { list-style: none; display: grid; gap: 9px; }
+        .billing-note li { position: relative; padding-left: 24px; color: #d3cde2; font-size: 0.94rem; line-height: 1.65; }
+        .billing-note li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+        .billing-note b { color: #fff; }
+
+        .custom-cta { max-width: 900px; margin: 26px auto 0; padding: 22px 26px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--surface-color); display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+        .custom-cta p { color: var(--text-muted); font-size: 0.95rem; }
+        .custom-cta b { color: #fff; }
+        .btn-ghost { display: inline-flex; align-items: center; justify-content: center; padding: 13px 26px; border-radius: 999px; border: 1px solid var(--border-color); background: rgba(255, 255, 255, 0.04); color: #fff !important; font-weight: 700; font-size: 0.94rem; white-space: nowrap; transition: all 0.26s ease; }
+        .btn-ghost:hover { border-color: rgba(242, 0, 137, 0.6); background: rgba(242, 0, 137, 0.1); transform: translateY(-2px); }
+
+        .faq-mini { max-width: 900px; margin: 60px auto 90px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .faq-mini article { padding: 22px 24px; border: 1px solid var(--border-color); border-radius: 18px; background: var(--surface-color); }
+        .faq-mini h4 { font-size: 0.98rem; margin-bottom: 7px; }
+        .faq-mini p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; }
+
+        @media (max-width: 980px) {
+            .steps { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 460px; }
+            .faq-mini { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .trial-hero { padding: 74px 0 34px; }
+            .billing-note { padding: 22px 20px; }
+            .custom-cta { flex-direction: column; align-items: flex-start; }
+            .btn-ghost { width: 100%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <nav></nav>
+
+    <main>
+        <section class="trial-hero">
+            <div class="container">
+                <p class="kicker">Free Trial</p>
+                <h1>Try Kyntlo free for <span>14 days</span></h1>
+                <p class="lead">Pick the package that fits, create your workspace, and use the platform in full for 14 days. No charge today, and you can cancel any time before the trial ends.</p>
+
+                <div class="steps">
+                    <article class="step is-active">
+                        <div class="step__num">1</div>
+                        <h3>Choose your package</h3>
+                        <p>Select Starter, Growth, or Pro below. You can upgrade or downgrade later at any time — nothing is locked in.</p>
+                    </article>
+                    <article class="step">
+                        <div class="step__num">2</div>
+                        <h3>Create your workspace</h3>
+                        <p>Complete secure checkout to set up your account. Your card is saved to start the subscription, but <b>nothing is charged today</b>.</p>
+                    </article>
+                    <article class="step">
+                        <div class="step__num">3</div>
+                        <h3>Explore free for 14 days</h3>
+                        <p>Full access from day one. Cancel before day 14 and you pay nothing at all.</p>
+                    </article>
+                </div>
+
+                <div class="promise">
+                    <span><b>✓</b> 14 days free</span>
+                    <span><b>✓</b> No charge today</span>
+                    <span><b>✓</b> No setup fees</span>
+                    <span><b>✓</b> Cancel anytime</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section-container" id="pricing">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Step 1 — pick the package you want to trial</h2>
+                    <p>Every package below starts with the same 14-day free trial.</p>
+                </div>
+
+                <div class="pricing-grid">
+
+                    <div class="pricing-card" data-package="starter">
+                        <div class="pricing-header">
+                            <div class="plan-name">Starter</div>
+                            <div class="pricing-price"><span class="price-lockup"><span class="price-now">$90</span><span class="price-per">/mo</span></span></div>
+                            <div class="plan-desc">Launch CRM, booking, and lead capture.</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><span class="check-icon">✦</span> CRM contacts &amp; opportunities</li>
+                                <li><span class="check-icon">✦</span> Funnels, pages, forms &amp; surveys</li>
+                                <li><span class="check-icon">✦</span> Calendar booking &amp; live chat</li>
+                                <li><span class="check-icon">✦</span> Up to 3 users</li>
+                            </ul>
+                            <a href="checkout.html?package=starter&amp;billing=quarterly" class="package-button">Start Free Trial</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card premium" data-package="pro">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <div class="plan-name">Pro</div>
+                            <div class="pricing-price"><span class="price-lockup"><span class="price-now">$490</span><span class="price-per">/mo</span></span></div>
+                            <div class="plan-desc">Unlimited AI, reviews, analytics, and reactivation in one growth system.</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><span class="check-icon">✦</span> Everything in Growth</li>
+                                <li><span class="check-icon">✦</span> <b>Unlimited AI usage across the platform</b></li>
+                                <li><span class="check-icon">✦</span> Voice AI &amp; missed-call text-back</li>
+                                <li><span class="check-icon">✦</span> Reputation manager &amp; analytics</li>
+                                <li><span class="check-icon">✦</span> Up to 25 users</li>
+                            </ul>
+                            <a href="checkout.html?package=pro&amp;billing=quarterly" class="package-button">Start Free Trial</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card" data-package="growth">
+                        <div class="pricing-header">
+                            <div class="plan-name">Growth</div>
+                            <div class="pricing-price"><span class="price-lockup"><span class="price-now">$270</span><span class="price-per">/mo</span></span></div>
+                            <div class="plan-desc">Automate follow-up and convert more bookings.</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><span class="check-icon">✦</span> Everything in Starter</li>
+                                <li><span class="check-icon">✦</span> Workflow automation</li>
+                                <li><span class="check-icon">✦</span> Full omnichannel inbox</li>
+                                <li><span class="check-icon">✦</span> Up to 10 users</li>
+                            </ul>
+                            <a href="checkout.html?package=growth&amp;billing=quarterly" class="package-button">Start Free Trial</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="billing-note">
+                    <h3><span>✓</span> What happens after the 14 days</h3>
+                    <ul>
+                        <li>Your trial runs for <b>14 full days from signup</b> with complete access to your chosen package.</li>
+                        <li>You are <b>not charged today</b>. Your payment method is stored securely so the subscription can continue automatically.</li>
+                        <li>If you do nothing, on <b>day 15</b> the package price you selected is charged and your subscription begins.</li>
+                        <li><b>Cancel any time before day 14</b> from your account or by contacting us, and you will not be charged at all.</li>
+                        <li>Quarterly billing is charged once for the full 3-month period; monthly billing is charged every month.</li>
+                    </ul>
+                </div>
+
+                <div class="custom-cta">
+                    <p><b>Need something tailored?</b> Build your own package with our team — pick only the features and limits you need.</p>
+                    <a href="contact.html#contact-form" class="btn-ghost">Talk to Sales</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="faq-mini">
+                    <article><h4>Do I need a credit card?</h4><p>Yes — your card is required to create the subscription, but no payment is taken during the 14-day trial period.</p></article>
+                    <article><h4>Can I change package during the trial?</h4><p>Yes. Upgrade or downgrade at any point and your workspace, contacts, and automations move with you.</p></article>
+                    <article><h4>What if I cancel?</h4><p>Cancel before day 14 and nothing is charged. After that, standard <a href="refund.html" style="color: var(--brand-hot); font-weight: 700;">refund policy</a> terms apply.</p></article>
+                    <article><h4>Is onboarding included?</h4><p>Every package includes guided onboarding so your workspace is configured properly from the start.</p></article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+</body>
+</html>

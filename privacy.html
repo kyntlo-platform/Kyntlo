@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Kyntlo</title>
+    <meta name="description" content="Read how Kyntlo collects, uses, protects, shares, and retains personal information.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css" rel="stylesheet">
+    <script src="assets/site-shell.js" defer></script>
+    <style>
+        :root {
+            --surface-light: rgba(255, 255, 255, 0.03);
+            --bg-color: #07050f;
+            --surface-color: rgba(255, 255, 255, 0.04);
+            --text-main: #f5f3fa;
+            --text-muted: #a49fb8;
+            --border-color: rgba(255, 255, 255, 0.09);
+            --brand-pink: #f20089;
+            --brand-purple: #6d00c1;
+            --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+        }
+
+        html { background: var(--bg-color); }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .legal-header {
+            padding: 96px 0 62px;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--surface-color);
+            text-align: center;
+        }
+
+        .legal-header h1 {
+            margin-bottom: 14px;
+            background: var(--gradient-kinetic);
+            background-clip: text;
+            color: transparent;
+            font-size: clamp(2.6rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.08;
+        }
+
+        .legal-header p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 1.08rem;
+        }
+
+        .legal-layout {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: 56px;
+            padding: 72px 20px 100px;
+        }
+
+
+
+
+        .legal-content {
+            max-width: 860px;
+        }
+
+        .legal-card {
+            margin-bottom: 26px;
+            padding: 34px;
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            background: var(--surface-light);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .legal-card h2 {
+            margin-bottom: 16px;
+            color: var(--text-main);
+            font-size: 1.58rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .legal-card p,
+        .legal-card li {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            line-height: 1.78;
+        }
+
+        .legal-card p {
+            margin-bottom: 14px;
+        }
+
+        .legal-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-card ul {
+            margin: 10px 0 0 22px;
+        }
+
+        .legal-card li {
+            margin-bottom: 10px;
+        }
+
+        .legal-card b {
+            color: var(--text-main);
+        }
+
+        .notice {
+            border-color: rgba(242, 0, 137, 0.26);
+            background: rgba(242, 0, 137, 0.045);
+        }
+
+        @media (max-width: 900px) {
+            .legal-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding-top: 54px;
+            }
+
+            .legal-toc {
+                position: static;
+            }
+        }
+    
+        /* ---------- Animated legal TOC (scroll-spy) ---------- */
+        html { scroll-behavior: smooth; }
+        .legal-card, .legal-content section[id] { scroll-margin-top: 130px; }
+
+        .legal-toc {
+            position: sticky;
+            top: 112px;
+            align-self: start;
+            padding: 24px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .legal-toc h2 {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .legal-toc a {
+            position: relative;
+            display: block;
+            margin-bottom: 4px;
+            padding: 10px 14px 10px 18px;
+            border-radius: 11px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.35;
+            transition: color 0.28s ease, background 0.28s ease, transform 0.28s cubic-bezier(0.34, 1.4, 0.5, 1), padding-left 0.28s ease;
+        }
+
+        .legal-toc a::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 50%;
+            width: 3px;
+            height: 0;
+            border-radius: 3px;
+            background: linear-gradient(180deg, #f20089, #6d00c1);
+            transform: translateY(-50%);
+            transition: height 0.32s cubic-bezier(0.34, 1.4, 0.5, 1);
+        }
+
+        .legal-toc a:hover,
+        .legal-toc a:focus-visible {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(3px);
+        }
+
+        .legal-toc a:hover::before,
+        .legal-toc a:focus-visible::before { height: 42%; }
+
+        .legal-toc a.is-active {
+            color: #fff;
+            background: linear-gradient(90deg, rgba(242, 0, 137, 0.16), rgba(109, 0, 193, 0.06));
+            padding-left: 22px;
+        }
+
+        .legal-toc a.is-active::before { height: 62%; box-shadow: 0 0 14px rgba(242, 0, 137, 0.7); }
+
+        .legal-toc__progress {
+            height: 3px;
+            margin-top: 16px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        .legal-toc__progress span {
+            display: block;
+            height: 100%;
+            width: 0%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #f20089, #6d00c1);
+            transition: width 0.18s linear;
+        }
+
+        /* section reveal */
+        .legal-card {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .legal-card.is-in { opacity: 1; transform: translateY(0); }
+        .legal-card.is-target { border-color: rgba(242, 0, 137, 0.45); box-shadow: 0 0 0 1px rgba(242, 0, 137, 0.18), 0 22px 60px rgba(0, 0, 0, 0.4); }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .legal-card { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <nav></nav>
+
+    <header class="legal-header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Last updated: July 21, 2026. This policy explains how Kyntlo handles personal information across our website, free trial requests, demo booking, support, and platform services.</p>
+        </div>
+    </header>
+
+    <main class="container legal-layout">
+        <aside class="legal-toc" aria-label="Privacy policy sections">
+            <h2>Sections</h2>
+            <a href="#overview">Overview</a>
+            <a href="#collection">How We Collect Information</a>
+            <a href="#information">Information We Collect</a>
+            <a href="#use">How We Use Information</a>
+            <a href="#sharing">Sharing and Processors</a>
+            <a href="#cookies">Cookies and Tracking</a>
+            <a href="#ai">AI-Enabled Features</a>
+            <a href="#retention">Retention and Security</a>
+            <a href="#rights">Your Rights</a>
+            <a href="#children">Children</a>
+            <a href="#changes">Policy Changes</a>
+            <a href="#contact">Contact</a>
+        </aside>
+
+        <div class="legal-content">
+            <section class="legal-card notice" id="overview">
+                <h2>1. Overview</h2>
+                <p>Kyntlo provides a growth operations platform for CRM, conversations, booking, funnels, automation, AI-enabled workflows, and reporting. We process personal information to operate the website, respond to inquiries, provide services, support customers, maintain security, and improve the platform.</p>
+                <p>For this policy, "Kyntlo," "we," "us," and "our" refers to Kyntlo for Artificial Intelligence Tools, located at Building Lotus2 North90, After Chill Out Lotus, Cairo Governorate 11234, Egypt.</p>
+                <p>When Kyntlo collects information directly from website visitors, prospects, and account users, Kyntlo is responsible for explaining how that information is handled. When customers use Kyntlo to manage their own contacts, leads, and customers, the customer is generally responsible for the data they upload or collect through the platform.</p>
+            </section>
+
+            <section class="legal-card" id="collection">
+                <h2>2. How We Collect Personal Information</h2>
+                <p>Kyntlo may collect personal information through direct and indirect methods depending on how you use the website, forms, support channels, embedded tools, and platform services.</p>
+                <p><b>Direct methods:</b> information you provide through website forms, free trial requests, demo bookings, support tickets, email, phone calls, payment flows, onboarding documents, platform account setup, and other communications with Kyntlo.</p>
+                <p><b>Indirect methods:</b> information generated when you use the website or platform, information provided by customer administrators or authorized team members, information from trusted service providers and integrations used to deliver the service, public business sources, and third-party tools such as booking, chat, forms, payment, email, messaging, or analytics providers where enabled.</p>
+                <p>Kyntlo does not intentionally collect information in a way designed to identify individuals unless the information is needed for a legitimate website, service, support, billing, security, or customer workflow purpose.</p>
+            </section>
+
+            <section class="legal-card" id="information">
+                <h2>3. Information We Collect</h2>
+                <p>Depending on how you interact with Kyntlo, we may collect the following categories of information:</p>
+                <ul>
+                    <li><b>Identity and contact information:</b> name, email address, phone number, company name, role, location, and messages you send to us.</li>
+                    <li><b>Account information:</b> login details, user roles, workspace settings, plan selection, billing status, support requests, and service preferences.</li>
+                    <li><b>Customer content:</b> contacts, conversations, forms, surveys, appointment details, pipeline records, workflow configurations, campaign data, and files uploaded or created in the platform.</li>
+                    <li><b>Billing information:</b> subscription records, invoices, usage charges, payment status, and payment metadata. Full card details are handled by payment processors and are not intended to be stored by Kyntlo.</li>
+                    <li><b>Usage and device information:</b> IP address, browser type, pages viewed, referring URLs, device identifiers, approximate location, logs, diagnostic data, and cookie or similar tracking data.</li>
+                    <li><b>Demo and support information:</b> calendar booking details, call notes, troubleshooting information, and communications with sales or support.</li>
+                </ul>
+            </section>
+
+            <section class="legal-card" id="use">
+                <h2>4. How We Use Information</h2>
+                <p>Kyntlo uses personal information for the following business and service purposes:</p>
+                <ul>
+                    <li>Provide, configure, secure, maintain, and improve the Kyntlo website and platform.</li>
+                    <li>Respond to inquiries, book demos, provide onboarding, and deliver customer support.</li>
+                    <li>Create and manage accounts, subscriptions, permissions, billing, usage records, and service notices.</li>
+                    <li>Enable CRM, messaging, booking, automation, funnel, reporting, and AI-enabled platform functionality.</li>
+                    <li>Monitor performance, troubleshoot issues, prevent fraud, detect abuse, and protect the platform.</li>
+                    <li>Send operational messages, product updates, and marketing communications where permitted by law or consent.</li>
+                    <li>Comply with legal, tax, accounting, security, and regulatory obligations.</li>
+                </ul>
+                <p>Where privacy law requires a legal basis, we rely on contract performance, legitimate interests, consent, and legal obligations depending on the purpose and the context of processing.</p>
+            </section>
+
+            <section class="legal-card" id="sharing">
+                <h2>5. Sharing and Service Providers</h2>
+                <p>Kyntlo may share information with trusted providers that help us operate the service. These may include hosting providers, payment processors, calendar and booking tools, communications providers, analytics tools, customer support systems, security vendors, professional advisers, and integration partners selected by the customer.</p>
+                <p>We may also disclose information if required by law, to protect rights and safety, to enforce our terms, in connection with a business transaction, or with your direction or consent.</p>
+                <p>Some providers may process information in countries other than your own. Where required, Kyntlo uses appropriate contractual, technical, and organizational measures designed to protect transferred information.</p>
+            </section>
+
+            <section class="legal-card" id="cookies">
+                <h2>6. Cookies and Similar Technologies</h2>
+                <p>The Kyntlo marketing website currently uses limited essential browser storage, including storage used to remember cookie banner preferences. The website may also load embedded third-party tools such as chat widgets, Forminit forms, Calendly booking, payment links, maps, or platform login links, and those providers may use their own cookies or similar technologies when loaded or interacted with.</p>
+                <p>Kyntlo does not intentionally run separate advertising cookies on the website unless they are added later. If non-essential analytics, marketing, or third-party tracking technologies are introduced, Kyntlo will seek consent where required by applicable law and update the Cookie Policy accordingly.</p>
+                <p>You can control cookies through your browser settings. Disabling cookies may affect embedded forms, booking tools, chat, payment pages, or platform functionality.</p>
+            </section>
+
+            <section class="legal-card" id="ai">
+                <h2>7. AI-Enabled Features</h2>
+                <p>Kyntlo may offer AI-enabled tools for content, conversation assistance, workflow support, or sales automation. Information submitted into AI-enabled features may be processed to generate outputs, improve workflow execution, provide troubleshooting, and maintain service quality.</p>
+                <p>Customers are responsible for ensuring they have the right to submit data into AI-enabled features and for reviewing AI-generated outputs before relying on them. Kyntlo should not be used to make legally or similarly significant decisions about individuals without appropriate human review and lawful authorization.</p>
+            </section>
+
+            <section class="legal-card" id="retention">
+                <h2>8. Retention and Security</h2>
+                <p>Kyntlo generally retains website inquiry, demo, free trial, support, and account-related personal information for up to 12 months after the relevant request, customer relationship, or account activity ends, unless a longer period is required for legal, tax, accounting, dispute, fraud prevention, security, contractual, or customer-configured platform reasons.</p>
+                <p>Customer workspace data may follow the customer's account configuration, subscription status, deletion request, export requirements, and applicable legal obligations. Customers should maintain their own retention practices for contacts, campaigns, conversations, and uploaded data they control inside the platform.</p>
+                <p>Kyntlo uses administrative, technical, and organizational safeguards designed to protect information against unauthorized access, loss, misuse, alteration, and disclosure. No online service can guarantee absolute security, so customers should also maintain strong passwords, access controls, and internal data handling practices.</p>
+            </section>
+
+            <section class="legal-card" id="rights">
+                <h2>9. Your Privacy Rights</h2>
+                <p>Depending on where you live and the law that applies to your request, you may have several rights in relation to personal information Kyntlo holds about you, including:</p>
+                <ul>
+                    <li><b>Right to be informed:</b> to know how we collect, use, share, retain, and protect personal information as explained in this policy.</li>
+                    <li><b>Right of access and copy:</b> to request access to personal information we hold about you and obtain a copy where applicable.</li>
+                    <li><b>Right to rectification:</b> to request correction of inaccurate, incorrect, incomplete, or outdated personal information.</li>
+                    <li><b>Right to deletion or destruction:</b> to request deletion of personal information in certain circumstances, unless retention is required by law, contract, security, accounting, dispute, or legitimate business requirements.</li>
+                    <li><b>Right to withdraw consent:</b> to withdraw consent where processing is based on consent, without affecting processing that occurred before withdrawal.</li>
+                    <li><b>Right to restriction, objection, or portability:</b> to restrict processing, object to certain processing, or request portability where applicable law provides those rights.</li>
+                    <li><b>Right to complain:</b> to contact a privacy regulator or supervisory authority where applicable.</li>
+                </ul>
+                <p>If your information is held by a Kyntlo customer inside that customer's workspace, please contact that customer first. Kyntlo may need to support the customer in responding to your request.</p>
+            </section>
+
+            <section class="legal-card" id="children">
+                <h2>10. Children</h2>
+                <p>Kyntlo is intended for business use and is not directed to children. We do not knowingly collect personal information from children. If you believe a child has provided personal information to Kyntlo, please contact us so we can review and take appropriate action.</p>
+            </section>
+
+            <section class="legal-card" id="changes">
+                <h2>11. Changes to This Policy</h2>
+                <p>Kyntlo may update this Privacy Policy from time to time. The updated version will be posted on this page with a revised "Last updated" date and will replace the prior version from the effective date shown.</p>
+                <p>If a material policy change affects existing users, Kyntlo will provide reasonable notice through email, platform notices, the website, or other customer communication channels where required or appropriate. Customers are responsible for keeping account contact details current so notices can be received.</p>
+            </section>
+
+            <section class="legal-card" id="contact">
+                <h2>12. Contact</h2>
+                <p>For privacy questions, data requests, or concerns about this policy, contact Kyntlo for Artificial Intelligence Tools at <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a>.</p>
+                <p>Postal address: Building Lotus2 North90, After Chill Out Lotus, Cairo Governorate 11234, Egypt. Map location: <a href="https://maps.app.goo.gl/HZmYLkkVSMSWCZJF6" target="_blank" rel="noopener noreferrer">Google Maps</a>.</p>
+                <p>Please include enough detail for us to identify the relevant account, request, or interaction.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        (function () {
+            "use strict";
+            const toc = document.querySelector(".legal-toc");
+            if (!toc) return;
+            const links = [...toc.querySelectorAll('a[href^="#"]')];
+            const sections = links
+                .map(a => document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1))))
+                .filter(Boolean);
+            if (!sections.length) return;
+
+            const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            /* progress bar */
+            const bar = document.createElement("div");
+            bar.className = "legal-toc__progress";
+            bar.innerHTML = "<span></span>";
+            toc.appendChild(bar);
+            const fill = bar.firstElementChild;
+
+            function setActive(id) {
+                links.forEach(a => a.classList.toggle("is-active", a.getAttribute("href") === "#" + id));
+            }
+
+            /* scroll-spy: highlight the section nearest the top of the viewport */
+            let offsets = [];
+            function measure() { offsets = sections.map(s => s.offsetTop); }
+            measure();
+            window.addEventListener("resize", measure);
+
+            function sync() {
+                const y = window.scrollY + 150;
+                let current = sections[0];
+                for (let i = 0; i < sections.length; i++) {
+                    if (offsets[i] <= y) current = sections[i];
+                }
+                setActive(current.id);
+                const doc = document.documentElement;
+                const pct = doc.scrollHeight > doc.clientHeight
+                    ? (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100 : 0;
+                fill.style.width = Math.min(100, Math.max(0, pct)) + "%";
+            }
+            let rafTicking = false;
+            function onScroll() {
+                if (rafTicking) return;
+                rafTicking = true;
+                window.requestAnimationFrame(function () { rafTicking = false; sync(); });
+            }
+            window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", onScroll);
+            sync();
+
+            /* smooth scroll that clears the sticky nav, then flags the target */
+            links.forEach(a => a.addEventListener("click", (e) => {
+                const target = document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1)));
+                if (!target) return;
+                e.preventDefault();
+                const top = target.getBoundingClientRect().top + window.scrollY - 118;
+                window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
+                history.replaceState(null, "", a.getAttribute("href"));
+                setActive(target.id);
+                document.querySelectorAll(".legal-card.is-target").forEach(c => c.classList.remove("is-target"));
+                target.classList.add("is-target");
+                window.setTimeout(() => target.classList.remove("is-target"), 1600);
+            }));
+
+            /* reveal cards on scroll */
+            const cards = document.querySelectorAll(".legal-card");
+            if ("IntersectionObserver" in window && !reduce) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(en => {
+                        if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
+                    });
+                }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+                cards.forEach(c => io.observe(c));
+            } else {
+                cards.forEach(c => c.classList.add("is-in"));
+            }
+
+            /* deep link on load */
+            if (location.hash) {
+                const t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+                if (t) window.setTimeout(() => {
+                    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 118, behavior: "auto" });
+                    sync();
+                }, 60);
+            }
+        })();
+    </script>
+</body>
+</html>

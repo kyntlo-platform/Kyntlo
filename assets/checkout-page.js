@@ -1,0 +1,203 @@
+(function () {
+    "use strict";
+
+    /* Whop checkout plan IDs per package + billing period. */
+    const WHOP = {
+        starter:  { monthly: "plan_VnTTHDjp4IFiw", quarterly: "plan_aOq1QpsY5sWJB" },
+        growth:   { monthly: "plan_1WNKWE6cYCupT", quarterly: "plan_QIy1lE4MfeAsi" },
+        pro:      { monthly: "plan_d4YY0DcqLXx8b", quarterly: "plan_VWmHJTwHW6Pj5" }
+    };
+    const QUARTER_PROMO = "summer_50";
+    const QUARTER_DISCOUNT = 0.5;
+
+    const packages = {
+        starter: {
+            name: "Starter", monthly: 90,
+            summary: "Launch CRM, booking, forms, landing pages, live chat, and essential lead capture for a small team.",
+            highlights: ["CRM contacts and opportunities", "1 pipeline", "Funnels, landing pages, forms, and surveys", "Calendar booking", "Live chat widget", "Up to 3 users"]
+        },
+        growth: {
+            name: "Growth", monthly: 270,
+            summary: "Add workflow automation, full omnichannel inbox, appointment reminders, and stronger team collaboration.",
+            highlights: ["Everything in Starter", "2-3 pipelines", "Workflow automation", "Full omnichannel inbox", "Appointment reminders", "Up to 10 users"]
+        },
+        pro: {
+            name: "Pro", monthly: 490,
+            summary: "Unlimited AI usage across the entire platform, plus advanced AI, missed-call text-back, voice AI access, reviews, reactivation, analytics, and deeper campaign execution.",
+            highlights: ["Everything in Growth", "Unlimited AI usage across the whole platform", "Unlimited pipelines", "Missed call text-back", "Advanced AI chatbot", "Voice AI access", "Premium workflow actions", "Reputation manager", "Advanced analytics"]
+        }
+    };
+
+    function usd(amount) {
+        return "$" + Math.round(amount).toLocaleString("en-US");
+    }
+
+    function getParams() {
+        const params = new URLSearchParams(window.location.search);
+        const requested = params.get("package");
+        if (requested === "scale" || requested === "custom") {
+            window.location.replace("contact.html#contact-form");
+        }
+        const packageKey = packages[requested] ? requested : "starter";
+        const billingKey = params.get("billing") === "monthly" ? "monthly" : "quarterly";
+        return { packageKey, billingKey };
+    }
+
+    function billingCards(plan, activeBilling) {
+        const perMonth = plan.monthly * (1 - QUARTER_DISCOUNT);
+        const quarterTotal = plan.monthly * 3 * (1 - QUARTER_DISCOUNT);
+        return `
+            <div class="billing-choice" role="radiogroup" aria-label="Choose your billing plan">
+                <button type="button" class="billing-card ${activeBilling === "monthly" ? "is-active" : ""}" data-billing="monthly" role="radio" aria-checked="${activeBilling === "monthly"}">
+                    <span class="billing-card__name">Monthly</span>
+                    <span class="billing-card__price">${usd(plan.monthly)}<small>/mo</small></span>
+                    <ul class="billing-card__list">
+                        <li>Billed every month</li>
+                        <li>Standard package price</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                </button>
+                <button type="button" class="billing-card is-deal ${activeBilling === "quarterly" ? "is-active" : ""}" data-billing="quarterly" role="radio" aria-checked="${activeBilling === "quarterly"}">
+                    <span class="billing-card__badge">Best deal &middot; Save 50%</span>
+                    <span class="billing-card__name">Quarterly</span>
+                    <span class="billing-card__price"><s>${usd(plan.monthly)}</s> ${usd(perMonth)}<small>/mo</small></span>
+                    <span class="billing-card__save">${usd(quarterTotal)} billed once &middot; you save ${usd(plan.monthly * 3 - quarterTotal)}</span>
+                    <ul class="billing-card__list">
+                        <li><b>50% off</b> your first 3 months</li>
+                        <li>Exact same features as monthly</li>
+                        <li>More runway to launch and see results</li>
+                        <li>Renews at ${usd(plan.monthly)}/mo after the first quarter</li>
+                    </ul>
+                </button>
+            </div>
+        `;
+    }
+
+    /* Whop's loader replaces the placeholder div in-place, so it must be
+       re-created (and the loader re-run) every time the selection changes. */
+    function mountWhop(packageKey, billingKey) {
+        const host = document.getElementById("whop-checkout-host");
+        if (!host) return;
+        const planId = (WHOP[packageKey] || {})[billingKey];
+        if (!planId) return;
+
+        host.innerHTML = "";
+        const node = document.createElement("div");
+        node.setAttribute("data-whop-checkout-plan-id", planId);
+        node.setAttribute("data-whop-checkout-theme", "light");
+        node.setAttribute("data-whop-checkout-theme-accent-color", "#6d00c1");
+        node.setAttribute("data-whop-checkout-theme-button-text", "Start Free Trial!");
+        node.setAttribute("data-whop-checkout-adaptive-pricing", "true");
+        node.setAttribute("data-whop-checkout-setup-future-usage", "off_session");
+        node.setAttribute("data-whop-checkout-collect-phone-numbers", "true");
+        node.setAttribute("data-whop-checkout-hide-address", "true");
+        node.setAttribute("data-whop-checkout-promo-code", billingKey === "quarterly" ? QUARTER_PROMO : "");
+        host.appendChild(node);
+
+        const prev = document.getElementById("whop-loader");
+        if (prev) prev.remove();
+        const script = document.createElement("script");
+        script.id = "whop-loader";
+        script.async = true;
+        script.src = "https://js.whop.com/static/checkout/loader.js";
+        document.body.appendChild(script);
+
+        /* If the payment script is blocked or slow, never leave an empty box. */
+        const existingNote = document.querySelector(".whop-fallback");
+        if (existingNote) existingNote.remove();
+        window.setTimeout(function () {
+            if (host.querySelector("iframe")) return;
+            const note = document.createElement("p");
+            note.className = "whop-fallback";
+            note.innerHTML = "The secure payment form is taking longer than usual to load. " +
+                "Please check your connection and refresh the page, or " +
+                '<a href="contact.html#contact-form" style="color:#ff1aa3;font-weight:700;">contact our team</a> ' +
+                "and we'll send you a direct payment link.";
+            host.insertAdjacentElement("afterend", note);
+        }, 7000);
+    }
+
+    function renderCheckout() {
+        const root = document.getElementById("checkout-page");
+        if (!root) return;
+
+        const { packageKey, billingKey } = getParams();
+        const plan = packages[packageKey];
+        const dueMonthly = billingKey === "quarterly" ? plan.monthly * (1 - QUARTER_DISCOUNT) : plan.monthly;
+        const quarterTotal = plan.monthly * 3 * (1 - QUARTER_DISCOUNT);
+
+        document.title = plan.name + " Checkout | Kyntlo";
+
+        root.innerHTML = `
+            <section class="checkout-hero">
+                <div class="container">
+                    <p class="checkout-eyebrow">Secure checkout</p>
+                    <h1 class="checkout-title">You're one step away from <span>${plan.name}</span></h1>
+                    <p class="checkout-subtitle">Pick your billing rhythm, review your package, and complete payment securely below. Every plan starts with a 14-day free trial.</p>
+                    <ol class="checkout-steps" aria-label="Trial steps">
+                        <li class="is-done"><span>1</span> Package chosen</li>
+                        <li class="is-current"><span>2</span> Create workspace</li>
+                        <li><span>3</span> 14 days free</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="checkout-section">
+                <div class="container">
+                    ${billingCards(plan, billingKey)}
+
+                    <div class="checkout-grid">
+                        <article class="checkout-card">
+                            <div class="order-topline">
+                                <span class="pill">${plan.name}</span>
+                                <span class="pill ${billingKey === "quarterly" ? "pill--deal" : ""}">${billingKey === "quarterly" ? "Quarterly &middot; 50% off first 3 months" : "Monthly"}</span>
+                            </div>
+                            <h2>Order summary</h2>
+                            <p>${plan.summary}</p>
+                            <div class="checkout-price">
+                                ${billingKey === "quarterly" ? '<span class="price-was">' + usd(plan.monthly) + "</span>" : ""}
+                                <span class="price-now">${usd(dueMonthly)}<small>/mo</small></span>
+                                ${billingKey === "quarterly" ? '<span class="price-save">SAVE 50%</span>' : ""}
+                            </div>
+                            <p class="checkout-note">${billingKey === "quarterly"
+                                ? usd(quarterTotal) + " billed today for 3 months, then the package renews at " + usd(plan.monthly) + "/mo plus taxes."
+                                : usd(plan.monthly) + " billed monthly, plus taxes. Cancel anytime."}</p>
+                            <ul class="checkout-list">
+                                ${plan.highlights.map((item) => "<li>" + item + "</li>").join("")}
+                            </ul>
+                            <a class="switch-package" href="pricing.html">&larr; Change package</a>
+                        </article>
+
+                        <aside class="payment-card" aria-label="Payment">
+                            <div class="payment-card__inner">
+                                <div class="trial-banner">
+                                    <span class="trial-banner__pill">14-day free trial</span>
+                                    <p><b>You will not be charged today.</b> Your trial starts as soon as your workspace is created. After the 14 days end, <b>${billingKey === "quarterly" ? usd(quarterTotal) + " will be charged once for your first 3 months" : usd(plan.monthly) + " will be charged for your first month"}</b> unless you cancel first. Cancel any time before day 14 and you pay nothing.</p>
+                                </div>
+                                <h2>Secure payment</h2>
+                                <p>Complete your ${plan.name} ${billingKey} subscription below. Payments are processed securely by our payment provider.</p>
+                            </div>
+                            <div id="whop-checkout-host" class="whop-host"></div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        `;
+
+        mountWhop(packageKey, billingKey);
+
+        root.querySelectorAll(".billing-card").forEach((card) => {
+            card.addEventListener("click", () => {
+                const next = card.dataset.billing;
+                const url = new URL(window.location.href);
+                url.searchParams.set("package", packageKey);
+                url.searchParams.set("billing", next);
+                window.history.replaceState(null, "", url.toString());
+                renderCheckout();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+    }
+
+    renderCheckout();
+})();
