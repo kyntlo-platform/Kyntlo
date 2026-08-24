@@ -124,6 +124,25 @@
         });
     }
 
+    /* Keyboard users land on the nav first; give them a way past it. */
+    function ensureSkipLink() {
+        const main = document.querySelector("main");
+        if (!main || document.querySelector(".skip-to-content")) return;
+        if (!main.id) main.id = "main-content";
+
+        const link = document.createElement("a");
+        link.className = "skip-to-content";
+        link.href = "#" + main.id;
+        link.textContent = "Skip to main content";
+        document.body.insertBefore(link, document.body.firstChild);
+
+        /* a hash jump alone does not move focus to a non-focusable target */
+        link.addEventListener("click", function () {
+            main.setAttribute("tabindex", "-1");
+            main.focus({ preventScroll: true });
+        });
+    }
+
     function navLink(item, mobileClass) {
         const active = item.key === pageKey;
         const current = active ? ' aria-current="page"' : "";
@@ -634,6 +653,7 @@
     ensureFavicon();
     ensureSharePreview();
     addScreenReaderUtility();
+    ensureSkipLink();
     setupPageTransitions();
     renderNavigation();
     renderFooter();

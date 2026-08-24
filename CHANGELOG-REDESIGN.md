@@ -1,3 +1,88 @@
+# ROUND 8 — Hero engine rebuilt for energy, offer badge redesigned, site-wide fixes
+
+## Hero — rebuilt as a reactive engine
+The particle field was technically sound after round 7 but deliberately calm; it now reads as a
+system that is *running*, without changing a single element of the hero's layout or copy.
+- **Signal packets.** Bright pulses travel along the links between nodes and flare the node they
+  arrive at. This is the main change: the field now looks like traffic moving through a network
+  instead of dots drifting.
+- **Node energy.** Every node carries an energy value that decays each frame and spikes when a
+  pulse lands on it or the cursor passes nearby. Energised nodes grow, brighten, and light up
+  their links, so activity ripples outward instead of staying local.
+- **Faster, organic motion.** Base speed roughly doubled (0.28–0.90 vs a flat 0.26) with a small
+  random wander per frame and a hard speed clamp, so the drift never looks mechanical or runs away.
+- **Click shockwaves.** Clicking or tapping the hero emits an expanding ring that pushes and
+  excites every node it sweeps past.
+- **Cursor field.** Nodes are drawn toward the pointer (and released when it leaves), links to the
+  cursor are drawn, and a soft halo is painted at the pointer itself.
+- **Entrance.** The field blooms outward from the centre over ~1s on first paint rather than
+  appearing fully formed.
+- **Colour.** Nodes carry a pink→purple charge; links are tinted from the blend of both ends
+  rather than one flat purple.
+- **Pointer lighting (CSS).** The hero has a radial spotlight that follows the cursor via CSS
+  variables written inside a single rAF tick, and the dashboard/ops-feed pair leans a few degrees
+  toward the pointer. Both are fine-pointer only.
+- **Headline + badge.** `unstoppable growth` now uses the animated brand gradient, and the status
+  badge has a slow sheen sweep.
+
+Everything from round 7 is kept: devicePixelRatio backing store, IntersectionObserver +
+`visibilitychange` gating, delta-time normalisation, squared-distance comparisons, debounced
+resize, and node counts tiered by width (72 / 60 / 42 / 26).
+
+**Cost check:** measured at parity with the old engine (same frames/sec in the same headless
+harness) despite doing considerably more, because the link loop no longer builds an `rgba()`
+string per segment — eight colour prefixes are precomputed and only the alpha is appended — and
+`Math.hypot` was replaced with plain squared-distance maths in the hot paths.
+
+Under `prefers-reduced-motion` the canvas, the spotlight, the sheen and the lean are all disabled.
+
+## Limited-time badge — redesigned again
+The round-7 chip was legible but generic: a flat pill floating above the switch, visually
+unattached to the plan it applies to, and static regardless of what the visitor had selected.
+
+It is now a **launch-offer ticket** that is part of the switch:
+- A gradient **"50% OFF" stub** on the left, split from the copy by a dashed perforation, so the
+  discount is the first thing read rather than being buried in a sentence.
+- Copy that names the target plan: *Your first 3 months on the **Quarterly** plan*.
+- A **caret rendered by the switch itself at 75% width**, so it lines up with the centre of the
+  Quarterly tab at any container width instead of pointing at the gap between the two tabs.
+- **A state.** When Quarterly is selected the ticket reads `✓ Applied`, gains a pink glow, and the
+  stub is fully saturated. On Monthly it desaturates and turns into a working **`Apply offer`
+  button** that switches the visitor to Quarterly — the badge is now functional, not decorative.
+- A slow sheen sweep, and the pulsing status dot kept from round 7.
+- Stacks to two rows below 600px with the action full-width; verified with no overflow at 360px.
+
+## Site-wide review fixes
+- **Canonical URLs.** Only the homepage had one. Every page now carries a static
+  `<link rel="canonical">` pointing at its clean URL, matching `_redirects` / `.htaccess`. The four
+  `package-*.html` stubs — which redirect on load — are `noindex, follow` instead.
+- **Contrast failures.** `--brand-purple` (#6d00c1) was used for text on the near-black surface
+  (#07050f) in eight places: roughly **2.3:1**, well under WCAG AA. All now use `--brand-pink`
+  (**4.95:1**), which is already the accent colour those pages use elsewhere. Affected:
+  accessibility card links, contact card links, comparison cards, the whole "Kyntlo approach"
+  column of the comparison table, FAQ quick-link hover + numbered markers, the get-started badge,
+  and the security status label.
+- **Invisible CTA.** `security.html`'s "Contact contact@kyntlo.ai" button was purple text on a
+  translucent white overlay sitting on the pink→purple gradient box — effectively unreadable. It is
+  now a solid white pill with purple text, the same pattern the pricing cards already use.
+- **Skip link.** There was none anywhere, despite the accessibility statement promising keyboard
+  focus support. The shell now injects a "Skip to main content" link as the first tab stop on every
+  page, and moves real focus (not just the hash) to `<main>`.
+- **Empty ops feed.** The hero's live feed pushed its first line on load and one every 2.2s, so a
+  260px-tall panel painted almost empty. It now seeds five lines immediately, then streams.
+- **CLS / LCP.** The hero dashboard screenshot had no intrinsic size; it now carries
+  `width`/`height` (1920×911) plus `fetchpriority="high"` and `decoding="async"`.
+- **Font preconnect.** Present on 4 pages, now on all 22.
+- **Checkout redirect flash.** `checkout.html?package=scale` called `location.replace()` and then
+  carried on rendering a Starter checkout behind the navigation. It now bails out of the render.
+- **robots.txt / sitemap.xml.** Neither existed. Added, with the checkout and `package-*` stubs
+  disallowed and 17 public URLs listed.
+
+Verified with a headless pass over all 22 pages: no JS errors, no broken internal links, no
+duplicate IDs, no horizontal overflow at 360 / 768 / 1440, and canonical present everywhere.
+
+---
+
 # ROUND 7 — Real testimonial photos, badge redesign, hero engine rebuild
 
 ## Testimonial photos (replacing the illustrated placeholders)

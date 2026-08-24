@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Utility pages with no standalone search value
+Disallow: /checkout
+Disallow: /package-starter
+Disallow: /package-growth
+Disallow: /package-pro
+Disallow: /package-scale
+
+Sitemap: https://kyntlo.ai/sitemap.xml

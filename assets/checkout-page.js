@@ -36,7 +36,9 @@
         const params = new URLSearchParams(window.location.search);
         const requested = params.get("package");
         if (requested === "scale" || requested === "custom") {
+            /* these are quote-only plans: leave before painting a Starter checkout */
             window.location.replace("contact.html#contact-form");
+            return null;
         }
         const packageKey = packages[requested] ? requested : "starter";
         const billingKey = params.get("billing") === "monthly" ? "monthly" : "quarterly";
@@ -121,7 +123,9 @@
         const root = document.getElementById("checkout-page");
         if (!root) return;
 
-        const { packageKey, billingKey } = getParams();
+        const params = getParams();
+        if (!params) return;
+        const { packageKey, billingKey } = params;
         const plan = packages[packageKey];
         const dueMonthly = billingKey === "quarterly" ? plan.monthly * (1 - QUARTER_DISCOUNT) : plan.monthly;
         const quarterTotal = plan.monthly * 3 * (1 - QUARTER_DISCOUNT);
