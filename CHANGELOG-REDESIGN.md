@@ -1,3 +1,60 @@
+# ROUND 10 — Reviewer feedback: hero reverted to the neural field, image and footer fixes
+
+Four issues were raised on the published preview. All four are fixed.
+
+## Hero — the neural field is back, and answers the cursor harder
+The curl-noise current from round 9 was rejected: not good, and not interactive. The original
+particle-and-links field is restored (the round-8 engine, verbatim), and the cursor's effect on
+it has been pushed well past where it was:
+- Cursor reach widened from 215px to **265px**, so far more of the field responds at once.
+- Links drawn from nearby nodes to the cursor are **brighter and thicker the closer they get**
+  (`rgba(255,60,178)` at up to 0.62 alpha, width scaling with proximity) instead of a flat
+  thin line.
+- Nodes are pulled toward the cursor **more than twice as hard** (0.0017 vs 0.00075) and are
+  excited ~2.4x faster, so they visibly brighten and swell as the pointer passes.
+- **The cursor is now a node of the network**: a pulsing ring plus a bright core, so it reads as
+  part of the field rather than something floating over it.
+- The canvas density mask added for the flow field was removed — it was there to keep that
+  effect off the headline and only dims this one.
+Click shockwaves, signal packets travelling along links, node energy, the pointer spotlight and
+the showcase lean are all still there.
+
+## Dashboard screenshot was stretched — a regression from round 8
+Round 8 added `width="1920" height="911"` to the hero screenshot for CLS. Those attributes map
+to CSS `width`/`height`; `.browser-window img` overrode the width with `100%` but **nothing
+overrode the height**, so the image rendered **685x911 instead of 685x325** — stretched 2.8x
+vertically at desktop and 5.6x at 390px.
+
+`height: auto` is now set both on the global `img` rule and on `.browser-window img`. The
+aspect ratio is exact again (2.108 measured against 2.108 natural) and the CLS benefit is kept,
+because the attributes still supply the intrinsic ratio.
+
+This also fixes the ops feed panel, which was the second half of the same report. It is a grid
+sibling with `align-items: stretch`, so it was being stretched to match the over-tall image
+column — **955px tall for ~270px of content**. It is now 369px and reads as intended.
+
+## The footer was slicing the top off its own CTA band
+`.site-footer` had `overflow: hidden` while `.site-footer__cta` had `margin-top: -46px` to
+overhang the footer's top edge. The overhang was therefore **clipped: 45px of the band, including
+its top border and part of the heading, was cut off on every page**.
+
+The `overflow: hidden` existed only to contain `.site-footer__glow`, which sits 260px above the
+footer. That element now clips itself (`clip-path: inset(260px 0 0 0)`), so the footer does not
+have to, and the band renders whole.
+
+Removing the clip exposed a second problem: the glow is `130vw` wide and had been relying on the
+footer to hide the excess, so it started causing **115px of horizontal page overflow at 768px**.
+It is now `min(1100px, 100%)` — identical at desktop, self-contained below 1100px. Re-verified:
+no horizontal overflow at 360, 768 or 1280 on any of the 22 pages.
+
+## Preview: the calendar placeholder was invisible
+The booking widget is stubbed in the artifact because a strict CSP blocks external embeds. The
+stub was styled for the dark page, but it sits inside `.calendar-container`, which is **white**
+(the real widget is white) — so it was light grey on white. It is now styled for a white
+surface and fills the 700px the real calendar reserves.
+
+---
+
 # ROUND 9 — Full-site audit pass, unique hero current, reworked header interaction
 
 ## Site-wide audit

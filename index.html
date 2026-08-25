@@ -56,7 +56,7 @@
             -webkit-font-smoothing: antialiased;
         }
         a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; }
+        img { max-width: 100%; height: auto; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
         section { padding: 110px 0; position: relative; }
 
@@ -94,9 +94,7 @@
 
         /* ---------- Hero ---------- */
         .hero { padding: 140px 0 90px; text-align: center; overflow: hidden; --hero-mx: 50%; --hero-my: 38%; --hero-glow: 0; }
-        #ai-canvas { position: absolute; inset: 0; z-index: 0; pointer-events: none;
-            -webkit-mask-image: radial-gradient(64% 48% at 50% 34%, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.5) 54%, #000 88%);
-            mask-image: radial-gradient(64% 48% at 50% 34%, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.5) 54%, #000 88%); }
+        #ai-canvas { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
         /* the hero lights up under the pointer */
         .hero::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(460px circle at var(--hero-mx) var(--hero-my), rgba(242, 0, 137, 0.2), rgba(109, 0, 193, 0.11) 45%, transparent 72%); opacity: var(--hero-glow); transition: opacity 0.5s ease; }
         .hero-badge { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px; border-radius: 999px; background: var(--glass); border: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 30px; backdrop-filter: blur(8px); }
@@ -121,7 +119,7 @@
         .browser-header span { width: 11px; height: 11px; border-radius: 50%; }
         .browser-header .r { background: #ff5f56; } .browser-header .y { background: #ffbd2e; } .browser-header .g { background: #27c93f; }
         .browser-header .url { flex: 1; margin-left: 10px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); background: rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 5px 12px; text-align: center; }
-        .browser-window img { display: block; width: 100%; }
+        .browser-window img { display: block; width: 100%; height: auto; }
 
         .ops-feed { display: flex; flex-direction: column; border-radius: 20px; border: 1px solid var(--line); background: rgba(12, 9, 24, 0.85); backdrop-filter: blur(14px); overflow: hidden; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5); }
         .ops-feed__head { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
@@ -967,7 +965,7 @@
                 if (!reduceMotion) setInterval(pushOp, 2200);
             }
 
-            /* ---------- Hero: pointer lighting + current field ---------- */
+            /* ---------- Hero: pointer lighting + neural field ---------- */
             const canvas = document.getElementById("ai-canvas");
             const heroSection = document.querySelector(".hero");
             const heroShowcase = document.querySelector(".hero-showcase");
@@ -1018,120 +1016,31 @@
                 let width = 0, height = 0, dpr = 1;
                 let running = false, rafId = 0, lastTime = 0, age = 0;
 
-                const pointer = { x: -9999, y: -9999, live: false, vx: 0, vy: 0 };
-                const strands = [];
-                const sparks = [];
-                const rings = [];         /* click shockwaves */
-                let burst = 0;            /* click energy, decays back to 0 */
-                let quality = 1;          /* dropped once if the device cannot keep up */
-                let avgDt = 1;
+                const pointer = { x: -9999, y: -9999, live: false };
+                const nodes = [];
+                const pulses = [];      /* signal packets travelling along a link */
+                const ripples = [];     /* shockwaves emitted on click / tap */
+                const linkPool = [];    /* sampled neighbour pairs, refreshed each frame */
 
-                const CELL = 34;          /* vector-field resolution in CSS px */
-                const TRAIL = 12;         /* points kept per strand */
-                const SWIRL = 190, SWIRL_SQ = SWIRL * SWIRL;
-
-                /* four strand families — one stroke() per family per frame */
-                const FAMILIES = [
-                    { color: "rgba(242, 0, 137, ",   alpha: 0.38, w: 0.9, speed: 1.7 },
-                    { color: "rgba(196, 52, 228, ",  alpha: 0.44, w: 1.2, speed: 2.2 },
-                    { color: "rgba(140, 32, 224, ",  alpha: 0.52, w: 1.7, speed: 2.7 },
-                    { color: "rgba(255, 186, 230, ", alpha: 0.72, w: 1.3, speed: 3.3 }
-                ];
-
-                let cols = 0, rows = 0;
-                let fieldA = null, fieldB = null;   /* interleaved [vx, vy, ...] */
-
-                /* ---- tiny value noise, only ever run when the field is baked ---- */
-                const perm = new Uint8Array(512);
-                (function seedPerm() {
-                    const p = new Uint8Array(256);
-                    for (let i = 0; i < 256; i++) p[i] = i;
-                    /* deterministic shuffle: the field should look designed, not random */
-                    let seed = 1337;
-                    for (let i = 255; i > 0; i--) {
-                        seed = (seed * 1103515245 + 12345) & 0x7fffffff;
-                        const j = seed % (i + 1);
-                        const t = p[i]; p[i] = p[j]; p[j] = t;
-                    }
-                    for (let i = 0; i < 512; i++) perm[i] = p[i & 255];
-                })();
-
-                function fade(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
-                function grad(hash, x, y) {
-                    switch (hash & 3) {
-                        case 0: return x + y;
-                        case 1: return -x + y;
-                        case 2: return x - y;
-                        default: return -x - y;
-                    }
-                }
-                function noise2(x, y) {
-                    const xi = Math.floor(x) & 255, yi = Math.floor(y) & 255;
-                    const xf = x - Math.floor(x), yf = y - Math.floor(y);
-                    const u = fade(xf), v = fade(yf);
-                    const aa = perm[perm[xi] + yi], ab = perm[perm[xi] + yi + 1];
-                    const ba = perm[perm[xi + 1] + yi], bb = perm[perm[xi + 1] + yi + 1];
-                    const x1 = grad(aa, xf, yf) + u * (grad(ba, xf - 1, yf) - grad(aa, xf, yf));
-                    const x2 = grad(ab, xf, yf - 1) + u * (grad(bb, xf - 1, yf - 1) - grad(ab, xf, yf - 1));
-                    return x1 + v * (x2 - x1);
+                /* pre-built colour prefixes: the link loop runs thousands of times a
+                   second, so it must not build a fresh rgba() string per segment */
+                const LINK_RGB = [];
+                for (let i = 0; i < 8; i++) {
+                    const mix = i / 7;
+                    LINK_RGB.push("rgba(" + Math.round(242 - 109 * mix) + "," +
+                        Math.round(26 * (1 - mix)) + "," + Math.round(137 + 56 * mix) + ",");
                 }
 
-                /* curl of a scalar potential -> a field with no sources or sinks,
-                   which is what keeps the strands from piling into clumps */
-                function bakeField(target, offset, scale) {
-                    const e = 0.0016;
-                    let i = 0;
-                    for (let r = 0; r < rows; r++) {
-                        for (let c = 0; c < cols; c++) {
-                            const x = c * CELL * scale + offset;
-                            const y = r * CELL * scale + offset;
-                            const dx = (noise2(x, y + e) - noise2(x, y - e)) / (2 * e);
-                            const dy = (noise2(x + e, y) - noise2(x - e, y)) / (2 * e);
-                            let vx = dx, vy = -dy;
-                            const len = Math.sqrt(vx * vx + vy * vy) || 1;
-                            /* bias the whole field slightly upward-right: growth, not drift */
-                            vx = vx / len * 0.86 + 0.5;
-                            vy = vy / len * 0.86 - 0.22;
-                            const l2 = Math.sqrt(vx * vx + vy * vy) || 1;
-                            target[i++] = vx / l2;
-                            target[i++] = vy / l2;
-                        }
-                    }
-                }
+                const LINK = 150, LINK_SQ = LINK * LINK;
+                const REACH = 265, REACH_SQ = REACH * REACH;
+                const MAX_PULSES = 22;
+                const MAX_SPEED = 1.45;
+                let pulseTimer = 14;
 
-                function seedStrand(s, firstRun) {
-                    s.x = Math.random() * width;
-                    s.y = firstRun ? Math.random() * height : Math.random() * height;
-                    s.vx = 0; s.vy = 0;
-                    s.life = 150 + Math.random() * 260;
-                    s.n = 0;
-                    for (let i = 0; i < TRAIL; i++) { s.tx[i] = s.x; s.ty[i] = s.y; }
-                }
-
-                function buildStrands() {
-                    strands.length = 0;
-                    const area = width * height;
-                    const count = Math.round(Math.min(190, Math.max(60, area / 7500)) * quality);
-                    for (let i = 0; i < count; i++) {
-                        const s = {
-                            fam: i % FAMILIES.length,
-                            tx: new Float32Array(TRAIL),
-                            ty: new Float32Array(TRAIL),
-                            x: 0, y: 0, vx: 0, vy: 0, life: 0, n: 0
-                        };
-                        seedStrand(s, true);
-                        s.life = Math.random() * 320;   /* stagger the first respawn wave */
-                        strands.push(s);
-                    }
-                    sparks.length = 0;
-                    const sparkCount = width > 900 ? 14 : 7;
-                    for (let i = 0; i < sparkCount; i++) {
-                        sparks.push({ x: Math.random() * width, y: Math.random() * height,
-                                      vx: 0, vy: 0, life: Math.random() * 260 + 90, r: Math.random() * 1.1 + 1.5 });
-                    }
-                }
-
+                /* crisp on retina: scale the backing store, draw in CSS pixels */
                 function resizeCanvas() {
+                    const prevW = width || heroSection.offsetWidth;
+                    const prevH = height || heroSection.offsetHeight;
                     dpr = Math.min(window.devicePixelRatio || 1, 2);
                     width = heroSection.offsetWidth;
                     height = heroSection.offsetHeight;
@@ -1140,75 +1049,56 @@
                     canvas.style.width = width + "px";
                     canvas.style.height = height + "px";
                     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-                    ctx.lineCap = "round";
-                    ctx.lineJoin = "bevel";   /* thin strands: bevel is free, round is not */
-
-                    cols = Math.ceil(width / CELL) + 2;
-                    rows = Math.ceil(height / CELL) + 2;
-                    fieldA = new Float32Array(cols * rows * 2);
-                    fieldB = new Float32Array(cols * rows * 2);
-                    bakeField(fieldA, 0, 0.0030);
-                    bakeField(fieldB, 91.7, 0.0024);
-                    buildStrands();
+                    /* keep nodes proportionally placed instead of bunching up */
+                    if (nodes.length && prevW && prevH) {
+                        const sx = width / prevW, sy = height / prevH;
+                        for (const n of nodes) { n.x *= sx; n.y *= sy; }
+                    }
                 }
 
                 let resizeTimer = 0;
-                let lastW = 0, lastH = 0;
                 window.addEventListener("resize", function () {
                     window.clearTimeout(resizeTimer);
-                    resizeTimer = window.setTimeout(function () {
-                        /* mobile browsers fire resize when the URL bar hides; only a real
-                           width change is worth rebuilding the field for */
-                        if (heroSection.offsetWidth === lastW && Math.abs(heroSection.offsetHeight - lastH) < 90) return;
-                        lastW = heroSection.offsetWidth; lastH = heroSection.offsetHeight;
-                        resizeCanvas();
-                    }, 180);
+                    resizeTimer = window.setTimeout(resizeCanvas, 150);
                 });
                 resizeCanvas();
-                lastW = width; lastH = height;
 
                 heroSection.addEventListener("pointermove", function (event) {
                     const rect = heroSection.getBoundingClientRect();
-                    const nx = event.clientX - rect.left, ny = event.clientY - rect.top;
-                    if (pointer.live) { pointer.vx = nx - pointer.x; pointer.vy = ny - pointer.y; }
-                    pointer.x = nx; pointer.y = ny; pointer.live = true;
+                    pointer.x = event.clientX - rect.left;
+                    pointer.y = event.clientY - rect.top;
+                    pointer.live = true;
                 }, { passive: true });
 
                 heroSection.addEventListener("pointerleave", function () {
-                    pointer.live = false; pointer.x = -9999; pointer.y = -9999;
-                    pointer.vx = 0; pointer.vy = 0;
+                    pointer.x = -9999; pointer.y = -9999; pointer.live = false;
                 }, { passive: true });
 
+                /* a click sends a shockwave through the field */
                 heroSection.addEventListener("pointerdown", function (event) {
                     const rect = heroSection.getBoundingClientRect();
-                    burst = 1;
-                    if (rings.length > 3) rings.shift();
-                    rings.push({ x: event.clientX - rect.left, y: event.clientY - rect.top, r: 8, life: 1 });
+                    if (ripples.length > 3) ripples.shift();
+                    ripples.push({ x: event.clientX - rect.left, y: event.clientY - rect.top, r: 6, life: 1 });
                 }, { passive: true });
 
-                /* bilinear sample of the cross-faded field */
-                function sampleField(x, y, blend, out) {
-                    const gx = x / CELL, gy = y / CELL;
-                    let c0 = gx | 0, r0 = gy | 0;
-                    if (c0 < 0) c0 = 0; else if (c0 > cols - 2) c0 = cols - 2;
-                    if (r0 < 0) r0 = 0; else if (r0 > rows - 2) r0 = rows - 2;
-                    const fx = gx - c0, fy = gy - r0;
-                    const i00 = (r0 * cols + c0) * 2, i10 = i00 + 2;
-                    const i01 = ((r0 + 1) * cols + c0) * 2, i11 = i01 + 2;
-                    let vx = 0, vy = 0;
-                    const w00 = (1 - fx) * (1 - fy), w10 = fx * (1 - fy);
-                    const w01 = (1 - fx) * fy, w11 = fx * fy;
-                    for (const pair of [[fieldA, 1 - blend], [fieldB, blend]]) {
-                        const f = pair[0], k = pair[1];
-                        if (k <= 0) continue;
-                        vx += k * (f[i00] * w00 + f[i10] * w10 + f[i01] * w01 + f[i11] * w11);
-                        vy += k * (f[i00 + 1] * w00 + f[i10 + 1] * w10 + f[i01 + 1] * w01 + f[i11 + 1] * w11);
-                    }
-                    const len = Math.sqrt(vx * vx + vy * vy) || 1;
-                    out[0] = vx / len; out[1] = vy / len;
+                const count = width > 1400 ? 72 : (width > 1100 ? 60 : (width > 700 ? 42 : 26));
+                for (let i = 0; i < count; i++) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = 0.28 + Math.random() * 0.62;
+                    nodes.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: Math.cos(angle) * speed,
+                        vy: Math.sin(angle) * speed,
+                        r: Math.random() * 1.5 + 0.9,
+                        charge: Math.random(),   /* 0 = pink, 1 = purple */
+                        energy: 0                /* flares when hit by a pulse or the cursor */
+                    });
                 }
 
-                const dir = [0, 0];
+                function excite(node, amount) {
+                    node.energy = Math.min(1, node.energy + amount);
+                }
 
                 function frame(now) {
                     if (!running) return;
@@ -1217,120 +1107,183 @@
                     lastTime = now;
                     age += dt;
 
-                    /* If the device cannot hold ~32fps, thin the field once rather than
-                       letting the whole page judder. A rolling average is used rather than
-                       a run of consecutive slow frames, which a single fast frame resets. */
-                    avgDt += (dt - avgDt) * 0.05;
-                    if (quality === 1 && age > 150 && avgDt > 1.9) {
-                        quality = 0.55;
-                        buildStrands();
-                    }
-
-                    const intro = Math.min(age / 70, 1);
+                    /* entrance: the field blooms outwards from the centre once */
+                    const intro = Math.min(age / 64, 1);
                     const eased = 1 - Math.pow(1 - intro, 3);
-                    /* the current breathes, so the hero is never perfectly steady */
-                    const breath = 0.86 + 0.14 * Math.sin(age * 0.011);
-                    const blend = 0.5 + 0.5 * Math.sin(age * 0.0022);
-                    const push = 1 + burst * 2.2;
-                    burst *= Math.pow(0.955, dt);
-                    if (burst < 0.002) burst = 0;
+                    const spread = 0.62 + 0.38 * eased;
+                    const cx = width / 2, cy = height / 2;
 
                     ctx.clearRect(0, 0, width, height);
+                    linkPool.length = 0;
 
-                    for (let f = 0; f < FAMILIES.length; f++) {
-                        const fam = FAMILIES[f];
-                        ctx.strokeStyle = fam.color + (fam.alpha * eased).toFixed(3) + ")";
-                        ctx.lineWidth = fam.w;
-                        ctx.beginPath();
+                    for (let i = 0; i < nodes.length; i++) {
+                        const n = nodes[i];
 
-                        for (let i = 0; i < strands.length; i++) {
-                            const s = strands[i];
-                            if (s.fam !== f) continue;
+                        /* organic wander keeps the motion from looking mechanical */
+                        n.vx += (Math.random() - 0.5) * 0.035 * dt;
+                        n.vy += (Math.random() - 0.5) * 0.035 * dt;
+                        const sp = Math.sqrt(n.vx * n.vx + n.vy * n.vy);
+                        if (sp > MAX_SPEED) { n.vx = n.vx / sp * MAX_SPEED; n.vy = n.vy / sp * MAX_SPEED; }
 
-                            sampleField(s.x, s.y, blend, dir);
-                            const sp = fam.speed * breath * push;
-                            let tvx = dir[0] * sp, tvy = dir[1] * sp;
+                        n.x += n.vx * dt;
+                        n.y += n.vy * dt;
+                        if (n.x < 0) { n.x = 0; n.vx = Math.abs(n.vx); }
+                        else if (n.x > width) { n.x = width; n.vx = -Math.abs(n.vx); }
+                        if (n.y < 0) { n.y = 0; n.vy = Math.abs(n.vy); }
+                        else if (n.y > height) { n.y = height; n.vy = -Math.abs(n.vy); }
 
-                            /* The cursor spins the current around itself. This blends the
-                               *direction* rather than adding velocity: adding it flung strands
-                               out of the vortex and left a bald patch under the pointer. */
-                            if (pointer.live) {
-                                const dx = s.x - pointer.x, dy = s.y - pointer.y;
-                                const dsq = dx * dx + dy * dy;
-                                if (dsq < SWIRL_SQ) {
-                                    const d = Math.sqrt(dsq) || 1;
-                                    const t = 1 - dsq / SWIRL_SQ;
-                                    const k = t * t;                       /* bite only near the centre */
-                                    /* mostly tangential, with just enough inward pull to hold an orbit */
-                                    const wx = (-dy / d) * 0.94 + (-dx / d) * 0.34;
-                                    const wy = (dx / d) * 0.94 + (-dy / d) * 0.34;
-                                    const os = sp * 1.45;
-                                    tvx = tvx * (1 - k) + wx * os * k;
-                                    tvy = tvy * (1 - k) + wy * os * k;
-                                    /* a moving cursor drags the current along with it */
-                                    tvx += pointer.vx * k * 0.06;
-                                    tvy += pointer.vy * k * 0.06;
-                                }
-                            }
-
-                            /* ease toward the target so strands curve instead of snapping */
-                            s.vx += (tvx - s.vx) * 0.14 * dt;
-                            s.vy += (tvy - s.vy) * 0.14 * dt;
-                            s.x += s.vx * dt;
-                            s.y += s.vy * dt;
-                            s.life -= dt;
-
-                            if (s.life <= 0 || s.x < -40 || s.x > width + 40 || s.y < -40 || s.y > height + 40) {
-                                seedStrand(s, false);
-                                continue;
-                            }
-
-                            /* ring buffer of past positions = the visible strand */
-                            s.tx[s.n] = s.x; s.ty[s.n] = s.y;
-                            s.n = (s.n + 1) % TRAIL;
-                            let idx = s.n;
-                            ctx.moveTo(s.tx[idx], s.ty[idx]);
-                            for (let k = 1; k < TRAIL; k++) {
-                                idx = (idx + 1) % TRAIL;
-                                ctx.lineTo(s.tx[idx], s.ty[idx]);
-                            }
-                        }
-                        ctx.stroke();
+                        n.energy *= Math.pow(0.93, dt);
+                        n.px = cx + (n.x - cx) * spread;
+                        n.py = cy + (n.y - cy) * spread;
                     }
 
-                    /* click shockwaves */
-                    for (let i = rings.length - 1; i >= 0; i--) {
-                        const w = rings[i];
-                        w.r += 9 * dt;
-                        w.life -= 0.019 * dt;
-                        if (w.life <= 0) { rings.splice(i, 1); continue; }
-                        ctx.strokeStyle = "rgba(255, 120, 205, " + (0.4 * w.life * w.life).toFixed(3) + ")";
+                    /* ---- links ---- */
+                    ctx.lineWidth = 1;
+                    for (let i = 0; i < nodes.length; i++) {
+                        const a = nodes[i];
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            const b = nodes[j];
+                            const dx = a.px - b.px, dy = a.py - b.py;
+                            const dsq = dx * dx + dy * dy;
+                            if (dsq >= LINK_SQ) continue;
+
+                            const t = 1 - dsq / LINK_SQ;
+                            const heat = a.energy > b.energy ? a.energy : b.energy;
+                            const alpha = (0.26 * t + 0.34 * t * heat) * eased;
+                            ctx.strokeStyle = LINK_RGB[(a.charge + b.charge) * 3.5 | 0] + alpha.toFixed(2) + ")";
+                            ctx.beginPath();
+                            ctx.moveTo(a.px, a.py);
+                            ctx.lineTo(b.px, b.py);
+                            ctx.stroke();
+
+                            if (t > 0.35 && linkPool.length < 90) linkPool.push(i, j);
+                        }
+                    }
+
+                    /* ---- signal packets ---- */
+                    pulseTimer -= dt;
+                    if (pulseTimer <= 0 && pulses.length < MAX_PULSES && linkPool.length) {
+                        const k = (Math.random() * (linkPool.length >> 1) | 0) << 1;
+                        pulses.push({ a: linkPool[k], b: linkPool[k + 1], t: 0, speed: 0.014 + Math.random() * 0.018 });
+                        pulseTimer = 5 + Math.random() * 9;
+                    }
+
+                    for (let i = pulses.length - 1; i >= 0; i--) {
+                        const p = pulses[i];
+                        const a = nodes[p.a], b = nodes[p.b];
+                        p.t += p.speed * dt;
+                        if (p.t >= 1) { excite(b, 0.85); pulses.splice(i, 1); continue; }
+
+                        const dx = b.px - a.px, dy = b.py - a.py;
+                        if (dx * dx + dy * dy > LINK_SQ * 1.6) { pulses.splice(i, 1); continue; }
+
+                        const x = a.px + dx * p.t, y = a.py + dy * p.t;
+                        const tail = Math.max(0, p.t - 0.16);
+                        const fade = Math.sin(p.t * Math.PI);
+
+                        ctx.strokeStyle = "rgba(255, 138, 216, " + (0.5 * fade).toFixed(3) + ")";
                         ctx.lineWidth = 1.6;
+                        ctx.beginPath();
+                        ctx.moveTo(a.px + dx * tail, a.py + dy * tail);
+                        ctx.lineTo(x, y);
+                        ctx.stroke();
+                        ctx.lineWidth = 1;
+
+                        ctx.fillStyle = "rgba(255, 214, 240, " + (0.9 * fade).toFixed(3) + ")";
+                        ctx.beginPath();
+                        ctx.arc(x, y, 1.9, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    /* ---- cursor field ---- */
+                    if (pointer.live) {
+                        for (let i = 0; i < nodes.length; i++) {
+                            const n = nodes[i];
+                            const dx = n.px - pointer.x, dy = n.py - pointer.y;
+                            const dsq = dx * dx + dy * dy;
+                            if (dsq >= REACH_SQ) continue;
+
+                            const t = 1 - dsq / REACH_SQ;
+                            excite(n, 0.24 * t * dt);
+                            /* drawn toward the cursor, then released when it leaves */
+                            n.vx -= dx * 0.0017 * t * dt;
+                            n.vy -= dy * 0.0017 * t * dt;
+
+                            ctx.lineWidth = 1 + t * 0.7;
+                            ctx.strokeStyle = "rgba(255, 60, 178, " + (0.62 * t * t).toFixed(3) + ")";
+                            ctx.beginPath();
+                            ctx.moveTo(n.px, n.py);
+                            ctx.lineTo(pointer.x, pointer.y);
+                            ctx.stroke();
+                        }
+
+                        ctx.lineWidth = 1;
+                        const halo = ctx.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, 34);
+                        halo.addColorStop(0, "rgba(255, 90, 200, 0.38)");
+                        halo.addColorStop(1, "rgba(255, 90, 200, 0)");
+                        ctx.fillStyle = halo;
+                        ctx.beginPath();
+                        ctx.arc(pointer.x, pointer.y, 34, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        /* the cursor is a node of the network too */
+                        const beat = 7.5 + Math.sin(age * 0.09) * 1.6;
+                        ctx.strokeStyle = "rgba(255, 150, 220, 0.55)";
+                        ctx.beginPath();
+                        ctx.arc(pointer.x, pointer.y, beat + 6, 0, Math.PI * 2);
+                        ctx.stroke();
+                        ctx.fillStyle = "rgba(255, 220, 244, 0.95)";
+                        ctx.beginPath();
+                        ctx.arc(pointer.x, pointer.y, 2.6, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    /* ---- shockwaves ---- */
+                    for (let i = ripples.length - 1; i >= 0; i--) {
+                        const w = ripples[i];
+                        const prevR = w.r;
+                        w.r += 7.5 * dt;
+                        w.life -= 0.016 * dt;
+                        if (w.life <= 0) { ripples.splice(i, 1); continue; }
+
+                        for (let j = 0; j < nodes.length; j++) {
+                            const n = nodes[j];
+                            const dx = n.px - w.x, dy = n.py - w.y;
+                            const d = Math.sqrt(dx * dx + dy * dy) || 1;
+                            if (d > prevR && d <= w.r) {
+                                n.vx += (dx / d) * 1.15;
+                                n.vy += (dy / d) * 1.15;
+                                excite(n, 0.9);
+                            }
+                        }
+
+                        ctx.strokeStyle = "rgba(255, 26, 163, " + (0.34 * w.life).toFixed(3) + ")";
+                        ctx.lineWidth = 1.4;
                         ctx.beginPath();
                         ctx.arc(w.x, w.y, w.r, 0, Math.PI * 2);
                         ctx.stroke();
+                        ctx.lineWidth = 1;
                     }
 
-                    /* a handful of bright signals riding the same current */
-                    ctx.fillStyle = "rgba(255, 226, 245, " + (0.85 * eased).toFixed(3) + ")";
-                    ctx.beginPath();
-                    for (let i = 0; i < sparks.length; i++) {
-                        const s = sparks[i];
-                        sampleField(s.x, s.y, blend, dir);
-                        const sp = 3.9 * breath * push;
-                        s.vx += (dir[0] * sp - s.vx) * 0.1 * dt;
-                        s.vy += (dir[1] * sp - s.vy) * 0.1 * dt;
-                        s.x += s.vx * dt; s.y += s.vy * dt;
-                        s.life -= dt;
-                        if (s.life <= 0 || s.x < 0 || s.x > width || s.y < 0 || s.y > height) {
-                            s.x = Math.random() * width; s.y = Math.random() * height;
-                            s.vx = 0; s.vy = 0; s.life = 150 + Math.random() * 260;
-                            continue;
-                        }
-                        ctx.moveTo(s.x + s.r, s.y);
-                        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    /* ---- nodes on top ---- */
+                    for (let i = 0; i < nodes.length; i++) {
+                        const n = nodes[i];
+                        const heat = n.energy;
+                        const r = n.r * (1 + heat * 1.5);
+                        const red = Math.round(242 - 109 * n.charge);
+                        const green = Math.round(26 * (1 - n.charge));
+                        const blue = Math.round(137 + 56 * n.charge);
+
+                        ctx.fillStyle = "rgba(" + red + "," + green + "," + blue + "," + (0.12 + 0.3 * heat).toFixed(3) + ")";
+                        ctx.beginPath();
+                        ctx.arc(n.px, n.py, r * 3.2, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        ctx.fillStyle = "rgba(" + Math.min(255, red + 60) + "," + Math.min(255, green + 120 * heat) + "," + Math.min(255, blue + 60) + "," + (0.55 + 0.45 * heat).toFixed(3) + ")";
+                        ctx.beginPath();
+                        ctx.arc(n.px, n.py, r, 0, Math.PI * 2);
+                        ctx.fill();
                     }
-                    ctx.fill();
 
                     rafId = requestAnimationFrame(frame);
                 }
