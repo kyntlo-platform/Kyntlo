@@ -163,6 +163,7 @@
                     <img src="assets/kyntlo-logo-cropped.png" alt="Kyntlo">
                 </a>
                 <div class="site-nav__links" id="site-navigation" hidden>
+                    <span class="site-nav__marker" aria-hidden="true"></span>
                     ${navItems.map((item) => navLink(item)).join("")}
                     <a class="site-nav__mobile-login" href="${LOGIN_HREF}">${t("login")}</a>
                     <a class="site-nav__mobile-cta" href="${siteHref(GET_STARTED_HREF)}">${t("getStarted")}</a>
@@ -180,29 +181,117 @@
 
         const toggle = nav.querySelector(".site-nav__toggle");
         const links = nav.querySelector(".site-nav__links");
+        const inner = nav.querySelector(".site-nav__inner");
         const mobileQuery = window.matchMedia("(max-width: 980px)");
+        const calmMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* ---------- one marker that travels between the links ---------- */
+        const marker = links.querySelector(".site-nav__marker");
+        let markerRaf = 0;
+
+        function currentLink() {
+            return links.querySelector('a[aria-current="page"]');
+        }
+
+        /* `resting` = nobody is pointing at the nav, so the pill sits quietly on the
+           current page and the rail stays dark. Hover/focus brings both up to full. */
+        function moveMarkerTo(link, resting) {
+            if (!marker || !inner || mobileQuery.matches) return;
+            if (!link) {
+                marker.classList.remove("is-on", "is-rest");
+                inner.style.setProperty("--rail-o", "0");
+                return;
+            }
+            const box = link.getBoundingClientRect();
+            const base = links.getBoundingClientRect();
+            const innerBox = inner.getBoundingClientRect();
+            marker.style.width = box.width + "px";
+            marker.style.transform = "translate3d(" + (box.left - base.left) + "px, -50%, 0)";
+            marker.classList.add("is-on");
+            marker.classList.toggle("is-rest", !!resting);
+            /* the bar's top edge lights up above whichever item the pointer is on */
+            inner.style.setProperty("--rail-x", (box.left - innerBox.left + box.width / 2) + "px");
+            inner.style.setProperty("--rail-o", resting ? "0" : "1");
+        }
+
+        function restMarker() {
+            moveMarkerTo(currentLink(), true);
+        }
+
+        function queueMarker(link, resting) {
+            if (markerRaf) cancelAnimationFrame(markerRaf);
+            markerRaf = requestAnimationFrame(function () {
+                markerRaf = 0;
+                moveMarkerTo(link, resting);
+            });
+        }
+
+        if (marker) {
+            links.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("pointerenter", function () { queueMarker(link); });
+                link.addEventListener("focus", function () { queueMarker(link); });
+            });
+            links.addEventListener("pointerleave", function () { queueMarker(currentLink(), true); });
+            links.addEventListener("focusout", function (event) {
+                if (!links.contains(event.relatedTarget)) queueMarker(currentLink(), true);
+            });
+            /* fonts land after first paint and change link widths, so measure again */
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(restMarker).catch(function () {});
+            }
+            window.addEventListener("resize", restMarker);
+            requestAnimationFrame(restMarker);
+        }
+
+        /* ---------- mobile panel ---------- */
+        let hideTimer = 0;
+
+        function openMenu() {
+            window.clearTimeout(hideTimer);
+            links.hidden = false;
+            toggle.setAttribute("aria-expanded", "true");
+            if (calmMotion) { links.classList.add("is-open"); return; }
+            /* one frame in the closed state first, or there is nothing to animate from */
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () { links.classList.add("is-open"); });
+            });
+        }
+
+        function closeMenu(focusToggle) {
+            toggle.setAttribute("aria-expanded", "false");
+            links.classList.remove("is-open");
+            window.clearTimeout(hideTimer);
+            /* keep it in the tree until the close transition ends, then hide it from AT */
+            hideTimer = window.setTimeout(function () {
+                if (mobileQuery.matches && toggle.getAttribute("aria-expanded") !== "true") {
+                    links.hidden = true;
+                }
+            }, calmMotion ? 0 : 300);
+            if (focusToggle) toggle.focus();
+        }
 
         function syncMenu() {
+            window.clearTimeout(hideTimer);
             if (mobileQuery.matches) {
                 const expanded = toggle.getAttribute("aria-expanded") === "true";
                 links.hidden = !expanded;
+                links.classList.toggle("is-open", expanded);
+                marker && marker.classList.remove("is-on");
             } else {
                 toggle.setAttribute("aria-expanded", "false");
                 links.hidden = false;
+                links.classList.remove("is-open");
+                restMarker();
             }
         }
 
         toggle.addEventListener("click", function () {
-            const expanded = toggle.getAttribute("aria-expanded") === "true";
-            toggle.setAttribute("aria-expanded", String(!expanded));
-            links.hidden = expanded;
+            if (toggle.getAttribute("aria-expanded") === "true") closeMenu(false);
+            else openMenu();
         });
 
         links.addEventListener("click", function (event) {
-            if (mobileQuery.matches && event.target.closest("a")) {
-                toggle.setAttribute("aria-expanded", "false");
-                links.hidden = true;
-            }
+            if (mobileQuery.matches && event.target.closest("a")) closeMenu(false);
         });
 
         document.addEventListener("click", function (event) {
@@ -211,16 +300,13 @@
                 toggle.getAttribute("aria-expanded") === "true" &&
                 !nav.contains(event.target)
             ) {
-                toggle.setAttribute("aria-expanded", "false");
-                links.hidden = true;
+                closeMenu(false);
             }
         });
 
         document.addEventListener("keydown", function (event) {
             if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
-                toggle.setAttribute("aria-expanded", "false");
-                links.hidden = true;
-                toggle.focus();
+                closeMenu(true);
             }
         });
 

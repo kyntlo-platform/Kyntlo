@@ -120,10 +120,10 @@
                     '</span>' +
                     '<button type="button" class="billing-offer__action" data-apply-billing="quarterly"></button>' +
                 '</div>' +
-                '<div class="billing-switch" role="tablist" aria-label="Choose billing plan">' +
+                '<div class="billing-switch" role="radiogroup" aria-label="Choose billing plan">' +
                     '<span class="billing-switch__thumb" aria-hidden="true"></span>' +
                     Object.entries(billingPlans).map(([key, plan]) =>
-                        '<button type="button" class="billing-tab" data-billing="' + key + '" role="tab">' +
+                        '<button type="button" class="billing-tab" data-billing="' + key + '" role="radio">' +
                             "<span>" + plan.label + "</span>" +
                             '<small class="' + (key === "quarterly" ? "is-deal" : "") + '">' + plan.note + "</small>" +
                         "</button>"
@@ -138,7 +138,7 @@
         document.querySelectorAll(".billing-tab").forEach((tab) => {
             const active = tab.dataset.billing === billingKey;
             tab.classList.toggle("is-active", active);
-            tab.setAttribute("aria-selected", String(active));
+            tab.setAttribute("aria-checked", String(active));
         });
         document.querySelectorAll(".billing-switch").forEach((sw) => {
             sw.classList.toggle("is-quarterly", billingKey === "quarterly");
@@ -234,12 +234,12 @@
             ".pricing-price{display:flex;flex-direction:column;align-items:center;gap:8px;}",
             ".pricing-price .price-lockup{display:flex;align-items:baseline;justify-content:center;gap:10px;flex-wrap:nowrap;}",
             ".pricing-price .price-now{font-size:clamp(2.9rem,3.6vw,3.7rem);font-weight:800;letter-spacing:-.05em;line-height:1;color:#14141c;}",
-            ".pricing-price .price-per{font-size:1.05rem;font-weight:700;color:#8b8698;letter-spacing:0;}",
-            ".pricing-price .price-was{position:relative;font-size:1.35rem;font-weight:700;color:#a8a3b5;opacity:.85;}",
+            ".pricing-price .price-per{font-size:1.05rem;font-weight:700;color:#5f5a6d;letter-spacing:0;}",
+            ".pricing-price .price-was{position:relative;font-size:1.35rem;font-weight:700;color:#6e6a7c;}",
             ".pricing-price .price-was::after{content:'';position:absolute;left:-6%;top:52%;width:112%;height:2.5px;border-radius:2px;background:linear-gradient(90deg,#f20089,#ff1aa3);transform:rotate(-9deg);}",
             ".pricing-price .price-meta{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}",
-            ".pricing-price .price-save{padding:4px 11px;border-radius:999px;background:rgba(16,163,110,.12);border:1px solid rgba(16,163,110,.42);color:#0d8f60;font-size:.66rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;}",
-            ".pricing-price .price-tax{font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#9a95a8;}",
+            ".pricing-price .price-save{padding:4px 11px;border-radius:999px;background:rgba(16,163,110,.12);border:1px solid rgba(16,163,110,.42);color:#0a6d49;font-size:.66rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;}",
+            ".pricing-price .price-tax{font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#5f5a6d;}",
             /* dark (Customized) card variant */
             ".pricing-card.custom .pricing-price .price-now{color:#fff;}",
             ".pricing-card.custom .pricing-price .price-tax{color:#a49fb8;}",

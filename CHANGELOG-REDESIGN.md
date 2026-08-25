@@ -1,3 +1,84 @@
+# ROUND 9 — Full-site audit pass, unique hero current, reworked header interaction
+
+## Site-wide audit
+Every one of the 22 pages was loaded headlessly at 1440px and 390px and machine-checked for
+text contrast (computed foreground against the real composited background), heading order,
+accessible names, ARIA reference integrity, unlabelled form fields, clipped text and JS errors;
+then every button on every page was clicked at both widths. Findings, all fixed:
+
+- **Ten WCAG AA contrast failures.**
+  - The whole price lockup on the white plan cards was too light: `$90` struck-through at
+    **2.45:1**, `Plus taxes` at **2.90:1**, `/mo` at **3.52:1**, `Save 50%` at **4.11:1**.
+    Darkened to 5.2–6.6:1, keeping the same visual hierarchy.
+  - `Not Included` headings and their list items on the plan cards at **3.41:1** → 5.9:1.
+  - `security.html`'s amber "Integration Required" chip at **4.1:1** — it was a *light-mode*
+    amber (`#9b6500`) sitting on a dark card. Now `#ffc247`.
+  - `login.html` and `signup.html` used light-mode slate greys (`#5b6678`, `#667085`) for body
+    text on the near-black auth background — **3.49:1** and **4.07:1**. Both now use the site's
+    own `--muted`, which is what every other dark page already uses (7.9:1).
+- **Three heading-order skips.** `index.html` jumped h2 → h4, `pricing.html` h1 → h4, and
+  `trial.html` h1 → h3. The excludes headings became h3 (CSS retargeted, so nothing moves
+  visually), the trial step headings became h2, and the pricing plan grid got a screen-reader-only
+  h2 so the h1 → h3 gap closes. `.sr-only` was added to the stylesheet as well as the shell
+  script, so such headings can never flash before the script runs.
+- **Wrong ARIA pattern on the billing switch.** Monthly/Quarterly were `role="tab"` with
+  `aria-selected`, but there are no tabpanels — a tab that controls nothing is a dead end for a
+  screen reader. They are now `role="radio"` in a `role="radiogroup"` with `aria-checked`, which
+  is the pattern the checkout page already uses for the same choice.
+
+Verified clean afterwards: zero contrast failures, zero heading skips, zero dangling ARIA
+references, zero unlabelled fields, zero JS errors, and no horizontal overflow at 360/768/1280.
+
+## Hero — a current, not a constellation
+The particle-and-lines field was replaced outright. Linked dots are the most over-used hero
+background on the web, and no amount of tuning makes one distinctive. It is now a **curl-noise
+flow field**: ~190 strands ride a divergence-free vector field, so they sweep in long coherent
+arcs that read as one moving current rather than scattered points.
+
+- The field is **baked into two static vector grids at startup** and cross-faded at runtime, so
+  the frame loop does no noise sampling at all — the whole field costs **four `stroke()` calls
+  and one `fill()` per frame**, one per strand family.
+- Curl (the gradient of a scalar potential, rotated 90°) means the field has no sources or sinks,
+  so strands never pile into clumps. A slight up-and-right bias gives the motion a direction.
+- **The cursor spins the current around itself.** The first attempt added velocity toward a
+  tangent, which flung strands out and left a bald patch under the pointer; it now blends the
+  *direction* instead, so speed stays bounded and strands orbit and recirculate.
+- Clicking sends a **shockwave ring** out and surges the whole current briefly.
+- A handful of bright signals ride the same field, and the whole current breathes.
+- A CSS mask keeps the field quiet behind the headline and lets it build toward the edges.
+
+Two bugs were found and fixed while building it. The noise scale was multiplying cell size by
+0.055, which is ~1.9 noise units per cell — far past the decorrelation distance, so neighbouring
+cells pointed in unrelated directions and the "field" was really just noise. And a trail records
+one point per frame, so its length is `speed x TRAIL`; the original numbers produced 5–10px
+stubs rather than strands.
+
+**Adaptive quality.** The field now measures its own frame time as a rolling average and thins
+itself once, to 55%, if the device cannot hold ~32fps. A first attempt counted *consecutive*
+slow frames, which a single fast frame reset — it never fired. The rolling average does.
+
+Kept from the previous round: pointer spotlight, the showcase leaning toward the cursor, the
+animated headline gradient, dpr scaling, IntersectionObserver + `visibilitychange` gating,
+delta-time normalisation, and a full reduced-motion off-switch.
+
+## Header — one marker instead of five highlights
+The nav's only interaction was a per-link background fade, and the mobile panel appeared and
+disappeared with `display: none` — no animation at all.
+
+- **A single pill now travels the nav.** It glides to whatever is hovered or focused, and settles
+  back onto the current page when the pointer leaves. It follows keyboard focus too, so tabbing
+  through the nav is as legible as hovering.
+- **The bar itself responds.** A segment of its top edge lights up above whichever item the
+  pointer is on, tracking the marker. Both run entirely on custom properties and transforms, so
+  hover work never touches layout.
+- At rest the pill sits at half opacity and the rail is dark, so the idle header looks as it did.
+- **The mobile panel is animated.** It scales and fades in with its items staggered behind it, and
+  on close it stays in the DOM until the transition finishes before `hidden` is applied — so the
+  animation plays without ever lying to assistive tech about what is on screen. Re-measured on
+  font load and resize.
+
+---
+
 # ROUND 8 — Hero engine rebuilt for energy, offer badge redesigned, site-wide fixes
 
 ## Hero — rebuilt as a reactive engine
