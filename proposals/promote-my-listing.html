@@ -83,7 +83,7 @@
             height: 68px; display: flex; align-items: center; gap: 24px;
         }
         .docbar__brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
-        .docbar__brand img { width: 108px; }
+        .docbar__brand img { width: 108px; filter: brightness(0) invert(1); }
         .docbar__tag {
             font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
             letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand-hot);
@@ -134,7 +134,7 @@
         /* ---------- Cover ---------- */
         .cover { padding: 84px 0 96px; }
         .cover__grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: center; }
-        .cover__logo { width: 232px; margin-bottom: 34px; }
+        .cover__logo { width: 232px; margin-bottom: 34px; filter: brightness(0) invert(1); }
         .cover__eyebrow {
             display: inline-flex; align-items: center; gap: 10px;
             font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
@@ -465,7 +465,7 @@
         /* ---------- Footer ---------- */
         .doc-footer { border-top: 1px solid var(--line-soft); padding: 44px 0 54px; }
         .doc-footer__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px; }
-        .doc-footer img { width: 96px; opacity: 0.9; }
+        .doc-footer img { width: 96px; opacity: 0.72; filter: brightness(0) invert(1); }
         .doc-footer p { color: var(--muted); font-size: 0.83rem; line-height: 1.7; }
         .doc-footer a { color: var(--brand-hot); font-weight: 600; }
         .doc-footer a:hover { text-decoration: underline; }
@@ -556,7 +556,7 @@
             tr.row-total td, tr.row-total th { background: #fdf2f8 !important; }
             .invest { border: none !important; }
             .section-head { margin-bottom: 26px; }
-            .docbar__brand img, .cover__logo, .doc-footer img { filter: none; }
+            .docbar__brand img, .cover__logo, .doc-footer img { filter: none !important; opacity: 1; }
         }
     </style>
 </head>
