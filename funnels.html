@@ -110,20 +110,51 @@
         .check-list li::before { content: '✓'; position: absolute; left: 0; top: 1px; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, rgba(242, 0, 137, 0.25), rgba(109, 0, 193, 0.25)); border: 1px solid rgba(242, 0, 137, 0.45); color: var(--brand-hot); font-size: 0.7rem; font-weight: 800; }
         .split-media { position: relative; border-radius: 24px; border: 1px solid var(--line); background: rgba(12, 9, 24, 0.7); backdrop-filter: blur(12px); padding: 26px; box-shadow: 0 36px 90px rgba(0, 0, 0, 0.5); }
 
-        /* mock builder */
-        .mock-builder { display: grid; grid-template-columns: 56px 1fr; gap: 14px; }
-        .mock-rail { display: grid; gap: 10px; align-content: start; }
-        .mock-rail span { display: block; height: 40px; border-radius: 10px; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--line); }
-        .mock-rail span:first-child { background: linear-gradient(135deg, rgba(242, 0, 137, 0.4), rgba(109, 0, 193, 0.4)); border-color: rgba(242, 0, 137, 0.5); }
-        .mock-canvas { display: grid; gap: 10px; }
-        .mock-block { border-radius: 12px; border: 1px dashed rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.03); padding: 14px; }
-        .mock-block.hero-block { height: 92px; background: linear-gradient(135deg, rgba(242, 0, 137, 0.14), rgba(109, 0, 193, 0.14)); border-style: solid; border-color: rgba(242, 0, 137, 0.35); }
-        .mock-line { height: 9px; border-radius: 6px; background: rgba(255, 255, 255, 0.12); margin-bottom: 7px; }
-        .mock-line.w60 { width: 60%; }
-        .mock-line.w40 { width: 40%; }
-        .mock-cta { width: 130px; height: 34px; border-radius: 999px; background: var(--gradient-kinetic); box-shadow: 0 8px 22px rgba(242, 0, 137, 0.4); }
-        .mock-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-        .mock-cols span { height: 58px; border-radius: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); }
+        /* ---- page builder diagram ----
+           The old version was unlabelled grey bars, so it read as decoration
+           rather than an explanation. This one names every part: a block library
+           on the left, the page being assembled on the right, and one block
+           caught mid-drag with the drop position marked. */
+        .builder { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 16px; align-items: start; }
+        .builder__label { display: block; margin-bottom: 10px; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+        .builder__library { display: grid; gap: 7px; align-content: start; }
+        .builder__block { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--glass); font-size: 0.76rem; font-weight: 650; color: #d9d4e8; }
+        .builder__block svg { flex: none; width: 14px; height: 14px; color: var(--brand-hot); }
+        .builder__block--dragging { border-color: rgba(242, 0, 137, 0.6); background: linear-gradient(135deg, rgba(242, 0, 137, 0.22), rgba(109, 0, 193, 0.22)); color: #fff; box-shadow: 0 12px 28px rgba(242, 0, 137, 0.35); transform: translateX(6px) rotate(-2deg); }
+
+        .builder__screen { border-radius: 14px; border: 1px solid var(--line); background: rgba(7, 5, 15, 0.72); overflow: hidden; }
+        .builder__bar { display: flex; align-items: center; gap: 7px; padding: 9px 12px; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); }
+        .builder__bar i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); }
+        .builder__url { margin-left: 6px; font-family: var(--font-mono); font-size: 0.64rem; color: var(--muted); }
+        .builder__canvas { display: grid; gap: 9px; padding: 12px; }
+
+        .builder__section { position: relative; padding: 13px 14px; border-radius: 11px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.035); }
+        .builder__tag { position: absolute; top: -8px; left: 12px; padding: 2px 8px; border-radius: 999px; background: #14101f; border: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+        .builder__section--selected { border-color: rgba(242, 0, 137, 0.5); background: linear-gradient(135deg, rgba(242, 0, 137, 0.12), rgba(109, 0, 193, 0.12)); }
+        .builder__section--selected .builder__tag { color: #fff; border-color: rgba(242, 0, 137, 0.5); background: linear-gradient(135deg, #f20089, #6d00c1); }
+
+        .builder__h { margin: 4px 0 3px; font-family: var(--font-display); font-size: 0.94rem; font-weight: 700; color: #fff; }
+        .builder__p { margin: 0 0 10px; font-size: 0.72rem; line-height: 1.5; color: var(--muted); }
+        .builder__cta { display: inline-flex; align-items: center; padding: 7px 16px; border-radius: 999px; background: var(--gradient-kinetic); box-shadow: 0 8px 20px rgba(242, 0, 137, 0.35); font-size: 0.72rem; font-weight: 700; color: #fff; }
+
+        .builder__fields { display: grid; gap: 6px; margin-top: 6px; }
+        .builder__field { padding: 6px 9px; border-radius: 7px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); font-size: 0.68rem; color: var(--muted); }
+        .builder__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; margin-top: 6px; }
+        .builder__col { padding: 9px 8px; border-radius: 8px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); font-size: 0.66rem; font-weight: 650; color: #d9d4e8; text-align: center; }
+
+        /* where the dragged block will land */
+        .builder__drop { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 11px; border: 1px dashed rgba(242, 0, 137, 0.65); background: rgba(242, 0, 137, 0.07); font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand-hot); }
+        .builder__drop::before { content: '+'; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; background: var(--brand-hot); color: #12000a; font-size: 0.72rem; font-weight: 800; }
+
+        .builder__caption { margin: 14px 0 0; font-size: 0.78rem; line-height: 1.6; color: var(--muted); }
+        .builder__caption b { color: #fff; font-weight: 700; }
+
+        @media (max-width: 560px) {
+            .builder { grid-template-columns: 1fr; }
+            .builder__library { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .builder__block--dragging { transform: none; }
+        }
 
         /* upsell flow mock */
         .flow { display: grid; gap: 12px; }
@@ -278,20 +309,65 @@
                         <li><b>Fast by default</b> — globally-served pages engineered for speed and SEO fundamentals.</li>
                     </ul>
                 </div>
-                <div class="split-media" aria-label="Illustration of the page builder">
-                    <div class="mock-builder">
-                        <div class="mock-rail"><span></span><span></span><span></span><span></span><span></span></div>
-                        <div class="mock-canvas">
-                            <div class="mock-block hero-block">
-                                <div class="mock-line w60"></div>
-                                <div class="mock-line w40"></div>
-                                <div class="mock-cta"></div>
+                <div class="split-media">
+                    <figure class="builder" role="group" aria-labelledby="builder-caption">
+                        <div>
+                            <span class="builder__label">Blocks</span>
+                            <div class="builder__library">
+                                <span class="builder__block"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="7" rx="1.5"/><path d="M4 12h8"/></svg>Hero</span>
+                                <span class="builder__block"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h7"/></svg>Text</span>
+                                <span class="builder__block"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="3.5" width="13" height="4" rx="1.5"/><rect x="1.5" y="10" width="7" height="3.5" rx="1.5"/></svg>Form</span>
+                                <span class="builder__block"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><circle cx="5.5" cy="6" r="1.2"/><path d="M2.5 12l4-4 6 5"/></svg>Image</span>
+                                <span class="builder__block"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 3.5h11v7h-6l-3 3v-3h-2z"/></svg>Testimonial</span>
+                                <span class="builder__block builder__block--dragging"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>Pricing</span>
                             </div>
-                            <div class="mock-block"><div class="mock-line"></div><div class="mock-line w60"></div></div>
-                            <div class="mock-cols"><span></span><span></span><span></span></div>
-                            <div class="mock-block"><div class="mock-line w40"></div><div class="mock-line"></div></div>
                         </div>
-                    </div>
+
+                        <div>
+                            <span class="builder__label">Your page</span>
+                            <div class="builder__screen">
+                                <div class="builder__bar">
+                                    <i></i><i></i><i></i>
+                                    <span class="builder__url">yourbrand.com/offer</span>
+                                </div>
+                                <div class="builder__canvas">
+                                    <div class="builder__section builder__section--selected">
+                                        <span class="builder__tag">Hero &middot; selected</span>
+                                        <p class="builder__h">Book more jobs this month</p>
+                                        <p class="builder__p">One page, one offer, one clear next step.</p>
+                                        <span class="builder__cta">Get my free quote</span>
+                                    </div>
+
+                                    <div class="builder__section">
+                                        <span class="builder__tag">Form</span>
+                                        <div class="builder__fields">
+                                            <span class="builder__field">Full name</span>
+                                            <span class="builder__field">Email address</span>
+                                            <span class="builder__field">Phone number</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="builder__section">
+                                        <span class="builder__tag">3 columns</span>
+                                        <div class="builder__cols">
+                                            <span class="builder__col">Same-day</span>
+                                            <span class="builder__col">Fixed price</span>
+                                            <span class="builder__col">5&#9733; rated</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="builder__drop">Drop &ldquo;Pricing&rdquo; here</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <figcaption class="builder__caption" id="builder-caption" style="grid-column: 1 / -1;">
+                            Pick a block from the library and drop it into the page. Every block is
+                            already wired to the rest of Kyntlo &mdash; a <b>Form</b> creates the contact
+                            and starts the follow-up workflow, a <b>Pricing</b> block links straight to
+                            checkout. No connectors to configure.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
 

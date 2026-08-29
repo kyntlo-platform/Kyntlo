@@ -286,20 +286,26 @@
         /* ---------- Testimonials ---------- */
         .testimonials { background: linear-gradient(180deg, transparent, rgba(242, 0, 137, 0.04) 40%, transparent); }
         .testimonials-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 56px; }
-        .testimonial-card { position: relative; display: flex; flex-direction: column; padding: 32px 28px; border-radius: 22px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease; }
-        .testimonial-card:hover { transform: translateY(-8px); border-color: rgba(242, 0, 137, 0.4); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); }
-        .testimonial-card.featured { grid-column: span 2; background: linear-gradient(150deg, rgba(242, 0, 137, 0.1), rgba(109, 0, 193, 0.1)); border: 1px solid rgba(242, 0, 137, 0.35); }
-        .testimonial-card .quote-mark { position: absolute; top: 20px; right: 26px; font-family: var(--font-display); font-size: 4rem; line-height: 1; background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.55; }
-        .stars { display: flex; gap: 3px; margin-bottom: 16px; }
-        .stars svg { width: 16px; height: 16px; fill: #ffbf3c; }
-        .testimonial-card blockquote { flex: 1; font-size: 1rem; line-height: 1.75; color: #d9d4e8; margin-bottom: 24px; }
-        .testimonial-card.featured blockquote { font-size: 1.18rem; color: #efeaf8; }
-        .testimonial-person { display: flex; align-items: center; gap: 14px; }
-        .testimonial-person img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid transparent; background: var(--gradient-kinetic) border-box; box-shadow: 0 10px 26px rgba(242, 0, 137, 0.35); transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.5, 1); }
-        .testimonial-card:hover .testimonial-person img { transform: scale(1.12) rotate(-3deg); }
-        .testimonial-person .who strong { display: block; font-size: 0.98rem; }
-        .testimonial-person .who span { font-size: 0.82rem; color: var(--muted); }
-        .testimonials-disclaimer { margin-top: 26px; text-align: center; font-size: 0.78rem; color: rgba(164, 159, 184, 0.6); font-family: var(--font-mono); letter-spacing: 0.06em; }
+
+        /* Scenario cards. These describe how a type of business runs on Kyntlo; they
+           are not attributed to a person, so there is no portrait and no name. */
+        .scenario-card { position: relative; display: flex; flex-direction: column; gap: 18px; padding: 30px 28px; border-radius: 22px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(12px); transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease; }
+        .scenario-card:hover { transform: translateY(-8px); border-color: rgba(242, 0, 137, 0.4); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); }
+        .scenario-card.featured { grid-column: span 2; background: linear-gradient(150deg, rgba(242, 0, 137, 0.1), rgba(109, 0, 193, 0.1)); border: 1px solid rgba(242, 0, 137, 0.35); }
+
+        .scenario-sector { align-self: flex-start; padding: 5px 13px; border-radius: 999px; border: 1px solid rgba(242, 0, 137, 0.35); background: rgba(242, 0, 137, 0.1); font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-hot); }
+
+        .scenario-text { flex: 1; margin: 0; font-size: 1rem; line-height: 1.75; color: #d9d4e8; }
+        .scenario-card.featured .scenario-text { font-size: 1.12rem; color: #efeaf8; }
+
+        .scenario-meta { display: flex; align-items: center; gap: 13px; padding-top: 18px; border-top: 1px solid var(--line); }
+        .scenario-icon { flex: none; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, rgba(242, 0, 137, 0.22), rgba(109, 0, 193, 0.22)); border: 1px solid rgba(242, 0, 137, 0.32); color: var(--brand-hot); }
+        .scenario-icon svg { width: 19px; height: 19px; }
+        .scenario-meta .who { display: block; min-width: 0; }
+        .scenario-meta .who strong { display: block; font-size: 0.95rem; font-weight: 700; color: #fff; }
+        .scenario-meta .who span { font-size: 0.8rem; color: var(--muted); }
+
+        .testimonials-disclaimer { margin-top: 26px; text-align: center; font-size: 0.78rem; color: var(--muted); font-family: var(--font-mono); letter-spacing: 0.06em; }
 
         /* ---------- Demo / CTA ---------- */
         .demo-section { padding: 110px 0; }
@@ -333,7 +339,7 @@
             .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .testimonials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .testimonial-card.featured { grid-column: span 2; }
+            .scenario-card.featured { grid-column: span 2; }
             .hero-showcase { grid-template-columns: 1fr; }
             .ops-feed__body { min-height: 200px; }
         }
@@ -342,7 +348,7 @@
             .hero { padding: 100px 0 70px; }
             .about-grid { grid-template-columns: 1fr; gap: 46px; }
             .features-grid, .testimonials-grid, .pricing-grid { grid-template-columns: 1fr; }
-            .testimonial-card.featured { grid-column: span 1; }
+            .scenario-card.featured { grid-column: span 1; }
             .stat-panel { grid-template-columns: 1fr 1fr; }
             .matrix-head { display: none; }
             .matrix-row { grid-template-columns: 1fr; gap: 10px; padding: 18px 20px; }
@@ -770,68 +776,53 @@
     <section class="testimonials">
         <div class="container">
             <div class="center reveal">
-                <p class="kicker" style="justify-content:center;">Customer Stories</p>
-                <h2 class="section-title">Trusted by operators who want <span class="text-gradient">cleaner growth</span></h2>
-                <p class="section-sub">The kind of operational outcomes Kyntlo is designed to deliver — from agencies, clinics, and multi-location brands.</p>
+                <p class="kicker" style="justify-content:center;">How teams use Kyntlo</p>
+                <h2 class="section-title">Built for the way <span class="text-gradient">these teams work</span></h2>
+                <p class="section-sub">Five operating patterns Kyntlo is designed around &mdash; from agencies and clinics to restaurants, studios, and home services.</p>
             </div>
             <div class="testimonials-grid">
-                <article class="testimonial-card featured reveal">
-                    <span class="quote-mark" aria-hidden="true">"</span>
-                    <div class="stars" aria-label="5 out of 5 stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
-                    </div>
-                    <blockquote>Kyntlo replaced the messy middle between marketing and sales. Leads, bookings, and follow-up now run in one operating rhythm — and for the first time, the whole team works from a single source of truth. We finally know exactly which opportunities need attention.</blockquote>
-                    <div class="testimonial-person">
-                        <img src="assets/avatars/adam.jpg" alt="Portrait of Adam Miller" width="56" height="56" loading="lazy" decoding="async">
-                        <div class="who"><strong>Adam Miller</strong><span>Founder, Growth Advisory Studio</span></div>
+                <article class="scenario-card featured reveal">
+                    <span class="scenario-sector">Agency</span>
+                    <p class="scenario-text">Leads, bookings, and follow-up run on one operating rhythm instead of three disconnected tools. The whole team works from a single customer record, and it is obvious at a glance which opportunities have gone quiet and need attention.</p>
+                    <div class="scenario-meta">
+                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span>
+                        <span class="who"><strong>Founder</strong><span>Growth advisory studio · 6 people</span></span>
                     </div>
                 </article>
-                <article class="testimonial-card reveal reveal-d1">
-                    <span class="quote-mark" aria-hidden="true">"</span>
-                    <div class="stars" aria-label="5 out of 5 stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
-                    </div>
-                    <blockquote>The biggest win was consistency. Forms, reminders, inbox activity, and pipeline stages stopped living in separate places.</blockquote>
-                    <div class="testimonial-person">
-                        <img src="assets/avatars/sofia.jpg" alt="Portrait of Sofia Romano" width="56" height="56" loading="lazy" decoding="async">
-                        <div class="who"><strong>Sofia Romano</strong><span>Operations Lead, Multi-Location Clinic</span></div>
+                <article class="scenario-card reveal reveal-d1">
+                    <span class="scenario-sector">Healthcare</span>
+                    <p class="scenario-text">Forms, reminders, inbox activity, and pipeline stages stop living in separate places, so no booking depends on someone remembering to check a second system.</p>
+                    <div class="scenario-meta">
+                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/><rect x="3" y="3" width="18" height="18" rx="4"/></svg></span>
+                        <span class="who"><strong>Operations lead</strong><span>Multi-location clinic · 4 sites</span></span>
                     </div>
                 </article>
-                <article class="testimonial-card reveal">
-                    <span class="quote-mark" aria-hidden="true">"</span>
-                    <div class="stars" aria-label="5 out of 5 stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
-                    </div>
-                    <blockquote>Missed calls used to mean lost covers. Now every one gets an instant text back, and bookings and reviews run themselves.</blockquote>
-                    <div class="testimonial-person">
-                        <img src="assets/avatars/jonas.jpg" alt="Portrait of Jonas Keller" width="56" height="56" loading="lazy" decoding="async">
-                        <div class="who"><strong>Jonas Keller</strong><span>Owner, Multi-Site Restaurant Group</span></div>
+                <article class="scenario-card reveal">
+                    <span class="scenario-sector">Hospitality</span>
+                    <p class="scenario-text">A missed call triggers an instant text back rather than a lost cover, and review requests go out after every visit without anyone chasing them.</p>
+                    <div class="scenario-meta">
+                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8a2 2 0 002 2h0a2 2 0 002-2V3M9 13v8M17 3c-1.5 2-2 4-2 6a2 2 0 002 2v10"/></svg></span>
+                        <span class="who"><strong>Owner</strong><span>Multi-site restaurant group</span></span>
                     </div>
                 </article>
-                <article class="testimonial-card reveal reveal-d1">
-                    <span class="quote-mark" aria-hidden="true">"</span>
-                    <div class="stars" aria-label="5 out of 5 stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
-                    </div>
-                    <blockquote>Enquiries, site visits, and proposals finally sit in one pipeline. The quarterly plan gave us runway to set it up properly.</blockquote>
-                    <div class="testimonial-person">
-                        <img src="assets/avatars/laura.jpg" alt="Portrait of Laura Bennett" width="56" height="56" loading="lazy" decoding="async">
-                        <div class="who"><strong>Laura Bennett</strong><span>Director, Property &amp; Design Studio</span></div>
+                <article class="scenario-card reveal reveal-d1">
+                    <span class="scenario-sector">Property</span>
+                    <p class="scenario-text">Enquiries, site visits, and proposals sit in one pipeline, so a quote that has been waiting nine days is visible instead of buried in an inbox.</p>
+                    <div class="scenario-meta">
+                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg></span>
+                        <span class="who"><strong>Director</strong><span>Property & design studio</span></span>
                     </div>
                 </article>
-                <article class="testimonial-card reveal reveal-d2">
-                    <span class="quote-mark" aria-hidden="true">"</span>
-                    <div class="stars" aria-label="5 out of 5 stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7L12 2z"/></svg>
-                    </div>
-                    <blockquote>Our AI chatbot answers within seconds and books the call before a competitor even replies. That speed is the whole game.</blockquote>
-                    <div class="testimonial-person">
-                        <img src="assets/avatars/nadine.jpg" alt="Portrait of Nadine Davis" width="56" height="56" loading="lazy" decoding="async">
-                        <div class="who"><strong>Nadine Davis</strong><span>Head of Customer Acquisition, Home Services</span></div>
+                <article class="scenario-card reveal reveal-d2">
+                    <span class="scenario-sector">Home services</span>
+                    <p class="scenario-text">The AI chatbot answers within seconds and books the call while the enquiry is still warm, rather than after a competitor has already replied.</p>
+                    <div class="scenario-meta">
+                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 01-5 5L4 17v3h3l5.7-5.7a4 4 0 015-5l1.6-1.6-2.9-2.9z"/></svg></span>
+                        <span class="who"><strong>Head of acquisition</strong><span>Home services network</span></span>
                     </div>
                 </article>
             </div>
-            <p class="testimonials-disclaimer">Illustrative customer stories representing typical Kyntlo outcomes.</p>
+            <p class="testimonials-disclaimer">These are illustrative operating scenarios, not customer testimonials.</p>
         </div>
     </section>
 

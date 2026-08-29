@@ -21,7 +21,7 @@ select,
 .comparison-card,
 .migration-card,
 .package-card,
-.testimonial-card {
+.scenario-card {
     transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
