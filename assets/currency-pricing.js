@@ -13,6 +13,10 @@
 
     const QUARTER_DISCOUNT = 0.5;
 
+    /* Single source of truth for prices. checkout-page.js reads this rather than
+       keeping a second copy that can drift out of step. */
+    window.KyntloPricing = { packages: packages, quarterDiscount: QUARTER_DISCOUNT };
+
     const billingPlans = {
         monthly: { label: "Monthly", note: "Full flexibility" },
         quarterly: { label: "Quarterly", note: "Save 50%", limited: true }

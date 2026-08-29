@@ -8,25 +8,32 @@
         pro:      { monthly: "plan_d4YY0DcqLXx8b", quarterly: "plan_VWmHJTwHW6Pj5" }
     };
     const QUARTER_PROMO = "summer_50";
-    const QUARTER_DISCOUNT = 0.5;
+    const QUARTER_DISCOUNT = (window.KyntloPricing && window.KyntloPricing.quarterDiscount) || 0.5;
 
-    const packages = {
-        starter: {
-            name: "Starter", monthly: 90,
-            summary: "Launch CRM, booking, forms, landing pages, live chat, and essential lead capture for a small team.",
-            highlights: ["CRM contacts and opportunities", "1 pipeline", "Funnels, landing pages, forms, and surveys", "Calendar booking", "Live chat widget", "Up to 3 users"]
-        },
-        growth: {
-            name: "Growth", monthly: 270,
-            summary: "Add workflow automation, full omnichannel inbox, appointment reminders, and stronger team collaboration.",
-            highlights: ["Everything in Starter", "2-3 pipelines", "Workflow automation", "Full omnichannel inbox", "Appointment reminders", "Up to 10 users"]
-        },
-        pro: {
-            name: "Pro", monthly: 490,
-            summary: "Unlimited AI usage across the entire platform, plus advanced AI, missed-call text-back, voice AI access, reviews, reactivation, analytics, and deeper campaign execution.",
-            highlights: ["Everything in Growth", "Unlimited AI usage across the whole platform", "Unlimited pipelines", "Missed call text-back", "Advanced AI chatbot", "Voice AI access", "Premium workflow actions", "Reputation manager", "Advanced analytics"]
-        }
+    /* Names, prices and summaries come from currency-pricing.js (window.KyntloPricing);
+       only the checkout-specific highlight lists live here. */
+    const HIGHLIGHTS = {
+        starter: ["CRM contacts and opportunities", "1 pipeline", "Funnels, landing pages, forms, and surveys", "Calendar booking", "Live chat widget", "Up to 3 users"],
+        growth: ["Everything in Starter", "2-3 pipelines", "Workflow automation", "Full omnichannel inbox", "Appointment reminders", "Up to 10 users"],
+        pro: ["Everything in Growth", "Unlimited AI usage across the whole platform", "Unlimited pipelines", "Missed call text-back", "Advanced AI chatbot", "Voice AI access", "Premium workflow actions", "Reputation manager", "Advanced analytics"]
     };
+    const SUMMARIES = {
+        starter: "Launch CRM, booking, forms, landing pages, live chat, and essential lead capture for a small team.",
+        growth: "Add workflow automation, full omnichannel inbox, appointment reminders, and stronger team collaboration.",
+        pro: "Unlimited AI usage across the entire platform, plus advanced AI, missed-call text-back, voice AI access, reviews, reactivation, analytics, and deeper campaign execution."
+    };
+
+    const shared = (window.KyntloPricing && window.KyntloPricing.packages) || {};
+    const packages = Object.keys(HIGHLIGHTS).reduce(function (out, key) {
+        const base = shared[key] || {};
+        out[key] = {
+            name: base.name || key.charAt(0).toUpperCase() + key.slice(1),
+            monthly: base.monthly,
+            summary: SUMMARIES[key],
+            highlights: HIGHLIGHTS[key]
+        };
+        return out;
+    }, {});
 
     function usd(amount) {
         return "$" + Math.round(amount).toLocaleString("en-US");

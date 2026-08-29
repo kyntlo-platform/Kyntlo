@@ -33,6 +33,9 @@
             --brand-hot: #ff1aa3;
             --green: #35e0a1;
             --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            /* Text needs contrast the decorative gradient does not: #6d00c1 measures
+               2.33:1 on the dark ground, #b06bff measures 6.16:1. */
+            --gradient-text: linear-gradient(135deg, var(--brand-pink), #b06bff);
             --gradient-animated: linear-gradient(-45deg, #f20089, #6d00c1, #ff1aa3, #851ada);
             --font-display: 'Space Grotesk', 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
@@ -124,6 +127,7 @@
             *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
         }
     </style>
+    <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
 </head>
 <body data-theme="dark">
 

@@ -24,6 +24,9 @@
             --brand-purple: #6d00c1;
             --brand-hot: #ff1aa3;
             --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            /* Text needs contrast the decorative gradient does not: #6d00c1 measures
+               2.33:1 on the dark ground, #b06bff measures 6.16:1. */
+            --gradient-text: linear-gradient(135deg, var(--brand-pink), #b06bff);
             --gradient-animated: linear-gradient(-45deg, #f20089, #6d00c1, #ff1aa3, #851ada);
             --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.06);
             --shadow-hover: 0 24px 64px rgba(109, 0, 193, 0.18);
@@ -49,7 +52,7 @@
         .page-header { padding: 92px 0 56px; text-align: center; background: transparent; border-bottom: 1px solid var(--border-color); position: relative; overflow: hidden; }
         .page-header::before { content: ''; position: absolute; top: -55%; left: 50%; transform: translateX(-50%); width: 100vw; height: 640px; background: radial-gradient(circle, rgba(242, 0, 137, 0.12) 0%, rgba(109, 0, 193, 0.07) 40%, transparent 70%); pointer-events: none; }
         .page-title { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.06; margin-bottom: 18px; position: relative; }
-        .page-title .text-gradient { background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-title .text-gradient { background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
         .page-subtitle { font-size: 1.18rem; color: var(--text-muted); max-width: 720px; margin: 0 auto; position: relative; line-height: 1.75; }
         .pricing-trust { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 28px; margin-top: 28px; font-size: 0.92rem; color: var(--text-muted); position: relative; }
         .pricing-trust span { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
@@ -180,6 +183,69 @@
             .animate-fade-up { opacity: 1; }
         }
     </style>
+    <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Kyntlo",
+  "description": "AI-powered growth operations platform for CRM, conversations, booking, funnels, and automation.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Kyntlo"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Starter",
+      "description": "Launch CRM, booking, forms, landing pages, and lead capture for a small team.",
+      "price": "90",
+      "priceCurrency": "USD",
+      "url": "https://kyntlo.ai/checkout?package=starter",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "90",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Growth",
+      "description": "Workflow automation, a full omnichannel inbox, and appointment reminders.",
+      "price": "270",
+      "priceCurrency": "USD",
+      "url": "https://kyntlo.ai/checkout?package=growth",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "270",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "description": "Unlimited AI across the platform, voice AI, reviews, and advanced analytics.",
+      "price": "490",
+      "priceCurrency": "USD",
+      "url": "https://kyntlo.ai/checkout?package=pro",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "490",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body data-theme="dark">
 

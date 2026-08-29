@@ -23,6 +23,9 @@
             --brand-pink: #f20089;
             --brand-purple: #6d00c1;
             --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            /* Text needs contrast the decorative gradient does not: #6d00c1 measures
+               2.33:1 on the dark ground, #b06bff measures 6.16:1. */
+            --gradient-text: linear-gradient(135deg, var(--brand-pink), #b06bff);
             --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.4);
         }
 
@@ -247,6 +250,7 @@
             .legal-card { opacity: 1; transform: none; }
         }
     </style>
+    <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
 </head>
 <body data-theme="dark">
     <nav></nav>
@@ -280,7 +284,7 @@
                 <ul>
                     <li><b>Essential technologies:</b> Required for website operation, navigation, security, page rendering, cookie banner preference storage, embedded booking tools, and basic service functionality.</li>
                     <li><b>Preference technologies:</b> Used to remember choices such as cookie banner response, display preferences, form state, or similar settings where supported.</li>
-                    <li><b>Embedded widget technologies:</b> Tools such as LeadConnector chat, Forminit forms, Calendly booking, EasyKash payment pages, Google Maps, social media links, or Kyntlo Hub login pages may use their own cookies or similar technologies when loaded or interacted with.</li>
+                    <li><b>Embedded widget technologies:</b> Tools such as the LeadConnector chat widget and booking calendar, Forminit forms, the Whop checkout, the Silktide consent manager, Google Fonts, social media links, or Kyntlo Hub login pages may use their own cookies or similar technologies when loaded or interacted with.</li>
                     <li><b>Analytics or marketing technologies:</b> Kyntlo does not intentionally run separate advertising cookies on the marketing website unless they are added later. If added, Kyntlo will seek consent where required and update this policy.</li>
                 </ul>
             </section>

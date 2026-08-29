@@ -25,6 +25,9 @@
             --brand-hot: #ff1aa3;
             --green: #35e0a1;
             --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            /* Text needs contrast the decorative gradient does not: #6d00c1 measures
+               2.33:1 on the dark ground, #b06bff measures 6.16:1. */
+            --gradient-text: linear-gradient(135deg, var(--brand-pink), #b06bff);
             --gradient-animated: linear-gradient(-45deg, #f20089, #6d00c1, #ff1aa3, #851ada);
             --font-display: 'Space Grotesk', 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
@@ -49,7 +52,7 @@
         .center { text-align: center; }
         .center .kicker { justify-content: center; }
         .center .section-sub { margin-left: auto; margin-right: auto; }
-        .text-gradient { background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gradient { background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 36px; border-radius: 999px; font-weight: 700; font-size: 1rem; border: none; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; }
         .btn-kinetic { background: var(--gradient-animated); background-size: 240% 240%; animation: shiftBg 4s ease infinite; color: #fff !important; box-shadow: 0 12px 34px rgba(242, 0, 137, 0.35); }
@@ -206,6 +209,7 @@
             .reveal { opacity: 1; transform: none; }
         }
     </style>
+    <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
 </head>
 <body data-theme="dark">
 

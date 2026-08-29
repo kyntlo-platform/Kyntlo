@@ -43,3 +43,16 @@ RewriteRule ^(.+?)/?$ $1.html [L]
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
 </IfModule>
+
+# ---------------------------------------------------------------------------
+# Keep source-of-truth documents out of the public site.
+#
+# docs/ holds the product decision register and the white-label BRD, scripts/
+# holds the build check, and the changelog records internal history. All three
+# live in the repository but must never be reachable over HTTP.
+# ---------------------------------------------------------------------------
+RedirectMatch 404 ^/(docs|scripts)(/|$)
+
+<FilesMatch "\.(md|ps1|sh|yml|yaml|json|lock)$">
+    Require all denied
+</FilesMatch>

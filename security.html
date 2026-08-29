@@ -23,6 +23,9 @@
             --brand-pink: #f20089;
             --brand-purple: #6d00c1;
             --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            /* Text needs contrast the decorative gradient does not: #6d00c1 measures
+               2.33:1 on the dark ground, #b06bff measures 6.16:1. */
+            --gradient-text: linear-gradient(135deg, var(--brand-pink), #b06bff);
             --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.4);
         }
 
@@ -277,6 +280,7 @@
             }
         }
     </style>
+    <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
 </head>
 <body data-theme="dark">
     <nav></nav>
