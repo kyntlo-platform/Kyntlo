@@ -56,3 +56,22 @@ RedirectMatch 404 ^/(docs|scripts)(/|$)
 <FilesMatch "\.(md|ps1|sh|yml|yaml|json|lock)$">
     Require all denied
 </FilesMatch>
+
+# ---------------------------------------------------------------------------
+# Content-Security-Policy, in REPORT-ONLY mode.
+#
+# Nothing is blocked while this header is Report-Only - the browser only logs
+# what *would* have been blocked, to the console and to report-uri if one is set.
+# Watch the console on a real deploy for a few days, especially through a full
+# checkout, a contact-form submit and a demo booking, since the Whop, Forminit
+# and LeadConnector loaders each pull further resources of their own that cannot
+# be enumerated from this repository. Once the report is quiet, rename the header
+# to Content-Security-Policy to start enforcing it.
+#
+# 'unsafe-inline' is required for both scripts and styles: every page carries its
+# own inline <style>, and thirteen carry an inline <script>. Removing it means
+# extracting those to files or hashing them, which is a larger change.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://forminit.com; script-src 'self' 'unsafe-inline' https://js.whop.com https://forminit.com https://links.kyntlo.ai https://widgets.leadconnectorhq.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://js.whop.com https://links.kyntlo.ai https://widgets.leadconnectorhq.com; connect-src 'self' https://js.whop.com https://forminit.com https://links.kyntlo.ai https://widgets.leadconnectorhq.com; upgrade-insecure-requests"
+</IfModule>
