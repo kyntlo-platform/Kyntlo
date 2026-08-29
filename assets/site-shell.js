@@ -439,7 +439,7 @@
         "index": "Home", "": "Home", "funnels": "Funnels", "pricing": "Pricing",
         "contact": "Contact", "about": "About", "checkout": "Checkout",
         "trial": "Free Trial", "get-started": "Get Started", "login": "Login",
-        "signup": "Sign Up", "faq": "FAQ", "compare": "Compare",
+        "faq": "FAQ", "compare": "Compare",
         "security": "Security", "privacy": "Privacy Policy", "terms": "Terms of Use",
         "refund": "Refund Policy", "cookies": "Cookie Policy", "accessibility": "Accessibility",
         "package-starter": "Starter Package", "package-growth": "Growth Package",

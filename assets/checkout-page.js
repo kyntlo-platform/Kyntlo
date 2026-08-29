@@ -173,18 +173,18 @@
             (quarterly ? '<span class="price-save">SAVE 50%</span>' : ""));
 
         set("#checkout-note", quarterly
-            ? usd(quarterTotal) + " billed today for 3 months, then the package renews at " + usd(plan.monthly) + "/mo plus taxes."
-            : usd(plan.monthly) + " billed monthly, plus taxes. Cancel anytime.");
+            ? "Nothing today. " + usd(quarterTotal) + " is charged when your 14-day trial ends, covering your first 3 months. The package then renews at " + usd(plan.monthly) + "/mo plus taxes."
+            : "Nothing today. " + usd(plan.monthly) + " is charged when your 14-day trial ends, then monthly, plus taxes. Cancel anytime.");
 
         set("#checkout-trial-note",
-            "<b>You will not be charged today.</b> Your trial starts as soon as your workspace is created. After the 14 days end, <b>" +
+            "<b>You will not be charged today.</b> Your login details are emailed to you and the trial starts from there. After the 14 days end, <b>" +
             (quarterly
                 ? usd(quarterTotal) + " will be charged once for your first 3 months"
                 : usd(plan.monthly) + " will be charged for your first month") +
             "</b> unless you cancel first. Cancel any time before day 14 and you pay nothing.");
 
         set("#checkout-payment-note",
-            "Complete your " + plan.name + " " + billingKey + " subscription below. Payments are processed securely by our payment provider.");
+            "Complete your " + plan.name + " " + billingKey + " subscription below. Payments are processed securely by our payment provider, and your login details are emailed to you once the trial starts.");
 
         document.querySelectorAll(".billing-card").forEach((card) => {
             const active = card.dataset.billing === billingKey;
@@ -221,8 +221,8 @@
                     <p class="checkout-subtitle">Pick your billing rhythm, review your package, and complete payment securely below. Every plan starts with a 14-day free trial.</p>
                     <ol class="checkout-steps" aria-label="Trial steps">
                         <li class="is-done"><span>1</span> Package chosen</li>
-                        <li class="is-current"><span>2</span> Create workspace</li>
-                        <li><span>3</span> 14 days free</li>
+                        <li class="is-current"><span>2</span> Payment details</li>
+                        <li><span>3</span> Login emailed &middot; 14 days free</li>
                     </ol>
                 </div>
             </section>
