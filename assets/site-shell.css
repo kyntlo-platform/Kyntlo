@@ -51,15 +51,28 @@ select,
     gap: 18px;
     border: 1px solid var(--shell-border);
     border-radius: 22px;
-    background: var(--shell-bg);
-    backdrop-filter: blur(22px) saturate(1.4);
-    -webkit-backdrop-filter: blur(22px) saturate(1.4);
+    background: transparent;
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     transform: translateZ(0);
     will-change: background-color, box-shadow;
     transition: box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1),
                 background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Blurred bar surface on its own layer - see the note on .site-footer__cta::before.
+   Keeping `backdrop-filter` off .site-nav__inner stops it clipping the CTA's glow. */
+.site-nav__inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--shell-bg);
+    backdrop-filter: blur(22px) saturate(1.4);
+    -webkit-backdrop-filter: blur(22px) saturate(1.4);
+    pointer-events: none;
+    transition: background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* A segment of the bar's top edge lights up above whatever the pointer is on.
@@ -80,10 +93,21 @@ select,
     pointer-events: none;
 }
 
-body.kyn-scrolled .site-nav__inner {
+body.kyn-scrolled .site-nav__inner::before {
     background: rgba(9, 6, 17, 0.9);
+}
+
+body.kyn-scrolled .site-nav__inner {
     border-color: rgba(242, 0, 137, 0.22);
     box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(242, 0, 137, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* The option list is drawn by the OS on its own (light) surface, so it cannot
+   inherit the form control's light-on-dark colour or it disappears. */
+select option,
+select optgroup {
+    color: #14141c;
+    background-color: #ffffff;
 }
 
 /* .sr-only is also injected by the shell script; declaring it here too means
@@ -529,13 +553,87 @@ main:focus {
     }
 }
 
+/* ================= BRAND CURSOR =================
+   A pink dot with a trailing ring, drawn by .kyn-cursor / .kyn-cursor-ring and
+   driven from site-shell.js. Fine pointers only; the media query below hands the
+   system cursor back to touch devices and to anyone who asked for less motion. */
+.kyn-cursor,
+.kyn-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483000;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease, width 0.22s ease, height 0.22s ease,
+                background-color 0.22s ease, border-color 0.22s ease;
+    will-change: transform;
+}
+
+.kyn-cursor {
+    width: 7px;
+    height: 7px;
+    margin: -3.5px 0 0 -3.5px;
+    background: var(--shell-pink);
+    box-shadow: 0 0 12px rgba(242, 0, 137, 0.75);
+}
+
+.kyn-cursor-ring {
+    width: var(--pointer-size);
+    height: var(--pointer-size);
+    margin: calc(var(--pointer-size) / -2) 0 0 calc(var(--pointer-size) / -2);
+    border: 1.5px solid rgba(242, 0, 137, 0.55);
+    background: rgba(242, 0, 137, 0.06);
+}
+
+body.kyn-cursor-ready .kyn-cursor,
+body.kyn-cursor-ready .kyn-cursor-ring {
+    opacity: 1;
+}
+
+/* over a control the ring opens up and fills, so the cursor reads as "clickable" */
+body.kyn-cursor-active .kyn-cursor-ring {
+    width: calc(var(--pointer-size) * 2);
+    height: calc(var(--pointer-size) * 2);
+    margin: calc(var(--pointer-size) * -1) 0 0 calc(var(--pointer-size) * -1);
+    border-color: rgba(242, 0, 137, 0.9);
+    background: rgba(242, 0, 137, 0.14);
+}
+
+body.kyn-cursor-hidden .kyn-cursor,
+body.kyn-cursor-hidden .kyn-cursor-ring {
+    opacity: 0;
+}
+
+/* hide the native arrow only once ours is actually on screen */
+@media (hover: hover) and (pointer: fine) {
+    body.kyn-cursor-ready,
+    body.kyn-cursor-ready a,
+    body.kyn-cursor-ready button,
+    body.kyn-cursor-ready select,
+    body.kyn-cursor-ready summary,
+    body.kyn-cursor-ready [role="button"] {
+        cursor: none;
+    }
+
+    /* text and form fields keep their own cursors - the caret matters more */
+    body.kyn-cursor-ready input,
+    body.kyn-cursor-ready textarea {
+        cursor: auto;
+    }
+}
+
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
     body,
     body * {
         cursor: auto !important;
     }
 
-    
+    .kyn-cursor,
+    .kyn-cursor-ring {
+        display: none !important;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -648,6 +746,7 @@ main:focus {
 /* --- CTA band --- */
 .site-footer__cta {
     position: relative;
+    isolation: isolate;   /* keeps the ::before surface above the footer's own background */
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
@@ -656,10 +755,23 @@ main:focus {
     padding: 34px 40px;
     border: 1px solid rgba(242, 0, 137, 0.3);
     border-radius: 24px;
+    background: transparent;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+/* An element that carries `backdrop-filter` clips its descendants' painting to its
+   own border box, which was slicing the flat edge off the CTA button's pink glow.
+   The blurred surface lives on this layer instead, so the buttons stay unclipped. */
+.site-footer__cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
     background: linear-gradient(135deg, rgba(242, 0, 137, 0.14), rgba(109, 0, 193, 0.16)), rgba(12, 8, 22, 0.94);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    pointer-events: none;
 }
 
 .site-footer__cta h2 {

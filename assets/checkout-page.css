@@ -113,3 +113,30 @@ a { text-decoration: none; color: inherit; }
 .trial-banner b { color: #fff; }
 
 @media (max-width: 640px) { .checkout-steps li { font-size: 0.8rem; padding: 8px 14px; } }
+
+/* Both billing periods stay mounted so Whop only ever hydrates them once; they
+   share one grid cell, and only the active one is visible and clickable. */
+.whop-host {
+    display: grid;
+}
+
+.whop-plan {
+    grid-area: 1 / 1;
+    min-width: 0;
+    transition: opacity 0.2s ease;
+}
+
+.whop-plan[data-active="false"] {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.whop-plan[data-active="true"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .whop-plan { transition: none; }
+}

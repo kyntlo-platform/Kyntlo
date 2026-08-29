@@ -716,6 +716,66 @@
         });
     }
 
+    /* The brand cursor: a pink dot that tracks the pointer exactly, plus a ring that
+       eases in behind it. Fine pointers only, and never when reduced motion is asked
+       for - the CSS hands the system cursor back in both of those cases. */
+    function setupBrandCursor() {
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (document.querySelector(".kyn-cursor")) return;
+
+        const dot = document.createElement("div");
+        dot.className = "kyn-cursor";
+        const ring = document.createElement("div");
+        ring.className = "kyn-cursor-ring";
+        dot.setAttribute("aria-hidden", "true");
+        ring.setAttribute("aria-hidden", "true");
+        document.body.append(ring, dot);
+
+        const INTERACTIVE = 'a, button, select, summary, [role="button"], .billing-card, .tool-badge';
+        let x = window.innerWidth / 2, y = window.innerHeight / 2;
+        let ringX = x, ringY = y, raf = 0;
+
+        function frame() {
+            /* the ring lags by a fixed fraction each frame, which reads as weight */
+            ringX += (x - ringX) * 0.18;
+            ringY += (y - ringY) * 0.18;
+            ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+            raf = window.requestAnimationFrame(frame);
+        }
+
+        document.addEventListener("pointermove", function (event) {
+            if (event.pointerType !== "mouse") return;
+            x = event.clientX;
+            y = event.clientY;
+            dot.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+            if (!document.body.classList.contains("kyn-cursor-ready")) {
+                ringX = x; ringY = y;
+                document.body.classList.add("kyn-cursor-ready");
+                if (!raf) raf = window.requestAnimationFrame(frame);
+            }
+            document.body.classList.remove("kyn-cursor-hidden");
+            const over = event.target.closest && event.target.closest(INTERACTIVE);
+            document.body.classList.toggle("kyn-cursor-active", !!over);
+        }, { passive: true });
+
+        /* leaving the window, or switching to a tab, should not leave a dot stranded */
+        document.addEventListener("pointerleave", function () {
+            document.body.classList.add("kyn-cursor-hidden");
+        });
+        window.addEventListener("blur", function () {
+            document.body.classList.add("kyn-cursor-hidden");
+        });
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                window.cancelAnimationFrame(raf);
+                raf = 0;
+            } else if (!raf) {
+                raf = window.requestAnimationFrame(frame);
+            }
+        });
+    }
+
     function setupScrollState() {
         var ticking = false;
         var scrolled = null;
@@ -746,6 +806,7 @@
     setupSiteLocale();
     setupScrollState();
     setupHorizontalDrag();
+    setupBrandCursor();
     loadChatWidget();
     loadSilktideConsentManager();
 })();

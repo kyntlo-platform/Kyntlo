@@ -77,13 +77,13 @@
 
     /* Whop's loader replaces the placeholder div in-place, so it must be
        re-created (and the loader re-run) every time the selection changes. */
-    function mountWhop(packageKey, billingKey) {
-        const host = document.getElementById("whop-checkout-host");
-        if (!host) return;
-        const planId = (WHOP[packageKey] || {})[billingKey];
-        if (!planId) return;
-
-        host.innerHTML = "";
+    /* Whop's loader scans the DOM once and hydrates every [data-whop-checkout-plan-id]
+       node it finds. Re-injecting the script does not make it scan again, so the old
+       "rebuild the host and re-add the loader on every switch" approach left an empty
+       box after the first change of billing period. Both plans are mounted up front
+       instead, the loader runs exactly once, and switching only changes which of the
+       two mounted forms is shown. */
+    function planNode(planId, billingKey) {
         const node = document.createElement("div");
         node.setAttribute("data-whop-checkout-plan-id", planId);
         node.setAttribute("data-whop-checkout-theme", "light");
@@ -94,21 +94,37 @@
         node.setAttribute("data-whop-checkout-collect-phone-numbers", "true");
         node.setAttribute("data-whop-checkout-hide-address", "true");
         node.setAttribute("data-whop-checkout-promo-code", billingKey === "quarterly" ? QUARTER_PROMO : "");
-        host.appendChild(node);
+        return node;
+    }
 
-        const prev = document.getElementById("whop-loader");
-        if (prev) prev.remove();
-        const script = document.createElement("script");
-        script.id = "whop-loader";
-        script.async = true;
-        script.src = "https://js.whop.com/static/checkout/loader.js";
-        document.body.appendChild(script);
+    function mountWhop(packageKey, billingKey) {
+        const host = document.getElementById("whop-checkout-host");
+        if (!host) return;
+        const plans = WHOP[packageKey] || {};
+
+        host.innerHTML = "";
+        Object.keys(plans).forEach((key) => {
+            const slot = document.createElement("div");
+            slot.className = "whop-plan";
+            slot.dataset.billing = key;
+            slot.dataset.active = String(key === billingKey);
+            slot.appendChild(planNode(plans[key], key));
+            host.appendChild(slot);
+        });
+
+        /* one loader for the life of the page */
+        if (!document.getElementById("whop-loader")) {
+            const script = document.createElement("script");
+            script.id = "whop-loader";
+            script.async = true;
+            script.src = "https://js.whop.com/static/checkout/loader.js";
+            document.body.appendChild(script);
+        }
 
         /* If the payment script is blocked or slow, never leave an empty box. */
-        const existingNote = document.querySelector(".whop-fallback");
-        if (existingNote) existingNote.remove();
         window.setTimeout(function () {
             if (host.querySelector("iframe")) return;
+            if (document.querySelector(".whop-fallback")) return;
             const note = document.createElement("p");
             note.className = "whop-fallback";
             note.innerHTML = "The secure payment form is taking longer than usual to load. " +
@@ -119,6 +135,66 @@
         }, 7000);
     }
 
+    function showWhopPlan(billingKey) {
+        document.querySelectorAll("#whop-checkout-host .whop-plan").forEach((slot) => {
+            slot.dataset.active = String(slot.dataset.billing === billingKey);
+        });
+    }
+
+    /* Switching billing period only rewrites the copy that actually changes. The
+       payment forms stay mounted and keep whatever the customer has already typed. */
+    function applyBilling(packageKey, billingKey) {
+        const plan = packages[packageKey];
+        if (!plan) return;
+
+        const quarterly = billingKey === "quarterly";
+        const dueMonthly = quarterly ? plan.monthly * (1 - QUARTER_DISCOUNT) : plan.monthly;
+        const quarterTotal = plan.monthly * 3 * (1 - QUARTER_DISCOUNT);
+
+        const set = (selector, html) => {
+            const el = document.querySelector(selector);
+            if (el) el.innerHTML = html;
+        };
+
+        set("#checkout-billing-pill", quarterly ? "Quarterly &middot; 50% off first 3 months" : "Monthly");
+        const pill = document.getElementById("checkout-billing-pill");
+        if (pill) pill.classList.toggle("pill--deal", quarterly);
+
+        set("#checkout-price",
+            (quarterly ? '<span class="price-was">' + usd(plan.monthly) + "</span>" : "") +
+            '<span class="price-now">' + usd(dueMonthly) + "<small>/mo</small></span>" +
+            (quarterly ? '<span class="price-save">SAVE 50%</span>' : ""));
+
+        set("#checkout-note", quarterly
+            ? usd(quarterTotal) + " billed today for 3 months, then the package renews at " + usd(plan.monthly) + "/mo plus taxes."
+            : usd(plan.monthly) + " billed monthly, plus taxes. Cancel anytime.");
+
+        set("#checkout-trial-note",
+            "<b>You will not be charged today.</b> Your trial starts as soon as your workspace is created. After the 14 days end, <b>" +
+            (quarterly
+                ? usd(quarterTotal) + " will be charged once for your first 3 months"
+                : usd(plan.monthly) + " will be charged for your first month") +
+            "</b> unless you cancel first. Cancel any time before day 14 and you pay nothing.");
+
+        set("#checkout-payment-note",
+            "Complete your " + plan.name + " " + billingKey + " subscription below. Payments are processed securely by our payment provider.");
+
+        document.querySelectorAll(".billing-card").forEach((card) => {
+            const active = card.dataset.billing === billingKey;
+            card.classList.toggle("is-active", active);
+            card.setAttribute("aria-checked", String(active));
+        });
+
+        showWhopPlan(billingKey);
+
+        if (window.history && typeof window.history.replaceState === "function") {
+            const url = new URL(window.location.href);
+            url.searchParams.set("package", packageKey);
+            url.searchParams.set("billing", billingKey);
+            window.history.replaceState(null, "", url.toString());
+        }
+    }
+
     function renderCheckout() {
         const root = document.getElementById("checkout-page");
         if (!root) return;
@@ -127,8 +203,6 @@
         if (!params) return;
         const { packageKey, billingKey } = params;
         const plan = packages[packageKey];
-        const dueMonthly = billingKey === "quarterly" ? plan.monthly * (1 - QUARTER_DISCOUNT) : plan.monthly;
-        const quarterTotal = plan.monthly * 3 * (1 - QUARTER_DISCOUNT);
 
         document.title = plan.name + " Checkout | Kyntlo";
 
@@ -154,18 +228,12 @@
                         <article class="checkout-card">
                             <div class="order-topline">
                                 <span class="pill">${plan.name}</span>
-                                <span class="pill ${billingKey === "quarterly" ? "pill--deal" : ""}">${billingKey === "quarterly" ? "Quarterly &middot; 50% off first 3 months" : "Monthly"}</span>
+                                <span class="pill" id="checkout-billing-pill"></span>
                             </div>
                             <h2>Order summary</h2>
                             <p>${plan.summary}</p>
-                            <div class="checkout-price">
-                                ${billingKey === "quarterly" ? '<span class="price-was">' + usd(plan.monthly) + "</span>" : ""}
-                                <span class="price-now">${usd(dueMonthly)}<small>/mo</small></span>
-                                ${billingKey === "quarterly" ? '<span class="price-save">SAVE 50%</span>' : ""}
-                            </div>
-                            <p class="checkout-note">${billingKey === "quarterly"
-                                ? usd(quarterTotal) + " billed today for 3 months, then the package renews at " + usd(plan.monthly) + "/mo plus taxes."
-                                : usd(plan.monthly) + " billed monthly, plus taxes. Cancel anytime."}</p>
+                            <div class="checkout-price" id="checkout-price"></div>
+                            <p class="checkout-note" id="checkout-note"></p>
                             <ul class="checkout-list">
                                 ${plan.highlights.map((item) => "<li>" + item + "</li>").join("")}
                             </ul>
@@ -176,10 +244,10 @@
                             <div class="payment-card__inner">
                                 <div class="trial-banner">
                                     <span class="trial-banner__pill">14-day free trial</span>
-                                    <p><b>You will not be charged today.</b> Your trial starts as soon as your workspace is created. After the 14 days end, <b>${billingKey === "quarterly" ? usd(quarterTotal) + " will be charged once for your first 3 months" : usd(plan.monthly) + " will be charged for your first month"}</b> unless you cancel first. Cancel any time before day 14 and you pay nothing.</p>
+                                    <p id="checkout-trial-note"></p>
                                 </div>
                                 <h2>Secure payment</h2>
-                                <p>Complete your ${plan.name} ${billingKey} subscription below. Payments are processed securely by our payment provider.</p>
+                                <p id="checkout-payment-note"></p>
                             </div>
                             <div id="whop-checkout-host" class="whop-host"></div>
                         </aside>
@@ -189,16 +257,11 @@
         `;
 
         mountWhop(packageKey, billingKey);
+        applyBilling(packageKey, billingKey);
 
         root.querySelectorAll(".billing-card").forEach((card) => {
             card.addEventListener("click", () => {
-                const next = card.dataset.billing;
-                const url = new URL(window.location.href);
-                url.searchParams.set("package", packageKey);
-                url.searchParams.set("billing", next);
-                window.history.replaceState(null, "", url.toString());
-                renderCheckout();
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                applyBilling(packageKey, card.dataset.billing);
             });
         });
     }
