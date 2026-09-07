@@ -202,6 +202,53 @@
         }
     }
 
+    /* The payment form stays mounted while locked - Whop's loader scans the DOM once,
+       so removing and re-adding the host would leave a dead box. We disable interaction
+       with a class instead, and record the acknowledgement so it can be evidenced. */
+    const TERMS_VERSION = "2026-09-07";
+    const CONSENT_KEY = "kyntloTermsAccepted";
+
+    function recordConsent(packageKey, billingKey) {
+        try {
+            window.localStorage.setItem(CONSENT_KEY, JSON.stringify({
+                termsVersion: TERMS_VERSION,
+                acceptedAt: new Date().toISOString(),
+                documents: ["terms", "privacy", "refund"],
+                package: packageKey || null,
+                billing: billingKey || null
+            }));
+        } catch (error) {
+            /* Private browsing can refuse storage. The gate still works for this visit. */
+        }
+    }
+
+    function wireConsent(packageKey, billingKey) {
+        const box = document.getElementById("consentAccept");
+        const host = document.getElementById("whop-checkout-host");
+        const note = document.getElementById("consentNote");
+        if (!box || !host) return;
+
+        function apply() {
+            const ok = box.checked;
+            host.classList.toggle("is-locked", !ok);
+            host.setAttribute("aria-hidden", String(!ok));
+            if (!note) return;
+            if (ok) {
+                recordConsent(packageKey, billingKey);
+                note.textContent = "Accepted on " + new Date().toLocaleDateString(undefined, {
+                    year: "numeric", month: "long", day: "numeric"
+                }) + ". Terms version " + TERMS_VERSION + ".";
+                note.classList.add("is-accepted");
+            } else {
+                note.textContent = "Tick the box to unlock the payment form.";
+                note.classList.remove("is-accepted");
+            }
+        }
+
+        box.addEventListener("change", apply);
+        apply();
+    }
+
     function renderCheckout() {
         const root = document.getElementById("checkout-page");
         if (!root) return;
@@ -256,7 +303,15 @@
                                 <h2>Secure payment</h2>
                                 <p id="checkout-payment-note"></p>
                             </div>
-                            <div id="whop-checkout-host" class="whop-host"></div>
+                            <div class="consent-gate" id="consentGate">
+                                <label class="consent-check">
+                                    <input type="checkbox" id="consentAccept">
+                                    <span class="consent-box" aria-hidden="true"></span>
+                                    <span class="consent-copy">I have read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Use</a>, the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and the <a href="refund.html" target="_blank" rel="noopener">Refund Policy</a>. I confirm I am at least 18 and authorised to buy for my business.</span>
+                                </label>
+                                <p class="consent-note" id="consentNote">Tick the box to unlock the payment form.</p>
+                            </div>
+                            <div id="whop-checkout-host" class="whop-host is-locked"></div>
                         </aside>
                     </div>
                 </div>
@@ -265,6 +320,7 @@
 
         mountWhop(packageKey, billingKey);
         applyBilling(packageKey, billingKey);
+        wireConsent(packageKey, billingKey);
 
         root.querySelectorAll(".billing-card").forEach((card) => {
             card.addEventListener("click", () => {

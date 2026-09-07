@@ -140,3 +140,92 @@ a { text-decoration: none; color: inherit; }
 @media (prefers-reduced-motion: reduce) {
     .whop-plan { transition: none; }
 }
+
+/* ---------- Terms acknowledgement gate ----------
+   The payment host stays in the DOM while locked because Whop's loader scans
+   once; we block interaction rather than unmount it. */
+.consent-gate {
+    margin: 0 22px 18px;
+    padding: 18px 20px;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.consent-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.consent-check input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.consent-box {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    border-radius: 7px;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.2s ease, border-color 0.2s ease;
+    position: relative;
+}
+
+.consent-check input:checked + .consent-box {
+    background: linear-gradient(135deg, #f20089, #6d00c1);
+    border-color: transparent;
+}
+
+.consent-check input:checked + .consent-box::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+}
+
+.consent-check input:focus-visible + .consent-box {
+    outline: 2px solid #ff1aa3;
+    outline-offset: 3px;
+}
+
+.consent-copy {
+    font-size: 0.86rem;
+    line-height: 1.62;
+    color: var(--text-muted, #a49fb8);
+}
+
+.consent-copy a {
+    color: #ff1aa3;
+    font-weight: 700;
+}
+
+.consent-note {
+    margin: 12px 0 0 34px;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted, #a49fb8);
+    opacity: 0.85;
+}
+
+.consent-note.is-accepted { color: #35e0a1; opacity: 1; }
+
+.whop-host.is-locked {
+    opacity: 0.35;
+    filter: grayscale(0.6);
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
