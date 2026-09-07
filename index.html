@@ -285,6 +285,23 @@
         .usage-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 6px; }
         .usage-desc { flex: 1; color: var(--muted); font-size: 0.84rem; line-height: 1.55; margin-bottom: 12px; }
         .usage-cost { align-self: flex-start; font-family: var(--font-mono); font-weight: 700; font-size: 0.8rem; color: var(--brand-hot); background: rgba(242, 0, 137, 0.08); border: 1px dashed rgba(242, 0, 137, 0.35); border-radius: 8px; padding: 7px 12px; }
+        /* ---------- Ask AI ---------- */
+        .askai-section { padding: 96px 0 40px; }
+        .askai-shell { max-width: 880px; margin: 0 auto; text-align: center; }
+        .askai-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+        .askai-shell h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.12; margin-bottom: 16px; }
+        .askai-lede { color: var(--muted); font-size: 1.02rem; line-height: 1.7; max-width: 680px; margin: 0 auto 34px; }
+        .askai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 22px; }
+        .askai-card { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 22px 24px; border-radius: 18px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); text-decoration: none; transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.28s ease, background-color 0.28s ease; }
+        .askai-card:hover, .askai-card:focus-visible { transform: translateY(-4px); border-color: rgba(242, 0, 137, 0.45); background: rgba(242, 0, 137, 0.06); }
+        .askai-name { font-family: var(--font-display); font-size: 1.16rem; font-weight: 700; color: var(--ink); }
+        .askai-action { font-size: 0.86rem; font-weight: 600; color: var(--brand-hot); }
+        .askai-foot { color: var(--muted); font-size: 0.82rem; line-height: 1.6; max-width: 620px; margin: 0 auto; opacity: 0.85; }
+        @media (max-width: 640px) { .askai-section { padding: 68px 0 30px; } }
+        .usage-cat { grid-column: 1 / -1; display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin: 18px 0 2px; padding-bottom: 8px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+        .usage-cat:first-child { margin-top: 0; }
+        .usage-cat-note { font-family: var(--font-body); font-size: 0.74rem; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--muted); opacity: 0.8; }
+        .usage-region { display: inline-block; margin-left: 6px; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); vertical-align: middle; }
 
         /* ---------- Testimonials ---------- */
         .testimonials { background: linear-gradient(180deg, transparent, rgba(242, 0, 137, 0.04) 40%, transparent); }
@@ -656,7 +673,7 @@
                     <span><b>✦</b> 14-day free trial</span>
                     <span><b>✦</b> No setup fees</span>
                     <span><b>✦</b> Cancel anytime</span>
-                    <span><b>✦</b> Wholesale usage rates, no markup</span>
+                    <span><b>✦</b> Every usage rate published</span>
                 </div>
             </div>
 
@@ -784,33 +801,60 @@
 
             <div class="usage-accordion-wrapper reveal">
                 <button class="usage-accordion-btn" id="usageAccordionBtn" type="button" aria-expanded="false" aria-controls="usageAccordionContent">
-                    <span>View Wholesale Usage Costs &amp; Add-ons</span>
+                    <span>View Usage Rates &amp; Add-ons</span>
                     <span class="usage-accordion-icon" aria-hidden="true">↓</span>
                 </button>
                 <div class="usage-accordion-content" id="usageAccordionContent">
                     <div class="usage-accordion-inner">
-                        <p class="usage-note">Pay only for the telecom and AI resources you actually use. No markup.</p>
+                        <p class="usage-note">You pay for the messages, minutes and AI you actually use — nothing else. Every rate we charge is on this page, so your bill never contains a line you have not already seen. Telecom and WhatsApp rates are set per country and can change; we update this table when they do.</p>
                         <div class="usage-grid">
-                            <div class="usage-item"><div class="usage-title">Email Infrastructure</div><div class="usage-desc">Send unlimited emails to unlimited contacts with no list-size fees.</div><div class="usage-cost">$0.00135 / email</div></div>
-                            <div class="usage-item"><div class="usage-title">Email Verification</div><div class="usage-desc">Automatically check and recheck addresses every 90 days.</div><div class="usage-cost">$0.005 / email</div></div>
-                            <div class="usage-item"><div class="usage-title">SMS Messaging</div><div class="usage-desc">Send SMS messages to your list to close deals faster.</div><div class="usage-cost">$0.0158 / segment</div></div>
-                            <div class="usage-item"><div class="usage-title">Making Calls</div><div class="usage-desc">Make calls in the system to track and manage all call activity.</div><div class="usage-cost">$0.028 / min</div></div>
-                            <div class="usage-item"><div class="usage-title">Receiving Calls</div><div class="usage-desc">Track who is calling and view call data for each customer.</div><div class="usage-cost">$0.017 / min</div></div>
-                            <div class="usage-item"><div class="usage-title">Premium Triggers</div><div class="usage-desc">Skip complex Zapier setups. Connect directly to Google Sheets or webhooks.</div><div class="usage-cost">$0.02 / action</div></div>
-                            <div class="usage-item"><div class="usage-title">Content AI</div><div class="usage-desc">Use AI to write high-converting copy and generate AI images.</div><div class="usage-cost">$0.18 / 1k words</div></div>
-                            <div class="usage-item"><div class="usage-title">Conversation AI</div><div class="usage-desc">Automate and enhance customer interactions naturally.</div><div class="usage-cost">$0.04 / message</div></div>
-                            <div class="usage-item"><div class="usage-title">Funnels AI</div><div class="usage-desc">Simplify funnel creation with effective, customized designs.</div><div class="usage-cost">$1.98 / funnel</div></div>
-                            <div class="usage-item"><div class="usage-title">Reviews AI</div><div class="usage-desc">Automate customer feedback and save time on review management.</div><div class="usage-cost">$0.16 / response</div></div>
-                            <div class="usage-item"><div class="usage-title">Workflow AI</div><div class="usage-desc">Automate complex processes with AI-powered workflows.</div><div class="usage-cost">$0.06 / execution</div></div>
-                            <div class="usage-item"><div class="usage-title">Workflow Pro Plan</div><div class="usage-desc">10,000 premium workflow executions, up to 60% cheaper.</div><div class="usage-cost">$14.99 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Ad Manager</div><div class="usage-desc">Launch and manage ad campaigns easily with proven templates.</div><div class="usage-cost">$29 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Auto-Complete Address</div><div class="usage-desc">Fills in details to speed up checkout for a smoother experience.</div><div class="usage-cost">$0.0044 / search</div></div>
-                            <div class="usage-item"><div class="usage-title">Branded Client App</div><div class="usage-desc">Launch your own branded iOS and Android app with no coding.</div><div class="usage-cost">$79 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Dedicated IP</div><div class="usage-desc">Secure your sending reputation for better email deliverability.</div><div class="usage-cost">$88.50 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Domain Purchase</div><div class="usage-desc">Find and register the perfect domain for your business.</div><div class="usage-cost">$13 / domain</div></div>
-                            <div class="usage-item"><div class="usage-title">WhatsApp Integration</div><div class="usage-desc">Integrate WhatsApp to seamlessly send and receive messages.</div><div class="usage-cost">$29.99 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">WordPress Hosting</div><div class="usage-desc">Seamlessly integrate WordPress to build and manage sites.</div><div class="usage-cost">$14.99 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Yext Listings</div><div class="usage-desc">Keep business listings accurate across multiple platforms.</div><div class="usage-cost">$75 / month</div></div>
+                            <div class="usage-cat">Messaging</div>
+                            <div class="usage-item"><div class="usage-title">Email Sending</div><div class="usage-desc">Send to unlimited contacts with no list-size fees.</div><div class="usage-cost">$1.36 / 1,000 emails</div></div>
+                            <div class="usage-item"><div class="usage-title">Email Validation</div><div class="usage-desc">Check and recheck addresses so your sender reputation stays clean.</div><div class="usage-cost">$5.00 / 1,000 checks</div></div>
+                            <div class="usage-item"><div class="usage-title">Outbound SMS <span class="usage-region">US</span></div><div class="usage-desc">Text customers directly from the conversation they are already in.</div><div class="usage-cost">$24.90 / 1,000 segments</div></div>
+                            <div class="usage-item"><div class="usage-title">Inbound SMS <span class="usage-region">US</span></div><div class="usage-desc">Receive replies straight into the unified inbox.</div><div class="usage-cost">$34.90 / 1,000 segments</div></div>
+
+                            <div class="usage-cat">WhatsApp Business API <span class="usage-cat-note">Meta sets these rates per country</span></div>
+                            <div class="usage-item"><div class="usage-title">Utility &amp; Authentication <span class="usage-region">Egypt</span></div><div class="usage-desc">Confirmations, reminders, receipts and one-time codes.</div><div class="usage-cost">$7.20 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Marketing <span class="usage-region">Egypt</span></div><div class="usage-desc">Promotional and reactivation campaigns.</div><div class="usage-cost">$128.80 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Utility &amp; Authentication <span class="usage-region">North America</span></div><div class="usage-desc">Confirmations, reminders, receipts and one-time codes.</div><div class="usage-cost">$6.80 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Marketing <span class="usage-region">North America</span></div><div class="usage-desc">Promotional and reactivation campaigns.</div><div class="usage-cost">$50.00 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Utility &amp; Authentication <span class="usage-region">Italy</span></div><div class="usage-desc">Confirmations, reminders, receipts and one-time codes.</div><div class="usage-cost">$60.00 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Marketing <span class="usage-region">Italy</span></div><div class="usage-desc">Promotional and reactivation campaigns.</div><div class="usage-cost">$159.00 / 1,000</div></div>
+
+                            <div class="usage-cat">Voice</div>
+                            <div class="usage-item"><div class="usage-title">Outbound Calls</div><div class="usage-desc">Calls placed from the platform, logged against the customer record.</div><div class="usage-cost">$0.03 / min</div></div>
+                            <div class="usage-item"><div class="usage-title">Inbound Calls</div><div class="usage-desc">Calls received on web, mobile or desk phone.</div><div class="usage-cost">$0.02 / min</div></div>
+                            <div class="usage-item"><div class="usage-title">Call Recording</div><div class="usage-desc">Record calls where you have consent to do so.</div><div class="usage-cost">$0.005 / min</div></div>
+                            <div class="usage-item"><div class="usage-title">Recording Storage</div><div class="usage-desc">Keep recordings available for review and training.</div><div class="usage-cost">$0.001 / min / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Call Transcription</div><div class="usage-desc">Turn every call into searchable text with a summary.</div><div class="usage-cost">$0.048 / min</div></div>
+                            <div class="usage-item"><div class="usage-title">Answering Machine Detection</div><div class="usage-desc">Skip voicemail on outbound campaigns instead of wasting the call.</div><div class="usage-cost">$0.015 / call</div></div>
+                            <div class="usage-item"><div class="usage-title">Voicemail Drops</div><div class="usage-desc">Leave a pre-recorded message without ringing the phone.</div><div class="usage-cost">$0.036 / min</div></div>
+                            <div class="usage-item"><div class="usage-title">Conference Calls</div><div class="usage-desc">Multi-party calls, billed per participant minute.</div><div class="usage-cost">$0.0036 – $0.008 / participant min</div></div>
+                            <div class="usage-item"><div class="usage-title">Text-to-Speech</div><div class="usage-desc">Natural spoken voice for agents and voicemail.</div><div class="usage-cost">$0.00168 / 100 chars</div></div>
+
+                            <div class="usage-cat">AI</div>
+                            <div class="usage-item"><div class="usage-title">Conversation AI</div><div class="usage-desc">Each customer message and the AI reply that answers it.</div><div class="usage-cost">$8.00 / 1,000 exchanges</div></div>
+                            <div class="usage-item"><div class="usage-title">Reviews AI</div><div class="usage-desc">Drafted replies to customer reviews.</div><div class="usage-cost">$20.00 / 1,000 replies</div></div>
+                            <div class="usage-item"><div class="usage-title">Premium Workflow Executions</div><div class="usage-desc">Direct connections to Google Sheets, webhooks and external services.</div><div class="usage-cost">$20.00 / 1,000 runs</div></div>
+                            <div class="usage-item"><div class="usage-title">Content AI — Writing</div><div class="usage-desc">Captions, emails, page copy and message variations in your brand voice.</div><div class="usage-cost">$0.189 / 1,000 words</div></div>
+                            <div class="usage-item"><div class="usage-title">Content AI — Images</div><div class="usage-desc">Branded graphics generated from a plain-language prompt.</div><div class="usage-cost">$0.126 / image</div></div>
+
+                            <div class="usage-cat">AI Employee</div>
+                            <div class="usage-item"><div class="usage-title">AI Employee — Growth</div><div class="usage-desc">The AI agent bundle for a single busy location.</div><div class="usage-cost">$100 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">AI Employee — Unlimited</div><div class="usage-desc">Uncapped AI agent usage for high-volume operations.</div><div class="usage-cost">$194 / month</div></div>
+
+                            <div class="usage-cat">Optional add-ons</div>
+                            <div class="usage-item"><div class="usage-title">Branded Client App</div><div class="usage-desc">Your own iOS and Android client portal, no code required.</div><div class="usage-cost">$98 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Dedicated IP</div><div class="usage-desc">Isolate your email sending reputation from everyone else's.</div><div class="usage-cost">$118 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Online Listings</div><div class="usage-desc">Keep name, address and hours correct across directories.</div><div class="usage-cost">$60 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Premium Prospecting</div><div class="usage-desc">Research and build targeted outbound lists.</div><div class="usage-cost">$58 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">SEO Suite</div><div class="usage-desc">Keyword research, audits and rank tracking.</div><div class="usage-cost">$158 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">WhatsApp Integration</div><div class="usage-desc">Connect a WhatsApp Business number to the inbox.</div><div class="usage-cost">$20 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Workflow Pro</div><div class="usage-desc">Bulk premium executions at a lower effective rate.</div><div class="usage-cost">$20 – $100 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">WordPress Hosting</div><div class="usage-desc">Managed hosting, scaled to the size of the site.</div><div class="usage-cost">$20 – $994 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Domain Registration</div><div class="usage-desc">Buy and connect a domain without leaving the platform.</div><div class="usage-cost">Varies by TLD</div></div>
+                            <div class="usage-item"><div class="usage-title">External AI Models</div><div class="usage-desc">Call your own model provider from inside a workflow.</div><div class="usage-cost">Varies by model</div></div>
                         </div>
                     </div>
                 </div>
@@ -867,6 +911,32 @@
                         <span class="who"><strong>Head of acquisition</strong><span>Home services network</span></span>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ASK AI ================= -->
+    <section id="ask-ai" class="askai-section">
+        <div class="container">
+            <div class="askai-shell reveal">
+                <span class="askai-eyebrow">Don't take our word for it</span>
+                <h2>Ask an AI what <span class="text-gradient">Kyntlo does.</span></h2>
+                <p class="askai-lede">We would rather you checked. Open any of these and an assistant will walk you through what Kyntlo is, how the Voice and Chat agents work, what onboarding looks like, and how the pricing is built — in plain language, from a business owner's point of view.</p>
+                <div class="askai-grid">
+                    <a class="askai-card" href="https://chatgpt.com/?q=Explain+how+Kyntlo+%28kyntlo.ai%29+helps+businesses+automate+operations+and+replace+fragmented+tools+with+AI.+Detail+what+the+service+includes+step-by-step%3A+core+capabilities%2C+autonomous+Voice+and+Chat+AI+agents%2C+the+onboarding+process%2C+post-launch+support%2C+pricing+model.+Explain+it+simply+from+a+business+owner+perspective." target="_blank" rel="noopener noreferrer">
+                        <span class="askai-name">ChatGPT</span>
+                        <span class="askai-action">Ask about Kyntlo <span aria-hidden="true">↗</span></span>
+                    </a>
+                    <a class="askai-card" href="https://claude.ai/new?q=Explain%20how%20Kyntlo%20(kyntlo.ai)%20helps%20businesses%20automate%20operations%20and%20replace%20fragmented%20tools%20with%20AI.%20Detail%20what%20the%20service%20includes%20step-by-step%3A%20core%20capabilities%2C%20autonomous%20Voice%20and%20Chat%20AI%20agents%2C%20the%20onboarding%20process%2C%20post-launch%20support%2C%20pricing%20model.%20Explain%20it%20simply%20from%20a%20business%20owner%20perspective." target="_blank" rel="noopener noreferrer">
+                        <span class="askai-name">Claude</span>
+                        <span class="askai-action">Ask about Kyntlo <span aria-hidden="true">↗</span></span>
+                    </a>
+                    <a class="askai-card" href="https://www.perplexity.ai/search?q=Explain+how+Kyntlo+(kyntlo.ai)+helps+businesses+automate+operations+and+replace+fragmented+tools+with+AI.+Detail+what+the+service+includes+step-by-step%3A+core+capabilities%2C+autonomous+Voice+and+Chat+AI+agents%2C+the+onboarding+process%2C+post-launch+support%2C+pricing+model.+Explain+it+simply+from+a+business+owner+perspective." target="_blank" rel="noopener noreferrer">
+                        <span class="askai-name">Perplexity</span>
+                        <span class="askai-action">Ask about Kyntlo <span aria-hidden="true">↗</span></span>
+                    </a>
+                </div>
+                <p class="askai-foot">These open a fresh conversation with a question already written. Answers are generated by each assistant and are not written or reviewed by Kyntlo.</p>
             </div>
         </div>
     </section>
