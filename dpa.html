@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Processing Agreement | Kyntlo</title>
+    <meta name="description" content="The Kyntlo Data Processing Agreement: roles, instructions, security, sub-processors, international transfers, breach notification, audit rights and deletion on termination.">
+    <link rel="canonical" href="https://kyntlo.ai/dpa">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css?v=20260907" rel="stylesheet">
+    <script src="assets/site-shell.js?v=20260907" defer></script>
+    <style>
+        :root {
+            --surface-light: rgba(255, 255, 255, 0.03);
+            --bg-color: #07050f;
+            --surface-color: rgba(255, 255, 255, 0.04);
+            --text-main: #f5f3fa;
+            --text-muted: #a49fb8;
+            --border-color: rgba(255, 255, 255, 0.09);
+            --brand-pink: #f20089;
+            --brand-purple: #6d00c1;
+            --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            /* Text needs contrast the decorative gradient does not: #6d00c1 measures
+               2.33:1 on the dark ground, #b06bff measures 6.16:1. */
+            --gradient-text: linear-gradient(135deg, var(--brand-pink), #b06bff);
+            --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+        }
+
+        html { background: var(--bg-color); }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .legal-header {
+            padding: 96px 0 62px;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--surface-color);
+            text-align: center;
+        }
+
+        .legal-header h1 {
+            margin-bottom: 14px;
+            background: var(--gradient-kinetic);
+            background-clip: text;
+            color: transparent;
+            font-size: clamp(2.6rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.08;
+        }
+
+        .legal-header p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 1.08rem;
+        }
+
+        .legal-layout {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: 56px;
+            padding: 72px 20px 100px;
+        }
+
+
+
+
+        .legal-content {
+            max-width: 860px;
+        }
+
+        .legal-card {
+            margin-bottom: 26px;
+            padding: 34px;
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            background: var(--surface-light);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .legal-card h2 {
+            margin-bottom: 16px;
+            color: var(--text-main);
+            font-size: 1.58rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .legal-card p,
+        .legal-card li {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            line-height: 1.78;
+        }
+
+        .legal-card p {
+            margin-bottom: 14px;
+        }
+
+        .legal-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-card ul {
+            margin: 10px 0 0 22px;
+        }
+
+        .legal-card li {
+            margin-bottom: 10px;
+        }
+
+        .legal-card b {
+            color: var(--text-main);
+        }
+
+        .notice {
+            border-color: rgba(109, 0, 193, 0.24);
+            background: rgba(109, 0, 193, 0.045);
+        }
+
+        @media (max-width: 900px) {
+            .legal-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding-top: 54px;
+            }
+
+            .legal-toc {
+                position: static;
+            }
+        }
+    
+        /* ---------- Animated legal TOC (scroll-spy) ---------- */
+        html { scroll-behavior: smooth; }
+        .legal-card, .legal-content section[id] { scroll-margin-top: 130px; }
+
+        .legal-toc {
+            position: sticky;
+            top: 112px;
+            align-self: start;
+            padding: 24px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .legal-toc h2 {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .legal-toc a {
+            position: relative;
+            display: block;
+            margin-bottom: 4px;
+            padding: 10px 14px 10px 18px;
+            border-radius: 11px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.35;
+            transition: color 0.28s ease, background 0.28s ease, transform 0.28s cubic-bezier(0.34, 1.4, 0.5, 1), padding-left 0.28s ease;
+        }
+
+        .legal-toc a::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 50%;
+            width: 3px;
+            height: 0;
+            border-radius: 3px;
+            background: linear-gradient(180deg, #f20089, #6d00c1);
+            transform: translateY(-50%);
+            transition: height 0.32s cubic-bezier(0.34, 1.4, 0.5, 1);
+        }
+
+        .legal-toc a:hover,
+        .legal-toc a:focus-visible {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(3px);
+        }
+
+        .legal-toc a:hover::before,
+        .legal-toc a:focus-visible::before { height: 42%; }
+
+        .legal-toc a.is-active {
+            color: #fff;
+            background: linear-gradient(90deg, rgba(242, 0, 137, 0.16), rgba(109, 0, 193, 0.06));
+            padding-left: 22px;
+        }
+
+        .legal-toc a.is-active::before { height: 62%; box-shadow: 0 0 14px rgba(242, 0, 137, 0.7); }
+
+        .legal-toc__progress {
+            height: 3px;
+            margin-top: 16px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        .legal-toc__progress span {
+            display: block;
+            height: 100%;
+            width: 0%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #f20089, #6d00c1);
+            transition: width 0.18s linear;
+        }
+
+        /* section reveal */
+        .legal-card {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .legal-card.is-in { opacity: 1; transform: translateY(0); }
+        .legal-card.is-target { border-color: rgba(242, 0, 137, 0.45); box-shadow: 0 0 0 1px rgba(242, 0, 137, 0.18), 0 22px 60px rgba(0, 0, 0, 0.4); }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .legal-card { opacity: 1; transform: none; }
+        }
+    </style>
+    <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
+</head>
+<body data-theme="dark">
+    <nav></nav>
+
+    <header class="legal-header">
+        <div class="container">
+            <h1>Data Processing Agreement</h1>
+            <p>Version 1.0 — 7 September 2026. This DPA applies where Kyntlo processes personal data on your behalf. It forms part of the <a href="terms.html">Terms of Use</a> and takes precedence over them on data protection. To have it countersigned, email <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a>.</p>
+        </div>
+    </header>
+
+    <main class="container legal-layout">
+        <aside class="legal-toc" aria-label="DPA sections">
+            <h2>Sections</h2>
+            <a href="#roles">Roles</a>
+            <a href="#scope">Scope of Processing</a>
+            <a href="#instructions">Our Instructions</a>
+            <a href="#confidentiality">Confidentiality</a>
+            <a href="#security">Security</a>
+            <a href="#subprocessors">Sub-processors</a>
+            <a href="#transfers">International Transfers</a>
+            <a href="#assistance">Assistance to You</a>
+            <a href="#breach">Breach Notification</a>
+            <a href="#audit">Audit</a>
+            <a href="#deletion">Return and Deletion</a>
+            <a href="#liability">Liability</a>
+            <a href="#annex-a">Annex A — Details</a>
+            <a href="#annex-b">Annex B — Security</a>
+            <a href="#annex-c">Annex C — Sub-processors</a>
+        </aside>
+
+        <div class="legal-content">
+            <section class="legal-card notice" id="roles">
+                <h2>1. The Parties and Their Roles</h2>
+                <p>This Data Processing Agreement is between you (the <b>Controller</b>) and Kyntlo for Artificial Intelligence Tools, Building Lotus2 North90, Cairo Governorate 11234, Egypt (the <b>Processor</b>).</p>
+                <p>You decide why and how personal data about your customers, leads, patients or members is processed. Kyntlo processes it only to provide the Services and only on your documented instructions. You are responsible for having a lawful basis for that processing and for giving the people concerned the information they are entitled to.</p>
+                <p>Kyntlo remains an independent controller for its own account data — the names and contact details of the people who administer your Kyntlo account, billing records, and support correspondence. That processing is described in the <a href="privacy.html">Privacy Policy</a>, not here.</p>
+                <p>This DPA applies to the extent that Egypt's Personal Data Protection Law (Law No. 151 of 2020), the EU General Data Protection Regulation, the UK GDPR, or a US state privacy law applies to the processing.</p>
+            </section>
+
+            <section class="legal-card" id="scope">
+                <h2>2. Scope, Subject Matter and Duration</h2>
+                <p>The subject matter is the provision of the Kyntlo platform and any configuration or managed services you have purchased. Processing lasts for as long as your subscription is active, plus the retention windows set out in section 11.</p>
+                <p>The categories of data subject, the categories of personal data, and the processing operations are set out in <a href="#annex-a">Annex A</a>. If you need to process special categories of data — health, biometric, or similar — you must agree that in writing with us first, because it changes the configuration and the safeguards required.</p>
+            </section>
+
+            <section class="legal-card" id="instructions">
+                <h2>3. Processing Only on Your Instructions</h2>
+                <p>Kyntlo processes personal data only on your documented instructions, including for international transfers, unless required to do otherwise by law that applies to Kyntlo. Where a law requires processing beyond your instructions, Kyntlo will tell you before processing unless that law prohibits it on important grounds of public interest.</p>
+                <p>Your instructions are: this DPA, the Terms of Use, your configuration of the Services, and any written instruction you give us through support. If Kyntlo considers an instruction to infringe applicable data protection law, it will tell you without undue delay and may pause the affected processing until the matter is resolved.</p>
+                <p><b>Kyntlo does not:</b> sell your personal data; share it for cross-context behavioural advertising; use it for its own marketing; or use the content of your customer conversations, contacts or files to train general-purpose AI models. Aggregated, anonymised statistics that cannot identify you, your business or any individual may be used to operate and improve the Services.</p>
+            </section>
+
+            <section class="legal-card" id="confidentiality">
+                <h2>4. Confidentiality</h2>
+                <p>Kyntlo ensures that every person authorised to process personal data under this DPA — employees and contractors alike — is bound by a written duty of confidentiality that survives the end of their engagement, and receives training appropriate to their access. Access is granted on a need-to-know basis and removed when it is no longer needed.</p>
+            </section>
+
+            <section class="legal-card" id="security">
+                <h2>5. Security of Processing</h2>
+                <p>Kyntlo implements appropriate technical and organisational measures to protect personal data against accidental or unlawful destruction, loss, alteration, unauthorised disclosure or access, taking into account the state of the art, the cost of implementation, and the risk to the people concerned. Those measures are described in <a href="#annex-b">Annex B</a>.</p>
+                <p>Security measures evolve. Kyntlo may update them, provided the level of protection is not reduced.</p>
+            </section>
+
+            <section class="legal-card" id="subprocessors">
+                <h2>6. Sub-processors</h2>
+                <p>You give Kyntlo general authorisation to engage sub-processors to deliver the Services. The current list is in <a href="#annex-c">Annex C</a>.</p>
+                <p>Kyntlo imposes on every sub-processor data protection obligations no less protective than those in this DPA, and remains fully liable to you for their performance.</p>
+                <p>Kyntlo will give you at least <b>30 days' notice</b> before adding or replacing a sub-processor, by email to your registered account contact. If you reasonably object on data protection grounds within that period, we will work with you in good faith to find an alternative. If none is available, you may terminate the affected Services without penalty and receive a refund of fees paid for service not delivered.</p>
+            </section>
+
+            <section class="legal-card" id="transfers">
+                <h2>7. International Transfers</h2>
+                <p>Kyntlo operates from Egypt and uses infrastructure, communications and AI providers located in other countries. Personal data will therefore be transferred across borders.</p>
+                <p><b>From the EEA and the UK.</b> Egypt is not the subject of an adequacy decision by the European Commission or the UK government. Where personal data is transferred from the EEA or the UK to Egypt or to any other country without adequacy, the parties rely on the European Commission's Standard Contractual Clauses (Decision 2021/914), Module Two (controller to processor), which are incorporated into this DPA by reference and completed using Annexes A, B and C. For transfers originating in the UK, the UK International Data Transfer Addendum applies to those clauses. Where this DPA and the Standard Contractual Clauses conflict, the Clauses prevail.</p>
+                <p><b>From Egypt.</b> Cross-border transfers of personal data governed by Law No. 151 of 2020 are made in accordance with its cross-border transfer requirements and any authorisation required from the Personal Data Protection Centre.</p>
+                <p>Kyntlo will tell you if it becomes unable to meet these obligations, and you may suspend transfers or terminate the affected Services.</p>
+            </section>
+
+            <section class="legal-card" id="assistance">
+                <h2>8. Assistance to You</h2>
+                <p><b>Requests from individuals.</b> If a person contacts Kyntlo directly to access, correct, delete, port or object to the processing of data held in your workspace, Kyntlo will not action the request itself. It will refer the person to you and notify you without undue delay, because that data is yours to control. Kyntlo provides export, correction and deletion tools in the platform and will give reasonable additional assistance so you can respond within the period your law requires — one month under the GDPR, 45 days under the CCPA, and the period set by the PDPL.</p>
+                <p><b>Assessments and consultation.</b> Taking into account the nature of processing and the information available to it, Kyntlo will give you reasonable assistance with data protection impact assessments and with prior consultation of a supervisory authority.</p>
+            </section>
+
+            <section class="legal-card" id="breach">
+                <h2>9. Personal Data Breach</h2>
+                <p>Kyntlo will notify you <b>without undue delay, and in any case within 48 hours</b>, after becoming aware of a personal data breach affecting personal data processed under this DPA. The notification will describe, as far as known: the nature of the breach and the categories and approximate number of records and people affected; the likely consequences; the measures taken or proposed; and a contact point for more information. Where the full picture is not yet available, Kyntlo will provide information in phases without further undue delay.</p>
+                <p>This timing exists so that you can meet your own 72-hour obligation under GDPR Article 33 and the equivalent obligation under the PDPL. Notifying the supervisory authority and, where required, the individuals, is your responsibility as controller. Kyntlo will not make a public statement identifying you in connection with a breach without consulting you first, unless legally compelled.</p>
+                <p>You must likewise tell Kyntlo without undue delay if you become aware of a breach involving data in your workspace.</p>
+            </section>
+
+            <section class="legal-card" id="audit">
+                <h2>10. Records, Information and Audit</h2>
+                <p>Kyntlo maintains a record of the processing carried out on your behalf and will make available to you the information reasonably necessary to demonstrate compliance with this DPA.</p>
+                <p>You may audit that compliance <b>once in any twelve-month period</b>, on at least 30 days' written notice, during business hours, without unreasonably disrupting Kyntlo's operations, and subject to confidentiality. Additional audits may be carried out where a supervisory authority requires one or following a personal data breach affecting your data. Kyntlo may satisfy an audit request by providing an existing report or completed security questionnaire where that reasonably answers your questions. Audits are at your cost, except where the audit reveals material non-compliance.</p>
+            </section>
+
+            <section class="legal-card" id="deletion">
+                <h2>11. Return and Deletion</h2>
+                <p>You may export your data at any time while your subscription is active. After termination, your data remains available for export for <b>30 days</b>. After that period Kyntlo begins deletion: data is removed from live systems within <b>90 days</b> of termination and from routine backups within a further <b>90 days</b>.</p>
+                <p>Kyntlo may retain personal data where it is required to do so by law — for example tax and accounting records — in which case it continues to protect it under this DPA and processes it only for the purpose that requires retention. On written request, Kyntlo will confirm deletion.</p>
+            </section>
+
+            <section class="legal-card" id="liability">
+                <h2>12. Liability, Term and Precedence</h2>
+                <p>This DPA takes effect when you accept the Terms of Use or begin using the Services, whichever is earlier, and continues for as long as Kyntlo processes personal data on your behalf. Clauses that by their nature should survive termination do so.</p>
+                <p>Each party's liability under this DPA is subject to the limitations and exclusions of liability in the Terms of Use, except where applicable data protection law does not permit that limitation. Nothing in this DPA limits a data subject's rights.</p>
+                <p>Where this DPA conflicts with the Terms of Use, this DPA prevails on data protection matters. Where it conflicts with the Standard Contractual Clauses, the Clauses prevail. If a provision is found unenforceable, the rest remains in force.</p>
+                <p>This DPA is governed by the law stated in the Terms of Use, except where the Standard Contractual Clauses require the law of an EU member state, in which case that law governs those Clauses.</p>
+            </section>
+
+            <section class="legal-card" id="annex-a">
+                <h2>Annex A — Details of Processing</h2>
+                <p><b>Categories of data subject.</b> Your customers, leads, prospects, patients, clients or members; the people who contact you through any connected channel; and your own staff who use the workspace.</p>
+                <p><b>Categories of personal data.</b> Identifiers such as name, phone number, email address and postal address; appointment and booking records; message content across SMS, WhatsApp, web chat, social channels and email; call recordings and transcripts where you enable them; payment and invoice records; consent and opt-out status; notes, tags and custom fields you define; and technical data such as IP address and device information.</p>
+                <p><b>Special categories.</b> Not processed unless separately agreed in writing. Where you operate a clinic or similar and configure the workspace to hold health-related information, you must agree that with us in advance.</p>
+                <p><b>Nature and purpose of processing.</b> Collection, recording, organisation, storage, retrieval, use, transmission, disclosure to sub-processors, restriction and erasure — for the purpose of providing CRM, booking, messaging, voice, payment, reputation, automation and reporting functions, including AI features that answer, summarise, draft and prioritise on your behalf.</p>
+                <p><b>Frequency.</b> Continuous, for the duration of the subscription.</p>
+                <p><b>Duration.</b> The term of the subscription plus the retention periods in section 11.</p>
+            </section>
+
+            <section class="legal-card" id="annex-b">
+                <h2>Annex B — Technical and Organisational Measures</h2>
+                <p><b>Encryption.</b> Personal data is encrypted in transit using current TLS, and at rest.</p>
+                <p><b>Access control.</b> Role-based access on a least-privilege basis; individual named accounts; multi-factor authentication available on the platform and required for administrative access; access reviewed and revoked when no longer required.</p>
+                <p><b>Confidentiality.</b> Written confidentiality undertakings for all personnel with access, surviving the end of their engagement.</p>
+                <p><b>Resilience.</b> Regular backups, monitoring of availability, and restoration procedures.</p>
+                <p><b>Segregation.</b> Each customer workspace is logically separated so that one customer cannot access another's data.</p>
+                <p><b>Data export and erasure.</b> Self-service export and deletion available from the workspace, so you can meet data subject requests without depending on Kyntlo.</p>
+                <p><b>Sub-processor management.</b> Written terms with each sub-processor imposing equivalent obligations; review before engagement.</p>
+                <p><b>Incident response.</b> A defined process for detecting, escalating, investigating and notifying personal data breaches, with the notification timing set out in section 9.</p>
+                <p><b>AI-specific controls.</b> AI agents disclose that they are AI systems; escalation to a human is configurable and tested before go-live; customer content is not used to train general-purpose models.</p>
+                <p>These measures are reviewed periodically and may be updated provided protection is not reduced.</p>
+            </section>
+
+            <section class="legal-card" id="annex-c">
+                <h2>Annex C — Sub-processors</h2>
+                <p>Kyntlo engages the following categories of sub-processor to deliver the Services. The named, current list — including each provider's identity, processing location and function — is maintained by Kyntlo and provided on request to <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a>, and forms part of this Annex.</p>
+                <p><b>Cloud hosting and storage</b> — operation of the platform and storage of workspace data.<br>
+                <b>Telecommunications and messaging carriers</b> — delivery of SMS, voice calls and WhatsApp messages, including the number and routing providers for each country served.<br>
+                <b>Email delivery</b> — sending and deliverability of transactional and marketing email.<br>
+                <b>AI and speech providers</b> — language model inference, speech-to-text and text-to-speech for the voice and chat agents.<br>
+                <b>Payment processing</b> — subscription billing and, where you enable it, collection of payments from your own customers.<br>
+                <b>Analytics and error monitoring</b> — availability, performance and fault diagnosis.</p>
+                <p>Changes are notified in accordance with section 6, giving you 30 days to object before a new sub-processor begins processing.</p>
+            </section>
+
+            <section class="legal-card" id="signing">
+                <h2>Signing This DPA</h2>
+                <p>This DPA is effective without signature once you accept the Terms of Use or begin using the Services. Many customers need a countersigned copy for their own compliance file, and buyers in regulated sectors usually do. Email <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a> with your legal entity name and registered address and we will return an executed copy, together with the Standard Contractual Clauses completed for your transfer scenario where those apply.</p>
+            </section>
+        </div>
+    </main>
+</main>
+
+    <footer></footer>
+
+    <script>
+        (function () {
+            "use strict";
+            const toc = document.querySelector(".legal-toc");
+            if (!toc) return;
+            const links = [...toc.querySelectorAll('a[href^="#"]')];
+            const sections = links
+                .map(a => document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1))))
+                .filter(Boolean);
+            if (!sections.length) return;
+
+            const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            /* progress bar */
+            const bar = document.createElement("div");
+            bar.className = "legal-toc__progress";
+            bar.innerHTML = "<span></span>";
+            toc.appendChild(bar);
+            const fill = bar.firstElementChild;
+
+            function setActive(id) {
+                links.forEach(a => a.classList.toggle("is-active", a.getAttribute("href") === "#" + id));
+            }
+
+            /* scroll-spy: highlight the section nearest the top of the viewport */
+            let offsets = [];
+            function measure() { offsets = sections.map(s => s.offsetTop); }
+            measure();
+            window.addEventListener("resize", measure);
+
+            function sync() {
+                const y = window.scrollY + 150;
+                let current = sections[0];
+                for (let i = 0; i < sections.length; i++) {
+                    if (offsets[i] <= y) current = sections[i];
+                }
+                setActive(current.id);
+                const doc = document.documentElement;
+                const pct = doc.scrollHeight > doc.clientHeight
+                    ? (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100 : 0;
+                fill.style.width = Math.min(100, Math.max(0, pct)) + "%";
+            }
+            let rafTicking = false;
+            function onScroll() {
+                if (rafTicking) return;
+                rafTicking = true;
+                window.requestAnimationFrame(function () { rafTicking = false; sync(); });
+            }
+            window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", onScroll);
+            sync();
+
+            /* smooth scroll that clears the sticky nav, then flags the target */
+            links.forEach(a => a.addEventListener("click", (e) => {
+                const target = document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1)));
+                if (!target) return;
+                e.preventDefault();
+                const top = target.getBoundingClientRect().top + window.scrollY - 118;
+                window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
+                history.replaceState(null, "", a.getAttribute("href"));
+                setActive(target.id);
+                document.querySelectorAll(".legal-card.is-target").forEach(c => c.classList.remove("is-target"));
+                target.classList.add("is-target");
+                window.setTimeout(() => target.classList.remove("is-target"), 1600);
+            }));
+
+            /* reveal cards on scroll */
+            const cards = document.querySelectorAll(".legal-card");
+            if ("IntersectionObserver" in window && !reduce) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(en => {
+                        if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
+                    });
+                }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+                cards.forEach(c => io.observe(c));
+            } else {
+                cards.forEach(c => c.classList.add("is-in"));
+            }
+
+            /* deep link on load */
+            if (location.hash) {
+                const t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+                if (t) window.setTimeout(() => {
+                    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 118, behavior: "auto" });
+                    sync();
+                }, 60);
+            }
+        })();
+    </script>
+</body>
+</html>

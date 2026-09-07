@@ -391,6 +391,7 @@
                             <li><a href="${siteHref("privacy.html")}">Privacy Policy</a></li>
                             <li><a href="${siteHref("terms.html")}">Terms of Use</a></li>
                             <li><a href="${siteHref("cookies.html")}">Cookie Policy</a></li>
+                            <li><a href="${siteHref("dpa.html")}">Data Processing Agreement</a></li>
                             <li><a href="${siteHref("refund.html")}">Refund Policy</a></li>
                             <li><a href="${siteHref("accessibility.html")}">Accessibility</a></li>
                         </ul>
