@@ -112,8 +112,11 @@ country. Most small teams spend $15–$60 a month on usage.
 
 A typical stack of twelve tools — CRM, funnels, website, forms, email
 marketing, SMS, booking, workflow automation, reputation management, courses,
-chat widget, call tracking — costs roughly $2,488 a month across twelve
-vendors, twelve logins and twelve invoices. Kyntlo starts at $90.
+chat widget, call tracking — runs between $809 and $3,295 a month depending
+on the tier of each tool, or about $2,052 for a typical mid-range
+configuration, across twelve vendors, twelve logins and twelve invoices.
+Kyntlo starts at $90. The per-category breakdown behind that figure is
+published on the homepage.
 
 ## Data and compliance
 

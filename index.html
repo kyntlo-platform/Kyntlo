@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyntlo | AI Growth Operations Platform</title>
-    <meta name="description" content="Kyntlo unifies CRM, funnels, omnichannel conversations, booking, and AI automation into one kinetic growth engine.">
+    <title>Kyntlo | The AI That Answers, Books and Follows Up</title>
+    <meta name="description" content="Kyntlo answers your calls, DMs and web chat with AI, books the appointment, sends the reminder and the invoice, and wins back customers who went quiet. One platform instead of twelve. From $90/mo.">
     <link rel="canonical" href="https://kyntlo.ai/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Kyntlo">
-    <meta property="og:title" content="Kyntlo | AI Growth Operations Platform">
-    <meta property="og:description" content="Kyntlo unifies CRM, funnels, omnichannel conversations, booking, and AI automation into one kinetic growth engine.">
+    <meta property="og:title" content="Kyntlo | The AI That Answers, Books and Follows Up">
+    <meta property="og:description" content="Kyntlo answers your calls, DMs and web chat with AI, books the appointment, sends the reminder and the invoice, and wins back customers who went quiet. One platform instead of twelve. From $90/mo.">
     <meta property="og:url" content="https://kyntlo.ai/">
     <meta property="og:image" content="https://kyntlo.ai/assets/og-kyntlo-preview.png">
     <meta property="og:image:alt" content="Kyntlo logo and AI Growth Operations Platform preview">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kyntlo | AI Growth Operations Platform">
-    <meta name="twitter:description" content="Kyntlo unifies CRM, funnels, omnichannel conversations, booking, and AI automation into one kinetic growth engine.">
+    <meta name="twitter:title" content="Kyntlo | The AI That Answers, Books and Follows Up">
+    <meta name="twitter:description" content="Kyntlo answers your calls, DMs and web chat with AI, books the appointment, sends the reminder and the invoice, and wins back customers who went quiet. One platform instead of twelve. From $90/mo.">
     <meta name="twitter:image" content="https://kyntlo.ai/assets/og-kyntlo-preview.png">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,6 +134,7 @@
         .ops-feed__body .op b { color: var(--brand-hot); font-weight: 700; }
         .ops-feed__body .op .ok { color: #35e0a1; }
         .ops-feed__foot { padding: 14px 20px; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--muted); }
+        .ops-feed__note { opacity: 0.7; font-size: 0.74rem; }
         .ops-feed__foot strong { color: var(--ink); font-family: var(--font-mono); }
 
         /* ---------- Integrations marquee ---------- */
@@ -213,7 +214,10 @@
 
         /* ---------- Replacement matrix ---------- */
         .matrix { margin-top: 54px; border-radius: 24px; border: 1px solid var(--line); background: rgba(12, 9, 24, 0.7); backdrop-filter: blur(12px); overflow: hidden; }
-        .matrix-row, .matrix-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) 96px; gap: 16px; align-items: center; padding: 15px 24px; }
+        .matrix-row, .matrix-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr) 108px 96px; gap: 16px; align-items: center; padding: 15px 24px; }
+        .matrix-cost { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; color: var(--muted); white-space: nowrap; }
+        .matrix-total .matrix-cost { color: var(--brand-hot); font-size: 0.9rem; }
+        .tool-chip--sm { height: 34px; padding: 0 13px; font-size: 0.74rem; }
         .matrix-head { background: rgba(255, 255, 255, 0.03); border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
         .matrix-row { border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: background 0.25s ease; }
         .matrix-row:last-child { border-bottom: 0; }
@@ -331,6 +335,10 @@
 
         .scenario-sector { align-self: flex-start; padding: 5px 13px; border-radius: 999px; border: 1px solid rgba(242, 0, 137, 0.35); background: rgba(242, 0, 137, 0.1); font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-hot); }
 
+        .scenario-pain { font-family: var(--font-display); font-size: 1.12rem; font-weight: 700; line-height: 1.45; color: var(--ink); margin-bottom: 14px; }
+        .scenario-card.featured .scenario-pain { font-size: 1.3rem; }
+        .scenario-cost { margin-top: 14px; font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+        .scenario-cost b { color: var(--brand-hot); font-weight: 700; }
         .scenario-text { flex: 1; margin: 0; font-size: 1rem; line-height: 1.75; color: #d9d4e8; }
         .scenario-card.featured .scenario-text { font-size: 1.12rem; color: #efeaf8; }
 
@@ -350,6 +358,11 @@
 
         /* ---------- Demo / CTA ---------- */
         .demo-section { padding: 110px 0; }
+        .demo-lede { max-width: 640px; margin: 0 auto 26px; }
+        .audit-points { list-style: none; max-width: 660px; margin: 0 auto 30px; text-align: left; display: grid; gap: 12px; }
+        .audit-points li { position: relative; padding-left: 30px; color: var(--muted); font-size: 0.94rem; line-height: 1.68; }
+        .audit-points li::before { content: '✦'; position: absolute; left: 6px; top: 0; color: var(--brand-hot); font-size: 0.9rem; }
+        .audit-points b { color: var(--ink); font-weight: 700; }
         .demo-shell { border-radius: 30px; padding: 70px 40px 50px; text-align: center; background: linear-gradient(150deg, rgba(242, 0, 137, 0.16), rgba(109, 0, 193, 0.18)); border: 1px solid rgba(242, 0, 137, 0.3); position: relative; overflow: hidden; }
         .demo-shell::before { content: ''; position: absolute; top: -160px; left: 50%; transform: translateX(-50%); width: 700px; height: 380px; background: radial-gradient(closest-side, rgba(255, 26, 163, 0.25), transparent); pointer-events: none; }
         .demo-shell h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.03em; margin-bottom: 16px; position: relative; }
@@ -470,14 +483,14 @@
     <section class="hero">
         <canvas id="ai-canvas" aria-hidden="true"></canvas>
         <div class="container">
-            <div class="hero-badge reveal"><span class="dot"></span> KYNTLO&nbsp;AI&nbsp;·&nbsp;GROWTH OPERATIONS ONLINE</div>
-            <h1 class="reveal reveal-d1">The AI engine behind <span class="text-gradient">unstoppable growth</span></h1>
-            <p class="lead reveal reveal-d2">Kyntlo unifies CRM, funnels, omnichannel conversations, booking, and AI automation into one kinetic operating system — so your team moves faster than the market.</p>
+            <div class="hero-badge reveal"><span class="dot"></span> AI&nbsp;GROWTH&nbsp;OPERATIONS&nbsp;·&nbsp;ANSWERS&nbsp;24/7</div>
+            <h1 class="reveal reveal-d1">Your phone rang at 8:41pm. <span class="text-gradient">Nobody answered.</span></h1>
+            <p class="lead reveal reveal-d2">That was a customer. Tomorrow you will not even know they called. Kyntlo picks up — on the phone, in the DMs, on the web chat — has a real conversation, checks your calendar and books the job. Then it reminds them, invoices them, asks for the review, and brings them back when they go quiet.</p>
             <div class="hero-ctas reveal reveal-d3">
                 <a href="trial.html" class="btn btn-kinetic">Start Free Trial</a>
-                <a href="#book-demo" class="btn btn-ghost">Book a Live Demo</a>
+                <a href="#book-demo" class="btn btn-ghost">Get a free Growth Audit</a>
             </div>
-            <p class="hero-note reveal reveal-d3">14-day free trial · No setup fees · Cancel anytime</p>
+            <p class="hero-note reveal reveal-d3">14-day free trial · Nothing charged today · Cancel anytime</p>
 
             <div class="hero-showcase reveal reveal-d3">
                 <div class="browser-window">
@@ -487,10 +500,10 @@
                     </div>
                     <img src="assets/dashboard-kyntlo-interface.png" alt="Kyntlo dashboard interface showing pipeline, conversations, and reporting" width="1920" height="911" fetchpriority="high" decoding="async">
                 </div>
-                <aside class="ops-feed" aria-label="Live AI operations feed (illustrative)">
-                    <div class="ops-feed__head"><span>kyntlo.ops</span><span class="live">LIVE</span></div>
+                <aside class="ops-feed" aria-label="Example AI operations feed. Illustrative sample, not live customer data.">
+                    <div class="ops-feed__head"><span>kyntlo.ops</span><span class="live">EXAMPLE</span></div>
                     <div class="ops-feed__body" id="opsFeed"></div>
-                    <div class="ops-feed__foot">AI actions executed today: <strong id="opsCounter">0</strong></div>
+                    <div class="ops-feed__foot">A typical day on Pro: <strong id="opsCounter">0</strong> automated actions <span class="ops-feed__note">— illustrative, not live data</span></div>
                 </aside>
             </div>
         </div>
@@ -599,7 +612,7 @@
             </div>
             <div class="stat-panel">
                 <div class="stat-card reveal"><div class="num" data-count="9" data-suffix="+">0</div><div class="lbl">Tool categories replaced by one platform</div></div>
-                <div class="stat-card reveal reveal-d1"><div class="num" data-count="2488" data-prefix="$" data-suffix="+">0</div><div class="lbl">Typical monthly stack cost Kyntlo replaces</div></div>
+                <div class="stat-card reveal reveal-d1"><div class="num" data-count="2052" data-prefix="$">0</div><div class="lbl">Typical monthly cost of the 12 tools Kyntlo replaces</div></div>
                 <div class="stat-card reveal reveal-d2"><div class="num" data-count="14">0</div><div class="lbl">Days of free trial on every plan</div></div>
                 <div class="stat-card reveal reveal-d3"><div class="num" data-count="1">0</div><div class="lbl">Login, invoice, and source of truth</div></div>
             </div>
@@ -721,17 +734,20 @@
             </div>
 
             <div class="matrix reveal" aria-label="Tools Kyntlo replaces">
-                <div class="matrix-head"><span>Capability</span><span>Replaces</span><span style="justify-self:center;">Kyntlo</span></div>
-                <div class="matrix-row"><strong>CRM &amp; pipeline management</strong><div class="matrix-tools"><span class="tool-badge" title="Pipedrive"><img src="assets/platform-icons/pipedrive.png" alt="Pipedrive" loading="lazy"><span class="tool-badge__tip">Pipedrive</span></span><span class="tool-badge" title="Salesforce"><img src="assets/platform-icons/salesforce.png" alt="Salesforce" loading="lazy"><span class="tool-badge__tip">Salesforce</span></span><span class="tool-badge" title="HubSpot"><img src="assets/platform-icons/hubspot.png" alt="HubSpot" loading="lazy"><span class="tool-badge__tip">HubSpot</span></span></div><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Unlimited sales funnels</strong><div class="matrix-tools"><span class="tool-badge" title="ClickFunnels"><img src="assets/platform-icons/clickfunnels.png" alt="ClickFunnels" loading="lazy"><span class="tool-badge__tip">ClickFunnels</span></span><span class="tool-badge" title="Leadpages"><img src="assets/platform-icons/leadpages.png" alt="Leadpages" loading="lazy"><span class="tool-badge__tip">Leadpages</span></span><span class="tool-badge" title="Unbounce"><img src="assets/platform-icons/unbounce.png" alt="Unbounce" loading="lazy"><span class="tool-badge__tip">Unbounce</span></span></div><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Website builder</strong><div class="matrix-tools"><span class="tool-badge" title="WordPress"><img src="assets/platform-icons/wordpress.png" alt="WordPress" loading="lazy"><span class="tool-badge__tip">WordPress</span></span><span class="tool-badge" title="Wix"><img src="assets/platform-icons/wix.png" alt="Wix" loading="lazy"><span class="tool-badge__tip">Wix</span></span><span class="tool-badge" title="Squarespace"><img src="assets/platform-icons/squarespace.png" alt="Squarespace" loading="lazy"><span class="tool-badge__tip">Squarespace</span></span></div><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Surveys &amp; forms</strong><div class="matrix-tools"><span class="tool-badge" title="Jotform"><img src="assets/platform-icons/jotform.png" alt="Jotform" loading="lazy"><span class="tool-badge__tip">Jotform</span></span><span class="tool-badge" title="Typeform"><img src="assets/platform-icons/typeform.png" alt="Typeform" loading="lazy"><span class="tool-badge__tip">Typeform</span></span><span class="tool-badge" title="Google Forms"><img src="assets/platform-icons/googleforms.png" alt="Google Forms" loading="lazy"><span class="tool-badge__tip">Google Forms</span></span></div><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Email marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Constant Contact"><img src="assets/platform-icons/constantcontact.png" alt="Constant Contact" loading="lazy"><span class="tool-badge__tip">Constant Contact</span></span><span class="tool-badge" title="ActiveCampaign"><img src="assets/platform-icons/activecampaign.png" alt="ActiveCampaign" loading="lazy"><span class="tool-badge__tip">ActiveCampaign</span></span><span class="tool-badge" title="Mailchimp"><img src="assets/platform-icons/mailchimp.png" alt="Mailchimp" loading="lazy"><span class="tool-badge__tip">Mailchimp</span></span></div><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>2-way SMS marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Twilio"><img src="assets/platform-icons/twilio.png" alt="Twilio" loading="lazy"><span class="tool-badge__tip">Twilio</span></span><span class="tool-badge" title="Klaviyo"><img src="assets/platform-icons/klaviyo.png" alt="Klaviyo" loading="lazy"><span class="tool-badge__tip">Klaviyo</span></span><span class="tool-badge" title="SimpleTexting"><img src="assets/platform-icons/simpletexting.png" alt="SimpleTexting" loading="lazy"><span class="tool-badge__tip">SimpleTexting</span></span></div><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Booking &amp; appointments</strong><div class="matrix-tools"><span class="tool-badge" title="Acuity"><img src="assets/platform-icons/acuity.png" alt="Acuity" loading="lazy"><span class="tool-badge__tip">Acuity</span></span><span class="tool-badge" title="Calendly"><img src="assets/platform-icons/calendly.png" alt="Calendly" loading="lazy"><span class="tool-badge__tip">Calendly</span></span><span class="tool-badge" title="Google Calendar"><img src="assets/platform-icons/googlecalendar.png" alt="Google Calendar" loading="lazy"><span class="tool-badge__tip">Google Calendar</span></span></div><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Workflow automations</strong><div class="matrix-tools"><span class="tool-badge" title="Zapier"><img src="assets/platform-icons/zapier.png" alt="Zapier" loading="lazy"><span class="tool-badge__tip">Zapier</span></span><span class="tool-badge" title="Pabbly"><img src="assets/platform-icons/pabbly.png" alt="Pabbly" loading="lazy"><span class="tool-badge__tip">Pabbly</span></span><span class="tool-badge" title="Make"><img src="assets/platform-icons/make.png" alt="Make" loading="lazy"><span class="tool-badge__tip">Make</span></span></div><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Reputation management</strong><div class="matrix-tools"><span class="tool-badge" title="Birdeye"><img src="assets/platform-icons/birdeye.png" alt="Birdeye" loading="lazy"><span class="tool-badge__tip">Birdeye</span></span><span class="tool-badge" title="Podium"><img src="assets/platform-icons/podium.png" alt="Podium" loading="lazy"><span class="tool-badge__tip">Podium</span></span><span class="tool-badge" title="Grade.us"><img src="assets/platform-icons/gradeus.png" alt="Grade.us" loading="lazy"><span class="tool-badge__tip">Grade.us</span></span></div><span class="matrix-check">✓</span></div>
-                <div class="matrix-row matrix-total"><strong>Overall platform cost</strong><div class="matrix-tools"><span class="tool-chip">$2,488+ monthly stack</span></div><span class="matrix-check">from $45</span></div>
+                <div class="matrix-head"><span>Capability</span><span>Replaces</span><span>Typical cost</span><span style="justify-self:center;">Kyntlo</span></div>
+                <div class="matrix-row"><strong>CRM &amp; pipeline management</strong><div class="matrix-tools"><span class="tool-badge" title="Pipedrive"><img src="assets/platform-icons/pipedrive.png" alt="Pipedrive" loading="lazy"><span class="tool-badge__tip">Pipedrive</span></span><span class="tool-badge" title="Salesforce"><img src="assets/platform-icons/salesforce.png" alt="Salesforce" loading="lazy"><span class="tool-badge__tip">Salesforce</span></span><span class="tool-badge" title="HubSpot"><img src="assets/platform-icons/hubspot.png" alt="HubSpot" loading="lazy"><span class="tool-badge__tip">HubSpot</span></span></div><span class="matrix-cost">$99 – $500</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Unlimited sales funnels</strong><div class="matrix-tools"><span class="tool-badge" title="ClickFunnels"><img src="assets/platform-icons/clickfunnels.png" alt="ClickFunnels" loading="lazy"><span class="tool-badge__tip">ClickFunnels</span></span><span class="tool-badge" title="Leadpages"><img src="assets/platform-icons/leadpages.png" alt="Leadpages" loading="lazy"><span class="tool-badge__tip">Leadpages</span></span><span class="tool-badge" title="Unbounce"><img src="assets/platform-icons/unbounce.png" alt="Unbounce" loading="lazy"><span class="tool-badge__tip">Unbounce</span></span></div><span class="matrix-cost">$97 – $297</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Website builder</strong><div class="matrix-tools"><span class="tool-badge" title="WordPress"><img src="assets/platform-icons/wordpress.png" alt="WordPress" loading="lazy"><span class="tool-badge__tip">WordPress</span></span><span class="tool-badge" title="Wix"><img src="assets/platform-icons/wix.png" alt="Wix" loading="lazy"><span class="tool-badge__tip">Wix</span></span><span class="tool-badge" title="Squarespace"><img src="assets/platform-icons/squarespace.png" alt="Squarespace" loading="lazy"><span class="tool-badge__tip">Squarespace</span></span></div><span class="matrix-cost">$29 – $99</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Surveys &amp; forms</strong><div class="matrix-tools"><span class="tool-badge" title="Jotform"><img src="assets/platform-icons/jotform.png" alt="Jotform" loading="lazy"><span class="tool-badge__tip">Jotform</span></span><span class="tool-badge" title="Typeform"><img src="assets/platform-icons/typeform.png" alt="Typeform" loading="lazy"><span class="tool-badge__tip">Typeform</span></span><span class="tool-badge" title="Google Forms"><img src="assets/platform-icons/googleforms.png" alt="Google Forms" loading="lazy"><span class="tool-badge__tip">Google Forms</span></span></div><span class="matrix-cost">$25 – $99</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Email marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Constant Contact"><img src="assets/platform-icons/constantcontact.png" alt="Constant Contact" loading="lazy"><span class="tool-badge__tip">Constant Contact</span></span><span class="tool-badge" title="ActiveCampaign"><img src="assets/platform-icons/activecampaign.png" alt="ActiveCampaign" loading="lazy"><span class="tool-badge__tip">ActiveCampaign</span></span><span class="tool-badge" title="Mailchimp"><img src="assets/platform-icons/mailchimp.png" alt="Mailchimp" loading="lazy"><span class="tool-badge__tip">Mailchimp</span></span></div><span class="matrix-cost">$49 – $299</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>2-way SMS marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Twilio"><img src="assets/platform-icons/twilio.png" alt="Twilio" loading="lazy"><span class="tool-badge__tip">Twilio</span></span><span class="tool-badge" title="Klaviyo"><img src="assets/platform-icons/klaviyo.png" alt="Klaviyo" loading="lazy"><span class="tool-badge__tip">Klaviyo</span></span><span class="tool-badge" title="SimpleTexting"><img src="assets/platform-icons/simpletexting.png" alt="SimpleTexting" loading="lazy"><span class="tool-badge__tip">SimpleTexting</span></span></div><span class="matrix-cost">$49 – $199</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Booking &amp; appointments</strong><div class="matrix-tools"><span class="tool-badge" title="Acuity"><img src="assets/platform-icons/acuity.png" alt="Acuity" loading="lazy"><span class="tool-badge__tip">Acuity</span></span><span class="tool-badge" title="Calendly"><img src="assets/platform-icons/calendly.png" alt="Calendly" loading="lazy"><span class="tool-badge__tip">Calendly</span></span><span class="tool-badge" title="Google Calendar"><img src="assets/platform-icons/googlecalendar.png" alt="Google Calendar" loading="lazy"><span class="tool-badge__tip">Google Calendar</span></span></div><span class="matrix-cost">$15 – $60</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Workflow automations</strong><div class="matrix-tools"><span class="tool-badge" title="Zapier"><img src="assets/platform-icons/zapier.png" alt="Zapier" loading="lazy"><span class="tool-badge__tip">Zapier</span></span><span class="tool-badge" title="Pabbly"><img src="assets/platform-icons/pabbly.png" alt="Pabbly" loading="lazy"><span class="tool-badge__tip">Pabbly</span></span><span class="tool-badge" title="Make"><img src="assets/platform-icons/make.png" alt="Make" loading="lazy"><span class="tool-badge__tip">Make</span></span></div><span class="matrix-cost">$29 – $199</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Reputation management</strong><div class="matrix-tools"><span class="tool-badge" title="Birdeye"><img src="assets/platform-icons/birdeye.png" alt="Birdeye" loading="lazy"><span class="tool-badge__tip">Birdeye</span></span><span class="tool-badge" title="Podium"><img src="assets/platform-icons/podium.png" alt="Podium" loading="lazy"><span class="tool-badge__tip">Podium</span></span><span class="tool-badge" title="Grade.us"><img src="assets/platform-icons/gradeus.png" alt="Grade.us" loading="lazy"><span class="tool-badge__tip">Grade.us</span></span></div><span class="matrix-cost">$199 – $499</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Courses &amp; memberships</strong><div class="matrix-tools"><span class="tool-chip tool-chip--sm">Kajabi</span><span class="tool-chip tool-chip--sm">Teachable</span></div><span class="matrix-cost">$99 – $399</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Chat widget &amp; AI replies</strong><div class="matrix-tools"><span class="tool-chip tool-chip--sm">Intercom</span><span class="tool-chip tool-chip--sm">Drift</span></div><span class="matrix-cost">$74 – $500</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Call tracking &amp; recording</strong><div class="matrix-tools"><span class="tool-chip tool-chip--sm">CallRail</span></div><span class="matrix-cost">$45 – $145</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row matrix-total"><strong>12 tools, 12 logins, 12 invoices</strong><div class="matrix-tools"><span class="tool-chip">Range across the twelve: $809 – $3,295 / month</span></div><span class="matrix-cost">$2,052</span><span class="matrix-check">from $90</span></div>
             </div>
         </div>
     </section>
@@ -941,48 +957,58 @@
         <div class="container">
             <div class="center reveal">
                 <p class="kicker" style="justify-content:center;">How teams use Kyntlo</p>
-                <h2 class="section-title">Built for the way <span class="text-gradient">these teams work</span></h2>
-                <p class="section-sub">Five operating patterns Kyntlo is designed around &mdash; from agencies and clinics to restaurants, studios, and home services.</p>
+                <h2 class="section-title">The sentence we hear <span class="text-gradient">in every first call</span></h2>
+                <p class="section-sub">Five kinds of business, five different leaks, one pattern underneath: the money is not lost on the ads. It is lost in the gap between someone reaching out and someone answering. These are the sentences owners actually say, and roughly what each one costs a month.</p>
             </div>
             <div class="testimonials-grid">
                 <article class="scenario-card featured reveal">
-                    <span class="scenario-sector">Agency</span>
-                    <p class="scenario-text">Leads, bookings, and follow-up run on one operating rhythm instead of three disconnected tools. The whole team works from a single customer record, and it is obvious at a glance which opportunities have gone quiet and need attention.</p>
+                    <span class="scenario-sector">Home services</span>
+                    <p class="scenario-pain">&ldquo;I'm under a sink. The phone rings. I lose the job.&rdquo;</p>
+                    <p class="scenario-text">Twenty to forty calls a month go unanswered because the person who would answer them is the person doing the work. The AI voice agent picks up, works out what they need, and books it into the diary — and if a call is still missed, a text goes back within seconds while they are deciding who to try next.</p>
+                    <p class="scenario-cost">Typical leak <b>$1,500 – $3,000 / month</b></p>
                     <div class="scenario-meta">
-                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span>
-                        <span class="who"><strong>Founder</strong><span>Growth advisory studio · 6 people</span></span>
+                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 01-5 5L4 17v3h3l5.7-5.7a4 4 0 015-5l1.6-1.6-2.9-2.9z"/></svg></span>
+                        <span class="who"><strong>Plumbing, HVAC, electrical, roofing</strong><span>2–15 vans</span></span>
                     </div>
                 </article>
                 <article class="scenario-card reveal reveal-d1">
-                    <span class="scenario-sector">Healthcare</span>
-                    <p class="scenario-text">Forms, reminders, inbox activity, and pipeline stages stop living in separate places, so no booking depends on someone remembering to check a second system.</p>
+                    <span class="scenario-sector">Clinics &amp; dental</span>
+                    <p class="scenario-pain">&ldquo;A quarter of them just don't turn up.&rdquo;</p>
+                    <p class="scenario-text">Confirmation on booking, a reminder the day before, a nudge on the morning, and intake forms filled in before arrival. No-show rates typically fall from around a quarter of the book to about one in ten.</p>
+                    <p class="scenario-cost">Typical leak <b>$1,200 / month</b></p>
                     <div class="scenario-meta">
                         <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/><rect x="3" y="3" width="18" height="18" rx="4"/></svg></span>
-                        <span class="who"><strong>Operations lead</strong><span>Multi-location clinic · 4 sites</span></span>
+                        <span class="who"><strong>Dental, medical, med spas</strong><span>1–4 locations</span></span>
                     </div>
                 </article>
                 <article class="scenario-card reveal">
-                    <span class="scenario-sector">Hospitality</span>
-                    <p class="scenario-text">A missed call triggers an instant text back rather than a lost cover, and review requests go out after every visit without anyone chasing them.</p>
+                    <span class="scenario-sector">Salons &amp; spas</span>
+                    <p class="scenario-pain">&ldquo;I answer DMs at midnight and still have empty chairs.&rdquo;</p>
+                    <p class="scenario-text">The AI answers the pricing and availability questions in about forty seconds, at any hour, and books straight into the calendar. Clients who have not been in for six weeks get a message referencing what they last had.</p>
+                    <p class="scenario-cost">Typical leak <b>$1,200 – $2,500 / month</b></p>
                     <div class="scenario-meta">
-                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8a2 2 0 002 2h0a2 2 0 002-2V3M9 13v8M17 3c-1.5 2-2 4-2 6a2 2 0 002 2v10"/></svg></span>
-                        <span class="who"><strong>Owner</strong><span>Multi-site restaurant group</span></span>
+                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.6 8.6L20 20M8.6 15.4L20 4"/></svg></span>
+                        <span class="who"><strong>Hair, beauty, wellness</strong><span>3–12 chairs</span></span>
                     </div>
                 </article>
                 <article class="scenario-card reveal reveal-d1">
-                    <span class="scenario-sector">Property</span>
-                    <p class="scenario-text">Enquiries, site visits, and proposals sit in one pipeline, so a quote that has been waiting nine days is visible instead of buried in an inbox.</p>
+                    <span class="scenario-sector">Gyms &amp; studios</span>
+                    <p class="scenario-pain">&ldquo;I find out someone left when the payment fails.&rdquo;</p>
+                    <p class="scenario-text">Attendance is a leading indicator and cancellation is a lagging one. Kyntlo flags the member whose visits dropped off two weeks ago, while a conversation can still change the outcome.</p>
+                    <p class="scenario-cost">Typical leak <b>$1,500 – $4,000 / month</b></p>
                     <div class="scenario-meta">
-                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg></span>
-                        <span class="who"><strong>Director</strong><span>Property & design studio</span></span>
+                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M3 9v5M17.5 6.5v11M21 9v5M6.5 12h11"/></svg></span>
+                        <span class="who"><strong>Boutique studios, gyms</strong><span>100–800 members</span></span>
                     </div>
                 </article>
                 <article class="scenario-card reveal reveal-d2">
-                    <span class="scenario-sector">Home services</span>
-                    <p class="scenario-text">The AI chatbot answers within seconds and books the call while the enquiry is still warm, rather than after a competitor has already replied.</p>
+                    <span class="scenario-sector">Agencies</span>
+                    <p class="scenario-pain">&ldquo;I deliver the leads. They waste them. I get blamed.&rdquo;</p>
+                    <p class="scenario-text">Every lead you generate gets a personalised first response in under a minute, with a dashboard that proves it. Your client stops blaming the lead quality, because the follow-up is no longer the variable.</p>
+                    <p class="scenario-cost">Typical leak <b>$2,000 – $8,000 / month</b></p>
                     <div class="scenario-meta">
-                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 01-5 5L4 17v3h3l5.7-5.7a4 4 0 015-5l1.6-1.6-2.9-2.9z"/></svg></span>
-                        <span class="who"><strong>Head of acquisition</strong><span>Home services network</span></span>
+                        <span class="scenario-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span>
+                        <span class="who"><strong>Marketing &amp; web agencies</strong><span>10–40 clients</span></span>
                     </div>
                 </article>
             </div>
@@ -1019,9 +1045,9 @@
     <section id="book-demo" class="demo-section">
         <div class="container">
             <div class="demo-shell reveal">
-                <h2>Ready to <span class="text-gradient">systemize?</span></h2>
-                <p>Schedule a dedicated onboarding and strategy session with the Kyntlo team and see the platform running on your use case.</p>
-                <a href="trial.html" class="btn btn-kinetic">Start Free Trial Instead</a>
+                <h2>Find out what the leak is <span class="text-gradient">actually costing you.</span></h2>
+                <p class="demo-lede">Thirty minutes. We ask how enquiries reach you and what happens to the ones nobody gets to, then do the arithmetic with your numbers — missed calls, no-shows, the customers who quietly stopped coming. You leave with a written figure whether or not you ever buy anything.</p><ul class="audit-points"><li><b>No demo unless you want one.</b> We diagnose first. A product tour before we understand your business is just a tour.</li><li><b>Your numbers, conservative rates.</b> Nothing inflated — the figure is large enough without help.</li><li><b>We will tell you if it is not worth it.</b> Roughly a third of these end with us saying "not yet". That is a real outcome, not a soft no.</li></ul>
+                <a href="trial.html" class="btn btn-kinetic">Skip the audit — start the free trial</a>
                 <div class="calendar-container">
                     <iframe src="https://links.kyntlo.ai/widget/booking/BRMtQSYpjswqT1ItfLv2" allow="payment" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="BRMtQSYpjswqT1ItfLv2_1787440446544" title="Book a Kyntlo demo"></iframe>
                     <script src="https://links.kyntlo.ai/js/form_embed.js" type="text/javascript"></script>
