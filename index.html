@@ -297,15 +297,25 @@
 
 
         /* ---------- channels rail ---------- */
-        .channels{padding:46px 0 8px}
-        .chan-lab{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
-            color:var(--dim);text-align:center;margin-bottom:24px;line-height:1.7}
-        .chan-lab2{margin-top:34px}
-        .chan-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
-        .chan-rail img{width:44px;height:44px;object-fit:contain;padding:7px;border-radius:11px;
-            border:1px solid var(--line-2);background:rgba(255,255,255,.035);
-            filter:grayscale(1);opacity:.62;transition:filter .3s ease,opacity .3s ease,transform .3s ease}
-        .chan-rail img:hover{filter:none;opacity:1;transform:translateY(-3px)}
+        .channels{padding:78px 0 70px}
+        .chan-lab{font-size:1.06rem;color:var(--muted);text-align:center;margin-bottom:30px;
+            line-height:1.6;max-width:640px;margin-left:auto;margin-right:auto}
+        .chan-lab b{color:var(--ink);font-weight:700}
+        .chan-lab2{margin-top:64px}
+        .chan-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+        /* These are third-party marks drawn for light backgrounds - several of them
+           are near-black and vanish on our ground, so each sits on its own light tile. */
+        .chan-rail img{width:78px;height:78px;object-fit:contain;padding:16px;border-radius:18px;
+            border:1px solid rgba(255,255,255,.14);background:#f6f5f9;
+            opacity:.9;
+            transition:opacity .3s ease,transform .35s cubic-bezier(.2,.8,.2,1),
+                       border-color .3s ease,box-shadow .3s ease,background .3s ease}
+        .chan-rail img:hover{opacity:1;background:#fff;transform:translateY(-6px) scale(1.05);
+            border-color:rgba(242,0,137,.55);box-shadow:0 16px 38px rgba(242,0,137,.26)}
+        @media (max-width:720px){
+            .chan-rail img{width:60px;height:60px;padding:11px;border-radius:15px}
+            .chan-lab{font-size:.98rem}
+        }
 
         /* ---------- logo chips in the stack table ---------- */
         .tools-logos{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
@@ -341,6 +351,68 @@
         .bookframe iframe{display:block;width:100%;min-height:640px;border:0}
         @media (max-width:980px){.book-grid{grid-template-columns:1fr;gap:40px}}
 
+
+        /* ---------- motion / liveness ---------- */
+        .progress{position:fixed;top:0;left:0;height:2px;width:100%;z-index:10000;
+            background:var(--grad-kinetic);transform:scaleX(0);transform-origin:0 50%;
+            box-shadow:0 0 12px rgba(242,0,137,.7);pointer-events:none}
+
+        /* hero conversation plays out on load */
+        .msg{opacity:0;transform:translateY(10px);
+            transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+        .msg.shown{opacity:1;transform:none}
+        .typing{display:inline-flex;gap:4px;align-items:center;height:18px}
+        .typing i{width:5px;height:5px;border-radius:50%;background:var(--hot);display:block;
+            animation:bounce 1.25s infinite}
+        .typing i:nth-child(2){animation-delay:.16s}
+        .typing i:nth-child(3){animation-delay:.32s}
+        @keyframes bounce{0%,60%,100%{opacity:.25;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+        .phone-foot{opacity:0;transition:opacity .5s ease}
+        .phone-foot.shown{opacity:1}
+        .phone{position:relative}
+        .phone::after{content:"";position:absolute;inset:-1px;border-radius:22px;pointer-events:none;
+            background:linear-gradient(135deg,rgba(242,0,137,.35),transparent 45%);
+            opacity:0;transition:opacity .6s ease}
+        .phone.live::after{opacity:1}
+
+        /* timeline comes alive as you pass it */
+        .tl{--fill:0%}
+        .tl::after{content:"";position:absolute;left:110px;top:6px;width:1px;height:var(--fill);
+            background:linear-gradient(180deg,var(--pink),var(--purple));
+            box-shadow:0 0 12px rgba(242,0,137,.6);transition:height .18s linear}
+        .stop::after{transition:background .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.2,.8,.2,1)}
+        .stop.active::after{background:var(--hot);transform:scale(1.5);
+            box-shadow:0 0 0 4px var(--bg-2),0 0 0 5px rgba(242,0,137,.5),0 0 18px 3px rgba(242,0,137,.5)}
+        .stop .col{transition:border-color .45s ease,background .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+        .stop.active .col.kyn{border-color:rgba(53,224,161,.45);background:rgba(53,224,161,.08);transform:translateY(-2px)}
+        .stop-time{transition:color .4s ease}
+        .stop.active .stop-time{color:var(--hot)}
+
+        /* calculator reacts */
+        .ro-row b,.slider label b{transition:color .25s ease,transform .25s cubic-bezier(.2,.8,.2,1)}
+        .ro-row b.bump,.slider label b.bump{color:var(--hot);transform:scale(1.08)}
+        .ro-total{transition:box-shadow .4s ease}
+        .ro-total.bump{box-shadow:inset 0 0 40px rgba(242,0,137,.18)}
+
+        /* cards lift with a light source */
+        .sysitem,.bcard,.step,.aicard,.pstat{position:relative}
+        .bcard,.step,.pstat{transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s ease,box-shadow .35s ease}
+        .bcard:hover,.pstat:hover{box-shadow:0 22px 50px rgba(0,0,0,.45)}
+        .sysitem{position:relative;overflow:hidden}
+        .sysitem::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+            background:var(--grad-kinetic);transform:scaleX(0);transform-origin:0 50%;
+            transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+        .sysitem:hover::before{transform:scaleX(1)}
+        .trow{transition:background .28s ease}
+        .trow:not(.thead):not(.ttotal):hover{background:rgba(242,0,137,.055)}
+
+        @media (prefers-reduced-motion:reduce){
+            .progress{display:none}
+            .msg,.phone-foot{opacity:1;transform:none}
+            .tl::after{display:none}
+            .typing{display:none}
+        }
+
         /* ---------- responsive ---------- */
         @media (max-width:980px){
             .hero-grid,.calc-grid,.fitgrid,.pinner{grid-template-columns:1fr;gap:44px}
@@ -361,7 +433,6 @@
             .split{grid-template-columns:1fr}
             .sysgrid,.bgrid,.steps{grid-template-columns:1fr}
             .trow{grid-template-columns:1fr;gap:8px;padding:16px 20px}
-            .chan-rail img{width:38px;height:38px}
             .trow .cost2{text-align:left}
             .thead{display:none}
             .pstats{grid-template-columns:1fr}
@@ -370,6 +441,7 @@
     <noscript><style>.rv{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
 </head>
 <body data-theme="dark">
+    <div class="progress" id="progress" aria-hidden="true"></div>
     <nav></nav>
     <main>
 
@@ -407,9 +479,9 @@
     <!-- ============ CHANNELS ============ -->
     <section class="channels">
         <div class="wrap">
-            <p class="chan-lab rv">Answers on the channels your customers already use</p>
+            <p class="chan-lab rv"><b>Answers on the channels your customers already use.</b> One inbox, whichever one they picked.</p>
             <div class="chan-rail rv"><img src="assets/integration-logos/whatsapp.png" alt="whatsapp" loading="lazy" width="30" height="30"><img src="assets/integration-logos/instagram.png" alt="instagram" loading="lazy" width="30" height="30"><img src="assets/integration-logos/facebook.png" alt="facebook" loading="lazy" width="30" height="30"><img src="assets/integration-logos/google.png" alt="google" loading="lazy" width="30" height="30"><img src="assets/integration-logos/tiktok.png" alt="tiktok" loading="lazy" width="30" height="30"><img src="assets/integration-logos/linkedin.png" alt="linkedin" loading="lazy" width="30" height="30"><img src="assets/integration-logos/outlook.png" alt="outlook" loading="lazy" width="30" height="30"><img src="assets/integration-logos/teams.png" alt="teams" loading="lazy" width="30" height="30"><img src="assets/integration-logos/slack.png" alt="slack" loading="lazy" width="30" height="30"><img src="assets/integration-logos/zoom.png" alt="zoom" loading="lazy" width="30" height="30"></div>
-            <p class="chan-lab chan-lab2 rv">And connects to the tools you already run</p>
+            <p class="chan-lab chan-lab2 rv"><b>And connects to the tools you already run.</b> Payments, accounting, storefront and scheduling stay where they are.</p>
             <div class="chan-rail rv"><img src="assets/integration-logos/stripe.png" alt="stripe" loading="lazy" width="30" height="30"><img src="assets/integration-logos/paypal.png" alt="paypal" loading="lazy" width="30" height="30"><img src="assets/integration-logos/square.png" alt="square" loading="lazy" width="30" height="30"><img src="assets/integration-logos/razorpay.png" alt="razorpay" loading="lazy" width="30" height="30"><img src="assets/integration-logos/authorizenet.png" alt="authorizenet" loading="lazy" width="30" height="30"><img src="assets/integration-logos/nmi.png" alt="nmi" loading="lazy" width="30" height="30"><img src="assets/integration-logos/quickbooks.png" alt="quickbooks" loading="lazy" width="30" height="30"><img src="assets/integration-logos/xero.png" alt="xero" loading="lazy" width="30" height="30"><img src="assets/integration-logos/wave.png" alt="wave" loading="lazy" width="30" height="30"><img src="assets/integration-logos/shopify.png" alt="shopify" loading="lazy" width="30" height="30"><img src="assets/integration-logos/woocommerce.png" alt="woocommerce" loading="lazy" width="30" height="30"><img src="assets/integration-logos/printful.png" alt="printful" loading="lazy" width="30" height="30"><img src="assets/integration-logos/wordpress.png" alt="wordpress" loading="lazy" width="30" height="30"><img src="assets/integration-logos/notion.png" alt="notion" loading="lazy" width="30" height="30"><img src="assets/integration-logos/zapier.png" alt="zapier" loading="lazy" width="30" height="30"><img src="assets/integration-logos/pabbly.png" alt="pabbly" loading="lazy" width="30" height="30"><img src="assets/integration-logos/mailgun.png" alt="mailgun" loading="lazy" width="30" height="30"></div>
         </div>
     </section>
@@ -761,6 +833,87 @@
             els.forEach(function(e){ io.observe(e); });
         }
 
+        var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* ---- scroll progress ---- */
+        var bar = document.getElementById("progress");
+        if (bar && !calm) {
+            var pTick = false;
+            function drawProgress(){
+                pTick = false;
+                var h = document.documentElement.scrollHeight - window.innerHeight;
+                bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ")";
+            }
+            window.addEventListener("scroll", function(){
+                if (pTick) return; pTick = true; window.requestAnimationFrame(drawProgress);
+            }, { passive: true });
+            drawProgress();
+        }
+
+        /* ---- the hero conversation plays out, so the page opens alive ---- */
+        (function(){
+            var phone = document.querySelector(".phone");
+            if (!phone) return;
+            var msgs = phone.querySelectorAll(".msg");
+            var foot = phone.querySelector(".phone-foot");
+            if (calm) {
+                msgs.forEach(function(m){ m.classList.add("shown"); });
+                if (foot) foot.classList.add("shown");
+                phone.classList.add("live");
+                return;
+            }
+            var i = 0;
+            function next(){
+                if (i >= msgs.length) {
+                    if (foot) foot.classList.add("shown");
+                    phone.classList.add("live");
+                    return;
+                }
+                var m = msgs[i];
+                var isAI = m.classList.contains("ai");
+                if (isAI) {
+                    /* a beat of "typing" before the AI replies - it reads as a real exchange */
+                    var body = m.querySelector(".body");
+                    var real = body.innerHTML;
+                    body.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
+                    m.classList.add("shown");
+                    window.setTimeout(function(){ body.innerHTML = real; i++; window.setTimeout(next, 900); }, 1100);
+                } else {
+                    m.classList.add("shown");
+                    i++;
+                    window.setTimeout(next, 950);
+                }
+            }
+            window.setTimeout(next, 700);
+        })();
+
+        /* ---- the timeline fills and highlights as you move through the day ---- */
+        (function(){
+            var tl = document.querySelector(".tl");
+            if (!tl || calm) return;
+            var stops = Array.prototype.slice.call(tl.querySelectorAll(".stop"));
+            var tTick = false;
+            function paintTl(){
+                tTick = false;
+                var r = tl.getBoundingClientRect();
+                var mid = window.innerHeight * 0.42;
+                var pct = Math.max(0, Math.min(1, (mid - r.top) / r.height));
+                tl.style.setProperty("--fill", (pct * 100).toFixed(2) + "%");
+                var best = null, bestD = Infinity;
+                stops.forEach(function(st){
+                    var sr = st.getBoundingClientRect();
+                    var d = Math.abs((sr.top + 40) - mid);
+                    if (d < bestD) { bestD = d; best = st; }
+                });
+                stops.forEach(function(st){ st.classList.toggle("active", st === best && bestD < window.innerHeight * 0.6); });
+            }
+            window.addEventListener("scroll", function(){
+                if (tTick) return; tTick = true; window.requestAnimationFrame(paintTl);
+            }, { passive: true });
+            window.addEventListener("resize", paintTl);
+            paintTl();
+        })();
+
         /* ---- leak calculator ----
            Rates are the conservative ones published beside the sliders. The stack
            figure is the midpoint of the twelve-tool range shown in the table above,
@@ -779,6 +932,26 @@
         if (!S.calls) return;
 
         function money(n){ return "$" + Math.round(n).toLocaleString("en-US"); }
+
+        /* count toward the new figure so a slider drag reads as a live calculation */
+        var anim = {};
+        function setNum(id, value, fmt){
+            var el = document.getElementById(id);
+            if (!el) return;
+            if (calm) { el.textContent = fmt(value); return; }
+            var from = anim[id] === undefined ? value : anim[id];
+            var start = performance.now(), dur = 420;
+            el.classList.add("bump");
+            function step(now){
+                var k = Math.min(1, (now - start) / dur);
+                var e = 1 - Math.pow(1 - k, 3);
+                el.textContent = fmt(from + (value - from) * e);
+                if (k < 1) requestAnimationFrame(step);
+                else { anim[id] = value; el.classList.remove("bump"); }
+            }
+            anim[id] = value;
+            requestAnimationFrame(step);
+        }
 
         function paint(){
             var calls   = +S.calls.value,
@@ -803,13 +976,16 @@
             var rHours  = staff * WEEKS * HOUR_COST;
             var total   = rCalls + rNoshow + rReact + rSoft + rHours;
 
-            document.getElementById("r-calls").textContent  = money(rCalls);
-            document.getElementById("r-noshow").textContent = money(rNoshow);
-            document.getElementById("r-react").textContent  = money(rReact);
+            setNum("r-calls", rCalls, money);
+            setNum("r-noshow", rNoshow, money);
+            setNum("r-react", rReact, money);
             document.getElementById("r-soft").textContent   = money(rSoft);
-            document.getElementById("r-hours").textContent  = money(rHours);
-            document.getElementById("r-total").textContent  = money(total);
-            document.getElementById("r-mult").textContent   = (total / PRO).toFixed(1).replace(/\.0$/, "") + "×";
+            setNum("r-hours", rHours, money);
+            setNum("r-total", total, money);
+            setNum("r-mult", total / PRO, function(v){ return v.toFixed(1).replace(/\.0$/, "") + "×"; });
+            var box = document.querySelector(".ro-total");
+            if (box && !calm) { box.classList.add("bump"); window.clearTimeout(box._t);
+                box._t = window.setTimeout(function(){ box.classList.remove("bump"); }, 400); }
         }
 
         Object.keys(S).forEach(function(k){

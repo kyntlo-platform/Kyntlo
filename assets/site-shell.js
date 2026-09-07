@@ -158,6 +158,15 @@
         nav.className = "site-nav";
         nav.setAttribute("aria-label", "Primary navigation");
         nav.innerHTML = `
+            <div class="site-nav__trust">
+                <div class="container site-nav__trust-inner">
+                    <span class="tb-item tb-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Cairo, Egypt &middot; serving EMEA &amp; North America</span>
+                    <span class="tb-item tb-lang">English &amp; العربية</span>
+                    <span class="tb-sep" aria-hidden="true"></span>
+                    <span class="tb-item tb-trial">14-day free trial &middot; nothing charged today &middot; cancel anytime</span>
+                    <a class="tb-item tb-mail" href="mailto:Support@kyntlo.ai">Support@kyntlo.ai</a>
+                </div>
+            </div>
             <div class="container site-nav__inner">
                 <a class="site-nav__brand" href="${siteHref("index.html")}" aria-label="Kyntlo home">
                     <img src="assets/kyntlo-logo-cropped.png" alt="Kyntlo">
@@ -787,6 +796,9 @@
             if (next === scrolled) return;   // only touch the DOM when the state actually flips
             scrolled = next;
             document.body.classList.toggle("kyn-scrolled", next);
+            /* collapses the trust strip and tightens the bar once you leave the top */
+            var bar = document.querySelector(".site-nav");
+            if (bar) bar.classList.toggle("is-stuck", next);
         }
         function onScroll() {
             if (ticking) return;

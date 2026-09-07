@@ -30,29 +30,83 @@ select,
     top: 0;
     z-index: 9999;
     width: 100%;
-    padding: 14px 22px 0;
-    display: flex;
-    justify-content: center;
+    padding: 0;
+    display: block;
     background: transparent;
     pointer-events: none;
+    border-bottom: 1px solid var(--shell-border);
+    transition: border-color 0.35s ease;
 }
+
+/* The whole bar sits on one blurred layer. Keeping backdrop-filter off the
+   inner row stops it clipping the CTA's glow - see the footer CTA note. */
+.site-nav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(8, 5, 17, 0.82);
+    backdrop-filter: blur(20px) saturate(1.35);
+    -webkit-backdrop-filter: blur(20px) saturate(1.35);
+    pointer-events: none;
+    transition: background-color 0.35s ease;
+}
+
+.site-nav.is-stuck { border-bottom-color: rgba(255, 255, 255, 0.16); }
+.site-nav.is-stuck::before { background: rgba(6, 4, 13, 0.94); }
+.site-nav.is-stuck .site-nav__trust { max-height: 0; opacity: 0; }
+
+/* --- trust strip --- */
+.site-nav__trust {
+    pointer-events: auto;
+    max-height: 46px;
+    opacity: 1;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.022);
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+.site-nav__trust-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px 22px;
+    flex-wrap: wrap;
+    padding: 12px 22px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--shell-muted);
+}
+
+.tb-item { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.tb-item svg { width: 13px; height: 13px; flex: 0 0 auto; color: var(--shell-pink); }
+.tb-sep { flex: 1 1 auto; }
+.tb-mail { color: var(--shell-muted); transition: color 0.24s ease; }
+.tb-mail:hover { color: var(--shell-pink); }
+.tb-trial { color: #8de0bd; }
+
+@media (max-width: 1080px) { .tb-lang, .tb-loc { display: none; } }
+@media (max-width: 720px) { .site-nav__trust { display: none; } }
 
 .site-nav__inner {
     pointer-events: auto;
     --rail-x: 50%;
     --rail-o: 0;
+    position: relative;
     width: 100%;
     max-width: 1240px;
-    height: 72px;
-    padding: 0 12px 0 22px;
+    margin: 0 auto;
+    height: 74px;
+    padding: 0 22px;
+    transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: grid;
     grid-template-columns: minmax(150px, 1fr) auto minmax(230px, 1fr);
     align-items: center;
     gap: 18px;
-    border: 1px solid var(--shell-border);
-    border-radius: 22px;
+    border: 0;
+    border-radius: 0;
     background: transparent;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     transform: translateZ(0);
     will-change: background-color, box-shadow;
     transition: box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1),
@@ -60,27 +114,14 @@ select,
                 border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Blurred bar surface on its own layer - see the note on .site-footer__cta::before.
-   Keeping `backdrop-filter` off .site-nav__inner stops it clipping the CTA's glow. */
-.site-nav__inner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
-    background: var(--shell-bg);
-    backdrop-filter: blur(22px) saturate(1.4);
-    -webkit-backdrop-filter: blur(22px) saturate(1.4);
-    pointer-events: none;
-    transition: background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* The blurred surface lives on .site-nav now - one layer for the whole bar. */
 
 /* A segment of the bar's top edge lights up above whatever the pointer is on.
    Driven by two custom properties so hover work never touches layout. */
 .site-nav__inner::after {
     content: "";
     position: absolute;
-    top: -1px;
+    bottom: -1px;
     left: 0;
     width: 132px;
     height: 1px;
@@ -93,14 +134,8 @@ select,
     pointer-events: none;
 }
 
-body.kyn-scrolled .site-nav__inner::before {
-    background: rgba(9, 6, 17, 0.9);
-}
-
-body.kyn-scrolled .site-nav__inner {
-    border-color: rgba(242, 0, 137, 0.22);
-    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(242, 0, 137, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.07);
-}
+body.kyn-scrolled .site-nav { box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5); }
+body.kyn-scrolled .site-nav__inner { height: 64px; }
 
 /* The option list is drawn by the OS on its own (light) surface, so it cannot
    inherit the form control's light-on-dark colour or it disappears. */
