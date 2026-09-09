@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kyntlo — Go-Live Checklist</title>
+<style>
+  :root{
+    --ink:#15121c; --ink-soft:#4b4458; --ink-faint:#7a7288;
+    --line:#e3dfeb; --line-soft:#efecf4;
+    --bg:#faf9fc; --card:#ffffff;
+    --brand:#5b34d6; --brand-soft:#f2edff;
+    --ok:#0f7a52; --ok-soft:#e6f5ee;
+    --warn:#8a5a00; --warn-soft:#fdf3df;
+    --stop:#a32020; --stop-soft:#fdecec;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    padding:0 20px 80px;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+
+  header.top{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);font-weight:700;margin:0 0 10px}
+  h1{font-size:clamp(30px,5vw,44px);line-height:1.12;letter-spacing:-.02em;margin:0 0 14px}
+  .lede{font-size:17px;color:var(--ink-soft);margin:0;max-width:62ch}
+  .meta{margin-top:22px;font-size:13px;color:var(--ink-faint)}
+  .meta code{font-family:var(--mono);font-size:12px;background:var(--line-soft);padding:2px 6px;border-radius:4px;color:var(--ink-soft)}
+
+  .progress{margin:26px 0 0;display:flex;align-items:center;gap:14px}
+  .bar{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:var(--brand);border-radius:99px;transition:width .25s ease}
+  .count{font-size:13px;color:var(--ink-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .reset{border:0;background:none;color:var(--ink-faint);font-size:12px;text-decoration:underline;cursor:pointer;padding:0}
+
+  h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
+     margin:52px 0 4px;font-weight:700}
+  h2 + .sect-note{margin:0 0 18px;font-size:15px;color:var(--ink-soft);max-width:66ch}
+
+  .item{background:var(--card);border:1px solid var(--line);border-radius:12px;
+        padding:18px 20px;margin:0 0 12px;display:flex;gap:14px;align-items:flex-start}
+  .item.done{background:#fcfcfd;border-color:var(--line-soft)}
+  .item.done .title{color:var(--ink-faint);text-decoration:line-through}
+  input[type=checkbox]{
+    appearance:none;-webkit-appearance:none;flex:0 0 auto;
+    width:20px;height:20px;margin:3px 0 0;border:1.5px solid #c6bfd4;border-radius:5px;
+    background:#fff;cursor:pointer;position:relative;transition:all .12s ease}
+  input[type=checkbox]:hover{border-color:var(--brand)}
+  input[type=checkbox]:checked{background:var(--brand);border-color:var(--brand)}
+  input[type=checkbox]:checked::after{
+    content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
+    border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg)}
+  input[type=checkbox]:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .body{flex:1;min-width:0}
+  .title{font-weight:650;font-size:16px;margin:0 0 6px;line-height:1.4}
+  .desc{margin:0;font-size:14.5px;color:var(--ink-soft)}
+  .desc + .desc{margin-top:8px}
+  .desc code, .val{font-family:var(--mono);font-size:12.5px;background:var(--line-soft);
+      padding:2px 6px;border-radius:4px;color:var(--ink);word-break:break-all}
+  .fail{margin:10px 0 0;font-size:13.5px;color:var(--stop);background:var(--stop-soft);
+        border-radius:8px;padding:9px 12px}
+  .fail b{font-weight:700}
+
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+       padding:3px 8px;border-radius:99px;margin-left:8px;vertical-align:2px;white-space:nowrap}
+  .tag.blocker{background:var(--stop-soft);color:var(--stop)}
+  .tag.verify{background:var(--warn-soft);color:var(--warn)}
+  .tag.ready{background:var(--ok-soft);color:var(--ok)}
+
+  ul.plain{margin:10px 0 0;padding:0;list-style:none;font-size:14px;color:var(--ink-soft)}
+  ul.plain li{padding:5px 0 5px 16px;position:relative;border-top:1px solid var(--line-soft)}
+  ul.plain li:first-child{border-top:0}
+  ul.plain li::before{content:"";position:absolute;left:2px;top:14px;width:5px;height:5px;
+      border-radius:99px;background:#cdc6da}
+
+  .callout{background:var(--brand-soft);border-radius:12px;padding:20px 22px;margin:34px 0 0}
+  .callout p{margin:0;font-size:15px;color:#3d2a78}
+  .callout p + p{margin-top:10px}
+  .callout strong{color:#2b1a5c}
+
+  footer.end{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);
+             font-size:13px;color:var(--ink-faint)}
+
+  @media print{
+    body{background:#fff;padding:0;font-size:12pt}
+    .progress,.reset{display:none}
+    .item{break-inside:avoid;border-color:#ddd;padding:12px 14px}
+    h2{break-after:avoid}
+    header.top{padding-top:0}
+    a{color:inherit;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Kyntlo · Website V2</p>
+  <h1>Go-live checklist</h1>
+  <p class="lede">Every external platform the site touches, what it needs from you, and what a
+  visitor sees if it isn't wired. Work top to bottom — the blockers are first.</p>
+  <p class="meta">
+    Branch <code>claude/kyntlo-website-v2</code> &nbsp;·&nbsp; 23 pages &nbsp;·&nbsp;
+    Prepared 9 September 2026
+  </p>
+  <div class="progress">
+    <div class="bar"><i id="fill"></i></div>
+    <span class="count" id="count">0 / 0</span>
+    <button class="reset" id="reset" type="button">Reset</button>
+  </div>
+</header>
+
+<!-- ───────────────────────── BLOCKERS ───────────────────────── -->
+<h2>1 · Blockers — do these before the site is public</h2>
+<p class="sect-note">Each of these is either a legal exposure or a dead end a real customer will hit.</p>
+
+<label class="item">
+  <input type="checkbox" data-id="privacy-inbox">
+  <div class="body">
+    <p class="title">Create the <span class="val">privacy@kyntlo.ai</span> inbox <span class="tag blocker">Blocker</span></p>
+    <p class="desc">Printed in the Terms, the Privacy Policy and the DPA as the address for data-subject
+    requests, deletion requests and the CCPA "Do Not Sell or Share" route. Add it as an alias on your
+    existing mail, and make sure someone actually reads it — GDPR gives you 30 days to answer a request.</p>
+    <p class="fail"><b>If skipped:</b> you publish a legal contact route that bounces. That is a
+    documented compliance failure, not a broken link.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="whop-prices">
+  <div class="body">
+    <p class="title">Confirm the Whop plan prices match the site <span class="tag blocker">Blocker</span></p>
+    <p class="desc">The site advertises <span class="val">$90</span> Starter, <span class="val">$270</span>
+    Growth, <span class="val">$490</span> Pro per month, with 50% off the first quarter. Whop holds the
+    real numbers. Open each of the six plans and check the amount and the interval.</p>
+    <ul class="plain">
+      <li>Starter — monthly <span class="val">plan_VnTTHDjp4IFiw</span> · quarterly <span class="val">plan_aOq1QpsY5sWJB</span></li>
+      <li>Growth — monthly <span class="val">plan_1WNKWE6cYCupT</span> · quarterly <span class="val">plan_QIy1lE4MfeAsi</span></li>
+      <li>Pro — monthly <span class="val">plan_d4YY0DcqLXx8b</span> · quarterly <span class="val">plan_VWmHJTwHW6Pj5</span></li>
+    </ul>
+    <p class="fail"><b>If skipped:</b> the customer reads one price and is charged another. That is a
+    chargeback and a refund request, on your first paying customer.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="whop-promo">
+  <div class="body">
+    <p class="title">Check the <span class="val">summer_50</span> promo code is live in Whop <span class="tag blocker">Blocker</span></p>
+    <p class="desc">The quarterly option applies this code automatically. It must exist, be active, and
+    give exactly 50% off the first quarter.</p>
+    <p class="fail"><b>If skipped:</b> quarterly checkout silently charges full price — the discount the
+    page promised just doesn't appear.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="dns">
+  <div class="body">
+    <p class="title">Point <span class="val">kyntlo.ai</span> at the host, with HTTPS <span class="tag blocker">Blocker</span></p>
+    <p class="desc">Upload the site into <span class="val">public_html</span>, confirm the SSL certificate
+    is issued, and check that <span class="val">http://</span> redirects to <span class="val">https://</span>.
+    The site references its own domain in 45 places — canonical tags, the sitemap, structured data.</p>
+    <p class="fail"><b>If skipped:</b> browsers show a security warning, and Google indexes nothing.</p>
+  </div>
+</label>
+
+<!-- ───────────────────────── VERIFY ───────────────────────── -->
+<h2>2 · Verify on the live domain — 15 minutes</h2>
+<p class="sect-note">These are already wired in the code. They can't be tested from a build environment —
+each needs one click on the real site. Do them in order; each takes about a minute.</p>
+
+<label class="item">
+  <input type="checkbox" data-id="v-checkout">
+  <div class="body">
+    <p class="title">Whop checkout opens on all six plans <span class="tag verify">Verify</span></p>
+    <p class="desc">Go to <span class="val">/checkout</span>. Tick the agreement box, switch between
+    Monthly and Quarterly, and open each package. The Whop panel must load every time.</p>
+    <p class="desc">Whop's script scans the page <strong>once</strong> on load. Both billing options are
+    mounted up front and switching only shows and hides them — so if a plan loads on first view but not
+    after switching, something has changed that shouldn't have.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="v-clickwrap">
+  <div class="body">
+    <p class="title">The terms checkbox actually gates payment <span class="tag verify">Verify</span></p>
+    <p class="desc">On <span class="val">/checkout</span>, before ticking the box the payment area should
+    be greyed out and unusable. After ticking, it unlocks. This is your record of consent — it stores the
+    terms version, the timestamp and which documents were accepted.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="v-report">
+  <div class="body">
+    <p class="title">The free report widget loads and delivers <span class="tag verify">Verify</span></p>
+    <p class="desc">Open <span class="val">/report</span>, submit a real business name and your own email.
+    Confirm the widget accepts it, the report arrives, and the lead lands in your CRM.</p>
+    <p class="desc">Widget <span class="val">6a955f9388a8631843b27117</span>. This is your main lead
+    magnet — if it fails, the strongest page on the site collects nothing.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="v-booking">
+  <div class="body">
+    <p class="title">Growth Audit booking shows real availability <span class="tag verify">Verify</span></p>
+    <p class="desc">On the homepage, scroll to the booking section and book a slot for yourself. Check the
+    calendar shows open times (not "no availability"), that the confirmation arrives, and that the slot
+    appears in your calendar.</p>
+    <p class="desc">Calendar <span class="val">BRMtQSYpjswqT1ItfLv2</span> on
+    <span class="val">links.kyntlo.ai</span> — that subdomain must resolve.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="v-form">
+  <div class="body">
+    <p class="title">Contact form submits and notifies you <span class="tag verify">Verify</span></p>
+    <p class="desc">Submit the demo request form with your own details. Confirm the success message shows
+    and the notification reaches you. Form <span class="val">e2memfx2j5y</span>.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="v-chat">
+  <div class="body">
+    <p class="title">Chat bubble appears and routes to a person <span class="tag verify">Verify</span></p>
+    <p class="desc">The bubble should appear bottom-right on every page. Send a message and confirm it
+    reaches your inbox. Widget <span class="val">6a579e7ad166a8719f6ed338</span>.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="v-cookie">
+  <div class="body">
+    <p class="title">Cookie banner appears, and rejecting sticks <span class="tag verify">Verify</span></p>
+    <p class="desc">In a private window, the consent banner should appear on first visit. Click
+    <strong>Reject all</strong> and reload — it must not reappear, and no analytics cookie may be set.
+    Then check <strong>Cookie preferences</strong> in the footer reopens the dialog.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="v-login">
+  <div class="body">
+    <p class="title"><span class="val">hub.kyntlo.ai</span> is live and accepts logins <span class="tag verify">Verify</span></p>
+    <p class="desc">The login page hands off to your platform on this subdomain. Confirm it resolves,
+    serves HTTPS, and that a real account can sign in.</p>
+    <p class="fail"><b>If skipped:</b> paying customers can't reach the product they just bought.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="v-legal">
+  <div class="body">
+    <p class="title">All four legal pages open from the footer <span class="tag verify">Verify</span></p>
+    <p class="desc"><span class="val">/terms</span>, <span class="val">/privacy</span>,
+    <span class="val">/dpa</span>, <span class="val">/refund</span> — plus the
+    <strong>Do Not Sell or Share My Personal Information</strong> link, which should jump to the US rights
+    section of the privacy policy.</p>
+  </div>
+</label>
+
+<!-- ───────────────────────── DECISIONS ───────────────────────── -->
+<h2>3 · Decisions only you can make</h2>
+<p class="sect-note">The site works without these. It works better with them — but each needs a choice
+from you, not a code change.</p>
+
+<label class="item">
+  <input type="checkbox" data-id="d-analytics">
+  <div class="body">
+    <p class="title">Pick an analytics tool <span class="tag verify">Decide</span></p>
+    <p class="desc">This is the only genuinely empty slot in the codebase. Everything is built and
+    waiting — consent gating, IP anonymisation, no ad-targeting signals. It stays dormant until an ID is
+    set, so nothing breaks meanwhile.</p>
+    <ul class="plain">
+      <li><strong>Google Analytics 4</strong> — free, most tutorials, most complex. Gives you an ID
+      shaped <span class="val">G-XXXXXXXXXX</span>.</li>
+      <li><strong>Plausible or Fathom</strong> — about $9/month, far simpler, no cookie banner needed
+      for them, EU-hosted.</li>
+      <li><strong>Cloudflare Web Analytics</strong> — free and private, but only if you move DNS to
+      Cloudflare.</li>
+    </ul>
+    <p class="desc">Once you have an ID, it's a one-line change: <span class="val">window.KYNTLO_GA_ID</span>.
+    Send it to me and I'll wire it.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="d-vendor">
+  <div class="body">
+    <p class="title">Decide how the infrastructure vendor is named in the DPA <span class="tag verify">Decide</span></p>
+    <p class="desc">Your supplied DPA names the vendor three times. Your own Brand Rules forbid naming it
+    anywhere, permanently. I published sub-processors <strong>by role</strong> instead — which is valid
+    under GDPR, with the named list available on written request.</p>
+    <p class="desc">You can leave it as is, or name the vendor openly. Enterprise buyers and their legal
+    teams often ask for the named list before signing, so expect the question either way.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="d-lawyer">
+  <div class="body">
+    <p class="title">Have a lawyer read the Terms and the DPA <span class="tag verify">Decide</span></p>
+    <p class="desc">Two clauses can't do what they're written to do, and no wording fixes them:</p>
+    <ul class="plain">
+      <li>The DPA disclaims liability for the upstream infrastructure vendor. GDPR Article 28(4) makes a
+      processor liable for its sub-processors regardless. I added a line saying mandatory law prevails —
+      that's honest, but it doesn't restore the protection.</li>
+      <li>The Terms declare the service B2B-only to sidestep consumer protection. Whether someone is a
+      consumer depends on what they actually are, not what they agreed to. Under Egypt's Law 181/2018 a
+      sole trader buying for their own business may still qualify.</li>
+    </ul>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="d-pdpl">
+  <div class="body">
+    <p class="title">Start the Egypt PDPL registration <span class="tag verify">Decide</span></p>
+    <p class="desc">Law 151/2020 requires a registered Data Protection Officer and the relevant licences.
+    The deadline is <strong>31 October 2026</strong>. Separately, GDPR Article 27 requires an EU
+    Representative if you process EU residents' data — and you will, the moment a European fills in the
+    report form.</p>
+  </div>
+</label>
+
+<!-- ───────────────────────── AFTER ───────────────────────── -->
+<h2>4 · The first week after launch</h2>
+<p class="sect-note">Don't do these before go-live. They need real traffic to be meaningful.</p>
+
+<label class="item">
+  <input type="checkbox" data-id="a-csp">
+  <div class="body">
+    <p class="title">Leave the security policy in report-only mode for a few days <span class="tag ready">Wait</span></p>
+    <p class="desc">The Content-Security-Policy in <span class="val">.htaccess</span> is deliberately set
+    to report-only. Payment, form and booking providers load resources that can't be listed in advance
+    from the code alone.</p>
+    <p class="desc">After a full checkout, a form submit and a booking have all completed on the live
+    site with nothing broken, the header can be switched to enforcing — the file explains how, in a
+    comment right above it.</p>
+    <p class="fail"><b>If enforced too early:</b> checkout or booking dies silently, with nothing visible
+    to the visitor and no error you'd notice.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="a-search">
+  <div class="body">
+    <p class="title">Submit the sitemap to Google and Bing <span class="tag ready">Then</span></p>
+    <p class="desc">Add the domain in Google Search Console and Bing Webmaster Tools, then submit
+    <span class="val">https://kyntlo.ai/sitemap.xml</span>. Both are free, and Search Console is where
+    you'll see indexing problems first.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="a-mobile">
+  <div class="body">
+    <p class="title">Open the site on a real phone <span class="tag ready">Then</span></p>
+    <p class="desc">Not a browser resized to look narrow — an actual phone. Check the header stays
+    readable when scrolling, the calculator sliders work with a thumb, the channel logos are legible, and
+    the chat bubble doesn't cover the main call to action.</p>
+  </div>
+</label>
+
+<label class="item">
+  <input type="checkbox" data-id="a-cache">
+  <div class="body">
+    <p class="title">Remember the cache stamp on every future update <span class="tag ready">Ongoing</span></p>
+    <p class="desc">Assets are cached for a year for speed. Every stylesheet and script link carries a
+    <span class="val">?v=YYYYMMDD</span> stamp, which must be bumped whenever those files change —
+    otherwise returning visitors keep the old version.</p>
+    <p class="desc">I handle this on any change I make. It matters if anyone else edits the files.</p>
+  </div>
+</label>
+
+<div class="callout">
+  <p><strong>The short version.</strong> Six integrations are already connected and working in the code:
+  Whop payments, three LeadConnector widgets, the Forminit form, and the consent manager. One platform
+  genuinely needs wiring — analytics — and it needs a decision from you first.</p>
+  <p>Everything else on this list is verification: proving on the live domain what the code already
+  says should happen. The four items in section 1 are the ones that can hurt you.</p>
+</div>
+
+<footer class="end">
+  Kyntlo — Own Tomorrow. &nbsp;·&nbsp; Tick boxes as you go; progress is saved in this browser.
+  &nbsp;·&nbsp; Print or save as PDF with Ctrl/Cmd&nbsp;+&nbsp;P.
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = "kyntloLaunchChecklist";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("input[type=checkbox]"));
+  var fill = document.getElementById("fill");
+  var count = document.getElementById("count");
+
+  function read() {
+    try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
+  }
+  function write(state) {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  function paint() {
+    var done = 0;
+    boxes.forEach(function (b) {
+      b.closest(".item").classList.toggle("done", b.checked);
+      if (b.checked) done++;
+    });
+    count.textContent = done + " / " + boxes.length;
+    fill.style.width = (boxes.length ? (done / boxes.length) * 100 : 0) + "%";
+  }
+
+  var state = read();
+  boxes.forEach(function (b) {
+    b.checked = !!state[b.dataset.id];
+    b.addEventListener("change", function () {
+      var s = read();
+      s[b.dataset.id] = b.checked;
+      write(s);
+      paint();
+    });
+  });
+
+  document.getElementById("reset").addEventListener("click", function (e) {
+    e.preventDefault();
+    write({});
+    boxes.forEach(function (b) { b.checked = false; });
+    paint();
+  });
+
+  paint();
+})();
+</script>
+</body>
+</html>
