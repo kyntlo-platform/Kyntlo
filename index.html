@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="assets/site-shell.css?v=20260907" rel="stylesheet">
     <script src="assets/site-shell.js?v=20260907" defer></script>
     <script type="application/ld+json">
@@ -46,7 +46,7 @@
             /* Text gradient needs contrast the decorative one does not:
                #6d00c1 is 2.33:1 on this ground, #b06bff is 6.16:1. */
             --grad-text:linear-gradient(135deg,var(--pink),#b06bff);
-            --display:"Space Grotesk",Inter,sans-serif;
+            --display:"Space Grotesk","Plus Jakarta Sans", "Plus Jakarta Sans", Inter, sans-serif;
             --body:"Inter",system-ui,sans-serif;
             --mono:"JetBrains Mono",ui-monospace,monospace;
             --wrap:1180px;
@@ -224,9 +224,9 @@
         .fitcol h3{margin-bottom:8px}
         .fitcol > p{color:var(--muted);font-size:.95rem;margin-bottom:24px}
         .fitlist{list-style:none;display:grid;gap:14px}
-        .fitlist li{display:flex;gap:13px;font-size:.94rem;line-height:1.6;color:var(--muted)}
+        .fitlist li{position:relative;display:block;padding-left:20px;font-size:.94rem;line-height:1.6;color:var(--muted)}
         .fitlist li b{color:var(--ink);font-weight:600}
-        .fitlist li::before{content:"";flex:0 0 auto;width:7px;height:7px;border-radius:50%;margin-top:8px}
+        .fitlist li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%}
         .yes li::before{background:var(--gain)}
         .no li::before{background:var(--dim)}
         .fitnote{margin-top:26px;padding:18px 20px;border-left:2px solid var(--pink);
@@ -342,10 +342,10 @@
         .book{padding:100px 0;border-top:1px solid var(--line);background:var(--bg-2)}
         .book-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
         .booklist{list-style:none;display:grid;gap:14px}
-        .booklist li{display:flex;gap:12px;font-size:.94rem;line-height:1.65;color:var(--muted)}
+        .booklist li{position:relative;display:block;padding-left:20px;font-size:.94rem;line-height:1.65;color:var(--muted)}
         .booklist li b{color:var(--ink);font-weight:600}
-        .booklist li::before{content:"";flex:0 0 auto;width:7px;height:7px;border-radius:50%;
-            background:var(--pink);margin-top:8px}
+        .booklist li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;
+            background:var(--pink)}
         .bookframe{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;
             box-shadow:0 30px 80px rgba(0,0,0,.5);min-height:640px}
         .bookframe iframe{display:block;width:100%;min-height:640px;border:0}

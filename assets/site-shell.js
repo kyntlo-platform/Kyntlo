@@ -33,6 +33,7 @@
         { key: "index", href: "index.html#features", labelKey: "platform" },
         { key: "funnels", href: "funnels.html", labelKey: "funnels" },
         { key: "pricing", href: "pricing.html", labelKey: "pricing" },
+        { key: "report", href: "report.html", label: "Free Report" },
         { key: "contact", href: "contact.html", labelKey: "contact" },
         { key: "about", href: "about.html", labelKey: "about" }
     ];
@@ -147,7 +148,8 @@
         const active = item.key === pageKey;
         const current = active ? ' aria-current="page"' : "";
         const className = mobileClass ? ` class="${mobileClass}"` : "";
-        return `<a href="${siteHref(item.href)}"${className}${current}>${t(item.labelKey)}</a>`;
+        const label = item.labelKey ? t(item.labelKey) : item.label;
+        return `<a href="${siteHref(item.href)}"${className}${current}>${label}</a>`;
     }
 
     function renderNavigation() {
@@ -372,6 +374,7 @@
                             <li><a href="${siteHref("funnels.html")}">${t("funnels")}</a></li>
                             <li><a href="${siteHref("pricing.html")}">${t("pricing")}</a></li>
                             <li><a href="${siteHref("compare.html")}">${t("compare")}</a></li>
+                            <li><a href="${siteHref("report.html")}">Free Business Report</a></li>
                         </ul>
                     </nav>
 
@@ -403,6 +406,8 @@
                             <li><a href="${siteHref("dpa.html")}">Data Processing Agreement</a></li>
                             <li><a href="${siteHref("refund.html")}">Refund Policy</a></li>
                             <li><a href="${siteHref("accessibility.html")}">Accessibility</a></li>
+                            <li><a href="${siteHref("privacy.html")}#us-rights">Do Not Sell or Share My Personal Information</a></li>
+                            <li><button type="button" class="site-footer__cookiebtn" data-cookie-reopen>Cookie preferences</button></li>
                         </ul>
                     </nav>
                 </div>
@@ -787,6 +792,60 @@
         });
     }
 
+    /* ---------- analytics ----------
+       The consent manager already maps its "analytics" category to
+       analytics_storage, so the correct pattern is Google Consent Mode: load
+       the tag with every storage type denied by default and let the banner
+       grant it. Nothing is measured until the visitor agrees, and no tag is
+       requested at all unless a measurement ID has been configured. */
+    function setupAnalytics() {
+        var id = window.KYNTLO_GA_ID;
+        if (!id || document.getElementById("kyn-ga")) return;
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        gtag("consent", "default", {
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            analytics_storage: "denied",
+            functionality_storage: "granted",
+            security_storage: "granted",
+            wait_for_update: 500
+        });
+
+        var tag = document.createElement("script");
+        tag.id = "kyn-ga";
+        tag.async = true;
+        tag.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+        document.head.appendChild(tag);
+
+        gtag("js", new Date());
+        gtag("config", id, {
+            anonymize_ip: true,
+            allow_google_signals: false,
+            allow_ad_personalization_signals: false
+        });
+    }
+
+    /* The footer control hands back to the consent manager's own dialog so
+       there is one place preferences live, not two. */
+    function setupCookiePreferences() {
+        document.addEventListener("click", function (event) {
+            var trigger = event.target.closest("[data-cookie-reopen]");
+            if (!trigger) return;
+            event.preventDefault();
+            var mgr = window.silktideConsentManager;
+            if (mgr && typeof mgr.openPreferences === "function") { mgr.openPreferences(); return; }
+            if (mgr && typeof mgr.show === "function") { mgr.show(); return; }
+            var existing = document.querySelector("[data-stcm-open-preferences], .stcm-preferences-trigger");
+            if (existing) { existing.click(); return; }
+            window.location.href = siteHref("cookies.html");
+        });
+    }
+
     function setupScrollState() {
         var ticking = false;
         var scrolled = null;
@@ -823,4 +882,6 @@
     setupBrandCursor();
     loadChatWidget();
     loadSilktideConsentManager();
+    setupCookiePreferences();
+    setupAnalytics();
 })();
