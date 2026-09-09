@@ -205,7 +205,7 @@
     /* The payment form stays mounted while locked - Whop's loader scans the DOM once,
        so removing and re-adding the host would leave a dead box. We disable interaction
        with a class instead, and record the acknowledgement so it can be evidenced. */
-    const TERMS_VERSION = "2026-09-07";
+    const TERMS_VERSION = "2026-09-06";
     const CONSENT_KEY = "kyntloTermsAccepted";
 
     function recordConsent(packageKey, billingKey) {
@@ -213,7 +213,7 @@
             window.localStorage.setItem(CONSENT_KEY, JSON.stringify({
                 termsVersion: TERMS_VERSION,
                 acceptedAt: new Date().toISOString(),
-                documents: ["terms", "privacy", "refund"],
+                documents: ["terms", "privacy", "dpa", "refund"],
                 package: packageKey || null,
                 billing: billingKey || null
             }));
@@ -307,7 +307,7 @@
                                 <label class="consent-check">
                                     <input type="checkbox" id="consentAccept">
                                     <span class="consent-box" aria-hidden="true"></span>
-                                    <span class="consent-copy">I have read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Use</a>, the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and the <a href="refund.html" target="_blank" rel="noopener">Refund Policy</a>. I confirm I am at least 18 and authorised to buy for my business.</span>
+                                    <span class="consent-copy">I am opening a <b>business account</b>, and I have read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>, the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>, the <a href="dpa.html" target="_blank" rel="noopener">Data Processing Agreement</a> and the <a href="refund.html" target="_blank" rel="noopener">Refund Policy</a>. I confirm I am at least 18 and authorised to bind my organisation.</span>
                                 </label>
                                 <p class="consent-note" id="consentNote">Tick the box to unlock the payment form.</p>
                             </div>

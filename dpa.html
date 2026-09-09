@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Processing Agreement | Kyntlo</title>
-    <meta name="description" content="The Kyntlo Data Processing Agreement: roles, instructions, security, sub-processors, international transfers, breach notification, audit rights and deletion on termination.">
+    <meta name="description" content="The Kyntlo Enterprise Data Processing Agreement: controller and processor roles, sub-processing, security measures, breach notification, data subject rights, Standard Contractual Clauses, audit and deletion.">
     <link rel="canonical" href="https://kyntlo.ai/dpa">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <link href="assets/site-shell.css?v=20260907" rel="stylesheet">
-    <script src="assets/site-shell.js?v=20260907" defer></script>
+    <link href="assets/site-shell.css?v=20260909" rel="stylesheet">
+    <script src="assets/site-shell.js?v=20260909" defer></script>
     <style>
         :root {
             --surface-light: rgba(255, 255, 255, 0.03);
@@ -267,154 +267,95 @@
     <header class="legal-header">
         <div class="container">
             <h1>Data Processing Agreement</h1>
-            <p>Version 1.0 — 7 September 2026. This DPA applies where Kyntlo processes personal data on your behalf. It forms part of the <a href="terms.html">Terms of Use</a> and takes precedence over them on data protection. To have it countersigned, email <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a>.</p>
+            <p>Effective 6 September 2026 &middot; Kyntlo for Artificial Intelligence Tools, Cairo, Egypt. This DPA is incorporated into the <a href="terms.html">Terms of Service</a> and governs Kyntlo's processing of personal data on behalf of the Customer. For a countersigned copy, email <a href="mailto:privacy@kyntlo.ai">privacy@kyntlo.ai</a>.</p>
         </div>
     </header>
 
     <main class="container legal-layout">
-        <aside class="legal-toc" aria-label="DPA sections">
+        <aside class="legal-toc" aria-label="Sections">
             <h2>Sections</h2>
-            <a href="#roles">Roles</a>
-            <a href="#scope">Scope of Processing</a>
-            <a href="#instructions">Our Instructions</a>
-            <a href="#confidentiality">Confidentiality</a>
+            <a href="#definitions">Definitions</a>
+            <a href="#roles">Roles &amp; Scope</a>
+            <a href="#subprocessors">Sub-processing</a>
             <a href="#security">Security</a>
-            <a href="#subprocessors">Sub-processors</a>
-            <a href="#transfers">International Transfers</a>
-            <a href="#assistance">Assistance to You</a>
             <a href="#breach">Breach Notification</a>
-            <a href="#audit">Audit</a>
-            <a href="#deletion">Return and Deletion</a>
+            <a href="#dsr">Data Subject Rights</a>
+            <a href="#transfers">International Transfers</a>
+            <a href="#audit">Audit Rights</a>
+            <a href="#deletion">Return &amp; Deletion</a>
             <a href="#liability">Liability</a>
-            <a href="#annex-a">Annex A — Details</a>
-            <a href="#annex-b">Annex B — Security</a>
-            <a href="#annex-c">Annex C — Sub-processors</a>
+            <a href="#annex-i">Annex I — Processing</a>
+            <a href="#annex-ii">Annex II — Security Measures</a>
         </aside>
 
         <div class="legal-content">
-            <section class="legal-card notice" id="roles">
-                <h2>1. The Parties and Their Roles</h2>
-                <p>This Data Processing Agreement is between you (the <b>Controller</b>) and Kyntlo for Artificial Intelligence Tools, Building Lotus2 North90, Cairo Governorate 11234, Egypt (the <b>Processor</b>).</p>
-                <p>You decide why and how personal data about your customers, leads, patients or members is processed. Kyntlo processes it only to provide the Services and only on your documented instructions. You are responsible for having a lawful basis for that processing and for giving the people concerned the information they are entitled to.</p>
-                <p>Kyntlo remains an independent controller for its own account data — the names and contact details of the people who administer your Kyntlo account, billing records, and support correspondence. That processing is described in the <a href="privacy.html">Privacy Policy</a>, not here.</p>
-                <p>This DPA applies to the extent that Egypt's Personal Data Protection Law (Law No. 151 of 2020), the EU General Data Protection Regulation, the UK GDPR, or a US state privacy law applies to the processing.</p>
+            <section class="legal-card notice" id="definitions">
+                <h2>1. Definitions</h2>
+                <ul class="legal-list"><li><b>"Data Protection Laws"</b> means all applicable worldwide privacy regulations, including the EU General Data Protection Regulation, the UK GDPR, the California Consumer Privacy Act, and the Egypt Personal Data Protection Law (Law No. 151/2020).</li><li><b>"Sub-processor"</b> means any third party engaged by Kyntlo (the Processor) to process personal data, including our platform infrastructure provider and its underlying cloud partners.</li><li><b>"Standard Contractual Clauses"</b> means the clauses approved by the European Commission for the lawful transfer of personal data to third countries.</li></ul>
             </section>
 
-            <section class="legal-card" id="scope">
-                <h2>2. Scope, Subject Matter and Duration</h2>
-                <p>The subject matter is the provision of the Kyntlo platform and any configuration or managed services you have purchased. Processing lasts for as long as your subscription is active, plus the retention windows set out in section 11.</p>
-                <p>The categories of data subject, the categories of personal data, and the processing operations are set out in <a href="#annex-a">Annex A</a>. If you need to process special categories of data — health, biometric, or similar — you must agree that in writing with us first, because it changes the configuration and the safeguards required.</p>
-            </section>
-
-            <section class="legal-card" id="instructions">
-                <h2>3. Processing Only on Your Instructions</h2>
-                <p>Kyntlo processes personal data only on your documented instructions, including for international transfers, unless required to do otherwise by law that applies to Kyntlo. Where a law requires processing beyond your instructions, Kyntlo will tell you before processing unless that law prohibits it on important grounds of public interest.</p>
-                <p>Your instructions are: this DPA, the Terms of Use, your configuration of the Services, and any written instruction you give us through support. If Kyntlo considers an instruction to infringe applicable data protection law, it will tell you without undue delay and may pause the affected processing until the matter is resolved.</p>
-                <p><b>Kyntlo does not:</b> sell your personal data; share it for cross-context behavioural advertising; use it for its own marketing; or use the content of your customer conversations, contacts or files to train general-purpose AI models. Aggregated, anonymised statistics that cannot identify you, your business or any individual may be used to operate and improve the Services.</p>
-            </section>
-
-            <section class="legal-card" id="confidentiality">
-                <h2>4. Confidentiality</h2>
-                <p>Kyntlo ensures that every person authorised to process personal data under this DPA — employees and contractors alike — is bound by a written duty of confidentiality that survives the end of their engagement, and receives training appropriate to their access. Access is granted on a need-to-know basis and removed when it is no longer needed.</p>
-            </section>
-
-            <section class="legal-card" id="security">
-                <h2>5. Security of Processing</h2>
-                <p>Kyntlo implements appropriate technical and organisational measures to protect personal data against accidental or unlawful destruction, loss, alteration, unauthorised disclosure or access, taking into account the state of the art, the cost of implementation, and the risk to the people concerned. Those measures are described in <a href="#annex-b">Annex B</a>.</p>
-                <p>Security measures evolve. Kyntlo may update them, provided the level of protection is not reduced.</p>
+            <section class="legal-card" id="roles">
+                <h2>2. Roles and Scope of Processing</h2>
+                <ul class="legal-list"><li><b>Controller and processor.</b> The Customer is the data controller of all Customer Data. Kyntlo is a data processor acting strictly on the Customer's documented instructions.</li><li><b>Lawful basis warranty.</b> The Customer represents and warrants that it has secured all notices, consents and lawful bases required to collect and transfer personal data into the Kyntlo platform.</li><li><b>Customer instructions.</b> Kyntlo shall have no liability where the Customer's instructions or data collection practices violate applicable Data Protection Laws. If Kyntlo reasonably believes an instruction violates the GDPR or another applicable law, it may suspend the affected processing without penalty.</li></ul>
             </section>
 
             <section class="legal-card" id="subprocessors">
-                <h2>6. Sub-processors</h2>
-                <p>You give Kyntlo general authorisation to engage sub-processors to deliver the Services. The current list is in <a href="#annex-c">Annex C</a>.</p>
-                <p>Kyntlo imposes on every sub-processor data protection obligations no less protective than those in this DPA, and remains fully liable to you for their performance.</p>
-                <p>Kyntlo will give you at least <b>30 days' notice</b> before adding or replacing a sub-processor, by email to your registered account contact. If you reasonably object on data protection grounds within that period, we will work with you in good faith to find an alternative. If none is available, you may terminate the affected Services without penalty and receive a refund of fees paid for service not delivered.</p>
+                <h2>3. Sub-Processing and Infrastructure</h2>
+                <ul class="legal-list"><li><b>Authorised sub-processors.</b> The Customer grants Kyntlo general written authorisation to engage sub-processors to deliver the platform. Kyntlo's primary infrastructure is provided by a specialist platform infrastructure partner, which in turn runs on major cloud services including Google Cloud Platform and Amazon Web Services. <b>The current named list of sub-processors, with each provider's identity, processing location and function, is provided on written request to <a href="mailto:privacy@kyntlo.ai">privacy@kyntlo.ai</a></b> and forms part of this Annex.</li><li><b>Objection rights.</b> Kyntlo will notify the Customer of intended changes concerning the addition of a sub-processor. The Customer may object within 15 days; if the objection cannot be resolved, the Customer's sole remedy is to terminate the Agreement.</li><li><b>Upstream dependencies.</b> Kyntlo is a software-as-a-service provider built on third-party cloud infrastructure. To the fullest extent permitted by applicable law, Kyntlo disclaims liability for data breaches, server outages or delivery failures originating directly from an underlying sub-processor or a downstream telecommunications carrier. Where mandatory law makes a processor liable for its sub-processors, that law prevails over this paragraph.</li></ul>
             </section>
 
-            <section class="legal-card" id="transfers">
-                <h2>7. International Transfers</h2>
-                <p>Kyntlo operates from Egypt and uses infrastructure, communications and AI providers located in other countries. Personal data will therefore be transferred across borders.</p>
-                <p><b>From the EEA and the UK.</b> Egypt is not the subject of an adequacy decision by the European Commission or the UK government. Where personal data is transferred from the EEA or the UK to Egypt or to any other country without adequacy, the parties rely on the European Commission's Standard Contractual Clauses (Decision 2021/914), Module Two (controller to processor), which are incorporated into this DPA by reference and completed using Annexes A, B and C. For transfers originating in the UK, the UK International Data Transfer Addendum applies to those clauses. Where this DPA and the Standard Contractual Clauses conflict, the Clauses prevail.</p>
-                <p><b>From Egypt.</b> Cross-border transfers of personal data governed by Law No. 151 of 2020 are made in accordance with its cross-border transfer requirements and any authorisation required from the Personal Data Protection Centre.</p>
-                <p>Kyntlo will tell you if it becomes unable to meet these obligations, and you may suspend transfers or terminate the affected Services.</p>
-            </section>
-
-            <section class="legal-card" id="assistance">
-                <h2>8. Assistance to You</h2>
-                <p><b>Requests from individuals.</b> If a person contacts Kyntlo directly to access, correct, delete, port or object to the processing of data held in your workspace, Kyntlo will not action the request itself. It will refer the person to you and notify you without undue delay, because that data is yours to control. Kyntlo provides export, correction and deletion tools in the platform and will give reasonable additional assistance so you can respond within the period your law requires — one month under the GDPR, 45 days under the CCPA, and the period set by the PDPL.</p>
-                <p><b>Assessments and consultation.</b> Taking into account the nature of processing and the information available to it, Kyntlo will give you reasonable assistance with data protection impact assessments and with prior consultation of a supervisory authority.</p>
+            <section class="legal-card" id="security">
+                <h2>4. Technical and Organisational Measures</h2>
+                <ul class="legal-list"><li><b>Security standards.</b> Kyntlo implements and maintains industry-standard technical and organisational measures, set out in Annex II, designed to protect personal data against unauthorised access, loss or alteration.</li><li><b>Confidentiality.</b> Kyntlo ensures that all personnel authorised to process personal data are bound by strict obligations of confidentiality.</li></ul>
             </section>
 
             <section class="legal-card" id="breach">
-                <h2>9. Personal Data Breach</h2>
-                <p>Kyntlo will notify you <b>without undue delay, and in any case within 48 hours</b>, after becoming aware of a personal data breach affecting personal data processed under this DPA. The notification will describe, as far as known: the nature of the breach and the categories and approximate number of records and people affected; the likely consequences; the measures taken or proposed; and a contact point for more information. Where the full picture is not yet available, Kyntlo will provide information in phases without further undue delay.</p>
-                <p>This timing exists so that you can meet your own 72-hour obligation under GDPR Article 33 and the equivalent obligation under the PDPL. Notifying the supervisory authority and, where required, the individuals, is your responsibility as controller. Kyntlo will not make a public statement identifying you in connection with a breach without consulting you first, unless legally compelled.</p>
-                <p>You must likewise tell Kyntlo without undue delay if you become aware of a breach involving data in your workspace.</p>
+                <h2>5. Personal Data Breach Notification</h2>
+                <ul class="legal-list"><li><b>Incident response.</b> In the event of a confirmed personal data breach affecting the Customer's workspace, Kyntlo will notify the Customer without undue delay, and in no event later than 72 hours after becoming aware of the breach.</li><li><b>Remediation.</b> Kyntlo will provide reasonable assistance to the Customer in mitigating the breach and meeting the Customer's own regulatory notification obligations.</li></ul>
+            </section>
+
+            <section class="legal-card" id="dsr">
+                <h2>6. Data Subject Rights</h2>
+                <ul class="legal-list"><li><b>Assistance.</b> Kyntlo provides technical features allowing the Customer to fulfil data subject requests, including deletion, access and portability.</li><li><b>Redirection.</b> If Kyntlo receives a data subject request directly from the Customer's end user, Kyntlo will not respond directly but will forward the request to the Customer.</li></ul>
+            </section>
+
+            <section class="legal-card" id="transfers">
+                <h2>7. International Data Transfers</h2>
+                <ul class="legal-list"><li><b>Standard Contractual Clauses.</b> For any transfer of personal data from the European Economic Area, Switzerland or the UK to Kyntlo in Egypt or to its sub-processors, the parties agree that the European Commission's Standard Contractual Clauses (Module Two, controller to processor) apply and are incorporated by reference.</li><li><b>UK Addendum.</b> For data governed by the UK GDPR, the UK International Data Transfer Addendum applies alongside the Standard Contractual Clauses.</li></ul>
             </section>
 
             <section class="legal-card" id="audit">
-                <h2>10. Records, Information and Audit</h2>
-                <p>Kyntlo maintains a record of the processing carried out on your behalf and will make available to you the information reasonably necessary to demonstrate compliance with this DPA.</p>
-                <p>You may audit that compliance <b>once in any twelve-month period</b>, on at least 30 days' written notice, during business hours, without unreasonably disrupting Kyntlo's operations, and subject to confidentiality. Additional audits may be carried out where a supervisory authority requires one or following a personal data breach affecting your data. Kyntlo may satisfy an audit request by providing an existing report or completed security questionnaire where that reasonably answers your questions. Audits are at your cost, except where the audit reveals material non-compliance.</p>
+                <h2>8. Audit Rights</h2>
+                <ul class="legal-list"><li><b>Documentary audits.</b> On written request, Kyntlo will make available the information reasonably necessary to demonstrate compliance with this DPA, in the form of security documentation, ISO certificates or SOC 2 reports provided by our sub-processors.</li><li><b>Limitation.</b> To preserve the security of a multi-tenant cloud environment, physical on-site audits or penetration tests of Kyntlo's servers by the Customer are not permitted.</li></ul>
             </section>
 
             <section class="legal-card" id="deletion">
-                <h2>11. Return and Deletion</h2>
-                <p>You may export your data at any time while your subscription is active. After termination, your data remains available for export for <b>30 days</b>. After that period Kyntlo begins deletion: data is removed from live systems within <b>90 days</b> of termination and from routine backups within a further <b>90 days</b>.</p>
-                <p>Kyntlo may retain personal data where it is required to do so by law — for example tax and accounting records — in which case it continues to protect it under this DPA and processes it only for the purpose that requires retention. On written request, Kyntlo will confirm deletion.</p>
+                <h2>9. Return and Deletion of Data</h2>
+                <ul class="legal-list"><li><b>On termination.</b> On termination or expiry of the Customer's subscription, Kyntlo shall, at the Customer's choice, delete or return all personal data.</li><li><b>Routine deletion.</b> Where no explicit instruction is given, Kyntlo and its sub-processors routinely purge inactive workspace data within 30 to 90 days of account termination, unless retention is required by applicable law.</li></ul>
             </section>
 
             <section class="legal-card" id="liability">
-                <h2>12. Liability, Term and Precedence</h2>
-                <p>This DPA takes effect when you accept the Terms of Use or begin using the Services, whichever is earlier, and continues for as long as Kyntlo processes personal data on your behalf. Clauses that by their nature should survive termination do so.</p>
-                <p>Each party's liability under this DPA is subject to the limitations and exclusions of liability in the Terms of Use, except where applicable data protection law does not permit that limitation. Nothing in this DPA limits a data subject's rights.</p>
-                <p>Where this DPA conflicts with the Terms of Use, this DPA prevails on data protection matters. Where it conflicts with the Standard Contractual Clauses, the Clauses prevail. If a provision is found unenforceable, the rest remains in force.</p>
-                <p>This DPA is governed by the law stated in the Terms of Use, except where the Standard Contractual Clauses require the law of an EU member state, in which case that law governs those Clauses.</p>
+                <h2>10. Limitation of Liability</h2>
+                <p>Claims brought under this DPA are subject to the limitation of liability in the <a href="terms.html#liability">Terms of Service</a>. Kyntlo's total aggregate liability across all privacy claims shall not exceed the subscription fees paid by the Customer in the three months preceding the incident giving rise to the liability, except where applicable mandatory law does not permit that limitation.</p>
             </section>
 
-            <section class="legal-card" id="annex-a">
-                <h2>Annex A — Details of Processing</h2>
-                <p><b>Categories of data subject.</b> Your customers, leads, prospects, patients, clients or members; the people who contact you through any connected channel; and your own staff who use the workspace.</p>
-                <p><b>Categories of personal data.</b> Identifiers such as name, phone number, email address and postal address; appointment and booking records; message content across SMS, WhatsApp, web chat, social channels and email; call recordings and transcripts where you enable them; payment and invoice records; consent and opt-out status; notes, tags and custom fields you define; and technical data such as IP address and device information.</p>
-                <p><b>Special categories.</b> Not processed unless separately agreed in writing. Where you operate a clinic or similar and configure the workspace to hold health-related information, you must agree that with us in advance.</p>
-                <p><b>Nature and purpose of processing.</b> Collection, recording, organisation, storage, retrieval, use, transmission, disclosure to sub-processors, restriction and erasure — for the purpose of providing CRM, booking, messaging, voice, payment, reputation, automation and reporting functions, including AI features that answer, summarise, draft and prioritise on your behalf.</p>
-                <p><b>Frequency.</b> Continuous, for the duration of the subscription.</p>
-                <p><b>Duration.</b> The term of the subscription plus the retention periods in section 11.</p>
+            <section class="legal-card" id="annex-i">
+                <h2>11. Annex I — Details of Processing</h2>
+                <p><b>Subject matter and duration.</b> Processing is necessary to provide the Kyntlo CRM, automation workflows, AI tools and omnichannel communication platform. It lasts for the duration of the Customer's active subscription.</p>
+                <p><b>Categories of data subject.</b> The Customer's end users, prospects, leads, employees, contractors and calendar invitees.</p>
+                <p><b>Categories of personal data.</b></p>
+                <ul class="legal-list"><li>Identity and contact data — names, email addresses, phone numbers, physical addresses.</li><li>Business and CRM data — lead status, company names, job titles, calendar appointments.</li><li>Communication data — SMS logs, call recordings, email bodies, web-chat transcripts.</li><li>System metadata — IP addresses, device identifiers, browser types.</li></ul>
+                <p><b>Sensitive data limitations.</b> The platform is not configured to process Payment Card Industry data directly — that is tokenised by the payment gateway — or Protected Health Information under HIPAA, unless a separate Business Associate Agreement is executed.</p>
             </section>
 
-            <section class="legal-card" id="annex-b">
-                <h2>Annex B — Technical and Organisational Measures</h2>
-                <p><b>Encryption.</b> Personal data is encrypted in transit using current TLS, and at rest.</p>
-                <p><b>Access control.</b> Role-based access on a least-privilege basis; individual named accounts; multi-factor authentication available on the platform and required for administrative access; access reviewed and revoked when no longer required.</p>
-                <p><b>Confidentiality.</b> Written confidentiality undertakings for all personnel with access, surviving the end of their engagement.</p>
-                <p><b>Resilience.</b> Regular backups, monitoring of availability, and restoration procedures.</p>
-                <p><b>Segregation.</b> Each customer workspace is logically separated so that one customer cannot access another's data.</p>
-                <p><b>Data export and erasure.</b> Self-service export and deletion available from the workspace, so you can meet data subject requests without depending on Kyntlo.</p>
-                <p><b>Sub-processor management.</b> Written terms with each sub-processor imposing equivalent obligations; review before engagement.</p>
-                <p><b>Incident response.</b> A defined process for detecting, escalating, investigating and notifying personal data breaches, with the notification timing set out in section 9.</p>
-                <p><b>AI-specific controls.</b> AI agents disclose that they are AI systems; escalation to a human is configurable and tested before go-live; customer content is not used to train general-purpose models.</p>
-                <p>These measures are reviewed periodically and may be updated provided protection is not reduced.</p>
+            <section class="legal-card" id="annex-ii">
+                <h2>12. Annex II — Technical and Organisational Measures</h2>
+                <p>Kyntlo, together with its sub-processors, maintains the following measures:</p>
+                <ul class="legal-list"><li><b>Encryption.</b> All data transmitted across public networks is encrypted using TLS 1.2 or higher. Data stored in databases is encrypted at rest using AES-256.</li><li><b>Access controls.</b> Role-based access control within the application, and mandatory multi-factor authentication for Kyntlo administrative access to production environments.</li><li><b>Physical security.</b> Kyntlo relies on cloud data centres maintaining biometric access control, 24/7 security staffing and CCTV monitoring, certified to SOC 2 and ISO 27001.</li><li><b>Resilience and backups.</b> Automated daily database backups distributed across multiple availability zones to ensure restoration after a physical or technical incident.</li><li><b>Anonymisation for AI processing.</b> Personal data is stripped of identifiers when aggregated to train or optimise internal routing and workflow models. No personal data is transferred to public or generalised third-party foundation AI models.</li></ul>
             </section>
 
-            <section class="legal-card" id="annex-c">
-                <h2>Annex C — Sub-processors</h2>
-                <p>Kyntlo engages the following categories of sub-processor to deliver the Services. The named, current list — including each provider's identity, processing location and function — is maintained by Kyntlo and provided on request to <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a>, and forms part of this Annex.</p>
-                <p><b>Cloud hosting and storage</b> — operation of the platform and storage of workspace data.<br>
-                <b>Telecommunications and messaging carriers</b> — delivery of SMS, voice calls and WhatsApp messages, including the number and routing providers for each country served.<br>
-                <b>Email delivery</b> — sending and deliverability of transactional and marketing email.<br>
-                <b>AI and speech providers</b> — language model inference, speech-to-text and text-to-speech for the voice and chat agents.<br>
-                <b>Payment processing</b> — subscription billing and, where you enable it, collection of payments from your own customers.<br>
-                <b>Analytics and error monitoring</b> — availability, performance and fault diagnosis.</p>
-                <p>Changes are notified in accordance with section 6, giving you 30 days to object before a new sub-processor begins processing.</p>
-            </section>
-
-            <section class="legal-card" id="signing">
-                <h2>Signing This DPA</h2>
-                <p>This DPA is effective without signature once you accept the Terms of Use or begin using the Services. Many customers need a countersigned copy for their own compliance file, and buyers in regulated sectors usually do. Email <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a> with your legal entity name and registered address and we will return an executed copy, together with the Standard Contractual Clauses completed for your transfer scenario where those apply.</p>
-            </section>
         </div>
     </main>
-</main>
 
     <footer></footer>
 
