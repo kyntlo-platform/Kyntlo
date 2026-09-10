@@ -380,6 +380,7 @@
                         <h2 class="site-footer__title">Get Started</h2>
                         <ul class="site-footer__links">
                             <li><a href="${siteHref("trial.html")}">${t("startTrial")}</a></li>
+                            <li><a href="${siteHref("report.html")}">Free visibility report</a></li>
                             <li><a href="${siteHref(REQUEST_DEMO_HREF)}">${t("requestDemo")}</a></li>
                             <li><a href="${LOGIN_HREF}">${t("login")}</a></li>
                         </ul>
