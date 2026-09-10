@@ -346,7 +346,7 @@
                         <p>An AI-powered growth platform for CRM, conversations, booking, funnels, and automation.</p>
                         <ul class="site-footer__contact">
                             <li><span aria-hidden="true">✉</span><a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a></li>
-                            <li><span aria-hidden="true">⌖</span><span>Building Lotus2 North90, After Chill Out Lotus,<br>Cairo Governorate 11234, Egypt</span></li>
+                            <li><span aria-hidden="true">⌖</span><a href="https://maps.app.goo.gl/1wYuZVjADThQcFWq8" target="_blank" rel="noopener noreferrer">Building Lotus2 North90, After Chill Out Lotus,<br>Cairo Governorate 11234, Egypt</a></li>
                         </ul>
                         <div class="site-footer__social" aria-label="Kyntlo on social media">
                             <a href="https://www.facebook.com/people/Kyntlo/61590216517723/" target="_blank" rel="noopener noreferrer" aria-label="Kyntlo on Facebook"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.29-.04-1.27-.12-2.41-.12-2.38 0-4.01 1.45-4.01 4.12v2.3H7.6V13h2.68v8h3.22z"/></svg></a>
