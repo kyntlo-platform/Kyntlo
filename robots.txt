@@ -4,6 +4,7 @@ Allow: /
 # Utility pages with no standalone search value
 Disallow: /docs/
 Disallow: /scripts/
+Disallow: /report
 Disallow: /checkout
 Disallow: /package-starter
 Disallow: /package-growth

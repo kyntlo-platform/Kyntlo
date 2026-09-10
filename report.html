@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Business Visibility Report | Kyntlo</title>
+    <meta name="description" content="Get a free report on how your business actually looks online: your listings, reviews, search visibility and the gaps costing you customers. Takes about 60 seconds.">
+    <link rel="canonical" href="https://kyntlo.ai/report">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css?v=20260829" rel="stylesheet">
+    <script src="assets/site-shell.js?v=20260829" defer></script>
+    <style>
+        :root{
+            --bg:#07050f;--bg-2:#0b0817;--ink:#f5f3fa;--muted:#a49fb8;--dim:#6f6a85;
+            --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.045);
+            --pink:#f20089;--hot:#ff1aa3;--purple:#6d00c1;--loss:#ff6b6b;--gain:#35e0a1;
+            --grad-kinetic:linear-gradient(135deg,var(--pink),var(--purple));
+            --grad-text:linear-gradient(135deg,var(--pink),#b06bff);
+            --display:"Space Grotesk",Inter,sans-serif;
+            --body:"Plus Jakarta Sans","Inter",system-ui,sans-serif;
+            --mono:"JetBrains Mono",ui-monospace,monospace;
+        }
+        *{box-sizing:border-box;margin:0;padding:0}
+        a{color:inherit;text-decoration:none}
+        img{max-width:100%}
+        body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.65;
+            -webkit-font-smoothing:antialiased;overflow-x:hidden}
+        .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 28px}
+        h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.028em;line-height:1.07}
+        .grad{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+        .eyebrow{font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.2em;
+            text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:12px}
+        .eyebrow::before{content:"";width:26px;height:1px;background:var(--pink)}
+        .rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+        .rv.in{opacity:1;transform:none}
+        @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+
+        .rpt-hero{padding:96px 0 70px;position:relative;overflow:hidden}
+        .rpt-hero::before{content:"";position:absolute;top:-34%;left:50%;width:min(1000px,120vw);height:640px;
+            transform:translateX(-50%);pointer-events:none;
+            background:radial-gradient(closest-side,rgba(242,0,137,.17),transparent 72%)}
+        .rpt-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;position:relative}
+        .rpt-hero h1{font-size:clamp(2.2rem,4.6vw,3.5rem);margin:20px 0 20px}
+        .rpt-lede{color:var(--muted);font-size:1.06rem;line-height:1.72;margin-bottom:30px}
+        .rpt-points{list-style:none;display:grid;gap:13px;margin-bottom:30px}
+        .rpt-points li{position:relative;display:block;padding-left:32px;font-size:.96rem;line-height:1.62;color:var(--muted)}
+        .rpt-points li b{color:var(--ink);font-weight:700}
+        .rpt-points li::before{content:"";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;
+            background:rgba(53,224,161,.14);border:1px solid rgba(53,224,161,.4);
+            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2335e0a1' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+            background-size:12px;background-repeat:no-repeat;background-position:center}
+        .rpt-meta{display:flex;flex-wrap:wrap;gap:10px 24px;font-family:var(--mono);font-size:.74rem;color:var(--dim)}
+        .rpt-meta span{display:inline-flex;align-items:center;gap:7px}
+        .rpt-meta i{width:6px;height:6px;border-radius:50%;background:var(--gain);display:block}
+
+        .formcard{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;
+            box-shadow:0 34px 90px rgba(0,0,0,.55);position:sticky;top:120px}
+        .formcard__top{padding:18px 22px;background:var(--bg-2);border-bottom:1px solid var(--line);
+            display:flex;align-items:center;justify-content:space-between;gap:14px}
+        .formcard__top strong{font-family:var(--display);font-size:.98rem;color:var(--ink)}
+        .formcard__top span{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;
+            text-transform:uppercase;color:var(--gain)}
+        .formcard iframe{display:block;width:100%;min-height:700px;border:0;background:#fff}
+        .formcard__foot{padding:14px 22px;background:var(--bg-2);border-top:1px solid var(--line);
+            font-size:.78rem;color:var(--dim);line-height:1.6}
+        .formcard__foot a{color:var(--hot);font-weight:700}
+
+        .rpt-inside{padding:90px 0;background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+        .rpt-inside h2{font-size:clamp(1.8rem,3.6vw,2.7rem);margin:18px 0 18px}
+        .checks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+        .check{border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:rgba(255,255,255,.02);
+            transition:transform .32s cubic-bezier(.2,.8,.2,1),border-color .32s ease}
+        .check:hover{transform:translateY(-4px);border-color:rgba(242,0,137,.4)}
+        .check h3{font-size:1.05rem;margin-bottom:10px}
+        .check p{font-size:.9rem;color:var(--muted);line-height:1.66}
+        .check .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+            color:var(--pink);display:block;margin-bottom:12px;font-weight:700}
+
+        .rpt-after{padding:90px 0}
+        .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:46px;
+            border:1px solid var(--line);border-radius:18px;overflow:hidden}
+        .s3{padding:28px 26px;border-right:1px solid var(--line);background:var(--bg)}
+        .s3:last-child{border-right:0}
+        .s3 .n{font-family:var(--mono);font-size:.68rem;color:var(--pink);font-weight:700;letter-spacing:.16em;
+            display:block;margin-bottom:12px}
+        .s3 h3{font-size:1.04rem;margin-bottom:9px}
+        .s3 p{font-size:.9rem;color:var(--muted);line-height:1.66}
+        .honest{margin-top:34px;padding:20px 22px;border-left:2px solid var(--pink);
+            background:rgba(242,0,137,.05);font-size:.94rem;color:var(--muted);line-height:1.7;max-width:78ch}
+        .honest b{color:var(--ink)}
+        @media (max-width:980px){
+            .rpt-grid{grid-template-columns:1fr;gap:44px}
+            .formcard{position:static}
+            .checks,.steps3{grid-template-columns:1fr}
+            .s3{border-right:0;border-bottom:1px solid var(--line)}
+        }
+        @media (max-width:640px){.wrap{padding:0 20px}}
+    </style>
+    <noscript><style>.rv,.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
+    <!-- Google Analytics 4 (G-TPM67XPDR4).
+         Consent Mode v2: every storage type starts denied. The Silktide consent
+         manager in site-shell.js maps its Analytics and Marketing categories to
+         these same signals, so acceptance is what turns tracking on - not page
+         load. Removing the gtag('consent','default') block below would start
+         tracking before the visitor has chosen, which is not valid consent. -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-TPM67XPDR4');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPM67XPDR4"></script>
+</head>
+<body data-theme="dark">
+    <nav></nav>
+    <main>
+
+    <section class="rpt-hero">
+        <div class="wrap rpt-grid">
+            <div>
+                <p class="eyebrow rv">Free · no card · about 60 seconds</p>
+                <h1 class="rv">See your business <span class="grad">the way a customer does.</span></h1>
+                <p class="rpt-lede rv">Enter your business name and we will scan what is publicly visible about you right now — your listings, your reviews, how you show up in search, and whether someone looking for you today would actually find and choose you.</p>
+                <ul class="rpt-points rv">
+                    <li><b>Where you appear, and where you don't.</b> The directories and maps listings customers check before calling anyone.</li>
+                    <li><b>What your reviews are actually saying.</b> Volume, rating, recency, and how that compares to the businesses near you.</li>
+                    <li><b>The gaps costing you enquiries.</b> Wrong hours, missing details, unanswered reviews, listings that contradict each other.</li>
+                    <li><b>A prioritised list.</b> What to fix first, what can wait, and what does not matter.</li>
+                </ul>
+                <div class="rpt-meta rv">
+                    <span><i></i> No credit card</span>
+                    <span><i></i> No sales call required</span>
+                    <span><i></i> Report is yours to keep</span>
+                </div>
+            </div>
+
+            <aside class="formcard rv">
+                <div class="formcard__top"><strong>Run your free report</strong><span>Instant</span></div>
+                <iframe src="https://services.leadconnectorhq.com/prospecting/widgets/public/6a955f9388a8631843b27117"
+                        title="Free business visibility report" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <div class="formcard__foot">We use your details to generate and send the report, and to follow up once. Nothing is sold or shared — see the <a href="privacy.html">Privacy Policy</a>.</div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="rpt-inside">
+        <div class="wrap">
+            <p class="eyebrow rv">What the report checks</p>
+            <h2 class="rv">Six things that decide whether<br><span class="grad">a stranger calls you or a competitor.</span></h2>
+            <div class="checks">
+                <article class="check rv"><span class="k">01 — Findability</span><h3>Can they even find you?</h3><p>Whether your business appears in the local listings and map results people actually look at, and how prominently.</p></article>
+                <article class="check rv"><span class="k">02 — Listings</span><h3>Do your details agree?</h3><p>Name, address, phone and opening hours across every place they are published. Contradictions quietly cost you calls.</p></article>
+                <article class="check rv"><span class="k">03 — Reputation</span><h3>What do the reviews say?</h3><p>How many, how recent, what rating, and how many of them nobody ever replied to.</p></article>
+                <article class="check rv"><span class="k">04 — Website</span><h3>Does the site do anything?</h3><p>Whether a visitor can book, enquire or pay without leaving — or whether it is a brochure that just sits there.</p></article>
+                <article class="check rv"><span class="k">05 — Responsiveness</span><h3>What happens after hours?</h3><p>Whether an enquiry made outside working hours has any route to an answer before the next morning.</p></article>
+                <article class="check rv"><span class="k">06 — Competitors</span><h3>How do you compare?</h3><p>The same measures for businesses like yours nearby, so the numbers have something to mean.</p></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="rpt-after">
+        <div class="wrap">
+            <p class="eyebrow rv">What happens next</p>
+            <h2 class="rv" style="font-size:clamp(1.8rem,3.6vw,2.7rem);margin:18px 0">No pressure, <span class="grad">and no obligation.</span></h2>
+            <div class="steps3 rv">
+                <div class="s3"><span class="n">STEP 01</span><h3>You get the report</h3><p>It arrives by email, yours to keep, whether or not you ever speak to us. Take it to whoever handles your marketing.</p></div>
+                <div class="s3"><span class="n">STEP 02</span><h3>We read it too</h3><p>If something in it is worth a conversation, we will say what and why in one message. If it is not, we will leave you alone.</p></div>
+                <div class="s3"><span class="n">STEP 03</span><h3>Optional Growth Audit</h3><p>Thirty minutes to turn the findings into a number: what the gaps are costing you a month, in writing.</p></div>
+            </div>
+            <p class="honest rv"><b>Being straight with you:</b> this report tells you how your business looks from the outside. It cannot see your missed calls, your no-show rate or your dormant customer list — that is what the <a href="pricing.html" style="color:var(--hot);font-weight:700">leak calculator</a> and the <a href="contact.html#contact-form" style="color:var(--hot);font-weight:700">Growth Audit</a> are for. Plenty of businesses read this report, fix two things themselves and never need us. That is a fine outcome.</p>
+        </div>
+    </section>
+
+    </main>
+    <footer></footer>
+    <script>
+    (function(){
+        var els=document.querySelectorAll(".rv");
+        if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return;}
+        var io=new IntersectionObserver(function(en){en.forEach(function(x){
+            if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}});},
+            {rootMargin:"0px 0px -8% 0px",threshold:.06});
+        els.forEach(function(e){io.observe(e)});
+    })();
+    </script>
+</body>
+</html>
