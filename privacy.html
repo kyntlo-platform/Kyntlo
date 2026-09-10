@@ -260,6 +260,26 @@
         }
     </style>
     <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
+    <!-- Google Analytics 4 (G-TPM67XPDR4).
+         Consent Mode v2: every storage type starts denied. The Silktide consent
+         manager in site-shell.js maps its Analytics and Marketing categories to
+         these same signals, so acceptance is what turns tracking on - not page
+         load. Removing the gtag('consent','default') block below would start
+         tracking before the visitor has chosen, which is not valid consent. -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-TPM67XPDR4');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPM67XPDR4"></script>
 </head>
 <body data-theme="dark">
     <nav></nav>
@@ -334,7 +354,7 @@
 
             <section class="legal-card" id="sharing">
                 <h2>5. Sharing and Service Providers</h2>
-                <p>Kyntlo may share information with trusted providers that help us operate the service. These may include hosting providers, payment processors, calendar and booking tools, communications providers, analytics tools, customer support systems, security vendors, professional advisers, and integration partners selected by the customer.</p>
+                <p>Kyntlo may share information with trusted providers that help us operate the service. These may include hosting providers, payment processors, calendar and booking tools, communications providers, analytics tools (currently Google Analytics 4), customer support systems, security vendors, professional advisers, and integration partners selected by the customer.</p>
                 <p>We may also disclose information if required by law, to protect rights and safety, to enforce our terms, in connection with a business transaction, or with your direction or consent.</p>
                 <p>Some providers may process information in countries other than your own. Where required, Kyntlo uses appropriate contractual, technical, and organizational measures designed to protect transferred information.</p>
             </section>

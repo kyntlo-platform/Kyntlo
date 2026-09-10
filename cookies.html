@@ -251,6 +251,26 @@
         }
     </style>
     <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
+    <!-- Google Analytics 4 (G-TPM67XPDR4).
+         Consent Mode v2: every storage type starts denied. The Silktide consent
+         manager in site-shell.js maps its Analytics and Marketing categories to
+         these same signals, so acceptance is what turns tracking on - not page
+         load. Removing the gtag('consent','default') block below would start
+         tracking before the visitor has chosen, which is not valid consent. -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-TPM67XPDR4');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPM67XPDR4"></script>
 </head>
 <body data-theme="dark">
     <nav></nav>
@@ -285,7 +305,7 @@
                     <li><b>Essential technologies:</b> Required for website operation, navigation, security, page rendering, cookie banner preference storage, embedded booking tools, and basic service functionality.</li>
                     <li><b>Preference technologies:</b> Used to remember choices such as cookie banner response, display preferences, form state, or similar settings where supported.</li>
                     <li><b>Embedded widget technologies:</b> Tools such as the LeadConnector chat widget and booking calendar, Forminit forms, the Whop checkout, the Silktide consent manager, Google Fonts, social media links, or Kyntlo Hub login pages may use their own cookies or similar technologies when loaded or interacted with.</li>
-                    <li><b>Analytics or marketing technologies:</b> Kyntlo does not intentionally run separate advertising cookies on the marketing website unless they are added later. If added, Kyntlo will seek consent where required and update this policy.</li>
+                    <li><b>Analytics or marketing technologies:</b> Kyntlo uses Google Analytics 4 (measurement ID G-TPM67XPDR4) to understand which pages are visited and how visitors move around the site. It is loaded with Google Consent Mode set to denied by default, so no analytics or advertising storage is written until you accept it in the cookie banner. Declining leaves it off. Kyntlo does not run separate advertising cookies on the marketing website; if that changes, consent will be sought and this policy updated.</li>
                 </ul>
             </section>
 

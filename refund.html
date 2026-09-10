@@ -260,6 +260,26 @@
         }
     </style>
     <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
+    <!-- Google Analytics 4 (G-TPM67XPDR4).
+         Consent Mode v2: every storage type starts denied. The Silktide consent
+         manager in site-shell.js maps its Analytics and Marketing categories to
+         these same signals, so acceptance is what turns tracking on - not page
+         load. Removing the gtag('consent','default') block below would start
+         tracking before the visitor has chosen, which is not valid consent. -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-TPM67XPDR4');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPM67XPDR4"></script>
 </head>
 <body data-theme="dark">
     <nav></nav>
