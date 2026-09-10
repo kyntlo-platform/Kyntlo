@@ -5,6 +5,7 @@
 /compare.html /compare 301
 /contact.html /contact 301
 /cookies.html /cookies 301
+/dpa.html /dpa 301
 /faq.html /faq 301
 /funnels.html /funnels 301
 /get-started.html /get-started 301
@@ -26,6 +27,7 @@
 /compare /compare.html 200
 /contact /contact.html 200
 /cookies /cookies.html 200
+/dpa /dpa.html 200
 /faq /faq.html 200
 /funnels /funnels.html 200
 /get-started /get-started.html 200

@@ -28,7 +28,7 @@ const warn = (msg) => warnings.push(msg);
 const REQUIRED_PAGES = [
     "index.html", "about.html", "funnels.html", "compare.html", "pricing.html",
     "checkout.html", "trial.html", "get-started.html", "contact.html", "faq.html",
-    "security.html", "privacy.html", "terms.html", "refund.html", "cookies.html",
+    "security.html", "privacy.html", "terms.html", "refund.html", "cookies.html", "dpa.html",
     "accessibility.html"
 ];
 
