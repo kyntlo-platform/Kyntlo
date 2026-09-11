@@ -284,7 +284,7 @@
                 <span><b>✦</b> 14-day free trial</span>
                 <span><b>✦</b> No setup fees</span>
                 <span><b>✦</b> Cancel anytime</span>
-                <span><b>✦</b> Every usage rate published</span>
+                <span><b>✦</b> Usage at cost, no markup</span>
             </div>
         </div>
     </header>
@@ -422,58 +422,53 @@
 
             <div class="usage-accordion-wrapper">
                 <button class="usage-accordion-btn" id="usageAccordionBtn" type="button" aria-expanded="false" aria-controls="usageAccordionContent">
-                    <span>View Usage Rates &amp; Add-ons</span>
+                    <span>View Usage Costs &amp; Add-ons &mdash; billed at cost</span>
                     <span class="usage-accordion-icon" aria-hidden="true">↓</span>
                 </button>
                 <div class="usage-accordion-content" id="usageAccordionContent">
                     <div class="usage-accordion-inner">
-                        <p class="usage-note">You pay for the messages, minutes and AI you actually use — nothing else. Every rate we charge is on this page, so your bill never contains a line you have not already seen. Telecom and WhatsApp rates are set per country and can change; we update this table when they do.</p>
+                        <p class="usage-note">Every rate below is what the carrier, Meta, or the model provider charges us &mdash; passed through to you at cost, with no markup added by Kyntlo. You pay for the messages, minutes and AI you actually use, and nothing else. Telecom and WhatsApp rates are set per country and can change; we update this table when they do.</p>
                         <div class="usage-grid">
                             <div class="usage-cat">Messaging</div>
-                            <div class="usage-item"><div class="usage-title">Email Sending</div><div class="usage-desc">Send to unlimited contacts with no list-size fees.</div><div class="usage-cost">$1.36 / 1,000 emails</div></div>
-                            <div class="usage-item"><div class="usage-title">Email Validation</div><div class="usage-desc">Check and recheck addresses so your sender reputation stays clean.</div><div class="usage-cost">$5.00 / 1,000 checks</div></div>
-                            <div class="usage-item"><div class="usage-title">Outbound SMS <span class="usage-region">US</span></div><div class="usage-desc">Text customers directly from the conversation they are already in.</div><div class="usage-cost">$24.90 / 1,000 segments</div></div>
-                            <div class="usage-item"><div class="usage-title">Inbound SMS <span class="usage-region">US</span></div><div class="usage-desc">Receive replies straight into the unified inbox.</div><div class="usage-cost">$34.90 / 1,000 segments</div></div>
-
+                            <div class="usage-item"><div class="usage-title">Email Sending</div><div class="usage-desc">Send to unlimited contacts with no list-size fees.</div><div class="usage-cost">$0.68 / 1,000 emails</div></div>
+                            <div class="usage-item"><div class="usage-title">Email Validation</div><div class="usage-desc">Check and recheck addresses so your sender reputation stays clean.</div><div class="usage-cost">$2.50 / 1,000 checks</div></div>
+                            <div class="usage-item"><div class="usage-title">Outbound SMS <span class="usage-region">US</span></div><div class="usage-desc">Text customers directly from the conversation they are already in.</div><div class="usage-cost">$12.50 / 1,000 segments</div></div>
+                            <div class="usage-item"><div class="usage-title">Inbound SMS <span class="usage-region">US</span></div><div class="usage-desc">Receive replies straight into the unified inbox.</div><div class="usage-cost">$17.50 / 1,000 segments</div></div>
                             <div class="usage-cat">WhatsApp Business API <span class="usage-cat-note">Meta sets these rates per country</span></div>
-                            <div class="usage-item"><div class="usage-title">Utility &amp; Authentication <span class="usage-region">Egypt</span></div><div class="usage-desc">Confirmations, reminders, receipts and one-time codes.</div><div class="usage-cost">$7.20 / 1,000</div></div>
-                            <div class="usage-item"><div class="usage-title">Marketing <span class="usage-region">Egypt</span></div><div class="usage-desc">Promotional and reactivation campaigns.</div><div class="usage-cost">$128.80 / 1,000</div></div>
-                            <div class="usage-item"><div class="usage-title">Utility &amp; Authentication <span class="usage-region">North America</span></div><div class="usage-desc">Confirmations, reminders, receipts and one-time codes.</div><div class="usage-cost">$6.80 / 1,000</div></div>
-                            <div class="usage-item"><div class="usage-title">Marketing <span class="usage-region">North America</span></div><div class="usage-desc">Promotional and reactivation campaigns.</div><div class="usage-cost">$50.00 / 1,000</div></div>
-                            <div class="usage-item"><div class="usage-title">Utility &amp; Authentication <span class="usage-region">Italy</span></div><div class="usage-desc">Confirmations, reminders, receipts and one-time codes.</div><div class="usage-cost">$60.00 / 1,000</div></div>
-                            <div class="usage-item"><div class="usage-title">Marketing <span class="usage-region">Italy</span></div><div class="usage-desc">Promotional and reactivation campaigns.</div><div class="usage-cost">$159.00 / 1,000</div></div>
-
-                            <div class="usage-cat">Voice</div>
-                            <div class="usage-item"><div class="usage-title">Outbound Calls</div><div class="usage-desc">Calls placed from the platform, logged against the customer record.</div><div class="usage-cost">$0.03 / min</div></div>
-                            <div class="usage-item"><div class="usage-title">Inbound Calls</div><div class="usage-desc">Calls received on web, mobile or desk phone.</div><div class="usage-cost">$0.02 / min</div></div>
-                            <div class="usage-item"><div class="usage-title">Call Recording</div><div class="usage-desc">Record calls where you have consent to do so.</div><div class="usage-cost">$0.005 / min</div></div>
-                            <div class="usage-item"><div class="usage-title">Recording Storage</div><div class="usage-desc">Keep recordings available for review and training.</div><div class="usage-cost">$0.001 / min / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Call Transcription</div><div class="usage-desc">Turn every call into searchable text with a summary.</div><div class="usage-cost">$0.048 / min</div></div>
-                            <div class="usage-item"><div class="usage-title">Answering Machine Detection</div><div class="usage-desc">Skip voicemail on outbound campaigns instead of wasting the call.</div><div class="usage-cost">$0.015 / call</div></div>
-                            <div class="usage-item"><div class="usage-title">Voicemail Drops</div><div class="usage-desc">Leave a pre-recorded message without ringing the phone.</div><div class="usage-cost">$0.036 / min</div></div>
-                            <div class="usage-item"><div class="usage-title">Conference Calls</div><div class="usage-desc">Multi-party calls, billed per participant minute.</div><div class="usage-cost">$0.0036 – $0.008 / participant min</div></div>
-                            <div class="usage-item"><div class="usage-title">Text-to-Speech</div><div class="usage-desc">Natural spoken voice for agents and voicemail.</div><div class="usage-cost">$0.00168 / 100 chars</div></div>
-
+                            <div class="usage-item"><div class="usage-title">Utility &amp; Authentication <span class="usage-region">Egypt</span></div><div class="usage-desc">Confirmations, reminders, receipts and one-time codes.</div><div class="usage-cost">$3.60 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Marketing <span class="usage-region">Egypt</span></div><div class="usage-desc">Promotional and reactivation campaigns.</div><div class="usage-cost">$64.40 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Utility &amp; Authentication <span class="usage-region">North America</span></div><div class="usage-desc">Confirmations, reminders, receipts and one-time codes.</div><div class="usage-cost">$3.40 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Marketing <span class="usage-region">North America</span></div><div class="usage-desc">Promotional and reactivation campaigns.</div><div class="usage-cost">$25.00 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Utility &amp; Authentication <span class="usage-region">Italy</span></div><div class="usage-desc">Confirmations, reminders, receipts and one-time codes.</div><div class="usage-cost">$30.00 / 1,000</div></div>
+                            <div class="usage-item"><div class="usage-title">Marketing <span class="usage-region">Italy</span></div><div class="usage-desc">Promotional and reactivation campaigns.</div><div class="usage-cost">$79.50 / 1,000</div></div>
+                            <div class="usage-cat">Voice <span class="usage-cat-note">billed per 100 minutes, as the carrier bills us</span></div>
+                            <div class="usage-item"><div class="usage-title">Outbound Calls</div><div class="usage-desc">Calls placed from the platform, logged against the customer record.</div><div class="usage-cost">$1.66 / 100 min</div></div>
+                            <div class="usage-item"><div class="usage-title">Inbound Calls</div><div class="usage-desc">Calls received on web, mobile or desk phone.</div><div class="usage-cost">$1.17 / 100 min</div></div>
+                            <div class="usage-item"><div class="usage-title">Call Recording</div><div class="usage-desc">Record calls where you have consent to do so.</div><div class="usage-cost">$0.25 / 100 min</div></div>
+                            <div class="usage-item"><div class="usage-title">Recording Storage</div><div class="usage-desc">Keep recordings available for review and training.</div><div class="usage-cost">$0.05 / 100 min / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Call Transcription</div><div class="usage-desc">Turn every call into searchable text with a summary.</div><div class="usage-cost">$2.40 / 100 min</div></div>
+                            <div class="usage-item"><div class="usage-title">Answering Machine Detection</div><div class="usage-desc">Skip voicemail on outbound campaigns instead of wasting the call.</div><div class="usage-cost">$0.75 / 100 calls</div></div>
+                            <div class="usage-item"><div class="usage-title">Voicemail Drops</div><div class="usage-desc">Leave a pre-recorded message without ringing the phone.</div><div class="usage-cost">$1.80 / 100 min</div></div>
+                            <div class="usage-item"><div class="usage-title">Conference Calls</div><div class="usage-desc">Multi-party calls, billed per participant minute.</div><div class="usage-cost">$0.18 &ndash; $0.40 / 100 participant min</div></div>
+                            <div class="usage-item"><div class="usage-title">Text-to-Speech</div><div class="usage-desc">Natural spoken voice for agents and voicemail.</div><div class="usage-cost">$0.00084 / 100 chars</div></div>
                             <div class="usage-cat">AI</div>
-                            <div class="usage-item"><div class="usage-title">Conversation AI</div><div class="usage-desc">Each customer message and the AI reply that answers it.</div><div class="usage-cost">$8.00 / 1,000 exchanges</div></div>
-                            <div class="usage-item"><div class="usage-title">Reviews AI</div><div class="usage-desc">Drafted replies to customer reviews.</div><div class="usage-cost">$20.00 / 1,000 replies</div></div>
-                            <div class="usage-item"><div class="usage-title">Premium Workflow Executions</div><div class="usage-desc">Direct connections to Google Sheets, webhooks and external services.</div><div class="usage-cost">$20.00 / 1,000 runs</div></div>
-                            <div class="usage-item"><div class="usage-title">Content AI — Writing</div><div class="usage-desc">Captions, emails, page copy and message variations in your brand voice.</div><div class="usage-cost">$0.189 / 1,000 words</div></div>
-                            <div class="usage-item"><div class="usage-title">Content AI — Images</div><div class="usage-desc">Branded graphics generated from a plain-language prompt.</div><div class="usage-cost">$0.126 / image</div></div>
-
+                            <div class="usage-item"><div class="usage-title">Conversation AI</div><div class="usage-desc">Each customer message and the AI reply that answers it.</div><div class="usage-cost">$4.00 / 1,000 exchanges</div></div>
+                            <div class="usage-item"><div class="usage-title">Reviews AI</div><div class="usage-desc">Drafted replies to customer reviews.</div><div class="usage-cost">$10.00 / 1,000 replies</div></div>
+                            <div class="usage-item"><div class="usage-title">Premium Workflow Executions</div><div class="usage-desc">Direct connections to Google Sheets, webhooks and external services.</div><div class="usage-cost">$10.00 / 1,000 runs</div></div>
+                            <div class="usage-item"><div class="usage-title">Content AI &mdash; Writing</div><div class="usage-desc">Captions, emails, page copy and message variations in your brand voice.</div><div class="usage-cost">$9.45 / 100,000 words</div></div>
+                            <div class="usage-item"><div class="usage-title">Content AI &mdash; Images</div><div class="usage-desc">Branded graphics generated from a plain-language prompt.</div><div class="usage-cost">$6.30 / 100 images</div></div>
                             <div class="usage-cat">AI Employee</div>
-                            <div class="usage-item"><div class="usage-title">AI Employee — Growth</div><div class="usage-desc">The AI agent bundle for a single busy location.</div><div class="usage-cost">$100 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">AI Employee — Unlimited</div><div class="usage-desc">Uncapped AI agent usage for high-volume operations.</div><div class="usage-cost">$194 / month</div></div>
-
+                            <div class="usage-item"><div class="usage-title">AI Employee &mdash; Growth</div><div class="usage-desc">The AI agent bundle for a single busy location.</div><div class="usage-cost">$50 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">AI Employee &mdash; Unlimited</div><div class="usage-desc">Uncapped AI agent usage for high-volume operations.</div><div class="usage-cost">$97 / month</div></div>
                             <div class="usage-cat">Optional add-ons</div>
-                            <div class="usage-item"><div class="usage-title">Branded Client App</div><div class="usage-desc">Your own iOS and Android client portal, no code required.</div><div class="usage-cost">$98 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Dedicated IP</div><div class="usage-desc">Isolate your email sending reputation from everyone else's.</div><div class="usage-cost">$118 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Online Listings</div><div class="usage-desc">Keep name, address and hours correct across directories.</div><div class="usage-cost">$60 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Premium Prospecting</div><div class="usage-desc">Research and build targeted outbound lists.</div><div class="usage-cost">$58 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">SEO Suite</div><div class="usage-desc">Keyword research, audits and rank tracking.</div><div class="usage-cost">$158 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">WhatsApp Integration</div><div class="usage-desc">Connect a WhatsApp Business number to the inbox.</div><div class="usage-cost">$20 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Workflow Pro</div><div class="usage-desc">Bulk premium executions at a lower effective rate.</div><div class="usage-cost">$20 – $100 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">WordPress Hosting</div><div class="usage-desc">Managed hosting, scaled to the size of the site.</div><div class="usage-cost">$20 – $994 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Branded Client App</div><div class="usage-desc">Your own iOS and Android client portal, no code required.</div><div class="usage-cost">$49 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Dedicated IP</div><div class="usage-desc">Isolate your email sending reputation from everyone else's.</div><div class="usage-cost">$59 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Online Listings</div><div class="usage-desc">Keep name, address and hours correct across directories.</div><div class="usage-cost">$30 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Premium Prospecting</div><div class="usage-desc">Research and build targeted outbound lists.</div><div class="usage-cost">$29 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">SEO Suite</div><div class="usage-desc">Keyword research, audits and rank tracking.</div><div class="usage-cost">$79 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">WhatsApp Integration</div><div class="usage-desc">Connect a WhatsApp Business number to the inbox.</div><div class="usage-cost">$10 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">Workflow Pro</div><div class="usage-desc">Bulk premium executions at a lower effective rate.</div><div class="usage-cost">$10 &ndash; $50 / month</div></div>
+                            <div class="usage-item"><div class="usage-title">WordPress Hosting</div><div class="usage-desc">Managed hosting, scaled to the size of the site.</div><div class="usage-cost">$10 &ndash; $497 / month</div></div>
                             <div class="usage-item"><div class="usage-title">Domain Registration</div><div class="usage-desc">Buy and connect a domain without leaving the platform.</div><div class="usage-cost">Varies by TLD</div></div>
                             <div class="usage-item"><div class="usage-title">External AI Models</div><div class="usage-desc">Call your own model provider from inside a workflow.</div><div class="usage-cost">Varies by model</div></div>
                         </div>
