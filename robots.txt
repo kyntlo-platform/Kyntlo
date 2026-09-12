@@ -8,4 +8,7 @@ Disallow: /package-growth
 Disallow: /package-pro
 Disallow: /package-scale
 
+# Client proposals are private documents shared by link only
+Disallow: /proposals/
+
 Sitemap: https://kyntlo.ai/sitemap.xml

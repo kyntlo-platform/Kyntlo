@@ -20,6 +20,7 @@
 /signup.html /signup 301
 /terms.html /terms 301
 /trial.html /trial 301
+/proposals/promote-my-listing.html /proposals/promote-my-listing 301
 
 /about /about.html 200
 /accessibility /accessibility.html 200
@@ -42,3 +43,4 @@
 /signup /signup.html 200
 /terms /terms.html 200
 /trial /trial.html 200
+/proposals/promote-my-listing /proposals/promote-my-listing.html 200
