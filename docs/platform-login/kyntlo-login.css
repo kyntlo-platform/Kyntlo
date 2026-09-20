@@ -1,0 +1,756 @@
+/* ==========================================================================
+   Kyntlo — hub.kyntlo.ai login skin
+   --------------------------------------------------------------------------
+   Pairs with kyntlo-login.js, which tags the page's real elements with
+   data-kyn="..." attributes. Every rule below keys off those attributes, never
+   off HighLevel's own class names, so a platform update that renames their
+   classes does not break this skin.
+
+   Until the script runs, [data-kyn-ready] is absent and none of this applies —
+   the page renders in HighLevel's default styling. That is deliberate: a
+   half-applied skin looks broken, an unstyled login still works.
+   ========================================================================== */
+
+[data-kyn-ready] {
+    /* Brand tokens — identical to kyntlo.ai so the marketing site and the
+       platform read as one product. */
+    --kyn-bg: #07050f;
+    --kyn-bg-raise: #0c0918;
+    --kyn-glass: rgba(255, 255, 255, 0.04);
+    --kyn-line: rgba(255, 255, 255, 0.09);
+    --kyn-ink: #f5f3fa;
+    --kyn-muted: #a49fb8;
+    --kyn-pink: #f20089;
+    --kyn-purple: #6d00c1;
+    --kyn-hot: #ff1aa3;
+
+    /* Two gradients, deliberately different. The kinetic one is decoration
+       only: #6d00c1 measures 2.33:1 on this ground and must never carry text.
+       The text one swaps in #b06bff, which measures 6.16:1. */
+    --kyn-grad-kinetic: linear-gradient(135deg, var(--kyn-pink), var(--kyn-purple));
+    --kyn-grad-text: linear-gradient(135deg, var(--kyn-pink), #b06bff);
+
+    --kyn-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --kyn-body: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --kyn-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* --------------------------------------------------------------- ground --- */
+
+[data-kyn-ready],
+[data-kyn-ready] body {
+    background: var(--kyn-bg) !important;
+    color: var(--kyn-ink) !important;
+    font-family: var(--kyn-body) !important;
+}
+
+[data-kyn-ready] body {
+    min-height: 100vh;
+    margin: 0 !important;
+    overflow-x: hidden;
+}
+
+/* HighLevel paints its own panels behind the form. Flatten them so ours is
+   the only ground; the script marks them so we are not blanket-clearing every
+   element on the page. */
+[data-kyn="flatten"] {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* The aurora: three slow-drifting blobs, the same device the marketing site
+   uses in its hero. Pointer-events off so it can never swallow a click on the
+   form sitting above it. */
+[data-kyn="aurora"] {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    contain: strict;
+}
+
+[data-kyn="aurora"] span {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    filter: blur(120px);
+    will-change: transform;
+}
+
+[data-kyn="aurora"] span:nth-child(1) {
+    top: -180px;
+    left: -160px;
+    width: 620px;
+    height: 620px;
+    background: var(--kyn-purple);
+    opacity: 0.34;
+    animation: kyn-drift 24s ease-in-out infinite alternate;
+}
+
+[data-kyn="aurora"] span:nth-child(2) {
+    top: 28%;
+    right: -240px;
+    width: 560px;
+    height: 560px;
+    background: var(--kyn-pink);
+    opacity: 0.22;
+    animation: kyn-drift 28s ease-in-out infinite alternate-reverse;
+}
+
+[data-kyn="aurora"] span:nth-child(3) {
+    bottom: -260px;
+    left: 34%;
+    width: 680px;
+    height: 680px;
+    background: #851ada;
+    opacity: 0.2;
+    animation: kyn-drift 32s ease-in-out infinite alternate;
+}
+
+@keyframes kyn-drift {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to   { transform: translate3d(70px, -50px, 0) scale(1.12); }
+}
+
+/* The signal line: the gradient rule already at the top of the page, kept and
+   given movement. It reads as the platform being awake. */
+[data-kyn="signal"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 40;
+    background: linear-gradient(90deg, var(--kyn-purple), var(--kyn-pink), var(--kyn-hot), var(--kyn-purple));
+    background-size: 300% 100%;
+    animation: kyn-signal 9s linear infinite;
+}
+
+@keyframes kyn-signal {
+    to { background-position: 300% 0; }
+}
+
+/* --------------------------------------------------------------- layout --- */
+
+/* The two halves are positioned, not reparented. The card stays exactly where
+   the Vue app put it in the DOM; only its box is moved. That is the whole
+   reason this skin cannot break the form. */
+
+[data-kyn="brand"] {
+    position: fixed !important;
+    left: clamp(28px, 6vw, 92px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(520px, 42vw);
+    z-index: 2;
+}
+
+[data-kyn="card"] {
+    position: fixed !important;
+    right: clamp(24px, 6vw, 92px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(460px, 42vw);
+    max-height: calc(100vh - 44px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    z-index: 3;
+}
+
+/* A card tall enough to scroll gets a thin brand scrollbar rather than the
+   platform's default light one on our dark surface. */
+[data-kyn="card"] { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.22) transparent; }
+[data-kyn="card"]::-webkit-scrollbar { width: 8px; }
+[data-kyn="card"]::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); border-radius: 99px; }
+[data-kyn="card"]::-webkit-scrollbar-track { background: transparent; }
+
+/* ------------------------------------------------------------ left panel --- */
+
+[data-kyn="brand"] {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* The Kyntlo mark is dark artwork drawn for a light ground: on a translucent
+   dark tile it disappears. It keeps the white plate it has on the current
+   login page, and the brand glow sits behind that plate instead. */
+[data-kyn="brandmark"] {
+    position: relative;
+    display: inline-flex;
+    padding: 16px 24px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+    isolation: isolate;
+}
+
+/* The glow lives on a pseudo-element rather than as a box-shadow on the box
+   itself. Chromium clips a descendant's shadow to the border box of any
+   ancestor that carries backdrop-filter, which is exactly how the marketing
+   site's footer glow broke; this avoids the whole class of bug. */
+[data-kyn="brandmark"]::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 0, 137, 0.5), transparent 68%);
+    filter: blur(34px);
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+[data-kyn="brandmark"] img {
+    display: block;
+    height: clamp(42px, 4.6vw, 62px);
+    width: auto;
+}
+
+[data-kyn="greeting"] {
+    font-family: var(--kyn-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--kyn-muted);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+
+[data-kyn="greeting"]::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: var(--kyn-hot);
+}
+
+[data-kyn="wordmark"] {
+    font-family: var(--kyn-display);
+    font-size: clamp(2.2rem, 4vw, 3.3rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.04;
+    margin: 0;
+    color: var(--kyn-ink);
+}
+
+[data-kyn="wordmark"] em {
+    font-style: normal;
+    background: var(--kyn-grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--kyn-hot); /* fallback where background-clip:text is unsupported */
+}
+
+[data-kyn="blurb"] {
+    max-width: 44ch;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--kyn-muted);
+}
+
+/* The loop strip: the four things the platform does while nobody is watching.
+   Static text, no fabricated metrics — it describes the product, it does not
+   claim results. */
+[data-kyn="loop"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 0;
+}
+
+[data-kyn="loop"] li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 15px;
+    border-radius: 999px;
+    border: 1px solid var(--kyn-line);
+    background: var(--kyn-glass);
+    font-family: var(--kyn-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #cfc9de;
+}
+
+[data-kyn="loop"] li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--kyn-hot);
+    box-shadow: 0 0 0 0 rgba(255, 26, 163, 0.55);
+    animation: kyn-pulse 2.6s ease-out infinite;
+}
+
+[data-kyn="loop"] li:nth-child(2)::before { animation-delay: 0.65s; }
+[data-kyn="loop"] li:nth-child(3)::before { animation-delay: 1.3s; }
+[data-kyn="loop"] li:nth-child(4)::before { animation-delay: 1.95s; }
+
+@keyframes kyn-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(255, 26, 163, 0.5); }
+    70%  { box-shadow: 0 0 0 9px rgba(255, 26, 163, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 26, 163, 0); }
+}
+
+/* ----------------------------------------------------------------- card --- */
+
+[data-kyn="card"] {
+    isolation: isolate;
+    padding: clamp(32px, 4vw, 46px) clamp(26px, 3.4vw, 42px) !important;
+    border-radius: 26px !important;
+    border: 1px solid var(--kyn-line) !important;
+    background: transparent !important;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55) !important;
+    color: var(--kyn-ink) !important;
+    box-sizing: border-box;
+}
+
+/* Same ::before treatment as the brandmark — the blurred surface is a layer
+   underneath, not a filter on the card, so the card's own shadow survives. */
+[data-kyn="card"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background:
+        linear-gradient(150deg, rgba(242, 0, 137, 0.10), rgba(109, 0, 193, 0.13)),
+        rgba(12, 8, 22, 0.92);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    pointer-events: none;
+}
+
+[data-kyn="title"] {
+    font-family: var(--kyn-display) !important;
+    font-size: clamp(1.55rem, 2.6vw, 1.95rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.15 !important;
+    margin: 0 0 8px !important;
+    color: var(--kyn-ink) !important;
+}
+
+[data-kyn="subtitle"] {
+    margin: 0 0 30px !important;
+    font-size: 0.93rem;
+    line-height: 1.65;
+    color: var(--kyn-muted);
+}
+
+/* ---------------------------------------------------------------- forms --- */
+
+[data-kyn-ready] label,
+[data-kyn="label"] {
+    display: block;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em;
+    color: #d7d2e4 !important;
+    margin-bottom: 8px !important;
+}
+
+[data-kyn="field"] {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+[data-kyn="input"] {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    height: 52px !important;
+    padding: 0 16px !important;
+    border-radius: 13px !important;
+    border: 1px solid var(--kyn-line) !important;
+    background: rgba(255, 255, 255, 0.045) !important;
+    color: var(--kyn-ink) !important;
+    font-family: var(--kyn-body) !important;
+    font-size: 0.97rem !important;
+    line-height: 52px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+
+/* A password field sits next to a reveal toggle; leave room for it. */
+[data-kyn="input"][type="password"],
+[data-kyn="input"][data-kyn-revealable] {
+    padding-right: 50px !important;
+}
+
+[data-kyn="input"]::placeholder {
+    color: #7d7794 !important;
+    opacity: 1;
+}
+
+[data-kyn="input"]:hover {
+    border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+[data-kyn="input"]:focus,
+[data-kyn="input"]:focus-visible {
+    border-color: var(--kyn-hot) !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+    box-shadow: 0 0 0 3px rgba(255, 26, 163, 0.22) !important;
+}
+
+/* Chrome paints autofilled inputs with an opaque near-white background that
+   no background rule can override; a long inset shadow is the only reliable
+   way to repaint it, and -webkit-text-fill-color the only way to recolour the
+   text. Without this the two fields turn white on a dark card. */
+[data-kyn="input"]:-webkit-autofill,
+[data-kyn="input"]:-webkit-autofill:hover,
+[data-kyn="input"]:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--kyn-ink) !important;
+    -webkit-box-shadow: 0 0 0 1000px #17122a inset !important;
+    caret-color: var(--kyn-ink) !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* The reveal eye that HighLevel already ships. */
+[data-kyn="reveal"] {
+    position: absolute !important;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--kyn-muted) !important;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+[data-kyn="reveal"]:hover {
+    color: var(--kyn-ink) !important;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+[data-kyn="reveal"]:focus-visible {
+    outline: 2px solid var(--kyn-hot);
+    outline-offset: 2px;
+}
+
+/* Caps Lock warning, shown by the script while the key is on. Sits in the
+   flow rather than floating, so it never covers the field it warns about. */
+[data-kyn="caps"] {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin-top: 9px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 176, 32, 0.34);
+    background: rgba(255, 176, 32, 0.1);
+    font-size: 0.79rem;
+    line-height: 1.4;
+    color: #ffcf7a;
+}
+
+[data-kyn="caps"][data-kyn-on] {
+    display: flex;
+}
+
+/* ---------------------------------------------------------------- links --- */
+
+[data-kyn="forgot"] {
+    display: inline-block;
+    margin: -4px 0 18px auto;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    color: var(--kyn-hot) !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+[data-kyn="forgot"]:hover {
+    color: #ff86c8 !important;
+    text-decoration: underline !important;
+}
+
+[data-kyn="row-end"] {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* -------------------------------------------------------------- buttons --- */
+
+[data-kyn="submit"] {
+    position: relative;
+    overflow: hidden;
+    width: 100% !important;
+    height: 54px !important;
+    border: 0 !important;
+    border-radius: 13px !important;
+    background: var(--kyn-grad-kinetic) !important;
+    color: #fff !important;
+    font-family: var(--kyn-display) !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em !important;
+    cursor: pointer;
+    box-shadow: 0 16px 38px rgba(242, 0, 137, 0.3) !important;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+[data-kyn="submit"]:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 48px rgba(242, 0, 137, 0.42) !important;
+    filter: brightness(1.06);
+}
+
+[data-kyn="submit"]:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+[data-kyn="submit"]:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+[data-kyn="submit"]:disabled {
+    opacity: 0.62;
+    cursor: progress;
+    transform: none;
+}
+
+/* A sweep that runs only while the form is submitting, so the button reports
+   that something is happening instead of sitting dead. */
+[data-kyn="submit"][data-kyn-busy]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+    transform: translateX(-100%);
+    animation: kyn-sweep 1.15s linear infinite;
+}
+
+@keyframes kyn-sweep {
+    to { transform: translateX(100%); }
+}
+
+/* Divider */
+[data-kyn="divider"] {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 34px 0 26px !important;
+    font-family: var(--kyn-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8c86a3 !important;
+}
+
+[data-kyn="divider"]::before,
+[data-kyn="divider"]::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--kyn-line);
+}
+
+/* Google / SSO button */
+[data-kyn="oauth"] {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    width: 100% !important;
+    height: 52px !important;
+    border: 1px solid var(--kyn-line) !important;
+    border-radius: 13px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--kyn-ink) !important;
+    font-family: var(--kyn-body) !important;
+    font-size: 0.94rem !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+}
+
+[data-kyn="oauth"]:hover {
+    background: rgba(255, 255, 255, 0.09) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-1px);
+}
+
+[data-kyn="oauth"]:focus-visible {
+    outline: 2px solid var(--kyn-hot);
+    outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------ fine print --- */
+
+[data-kyn="legal"] {
+    margin: 24px 0 0 !important;
+    text-align: center;
+    font-size: 0.78rem !important;
+    line-height: 1.6;
+    color: #8c86a3 !important;
+}
+
+[data-kyn="legal"] a {
+    color: var(--kyn-hot) !important;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+[data-kyn="legal"] a:hover {
+    text-decoration: underline !important;
+}
+
+/* --------------------------------------------------- language selector --- */
+
+[data-kyn="langwrap"] {
+    position: fixed !important;
+    top: 22px;
+    right: 26px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--kyn-muted) !important;
+}
+
+[data-kyn="lang"] {
+    height: 40px !important;
+    padding: 0 34px 0 14px !important;
+    border-radius: 11px !important;
+    border: 1px solid var(--kyn-line) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--kyn-ink) !important;
+    font-family: var(--kyn-body) !important;
+    font-size: 0.86rem !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a49fb8' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 11px center !important;
+    background-size: 15px 15px !important;
+}
+
+/* The OS draws the open dropdown on its own surface and will not inherit
+   light-on-dark, so these two have to be set explicitly or the list reads as
+   white text on white. */
+[data-kyn="lang"] option,
+[data-kyn="lang"] optgroup {
+    color: #14141c;
+    background-color: #ffffff;
+}
+
+/* ------------------------------------------------------------ responsive --- */
+
+/* Under 960px the two halves stop sitting side by side: the brand panel
+   shrinks to a header strip pinned at the top, and the card takes the page. */
+@media (max-width: 960px) {
+    [data-kyn="brand"] {
+        left: 16px;
+        right: 16px;
+        top: 30px;
+        width: auto;
+        transform: none;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    [data-kyn="wordmark"] { font-size: clamp(1.6rem, 5.6vw, 2.1rem); }
+    [data-kyn="blurb"],
+    [data-kyn="loop"] { display: none; }
+
+    [data-kyn="card"] {
+        left: 16px;
+        right: 16px;
+        width: auto;
+        top: auto;
+        bottom: 18px;
+        transform: none;
+        max-height: calc(100vh - 230px);
+    }
+
+    [data-kyn="langwrap"] { top: 14px; right: 14px; }
+    [data-kyn="langwrap"] span { display: none; }
+}
+
+/* Phones: the logo alone, and the card gets the rest. */
+@media (max-width: 560px) {
+    /* Below the language selector, which stays pinned top-right. */
+    [data-kyn="brand"] { top: 66px; gap: 12px; }
+    [data-kyn="wordmark"],
+    [data-kyn="greeting"] { display: none; }
+    [data-kyn="brandmark"] { padding: 12px 18px; }
+    [data-kyn="brandmark"] img { height: 34px; }
+    [data-kyn="card"] { max-height: calc(100vh - 156px); }
+}
+
+/* Laptops with little vertical room: drop the loop strip rather than let the
+   card start scrolling. */
+@media (min-width: 961px) and (max-height: 700px) {
+    [data-kyn="loop"] { display: none; }
+    [data-kyn="brand"] { gap: 20px; }
+    [data-kyn="wordmark"] { font-size: clamp(2rem, 4vw, 2.8rem); }
+}
+
+/* ------------------------------------------------------------- a11y ------ */
+
+@media (prefers-reduced-motion: reduce) {
+    [data-kyn-ready] *,
+    [data-kyn-ready] *::before,
+    [data-kyn-ready] *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Windows high-contrast and forced-colors modes strip our palette; make sure
+   the card and fields keep a visible edge rather than dissolving. */
+@media (forced-colors: active) {
+    [data-kyn="card"],
+    [data-kyn="input"],
+    [data-kyn="oauth"],
+    [data-kyn="submit"] {
+        border: 1px solid CanvasText !important;
+    }
+}
+
+[data-kyn="skip"] {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 60;
+    padding: 12px 18px;
+    border-radius: 0 0 12px 0;
+    background: var(--kyn-hot);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+[data-kyn="skip"]:focus {
+    left: 0;
+}
