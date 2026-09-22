@@ -19,6 +19,12 @@ const TOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'tokens.json'), 'utf8'));
 const SCRIPT = JSON.parse(fs.readFileSync(path.join(ROOT, 'script.json'), 'utf8'));
 const VOTIME = fs.existsSync(path.join(ROOT, 'vo-timing.json'))
   ? JSON.parse(fs.readFileSync(path.join(ROOT, 'vo-timing.json'), 'utf8')) : {};
+// Whether the narration is real or a scratch track decides how it ships: a
+// publishable read is muxed into the ad itself; a guide read goes out as a
+// separate, stamped file that cannot be uploaded by accident.
+const VOENGINE = fs.existsSync(path.join(ROOT, 'vo-engine.json'))
+  ? JSON.parse(fs.readFileSync(path.join(ROOT, 'vo-engine.json'), 'utf8'))
+  : { engine: 'none', publishable: false };
 // captions are the voiceover lines — one script, so picture and read never drift
 const caption = (id, i) => SCRIPT[id][i].cap.replace(/\{\{(\w+)\}\}/g, (_, k) => tk(k));
 function tk(name) {
@@ -699,23 +705,37 @@ p{font-family:var(--m);font-size:29px;font-weight:700;letter-spacing:.09em;color
     list += `file '${path.join(OUT, scenes[scenes.length - 1].name + '.png')}'\n`;
     fs.writeFileSync(listFile, list);
     const mp4 = path.join(OUT, v.id + '.mp4');
+    const silent = path.join(TMP, v.id + '.silent.mp4');
+    const audio = path.join(ROOT, 'vo', v.id + '-vo.m4a');
+    const hasAudio = fs.existsSync(audio);
+    const target = (VOENGINE.publishable && hasAudio) ? silent : mp4;
+
     execFileSync(FFMPEG, [
       '-y', '-f', 'concat', '-safe', '0', '-i', listFile,
       '-vf', 'fps=30,format=yuv420p,scale=1080:1920',
       '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
-      '-movflags', '+faststart', mp4
+      '-movflags', '+faststart', target
     ], { stdio: 'pipe' });
+
+    if (VOENGINE.publishable && hasAudio) {
+      // real narration belongs in the ad itself; captions still carry it muted
+      execFileSync(FFMPEG, [
+        '-y', '-i', silent, '-i', audio,
+        '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-shortest',
+        '-movflags', '+faststart', mp4
+      ], { stdio: 'pipe' });
+      fs.unlinkSync(silent);
+    }
     const secs = scenes.reduce((t, s) => t + s.dur, 0);
     console.log(`encoded ${v.id}.mp4  (${scenes.length} scenes, ${secs.toFixed(1)}s)`);
 
     // A second cut carrying the synthetic guide read, for whoever records the
     // real one. It is stamped across the bottom so it cannot be uploaded by
     // mistake — the same guard the Arabic still carries.
-    const guide = path.join(ROOT, 'vo', v.id + '-guide.m4a');
-    if (fs.existsSync(guide)) {
+    if (!VOENGINE.publishable && hasAudio) {
       const voMp4 = path.join(OUT, v.id + '-guide-vo.mp4');
       execFileSync(FFMPEG, [
-        '-y', '-i', mp4, '-i', guide,
+        '-y', '-i', mp4, '-i', audio,
         '-i', path.join(OUT, 'guide-strip.png'),
         '-filter_complex', '[0:v][2:v]overlay=0:H-h[v]',
         '-map', '[v]', '-map', '1:a',
@@ -724,6 +744,9 @@ p{font-family:var(--m);font-size:29px;font-weight:700;letter-spacing:.09em;color
         '-movflags', '+faststart', voMp4
       ], { stdio: 'pipe' });
       console.log(`  + ${v.id}-guide-vo.mp4 (guide read)`);
+    } else if (VOENGINE.publishable && hasAudio) {
+      console.log(`  + narration muxed in (${VOENGINE.voice})`);
+      try { fs.unlinkSync(path.join(OUT, v.id + '-guide-vo.mp4')); } catch (e) {}
     }
   }
 
