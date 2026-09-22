@@ -3,6 +3,17 @@ DirectoryIndex index.html
 
 RewriteEngine On
 
+# ---------------------------------------------------------------------------
+# Force HTTPS.
+#
+# The site references its own https:// domain in canonical tags, the sitemap
+# and structured data, so a page served over http:// is both insecure and
+# self-contradicting. HTTP_HOST is preserved so this works on any hostname.
+# ---------------------------------------------------------------------------
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
 # Redirect public .html URLs to clean URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ %1 [R=301,L]
@@ -11,3 +22,102 @@ RewriteRule ^ %1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
+
+# ---------------------------------------------------------------------------
+# Caching
+#
+# HTML is revalidated on every request, so a deploy is visible immediately.
+# CSS/JS/images carry a ?v= stamp (bump VERSION in the page <head> links on each
+# deploy), so they can be cached hard - a new version is simply a new URL.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+    </FilesMatch>
+
+    <FilesMatch "\.(css|js|png|jpe?g|webp|gif|svg|ico|woff2?)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # -----------------------------------------------------------------------
+    # Baseline security headers
+    #
+    # Note these are ENFORCED, unlike the Content-Security-Policy below, which
+    # is deliberately report-only for now. That is why X-Frame-Options is here
+    # even though CSP's frame-ancestors says the same thing: until the CSP is
+    # switched to enforcing, frame-ancestors blocks nothing and this header is
+    # the only thing actually preventing the site being framed.
+    # -----------------------------------------------------------------------
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(self), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()"
+
+    # -----------------------------------------------------------------------
+    # HSTS - commented out ON PURPOSE.
+    #
+    # Turn this on only AFTER https://kyntlo.ai is confirmed working with a
+    # valid certificate. Once a browser has seen this header it will refuse
+    # plain HTTP for the whole max-age, so enabling it against a broken or
+    # expired certificate makes the site unreachable and there is no way to
+    # take it back from the visitor's browser.
+    #
+    # Start with a short max-age (300), confirm nothing breaks, then raise it
+    # to a year. Add preload only once you are certain, since that is
+    # effectively permanent.
+    #
+    #   Header always set Strict-Transport-Security "max-age=300"
+    #   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # -----------------------------------------------------------------------
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Keep source-of-truth documents out of the public site.
+#
+# docs/ holds the product decision register and the white-label BRD, scripts/
+# holds the build check, and the changelog records internal history. All three
+# live in the repository but must never be reachable over HTTP.
+# ---------------------------------------------------------------------------
+RedirectMatch 404 ^/(docs|scripts)(/|$)
+
+<FilesMatch "\.(md|ps1|sh|yml|yaml|json|lock)$">
+    Require all denied
+</FilesMatch>
+
+# ---------------------------------------------------------------------------
+# Content-Security-Policy, in REPORT-ONLY mode.
+#
+# Nothing is blocked while this header is Report-Only - the browser only logs
+# what *would* have been blocked, to the console and to report-uri if one is set.
+# Watch the console on a real deploy for a few days, especially through a full
+# checkout, a contact-form submit and a demo booking, since the Whop, Forminit
+# and LeadConnector loaders each pull further resources of their own that cannot
+# be enumerated from this repository. Once the report is quiet, rename the header
+# to Content-Security-Policy to start enforcing it.
+#
+# 'unsafe-inline' is required for both scripts and styles: every page carries its
+# own inline <style>, and thirteen carry an inline <script>. Removing it means
+# extracting those to files or hashing them, which is a larger change.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    #
+# Two origins were missing from the original policy and are now listed:
+#   - services.leadconnectorhq.com serves the free-report widget on /report, in
+#     an iframe. Without it in frame-src, enforcing this policy would silently
+#     kill the strongest lead magnet on the site.
+#   - googletagmanager.com / google-analytics.com are needed only once a
+#     measurement ID is set in assets/site-config.js. Listing them now costs
+#     nothing while that slot is empty, and saves a surprise later.
+Header always set Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://forminit.com; script-src 'self' 'unsafe-inline' https://js.whop.com https://forminit.com https://links.kyntlo.ai https://widgets.leadconnectorhq.com https://services.leadconnectorhq.com https://cdn.jsdelivr.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://js.whop.com https://links.kyntlo.ai https://widgets.leadconnectorhq.com https://services.leadconnectorhq.com; connect-src 'self' https://js.whop.com https://forminit.com https://links.kyntlo.ai https://widgets.leadconnectorhq.com https://services.leadconnectorhq.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; upgrade-insecure-requests"
+</IfModule>

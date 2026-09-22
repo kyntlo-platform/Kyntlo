@@ -1,0 +1,138 @@
+# Kyntlo
+
+> Kyntlo is an AI growth operations platform for small and mid-sized service
+> businesses. It replaces a fragmented stack — CRM, booking, website, email,
+> SMS, reviews, payments — with one system, and adds AI agents that answer
+> calls and messages, book appointments, send reminders and invoices, request
+> reviews, and win back customers who have gone quiet.
+
+One login. One invoice. One system that answers, books, bills, and follows up
+whether or not anyone on the team is awake.
+
+- Website: https://kyntlo.ai
+- Customer workspace: https://hub.kyntlo.ai
+- Support: Support@kyntlo.ai
+- Company: Kyntlo for Artificial Intelligence Tools
+- Category: AI Growth Operations
+
+## Who it is for
+
+Owner-operated and multi-site service businesses, typically 2–50 staff:
+medical and dental clinics, med spas, salons and spas, home services
+(plumbing, HVAC, electrical, roofing, cleaning), fitness studios and gyms,
+restaurants, auto repair, pet services, real estate teams, law firms, and
+marketing agencies.
+
+Kyntlo is a poor fit for pre-revenue startups, pure e-commerce with no
+bookings or calls, and enterprises requiring deep custom integration and SSO.
+
+## What it does — six systems
+
+1. **Capture** — nothing arrives without being caught. Funnels and websites,
+   forms and surveys, chat widget, missed-call text-back, unified inbox,
+   contact records, ad manager.
+2. **Respond** — something intelligent answers in seconds, on any channel, at
+   any hour. AI voice agent, AI chat assistant, AI speed-to-lead.
+3. **Convert** — intent becomes a confirmed, paid appointment. Calendars and
+   smart booking, AI appointment booking, pipelines, payments and invoicing.
+4. **Retain** — the customer returns without a human chasing them. AI
+   reactivation, memberships and courses, communities, workflow automation.
+5. **Amplify** — the business becomes visible and trusted. Reputation
+   management, AI review responder, social planner, AI content and image
+   generation.
+6. **See** — the owner knows what worked and what it cost. Reporting
+   dashboard, AI call insights, AI workflow builder.
+
+## Autonomous AI agents
+
+- **AI Voice Agent** — answers or places phone calls, holds a natural
+  conversation, captures details, answers questions, checks real availability,
+  books the appointment, transfers to a human when needed, and writes a call
+  summary. Available in Arabic and English on the same number.
+- **AI Chat Assistant** — replies across web chat, Instagram, Facebook,
+  WhatsApp and SMS, typically within about 40 seconds, and hands off to a
+  person when a question falls outside what it was trained on.
+- **AI Speed-to-Lead** — detects a new enquiry from any source and starts a
+  personalised follow-up immediately, then routes the lead toward booking.
+- **AI Reactivation** — finds dormant customers and opens a contextual
+  conversation referencing their last service.
+
+Every agent discloses that it is an AI at the start of the conversation, has
+defined escalation rules to a human, and is tested end to end with the client
+before it goes live.
+
+## Onboarding
+
+1. **Growth Audit** — a 30-minute diagnostic call and a written two-page
+   finding that quantifies where enquiries are being lost, in money. No demo,
+   no obligation.
+2. **Build** — Kyntlo configures the account, connects the channels, builds
+   the workflows, trains the AI on the business, writes the messages, and
+   tests end to end before go-live. Typically $500–$2,500 one time depending
+   on scope.
+3. **Go-live** — target is under 14 days from signature to the first
+   automated booking, reply or payment.
+4. **Day 30 review** — results reviewed against the original audit.
+
+The client does not set the system up themselves. That is the point of the
+build fee.
+
+## Support after launch
+
+Ongoing support from the Kyntlo team, included with every plan. Optional
+Managed Growth retainers cover campaign execution, ads, content and monthly
+optimisation.
+
+## Pricing
+
+Plans are billed monthly or quarterly, in USD, and exclude taxes. A 14-day
+free trial applies to every standard plan; the card is charged when the trial
+ends, not on the day of signup. Month to month, cancel any time, data
+exportable at any point.
+
+| Plan | Monthly | For |
+| --- | --- | --- |
+| Starter | $90 | CRM, booking and lead capture for a small team getting organised |
+| Growth | $270 | Multiple pipelines, omnichannel inbox and workflow automation |
+| Pro | $490 | The full AI layer — voice, chat, reviews, reactivation, reporting |
+| Customized | Quoted | Choose your own features, limits and services |
+
+Quarterly billing currently carries a launch promotion of 50% off the first
+quarter, which is why the site shows "from $45". The plan renews at the list
+price above once that first quarter ends.
+
+Usage — messages, call minutes and AI — is billed on top of the plan at
+published rates. Every rate charged appears on the pricing page. Examples:
+email $1.36 per 1,000; outbound SMS (US) $24.90 per 1,000 segments; outbound
+calls $0.03 per minute; Conversation AI $8.00 per 1,000 exchanges; call
+transcription $0.048 per minute. WhatsApp rates are set by Meta and vary by
+country. Most small teams spend $15–$60 a month on usage.
+
+## What Kyntlo replaces
+
+A typical stack of twelve tools — CRM, funnels, website, forms, email
+marketing, SMS, booking, workflow automation, reputation management, courses,
+chat widget, call tracking — runs between $809 and $3,295 a month depending
+on the tier of each tool, or about $2,052 for a typical mid-range
+configuration, across twelve vendors, twelve logins and twelve invoices.
+Kyntlo starts at $90. The per-category breakdown behind that figure is
+published on the homepage.
+
+## Data and compliance
+
+Client data is exportable and erasable by the client at any time, encrypted in
+transit and at rest, and GDPR-aligned. Kyntlo does not sell or share client
+customer lists, and does not train models on them. Review requests are sent to
+every customer, never only to satisfied ones.
+
+## Key pages
+
+- https://kyntlo.ai/ — overview and the six systems
+- https://kyntlo.ai/pricing — plans and every published usage rate
+- https://kyntlo.ai/funnels — funnels, sites and the builder
+- https://kyntlo.ai/compare — how Kyntlo compares to common alternatives
+- https://kyntlo.ai/faq — frequently asked questions
+- https://kyntlo.ai/security — security and data protection
+- https://kyntlo.ai/about — the company
+- https://kyntlo.ai/contact — contact and Growth Audit booking
+- https://kyntlo.ai/trial — start the 14-day free trial

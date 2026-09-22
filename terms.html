@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Use | Kyntlo</title>
-    <meta name="description" content="Read the Kyntlo Terms of Use for website access, platform subscriptions, account responsibilities, billing, acceptable use, and service limitations.">
+    <title>Terms of Service | Kyntlo</title>
+    <meta name="description" content="The Kyntlo Terms of Service: B2B-only use, accounts and billing, acceptable use, customer data, AI features, warranties and liability, and CRCICA arbitration seated in Cairo.">
     <link rel="canonical" href="https://kyntlo.ai/terms">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <link href="assets/site-shell.css" rel="stylesheet">
-    <script src="assets/site-shell.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css?v=20260922" rel="stylesheet">
+    <script src="assets/site-config.js?v=20260922"></script>
+    <script src="assets/site-shell.js?v=20260922" defer></script>
     <style>
         :root {
             --surface-light: rgba(255, 255, 255, 0.03);
@@ -23,6 +24,9 @@
             --brand-pink: #f20089;
             --brand-purple: #6d00c1;
             --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            /* Text needs contrast the decorative gradient does not: #6d00c1 measures
+               2.33:1 on the dark ground, #b06bff measures 6.16:1. */
+            --gradient-text: linear-gradient(135deg, var(--brand-pink), #b06bff);
             --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.4);
         }
 
@@ -30,7 +34,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: "Inter", sans-serif;
+            font-family: "Inter", system-ui, sans-serif;
         }
 
         html { background: var(--bg-color); }
@@ -138,8 +142,8 @@
         }
 
         .notice {
-            border-color: rgba(109, 0, 193, 0.24);
-            background: rgba(109, 0, 193, 0.045);
+            border-color: rgba(242, 0, 137, 0.26);
+            background: rgba(242, 0, 137, 0.045);
         }
 
         @media (max-width: 900px) {
@@ -256,125 +260,117 @@
             .legal-card { opacity: 1; transform: none; }
         }
     </style>
+    <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
 </head>
 <body data-theme="dark">
     <nav></nav>
 
     <header class="legal-header">
         <div class="container">
-            <h1>Terms of Use</h1>
-            <p>Last updated: June 17, 2026. These terms govern use of the Kyntlo website, demo booking experience, and platform services.</p>
+            <h1>Terms of Service</h1>
+            <p>Last updated: 22 September 2026. Governing entity: Kyntlo for Artificial Intelligence Tools, Cairo, Egypt. These terms are governed by Egyptian law, and disputes are settled by binding CRCICA arbitration seated in Cairo.</p>
         </div>
     </header>
 
     <main class="container legal-layout">
-        <aside class="legal-toc" aria-label="Terms sections">
+        <aside class="legal-toc" aria-label="Sections">
             <h2>Sections</h2>
-            <a href="#agreement">Agreement</a>
+            <a href="#agreement">Agreement &amp; B2B</a>
             <a href="#services">Services</a>
             <a href="#accounts">Accounts</a>
             <a href="#billing">Billing</a>
             <a href="#acceptable-use">Acceptable Use</a>
             <a href="#customer-data">Customer Data</a>
             <a href="#third-party">Third Parties</a>
-            <a href="#limitations">Limitations</a>
+            <a href="#ai">AI &amp; Betas</a>
+            <a href="#liability">Warranties &amp; Liability</a>
+            <a href="#termination">Termination</a>
+            <a href="#governing-law">Governing Law</a>
+            <a href="#changes">Changes</a>
             <a href="#contact">Contact</a>
         </aside>
 
         <div class="legal-content">
-            <section class="legal-card notice" id="agreement">
-                <h2>1. Agreement to These Terms</h2>
-                <p>By accessing the Kyntlo website, booking a demo, creating an account, using the platform, or authorizing another person to use Kyntlo on your behalf, you agree to these Terms of Use.</p>
-                <p>For these terms, "Kyntlo," "we," "us," and "our" refers to Kyntlo for Artificial Intelligence Tools, located at Building Lotus2 North90, After Chill Out Lotus, Cairo Governorate 11234, Egypt.</p>
-                <p>If you accept these terms for a company or other organization, you represent that you have authority to bind that organization. If a written order form, subscription agreement, or signed contract applies to your account, that document controls if it conflicts with these terms.</p>
+            <section class="legal-card notice">
+                <h2>Notice of updated terms</h2><p>This agreement incorporates binding commercial arbitration under CRCICA in Cairo, strict business-to-business usage parameters, and an explicit clickwrap assent mechanism at account creation and checkout.</p>
+            </section>
+
+            <section class="legal-card" id="agreement">
+                <h2>1. Agreement to These Terms &amp; B2B Restriction</h2>
+                <ul class="legal-list"><li><b>Active assent.</b> By checking the "I Agree" box, clicking to complete registration or checkout, booking a demo, or otherwise accessing or using the Kyntlo website and platform services, you expressly acknowledge that you have read, understood and unconditionally agreed to be bound by these Terms and our <a href="privacy.html">Privacy Policy</a>. If you do not agree, you must not access or use Kyntlo.</li><li><b>B2B restriction.</b> Kyntlo is strictly a business-to-business platform. You represent and warrant that you are using Kyntlo solely for commercial, business or professional purposes, and not as a consumer for personal, family or household purposes.</li><li><b>Parties and authority.</b> "Kyntlo", "we", "us" and "our" refer to Kyntlo for Artificial Intelligence Tools, Building Lotus2 North90, After Chill Out Lotus, Cairo Governorate 11234, Egypt. If you accept these terms for a company or other organisation, you represent and warrant that you have full legal authority to bind that organisation.</li><li><b>Age requirement.</b> You must be at least 18 years of age, or the legal age of majority in your jurisdiction, to register an account or use Kyntlo.</li></ul>
             </section>
 
             <section class="legal-card" id="services">
                 <h2>2. Kyntlo Services</h2>
-                <p>Kyntlo provides a business growth operations platform that may include CRM, pipelines, conversations, booking, funnels, forms, surveys, automation, reporting, reputation tools, AI-enabled features, and related services. Specific capabilities depend on the selected plan, account configuration, usage services, third-party approvals, and add-ons.</p>
-                <p>Kyntlo may improve, modify, suspend, or discontinue features from time to time. We aim to give reasonable notice when a material change affects paid customers, but some changes may be required quickly for security, legal, provider, or reliability reasons.</p>
+                <p>Kyntlo provides a business growth operations platform that may include CRM, pipelines, conversations, booking, funnels, forms, surveys, automation, reporting, reputation tools, AI-enabled features and related services. Specific capabilities depend on the selected plan, account configuration, usage services, third-party approvals and add-ons.</p>
+                <p>Kyntlo may improve, modify, suspend or discontinue features from time to time. We aim to give reasonable notice when a material change affects paid customers, but some changes may be required quickly for security, legal, provider or reliability reasons.</p>
             </section>
 
             <section class="legal-card" id="accounts">
                 <h2>3. Accounts and Responsibilities</h2>
-                <p>You are responsible for maintaining accurate account information, protecting login credentials, assigning appropriate user permissions, and supervising activity within your workspace.</p>
-                <ul>
-                    <li>You must use Kyntlo only for lawful business purposes.</li>
-                    <li>You are responsible for the contacts, campaigns, content, messages, automations, and data processed through your account.</li>
-                    <li>You must obtain any required consent or authorization before sending messages, collecting data, recording calls, using AI features, or connecting third-party services.</li>
-                    <li>You must promptly notify Kyntlo if you suspect unauthorized account access or security misuse.</li>
-                </ul>
+                <p>You are responsible for maintaining accurate account information, protecting login credentials, assigning appropriate user permissions and supervising activity within your workspace.</p>
+                <p>You must use Kyntlo only for lawful business purposes and remain fully accountable for contacts, campaigns, content, messages, automations and data processed through your account.</p>
+                <p>You must obtain any required consent or authorisation before sending messages, collecting data, recording calls, using AI features or connecting third-party services, and promptly notify Kyntlo of any unauthorised security access.</p>
+                <ul class="legal-list"><li><b>Account ownership disputes.</b> In the event of an internal dispute over account ownership — between an enterprise client, an agency and/or a former employee, for example — Kyntlo reserves the right to freeze the account pending a signed joint resolution or a binding court order, without incurring liability.</li><li><b>Inactive accounts.</b> Kyntlo reserves the right to suspend, archive or permanently delete accounts and data inactive or unpaid for more than 12 consecutive months.</li></ul>
             </section>
 
             <section class="legal-card" id="billing">
-                <h2>4. Subscriptions, Usage, and Billing</h2>
-                <p>Kyntlo plans may include recurring subscription fees, usage-based charges, add-ons, setup services, and third-party provider costs. Pricing, included limits, and plan features are shown on the website, order form, or account documentation at the time of purchase.</p>
-                <p>By providing a payment method, you authorize Kyntlo and its payment processors to charge recurring subscription fees, applicable taxes, usage charges, add-ons, and other agreed amounts. Usage-based charges may include communications, AI executions, telecom minutes, SMS segments, email services, verification services, numbers, domains, or other enabled services.</p>
-                <p>If your account uses a wallet, credit balance, or auto-recharge arrangement, you authorize applicable top-ups or charges according to the thresholds, limits, and billing settings approved for your account. You are responsible for monitoring usage and maintaining sufficient balance to avoid service interruption.</p>
-                <p>Late, failed, disputed, or reversed payments may result in account restriction, suspension, loss of feature access, or termination. Cancellation and refund handling is described in the Refund Policy.</p>
+                <h2>4. Subscriptions, Usage and Billing</h2>
+                <p>Kyntlo plans include recurring subscription fees, usage charges, add-ons, setup services and third-party provider costs. Prices are quoted exclusive of applicable sales, value-added or regional taxes, which are calculated at checkout.</p>
+                <p>By providing a payment method, you authorise automatic charges for recurring fees, usage-based communications, AI executions, telecom minutes, SMS segments, email services, verification services, numbers and domains.</p>
+                <p>Accounts using wallets or auto-recharge arrangements authorise automatic top-ups based on pre-set thresholds. Late, failed or disputed payments may result in account restriction, suspension or termination.</p>
             </section>
 
             <section class="legal-card" id="acceptable-use">
                 <h2>5. Acceptable Use</h2>
-                <p>You may not use Kyntlo to:</p>
-                <ul>
-                    <li>Violate laws, regulations, platform rules, carrier rules, advertising rules, privacy rules, or third-party rights.</li>
-                    <li>Send spam, unlawful marketing, deceptive messages, phishing content, malware, abusive content, or unauthorized communications.</li>
-                    <li>Collect, upload, or process sensitive information unless you have a lawful basis and appropriate safeguards.</li>
-                    <li>Bypass security, usage limits, billing controls, or provider requirements.</li>
-                    <li>Interfere with service performance, scrape the website, reverse engineer the platform, or attempt unauthorized access.</li>
-                    <li>Use AI-enabled features to create unlawful, misleading, discriminatory, harmful, or infringing content.</li>
-                </ul>
-                <p>Kyntlo may suspend or restrict access when we believe an account creates legal, security, deliverability, billing, provider, or platform risk.</p>
+                <ul class="legal-list"><li>You may not use Kyntlo to violate laws, regulations, carrier rules, advertising rules or privacy regulations, including the TCPA, GDPR, CCPA and CAN-SPAM.</li><li>Prohibited actions include sending spam, unlawful marketing, deceptive or phishing content, malware, or abusive text messages.</li><li>You may not collect or process sensitive regulated data — such as HIPAA health records — without an explicit lawful basis and proper contractual safeguards.</li><li>Bypassing security controls, scraping, reverse-engineering, or using AI features to generate discriminatory, harmful or infringing content is strictly prohibited.</li></ul>
             </section>
 
             <section class="legal-card" id="customer-data">
                 <h2>6. Customer Data and Content</h2>
-                <p>You retain ownership of the business data, customer records, campaign content, uploaded files, and communications you submit to Kyntlo. You grant Kyntlo the rights needed to host, process, transmit, display, troubleshoot, secure, and otherwise operate the services for your account.</p>
-                <p>You are responsible for the accuracy, legality, and quality of your data and content. Kyntlo is not responsible for customer instructions, campaign claims, message recipients, consent records, third-party lists, or business decisions made using platform outputs.</p>
-                <p>Use of personal information is also governed by the Privacy Policy and any applicable data processing terms agreed with Kyntlo.</p>
+                <p>You retain full ownership of the business data, customer records and campaign files you submit to Kyntlo, and grant us a worldwide licence to host, transmit, secure and operate the services for your workspace.</p>
+                <ul class="legal-list"><li><b>Usage analytics and AI training.</b> You grant Kyntlo rights to use anonymised, aggregated usage metadata to optimise system performance, conduct security analytics, and train internal Kyntlo machine learning and AI features. This anonymised data is stripped of all personally identifiable information and is never used to train external, third-party public foundation models.</li><li><b>Data privacy and regulations.</b> You act as the Data Controller (or Business) and Kyntlo acts as the Data Processor (or Service Provider). You are responsible for compliance with the GDPR, the CCPA and equivalent laws, and for managing Data Subject Rights requests. Our <a href="dpa.html">Data Processing Agreement</a> governs that relationship and forms part of these Terms.</li></ul>
             </section>
 
             <section class="legal-card" id="third-party">
                 <h2>7. Third-Party Services and Integrations</h2>
-                <p>Kyntlo may connect with third-party services such as payment processors, messaging providers, email providers, calendar tools, domain services, analytics tools, AI providers, social platforms, and other integrations. Third-party services may have separate terms, fees, approvals, policies, limits, and availability.</p>
-                <p>Kyntlo is not responsible for third-party outages, policy changes, rejected approvals, account restrictions, carrier filtering, deliverability decisions, platform suspensions, or pricing changes imposed by external providers.</p>
+                <p>Kyntlo connects with external services including payment gateways, telephony providers, email tools, calendar systems and AI vendors. Third-party providers operate under their own terms, approvals and fees.</p>
+                <p>Kyntlo is not liable for third-party outages, policy adjustments, carrier filtering, deliverability drops or abrupt pricing modifications imposed by external services.</p>
             </section>
 
-            <section class="legal-card">
-                <h2>8. AI-Enabled Features</h2>
-                <p>AI-enabled tools may generate content, summaries, suggested responses, workflow assistance, or sales support. Outputs may be inaccurate, incomplete, or inappropriate for a particular use. You are responsible for reviewing outputs before publishing, sending, relying on, or using them in customer-facing workflows.</p>
-                <p>You must not use AI-enabled features in a way that violates law, privacy obligations, intellectual property rights, advertising rules, employment rules, financial rules, medical rules, or other regulated decision-making obligations.</p>
+            <section class="legal-card" id="ai">
+                <h2>8. AI-Enabled Features and Beta Releases</h2>
+                <p>AI-enabled tools generate summaries, automated responses and workflow assistance. Because outputs may be incomplete or inaccurate, you are responsible for reviewing all outputs before commercial deployment.</p>
+                <ul class="legal-list"><li><b>Beta and early-release disclaimer.</b> Experimental AI features and early-access tools are provided strictly as previews, on an "as is" basis, carrying no service guarantees.</li></ul>
             </section>
 
-            <section class="legal-card" id="limitations">
-                <h2>9. Service Availability and Limitations</h2>
-                <p>Kyntlo works to provide a reliable platform, but we do not guarantee uninterrupted, error-free, or always-available service. Scheduled maintenance, emergency maintenance, third-party provider issues, internet failures, carrier filtering, payment failures, or customer configuration errors may affect access or delivery.</p>
-                <p>To the maximum extent permitted by law, Kyntlo is provided without warranties that are not expressly stated in a written agreement. Kyntlo will not be liable for indirect, incidental, special, consequential, punitive, or lost-profit damages arising from use of the services.</p>
-                <p>Where liability cannot be excluded, Kyntlo's aggregate liability is limited to the amount paid for the affected services during the period allowed by applicable law or the written agreement controlling the account.</p>
+            <section class="legal-card" id="liability">
+                <h2>9. Warranties, Liability and Indemnification</h2>
+                <ul class="legal-list"><li><b>Disclaimer of warranties.</b> The platform is provided "as is" and "as available" without express or implied warranties, including merchantability, fitness for a particular purpose, or non-infringement.</li><li><b>Limitation of liability.</b> Kyntlo's total cumulative liability under these terms shall never exceed the total subscription fees actually paid by you to Kyntlo during the three months preceding the claim.</li><li><b>Indemnification.</b> You agree to defend, indemnify and hold harmless Kyntlo, its directors and employees from all third-party claims, liabilities and legal expenses arising from your misuse of the platform or your regulatory breaches.</li><li><b>Force majeure.</b> Kyntlo is exempt from performance failures caused by events beyond its reasonable control, including internet outages, utility failures, cyberattacks or carrier disruptions.</li></ul>
             </section>
 
-            <section class="legal-card">
+            <section class="legal-card" id="termination">
                 <h2>10. Termination</h2>
-                <p>You may stop using Kyntlo or cancel your subscription according to the Refund Policy and any applicable order form. Kyntlo may suspend or terminate access for non-payment, legal risk, security risk, provider requirements, material breach, or misuse of the platform.</p>
-                <p>After termination, access to the workspace may be disabled. Customer data export, deletion, or retention will be handled according to account status, technical feasibility, legal obligations, and any applicable written agreement.</p>
+                <p>You may cancel your subscription in line with the <a href="refund.html">Refund Policy</a>. Kyntlo reserves the right to suspend or terminate workspace access immediately for non-payment, legal vulnerability, security risk or misuse of the platform.</p>
+                <p>Following termination, workspace access is disabled, and data export or deletion is managed according to legal compliance obligations and technical feasibility. The <a href="dpa.html">Data Processing Agreement</a> sets out the deletion timelines.</p>
             </section>
 
-            <section class="legal-card">
-                <h2>11. Governing Terms and Disputes</h2>
-                <p>Any governing-law, venue, arbitration, or dispute-resolution terms in an applicable order form or written agreement will control. If no separate agreement applies, disputes will be handled according to applicable law and mandatory protections that cannot be waived.</p>
+            <section class="legal-card" id="governing-law">
+                <h2>11. Governing Law and Dispute Resolution</h2>
+                <ul class="legal-list"><li><b>Governing law.</b> These Terms are governed by and construed under the laws of Egypt, disregarding conflict-of-law principles.</li><li><b>Binding arbitration.</b> Any controversy or claim arising out of these Terms shall be settled definitively and exclusively by binding commercial arbitration administered under the rules of the Cairo Regional Centre for International Commercial Arbitration (CRCICA). The seat and place of arbitration shall be Cairo, Egypt, conducted in English before a sole arbitrator.</li><li><b>Class action waiver.</b> All disputes must be arbitrated on an individual basis. You expressly waive any right to bring or participate in class-action or representative lawsuits against Kyntlo.</li><li><b>Mandatory rights.</b> Nothing in this section removes a right that applicable mandatory law does not permit to be waived.</li></ul>
             </section>
 
-            <section class="legal-card">
+            <section class="legal-card" id="changes">
                 <h2>12. Changes to These Terms</h2>
-                <p>Kyntlo may update these Terms of Use from time to time. The updated version will be posted on this page with a revised "Last updated" date. Continued use of Kyntlo after updates become effective means you accept the revised terms.</p>
+                <p>Kyntlo may modify these Terms periodically by publishing updated versions online with a revised date. Continued use of the platform following changes constitutes acceptance of the revised terms.</p>
             </section>
 
             <section class="legal-card" id="contact">
-                <h2>13. Contact</h2>
-                <p>For questions about these terms, contact Kyntlo for Artificial Intelligence Tools at <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a>.</p>
-                <p>Postal address: Building Lotus2 North90, After Chill Out Lotus, Cairo Governorate 11234, Egypt. Map location: <a href="https://maps.app.goo.gl/HZmYLkkVSMSWCZJF6" target="_blank" rel="noopener noreferrer">Google Maps</a>.</p>
+                <h2>13. Contact Information</h2>
+                <p>For enquiries regarding these Terms of Service, contact Kyntlo for Artificial Intelligence Tools at <a href="mailto:contact@kyntlo.ai">contact@kyntlo.ai</a>.</p>
+                <p>Postal address: Building Lotus2 North90, After Chill Out Lotus, Cairo Governorate 11234, Egypt.</p>
             </section>
+
         </div>
     </main>
 

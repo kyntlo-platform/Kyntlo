@@ -10,12 +10,12 @@
     --hot: #ff1aa3;
     --green: #35e0a1;
     --gradient: linear-gradient(-45deg, #f20089, #6d00c1, #ff1aa3, #851ada);
-    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+    --font-display: 'Space Grotesk', 'Plus Jakarta Sans', 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { background: var(--bg); color: var(--ink); font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 a { text-decoration: none; color: inherit; }
 .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 @keyframes ckShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
@@ -62,7 +62,7 @@ a { text-decoration: none; color: inherit; }
 .checkout-price .price-now small { font-size: 1rem; font-weight: 700; color: var(--muted); }
 .checkout-price .price-was { position: relative; font-size: 1.2rem; font-weight: 700; color: #8b8698; }
 .checkout-price .price-was::after { content: ''; position: absolute; left: -5%; top: 52%; width: 110%; height: 2.5px; border-radius: 2px; background: linear-gradient(90deg, var(--pink), var(--hot)); transform: rotate(-8deg); }
-.checkout-price .price-save { align-self: center; padding: 5px 12px; border-radius: 999px; background: rgba(53, 224, 161, 0.12); border: 1px solid rgba(53, 224, 161, 0.4); color: var(--green); font-size: 0.64rem; font-weight: 850; letter-spacing: 0.08em; font-family: 'Inter', sans-serif; }
+.checkout-price .price-save { align-self: center; padding: 5px 12px; border-radius: 999px; background: rgba(53, 224, 161, 0.12); border: 1px solid rgba(53, 224, 161, 0.4); color: var(--green); font-size: 0.64rem; font-weight: 850; letter-spacing: 0.08em; font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
 .checkout-note { color: var(--muted); font-size: 0.86rem; margin-bottom: 20px; }
 .checkout-list { list-style: none; display: grid; gap: 9px; margin-bottom: 24px; }
 .checkout-list li { position: relative; padding-left: 24px; font-size: 0.92rem; color: #cfc9e2; }
@@ -113,3 +113,119 @@ a { text-decoration: none; color: inherit; }
 .trial-banner b { color: #fff; }
 
 @media (max-width: 640px) { .checkout-steps li { font-size: 0.8rem; padding: 8px 14px; } }
+
+/* Both billing periods stay mounted so Whop only ever hydrates them once; they
+   share one grid cell, and only the active one is visible and clickable. */
+.whop-host {
+    display: grid;
+}
+
+.whop-plan {
+    grid-area: 1 / 1;
+    min-width: 0;
+    transition: opacity 0.2s ease;
+}
+
+.whop-plan[data-active="false"] {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.whop-plan[data-active="true"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .whop-plan { transition: none; }
+}
+
+/* ---------- Terms acknowledgement gate ----------
+   The payment host stays in the DOM while locked because Whop's loader scans
+   once; we block interaction rather than unmount it. */
+.consent-gate {
+    margin: 0 22px 18px;
+    padding: 18px 20px;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.consent-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.consent-check input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.consent-box {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    border-radius: 7px;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.2s ease, border-color 0.2s ease;
+    position: relative;
+}
+
+.consent-check input:checked + .consent-box {
+    background: linear-gradient(135deg, #f20089, #6d00c1);
+    border-color: transparent;
+}
+
+.consent-check input:checked + .consent-box::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+}
+
+.consent-check input:focus-visible + .consent-box {
+    outline: 2px solid #ff1aa3;
+    outline-offset: 3px;
+}
+
+.consent-copy {
+    font-size: 0.86rem;
+    line-height: 1.62;
+    color: var(--text-muted, #a49fb8);
+}
+
+.consent-copy a {
+    color: #ff1aa3;
+    font-weight: 700;
+}
+
+.consent-note {
+    margin: 12px 0 0 34px;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted, #a49fb8);
+    opacity: 0.85;
+}
+
+.consent-note.is-accepted { color: #35e0a1; opacity: 1; }
+
+.whop-host.is-locked {
+    opacity: 0.35;
+    filter: grayscale(0.6);
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}

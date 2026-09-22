@@ -8,25 +8,32 @@
         pro:      { monthly: "plan_d4YY0DcqLXx8b", quarterly: "plan_VWmHJTwHW6Pj5" }
     };
     const QUARTER_PROMO = "summer_50";
-    const QUARTER_DISCOUNT = 0.5;
+    const QUARTER_DISCOUNT = (window.KyntloPricing && window.KyntloPricing.quarterDiscount) || 0.5;
 
-    const packages = {
-        starter: {
-            name: "Starter", monthly: 90,
-            summary: "Launch CRM, booking, forms, landing pages, live chat, and essential lead capture for a small team.",
-            highlights: ["CRM contacts and opportunities", "1 pipeline", "Funnels, landing pages, forms, and surveys", "Calendar booking", "Live chat widget", "Up to 3 users"]
-        },
-        growth: {
-            name: "Growth", monthly: 270,
-            summary: "Add workflow automation, full omnichannel inbox, appointment reminders, and stronger team collaboration.",
-            highlights: ["Everything in Starter", "2-3 pipelines", "Workflow automation", "Full omnichannel inbox", "Appointment reminders", "Up to 10 users"]
-        },
-        pro: {
-            name: "Pro", monthly: 490,
-            summary: "Unlimited AI usage across the entire platform, plus advanced AI, missed-call text-back, voice AI access, reviews, reactivation, analytics, and deeper campaign execution.",
-            highlights: ["Everything in Growth", "Unlimited AI usage across the whole platform", "Unlimited pipelines", "Missed call text-back", "Advanced AI chatbot", "Voice AI access", "Premium workflow actions", "Reputation manager", "Advanced analytics"]
-        }
+    /* Names, prices and summaries come from currency-pricing.js (window.KyntloPricing);
+       only the checkout-specific highlight lists live here. */
+    const HIGHLIGHTS = {
+        starter: ["CRM contacts and opportunities", "1 pipeline", "Funnels, landing pages, forms, and surveys", "Calendar booking", "Live chat widget", "Up to 3 users"],
+        growth: ["Everything in Starter", "2-3 pipelines", "Workflow automation", "Full omnichannel inbox", "Appointment reminders", "Up to 10 users"],
+        pro: ["Everything in Growth", "Unlimited AI usage across the whole platform", "Unlimited pipelines", "Missed call text-back", "Advanced AI chatbot", "Voice AI access", "Premium workflow actions", "Reputation manager", "Advanced analytics"]
     };
+    const SUMMARIES = {
+        starter: "Launch CRM, booking, forms, landing pages, live chat, and essential lead capture for a small team.",
+        growth: "Add workflow automation, full omnichannel inbox, appointment reminders, and stronger team collaboration.",
+        pro: "Unlimited AI usage across the entire platform, plus advanced AI, missed-call text-back, voice AI access, reviews, reactivation, analytics, and deeper campaign execution."
+    };
+
+    const shared = (window.KyntloPricing && window.KyntloPricing.packages) || {};
+    const packages = Object.keys(HIGHLIGHTS).reduce(function (out, key) {
+        const base = shared[key] || {};
+        out[key] = {
+            name: base.name || key.charAt(0).toUpperCase() + key.slice(1),
+            monthly: base.monthly,
+            summary: SUMMARIES[key],
+            highlights: HIGHLIGHTS[key]
+        };
+        return out;
+    }, {});
 
     function usd(amount) {
         return "$" + Math.round(amount).toLocaleString("en-US");
@@ -77,13 +84,13 @@
 
     /* Whop's loader replaces the placeholder div in-place, so it must be
        re-created (and the loader re-run) every time the selection changes. */
-    function mountWhop(packageKey, billingKey) {
-        const host = document.getElementById("whop-checkout-host");
-        if (!host) return;
-        const planId = (WHOP[packageKey] || {})[billingKey];
-        if (!planId) return;
-
-        host.innerHTML = "";
+    /* Whop's loader scans the DOM once and hydrates every [data-whop-checkout-plan-id]
+       node it finds. Re-injecting the script does not make it scan again, so the old
+       "rebuild the host and re-add the loader on every switch" approach left an empty
+       box after the first change of billing period. Both plans are mounted up front
+       instead, the loader runs exactly once, and switching only changes which of the
+       two mounted forms is shown. */
+    function planNode(planId, billingKey) {
         const node = document.createElement("div");
         node.setAttribute("data-whop-checkout-plan-id", planId);
         node.setAttribute("data-whop-checkout-theme", "light");
@@ -94,21 +101,37 @@
         node.setAttribute("data-whop-checkout-collect-phone-numbers", "true");
         node.setAttribute("data-whop-checkout-hide-address", "true");
         node.setAttribute("data-whop-checkout-promo-code", billingKey === "quarterly" ? QUARTER_PROMO : "");
-        host.appendChild(node);
+        return node;
+    }
 
-        const prev = document.getElementById("whop-loader");
-        if (prev) prev.remove();
-        const script = document.createElement("script");
-        script.id = "whop-loader";
-        script.async = true;
-        script.src = "https://js.whop.com/static/checkout/loader.js";
-        document.body.appendChild(script);
+    function mountWhop(packageKey, billingKey) {
+        const host = document.getElementById("whop-checkout-host");
+        if (!host) return;
+        const plans = WHOP[packageKey] || {};
+
+        host.innerHTML = "";
+        Object.keys(plans).forEach((key) => {
+            const slot = document.createElement("div");
+            slot.className = "whop-plan";
+            slot.dataset.billing = key;
+            slot.dataset.active = String(key === billingKey);
+            slot.appendChild(planNode(plans[key], key));
+            host.appendChild(slot);
+        });
+
+        /* one loader for the life of the page */
+        if (!document.getElementById("whop-loader")) {
+            const script = document.createElement("script");
+            script.id = "whop-loader";
+            script.async = true;
+            script.src = "https://js.whop.com/static/checkout/loader.js";
+            document.body.appendChild(script);
+        }
 
         /* If the payment script is blocked or slow, never leave an empty box. */
-        const existingNote = document.querySelector(".whop-fallback");
-        if (existingNote) existingNote.remove();
         window.setTimeout(function () {
             if (host.querySelector("iframe")) return;
+            if (document.querySelector(".whop-fallback")) return;
             const note = document.createElement("p");
             note.className = "whop-fallback";
             note.innerHTML = "The secure payment form is taking longer than usual to load. " +
@@ -119,6 +142,113 @@
         }, 7000);
     }
 
+    function showWhopPlan(billingKey) {
+        document.querySelectorAll("#whop-checkout-host .whop-plan").forEach((slot) => {
+            slot.dataset.active = String(slot.dataset.billing === billingKey);
+        });
+    }
+
+    /* Switching billing period only rewrites the copy that actually changes. The
+       payment forms stay mounted and keep whatever the customer has already typed. */
+    function applyBilling(packageKey, billingKey) {
+        const plan = packages[packageKey];
+        if (!plan) return;
+
+        const quarterly = billingKey === "quarterly";
+        const dueMonthly = quarterly ? plan.monthly * (1 - QUARTER_DISCOUNT) : plan.monthly;
+        const quarterTotal = plan.monthly * 3 * (1 - QUARTER_DISCOUNT);
+
+        const set = (selector, html) => {
+            const el = document.querySelector(selector);
+            if (el) el.innerHTML = html;
+        };
+
+        set("#checkout-billing-pill", quarterly ? "Quarterly &middot; 50% off first 3 months" : "Monthly");
+        const pill = document.getElementById("checkout-billing-pill");
+        if (pill) pill.classList.toggle("pill--deal", quarterly);
+
+        set("#checkout-price",
+            (quarterly ? '<span class="price-was">' + usd(plan.monthly) + "</span>" : "") +
+            '<span class="price-now">' + usd(dueMonthly) + "<small>/mo</small></span>" +
+            (quarterly ? '<span class="price-save">SAVE 50%</span>' : ""));
+
+        set("#checkout-note", quarterly
+            ? "Nothing today. " + usd(quarterTotal) + " is charged when your 14-day trial ends, covering your first 3 months. The package then renews at " + usd(plan.monthly) + "/mo plus taxes."
+            : "Nothing today. " + usd(plan.monthly) + " is charged when your 14-day trial ends, then monthly, plus taxes. Cancel anytime.");
+
+        set("#checkout-trial-note",
+            "<b>You will not be charged today.</b> Your login details are emailed to you and the trial starts from there. After the 14 days end, <b>" +
+            (quarterly
+                ? usd(quarterTotal) + " will be charged once for your first 3 months"
+                : usd(plan.monthly) + " will be charged for your first month") +
+            "</b> unless you cancel first. Cancel any time before day 14 and you pay nothing.");
+
+        set("#checkout-payment-note",
+            "Complete your " + plan.name + " " + billingKey + " subscription below. Payments are processed securely by our payment provider, and your login details are emailed to you once the trial starts.");
+
+        document.querySelectorAll(".billing-card").forEach((card) => {
+            const active = card.dataset.billing === billingKey;
+            card.classList.toggle("is-active", active);
+            card.setAttribute("aria-checked", String(active));
+        });
+
+        showWhopPlan(billingKey);
+
+        if (window.history && typeof window.history.replaceState === "function") {
+            const url = new URL(window.location.href);
+            url.searchParams.set("package", packageKey);
+            url.searchParams.set("billing", billingKey);
+            window.history.replaceState(null, "", url.toString());
+        }
+    }
+
+    /* The payment form stays mounted while locked - Whop's loader scans the DOM once,
+       so removing and re-adding the host would leave a dead box. We disable interaction
+       with a class instead, and record the acknowledgement so it can be evidenced. */
+    const TERMS_VERSION = "2026-09-22";
+    const CONSENT_KEY = "kyntloTermsAccepted";
+
+    function recordConsent(packageKey, billingKey) {
+        try {
+            window.localStorage.setItem(CONSENT_KEY, JSON.stringify({
+                termsVersion: TERMS_VERSION,
+                acceptedAt: new Date().toISOString(),
+                documents: ["terms", "privacy", "dpa", "refund"],
+                package: packageKey || null,
+                billing: billingKey || null
+            }));
+        } catch (error) {
+            /* Private browsing can refuse storage. The gate still works for this visit. */
+        }
+    }
+
+    function wireConsent(packageKey, billingKey) {
+        const box = document.getElementById("consentAccept");
+        const host = document.getElementById("whop-checkout-host");
+        const note = document.getElementById("consentNote");
+        if (!box || !host) return;
+
+        function apply() {
+            const ok = box.checked;
+            host.classList.toggle("is-locked", !ok);
+            host.setAttribute("aria-hidden", String(!ok));
+            if (!note) return;
+            if (ok) {
+                recordConsent(packageKey, billingKey);
+                note.textContent = "Accepted on " + new Date().toLocaleDateString(undefined, {
+                    year: "numeric", month: "long", day: "numeric"
+                }) + ". Terms version " + TERMS_VERSION + ".";
+                note.classList.add("is-accepted");
+            } else {
+                note.textContent = "Tick the box to unlock the payment form.";
+                note.classList.remove("is-accepted");
+            }
+        }
+
+        box.addEventListener("change", apply);
+        apply();
+    }
+
     function renderCheckout() {
         const root = document.getElementById("checkout-page");
         if (!root) return;
@@ -127,8 +257,6 @@
         if (!params) return;
         const { packageKey, billingKey } = params;
         const plan = packages[packageKey];
-        const dueMonthly = billingKey === "quarterly" ? plan.monthly * (1 - QUARTER_DISCOUNT) : plan.monthly;
-        const quarterTotal = plan.monthly * 3 * (1 - QUARTER_DISCOUNT);
 
         document.title = plan.name + " Checkout | Kyntlo";
 
@@ -140,8 +268,8 @@
                     <p class="checkout-subtitle">Pick your billing rhythm, review your package, and complete payment securely below. Every plan starts with a 14-day free trial.</p>
                     <ol class="checkout-steps" aria-label="Trial steps">
                         <li class="is-done"><span>1</span> Package chosen</li>
-                        <li class="is-current"><span>2</span> Create workspace</li>
-                        <li><span>3</span> 14 days free</li>
+                        <li class="is-current"><span>2</span> Payment details</li>
+                        <li><span>3</span> Login emailed &middot; 14 days free</li>
                     </ol>
                 </div>
             </section>
@@ -154,18 +282,12 @@
                         <article class="checkout-card">
                             <div class="order-topline">
                                 <span class="pill">${plan.name}</span>
-                                <span class="pill ${billingKey === "quarterly" ? "pill--deal" : ""}">${billingKey === "quarterly" ? "Quarterly &middot; 50% off first 3 months" : "Monthly"}</span>
+                                <span class="pill" id="checkout-billing-pill"></span>
                             </div>
                             <h2>Order summary</h2>
                             <p>${plan.summary}</p>
-                            <div class="checkout-price">
-                                ${billingKey === "quarterly" ? '<span class="price-was">' + usd(plan.monthly) + "</span>" : ""}
-                                <span class="price-now">${usd(dueMonthly)}<small>/mo</small></span>
-                                ${billingKey === "quarterly" ? '<span class="price-save">SAVE 50%</span>' : ""}
-                            </div>
-                            <p class="checkout-note">${billingKey === "quarterly"
-                                ? usd(quarterTotal) + " billed today for 3 months, then the package renews at " + usd(plan.monthly) + "/mo plus taxes."
-                                : usd(plan.monthly) + " billed monthly, plus taxes. Cancel anytime."}</p>
+                            <div class="checkout-price" id="checkout-price"></div>
+                            <p class="checkout-note" id="checkout-note"></p>
                             <ul class="checkout-list">
                                 ${plan.highlights.map((item) => "<li>" + item + "</li>").join("")}
                             </ul>
@@ -176,12 +298,20 @@
                             <div class="payment-card__inner">
                                 <div class="trial-banner">
                                     <span class="trial-banner__pill">14-day free trial</span>
-                                    <p><b>You will not be charged today.</b> Your trial starts as soon as your workspace is created. After the 14 days end, <b>${billingKey === "quarterly" ? usd(quarterTotal) + " will be charged once for your first 3 months" : usd(plan.monthly) + " will be charged for your first month"}</b> unless you cancel first. Cancel any time before day 14 and you pay nothing.</p>
+                                    <p id="checkout-trial-note"></p>
                                 </div>
                                 <h2>Secure payment</h2>
-                                <p>Complete your ${plan.name} ${billingKey} subscription below. Payments are processed securely by our payment provider.</p>
+                                <p id="checkout-payment-note"></p>
                             </div>
-                            <div id="whop-checkout-host" class="whop-host"></div>
+                            <div class="consent-gate" id="consentGate">
+                                <label class="consent-check">
+                                    <input type="checkbox" id="consentAccept">
+                                    <span class="consent-box" aria-hidden="true"></span>
+                                    <span class="consent-copy">I am opening a <b>business account</b>, and I have read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>, the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>, the <a href="dpa.html" target="_blank" rel="noopener">Data Processing Agreement</a> and the <a href="refund.html" target="_blank" rel="noopener">Refund Policy</a>. I confirm I am at least 18 and authorised to bind my organisation.</span>
+                                </label>
+                                <p class="consent-note" id="consentNote">Tick the box to unlock the payment form.</p>
+                            </div>
+                            <div id="whop-checkout-host" class="whop-host is-locked"></div>
                         </aside>
                     </div>
                 </div>
@@ -189,16 +319,12 @@
         `;
 
         mountWhop(packageKey, billingKey);
+        applyBilling(packageKey, billingKey);
+        wireConsent(packageKey, billingKey);
 
         root.querySelectorAll(".billing-card").forEach((card) => {
             card.addEventListener("click", () => {
-                const next = card.dataset.billing;
-                const url = new URL(window.location.href);
-                url.searchParams.set("package", packageKey);
-                url.searchParams.set("billing", next);
-                window.history.replaceState(null, "", url.toString());
-                renderCheckout();
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                applyBilling(packageKey, card.dataset.billing);
             });
         });
     }

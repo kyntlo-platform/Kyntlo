@@ -2,10 +2,15 @@ User-agent: *
 Allow: /
 
 # Utility pages with no standalone search value
+Disallow: /docs/
+Disallow: /scripts/
 Disallow: /checkout
 Disallow: /package-starter
 Disallow: /package-growth
 Disallow: /package-pro
 Disallow: /package-scale
+
+# Plain-language summary for AI assistants and answer engines
+# https://kyntlo.ai/llms.txt
 
 Sitemap: https://kyntlo.ai/sitemap.xml

@@ -9,9 +9,10 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <link href="assets/site-shell.css" rel="stylesheet">
-    <script src="assets/site-shell.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="assets/site-shell.css?v=20260922" rel="stylesheet">
+    <script src="assets/site-config.js?v=20260922"></script>
+    <script src="assets/site-shell.js?v=20260922" defer></script>
     <style>
         :root {
             --bg-color: #07050f;
@@ -23,6 +24,9 @@
             --brand-pink: #f20089;
             --brand-purple: #6d00c1;
             --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            /* Text needs contrast the decorative gradient does not: #6d00c1 measures
+               2.33:1 on the dark ground, #b06bff measures 6.16:1. */
+            --gradient-text: linear-gradient(135deg, var(--brand-pink), #b06bff);
             --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.4);
         }
 
@@ -30,7 +34,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: "Inter", sans-serif;
+            font-family: "Inter", system-ui, sans-serif;
         }
 
         html { background: var(--bg-color); }
@@ -276,7 +280,10 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .doc-date { margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted, #a49fb8); opacity: 0.8; }
     </style>
+    <noscript><style>.reveal,.animate-fade-up{opacity:1!important;transform:none!important}.kyn-intro{display:none!important}</style></noscript>
 </head>
 <body data-theme="dark">
     <nav></nav>
@@ -285,6 +292,7 @@
         <div class="container">
             <p class="eyebrow">Privacy, Security and Compliance</p>
             <h1>Built on Trust. Prepared for Scale.</h1>
+            <p class="doc-date">Last updated: 22 September 2026.</p>
             <p>Kyntlo protects business workflows with a practical security program, privacy-first policies, customer controls, and transparent compliance status for subscribers and partners.</p>
         </div>
     </header>

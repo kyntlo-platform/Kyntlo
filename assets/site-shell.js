@@ -33,6 +33,7 @@
         { key: "index", href: "index.html#features", labelKey: "platform" },
         { key: "funnels", href: "funnels.html", labelKey: "funnels" },
         { key: "pricing", href: "pricing.html", labelKey: "pricing" },
+        { key: "report", href: "report.html", label: "Free Report" },
         { key: "contact", href: "contact.html", labelKey: "contact" },
         { key: "about", href: "about.html", labelKey: "about" }
     ];
@@ -147,7 +148,8 @@
         const active = item.key === pageKey;
         const current = active ? ' aria-current="page"' : "";
         const className = mobileClass ? ` class="${mobileClass}"` : "";
-        return `<a href="${siteHref(item.href)}"${className}${current}>${t(item.labelKey)}</a>`;
+        const label = item.labelKey ? t(item.labelKey) : item.label;
+        return `<a href="${siteHref(item.href)}"${className}${current}>${label}</a>`;
     }
 
     function renderNavigation() {
@@ -158,6 +160,15 @@
         nav.className = "site-nav";
         nav.setAttribute("aria-label", "Primary navigation");
         nav.innerHTML = `
+            <div class="site-nav__trust">
+                <div class="container site-nav__trust-inner">
+                    <span class="tb-item tb-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Cairo, Egypt &middot; serving EMEA &amp; North America</span>
+                    <span class="tb-item tb-lang">English &amp; العربية</span>
+                    <span class="tb-sep" aria-hidden="true"></span>
+                    <span class="tb-item tb-trial">14-day free trial &middot; nothing charged today &middot; cancel anytime</span>
+                    <a class="tb-item tb-mail" href="mailto:Support@kyntlo.ai">Support@kyntlo.ai</a>
+                </div>
+            </div>
             <div class="container site-nav__inner">
                 <a class="site-nav__brand" href="${siteHref("index.html")}" aria-label="Kyntlo home">
                     <img src="assets/kyntlo-logo-cropped.png" alt="Kyntlo">
@@ -363,6 +374,7 @@
                             <li><a href="${siteHref("funnels.html")}">${t("funnels")}</a></li>
                             <li><a href="${siteHref("pricing.html")}">${t("pricing")}</a></li>
                             <li><a href="${siteHref("compare.html")}">${t("compare")}</a></li>
+                            <li><a href="${siteHref("report.html")}">Free Business Report</a></li>
                         </ul>
                     </nav>
 
@@ -391,8 +403,11 @@
                             <li><a href="${siteHref("privacy.html")}">Privacy Policy</a></li>
                             <li><a href="${siteHref("terms.html")}">Terms of Use</a></li>
                             <li><a href="${siteHref("cookies.html")}">Cookie Policy</a></li>
+                            <li><a href="${siteHref("dpa.html")}">Data Processing Agreement</a></li>
                             <li><a href="${siteHref("refund.html")}">Refund Policy</a></li>
                             <li><a href="${siteHref("accessibility.html")}">Accessibility</a></li>
+                            <li><a href="${siteHref("privacy.html")}#us-rights">Do Not Sell or Share My Personal Information</a></li>
+                            <li><button type="button" class="site-footer__cookiebtn" data-cookie-reopen>Cookie preferences</button></li>
                         </ul>
                     </nav>
                 </div>
@@ -439,7 +454,8 @@
         "index": "Home", "": "Home", "funnels": "Funnels", "pricing": "Pricing",
         "contact": "Contact", "about": "About", "checkout": "Checkout",
         "trial": "Free Trial", "get-started": "Get Started", "login": "Login",
-        "signup": "Sign Up", "faq": "FAQ", "compare": "Compare",
+        "signup": "Sign Up", "report": "Free Business Report", "dpa": "Data Processing Agreement",
+        "faq": "FAQ", "compare": "Compare",
         "security": "Security", "privacy": "Privacy Policy", "terms": "Terms of Use",
         "refund": "Refund Policy", "cookies": "Cookie Policy", "accessibility": "Accessibility",
         "package-starter": "Starter Package", "package-growth": "Growth Package",
@@ -616,7 +632,8 @@
                         id: "analytics",
                         label: "Analytics",
                         description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
-                        defaultValue: true,
+                        /* No defaultValue: consent has to be given, not assumed.
+                           A pre-ticked analytics box is not valid consent under GDPR/ePrivacy. */
                         gtag: "analytics_storage"
                     },
                     {
@@ -716,6 +733,120 @@
         });
     }
 
+    /* The brand cursor: a pink dot that tracks the pointer exactly, plus a ring that
+       eases in behind it. Fine pointers only, and never when reduced motion is asked
+       for - the CSS hands the system cursor back in both of those cases. */
+    function setupBrandCursor() {
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (document.querySelector(".kyn-cursor")) return;
+
+        const dot = document.createElement("div");
+        dot.className = "kyn-cursor";
+        const ring = document.createElement("div");
+        ring.className = "kyn-cursor-ring";
+        dot.setAttribute("aria-hidden", "true");
+        ring.setAttribute("aria-hidden", "true");
+        document.body.append(ring, dot);
+
+        const INTERACTIVE = 'a, button, select, summary, [role="button"], .billing-card, .tool-badge';
+        let x = window.innerWidth / 2, y = window.innerHeight / 2;
+        let ringX = x, ringY = y, raf = 0;
+
+        function frame() {
+            /* the ring lags by a fixed fraction each frame, which reads as weight */
+            ringX += (x - ringX) * 0.18;
+            ringY += (y - ringY) * 0.18;
+            ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+            raf = window.requestAnimationFrame(frame);
+        }
+
+        document.addEventListener("pointermove", function (event) {
+            if (event.pointerType !== "mouse") return;
+            x = event.clientX;
+            y = event.clientY;
+            dot.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+            if (!document.body.classList.contains("kyn-cursor-ready")) {
+                ringX = x; ringY = y;
+                document.body.classList.add("kyn-cursor-ready");
+                if (!raf) raf = window.requestAnimationFrame(frame);
+            }
+            document.body.classList.remove("kyn-cursor-hidden");
+            const over = event.target.closest && event.target.closest(INTERACTIVE);
+            document.body.classList.toggle("kyn-cursor-active", !!over);
+        }, { passive: true });
+
+        /* leaving the window, or switching to a tab, should not leave a dot stranded */
+        document.addEventListener("pointerleave", function () {
+            document.body.classList.add("kyn-cursor-hidden");
+        });
+        window.addEventListener("blur", function () {
+            document.body.classList.add("kyn-cursor-hidden");
+        });
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                window.cancelAnimationFrame(raf);
+                raf = 0;
+            } else if (!raf) {
+                raf = window.requestAnimationFrame(frame);
+            }
+        });
+    }
+
+    /* ---------- analytics ----------
+       The consent manager already maps its "analytics" category to
+       analytics_storage, so the correct pattern is Google Consent Mode: load
+       the tag with every storage type denied by default and let the banner
+       grant it. Nothing is measured until the visitor agrees, and no tag is
+       requested at all unless a measurement ID has been configured. */
+    function setupAnalytics() {
+        var id = window.KYNTLO_GA_ID;
+        if (!id || document.getElementById("kyn-ga")) return;
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        gtag("consent", "default", {
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            analytics_storage: "denied",
+            functionality_storage: "granted",
+            security_storage: "granted",
+            wait_for_update: 500
+        });
+
+        var tag = document.createElement("script");
+        tag.id = "kyn-ga";
+        tag.async = true;
+        tag.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+        document.head.appendChild(tag);
+
+        gtag("js", new Date());
+        gtag("config", id, {
+            anonymize_ip: true,
+            allow_google_signals: false,
+            allow_ad_personalization_signals: false
+        });
+    }
+
+    /* The footer control hands back to the consent manager's own dialog so
+       there is one place preferences live, not two. */
+    function setupCookiePreferences() {
+        document.addEventListener("click", function (event) {
+            var trigger = event.target.closest("[data-cookie-reopen]");
+            if (!trigger) return;
+            event.preventDefault();
+            var mgr = window.silktideConsentManager;
+            if (mgr && typeof mgr.openPreferences === "function") { mgr.openPreferences(); return; }
+            if (mgr && typeof mgr.show === "function") { mgr.show(); return; }
+            var existing = document.querySelector("[data-stcm-open-preferences], .stcm-preferences-trigger");
+            if (existing) { existing.click(); return; }
+            window.location.href = siteHref("cookies.html");
+        });
+    }
+
     function setupScrollState() {
         var ticking = false;
         var scrolled = null;
@@ -725,6 +856,9 @@
             if (next === scrolled) return;   // only touch the DOM when the state actually flips
             scrolled = next;
             document.body.classList.toggle("kyn-scrolled", next);
+            /* collapses the trust strip and tightens the bar once you leave the top */
+            var bar = document.querySelector(".site-nav");
+            if (bar) bar.classList.toggle("is-stuck", next);
         }
         function onScroll() {
             if (ticking) return;
@@ -746,6 +880,9 @@
     setupSiteLocale();
     setupScrollState();
     setupHorizontalDrag();
+    setupBrandCursor();
     loadChatWidget();
     loadSilktideConsentManager();
+    setupCookiePreferences();
+    setupAnalytics();
 })();
