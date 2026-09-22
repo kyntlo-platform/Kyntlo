@@ -16,6 +16,11 @@ const FFMPEG = process.env.FFMPEG ||
 for (const d of [OUT, TMP]) fs.mkdirSync(d, { recursive: true });
 
 const TOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'tokens.json'), 'utf8'));
+const SCRIPT = JSON.parse(fs.readFileSync(path.join(ROOT, 'script.json'), 'utf8'));
+const VOTIME = fs.existsSync(path.join(ROOT, 'vo-timing.json'))
+  ? JSON.parse(fs.readFileSync(path.join(ROOT, 'vo-timing.json'), 'utf8')) : {};
+// captions are the voiceover lines — one script, so picture and read never drift
+const caption = (id, i) => SCRIPT[id][i].cap.replace(/\{\{(\w+)\}\}/g, (_, k) => tk(k));
 function tk(name) {
   const v = TOK[name];
   if (v === null || v === undefined || v === '') {
@@ -45,6 +50,7 @@ body{
 .mono{font-family:var(--m)}
 .eyebrow{font-family:var(--m);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--hot)}
 .wordmark{font-family:var(--d);font-weight:700;letter-spacing:-.02em}
+.wordmark img{height:1.72em;width:auto;display:inline-block;vertical-align:middle}
 .aurora{position:absolute;border-radius:50%;filter:blur(140px);pointer-events:none}
 `;
 
@@ -93,6 +99,9 @@ body{background:#e9e9ee;color:#000;font-family:-apple-system,'Inter',sans-serif}
 .caption{background:#fff;border-top:1px solid #c9c9d1;padding:28px 40px 32px;flex:none}
 .caption p{font-size:26px;line-height:1.48;color:#3a3a42}
 .caption p b{color:#000}
+.caption .by{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.caption .by img{height:38px;width:auto;display:block}
+.caption .by span{font-family:'JetBrains Mono',monospace;font-size:19px;color:#8a8a92;letter-spacing:.09em}
 `, `
 <div class="status"><span>9:41</span><span class="dots"><i></i><i></i><i></i></span></div>
 <div class="navbar"><div class="back">‹ Mailboxes</div><h1>Enquiries sent — Tue 7 Oct</h1></div>
@@ -137,6 +146,7 @@ body{background:#e9e9ee;color:#000;font-family:-apple-system,'Inter',sans-serif}
 </div>
 
 <div class="caption">
+  <div class="by"><img src="../brand/kyntlo-logo.png" alt="Kyntlo"><span>· SPEED-TO-LEAD TEST</span></div>
   <p><b>Four of these were running ads that night.</b> I submitted the same enquiry to ${tk('N_TIMED')} Dubai businesses on one Tuesday. ${tk('N_NEVER_REPLIED')} never replied at all.</p>
 </div>
 `));
@@ -184,7 +194,7 @@ add('meta-b-62-clinics', 1080, 1350, page(`
   <div class="rule"></div>
   <div class="foot">
     <div class="src">62 UAE clinics advertising on Instagram,<br>checked by hand. Source: Kyntlo.</div>
-    <div class="wordmark">Kyntlo</div>
+    <div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
   </div>
 </div>
 `));
@@ -244,7 +254,7 @@ h1{font-family:var(--d);font-size:92px;font-weight:700;line-height:1.05;letter-s
 <div class="cta">
   <div class="btn">Get the free audit →</div>
   <div class="terms">Booking, reminders and recall in one place.</div>
-  <div class="wordmark">Kyntlo</div>
+  <div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
 </div>`
   }
 ];
@@ -311,7 +321,7 @@ add('linkedin-a-aed-number', 1200, 627, page(`
   <div class="foot">
     <div class="method">The number most of them <b>cannot</b> quote: how long their own enquiry form takes to get a reply.<br>
     Median across ${tk('N_TIMED')} UAE businesses actively running ads, timed October 2026: <b>${tk('MEDIAN_HOURS')} hours</b>.</div>
-    <div class="wordmark">Kyntlo</div>
+    <div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
   </div>
 </div>
 `));
@@ -361,7 +371,7 @@ h1 em{font-style:normal;color:var(--hot)}
   <h1>Your ads never close.<br><em>Your inbox does.</em></h1>
   <p class="sub">We will time your own enquiry form and send you the numbers. Free, in 24 hours.</p>
 </div>
-<div class="wordmark">Kyntlo</div>
+<div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
 `));
 
 /* ============================================================ SNAP B
@@ -402,7 +412,7 @@ h1 em{font-style:normal;color:var(--hot)}
   <h1>إعلاناتك تعمل ٢٤ ساعة.<br><em>فريقك لا.</em></h1>
   <p class="sub">سنقيس سرعة الرد على نموذج التواصل في موقعك، ونرسل لك الأرقام. مجاناً، خلال ٢٤ ساعة.</p>
 </div>
-<div class="wordmark">Kyntlo</div>
+<div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
 <div class="warn">ARABIC COPY IS A DRAFT — NATIVE GULF-DIALECT REVIEW REQUIRED BEFORE THIS RUNS</div>
 `, { lang: 'ar', dir: 'rtl' }));
 
@@ -429,7 +439,7 @@ h1 em{font-style:normal;background:linear-gradient(120deg,#ff1aa3,#a021d6);-webk
   <p class="sub">Give us your website. We submit your enquiry form, time the reply, and send you the timestamps.</p>
   <div class="strip"><span class="chip">No call required</span><span class="chip">No signup</span></div>
 </div>
-<div class="foot"><div class="wordmark">Kyntlo</div><div class="free">Get the report →</div></div>
+<div class="foot"><div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div><div class="free">Get the report →</div></div>
 `));
 
 add('gbp-b-leak-test', 1200, 1200, page(`
@@ -457,7 +467,7 @@ h1{font-family:var(--d);font-size:66px;font-weight:600;line-height:1.14;letter-s
   <div class="rule"></div>
   <div class="foot">
     <div class="terms">No migration. No new system<br>to learn first.</div>
-    <div class="wordmark">Kyntlo</div>
+    <div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
   </div>
 </div>
 `));
@@ -478,7 +488,7 @@ h1 em{font-style:normal;background:linear-gradient(120deg,#ff1aa3,#a021d6);-webk
 <h1>I filled in <em>${tk('N_TIMED')} contact forms</em> in one afternoon.</h1>
 <div class="foot">
   <p class="sub">${tk('N_NEVER_REPLIED')} of them never replied. Every one was paying for the click that sent me there.</p>
-  <div class="wordmark">Kyntlo</div>
+  <div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
 </div>
 `));
 
@@ -507,7 +517,7 @@ h1 em{font-style:normal;color:var(--hot)}
   <h1>clinics whose “Book Now”<br>opens <em>a form, not a calendar</em>.</h1>
 </div>
 ${clinicGrid(35, 62, 'var(--pink)')}
-<div class="foot"><div class="src">62 UAE clinics advertising on Instagram, checked by hand.</div><div class="wordmark">Kyntlo</div></div>
+<div class="foot"><div class="src">62 UAE clinics advertising on Instagram, checked by hand.</div><div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div></div>
 `));
 
 /* ============================================================ MOTION POSTS
@@ -524,7 +534,7 @@ const vertShell = (extra) => `
   font-size:58px;font-weight:800;line-height:1.24;letter-spacing:-.02em;color:#fff;
   text-shadow:0 0 3px #000,3px 3px 0 #000,-3px 3px 0 #000,3px -3px 0 #000,-3px -3px 0 #000,0 5px 14px rgba(0,0,0,.7)}
 .cap em{font-style:normal;color:#ffd84d}
-.wordmark{position:absolute;left:0;right:0;bottom:92px;z-index:6;font-size:32px;color:rgba(255,255,255,.75);text-align:center}
+.wordmark{position:absolute;left:0;right:0;bottom:88px;z-index:6;font-size:38px;text-align:center}
 ${extra || ''}`;
 
 // ---- TikTok A / YouTube A : the spreadsheet, founder register
@@ -560,16 +570,21 @@ const sheetCSS = `
 .sr.hot{background:rgba(242,0,137,.13)}
 `;
 
-const ttA = [
-  { d: 2.6, cap: `I filled in the contact form on ${tk('N_TIMED')} Dubai businesses that are running ads <em>right now</em>.`, body: sheet(false) },
-  { d: 2.2, cap: `Not to sell them anything.`, body: sheet(false) },
-  { d: 2.4, cap: `Column two is when I submitted.`, body: sheet(false) },
-  { d: 2.4, cap: `Column three is when they replied.`, body: sheet(false) },
-  { d: 3.0, cap: `<em>${tk('N_NEVER_REPLIED')}</em> of them are still blank.`, body: sheet(true) },
-  { d: 2.8, cap: `Every one of them paid for the click that sent me there.`, body: sheet(true) },
-  { d: 2.8, cap: `It isn't a slow team. It's 11pm, and Friday, and lunch.`, body: sheet(true) },
-  { d: 3.2, cap: `I'll run the same test on yours. <em>Free.</em>`, body: `<div class="endcard"><div class="ec-n">24h</div><div class="ec-l">Your form, timed.<br>Timestamps sent back.</div><div class="ec-b">Get the free report →</div></div>` }
+const bodyA = [
+  { body: sheet(false) },
+  { body: sheet(false) },
+  { body: sheet(false) },
+  { body: sheet(false) },
+  { body: sheet(true) },
+  { body: sheet(true) },
+  { body: sheet(true) },
+  { body: `<div class="endcard"><div class="ec-n">24h</div><div class="ec-l">Your form, timed.<br>Timestamps sent back.</div><div class="ec-b">Get the free report →</div></div>` },
 ];
+const ttA = bodyA.map((s, i) => ({
+  d: (VOTIME['tiktok-a-spreadsheet'] || [])[i] || 2.6,
+  cap: caption('tiktok-a-spreadsheet', i),
+  body: s.body
+}));
 
 // ---- TikTok B / YouTube B : the 11pm lead, evidential register
 const lockCSS = `
@@ -591,16 +606,21 @@ const lock = (time, date, notifs = '') =>
   `<div class="lock"><div class="clock"><div class="t">${time}</div><div class="d">${date}</div></div>${notifs}</div>`;
 const notif = (b, s, st, cls = '') => `<div class="notif ${cls}"><b>${b}</b><span>${s}</span><div class="st">${st}</div></div>`;
 
-const ttB = [
-  { d: 2.6, cap: `23:04 — the lead arrives.`, body: lock('23:04', 'Tuesday 7 October', notif('New enquiry', 'Villa fit-out — Jumeirah', 'kyntlo.ai · just now')) },
-  { d: 2.2, cap: `The office is closed.`, body: `<div class="dim">${lock('23:04', 'Tuesday 7 October', notif('New enquiry', 'Villa fit-out — Jumeirah', 'kyntlo.ai · just now'))}</div>` },
-  { d: 2.6, cap: `09:12 — somebody replies.`, body: lock('09:12', 'Wednesday 8 October', notif('Reply sent', 'Re: Villa fit-out — Jumeirah', 'Sent · 10h 08m later')) },
-  { d: 2.6, cap: `<em>Ten hours</em> later.`, body: lock('09:12', 'Wednesday 8 October', notif('Reply sent', 'Re: Villa fit-out — Jumeirah', 'Sent · 10h 08m later')) },
-  { d: 3.0, cap: `The same enquiry went to three other companies.`, body: lock('09:12', 'Wednesday 8 October', notif('Reply sent', 'Re: Villa fit-out — Jumeirah', 'Sent · 10h 08m later') + notif('Enquiry also sent to', '3 other companies', 'Standard for this category')) },
-  { d: 3.2, cap: `One of them answered at <em>23:06</em>.`, body: lock('09:12', 'Wednesday 8 October', notif('Reply sent', 'Re: Villa fit-out — Jumeirah', 'Sent · 10h 08m later') + notif('Competitor replied', 'Re: Villa fit-out — Jumeirah', 'Sent · 23:06 · 2 minutes', 'rival')) },
-  { d: 2.8, cap: `Your ads run at 11pm. <em>Your team doesn't.</em>`, body: '' },
-  { d: 3.2, cap: `We close that gap in 14 days.`, body: `<div class="endcard"><div class="ec-n">14</div><div class="ec-l">days. One leak.<br>Fixed free.</div><div class="ec-b">Start with the free report →</div></div>` }
+const bodyB = [
+  { body: lock('23:04', 'Tuesday 7 October', notif('New enquiry', 'Villa fit-out — Jumeirah', 'kyntlo.ai · just now')) },
+  { body: `<div class="dim">${lock('23:04', 'Tuesday 7 October', notif('New enquiry', 'Villa fit-out — Jumeirah', 'kyntlo.ai · just now'))}</div>` },
+  { body: lock('09:12', 'Wednesday 8 October', notif('Reply sent', 'Re: Villa fit-out — Jumeirah', 'Sent · 10h 08m later')) },
+  { body: lock('09:12', 'Wednesday 8 October', notif('Reply sent', 'Re: Villa fit-out — Jumeirah', 'Sent · 10h 08m later')) },
+  { body: lock('09:12', 'Wednesday 8 October', notif('Reply sent', 'Re: Villa fit-out — Jumeirah', 'Sent · 10h 08m later') + notif('Enquiry also sent to', '3 other companies', 'Standard for this category')) },
+  { body: lock('09:12', 'Wednesday 8 October', notif('Reply sent', 'Re: Villa fit-out — Jumeirah', 'Sent · 10h 08m later') + notif('Competitor replied', 'Re: Villa fit-out — Jumeirah', 'Sent · 23:06 · 2 minutes', 'rival')) },
+  { body: '' },
+  { body: `<div class="endcard"><div class="ec-n">14</div><div class="ec-l">days. One leak.<br>Fixed free.</div><div class="ec-b">Start with the free report →</div></div>` },
 ];
+const ttB = bodyB.map((s, i) => ({
+  d: (VOTIME['tiktok-b-11pm-lead'] || [])[i] || 2.6,
+  cap: caption('tiktok-b-11pm-lead', i),
+  body: s.body
+}));
 
 const endcardCSS = `
 .endcard{position:relative;z-index:3;text-align:center}
@@ -611,14 +631,17 @@ const endcardCSS = `
   padding:26px 46px;border-radius:999px;font-family:var(--d);font-size:36px;font-weight:700}
 `;
 
+function timed(scenes, vid) {
+  return scenes.map((s, i) => ({ ...s, d: (VOTIME[vid] || [])[i] || s.d }));
+}
 const videos = [
-  { id: 'tiktok-a-spreadsheet', scenes: ttA, css: sheetCSS + endcardCSS },
-  { id: 'tiktok-b-11pm-lead', scenes: ttB, css: lockCSS + endcardCSS }
+  { id: 'tiktok-a-spreadsheet', scenes: timed(ttA, 'tiktok-a-spreadsheet'), css: sheetCSS + endcardCSS },
+  { id: 'tiktok-b-11pm-lead', scenes: timed(ttB, 'tiktok-b-11pm-lead'), css: lockCSS + endcardCSS }
 ];
 // YouTube Shorts reuse the same two constructions — same hypothesis test,
 // platform-native surface. Rendered separately so each can diverge later.
-videos.push({ id: 'youtube-a-spreadsheet', scenes: ttA, css: sheetCSS + endcardCSS });
-videos.push({ id: 'youtube-b-11pm-lead', scenes: ttB, css: lockCSS + endcardCSS });
+videos.push({ id: 'youtube-a-spreadsheet', scenes: timed(ttA, 'youtube-a-spreadsheet'), css: sheetCSS + endcardCSS });
+videos.push({ id: 'youtube-b-11pm-lead', scenes: timed(ttB, 'youtube-b-11pm-lead'), css: lockCSS + endcardCSS });
 
 const videoScenes = [];
 for (const v of videos) {
@@ -629,10 +652,18 @@ for (const v of videos) {
 <span class="aurora a"></span><span class="aurora b"></span>
 ${s.body}
 <div class="cap">${s.cap}</div>
-<div class="wordmark">Kyntlo</div>
+<div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
 `));
   });
 }
+
+/* the do-not-upload stamp for the guide cuts, rendered rather than drawn,
+   because this ffmpeg build has no drawtext filter */
+add('guide-strip', 1080, 80, page(`
+body{background:#ffb340}
+.frame{align-items:center;justify-content:center}
+p{font-family:var(--m);font-size:29px;font-weight:700;letter-spacing:.09em;color:#150d00;text-align:center}
+`, `<p>GUIDE TRACK · SYNTHETIC VOICE · NOT FOR UPLOAD</p>`));
 
 /* ------------------------------------------------------------- rendering */
 (async () => {
@@ -676,7 +707,27 @@ ${s.body}
     ], { stdio: 'pipe' });
     const secs = scenes.reduce((t, s) => t + s.dur, 0);
     console.log(`encoded ${v.id}.mp4  (${scenes.length} scenes, ${secs.toFixed(1)}s)`);
+
+    // A second cut carrying the synthetic guide read, for whoever records the
+    // real one. It is stamped across the bottom so it cannot be uploaded by
+    // mistake — the same guard the Arabic still carries.
+    const guide = path.join(ROOT, 'vo', v.id + '-guide.m4a');
+    if (fs.existsSync(guide)) {
+      const voMp4 = path.join(OUT, v.id + '-guide-vo.mp4');
+      execFileSync(FFMPEG, [
+        '-y', '-i', mp4, '-i', guide,
+        '-i', path.join(OUT, 'guide-strip.png'),
+        '-filter_complex', '[0:v][2:v]overlay=0:H-h[v]',
+        '-map', '[v]', '-map', '1:a',
+        '-c:v', 'libx264', '-preset', 'medium', '-crf', '21',
+        '-c:a', 'aac', '-b:a', '128k', '-shortest',
+        '-movflags', '+faststart', voMp4
+      ], { stdio: 'pipe' });
+      console.log(`  + ${v.id}-guide-vo.mp4 (guide read)`);
+    }
   }
+
+  try { fs.unlinkSync(path.join(OUT, 'guide-strip.png')); } catch (e) {}
 
   // scene stills are intermediates — keep them out of the delivery folder
   fs.mkdirSync(path.join(OUT, 'scenes'), { recursive: true });
