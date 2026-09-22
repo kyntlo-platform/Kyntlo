@@ -1,0 +1,4 @@
+.gemini_key
+*.key
+.env
+vo-run.log
