@@ -95,18 +95,23 @@ No budget was set by the owner. Modelled at **USD 12,000 over eight weeks**.
 The percentage split holds at any budget; the platform count does not. Below
 roughly $6,000 total, drop Snapchat and X and move the money to Meta.
 
+Platform set confirmed by the owner 22 Sep 2026: Instagram, Facebook,
+LinkedIn, TikTok, YouTube, Google Business Profile, and Snapchat if needed.
+X is not held and has been dropped from the plan.
+
 | Platform | Share | 8-week spend | Daily avg | Role |
 | --- | ---: | ---: | ---: | --- |
-| Meta (IG + FB) | 60% | $7,200 | $128.57 | Volume engine. The only platform that can produce enough conversions to leave the learning phase inside eight weeks. |
-| LinkedIn | 20% | $2,400 | $42.86 | Quality engine. 3–4× the CPL, ~65% qualified vs Meta's ~40%. |
-| TikTok | 10% | $1,200 | $21.43 | Cheap reach, genuine founder-content advantage, lower intent. Feeds retargeting. |
+| Meta (IG + FB) | 55% | $6,600 | $117.86 | Volume engine. The only platform that can produce enough conversions to leave the learning phase inside eight weeks. |
+| LinkedIn | 18% | $2,160 | $38.57 | Quality engine. 3–4× the CPL, ~65% qualified vs Meta's ~40%. |
+| TikTok | 12% | $1,440 | $25.71 | Cheap reach, genuine founder-content advantage, lower intent. Feeds retargeting. |
+| YouTube | 8% | $960 | $17.14 | Shorts carry the same two concepts as TikTok. One test on two algorithms turns a result into a finding rather than a quirk. |
 | Snapchat | 5% | $600 | $10.71 | Deliberate probe. De-risks the KSA expansion in month three. |
-| X | 3% | $360 | $6.43 | Smallest probe. Gulf business conversation is real; competition is thin. |
+| Google Business | — | organic | — | Not an ad platform; profile posts are organic. Feeds the location asset behind any later Google Ads campaign. |
 | ABM warm-up | — | $360 | $6.43 | Carved from Meta + LinkedIn above, not added. |
 | Winner reserve | 2% | $240 | — | Released in week 5 into whichever concept cleared graduation. |
 | **Total** | **100%** | **$12,000** | **$214.29** | |
 
-**Why 60% to one platform:** the commonest five-platform failure is that no
+**Why 55% to one platform:** the commonest five-platform failure is that no
 platform gets enough spend to leave the learning phase, producing five
 inconclusive results. Meta needs roughly 50 conversions per ad set per week to
 optimise. Evenly split, nothing reaches that. Weighted, Meta does — and Meta
@@ -230,19 +235,61 @@ audience before KSA.
 > as foreign to this audience faster than any English ad, and the cost is the
 > brand, not the budget.
 
-### X (3%)
-Objective: traffic, then conversions if the first fortnight justifies it.
+### YouTube (8%)
+Objective: video views into website conversions. Shorts plus 16:9 in-feed
+frames. Both concepts are the TikTok cuts re-delivered — running one test on
+two algorithms is what makes the result a finding rather than a quirk.
 
-- **A · The Data Post** — promoted text post, *personal*. Post organically
-  first; promote only if it earns engagement on its own, because a promoted
-  post carrying real replies outperforms a clean ad. If it dies organically,
-  the ad was never going to work and you learned it for free.
-- **B · What You Paid For** — 16:9 image, *evidential*. Two columns: "What you
-  paid for" (impression, click, CPC, landing page visit, each with an AED
-  figure) against "What you got" — one line, "A form entry nobody opened until
-  Thursday."
+- **A · Scrolling the Spreadsheet** — Shorts 21s + 1920×1080 in-feed,
+  *personal*. The thumbnail and the Short must make one promise; a thumbnail
+  that over-claims buys a view and loses the watch time that decides whether
+  YouTube keeps serving it.
+- **B · The 11pm Lead** — Shorts 22s + 1920×1080 in-feed, *evidential*. The
+  in-feed frame reuses the clinic grid so the evidential register stays
+  visually consistent across every platform.
+
+### Google Business Profile (organic)
+Not an ad platform — you cannot buy impressions on a Business Profile. These
+are profile posts. It earns its place for two reasons: it feeds the location
+asset behind any Google Ads campaign run later, and it is one of the few
+places a Gulf buyer checks before replying to a cold email.
+
+- **A · Free Lead Response Report** — "What's new" post, 1200×1200, weekly.
+- **B · The 14-Day Leak Test** — "Offer" post, 1200×1200, runs the full eight
+  weeks. The warm offer, placed where the warmest traffic already is.
+
+> Paid search is a genuinely strong channel for this offer — somebody
+> searching "CRM for clinics Dubai" is further down the funnel than anyone in
+> a social feed — but it is Google Ads, not the Business Profile, and it is a
+> separate budget line. Folding it in here would starve the Meta line the
+> whole plan depends on. Plan it for month three, once paid social has said
+> which message to bid on.
 
 ---
+
+## 6b. Rendered creative
+
+All eighteen assets are built and committed under `assets/ads/2026-q4/`, with
+`INDEX.md` listing every file, its dimensions and its placement. They are
+rendered from HTML by `build.js`, so the set is reproducible and a copy change
+is a re-render rather than a redraw.
+
+| Ready | Count | Detail |
+| --- | ---: | --- |
+| Ships today | 11 | Whole six-frame carousel, Meta B, both YouTube in-feed frames, both 11pm-lead videos, both Snapchat frames, both Google Business posts |
+| Awaiting Day 0 | 5 | Meta A, LinkedIn A, YouTube A in-feed, both spreadsheet videos |
+| Awaiting Arabic review | 1 | Snapchat B, which carries a burned-in warning strip until the copy is signed off |
+
+Unmeasured tokens render as visible amber slots rather than invented figures.
+Fill `tokens.json` after Day 0 and re-run the build.
+
+Review page: <https://claude.ai/artifact/9ckUoUE9qA6hfCzP1cJVYM>
+
+What the batch does not contain, deliberately: no testimonials, faces or
+customer names (the site's stories are illustrative); no press logos; no
+photography (the Snapchat shopfront is drawn); and no plan prices, which
+sidesteps the unresolved USD/EUR/AED inconsistency until the landing page
+settles it.
 
 ## 7. Decision rules
 
@@ -394,5 +441,7 @@ Ordered by lead time, not by importance.
 - [ ] Confirm the fulfilment owner and the 24-hour SLA is staffable.
 - [ ] Approve the clinic niche for paid given health-advertising regulation.
 - [ ] Confirm official social account handles once created.
+- [ ] Approve or reject each of the eighteen rendered assets.
+- [ ] Name the native Gulf-dialect reviewer for the Arabic creative.
 - [ ] Approve the free Lead Response Report as a committed offer.
 - [ ] Confirm legal position on the claims excluded from creative in §1.
