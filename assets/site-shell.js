@@ -39,6 +39,7 @@
     ];
 
     function isHostedProtocol() {
+        if (window.KYNTLO_CLEAN_URLS === false) return false;
         return window.location.protocol === "http:" || window.location.protocol === "https:";
     }
 

@@ -63,9 +63,11 @@ before it goes live.
 
 ## Onboarding
 
-1. **Growth Audit** — a 30-minute diagnostic call and a written two-page
-   finding that quantifies where enquiries are being lost, in money. No demo,
-   no obligation.
+1. **14-Day Leak Test** — a 30-minute diagnostic call that quantifies where
+   enquiries are being lost, in money. Kyntlo then fixes the single biggest
+   leak free, on the business's existing numbers and channels, against one
+   metric agreed before starting and measured after fourteen days. No demo,
+   no obligation, nothing to install.
 2. **Build** — Kyntlo configures the account, connects the channels, builds
    the workflows, trains the AI on the business, writes the messages, and
    tests end to end before go-live. Typically $500–$2,500 one time depending
@@ -134,5 +136,5 @@ every customer, never only to satisfied ones.
 - https://kyntlo.ai/faq — frequently asked questions
 - https://kyntlo.ai/security — security and data protection
 - https://kyntlo.ai/about — the company
-- https://kyntlo.ai/contact — contact and Growth Audit booking
+- https://kyntlo.ai/contact — contact and 14-Day Leak Test booking
 - https://kyntlo.ai/trial — start the 14-day free trial
