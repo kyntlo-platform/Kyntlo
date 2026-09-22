@@ -11,7 +11,7 @@ whether or not anyone on the team is awake.
 
 - Website: https://kyntlo.ai
 - Customer workspace: https://hub.kyntlo.ai
-- Support: Support@kyntlo.ai
+- Support: support@kyntlo.ai
 - Company: Kyntlo for Artificial Intelligence Tools
 - Category: AI Growth Operations
 
@@ -29,7 +29,7 @@ bookings or calls, and enterprises requiring deep custom integration and SSO.
 ## What it does — six systems
 
 1. **Capture** — nothing arrives without being caught. Funnels and websites,
-   forms and surveys, chat widget, missed-call text-back, unified inbox,
+   forms and surveys, chat widget, instant missed-call reply, unified inbox,
    contact records, ad manager.
 2. **Respond** — something intelligent answers in seconds, on any channel, at
    any hour. AI voice agent, AI chat assistant, AI speed-to-lead.

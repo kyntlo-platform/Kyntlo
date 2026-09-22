@@ -15,12 +15,12 @@
     const HIGHLIGHTS = {
         starter: ["CRM contacts and opportunities", "1 pipeline", "Funnels, landing pages, forms, and surveys", "Calendar booking", "Live chat widget", "Up to 3 users"],
         growth: ["Everything in Starter", "2-3 pipelines", "Workflow automation", "Full omnichannel inbox", "Appointment reminders", "Up to 10 users"],
-        pro: ["Everything in Growth", "Unlimited AI usage across the whole platform", "Unlimited pipelines", "Missed call text-back", "Advanced AI chatbot", "Voice AI access", "Premium workflow actions", "Reputation manager", "Advanced analytics"]
+        pro: ["Everything in Growth", "Unlimited AI usage across the whole platform", "Unlimited pipelines", "Instant missed-call reply", "Advanced AI chatbot", "Voice AI access", "Premium workflow actions", "Reputation manager", "Advanced analytics"]
     };
     const SUMMARIES = {
         starter: "Launch CRM, booking, forms, landing pages, live chat, and essential lead capture for a small team.",
         growth: "Add workflow automation, full omnichannel inbox, appointment reminders, and stronger team collaboration.",
-        pro: "Unlimited AI usage across the entire platform, plus advanced AI, missed-call text-back, voice AI access, reviews, reactivation, analytics, and deeper campaign execution."
+        pro: "Unlimited AI usage across the entire platform, plus advanced AI, instant missed-call reply, voice AI access, reviews, reactivation, analytics, and deeper campaign execution."
     };
 
     const shared = (window.KyntloPricing && window.KyntloPricing.packages) || {};

@@ -166,7 +166,7 @@
                     <span class="tb-item tb-lang">English &amp; العربية</span>
                     <span class="tb-sep" aria-hidden="true"></span>
                     <span class="tb-item tb-trial">14-day free trial &middot; nothing charged today &middot; cancel anytime</span>
-                    <a class="tb-item tb-mail" href="mailto:Support@kyntlo.ai">Support@kyntlo.ai</a>
+                    <a class="tb-item tb-mail" href="mailto:support@kyntlo.ai">support@kyntlo.ai</a>
                 </div>
             </div>
             <div class="container site-nav__inner">
@@ -415,8 +415,8 @@
                 <div class="site-footer__bottom">
                     <p>&copy; 2026 Kyntlo for Artificial Intelligence Tools. All rights reserved.</p>
                     <div class="site-footer__bottom-links">
-                        <a href="mailto:Sales@Kyntlo.ai">${t("salesInquiry")}</a>
-                        <a href="mailto:Support@Kyntlo.ai">${t("contactSupport")}</a>
+                        <a href="mailto:sales@kyntlo.ai">${t("salesInquiry")}</a>
+                        <a href="mailto:support@kyntlo.ai">${t("contactSupport")}</a>
                         <a href="${siteHref("privacy.html")}">Privacy</a>
                         <a href="${siteHref("terms.html")}">Terms</a>
                     </div>
