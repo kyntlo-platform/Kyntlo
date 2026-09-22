@@ -64,6 +64,63 @@ The four motion posts rebuild with narration inside them. The
 `*-guide-vo.mp4` files are deleted automatically, because a guide is only
 needed while the read is synthetic.
 
+## The direction controls duration, not just tone
+
+Measured on the same line, same voice, same model:
+
+| Direction | "Every one of them is running ads right now." |
+| --- | ---: |
+| "...unhurried..." | 6.12s |
+| "...normal conversational speed, no dramatic pauses, this is a 25-second social video..." | 3.60s |
+
+Same words, **41% shorter**. Across the whole script that was the difference
+between a 49-second TikTok ad and a 32-second one — and under 30 seconds is
+where short-form cold traffic actually performs, so the first version was
+unusable regardless of how good it sounded.
+
+The lesson for anyone editing `vo-style.json`: **state the format and the
+pace, not only the mood.** "Unhurried" is a reasonable instruction for tone
+and a bad one for a feed. Every style string here names the target length on
+purpose. After editing, check the totals `vo.py` prints before rebuilding.
+
+## Rate limits, measured
+
+On the free tier, `gemini-3.1-flash-tts-preview` allows **3 requests per
+minute**. The script narrates line by line, so a full run is 16 requests and
+takes about six minutes. Three things make that painless:
+
+- **Throttling.** Calls are spaced to stay inside the limit rather than
+  hammering it and backing off. `GEMINI_TTS_RPM` raises it on a paid key.
+- **Retry.** A 429 is caught, the delay Google names in the response is
+  honoured, and the line retries — up to six times.
+- **A cache.** Each line is keyed on its text, style, voice, model and engine.
+  A re-run only pays for lines that actually changed, so fixing one word in
+  the script costs one request, not sixteen. `vo/.cache.json` holds it;
+  delete it to force a full regenerate.
+
+Measured on this key, 22 Sep 2026:
+
+| Model / API | Free-tier verdict |
+| --- | --- |
+| `gemini-2.5-flash-preview-tts` | **Works.** Quota covers a full 16-line run. The default. |
+| `gemini-3.1-flash-tts-preview` | Caps around **10 requests a day**. One script is 16, so it cannot finish a run on the free tier. Marginally nicer read; worth switching to on a paid key. |
+| `gemini-2.5-pro-preview-tts` | Quota exhausted immediately. |
+| Cloud TTS (`texttospeech.googleapis.com`) | **Rejects API keys entirely** — HTTP 401, "API keys are not supported by this API. Expected OAuth2 access token". Needs a service account, not an AI Studio key. |
+
+So on a free AI Studio key there is exactly one workable route, and it is the
+default. Enabling billing on the project removes the cap and opens 3.1.
+
+**A two-word probe is not a valid test.** `gemini-2.5-flash-preview-tts`
+returned no audio for the text "Quota probe." and full audio for a real
+sentence. When checking whether a model works, send a real line.
+
+## Security note
+
+The key is sent as an `x-goog-api-key` header, never as a URL query
+parameter, so it cannot leak through a log line, a proxy access log or a
+traceback. Keep it in the environment. `.gitignore` covers `.gemini_key`,
+`*.key` and `.env`; nothing in this repository contains a credential.
+
 ## Knobs
 
 | Variable | Default | Notes |

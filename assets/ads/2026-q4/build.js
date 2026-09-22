@@ -708,7 +708,9 @@ p{font-family:var(--m);font-size:29px;font-weight:700;letter-spacing:.09em;color
     const silent = path.join(TMP, v.id + '.silent.mp4');
     const audio = path.join(ROOT, 'vo', v.id + '-vo.m4a');
     const hasAudio = fs.existsSync(audio);
-    const target = (VOENGINE.publishable && hasAudio) ? silent : mp4;
+    const narrated = VOENGINE.publishable && hasAudio &&
+      (!Array.isArray(VOENGINE.complete) || VOENGINE.complete.includes(v.id));
+    const target = narrated ? silent : mp4;
 
     execFileSync(FFMPEG, [
       '-y', '-f', 'concat', '-safe', '0', '-i', listFile,
@@ -717,7 +719,7 @@ p{font-family:var(--m);font-size:29px;font-weight:700;letter-spacing:.09em;color
       '-movflags', '+faststart', target
     ], { stdio: 'pipe' });
 
-    if (VOENGINE.publishable && hasAudio) {
+    if (narrated) {
       // real narration belongs in the ad itself; captions still carry it muted
       execFileSync(FFMPEG, [
         '-y', '-i', silent, '-i', audio,
@@ -732,7 +734,7 @@ p{font-family:var(--m);font-size:29px;font-weight:700;letter-spacing:.09em;color
     // A second cut carrying the synthetic guide read, for whoever records the
     // real one. It is stamped across the bottom so it cannot be uploaded by
     // mistake — the same guard the Arabic still carries.
-    if (!VOENGINE.publishable && hasAudio) {
+    if (!narrated && hasAudio && !VOENGINE.publishable) {
       const voMp4 = path.join(OUT, v.id + '-guide-vo.mp4');
       execFileSync(FFMPEG, [
         '-y', '-i', mp4, '-i', audio,
@@ -744,7 +746,7 @@ p{font-family:var(--m);font-size:29px;font-weight:700;letter-spacing:.09em;color
         '-movflags', '+faststart', voMp4
       ], { stdio: 'pipe' });
       console.log(`  + ${v.id}-guide-vo.mp4 (guide read)`);
-    } else if (VOENGINE.publishable && hasAudio) {
+    } else if (narrated) {
       console.log(`  + narration muxed in (${VOENGINE.voice})`);
       try { fs.unlinkSync(path.join(OUT, v.id + '-guide-vo.mp4')); } catch (e) {}
     }

@@ -1,5 +1,10 @@
 {
-  "engine": "espeak",
-  "voice": "mb-en1",
-  "publishable": false
+  "engine": "gemini",
+  "voice": "Charon",
+  "model": "gemini-2.5-flash-preview-tts",
+  "publishable": true,
+  "complete": [
+    "tiktok-a-spreadsheet",
+    "youtube-a-spreadsheet"
+  ]
 }

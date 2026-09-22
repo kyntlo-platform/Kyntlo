@@ -40,13 +40,22 @@ measured from the 62-clinic audit.
 | `gbp-a-free-report.png` | 1200×1200 | Google Business "What's new" post | Free Lead Response Report | — |
 | `gbp-b-leak-test.png` | 1200×1200 | Google Business "Offer" post | 14-Day Leak Test | — |
 
-### Guide cuts — never upload these
+### Narration status
 
-| File | What it is |
-| --- | --- |
-| `*-guide-vo.mp4` | The same cut with a synthetic guide read, stamped across the bottom |
-| `vo/*-guide.m4a` | That guide read on its own, to record against |
-| `VOICEOVER.md` | The script with in/out timecodes per line |
+| Video | Length | Audio |
+| --- | ---: | --- |
+| `tiktok-a-spreadsheet.mp4` | 32.6s | **Narrated** — Gemini TTS, voice Charon |
+| `youtube-a-spreadsheet.mp4` | 32.6s | **Narrated** — same read |
+| `tiktok-b-11pm-lead.mp4` | 28.0s | Captions only |
+| `youtube-b-11pm-lead.mp4` | 28.0s | Captions only |
+
+Concept B is captions-only because the free-tier daily quota ran out mid-run,
+not because anything is wrong with it. Six of its eight lines are still to
+synthesise. Re-run `python3 vo.py` once the quota resets and it finishes from
+the cache, then rebuild; the finished lines cost nothing the second time.
+
+`vo/*-vo.m4a` holds each narration track on its own, and `VOICEOVER.md` the
+script with in/out timecodes per line.
 
 `scenes/` holds the stills the motion posts are cut from. They are build
 intermediates, not deliverables — but they double as the storyboard if the
@@ -54,23 +63,19 @@ videos are ever reshot properly.
 
 ## Voiceover
 
-Every motion post ships twice.
-
-- **`<name>.mp4`** — captions only, no audio. **This is the one that runs.**
-  Social video is overwhelmingly watched muted, captions carry it, and a
-  silent captioned vertical is standard practice rather than a shortfall.
-- **`<name>-guide-vo.mp4`** — the same cut with a synthetic guide read and a
-  burned-in `GUIDE TRACK · SYNTHETIC VOICE · NOT FOR UPLOAD` strip.
-
-Neural text-to-speech is unreachable from the build environment — the egress
-policy blocks both the Microsoft and Google endpoints — so the guide voice is
-espeak-ng with MBROLA diphones. It is 1998-era synthesis: fine for pacing and
-for reading along to, not fit to publish.
+Narration is generated with Gemini TTS (`gemini-2.5-flash-preview-tts`, voice
+Charon) and muxed straight into the ad. Captions still carry every line, so
+the muted viewing that dominates these feeds loses nothing.
 
 **Every scene is cut to the length its line actually takes to say**, measured
-from the synthesised audio rather than guessed. A natural human read will fit
-the picture without re-editing. `VOICEOVER.md` carries the in/out timecode for
-every line.
+from the audio rather than guessed — so re-recording a line in a human voice
+needs no re-editing, and changing the script re-cuts the picture
+automatically. `VOICEOVER.md` carries the in/out timecode for every line.
+
+The direction given to the model matters more than the voice. `vo-style.json`
+holds one per concept, and they are opposites: a dry founder reporting what he
+found, against a flat voice reading out a measurement. See `TTS-SETUP.md` —
+the same line ran 41% shorter on a better-written direction.
 
 **Concept A should be recorded by the founder, not by anyone else.** It speaks
 in the first person — "I filled in the contact form on N Dubai businesses" —
