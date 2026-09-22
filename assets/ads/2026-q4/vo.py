@@ -23,8 +23,20 @@ FFMPEG = '/usr/local/lib/python3.11/dist-packages/imageio_ffmpeg/binaries/ffmpeg
 # Engine picks itself: a Google Cloud TTS key in the environment gets used,
 # otherwise it falls back to offline espeak. Google's output is publishable;
 # espeak's is a guide track only, and build.js stamps it accordingly.
+GEMINI_KEY = (os.environ.get('GEMINI_API_KEY')
+              or os.environ.get('GOOGLE_AI_STUDIO_KEY') or '')
 GOOGLE_KEY = os.environ.get('GOOGLE_TTS_KEY') or os.environ.get('GOOGLE_API_KEY') or ''
-ENGINE = 'google' if GOOGLE_KEY else 'espeak'
+ENGINE = 'gemini' if GEMINI_KEY else 'google' if GOOGLE_KEY else 'espeak'
+
+GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta'
+# Overridable, because preview model ids move. --models lists what the key serves.
+GEMINI_MODEL = os.environ.get('GEMINI_TTS_MODEL', 'gemini-3.1-flash-tts-preview')
+GEMINI_VOICE = os.environ.get('GEMINI_TTS_VOICE', 'Charon')
+
+# Gemini TTS takes a natural-language direction alongside the line, which is
+# the reason to prefer it here: the two concepts want opposite reads.
+STYLE = json.loads((pathlib.Path(__file__).parent / 'vo-style.json').read_text()) \
+    if (pathlib.Path(__file__).parent / 'vo-style.json').exists() else {}
 TTS_URL = 'https://texttospeech.googleapis.com/v1/text:synthesize'
 VOICES_URL = 'https://texttospeech.googleapis.com/v1/voices'
 
@@ -62,6 +74,61 @@ def spoken(line):
     return line
 
 
+def pcm_to_wav(pcm, path, rate=24000, channels=1, width=2):
+    with wave.open(str(path), 'wb') as w:
+        w.setnchannels(channels)
+        w.setsampwidth(width)
+        w.setframerate(rate)
+        w.writeframes(pcm)
+
+
+def gemini_synth(text, out_wav, style=''):
+    prompt = (style + '\n\n' + text) if style else text
+    body = json.dumps({
+        'contents': [{'parts': [{'text': prompt}]}],
+        'generationConfig': {
+            'responseModalities': ['AUDIO'],
+            'speechConfig': {
+                'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': GEMINI_VOICE}}
+            },
+        },
+    }).encode()
+    url = '%s/models/%s:generateContent?key=%s' % (GEMINI_URL, GEMINI_MODEL, GEMINI_KEY)
+    req = urllib.request.Request(url, data=body,
+                                 headers={'Content-Type': 'application/json'})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            data = json.load(r)
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode('utf8', 'replace')[:500]
+        raise SystemExit(
+            'Gemini TTS refused the request (HTTP %s).\n%s\n'
+            'Run `python3 vo.py --models` to see what this key actually serves, '
+            'then set GEMINI_TTS_MODEL. If the voice name is the problem, set '
+            'GEMINI_TTS_VOICE.' % (e.code, detail))
+
+    try:
+        part = data['candidates'][0]['content']['parts'][0]['inlineData']
+    except (KeyError, IndexError):
+        raise SystemExit('Gemini TTS returned no audio. Response was:\n'
+                         + json.dumps(data)[:500])
+    rate = 24000
+    for bit in part.get('mimeType', '').split(';'):
+        if bit.strip().startswith('rate='):
+            rate = int(bit.split('=')[1])
+    pcm_to_wav(base64.b64decode(part['data']), out_wav, rate=rate)
+
+
+def list_models():
+    with urllib.request.urlopen(GEMINI_URL + '/models?key=' + GEMINI_KEY, timeout=60) as r:
+        data = json.load(r)
+    for m in data.get('models', []):
+        name = m.get('name', '').replace('models/', '')
+        if 'tts' in name.lower() or 'AUDIO' in str(m.get('supportedGenerationMethods', '')):
+            print('%-46s %s' % (name, m.get('displayName', '')))
+    print('\nIf nothing is listed above, the key has no TTS model enabled.')
+
+
 def google_synth(text, out_wav):
     body = json.dumps({
         'input': {'text': text},
@@ -93,8 +160,10 @@ def list_voices():
             print('%-34s %-10s %s' % (v['name'], langs, v.get('ssmlGender', '')))
 
 
-def synth(text, out_wav):
-    if ENGINE == 'google':
+def synth(text, out_wav, style=''):
+    if ENGINE == 'gemini':
+        gemini_synth(text, out_wav, style)
+    elif ENGINE == 'google':
         google_synth(text, out_wav)
     else:
         subprocess.run(['espeak-ng', '-v', VOICE, '-s', str(SPEED),
@@ -119,7 +188,7 @@ def main():
         for i, line in enumerate(lines, 1):
             wav = VO / f'{source}-s{i:02d}.wav'
             if source == vid:
-                synth(spoken(line), wav)
+                synth(spoken(line), wav, STYLE.get(vid, ''))
             spoke = wav_seconds(wav)
             scene = round(max(2.0, PAD_HEAD + spoke + PAD_TAIL), 2)
             durations.append(scene)
@@ -150,8 +219,10 @@ def main():
     (ROOT / 'vo-timing.json').write_text(json.dumps(timing, indent=2))
     (ROOT / 'vo-engine.json').write_text(json.dumps({
         'engine': ENGINE,
-        'voice': GOOGLE_VOICE if ENGINE == 'google' else VOICE,
-        'publishable': ENGINE == 'google',
+        'voice': (GEMINI_VOICE if ENGINE == 'gemini'
+                  else GOOGLE_VOICE if ENGINE == 'google' else VOICE),
+        'model': GEMINI_MODEL if ENGINE == 'gemini' else None,
+        'publishable': ENGINE in ('gemini', 'google'),
     }, indent=2))
 
     # the recording script a human actually reads from
@@ -175,13 +246,20 @@ def main():
 
 if __name__ == '__main__':
     import sys
-    if '--voices' in sys.argv:
+    if '--models' in sys.argv:
+        if not GEMINI_KEY:
+            raise SystemExit('Set GEMINI_API_KEY first.')
+        list_models()
+    elif '--voices' in sys.argv:
         if not GOOGLE_KEY:
-            raise SystemExit('Set GOOGLE_TTS_KEY first.')
+            raise SystemExit('Set GOOGLE_TTS_KEY first (Cloud TTS voices). '
+                             'For Gemini, use --models.')
         list_voices()
     else:
         print('engine:', ENGINE, '| voice:',
-              GOOGLE_VOICE if ENGINE == 'google' else VOICE)
+              GEMINI_VOICE if ENGINE == 'gemini'
+              else GOOGLE_VOICE if ENGINE == 'google' else VOICE,
+              ('| model: ' + GEMINI_MODEL) if ENGINE == 'gemini' else '')
         if ENGINE == 'espeak':
             print('No GOOGLE_TTS_KEY set — producing a guide track, not final audio.')
         main()
