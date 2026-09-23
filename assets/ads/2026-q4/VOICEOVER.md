@@ -28,3 +28,9 @@ placeholder numbers so the pacing is realistic; say the real ones.
 | ---: | ---: | ---: | --- | ---: |
 | 1 | 0.00s | 4.67s | Eleven oh four at night. The lead arrives. | 3.77s |
 | 2 | 4.67s | 7.42s | The office is closed. | 1.85s |
+| 3 | 7.42s | 12.57s | Nine twelve the next morning. Somebody replies. | 4.25s |
+| 4 | 12.57s | 15.00s | Ten hours later. | 1.53s |
+| 5 | 15.00s | 18.99s | The same enquiry went to three other companies. | 3.09s |
+| 6 | 18.99s | 22.82s | One of them answered at eleven oh six. | 2.93s |
+| 7 | 22.82s | 27.17s | Your ads run at eleven at night. Your team doesn't. | 3.45s |
+| 8 | 27.17s | 31.84s | We close that gap in fourteen days. Start with the free report. | 3.77s |

@@ -42,17 +42,19 @@ measured from the 62-clinic audit.
 
 ### Narration status
 
-| Video | Length | Audio |
-| --- | ---: | --- |
-| `tiktok-a-spreadsheet.mp4` | 32.6s | **Narrated** — Gemini TTS, voice Charon |
-| `youtube-a-spreadsheet.mp4` | 32.6s | **Narrated** — same read |
-| `tiktok-b-11pm-lead.mp4` | 28.0s | Captions only |
-| `youtube-b-11pm-lead.mp4` | 28.0s | Captions only |
+All four motion posts are narrated — Gemini TTS, `gemini-2.5-flash-preview-tts`,
+voice Charon, muxed into the ad.
 
-Concept B is captions-only because the free-tier daily quota ran out mid-run,
-not because anything is wrong with it. Six of its eight lines are still to
-synthesise. Re-run `python3 vo.py` once the quota resets and it finishes from
-the cache, then rebuild; the finished lines cost nothing the second time.
+| Video | Length |
+| --- | ---: |
+| `tiktok-a-spreadsheet.mp4` | 32.6s |
+| `youtube-a-spreadsheet.mp4` | 32.6s |
+| `tiktok-b-11pm-lead.mp4` | 31.9s |
+| `youtube-b-11pm-lead.mp4` | 31.9s |
+
+The free tier caps at roughly ten requests a day per TTS model and a full
+script is sixteen, so this took two days and two runs. The per-line cache made
+the second run pay only for what was missing.
 
 `vo/*-vo.m4a` holds each narration track on its own, and `VOICEOVER.md` the
 script with in/out timecodes per line.
