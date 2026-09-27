@@ -10,6 +10,7 @@
     const labels = {
         platform: "Platform",
         funnels: "Funnels",
+        templates: "Templates",
         compare: "Compare",
         pricing: "Pricing",
         contact: "Contact",
@@ -32,6 +33,7 @@
     const navItems = [
         { key: "index", href: "index.html#features", labelKey: "platform" },
         { key: "funnels", href: "funnels.html", labelKey: "funnels" },
+        { key: "templates", href: "templates.html", labelKey: "templates" },
         { key: "pricing", href: "pricing.html", labelKey: "pricing" },
         { key: "contact", href: "contact.html", labelKey: "contact" },
         { key: "about", href: "about.html", labelKey: "about" }
@@ -361,6 +363,7 @@
                         <ul class="site-footer__links">
                             <li><a href="${siteHref("index.html#features")}">${t("features")}</a></li>
                             <li><a href="${siteHref("funnels.html")}">${t("funnels")}</a></li>
+                            <li><a href="${siteHref("templates.html")}">${t("templates")}</a></li>
                             <li><a href="${siteHref("pricing.html")}">${t("pricing")}</a></li>
                             <li><a href="${siteHref("compare.html")}">${t("compare")}</a></li>
                         </ul>
@@ -436,7 +439,7 @@
     }
 
     const KYN_PAGE_NAMES = {
-        "index": "Home", "": "Home", "funnels": "Funnels", "pricing": "Pricing",
+        "index": "Home", "": "Home", "funnels": "Funnels", "templates": "Templates", "pricing": "Pricing",
         "contact": "Contact", "about": "About", "checkout": "Checkout",
         "trial": "Free Trial", "get-started": "Get Started", "login": "Login",
         "signup": "Sign Up", "faq": "FAQ", "compare": "Compare",

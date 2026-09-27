@@ -18,6 +18,7 @@
 /refund.html /refund 301
 /security.html /security 301
 /signup.html /signup 301
+/templates.html /templates 301
 /terms.html /terms 301
 /trial.html /trial 301
 
@@ -40,5 +41,6 @@
 /refund /refund.html 200
 /security /security.html 200
 /signup /signup.html 200
+/templates /templates.html 200
 /terms /terms.html 200
 /trial /trial.html 200
