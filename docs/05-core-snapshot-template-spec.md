@@ -22,6 +22,9 @@ Marks used in this document:
   account. Must be checked in the snapshot source sub-account before release.
 - `LEGAL`: Needs legal review for the customer's market before use.
 - `PROPOSED`: Kyntlo default awaiting owner approval.
+- `APPROVED 2026-09-27`: Kyntlo default approved by the owner. The quiet
+  hours, the 180-day dormant threshold, the calendar settings and the 90-day
+  and 12-hour repeat limits were approved on this date.
 
 Plan availability:
 
@@ -193,7 +196,7 @@ list, Other.
 | `CORE-DSH-001` | Basic dashboard | Dashboard | New leads, bookings, no-shows, won value by source | None | Pipeline, calendar | None | Y | VERIFY |
 | `CORE-ONB-001` | Onboarding checklist | Checklist assets | Tracks section 7 inside the account | None | None | Onboarding owner works through it | Y | All |
 
-Calendar settings in the snapshot (`PROPOSED`, all `VERIFY` against the
+Calendar settings in the snapshot (`APPROVED 2026-09-27`, all `VERIFY` against the
 current calendar options):
 
 - Type per use case (CAL-001): single-owner by default; round-robin for
@@ -218,7 +221,7 @@ text is shown from custom values and links to `privacy_policy_url`.
   customer's named admin owns the live copy after onboarding.
 - Every workflow exits contacts tagged `ops-do-not-automate` or on
   Do Not Disturb for the channel being used.
-- Quiet hours (AUT-005, `PROPOSED`, `LEGAL` per market): SMS and marketing
+- Quiet hours (AUT-005, `APPROVED 2026-09-27`, still `LEGAL` per market): SMS and marketing
   email only 09:00-19:00 Monday to Saturday in the sub-account timezone.
   Messages due outside that window wait. Transactional appointment messages
   may send 08:00-20:00.
@@ -263,7 +266,7 @@ text is shown from custom values and links to `privacy_policy_url`.
 | `CORE-WF-05` | Appointment booked -> Consultation booked. Showed -> Consultation held, sets Last visit date. Status Won -> tags `status-customer`, removes `status-new-lead`. | Every event. | Opportunity closed (except the Won step). | No messages. | None (VERIFY) | None |
 | `CORE-WF-06` | Opportunity status Won, or appointment showed (one chosen at onboarding). Waits `review_request_delay_hours`, sends request, one reminder after 3 days. | Not if `Last review request date` is within 90 days. | Contact replies, opts out, or has `flow-review-requested` from this run. | Quiet hours apply. Every customer gets the same request and link: no screening for happy customers first, no incentives (`LEGAL`, REP-003, REP-006). | Reviews AI replies are separate and billable (REP-004); not part of this workflow. | 1-2 SMS or 1-2 email |
 | `CORE-WF-07` | Inbound call to the account number missed or unanswered. Sends one text, creates contact if new with Lead source = Missed call, creates task. | Once per contact per 12 hours. | Contact on DND; call was answered. | Replying to the caller is transactional in most markets (`LEGAL` per market). Quiet hours: outside hours, the text says when the team will call back. | Trigger type may be premium (VERIFY). No AI in core. | 1 SMS |
-| `CORE-WF-08` | Manual start by staff on a smart list: `Last visit date` older than `reactivation_dormant_days`, marketing consent for the channel, not DND, no open opportunity. Sets status In sprint. Three messages over 10 days. | Once per sprint; not again for 180 days (`PROPOSED`). | Contact books, replies, or opts out; status set to Returned or Opted out. | Marketing: consent required, quiet hours apply, opt-out on every message. | None (VERIFY) | Up to 3 SMS or 3 email |
+| `CORE-WF-08` | Manual start by staff on a smart list: `Last visit date` older than `reactivation_dormant_days`, marketing consent for the channel, not DND, no open opportunity. Sets status In sprint. Three messages over 10 days. | Once per sprint; not again for 180 days (`APPROVED 2026-09-27`). | Contact books, replies, or opts out; status set to Returned or Opted out. | Marketing: consent required, quiet hours apply, opt-out on every message. | None (VERIFY) | Up to 3 SMS or 3 email |
 | `CORE-WF-09` | Opportunity in Quote sent with no stage or status change for `quote_followup_days` (default 5). Sends one follow-up, then a staff task after 2 more days. | Once per quote; re-enters if a new quote date is set. | Opportunity moves stage or closes; contact replies. | Transactional (the contact asked for the quote). Quiet hours apply. | Stale-opportunity trigger availability is VERIFY; fallback is a wait step plus stage check. | 1 email + 0-1 SMS |
 
 Revenue Recovery Sprint planning (internal only):
@@ -272,7 +275,7 @@ Revenue Recovery Sprint planning (internal only):
 - 3% is Kyntlo's conservative planning rate for sizing a sprint with the
   customer. It is not a promise and must never appear as an expected result in
   customer-facing copy or on the website.
-- `reactivation_dormant_days` default 180 is `PROPOSED`; set per business at
+- `reactivation_dormant_days` default 180 is `APPROVED 2026-09-27`; set per business at
   onboarding.
 
 ## 5. Message Templates
