@@ -16,6 +16,12 @@ where to build the ad, what to select, what to paste and what to watch.
 | `06-GOOGLE-BUSINESS` | Business Profile | organic | 2 square profile posts |
 | `07-REFERENCE` | — | — | Voiceover script, build files, how to regenerate |
 
+**Read `00-BUDGET-20K-EGP.md` first.** At 20,000 EGP a month only Meta and
+Google Business are actually runnable — every other platform's own daily
+minimum is higher than its share of the budget, and TikTok's is higher than
+the entire budget. The spend shares in the table above are the full-plan
+figures; the budget page has what to do today.
+
 ## If you only do one thing
 
 Run **`01-META`** at the floor budget: AED 150/day for four weeks, two ads.
@@ -47,7 +53,7 @@ worth more than the leads.
 
 ## Numbers to hold in your head
 
-| | |
+| Number | Value |
 | --- | --- |
 | Target cost per qualified lead | **$85** |
 | Breakeven (gross profit per customer) | $4,200 |

@@ -72,6 +72,12 @@ where to build the ad, what to select, what to paste and what to watch.
 | `06-GOOGLE-BUSINESS` | Business Profile | organic | 2 square profile posts |
 | `07-REFERENCE` | — | — | Voiceover script, build files, how to regenerate |
 
+**Read `00-BUDGET-20K-EGP.md` first.** At 20,000 EGP a month only Meta and
+Google Business are actually runnable — every other platform's own daily
+minimum is higher than its share of the budget, and TikTok's is higher than
+the entire budget. The spend shares in the table above are the full-plan
+figures; the budget page has what to do today.
+
 ## If you only do one thing
 
 Run **`01-META`** at the floor budget: AED 150/day for four weeks, two ads.
@@ -103,7 +109,7 @@ worth more than the leads.
 
 ## Numbers to hold in your head
 
-| | |
+| Number | Value |
 | --- | --- |
 | Target cost per qualified lead | **$85** |
 | Breakeven (gross profit per customer) | $4,200 |
@@ -1036,6 +1042,7 @@ LAYOUT = {
 
 PKG.mkdir(parents=True)
 (PKG / '00-START-HERE.md').write_text(START)
+shutil.copy2(ROOT / 'BUDGET.md', PKG / '00-BUDGET-20K-EGP.md')
 
 missing = []
 for folder, files in LAYOUT.items():
@@ -1057,14 +1064,8 @@ for f in ['build.js', 'vo.py', 'script.json', 'vo-style.json', 'tokens.json',
         shutil.copy2(ROOT / f, ref / f)
 shutil.copytree(ROOT / 'brand', ref / 'brand')
 
-zip_path = DIST / 'kyntlo-ads-2026-q4.zip'
-with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as z:
-    for p in sorted(PKG.rglob('*')):
-        if p.is_file():
-            z.write(p, p.relative_to(DIST))
-
 print('missing sources:', missing or 'none')
 for folder in sorted([p for p in PKG.iterdir() if p.is_dir()]):
     n = len([f for f in folder.rglob('*') if f.is_file()])
     print('  %-22s %2d files' % (folder.name, n))
-print('zip: %s  (%.1f MB)' % (zip_path.name, zip_path.stat().st_size / 1e6))
+print('now run: python3 md2pdf.py, then python3 zip.py')
