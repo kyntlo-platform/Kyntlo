@@ -2,3 +2,5 @@
 *.key
 .env
 vo-run.log
+dist/
+*.zip
