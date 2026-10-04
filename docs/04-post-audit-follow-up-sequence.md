@@ -1,6 +1,6 @@
 # Kyntlo Post-Audit Follow-Up Email Sequence
 
-Status: Draft for owner review
+Status: Built in HighLevel (pilot, approval mode). See `05-post-audit-approval-engine-runbook.md`
 Created: 2026-10-04
 Related: `01-product-decisions.md`, `02-content-and-claims-audit.md`,
 `03-kyntlo-ghl-white-label-brd.md`
