@@ -611,6 +611,24 @@
             if (!window.silktideConsentManager || typeof window.silktideConsentManager.init !== "function") return;
 
             window.__kyntloSilktideConsentReady = true;
+
+            /* Under GPC the non-essential categories start rejected and the
+               banner does not interrupt: the visitor has already answered. They
+               can still open preferences from the footer and opt back in. */
+            var gpc = gpcEnabled();
+            if (gpc) {
+                try {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push(["consent", "update", {
+                        ad_storage: "denied",
+                        ad_user_data: "denied",
+                        ad_personalization: "denied",
+                        analytics_storage: "denied"
+                    }]);
+                } catch (e) { /* no tag loaded, nothing to update */ }
+                document.documentElement.setAttribute("data-gpc", "on");
+            }
+
             window.silktideConsentManager.init({
                 backdrop: {
                     show: true
@@ -633,14 +651,18 @@
                         id: "analytics",
                         label: "Analytics",
                         description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
-                        /* No defaultValue: consent has to be given, not assumed.
-                           A pre-ticked analytics box is not valid consent under GDPR/ePrivacy. */
+                        /* No defaultValue normally: consent has to be given, not
+                           assumed - a pre-ticked box is not valid consent under
+                           GDPR/ePrivacy. Under GPC it is explicitly set to false,
+                           which is a recorded rejection rather than an absence. */
+                        defaultValue: gpc ? false : undefined,
                         gtag: "analytics_storage"
                     },
                     {
                         id: "marketing",
                         label: "Marketing",
                         description: "<p>These cookies are used by us and our advertising partners to show you relevant ads on this site and elsewhere, and to measure how those campaigns perform.</p>",
+                        defaultValue: gpc ? false : undefined,
                         gtag: [
                             "ad_storage",
                             "ad_user_data",
@@ -794,6 +816,24 @@
         });
     }
 
+    /* ---------- Global Privacy Control ----------
+       The Privacy Policy states that Kyntlo honours GPC. Under the CCPA/CPRA
+       regulations GPC is a legally binding opt-out signal, not a courtesy, and
+       Colorado and Connecticut require it too - so this has to be enforced in
+       code, not only promised in the policy.
+
+       A visitor sending GPC is treated as having rejected analytics and
+       marketing before anything loads: no tag is requested and no consent
+       banner nags them for a decision they have already made. Essential
+       storage is unaffected, since that is what keeps the site working. */
+    function gpcEnabled() {
+        try {
+            return window.navigator && window.navigator.globalPrivacyControl === true;
+        } catch (e) {
+            return false;   /* a browser that throws on the property has not set it */
+        }
+    }
+
     /* ---------- analytics ----------
        The consent manager already maps its "analytics" category to
        analytics_storage, so the correct pattern is Google Consent Mode: load
@@ -803,6 +843,10 @@
     function setupAnalytics() {
         var id = window.KYNTLO_GA_ID;
         if (!id || document.getElementById("kyn-ga")) return;
+        /* An opt-out signal means the tag is never requested in the first place,
+           which is stronger than loading it denied and safer if consent state
+           is ever changed by something else later. */
+        if (gpcEnabled()) return;
 
         window.dataLayer = window.dataLayer || [];
         function gtag() { window.dataLayer.push(arguments); }

@@ -292,7 +292,7 @@
         <div class="container">
             <p class="eyebrow">Privacy, Security and Compliance</p>
             <h1>Built on Trust. Prepared for Scale.</h1>
-            <p class="doc-date">Last updated: 22 September 2026.</p>
+            <p class="doc-date">Last updated: 4 October 2026.</p>
             <p>Kyntlo protects business workflows with a practical security program, privacy-first policies, customer controls, and transparent compliance status for subscribers and partners.</p>
         </div>
     </header>
@@ -315,12 +315,12 @@
                     <article class="security-card">
                         <span class="status-label pending">Published</span>
                         <h3>Privacy and Legal Pages</h3>
-                        <p>Privacy Policy, Terms of Use, Refund Policy, Cookie Policy, Accessibility, and Contact pages are available publicly from the website footer.</p>
+                        <p>Every agreement is public and linked, not available on request: <a href="privacy.html">Privacy Policy</a>, <a href="terms.html">Terms of Service</a>, <a href="dpa.html">Data Processing Agreement</a>, <a href="refund.html">Refund Policy</a>, <a href="cookies.html">Cookie Policy</a> and <a href="accessibility.html">Accessibility</a>. The DPA is the one enterprise buyers ask for &mdash; it is signed-ready and needs no request.</p>
                     </article>
                     <article class="security-card">
                         <span class="status-label limited">Integration Required</span>
                         <h3>App Login and Demo Requests</h3>
-                        <p>Website login actions point to the Kyntlo Hub, free trial requests use a Kyntlo-styled Forminit form, and demo requests route visitors to the Calendly booking calendar.</p>
+                        <p>Login hands off to the Kyntlo Hub, trial requests use an embedded form, and audit bookings run on Kyntlo's own booking calendar &mdash; the same scheduling the product provides to customers, not a third-party tool bolted on.</p>
                     </article>
                 </div>
             </div>
@@ -374,25 +374,33 @@
                 <div class="section-header">
                     <p class="eyebrow">Security pillars</p>
                     <h2>How Kyntlo Thinks About Protection</h2>
-                    <p>The controls below define the standard Kyntlo security model. Final technical behavior may depend on the connected platform, hosting environment, payment provider, communications providers, and customer configuration.</p>
+                    <p>These are the controls we commit to contractually, not aspirations. Each one is also written into the Data Processing Agreement, so what you read here is what you can hold us to. Where a control depends on a provider &mdash; payments, telephony, cloud hosting &mdash; that is said plainly rather than implied.</p>
                 </div>
 
                 <div class="pillar-grid">
                     <article class="security-card dark">
-                        <h3>Infrastructure Security</h3>
-                        <p>Secure hosting, HTTPS transport, provider access controls, firewall protections, and vendor safeguards are expected for production services.</p>
+                        <h3>Encryption</h3>
+                        <p>Everything moving between a browser and our servers is encrypted with <b>TLS 1.2 or higher</b>. Databases, files and conversation logs are encrypted at rest with <b>AES-256</b>. These are the same measures committed to in Annex II of our <a href="dpa.html">Data Processing Agreement</a>.</p>
                     </article>
                     <article class="security-card dark">
-                        <h3>Product Security</h3>
-                        <p>Customer accounts should use role-based permissions, strong authentication, limited user access, and careful workspace administration.</p>
+                        <h3>Access control</h3>
+                        <p>Role-based access control inside the application, and <b>mandatory multi-factor authentication</b> for any Kyntlo administrative access to production. Workspace owners set their own team's permission tiers.</p>
                     </article>
                     <article class="security-card dark">
-                        <h3>Operational Security</h3>
-                        <p>Support access, account changes, billing requests, and security issues should be handled through controlled support channels.</p>
+                        <h3>Certified infrastructure</h3>
+                        <p>The platform runs on enterprise cloud infrastructure, including <b>Google Cloud Platform and Amazon Web Services</b>. Their data centres hold <b>SOC&nbsp;2 Type&nbsp;II and ISO&nbsp;27001</b> certification and are protected by biometric access control, 24/7 security staffing and CCTV. <em>Those certifications belong to the infrastructure providers; Kyntlo does not itself hold SOC&nbsp;2 or ISO&nbsp;27001.</em></p>
                     </article>
                     <article class="security-card dark">
-                        <h3>Application Security</h3>
-                        <p>Customer-facing forms, automations, AI workflows, and integrations should be reviewed before launch to reduce abuse and data exposure.</p>
+                        <h3>Resilience and backups</h3>
+                        <p>Automated daily database backups distributed across <b>multiple availability zones</b>, so a workspace can be restored after a physical or technical incident rather than reconstructed by hand.</p>
+                    </article>
+                    <article class="security-card dark">
+                        <h3>Breach notification</h3>
+                        <p>If a personal data breach affects your workspace, we notify you without undue delay and <b>within 72 hours</b> of becoming aware, and help you meet your own regulatory notification duties. That commitment is contractual, in section 5 of the <a href="dpa.html">DPA</a>.</p>
+                    </article>
+                    <article class="security-card dark">
+                        <h3>Your data is not AI training data</h3>
+                        <p>We <b>never</b> use your personal information, CRM contacts or conversation logs to train external, generalised or public foundation models. Only anonymised, aggregated metadata &mdash; stripped of identifiers &mdash; informs our own routing and workflow models.</p>
                     </article>
                 </div>
             </div>

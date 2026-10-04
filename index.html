@@ -417,7 +417,7 @@
         /* =====================================================================
            MARKETING SECTIONS
            The day, the leak calculator, packaged builds, honest fit, the ladder,
-           the partner strip, the AI check and the close. All drawn with the
+           the AI check and the close. All drawn with the
            tokens above so they read as one page with the sections around them.
            ===================================================================== */
 
@@ -541,17 +541,6 @@
         .step p { color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
         .step-price { margin-top: 15px; padding-top: 12px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--ink); }
 
-        /* ---------- Partner strip ---------- */
-        #partners { background: linear-gradient(180deg, transparent, rgba(242, 0, 137, 0.05), transparent); }
-        .partner-inner { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 46px; align-items: center; }
-        .pstats { display: grid; gap: 14px; }
-        .pstat { padding: 24px 26px; border: 1px solid var(--line); border-radius: 18px; background: var(--glass); }
-        .pstat .v {
-            display: block; font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; letter-spacing: -0.03em;
-            background: var(--gradient-kinetic); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .pstat .k { display: block; margin-top: 5px; color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
-
         /* ---------- Ask an AI ---------- */
         .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(212px, 1fr)); gap: 16px; margin-top: 40px; }
         .ai-card {
@@ -569,7 +558,7 @@
         .signoff { margin-top: 36px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
 
         @media (max-width: 900px) {
-            .calc-grid, .fit-grid, .partner-inner { grid-template-columns: 1fr; }
+            .calc-grid, .fit-grid { grid-template-columns: 1fr; }
             .stop { grid-template-columns: 1fr; gap: 16px; }
             .stop-time { display: flex; align-items: baseline; gap: 10px; }
             .stop-time small { margin-top: 0; }
@@ -976,15 +965,15 @@
 
             <div class="matrix reveal" aria-label="Tools Kyntlo replaces">
                 <div class="matrix-head"><span>Capability</span><span>Replaces</span><span style="justify-self:end;">Per month</span><span style="justify-self:center;">Kyntlo</span></div>
-                <div class="matrix-row"><strong>CRM &amp; pipeline management</strong><div class="matrix-tools"><span class="tool-badge" title="Pipedrive"><img src="assets/platform-icons/pipedrive.png" alt="Pipedrive" loading="lazy"><span class="tool-badge__tip">Pipedrive</span></span><span class="tool-badge" title="Salesforce"><img src="assets/platform-icons/salesforce.png" alt="Salesforce" loading="lazy"><span class="tool-badge__tip">Salesforce</span></span><span class="tool-chip">HubSpot</span></div><span class="matrix-cost">$99 – $500</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>CRM &amp; pipeline management</strong><div class="matrix-tools"><span class="tool-badge" title="Pipedrive"><img src="assets/platform-icons/pipedrive.png" alt="Pipedrive" loading="lazy"><span class="tool-badge__tip">Pipedrive</span></span><span class="tool-badge" title="Salesforce"><img src="assets/platform-icons/salesforce.png" alt="Salesforce" loading="lazy"><span class="tool-badge__tip">Salesforce</span></span><span class="tool-badge" title="HubSpot"><img src="assets/platform-icons/hubspot.png" alt="HubSpot" loading="lazy"><span class="tool-badge__tip">HubSpot</span></span></div><span class="matrix-cost">$99 – $500</span><span class="matrix-check">✓</span></div>
                 <div class="matrix-row"><strong>Unlimited sales funnels</strong><div class="matrix-tools"><span class="tool-badge" title="ClickFunnels"><img src="assets/platform-icons/clickfunnels.png" alt="ClickFunnels" loading="lazy"><span class="tool-badge__tip">ClickFunnels</span></span><span class="tool-badge" title="Leadpages"><img src="assets/platform-icons/leadpages.png" alt="Leadpages" loading="lazy"><span class="tool-badge__tip">Leadpages</span></span><span class="tool-badge" title="Unbounce"><img src="assets/platform-icons/unbounce.png" alt="Unbounce" loading="lazy"><span class="tool-badge__tip">Unbounce</span></span></div><span class="matrix-cost">$97 – $297</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Website builder</strong><div class="matrix-tools"><span class="tool-badge" title="WordPress"><img src="assets/platform-icons/wordpress.png" alt="WordPress" loading="lazy"><span class="tool-badge__tip">WordPress</span></span><span class="tool-chip">Wix</span><span class="tool-chip">Squarespace</span></div><span class="matrix-cost">$29 – $99</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Surveys &amp; forms</strong><div class="matrix-tools"><span class="tool-badge" title="Jotform"><img src="assets/platform-icons/jotform.png" alt="Jotform" loading="lazy"><span class="tool-badge__tip">Jotform</span></span><span class="tool-chip">Typeform</span><span class="tool-chip">Google Forms</span></div><span class="matrix-cost">$25 – $99</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Email marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Constant Contact"><img src="assets/platform-icons/constantcontact.png" alt="Constant Contact" loading="lazy"><span class="tool-badge__tip">Constant Contact</span></span><span class="tool-chip">ActiveCampaign</span><span class="tool-chip">Mailchimp</span></div><span class="matrix-cost">$49 – $299</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>2-way SMS marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Twilio"><img src="assets/platform-icons/twilio.png" alt="Twilio" loading="lazy"><span class="tool-badge__tip">Twilio</span></span><span class="tool-badge" title="Klaviyo"><img src="assets/platform-icons/klaviyo.png" alt="Klaviyo" loading="lazy"><span class="tool-badge__tip">Klaviyo</span></span><span class="tool-chip">SimpleTexting</span></div><span class="matrix-cost">$49 – $199</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Booking &amp; appointments</strong><div class="matrix-tools"><span class="tool-badge" title="Acuity"><img src="assets/platform-icons/acuity.png" alt="Acuity" loading="lazy"><span class="tool-badge__tip">Acuity</span></span><span class="tool-chip">Calendly</span><span class="tool-chip">Google Calendar</span></div><span class="matrix-cost">$15 – $60</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Workflow automations</strong><div class="matrix-tools"><span class="tool-badge" title="Zapier"><img src="assets/platform-icons/zapier.png" alt="Zapier" loading="lazy"><span class="tool-badge__tip">Zapier</span></span><span class="tool-badge" title="Pabbly"><img src="assets/platform-icons/pabbly.png" alt="Pabbly" loading="lazy"><span class="tool-badge__tip">Pabbly</span></span><span class="tool-chip">Make</span></div><span class="matrix-cost">$29 – $199</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Reputation management</strong><div class="matrix-tools"><span class="tool-badge" title="Birdeye"><img src="assets/platform-icons/birdeye.png" alt="Birdeye" loading="lazy"><span class="tool-badge__tip">Birdeye</span></span><span class="tool-badge" title="Podium"><img src="assets/platform-icons/podium.png" alt="Podium" loading="lazy"><span class="tool-badge__tip">Podium</span></span><span class="tool-chip">Grade.us</span></div><span class="matrix-cost">$199 – $499</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Website builder</strong><div class="matrix-tools"><span class="tool-badge" title="WordPress"><img src="assets/platform-icons/wordpress.png" alt="WordPress" loading="lazy"><span class="tool-badge__tip">WordPress</span></span><span class="tool-badge" title="Wix"><img src="assets/platform-icons/wix.png" alt="Wix" loading="lazy"><span class="tool-badge__tip">Wix</span></span><span class="tool-badge" title="Squarespace"><img src="assets/platform-icons/squarespace.png" alt="Squarespace" loading="lazy"><span class="tool-badge__tip">Squarespace</span></span></div><span class="matrix-cost">$29 – $99</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Surveys &amp; forms</strong><div class="matrix-tools"><span class="tool-badge" title="Jotform"><img src="assets/platform-icons/jotform.png" alt="Jotform" loading="lazy"><span class="tool-badge__tip">Jotform</span></span><span class="tool-badge" title="Typeform"><img src="assets/platform-icons/typeform.png" alt="Typeform" loading="lazy"><span class="tool-badge__tip">Typeform</span></span><span class="tool-badge" title="Google Forms"><img src="assets/platform-icons/googleforms.png" alt="Google Forms" loading="lazy"><span class="tool-badge__tip">Google Forms</span></span></div><span class="matrix-cost">$25 – $99</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Email marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Constant Contact"><img src="assets/platform-icons/constantcontact.png" alt="Constant Contact" loading="lazy"><span class="tool-badge__tip">Constant Contact</span></span><span class="tool-badge" title="ActiveCampaign"><img src="assets/platform-icons/activecampaign.png" alt="ActiveCampaign" loading="lazy"><span class="tool-badge__tip">ActiveCampaign</span></span><span class="tool-badge" title="Mailchimp"><img src="assets/platform-icons/mailchimp.png" alt="Mailchimp" loading="lazy"><span class="tool-badge__tip">Mailchimp</span></span></div><span class="matrix-cost">$49 – $299</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>2-way SMS marketing</strong><div class="matrix-tools"><span class="tool-badge" title="Twilio"><img src="assets/platform-icons/twilio.png" alt="Twilio" loading="lazy"><span class="tool-badge__tip">Twilio</span></span><span class="tool-badge" title="Klaviyo"><img src="assets/platform-icons/klaviyo.png" alt="Klaviyo" loading="lazy"><span class="tool-badge__tip">Klaviyo</span></span><span class="tool-badge" title="SimpleTexting"><img src="assets/platform-icons/simpletexting.png" alt="SimpleTexting" loading="lazy"><span class="tool-badge__tip">SimpleTexting</span></span></div><span class="matrix-cost">$49 – $199</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Booking &amp; appointments</strong><div class="matrix-tools"><span class="tool-badge" title="Acuity"><img src="assets/platform-icons/acuity.png" alt="Acuity" loading="lazy"><span class="tool-badge__tip">Acuity</span></span><span class="tool-badge" title="Calendly"><img src="assets/platform-icons/calendly.png" alt="Calendly" loading="lazy"><span class="tool-badge__tip">Calendly</span></span><span class="tool-badge" title="Google Calendar"><img src="assets/platform-icons/googlecalendar.png" alt="Google Calendar" loading="lazy"><span class="tool-badge__tip">Google Calendar</span></span></div><span class="matrix-cost">$15 – $60</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Workflow automations</strong><div class="matrix-tools"><span class="tool-badge" title="Zapier"><img src="assets/platform-icons/zapier.png" alt="Zapier" loading="lazy"><span class="tool-badge__tip">Zapier</span></span><span class="tool-badge" title="Pabbly"><img src="assets/platform-icons/pabbly.png" alt="Pabbly" loading="lazy"><span class="tool-badge__tip">Pabbly</span></span><span class="tool-badge" title="Make"><img src="assets/platform-icons/make.png" alt="Make" loading="lazy"><span class="tool-badge__tip">Make</span></span></div><span class="matrix-cost">$29 – $199</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Reputation management</strong><div class="matrix-tools"><span class="tool-badge" title="Birdeye"><img src="assets/platform-icons/birdeye.png" alt="Birdeye" loading="lazy"><span class="tool-badge__tip">Birdeye</span></span><span class="tool-badge" title="Podium"><img src="assets/platform-icons/podium.png" alt="Podium" loading="lazy"><span class="tool-badge__tip">Podium</span></span><span class="tool-badge" title="Grade.us"><img src="assets/platform-icons/gradeus.png" alt="Grade.us" loading="lazy"><span class="tool-badge__tip">Grade.us</span></span></div><span class="matrix-cost">$199 – $499</span><span class="matrix-check">✓</span></div>
                 <div class="matrix-row"><strong>Courses &amp; memberships</strong><div class="matrix-tools"><span class="tool-chip">Kajabi</span><span class="tool-chip">Teachable</span></div><span class="matrix-cost">$99 – $399</span><span class="matrix-check">✓</span></div>
                 <div class="matrix-row"><strong>Chat widget &amp; AI replies</strong><div class="matrix-tools"><span class="tool-chip">Intercom</span><span class="tool-chip">Drift</span><span class="tool-chip">Tidio</span></div><span class="matrix-cost">$74 – $500</span><span class="matrix-check">✓</span></div>
                 <div class="matrix-row"><strong>Call tracking &amp; recording</strong><div class="matrix-tools"><span class="tool-chip">CallRail</span></div><span class="matrix-cost">$45 – $145</span><span class="matrix-check">✓</span></div>
@@ -1005,7 +994,7 @@
                     <span><b>✦</b> 14-day free trial</span>
                     <span><b>✦</b> No setup fees</span>
                     <span><b>✦</b> Cancel anytime</span>
-                    <span><b>✦</b> Wholesale usage rates, no markup</span>
+                    <span><b>✦</b> Every usage rate published up front</span>
                 </div>
             </div>
 
@@ -1133,7 +1122,7 @@
 
             <div class="usage-accordion-wrapper reveal">
                 <button class="usage-accordion-btn" id="usageAccordionBtn" type="button" aria-expanded="false" aria-controls="usageAccordionContent">
-                    <span>View Wholesale Usage Costs &amp; Add-ons</span>
+                    <span>View Usage Rates &amp; Add-ons</span>
                     <span class="usage-accordion-icon" aria-hidden="true">↓</span>
                 </button>
                 <div class="usage-accordion-content" id="usageAccordionContent">
@@ -1289,7 +1278,7 @@
                     <p class="scenario-change"><b>What changes:</b> Kyntlo sits underneath each client, so follow-up stops being the variable. The dashboard shows what was sent, when, and what it booked.</p>
                     <div class="scenario-metrics">
                         <div class="sm"><span class="sm-v">Auditable</span><span class="sm-k">Every lead's follow-up, timestamped</span></div>
-                        <div class="sm"><span class="sm-v">20%</span><span class="sm-k">Recurring partner share on each account</span></div>
+                        <div class="sm"><span class="sm-v">Under 60s</span><span class="sm-k">First response on every client account, provable in the dashboard</span></div>
                     </div>
                 </article>
             </div>
@@ -1298,23 +1287,6 @@
         </div>
     </section>
 
-
-    <!-- ================= PARTNERS ================= -->
-    <section id="partners">
-        <div class="container partner-inner">
-            <div class="reveal">
-                <p class="kicker">For agencies &amp; consultants</p>
-                <h2 class="section-title">You deliver the leads.<br><span class="text-gradient">Your clients waste them.</span></h2>
-                <p class="section-sub" style="margin-bottom:28px;">If you build websites or run campaigns for local businesses, you have had the same conversation a hundred times: the client says the leads were bad. The leads were fine — nobody followed them up. Put Kyntlo underneath your clients and the follow-up stops being the variable you get blamed for.</p>
-                <a class="btn btn-ghost" href="contact.html#contact-form">Talk to us about partnering</a>
-            </div>
-            <div class="pstats reveal reveal-d1">
-                <div class="pstat"><span class="v">20%</span><span class="k">Recurring, for the life of the account</span></div>
-                <div class="pstat"><span class="v">$100</span><span class="k">On every build you source — and you keep whatever you charge for it</span></div>
-                <div class="pstat"><span class="v">Free</span><span class="k">Account for your own agency while we work together</span></div>
-            </div>
-        </div>
-    </section>
 
     <!-- ================= ASK AN AI ================= -->
     <section id="ask-ai">
