@@ -163,6 +163,29 @@ change.
 3. If any `{{` remains after replacement, or the contact has no email
    address, rendering fails.
 
+## Replies and opt-outs (noreply sender)
+
+Emails go out from noreply@kyntlo.ai, so clients cannot reply to them. The
+copy sends every response to info@kyntlo.ai instead:
+
+- Email 1 and Email 2 ask questions to go to info@kyntlo.ai.
+- Email 6 offers one-click choices. "Yes" opens the booking calendar.
+  "Later" and "No thanks" open an email to info@kyntlo.ai with a ready-made
+  subject line.
+- Every email except Email 6 ends with a "Let us know" opt-out link: an email
+  to info@kyntlo.ai with the subject "Please stop audit emails". Email 6 is
+  the last email, so it has no opt-out link.
+
+Those emails land in the info@kyntlo.ai inbox, not in HighLevel, so the engine
+cannot see them. Whoever reads info@kyntlo.ai must, the same day:
+
+- "Please stop audit emails" or "No thanks": add the tag `audit: stop`.
+- "Later please": add `audit: stop` and create a task to follow up in 90 days.
+- A question: answer it personally and add `audit: stop` if the
+  conversation continues by email.
+
+Booking a call through any button still stops the sequence automatically.
+
 ## Report
 
 End each run with a short summary: how many contacts were checked, queued,
