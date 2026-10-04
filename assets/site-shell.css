@@ -911,7 +911,7 @@ body.kyn-cursor-hidden .kyn-cursor-ring {
 .site-footer__contact a { color: var(--shell-muted); transition: color 0.24s ease; }
 .site-footer__contact a:hover { color: #fff; }
 
-.site-footer__social { display: flex; gap: 10px; }
+.site-footer__social { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .site-footer__social a {
     display: inline-flex;

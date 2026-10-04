@@ -1629,6 +1629,12 @@
                     rafId = 0;
                 }
 
+                /* Hand the main thread back the moment a page transition starts,
+                   so the overlay can actually fade in. Without this the field
+                   keeps painting and the transition is invisible until it is
+                   almost too late to see. */
+                window.addEventListener("kyntlo:leaving", stop);
+
                 /* only animate while the hero is actually on screen */
                 let onScreen = true;
                 if ("IntersectionObserver" in window) {

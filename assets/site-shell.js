@@ -7,6 +7,54 @@
     const REQUEST_DEMO_HREF = "index.html#book-demo";
     const LOGIN_HREF = "https://hub.kyntlo.ai/";
     const GET_STARTED_HREF = "get-started.html";
+
+    /* The footer icon row and the Community link are built from
+       window.KYNTLO_SOCIAL in site-config.js. An entry with no URL renders
+       nothing at all, so an unconfigured profile never ships as a dead link. */
+    const SOCIAL_ORDER = ["facebook", "instagram", "tiktok", "youtube", "linkedin", "community"];
+    const SOCIAL_META = {
+        facebook: {
+            label: "Kyntlo on Facebook",
+            svg: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.29-.04-1.27-.12-2.41-.12-2.38 0-4.01 1.45-4.01 4.12v2.3H7.6V13h2.68v8h3.22z"/></svg>'
+        },
+        instagram: {
+            label: "Kyntlo on Instagram",
+            svg: '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.1" cy="6.9" r="1.1" fill="currentColor" stroke="none"/></svg>'
+        },
+        tiktok: {
+            label: "Kyntlo on TikTok",
+            svg: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-2.9v12.1a2.26 2.26 0 11-2.26-2.26c.22 0 .43.03.63.09V8.95a5.4 5.4 0 00-.63-.04 5.27 5.27 0 105.27 5.27V8.1a6.3 6.3 0 003.69 1.19V6.37A3.4 3.4 0 0116.6 2z"/></svg>'
+        },
+        youtube: {
+            label: "Kyntlo on YouTube",
+            svg: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 00-1.75-1.77C18.28 5 12 5 12 5s-6.28 0-7.85.43A2.5 2.5 0 002.4 7.2 26.1 26.1 0 002 12a26.1 26.1 0 00.4 4.8 2.5 2.5 0 001.75 1.77C5.72 19 12 19 12 19s6.28 0 7.85-.43a2.5 2.5 0 001.75-1.77A26.1 26.1 0 0022 12a26.1 26.1 0 00-.4-4.8zM10.1 14.9V9.1l5.02 2.9-5.02 2.9z"/></svg>'
+        },
+        linkedin: {
+            label: "Kyntlo on LinkedIn",
+            svg: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 4a1.67 1.67 0 100 3.34A1.67 1.67 0 005.5 4zM20 20h-2.88v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V20H10.2V8.5h2.77v1.57h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43V20z"/></svg>'
+        },
+        community: {
+            label: "Join the Kyntlo community",
+            svg: '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.4" r="3.1"/><path d="M3.4 19.2a5.6 5.6 0 0111.2 0"/><path d="M16.1 5.6a3 3 0 010 5.7"/><path d="M17.4 14.3a5.4 5.4 0 013.2 4.9"/></svg>'
+        }
+    };
+
+    function socialUrl(key) {
+        const cfg = window.KYNTLO_SOCIAL;
+        if (!cfg || typeof cfg !== "object") return "";
+        const url = cfg[key];
+        return typeof url === "string" ? url.trim() : "";
+    }
+
+    function socialRow() {
+        return SOCIAL_ORDER.map((key) => {
+            const url = socialUrl(key);
+            if (!url) return "";
+            const meta = SOCIAL_META[key];
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer"`
+                + ` aria-label="${meta.label}" data-social="${key}">${meta.svg}</a>`;
+        }).join("\n                            ");
+    }
     const labels = {
         platform: "Platform",
         funnels: "Funnels",
@@ -361,10 +409,7 @@
                             <li><span aria-hidden="true">⌖</span><span>Building Lotus2 North90, After Chill Out Lotus,<br>Cairo Governorate 11234, Egypt</span></li>
                         </ul>
                         <div class="site-footer__social" aria-label="Kyntlo on social media">
-                            <a href="https://www.facebook.com/people/Kyntlo/61590216517723/" target="_blank" rel="noopener noreferrer" aria-label="Kyntlo on Facebook"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.29-.04-1.27-.12-2.41-.12-2.38 0-4.01 1.45-4.01 4.12v2.3H7.6V13h2.68v8h3.22z"/></svg></a>
-                            <a href="https://www.instagram.com/kyntlo.ai/" target="_blank" rel="noopener noreferrer" aria-label="Kyntlo on Instagram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.1" cy="6.9" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-                            <a href="https://youtube.com/@kyntlo" target="_blank" rel="noopener noreferrer" aria-label="Kyntlo on YouTube"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 00-1.75-1.77C18.28 5 12 5 12 5s-6.28 0-7.85.43A2.5 2.5 0 002.4 7.2 26.1 26.1 0 002 12a26.1 26.1 0 00.4 4.8 2.5 2.5 0 001.75 1.77C5.72 19 12 19 12 19s6.28 0 7.85-.43a2.5 2.5 0 001.75-1.77A26.1 26.1 0 0022 12a26.1 26.1 0 00-.4-4.8zM10.1 14.9V9.1l5.02 2.9-5.02 2.9z"/></svg></a>
-                            <a href="https://www.linkedin.com/company/kyntlo/" target="_blank" rel="noopener noreferrer" aria-label="Kyntlo on LinkedIn"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 4a1.67 1.67 0 100 3.34A1.67 1.67 0 005.5 4zM20 20h-2.88v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V20H10.2V8.5h2.77v1.57h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43V20z"/></svg></a>
+                            ${socialRow()}
                         </div>
                     </div>
 
@@ -386,6 +431,7 @@
                             <li><a href="${siteHref("contact.html")}">${t("contact")}</a></li>
                             <li><a href="${siteHref("security.html")}">${t("security")}</a></li>
                             <li><a href="${siteHref("faq.html")}">${t("faq")}</a></li>
+                            ${socialUrl("community") ? `<li><a href="${socialUrl("community")}" target="_blank" rel="noopener noreferrer">Community</a></li>` : ""}
                         </ul>
                     </nav>
 
@@ -549,6 +595,10 @@
             if (destLabel) {
                 destLabel.innerHTML = "Taking you to <b>" + kynPageName(nextUrl.pathname) + "</b>";
             }
+            /* Tell any running animation to stop before we ask the browser to
+               fade the overlay in - otherwise the fade competes with it and the
+               visitor sees a blank pause instead of a transition. */
+            window.dispatchEvent(new Event("kyntlo:leaving"));
             document.body.classList.add("kyn-leaving");
             window.setTimeout(function () {
                 window.location.href = nextUrl.href;
@@ -813,6 +863,13 @@
             } else if (!raf) {
                 raf = window.requestAnimationFrame(frame);
             }
+        });
+
+        /* a page transition owns the main thread for its 620ms; the ring is on
+           its way off screen anyway, so stop trailing it and let the overlay fade */
+        window.addEventListener("kyntlo:leaving", function () {
+            window.cancelAnimationFrame(raf);
+            raf = 0;
         });
     }
 

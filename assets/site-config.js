@@ -53,3 +53,30 @@ window.KYNTLO_PROMO_CODE = "summer_50";
    To end the test, set this to false. The splash then always plays; if
    "direct" won, delete the #kynIntro markup from index.html instead. */
 window.KYNTLO_INTRO_TEST = true;
+
+/* ---------------------------------------------------------------------------
+   SOCIAL + COMMUNITY LINKS
+   ---------------------------------------------------------------------------
+   The footer icon row is built from this list, so it is the one place to add,
+   change or retire a profile. Paste the full public URL for each one.
+
+   An entry left empty renders NOTHING - no icon, no placeholder, no dead link.
+   That is deliberate: a social icon that 404s costs more trust than a missing
+   icon, so an unknown profile simply stays off the site until you fill it in.
+
+   `community` is treated as a destination rather than a social profile: when
+   it is set it gets the icon in the row AND a "Community" link in the footer's
+   Company column, because that is a page people look for by name.
+   ------------------------------------------------------------------------- */
+window.KYNTLO_SOCIAL = {
+    facebook:  "https://www.facebook.com/people/Kyntlo/61590216517723/",
+    instagram: "https://www.instagram.com/kyntlo.ai/",
+    youtube:   "https://youtube.com/@kyntlo",
+    linkedin:  "https://www.linkedin.com/company/kyntlo/",
+
+    /* TODO: paste the TikTok profile URL, e.g. https://www.tiktok.com/@kyntlo */
+    tiktok:    "",
+
+    /* TODO: paste the community URL (Whop / Facebook group / forum). */
+    community: ""
+};
