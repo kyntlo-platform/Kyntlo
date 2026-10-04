@@ -125,8 +125,9 @@ character.
 1. Render the email (see Rendering below). If rendering fails, do not
    send. Create the task "Audit email N for {name} not sent: {reason}".
 2. Send it with `send-a-new-message`: body `{type:"Email", contactId,
-   subject, html, emailBcc:["Mahmoud.martists@gmail.com"]}`. Every
-   follow-up email is copied (BCC) to Mahmoud. Use the idempotency key
+   subject, html, emailFrom:"noreply@kyntlo.ai",
+   emailBcc:["Mahmoud.martists@gmail.com"]}`. Every follow-up email is sent
+   from noreply@kyntlo.ai and copied (BCC) to Mahmoud. Use the idempotency key
    `post-audit-{contactId}-{step}-v1` so a step can never go out twice.
 3. Then:
    - Set the status to the step's sent status.
