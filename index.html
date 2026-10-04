@@ -26,10 +26,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="assets/site-shell.css?v=20260922" rel="stylesheet">
-    <script src="assets/site-config.js?v=20260922"></script>
-    <script src="assets/site-shell.js?v=20260922" defer></script>
-    <script src="assets/currency-pricing.js?v=20260922" defer></script>
+    <link href="assets/site-shell.css?v=20261004" rel="stylesheet">
+    <script src="assets/site-config.js?v=20261004"></script>
+    <script src="assets/site-shell.js?v=20261004" defer></script>
+    <script src="assets/currency-pricing.js?v=20261004" defer></script>
     <style>
         :root {
             --bg: #07050f;
@@ -204,20 +204,40 @@
         .matrix-cost { justify-self: end; font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
         .matrix-total .matrix-cost { color: var(--ink); font-weight: 700; }
         .matrix-head { background: rgba(255, 255, 255, 0.03); border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
-        .matrix-row { border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: background 0.25s ease; }
+        .matrix-row { position: relative; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: background 0.25s ease; }
+        /* the row under the pointer paints above its neighbours, so a tooltip
+           rising out of it is not covered by the row above */
+        .matrix-row:hover, .matrix-row:focus-within { z-index: 7; }
         .matrix-row:last-child { border-bottom: 0; }
         .matrix-row:hover { background: rgba(242, 0, 137, 0.05); }
         .matrix-row strong { font-size: 0.98rem; font-weight: 700; }
         .matrix-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-        .tool-badge { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #fff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); transition: transform 0.28s cubic-bezier(0.34, 1.4, 0.5, 1), box-shadow 0.28s ease; cursor: default; }
+        .tool-badge { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #fff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); transition: transform 0.28s cubic-bezier(0.34, 1.4, 0.5, 1), box-shadow 0.28s ease; cursor: help; }
         .tool-badge img { width: 26px; height: 26px; object-fit: contain; display: block; }
-        .tool-badge:hover { transform: translateY(-4px) scale(1.12); box-shadow: 0 12px 28px rgba(242, 0, 137, 0.4), 0 0 0 3px rgba(242, 0, 137, 0.28); }
+        .tool-badge:hover,
+        .tool-badge:focus-visible { transform: translateY(-6px) scale(1.16); box-shadow: 0 16px 34px rgba(242, 0, 137, 0.45), 0 0 0 3px rgba(242, 0, 137, 0.38); outline: none; }
+        .tool-badge:hover img,
+        .tool-badge:focus-visible img { transform: scale(1.06); }
+        .tool-badge img { transition: transform 0.28s cubic-bezier(0.34, 1.4, 0.5, 1); }
+        .tool-chip__tip,
         .tool-badge__tip { position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%) translateY(4px); padding: 5px 11px; border-radius: 8px; background: #16101f; border: 1px solid rgba(255, 255, 255, 0.12); color: #f5f3fa; font-size: 0.7rem; font-weight: 650; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.24s ease, transform 0.24s ease; z-index: 6; }
-        .tool-badge:hover .tool-badge__tip { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .tool-badge:hover .tool-badge__tip,
+        .tool-badge:focus-visible .tool-badge__tip,
+        .tool-chip:hover .tool-chip__tip,
+        .tool-chip:focus-visible .tool-chip__tip { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* a small arrow, so the label reads as attached to the thing it names */
+        .tool-chip__tip::after,
+        .tool-badge__tip::after {
+            content: ""; position: absolute; top: 100%; left: 50%;
+            margin-left: -5px; border: 5px solid transparent;
+            border-top-color: rgba(255, 255, 255, 0.14);
+        }
         
-        .tool-chip { display: inline-flex; align-items: center; height: 42px; padding: 0 15px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.06); color: #cfc9dd; font-size: 0.78rem; font-weight: 650; white-space: nowrap; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+        .tool-chip { position: relative; cursor: help; display: inline-flex; align-items: center; height: 42px; padding: 0 15px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.06); color: #cfc9dd; font-size: 0.78rem; font-weight: 650; white-space: nowrap; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
         
-        .tool-chip:hover { border-color: rgba(242, 0, 137, 0.5); background: rgba(255, 255, 255, 0.1); color: #fff; transform: translateY(-2px); }
+        .tool-chip:hover,
+        .tool-chip:focus-visible { border-color: rgba(242, 0, 137, 0.6); background: rgba(242, 0, 137, 0.12); color: #fff; transform: translateY(-5px) scale(1.05); box-shadow: 0 14px 30px rgba(242, 0, 137, 0.34); outline: none; }
         .matrix-check { justify-self: center; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, rgba(242, 0, 137, 0.2), rgba(109, 0, 193, 0.2)); border: 1px solid rgba(242, 0, 137, 0.45); color: var(--brand-hot); font-weight: 800; }
         .matrix-total { background: linear-gradient(90deg, rgba(242, 0, 137, 0.1), rgba(109, 0, 193, 0.1)); }
         .matrix-total .matrix-check { width: auto; border-radius: 999px; padding: 6px 16px; font-family: var(--font-display); font-size: 1rem; white-space: nowrap; }
@@ -974,9 +994,9 @@
                 <div class="matrix-row"><strong>Booking &amp; appointments</strong><div class="matrix-tools"><span class="tool-badge" title="Acuity"><img src="assets/platform-icons/acuity.png" alt="Acuity" loading="lazy"><span class="tool-badge__tip">Acuity</span></span><span class="tool-badge" title="Calendly"><img src="assets/platform-icons/calendly.png" alt="Calendly" loading="lazy"><span class="tool-badge__tip">Calendly</span></span><span class="tool-badge" title="Google Calendar"><img src="assets/platform-icons/googlecalendar.png" alt="Google Calendar" loading="lazy"><span class="tool-badge__tip">Google Calendar</span></span></div><span class="matrix-cost">$15 – $60</span><span class="matrix-check">✓</span></div>
                 <div class="matrix-row"><strong>Workflow automations</strong><div class="matrix-tools"><span class="tool-badge" title="Zapier"><img src="assets/platform-icons/zapier.png" alt="Zapier" loading="lazy"><span class="tool-badge__tip">Zapier</span></span><span class="tool-badge" title="Pabbly"><img src="assets/platform-icons/pabbly.png" alt="Pabbly" loading="lazy"><span class="tool-badge__tip">Pabbly</span></span><span class="tool-badge" title="Make"><img src="assets/platform-icons/make.png" alt="Make" loading="lazy"><span class="tool-badge__tip">Make</span></span></div><span class="matrix-cost">$29 – $199</span><span class="matrix-check">✓</span></div>
                 <div class="matrix-row"><strong>Reputation management</strong><div class="matrix-tools"><span class="tool-badge" title="Birdeye"><img src="assets/platform-icons/birdeye.png" alt="Birdeye" loading="lazy"><span class="tool-badge__tip">Birdeye</span></span><span class="tool-badge" title="Podium"><img src="assets/platform-icons/podium.png" alt="Podium" loading="lazy"><span class="tool-badge__tip">Podium</span></span><span class="tool-badge" title="Grade.us"><img src="assets/platform-icons/gradeus.png" alt="Grade.us" loading="lazy"><span class="tool-badge__tip">Grade.us</span></span></div><span class="matrix-cost">$199 – $499</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Courses &amp; memberships</strong><div class="matrix-tools"><span class="tool-chip">Kajabi</span><span class="tool-chip">Teachable</span></div><span class="matrix-cost">$99 – $399</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Chat widget &amp; AI replies</strong><div class="matrix-tools"><span class="tool-chip">Intercom</span><span class="tool-chip">Drift</span><span class="tool-chip">Tidio</span></div><span class="matrix-cost">$74 – $500</span><span class="matrix-check">✓</span></div>
-                <div class="matrix-row"><strong>Call tracking &amp; recording</strong><div class="matrix-tools"><span class="tool-chip">CallRail</span></div><span class="matrix-cost">$45 – $145</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Courses &amp; memberships</strong><div class="matrix-tools"><span class="tool-badge" title="Kajabi"><img src="assets/platform-icons/kajabi.png" alt="Kajabi" loading="lazy"><span class="tool-badge__tip">Kajabi</span></span><span class="tool-badge" title="Teachable"><img src="assets/platform-icons/teachable.png" alt="Teachable" loading="lazy"><span class="tool-badge__tip">Teachable</span></span></div><span class="matrix-cost">$99 – $399</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Chat widget &amp; AI replies</strong><div class="matrix-tools"><span class="tool-badge" title="Tidio"><img src="assets/platform-icons/tidio.png" alt="Tidio" loading="lazy"><span class="tool-badge__tip">Tidio</span></span><span class="tool-chip" title="Intercom">Intercom</span><span class="tool-chip" title="Drift">Drift</span></div><span class="matrix-cost">$74 – $500</span><span class="matrix-check">✓</span></div>
+                <div class="matrix-row"><strong>Call tracking &amp; recording</strong><div class="matrix-tools"><span class="tool-badge" title="CallRail"><img src="assets/platform-icons/callrail.png" alt="CallRail" loading="lazy"><span class="tool-badge__tip">CallRail</span></span></div><span class="matrix-cost">$45 – $145</span><span class="matrix-check">✓</span></div>
                 <div class="matrix-row matrix-total"><strong>All twelve, together</strong><div class="matrix-tools"><span class="tool-chip">$809 – $3,295 depending on tier</span></div><span class="matrix-cost">≈ $2,052</span><span class="matrix-check">from $45</span></div>
             </div>
             <p class="calc-note reveal" style="max-width:860px;">Every row is a category most service businesses already pay for separately, shown at the price those tools actually charge. The midpoint of the twelve ranges is about <b style="color:var(--ink);">$2,052 a month</b> — add it up yourself, which is the point of publishing the ranges rather than asserting a total. Kyntlo starts at $90 and the plan with the full AI layer is $490, plus <a href="pricing.html" style="color:var(--brand-hot);font-weight:700;">published usage rates</a>.</p>

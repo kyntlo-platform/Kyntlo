@@ -229,3 +229,49 @@ a { text-decoration: none; color: inherit; }
     user-select: none;
     transition: opacity 0.3s ease, filter 0.3s ease;
 }
+
+/* ---- itemised acknowledgement ----
+   The points are shown rather than linked, because "conspicuous" is the test a
+   clickwrap is judged on. The list is capped in height and scrolls, so it stays
+   compact next to the payment panel without hiding anything. */
+.consent-lead {
+    margin: 0 0 12px;
+    color: var(--text-muted, #a49fb8);
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+.consent-list {
+    max-height: 208px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin: 0 0 16px;
+    padding: 14px 16px 14px 32px;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.09));
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.025);
+    display: grid;
+    gap: 11px;
+}
+
+.consent-list li {
+    color: var(--text-muted, #a49fb8);
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+.consent-list li b { color: var(--text-main, #f5f3fa); }
+.consent-list li em { color: var(--text-main, #f5f3fa); font-style: normal; font-weight: 700; }
+
+.consent-list::-webkit-scrollbar { width: 8px; }
+.consent-list::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background: rgba(242, 0, 137, 0.35);
+}
+
+/* the dispute waiver is set apart so it cannot read as part of the list above */
+.consent-check--dispute {
+    margin-top: 10px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-color, rgba(255, 255, 255, 0.09));
+}

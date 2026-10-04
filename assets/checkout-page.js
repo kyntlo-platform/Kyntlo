@@ -205,17 +205,34 @@
     /* The payment form stays mounted while locked - Whop's loader scans the DOM once,
        so removing and re-adding the host would leave a dead box. We disable interaction
        with a class instead, and record the acknowledgement so it can be evidenced. */
-    const TERMS_VERSION = "2026-09-22";
+    const TERMS_VERSION = "2026-10-04";
     const CONSENT_KEY = "kyntloTermsAccepted";
 
-    function recordConsent(packageKey, billingKey) {
+    /* What the customer actually ticked, itemised. A bare "accepted the terms"
+       flag is weak evidence; naming each point means the record shows WHAT was
+       put in front of them, which is the part that gets argued about later. */
+    const ACKNOWLEDGED = [
+        "b2b-capacity-and-authority",
+        "customer-is-data-controller",
+        "recording-consent-is-customers",
+        "messaging-registration-is-customers",
+        "ai-output-reviewed-by-human",
+        "usage-billed-on-top-of-plan",
+        "results-not-guaranteed"
+    ];
+
+    function recordConsent(packageKey, billingKey, arbitration) {
         try {
             window.localStorage.setItem(CONSENT_KEY, JSON.stringify({
                 termsVersion: TERMS_VERSION,
                 acceptedAt: new Date().toISOString(),
                 documents: ["terms", "privacy", "dpa", "refund"],
+                acknowledged: ACKNOWLEDGED,
+                arbitrationAndClassWaiver: !!arbitration,
                 package: packageKey || null,
-                billing: billingKey || null
+                billing: billingKey || null,
+                /* the page they were actually looking at when they agreed */
+                url: window.location.href
             }));
         } catch (error) {
             /* Private browsing can refuse storage. The gate still works for this visit. */
@@ -224,28 +241,37 @@
 
     function wireConsent(packageKey, billingKey) {
         const box = document.getElementById("consentAccept");
+        const arb = document.getElementById("consentArbitration");
         const host = document.getElementById("whop-checkout-host");
         const note = document.getElementById("consentNote");
-        if (!box || !host) return;
+        if (!box || !arb || !host) return;
 
         function apply() {
-            const ok = box.checked;
+            /* Both are required. The dispute-resolution waiver is a separate tick
+               on purpose: courts look hardest at arbitration and class-action
+               waivers, and a distinct affirmative act is far stronger evidence
+               than one bundled into a paragraph of other terms. */
+            const ok = box.checked && arb.checked;
             host.classList.toggle("is-locked", !ok);
             host.setAttribute("aria-hidden", String(!ok));
             if (!note) return;
             if (ok) {
-                recordConsent(packageKey, billingKey);
+                recordConsent(packageKey, billingKey, arb.checked);
                 note.textContent = "Accepted on " + new Date().toLocaleDateString(undefined, {
                     year: "numeric", month: "long", day: "numeric"
                 }) + ". Terms version " + TERMS_VERSION + ".";
                 note.classList.add("is-accepted");
+            } else if (box.checked || arb.checked) {
+                note.textContent = "One box still to tick before the payment form unlocks.";
+                note.classList.remove("is-accepted");
             } else {
-                note.textContent = "Tick the box to unlock the payment form.";
+                note.textContent = "Tick both boxes to unlock the payment form.";
                 note.classList.remove("is-accepted");
             }
         }
 
         box.addEventListener("change", apply);
+        arb.addEventListener("change", apply);
         apply();
     }
 
@@ -304,12 +330,31 @@
                                 <p id="checkout-payment-note"></p>
                             </div>
                             <div class="consent-gate" id="consentGate">
+                                <p class="consent-lead">Before your first payment, please confirm the following. Each point is a term you are agreeing to, shown here rather than buried in a link.</p>
+
+                                <ul class="consent-list">
+                                    <li><b>This is a business account.</b> You are buying for a business or professional purpose, not as a consumer, you are at least 18, and you are authorised to commit your organisation.</li>
+                                    <li><b>You control your customers' data.</b> For the contacts and conversations you bring in, you are the data controller and Kyntlo is your processor. You hold the lawful basis, issue your own privacy notice, and answer data-subject requests.</li>
+                                    <li><b>Recording consent is yours to obtain.</b> Many territories require the consent of <em>every</em> party to a recorded call. You decide what notice your recordings need and obtain that consent before recording.</li>
+                                    <li><b>Messaging registration is yours to maintain.</b> Sender registration such as A2P&nbsp;10DLC, opt-in records, opt-outs and quiet hours are your responsibility, and carriers may filter or refuse traffic at their discretion.</li>
+                                    <li><b>You review AI output before relying on it.</b> AI replies, summaries and bookings are advisory. A person checks anything that carries commercial or contractual weight.</li>
+                                    <li><b>Usage is billed on top of the plan.</b> Messages, minutes, AI and third-party services are charged per unit at the published rates, and any wallet or auto-recharge you enable will top up automatically.</li>
+                                    <li><b>Results are not guaranteed.</b> Figures shown anywhere on this site, including the calculator and the worked examples, are illustrative models and not a forecast or a promise.</li>
+                                </ul>
+
                                 <label class="consent-check">
                                     <input type="checkbox" id="consentAccept">
                                     <span class="consent-box" aria-hidden="true"></span>
-                                    <span class="consent-copy">I am opening a <b>business account</b>, and I have read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>, the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>, the <a href="dpa.html" target="_blank" rel="noopener">Data Processing Agreement</a> and the <a href="refund.html" target="_blank" rel="noopener">Refund Policy</a>. I confirm I am at least 18 and authorised to bind my organisation.</span>
+                                    <span class="consent-copy">I confirm every point above, and I have read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>, the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>, the <a href="dpa.html" target="_blank" rel="noopener">Data Processing Agreement</a> and the <a href="refund.html" target="_blank" rel="noopener">Refund Policy</a>.</span>
                                 </label>
-                                <p class="consent-note" id="consentNote">Tick the box to unlock the payment form.</p>
+
+                                <label class="consent-check consent-check--dispute">
+                                    <input type="checkbox" id="consentArbitration">
+                                    <span class="consent-box" aria-hidden="true"></span>
+                                    <span class="consent-copy">I agree that disputes are resolved by <b>binding arbitration in Cairo under CRCICA rules</b>, and I <b>waive the right to a court trial and to bring or join a class action</b>. This is set out in section 11 of the <a href="terms.html#governing-law" target="_blank" rel="noopener">Terms</a>.</span>
+                                </label>
+
+                                <p class="consent-note" id="consentNote">Tick both boxes to unlock the payment form.</p>
                             </div>
                             <div id="whop-checkout-host" class="whop-host is-locked"></div>
                         </aside>
