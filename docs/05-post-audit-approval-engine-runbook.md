@@ -34,7 +34,8 @@ Contact custom fields:
 | Audit Recommended Plan (dropdown) | `r6GmxyyTJQCw94TbZlVF` | `contact.audit_recommended_plan` |
 
 Custom values: `Audit Sequence Mode` (id `fB7x0ivwfK53dxkyuMuH`, `approval`
-or `auto`), `Audit Call Link`, `Audit Trial Link`, `Sender Name`.
+or `auto`), `Audit Call Link`, `Audit Trial Link`, `Audit Footer Name`,
+`Audit Footer Email`, `Sender Name`.
 
 Tags: `audit: delivered` (in the sequence), `audit: approve email` (the
 pending email is approved), `audit: stop` (stop now). The existing tag
@@ -149,10 +150,11 @@ change.
    - `{{contact.company_name}}`: company name. If empty, use "your
      business".
    - Every `{{contact.audit_*}}` field.
-   - `{{custom_values.sender_name}}`, `{{custom_values.audit_call_link}}`
-     and `{{custom_values.audit_trial_link}}`: from the custom values.
-   - `{{location.name}}` and `{{location.email}}`: from `get-location` (or
-     the equivalent location read).
+   - `{{custom_values.sender_name}}`, `{{custom_values.audit_call_link}}`,
+     `{{custom_values.audit_trial_link}}`,
+     `{{custom_values.audit_footer_name}}` and
+     `{{custom_values.audit_footer_email}}`: from the custom values. Do not
+     use location fields: this sub-account's name and email are test values.
 
    Insert values HTML-escaped into the body. Insert them as plain text into
    the subject.
