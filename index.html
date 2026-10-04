@@ -296,20 +296,6 @@
         .all-plans-strip b { color: var(--brand-hot); }
 
         /* Usage accordion */
-        .usage-accordion-wrapper { max-width: 920px; margin: 60px auto 0; border-radius: 20px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); overflow: hidden; }
-        .usage-accordion-btn { width: 100%; padding: 24px 30px; background: transparent; border: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-display); font-size: 1.12rem; font-weight: 700; color: var(--ink); cursor: pointer; transition: background 0.3s ease; }
-        .usage-accordion-btn:hover { background: rgba(242, 0, 137, 0.05); }
-        .usage-accordion-icon { color: var(--brand-hot); font-size: 1.3rem; transition: transform 0.3s ease; }
-        .usage-accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
-        .usage-accordion-content.active { max-height: 3200px; }
-        .usage-accordion-inner { padding: 8px 28px 30px; border-top: 1px solid var(--line); }
-        .usage-note { text-align: center; color: var(--muted); margin: 20px 0 26px; font-size: 0.95rem; }
-        .usage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-        .usage-item { display: flex; flex-direction: column; padding: 20px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); transition: transform 0.28s ease, border-color 0.28s ease; }
-        .usage-item:hover { transform: translateY(-4px); border-color: rgba(242, 0, 137, 0.4); }
-        .usage-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 6px; }
-        .usage-desc { flex: 1; color: var(--muted); font-size: 0.84rem; line-height: 1.55; margin-bottom: 12px; }
-        .usage-cost { align-self: flex-start; font-family: var(--font-mono); font-weight: 700; font-size: 0.8rem; color: var(--brand-hot); background: rgba(242, 0, 137, 0.08); border: 1px dashed rgba(242, 0, 137, 0.35); border-radius: 8px; padding: 7px 12px; }
 
         /* ---------- Testimonials ---------- */
         .testimonials { background: linear-gradient(180deg, transparent, rgba(242, 0, 137, 0.04) 40%, transparent); }
@@ -436,8 +422,8 @@
 
         /* =====================================================================
            MARKETING SECTIONS
-           The day, the leak calculator, packaged builds, honest fit, the ladder,
-           the AI check and the close. All drawn with the
+           The day, the leak calculator, packaged builds, honest fit and the
+           ladder. All drawn with the
            tokens above so they read as one page with the sections around them.
            ===================================================================== */
 
@@ -535,6 +521,10 @@
         .build-card > p:not(.build-hook) { flex: 1; color: var(--muted); font-size: 0.96rem; line-height: 1.7; }
         .build-who { margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
         .build-who em { display: block; margin-bottom: 4px; font-family: var(--font-mono); font-size: 0.64rem; font-style: normal; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; }
+
+        .pricing-more { max-width: 820px; margin: 30px auto 0; text-align: center;
+            color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
+        .pricing-more a { color: var(--brand-hot); font-weight: 700; }
 
         /* ---------- Honest fit ---------- */
         .fit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 52px; }
@@ -732,7 +722,7 @@
             <div class="center reveal">
                 <p class="kicker eyebrow-c">A Tuesday in your business</p>
                 <h2 class="section-title">Most businesses don't lose money on the ads.<br><span class="text-gradient">They lose it in the gaps.</span></h2>
-                <p class="section-sub">Six moments in an ordinary day, and one test you can run tonight. In each one something is supposed to happen and nobody has time to do it. Here is what today looks like, and what the same day looks like when the system handles it.</p>
+                <p class="section-sub">Three moments in an ordinary day, and one test you can run tonight. In each one something is supposed to happen and nobody has time to do it. Here is what today looks like, and what the same day looks like when the system handles it.</p>
             </div>
 
             <div class="timeline">
@@ -755,27 +745,7 @@
                     </div>
                 </div>
 
-                <div class="stop reveal">
-                    <div class="stop-time">9:15 PM<small>Tuesday</small></div>
-                    <div class="stop-body">
-                        <h3>A DM asks your prices.</h3>
-                        <div class="split-2">
-                            <div class="col-now"><span class="col-tag">Today</span><p>It sits with thirteen others until 11am tomorrow. Six of them have already booked somewhere that answered first.</p><div class="col-cost">Typical: <b>$900 a week</b> sitting unread</div></div>
-                            <div class="col-kyn"><span class="col-tag">With Kyntlo</span><p>Answered in about forty seconds with the right price for the treatment they asked about, and a booking link. Instagram, WhatsApp, SMS and web chat, one inbox.</p><div class="col-cost">Response time <b>4 hours → 40 seconds</b></div></div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="stop reveal">
-                    <div class="stop-time">11:20 PM<small>Tuesday</small></div>
-                    <div class="stop-body">
-                        <h3>Someone tried to book themselves.</h3>
-                        <div class="split-2">
-                            <div class="col-now"><span class="col-tag">Today</span><p>&ldquo;Book Now&rdquo; opens an enquiry form with a free-text date box. They type &ldquo;Thursday or Friday, afternoon if possible&rdquo; and wait. Somebody on your team will read it tomorrow and retype it into the calendar by hand.</p><div class="col-cost">A ready-to-buy customer, <b>put back in a queue</b></div></div>
-                            <div class="col-kyn"><span class="col-tag">With Kyntlo</span><p>They see the times that are actually free, pick one, and the appointment exists. No retyping, no double-booking, no &ldquo;we'll get back to you to confirm&rdquo; — and the reminder sequence starts itself.</p><div class="col-cost">Booking becomes <b>self-service, at any hour</b></div></div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="stop reveal">
                     <div class="stop-time">8:00 AM<small>Thursday</small></div>
@@ -788,27 +758,7 @@
                     </div>
                 </div>
 
-                <div class="stop reveal">
-                    <div class="stop-time">4:30 PM<small>Thursday</small></div>
-                    <div class="stop-body">
-                        <h3>The job is finished.</h3>
-                        <div class="split-2">
-                            <div class="col-now"><span class="col-tag">Today</span><p>The invoice gets written at 10pm, sent late, and chased twice. Payment lands three weeks later, if someone remembers to chase it.</p><div class="col-cost">Typical: <b>2–4 hrs/week</b> on invoicing</div></div>
-                            <div class="col-kyn"><span class="col-tag">With Kyntlo</span><p>Marking the job complete sends the invoice with a pay link before you are back in the van. Unpaid ones chase themselves, politely.</p><div class="col-cost">Payment time <b>3 weeks → under 5 days</b></div></div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="stop reveal">
-                    <div class="stop-time">9:00 AM<small>Friday</small></div>
-                    <div class="stop-body">
-                        <h3>They were happy. Nobody asked.</h3>
-                        <div class="split-2">
-                            <div class="col-now"><span class="col-tag">Today</span><p>Six hundred satisfied customers and eleven reviews, because asking is awkward and always the thing that gets skipped.</p><div class="col-cost">Typical: <b>11 reviews, 600 customers</b></div></div>
-                            <div class="col-kyn"><span class="col-tag">With Kyntlo</span><p>Every completed job asks — every customer, not only the happy ones, because gating reviews is against Google's policy. Replies get drafted for you.</p><div class="col-cost">Typically <b>+20–30 reviews a year</b></div></div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="stop reveal">
                     <div class="stop-time">6 WEEKS<small>Later</small></div>
@@ -883,76 +833,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ================= ABOUT ================= -->
-    <section id="about">
-        <div class="container about-grid">
-            <div class="reveal">
-                <p class="kicker">The Platform</p>
-                <h2 class="section-title">One command center for <span class="text-gradient">modern scale</span></h2>
-                <p class="section-sub">Kyntlo is built for businesses and agencies that refuse to be slowed down by fragmented tools. Every lead, message, booking, and campaign lives in one intelligent workspace — with AI working quietly in the background.</p>
-                <ul class="about-points">
-                    <li><span class="spark">✦</span> Unified pipeline visibility across every service you sell</li>
-                    <li><span class="spark">✦</span> One omnichannel inbox for email, chat, SMS, and WhatsApp</li>
-                    <li><span class="spark">✦</span> AI that qualifies, replies, books, and follows up for you</li>
-                </ul>
-            </div>
-            <div class="stat-panel">
-                <div class="stat-card reveal"><div class="num" data-count="9" data-suffix="+">0</div><div class="lbl">Tool categories replaced by one platform</div></div>
-                <div class="stat-card reveal reveal-d1"><div class="num" data-count="2052" data-prefix="$" data-suffix="">0</div><div class="lbl">Midpoint monthly cost of the stack Kyntlo replaces</div></div>
-                <div class="stat-card reveal reveal-d2"><div class="num" data-count="14">0</div><div class="lbl">Days of free trial on every plan</div></div>
-                <div class="stat-card reveal reveal-d3"><div class="num" data-count="1">0</div><div class="lbl">Login, invoice, and source of truth</div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= FEATURES ================= -->
-    <section id="features">
-        <div class="container">
-            <div class="center reveal">
-                <p class="kicker" style="justify-content:center;">AI Features</p>
-                <h2 class="section-title">Engineered with <span class="text-gradient">intelligence</span></h2>
-                <p class="section-sub">Sophisticated AI designed to work quietly in the background, amplifying everything your team does.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card reveal">
-                    <span class="feature-tag">AI</span>
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk1)" stroke-width="1.8" stroke-linecap="round"><defs><linearGradient id="gk1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2z"/></svg></div>
-                    <h3>Kinetic CRM &amp; Pipelines</h3>
-                    <p>Track leads effortlessly. Predictive scoring surfaces the hottest opportunities and suggests the exact next action to convert prospects into clients.</p>
-                </div>
-                <div class="feature-card reveal reveal-d1">
-                    <span class="feature-tag">AI</span>
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><path d="M21 12a8 8 0 0 1-8 8H4l2.2-2.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></div>
-                    <h3>AI Conversations</h3>
-                    <p>Instagram, Facebook, SMS, and email converge into one elegant inbox. AI auto-drafts intelligent replies so no lead ever waits.</p>
-                </div>
-                <div class="feature-card reveal reveal-d2">
-                    <span class="feature-tag">AI</span>
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3.5"/></svg></div>
-                    <h3>Voice AI Receptionist</h3>
-                    <p>Answer, qualify, and route calls with voice AI — and every unanswered call gets an instant text reply, so a busy line never costs you a customer.</p>
-                </div>
-                <div class="feature-card reveal">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><path d="M4 4h16l-6 8v6l-4 2v-8L4 4z"/></svg></div>
-                    <h3>High-Velocity Funnels</h3>
-                    <p>A pristine drag-and-drop builder for sites and funnels, with AI-assisted copy generation to launch campaigns in record time.</p>
-                </div>
-                <div class="feature-card reveal reveal-d1">
-                    <span class="feature-tag">AI</span>
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M9 14.5l2 2 4-4"/></svg></div>
-                    <h3>Smart Booking Bots</h3>
-                    <p>Eliminate scheduling friction. A conversational bot chats with leads, locks them into your calendar, and fights no-shows with automatic reminders.</p>
-                </div>
-                <div class="feature-card reveal reveal-d2">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gk6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="gk6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f20089"/><stop offset="1" stop-color="#6d00c1"/></linearGradient></defs><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></div>
-                    <h3>Automation &amp; Reporting</h3>
-                    <p>Design complex logic in a beautiful visual builder, then watch one operational view show your team exactly what needs attention next.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <!-- ================= WHAT WE BUILD ================= -->
     <section id="builds">
@@ -1029,25 +909,8 @@
                             <div class="plan-desc">Launch CRM, booking, and lead capture.</div>
                         </div>
                         <div class="pricing-body">
-                            <ul class="pricing-features">
-                                <li><span class="check-icon">✦</span> <div><b>CRM Contacts &amp; Opportunities</b> Manage every lead and customer.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>1 Pipeline</b> A simple lead-to-booking flow.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Funnels &amp; Pages</b> Capture leads from any traffic source.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Forms &amp; Surveys</b> Collect inquiries and qualification data.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Calendar Booking</b> Let clients book appointments.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Live Chat Widget</b> Capture website conversations.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Basic Email Campaigns</b> Send simple broadcasts.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Up to 3 Users</b> Small team access.</div></li>
-                            </ul>
-                            <div class="pricing-excludes">
-                                <h3>Not Included</h3>
-                                <ul>
-                                    <li><span class="cross-icon">✕</span> Workflow automation</li>
-                                    <li><span class="cross-icon">✕</span> SMS and WhatsApp access</li>
-                                    <li><span class="cross-icon">✕</span> AI chatbot &amp; instant missed-call reply</li>
-                                    <li><span class="cross-icon">✕</span> Reputation Manager</li>
-                                </ul>
-                            </div>
+                            
+                            
                             <a href="checkout.html?package=starter&billing=quarterly" class="package-button">Start Free Trial</a>
                         </div>
                     </div>
@@ -1060,24 +923,8 @@
                             <div class="plan-desc">Automate follow-up and convert more bookings.</div>
                         </div>
                         <div class="pricing-body">
-                            <ul class="pricing-features">
-                                <li><span class="check-icon">✦</span> <div><b>Everything in Starter</b> Full access to Starter features.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>2–3 Pipelines</b> Manage multiple services or lead flows.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Workflow Automation</b> Automate follow-ups and internal tasks.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Appointment Reminders</b> Reduce no-shows automatically.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Full Omnichannel Inbox</b> Email, chat, SMS, and WhatsApp together.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Basic AI Chatbot</b> Automated replies and FAQs.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Up to 10 Users</b> Team collaboration.</div></li>
-                            </ul>
-                            <div class="pricing-excludes">
-                                <h3>Not Included</h3>
-                                <ul>
-                                    <li><span class="cross-icon">✕</span> Advanced AI chatbot &amp; Sales Agent</li>
-                                    <li><span class="cross-icon">✕</span> Voice AI / Voice Receptionist</li>
-                                    <li><span class="cross-icon">✕</span> Memberships or courses</li>
-                                    <li><span class="cross-icon">✕</span> Advanced reporting &amp; attribution</li>
-                                </ul>
-                            </div>
+                            
+                            
                             <a href="checkout.html?package=growth&billing=quarterly" class="package-button">Start Free Trial</a>
                         </div>
                     </div>
@@ -1091,21 +938,7 @@
                             <div class="plan-desc">AI, reviews, analytics, and reactivation in one growth system.</div>
                         </div>
                         <div class="pricing-body">
-                            <ul class="pricing-features">
-                                <li><span class="check-icon">✦</span> <div><b>Everything in Growth</b> The fully unlocked ecosystem.</div></li>
-                            <li><span class="check-icon">✦</span> <div><b>Unlimited AI Usage</b> Every AI feature across the platform — chat, content, voice, workflows — with no caps.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Unlimited Pipelines</b> Support every service and process.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Instant Missed-Call Reply</b> Every unanswered call gets a text back within seconds.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Advanced AI Chatbot</b> Smarter multi-step conversations.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Voice AI Access</b> Voice workflows and receptionist-style routing.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Reputation Manager</b> Request and monitor customer reviews.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Reactivation Campaigns</b> Bring inactive clients back.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Memberships / Courses</b> Sell programs and subscriptions.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Call Tracking &amp; Recording</b> Track call conversions natively.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Advanced Analytics</b> Monitor performance and trends.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Premium Workflow Actions</b> Advanced automation for complex journeys.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Up to 25 Users</b> Larger team access.</div></li>
-                            </ul>
+                            
                             <a href="checkout.html?package=pro&billing=quarterly" class="package-button">Start Free Trial</a>
                         </div>
                     </div>
@@ -1117,15 +950,7 @@
                             <div class="plan-desc">Make the plan your own — choose exactly which features you want, nothing you don't.</div>
                         </div>
                         <div class="pricing-body">
-                            <ul class="pricing-features">
-                                <li><span class="check-icon">✦</span> <div><b>Pick Your Features</b> Hand-select CRM, AI, voice, funnels, reviews — only what you'll actually use.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Custom Limits</b> Users, pipelines, brands, and volumes sized to your operation.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Multi-Brand Ready</b> Run multiple brands or branches from one account.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Custom Integrations &amp; Dev</b> Scoped custom workflows and integrations.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Human Campaign Management</b> Scoped campaign execution support.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Dedicated Onboarding</b> A specialist configures your workspace with you.</div></li>
-                                <li><span class="check-icon">✦</span> <div><b>Tailored Pricing</b> Pay for your feature mix — not a one-size bundle.</div></li>
-                            </ul>
+                            
                             <a href="contact.html#contact-form" class="package-button">Contact Sales</a>
                         </div>
                     </div>
@@ -1140,39 +965,7 @@
                 <span><b>✦</b> Support from the Kyntlo team</span>
             </div>
 
-            <div class="usage-accordion-wrapper reveal">
-                <button class="usage-accordion-btn" id="usageAccordionBtn" type="button" aria-expanded="false" aria-controls="usageAccordionContent">
-                    <span>View Usage Rates &amp; Add-ons</span>
-                    <span class="usage-accordion-icon" aria-hidden="true">↓</span>
-                </button>
-                <div class="usage-accordion-content" id="usageAccordionContent">
-                    <div class="usage-accordion-inner">
-                        <p class="usage-note">Pay only for the telecom and AI resources you actually use. No markup.</p>
-                        <div class="usage-grid">
-                            <div class="usage-item"><div class="usage-title">Email Infrastructure</div><div class="usage-desc">Send unlimited emails to unlimited contacts with no list-size fees.</div><div class="usage-cost">$0.00135 / email</div></div>
-                            <div class="usage-item"><div class="usage-title">Email Verification</div><div class="usage-desc">Automatically check and recheck addresses every 90 days.</div><div class="usage-cost">$0.005 / email</div></div>
-                            <div class="usage-item"><div class="usage-title">SMS Messaging</div><div class="usage-desc">Send SMS messages to your list to close deals faster.</div><div class="usage-cost">$0.0158 / segment</div></div>
-                            <div class="usage-item"><div class="usage-title">Making Calls</div><div class="usage-desc">Make calls in the system to track and manage all call activity.</div><div class="usage-cost">$0.028 / min</div></div>
-                            <div class="usage-item"><div class="usage-title">Receiving Calls</div><div class="usage-desc">Track who is calling and view call data for each customer.</div><div class="usage-cost">$0.017 / min</div></div>
-                            <div class="usage-item"><div class="usage-title">Premium Workflow Actions</div><div class="usage-desc">Skip complex Zapier setups. Connect directly to Google Sheets or webhooks.</div><div class="usage-cost">$0.02 / action</div></div>
-                            <div class="usage-item"><div class="usage-title">AI Copywriting</div><div class="usage-desc">Use AI to write high-converting copy and generate AI images.</div><div class="usage-cost">$0.18 / 1k words</div></div>
-                            <div class="usage-item"><div class="usage-title">AI Conversations</div><div class="usage-desc">Automate and enhance customer interactions naturally.</div><div class="usage-cost">$0.04 / message</div></div>
-                            <div class="usage-item"><div class="usage-title">AI Funnel Builder</div><div class="usage-desc">Simplify funnel creation with effective, customized designs.</div><div class="usage-cost">$1.98 / funnel</div></div>
-                            <div class="usage-item"><div class="usage-title">AI Review Replies</div><div class="usage-desc">Automate customer feedback and save time on review management.</div><div class="usage-cost">$0.16 / response</div></div>
-                            <div class="usage-item"><div class="usage-title">AI Workflow Steps</div><div class="usage-desc">Automate complex processes with AI-powered workflows.</div><div class="usage-cost">$0.06 / execution</div></div>
-                            <div class="usage-item"><div class="usage-title">Workflow Pro Plan</div><div class="usage-desc">10,000 premium workflow executions, up to 60% cheaper.</div><div class="usage-cost">$14.99 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Ad Manager</div><div class="usage-desc">Launch and manage ad campaigns easily with proven templates.</div><div class="usage-cost">$29 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Auto-Complete Address</div><div class="usage-desc">Fills in details to speed up checkout for a smoother experience.</div><div class="usage-cost">$0.0044 / search</div></div>
-                            <div class="usage-item"><div class="usage-title">Branded Client App</div><div class="usage-desc">Launch your own branded iOS and Android app with no coding.</div><div class="usage-cost">$79 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Dedicated IP</div><div class="usage-desc">Secure your sending reputation for better email deliverability.</div><div class="usage-cost">$88.50 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Domain Purchase</div><div class="usage-desc">Find and register the perfect domain for your business.</div><div class="usage-cost">$13 / domain</div></div>
-                            <div class="usage-item"><div class="usage-title">WhatsApp Integration</div><div class="usage-desc">Integrate WhatsApp to seamlessly send and receive messages.</div><div class="usage-cost">$29.99 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">WordPress Hosting</div><div class="usage-desc">Seamlessly integrate WordPress to build and manage sites.</div><div class="usage-cost">$14.99 / month</div></div>
-                            <div class="usage-item"><div class="usage-title">Online Listings</div><div class="usage-desc">Keep business listings accurate across multiple platforms.</div><div class="usage-cost">$75 / month</div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="pricing-more reveal">Every plan line, the full feature comparison and every usage rate we charge &mdash; messages, minutes, AI, priced per region &mdash; are on the <a href="pricing.html">pricing page</a>. Nothing appears on a bill that is not printed there first.</p>
         </div>
     </section>
 
@@ -1269,61 +1062,14 @@
                     </div>
                 </article>
 
-                <article class="scenario-card reveal">
-                    <span class="scenario-tag">Home services &middot; 6 vans</span>
-                    <h3>The quote went out three days late</h3>
-                    <p class="scenario-setup"><b>Starting point:</b> 60 enquiries a month across the website, Google and Facebook, first reply averaging four hours, quotes written in the evening.</p>
-                    <p class="scenario-change"><b>What changes:</b> every enquiry gets a personalised reply inside a minute, the job is booked in the conversation, and marking it complete sends the invoice with a pay link.</p>
-                    <div class="scenario-metrics">
-                        <div class="sm"><span class="sm-v">4 hrs → 40 sec</span><span class="sm-k">First response time</span></div>
-                        <div class="sm"><span class="sm-v">3 wks → 5 days</span><span class="sm-k">Time to get paid</span></div>
-                    </div>
-                </article>
 
-                <article class="scenario-card reveal reveal-d1">
-                    <span class="scenario-tag">Salon &amp; spa &middot; 8 stations</span>
-                    <h3>620 past clients and nobody had asked them back</h3>
-                    <p class="scenario-setup"><b>Starting point:</b> 620 names in the till system, no idea which had stopped coming, and eleven Google reviews against six hundred-odd happy clients.</p>
-                    <p class="scenario-change"><b>What changes:</b> Kyntlo notices who has gone quiet and opens a conversation referencing their last treatment. Every finished appointment asks for a review — every client, not only the happy ones.</p>
-                    <div class="scenario-metrics">
-                        <div class="sm"><span class="sm-v">~$1,400</span><span class="sm-k">Monthly reactivation, at 3% return and zero ad spend</span></div>
-                        <div class="sm"><span class="sm-v">+20–30</span><span class="sm-k">Reviews a year</span></div>
-                    </div>
-                </article>
 
-                <article class="scenario-card reveal reveal-d2">
-                    <span class="scenario-tag">Marketing agency &middot; 14 clients</span>
-                    <h3>&ldquo;Your leads were rubbish&rdquo;</h3>
-                    <p class="scenario-setup"><b>Starting point:</b> good campaign numbers, angry clients, and no way to prove whether a lead was ever followed up — so every retention conversation was an argument.</p>
-                    <p class="scenario-change"><b>What changes:</b> Kyntlo sits underneath each client, so follow-up stops being the variable. The dashboard shows what was sent, when, and what it booked.</p>
-                    <div class="scenario-metrics">
-                        <div class="sm"><span class="sm-v">Auditable</span><span class="sm-k">Every lead's follow-up, timestamped</span></div>
-                        <div class="sm"><span class="sm-v">Under 60s</span><span class="sm-k">First response on every client account, provable in the dashboard</span></div>
-                    </div>
-                </article>
             </div>
 
             <p class="scenario-foot reveal">Every figure above is derived from the conservative rates published on this page — 25% of answered calls convert, no-shows settle around 10%, 3% of a dormant list returns — applied to the starting numbers stated in each card. They are models of how the system works, not results we are claiming on anyone's behalf. In a <a href="contact.html#contact-form">14-Day Leak Test</a> we run the same arithmetic against your own call logs and customer list, then fix the biggest leak free and show you what it moved.</p>
         </div>
     </section>
 
-
-    <!-- ================= ASK AN AI ================= -->
-    <section id="ask-ai">
-        <div class="container">
-            <div class="center reveal">
-                <p class="kicker eyebrow-c">Don't take our word for it</p>
-                <h2 class="section-title">Ask an AI what <span class="text-gradient">Kyntlo does.</span></h2>
-                <p class="section-sub">We would rather you checked. Each of these opens a fresh conversation with the question already written — what Kyntlo is, how the voice and chat agents work, what onboarding looks like, and how the pricing is built.</p>
-            </div>
-            <div class="ai-grid reveal">
-                <a class="ai-card" href="https://chatgpt.com/?q=Explain+how+Kyntlo+%28kyntlo.ai%29+helps+businesses+automate+operations+and+replace+fragmented+tools+with+AI.+Detail+what+the+service+includes+step-by-step%3A+core+capabilities%2C+autonomous+Voice+and+Chat+AI+agents%2C+the+onboarding+process%2C+post-launch+support%2C+pricing+model.+Explain+it+simply+from+a+business+owner+perspective." target="_blank" rel="noopener noreferrer"><span class="nm">ChatGPT</span><span class="go">Ask about Kyntlo ↗</span></a>
-                <a class="ai-card" href="https://claude.ai/new?q=Explain%20how%20Kyntlo%20(kyntlo.ai)%20helps%20businesses%20automate%20operations%20and%20replace%20fragmented%20tools%20with%20AI.%20Detail%20what%20the%20service%20includes%20step-by-step%3A%20core%20capabilities%2C%20autonomous%20Voice%20and%20Chat%20AI%20agents%2C%20the%20onboarding%20process%2C%20post-launch%20support%2C%20pricing%20model.%20Explain%20it%20simply%20from%20a%20business%20owner%20perspective." target="_blank" rel="noopener noreferrer"><span class="nm">Claude</span><span class="go">Ask about Kyntlo ↗</span></a>
-                <a class="ai-card" href="https://www.perplexity.ai/search?q=Explain+how+Kyntlo+(kyntlo.ai)+helps+businesses+automate+operations+and+replace+fragmented+tools+with+AI.+Detail+what+the+service+includes+step-by-step%3A+core+capabilities%2C+autonomous+Voice+and+Chat+AI+agents%2C+the+onboarding+process%2C+post-launch+support%2C+pricing+model.+Explain+it+simply+from+a+business+owner+perspective." target="_blank" rel="noopener noreferrer"><span class="nm">Perplexity</span><span class="go">Ask about Kyntlo ↗</span></a>
-            </div>
-            <p class="ai-foot reveal">Answers are generated by each assistant and are not written or reviewed by Kyntlo. We publish a plain-text summary at <a href="llms.txt" style="color:var(--brand-hot);font-weight:700;">/llms.txt</a> so they answer from our own words rather than guessing.</p>
-        </div>
-    </section>
 
     <!-- ================= DEMO ================= -->
     <section id="book-demo" class="demo-section">
@@ -1340,22 +1086,6 @@
         </div>
     </section>
 
-
-    <!-- ================= CLOSE ================= -->
-    <section class="close-band">
-        <div class="container">
-            <div class="center reveal">
-                <p class="kicker eyebrow-c">One conversation</p>
-                <h2 class="section-title">What happens at your business <span class="text-gradient">at 8pm tonight?</span></h2>
-                <p class="section-sub">Thirty minutes. We ask how enquiries reach you and what happens to the ones nobody gets to, then do the arithmetic with your numbers. You leave with a written figure whether or not you ever buy anything — and if it is not worth it yet, we will say so.</p>
-                <div class="hero-ctas" style="margin-top:34px;">
-                    <a class="btn btn-kinetic" href="contact.html#contact-form">Start a free 14-Day Leak Test</a>
-                    <a class="btn btn-ghost" href="pricing.html">See pricing &amp; usage rates</a>
-                </div>
-                <p class="signoff">Kyntlo &middot; Own Tomorrow</p>
-            </div>
-        </div>
-    </section>
 
     </main>
 
@@ -1914,18 +1644,6 @@
                 });
             }
 
-            /* ---------- Usage accordion ---------- */
-            const accordionBtn = document.getElementById("usageAccordionBtn");
-            const accordionContent = document.getElementById("usageAccordionContent");
-            if (accordionBtn && accordionContent) {
-                const icon = accordionBtn.querySelector(".usage-accordion-icon");
-                accordionBtn.addEventListener("click", () => {
-                    accordionContent.classList.toggle("active");
-                    const isOpen = accordionContent.classList.contains("active");
-                    accordionBtn.setAttribute("aria-expanded", String(isOpen));
-                    if (icon) icon.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
-                });
-            }
         })();
     </script>
 </body>
