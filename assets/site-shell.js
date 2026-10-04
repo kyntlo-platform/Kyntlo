@@ -11,7 +11,7 @@
     /* The footer icon row and the Community link are built from
        window.KYNTLO_SOCIAL in site-config.js. An entry with no URL renders
        nothing at all, so an unconfigured profile never ships as a dead link. */
-    const SOCIAL_ORDER = ["facebook", "instagram", "tiktok", "youtube", "linkedin", "community"];
+    const SOCIAL_ORDER = ["facebook", "instagram", "tiktok", "youtube", "linkedin", "google", "community"];
     const SOCIAL_META = {
         facebook: {
             label: "Kyntlo on Facebook",
@@ -32,6 +32,10 @@
         linkedin: {
             label: "Kyntlo on LinkedIn",
             svg: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 4a1.67 1.67 0 100 3.34A1.67 1.67 0 005.5 4zM20 20h-2.88v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V20H10.2V8.5h2.77v1.57h.04c.39-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.43V20z"/></svg>'
+        },
+        google: {
+            label: "Kyntlo on Google",
+            svg: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.24 10.4v3.3h5.44c-.22 1.4-1.63 4.1-5.44 4.1a6.05 6.05 0 110-12.1c1.86 0 3.11.79 3.82 1.48l2.6-2.5A9.28 9.28 0 0012.24 2.2a9.55 9.55 0 100 19.1c5.58 0 9.28-3.92 9.28-9.44 0-.63-.07-1.12-.16-1.6h-9.12z"/></svg>'
         },
         community: {
             label: "Join the Kyntlo community",

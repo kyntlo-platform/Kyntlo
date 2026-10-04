@@ -74,9 +74,14 @@ window.KYNTLO_SOCIAL = {
     youtube:   "https://youtube.com/@kyntlo",
     linkedin:  "https://www.linkedin.com/company/kyntlo/",
 
-    /* TODO: paste the TikTok profile URL, e.g. https://www.tiktok.com/@kyntlo */
-    tiktok:    "",
+    tiktok:    "https://www.tiktok.com/@kyntlo",
 
-    /* TODO: paste the community URL (Whop / Facebook group / forum). */
+    /* Google Business Profile. This is the share link from the Business Profile
+       dashboard; a g.page short link or the full Maps URL would be more durable
+       if one is available, since share.google links are generated per share. */
+    google:    "https://share.google/ikY0QiEt9VkzBoVFv",
+
+    /* TODO: paste the community URL (Whop / Facebook group / forum / Discord).
+       Nothing renders while this is empty. */
     community: ""
 };

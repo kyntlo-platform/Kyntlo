@@ -911,14 +911,16 @@ body.kyn-cursor-hidden .kyn-cursor-ring {
 .site-footer__contact a { color: var(--shell-muted); transition: color 0.24s ease; }
 .site-footer__contact a:hover { color: #fff; }
 
-.site-footer__social { display: flex; flex-wrap: wrap; gap: 10px; }
+/* six icons at the old 42px/10px no longer fit the brand column, which left
+   the last one orphaned on a second row; 40px/9px keeps them on one line. */
+.site-footer__social { display: flex; flex-wrap: wrap; gap: 9px; }
 
 .site-footer__social a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 13px;
     border: 1px solid var(--shell-border);
     background: rgba(255, 255, 255, 0.04);
@@ -1019,6 +1021,13 @@ body.kyn-cursor-hidden .kyn-cursor-ring {
 }
 
 /* --- responsive --- */
+/* The brand column narrows from about 1200px down, so the six icons tighten
+   rather than wrapping the last one onto a row of its own. */
+@media (max-width: 1200px) {
+    .site-footer__social { gap: 8px; }
+    .site-footer__social a { width: 36px; height: 36px; border-radius: 11px; }
+}
+
 @media (max-width: 1080px) {
     .site-footer__grid { grid-template-columns: minmax(220px, 1.3fr) repeat(2, minmax(120px, 1fr)); gap: 38px 28px; }
     .site-footer__links a, .site-footer__bottom-links a { min-height: 40px; }
