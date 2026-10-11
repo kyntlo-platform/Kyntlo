@@ -13,7 +13,7 @@ reading along to, not for publishing.
 
 Run:  python3 vo.py
 """
-import base64, hashlib, json, os, pathlib, re, subprocess, time
+import base64, hashlib, json, os, pathlib, re, subprocess, time, sys
 import urllib.error, urllib.request, wave
 
 ROOT = pathlib.Path(__file__).parent
@@ -102,7 +102,12 @@ def _throttle():
 
 
 def gemini_synth(text, out_wav, style='', attempt=0):
-    prompt = (style + '\n\n' + text) if style else text
+    # Newer TTS models will happily narrate the direction itself unless the
+    # boundary is explicit: 3.8-flash read all 75 words of it aloud. Spelling
+    # out what is direction and what is script keeps every model in line.
+    prompt = ((style + '\n\nRead aloud ONLY the line after SCRIPT:. '
+               'The text above is delivery direction and must not be spoken.'
+               '\n\nSCRIPT: ' + text) if style else text)
     _throttle()
     body = json.dumps({
         'contents': [{'parts': [{'text': prompt}]}],
@@ -233,7 +238,12 @@ def main():
         if (ROOT / 'vo-timing.json').exists() else {}
     complete = []
 
+    # --only <id> restricts the run to one video, so a model's daily quota
+    # can be spent where it is needed instead of re-synthesising cached work.
+    only = sys.argv[sys.argv.index('--only') + 1] if '--only' in sys.argv else None
     for vid, lines in SCRIPTS.items():
+        if only and vid != only:
+            continue
         # the two YouTube cuts reuse the TikTok audio rather than re-synthesising
         source = 'tiktok-a-spreadsheet' if vid.endswith('a-spreadsheet') else \
                  'tiktok-b-11pm-lead' if vid.endswith('b-11pm-lead') else vid
