@@ -66,5 +66,47 @@
       "cap": "We close that gap in 14 days. Start with the free report.",
       "vo": "We close that gap in fourteen days. Start with the free report."
     }
+  ],
+  "brand-film": [
+    {
+      "cap": "23:04",
+      "sub": "Somebody asks a Dubai clinic for an appointment.",
+      "vo": "At four minutes past eleven at night, somebody asks a Dubai clinic for an appointment."
+    },
+    {
+      "cap": "The ads are running.<br>The office is closed.",
+      "sub": "",
+      "vo": "The clinic's ads are running. The clinic's office is closed."
+    },
+    {
+      "cap": "62",
+      "sub": "Dubai clinics, opened by hand. All of them advertising that week.",
+      "vo": "We opened the websites of sixty two Dubai clinics that were advertising that week."
+    },
+    {
+      "cap": "35 &nbsp;·&nbsp; 18",
+      "sub": "had a form where a calendar should be &nbsp;·&nbsp; had no way to book at all",
+      "vo": "Thirty five had a form where a calendar should be. Eighteen had no way to book at all."
+    },
+    {
+      "cap": "8",
+      "sub": "had a real calendar. None of them send a reminder, or chase a no-show.",
+      "vo": "Only eight had a real calendar. Not one of them sends a reminder, or chases a no show."
+    },
+    {
+      "cap": "Nobody here is slow.",
+      "sub": "There is simply a gap between a lead arriving and a human seeing it.",
+      "vo": "None of these businesses were slow. There is simply a gap between a lead arriving, and a human seeing it."
+    },
+    {
+      "cap": "14 days.<br>One leak. Closed.",
+      "sub": "On your own numbers and channels. The report is yours either way.",
+      "vo": "We find your biggest gap, and we close it in fourteen days. On your own numbers and channels. The report is yours either way."
+    },
+    {
+      "cap": "__LOGO__",
+      "sub": "Booking, reminders and recall in one place.",
+      "vo": "Kyntlo. Booking, reminders and recall in one place."
+    }
   ]
 }
