@@ -39,16 +39,26 @@ Pointing `/leak-test` at these field keys is what wires the ads to the CRM.
 The Business Manager connection landed, so the paid layer exists now.
 
 **Integration** — page `Kyntlo` (`1146717545186948`) bound to ad account
-`act_3334301210113583`, status `connected`. The ad account is denominated in
-**EGP**, which happens to match the budget plan exactly — no currency
-conversion anywhere in the setup.
+**`Kyntlo Ads` (`act_1120037820712549`)**, inside Business Manager
+`2013911839202719`, status `connected`.
+
+The first build used `Kyntlo Socials` (`act_3334301210113583`). That account is
+denominated in EGP, which matched the plan without conversion — but it has no
+`business` owner at all, meaning it is a personal ad account. BM ownership
+decides domain verification, pixel sharing, asset permissions, and whether the
+ad account survives a restriction on someone's personal profile. That is worth
+more than the currency convenience, so the campaign moved and the duplicate
+draft was deleted.
+
+`Kyntlo Ads` bills in **USD**, and an ad account's currency cannot be changed
+after creation. Budgets below are converted at 48 EGP/USD.
 
 | Object | ID | Settings |
 | --- | --- | --- |
-| **Campaign** `META_Leads_Clinics_Dubai_2026Q4` | `6acbc6d992ced54fa4bb9cea` | Objective `OUTCOME_LEADS` · ad-set budgets, not CBO · `DRAFT` |
-| **Ad set** `AS1_Cold_Prospecting_Dubai_Clinics` | `6acbc740da9dce0c2dddfa9a` | **590 EGP/day** · Dubai region (geo key `10`) · age 28–60 · all genders · **no interest targeting** · automatic placements · website conversions |
-| **Ad** `AD_B_62_Clinics_Evidential` | `6acbc77bda9dce0c2dddfb12` | Headline *35 of 62 clinics. Same broken button.* · Learn more → `/leak-test` |
-| **Ad** `AD_A_Hand_Count_Personal` | `6acbc79192ced54fa4bb9ef6` | Headline *I checked 62 Dubai clinics by hand* · Learn more → `/leak-test` |
+| **Campaign** `META_Leads_Clinics_Dubai_2026Q4` | `6acbcc2592ced54fa4bbb9c1` | Objective `OUTCOME_LEADS` · ad-set budgets, not CBO · `DRAFT` |
+| **Ad set** `AS1_Cold_Prospecting_Dubai_Clinics` | `6acbcc2c92ced54fa4bbba67` | **$12.30/day** (590 EGP) · Dubai region (geo key `10`) · age 28–60 · all genders · **no interest targeting** · automatic placements · website conversions |
+| **Ad** `AD_B_62_Clinics_Evidential` | `6acbcc4192ced54fa4bbbf6e` | Headline *35 of 62 clinics. Same broken button.* · Learn more → `/leak-test` |
+| **Ad** `AD_A_Hand_Count_Personal` | `6acbcc49da9dce0c2dde1b86` | Headline *I checked 62 Dubai clinics by hand* · Learn more → `/leak-test` |
 
 Four decisions worth knowing about:
 
@@ -80,6 +90,38 @@ They have nothing to point at. `fb-get-custom-audiences` returns empty.
   campaign *or* be created through this API. Build it as its own campaign in
   Ads Manager, or accept `OUTCOME_ENGAGEMENT` as a proxy and judge it the same
   way: by outbound reply rate, never by its own cost per lead.
+
+### It is not in Ads Manager yet
+
+`DRAFT` here means staged inside Kyntlo, not pushed to Meta. Nothing appears
+in Ads Manager until `fb-publish-campaign` runs, and that call publishes
+straight to Meta with no paused option — so it is deliberately not run while
+the ads still have no creative attached. Publishing empty ads gets them
+rejected, and a rejection is a mark on a new ad account.
+
+## 2a. The brand film
+
+`kyntlo-brand-film.mp4` — 58s, 1080×1920, H.264 + AAC, poster frame beside it.
+
+Eight scenes cut to the narration rather than to a guessed grid, so picture
+and read cannot drift. Narration is neural TTS; the music is **composed here,
+not licensed** (`music.py` — A minor, 76 BPM, i-VI-III-VII), because a
+generated bed carries no attribution requirement and cannot draw a Content ID
+claim on a paid ad the way a stock track can. The bed is ducked under the
+voice by a real sidechain compressor, and its arrangement follows the script:
+sparse under the hook, fullest under the offer, resolving on the brand card.
+
+Every figure in it — 62, 35, 18, 8 — is from the measured audit. The `8` scene
+is deliberately drained of brand colour; it is the one number that is supposed
+to feel thin.
+
+Use it for the `/leak-test` hero, LinkedIn, and as a Meta video ad once the
+pixel is live. Ask if you want a 16:9 cut for the site or a 30s version for
+cold feed — both are a re-run of `assemble-film.py`, not a rebuild.
+
+The rendered mp4 and its poster are gitignored: the push path available from
+the build environment is text-only, so the 23 MB file cannot be committed
+from there. Re-render with `film-scenes.js` then `assemble-film.py`.
 
 ## 3. Eleven posts, drafted with final copy
 
@@ -126,7 +168,7 @@ In the order that matters.
 
 | # | Blocker | What it stops | How it clears |
 | --- | --- | --- | --- |
-| 1 | **No payment method on the ad account** — `fundingType: NONE` | Everything. A published campaign with no funding source does not deliver | Add a card in Ads Manager → Billing |
+| 1 | **No payment method** — `fundingType: NONE` on *both* ad accounts | Everything. A published campaign with no funding source does not deliver. Creating the ad account did not create billing; it is a separate step | Ads Manager → Billing → Payment settings |
 | 2 | **No Meta pixel** — `fb-get-pixels` returns 0 | The whole optimisation plan. The ad set says website conversions, but with no pixel Meta falls back to clicks — the metric least connected to money. Also blocks the retargeting pool from ever starting | Install the pixel, then set `pixelId` + `customEventType` on the ad set. Start on landing-page views, switch to `LEAD` around day 21 |
 | 3 | **`/leak-test` does not exist** | Both ads point at it | Build it: one field (website URL + email), wired to the seven fields in §1 |
 | 4 | **Ads have no media** | Nothing to look at. Media upload is multipart and not exposed through the connector, and this environment blocks the API host and the asset CDN | Drag the 19 files into Marketing → Media Library; then media attaches to posts and ads by URL |
@@ -160,9 +202,9 @@ Profile, not an edit to this one.
    in the debugger — a pixel that works in preview and not in production is
    the most common silent failure here
 3. Build `/leak-test`
-4. Upload the media; attach to ad `6acbc77bda9dce0c2dddfb12` first — ad B is
+4. Upload the media; attach to ad `6acbcc4192ced54fa4bbbf6e` first — ad B is
    the one that ships with no unverified numbers in it
-5. Set `pixelId` and `customEventType` on ad set `6acbc740da9dce0c2dddfa9a`
+5. Set `pixelId` and `customEventType` on ad set `6acbcc2c92ced54fa4bbba67`
 6. Publish the campaign (`fb-publish-campaign`) — the explicit go-live step
 7. Then, and only then, `CAMPAIGN.md` runs as written: change nothing until
    day 7
