@@ -56,33 +56,40 @@ small budget returns nothing.
 
 Both go in **one ad set**, so they compete on equal footing.
 
-### Ad 1 — The Tuesday Test  ·  `ad-01-the-tuesday-test.png`
+### Ad 1 — The Hand Count  ·  `ad-01-the-hand-count.png`
 
-1080×1350. Deliberately looks like a phone screenshot rather than an ad — no
-logo on the image, no brand colour, no gradient. That is the concept, not an
-oversight. The Kyntlo mark sits in the caption strip, which is where a real
-post carries it.
+1080×1350. A notes-app screenshot of the audit as it was actually kept — 62
+clinics, each tagged by what its booking button does, with the tally pencilled
+at the bottom. No logo on the image, no brand colour, no gradient. That is the
+concept, not an oversight: it reads as something a person photographed off
+their own screen, because that is what it is.
+
+Areas are shown instead of clinic names. You are about to sell to these
+businesses, and naming them in an ad that criticises their booking flow is not
+how that conversation starts well.
 
 **Primary text**
 
 ```
-Last Tuesday I filled in the contact form on {{N_TIMED}} Dubai businesses that are running ads right now.
+I spent an afternoon opening the websites of 62 Dubai clinics that were running Instagram ads that week.
 
-Not to sell them anything. Just to see how long a reply took.
+Not to sell them anything. I wanted to see what happens after someone clicks.
 
-{{N_NEVER_REPLIED}} never replied at all. The median was {{MEDIAN_HOURS}} hours.
+35 have a "Book Now" button that opens a form. Several with a free-text date field — which means a person retypes every request by hand.
 
-Every one of those businesses is paying for the click that produced my enquiry. They just weren't there when it landed.
+18 have no booking mechanism at all. The button is a phone number.
 
-The gap isn't a lazy team. It's nights, weekends, lunch, and the forty minutes reception is with someone else.
+8 have a real calendar. Not one of those eight sits inside anything that sends a reminder or chases a no-show.
 
-I'll run the same test on your business, free. You keep the timestamps whether or not we ever speak again.
+One didn't load at all, while its ads were still running.
+
+I'll do the same for your clinic, free, and send you what I find within 24 hours. You keep the notes whether or not we ever speak again.
 
 — Kyntlo
 ```
 
-**Headline** (40 char) — `We timed {{N_TIMED}} Dubai businesses`
-**Description** (30 char) — `Free lead response report`
+**Headline** (40 char) — `I checked 62 Dubai clinics by hand`
+**Description** (30 char) — `Free booking audit`
 **Call to action** — Learn more
 
 ### Ad 2 — 62 Clinics  ·  `ad-02-62-clinics.png`

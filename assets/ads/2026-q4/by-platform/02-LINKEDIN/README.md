@@ -67,9 +67,9 @@ Kyntlo's price.
 ```
 A missed consultation costs between AED 1,500 and AED 5,000. Most owners can quote that number without thinking.
 
-Far fewer can quote how long their own enquiry form takes to get a reply.
+Far fewer can say what their own booking button actually does.
 
-We timed {{N_TIMED}} UAE businesses that were actively running ads. The median was {{MEDIAN_HOURS}} hours. {{N_NEVER_REPLIED}} never replied at all.
+We checked 62 UAE clinics advertising on Instagram, by hand. 35 take enquiries through a form — several with a free-text date field, so a person retypes every request. 18 have no booking mechanism at all. Only 8 have a real calendar, and not one of those sits inside anything that sends a reminder or chases a no-show.
 
 None of them had a slow team. They had a gap between a lead arriving and a human seeing it — nights, weekends, and the forty minutes reception is with someone else.
 
@@ -79,6 +79,8 @@ The report is yours either way.
 ```
 
 **Headline** (70 char) — `What one missed enquiry actually costs you`
+
+Every figure here is measured. This ad ships today.
 **Call to action** — Download
 
 ### Ad 2 — the document ad  ·  `document-ad-page-01..06.png`

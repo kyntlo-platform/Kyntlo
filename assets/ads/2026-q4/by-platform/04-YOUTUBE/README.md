@@ -52,7 +52,7 @@ both to the channel, then reference them in the campaign.
 **Titles**
 
 ```
-I filled in {{N_TIMED}} Dubai contact forms in one afternoon
+I checked 62 Dubai clinic websites to see how you book
 ```
 ```
 Your ads run at 11pm. Your team doesn't.
@@ -61,7 +61,7 @@ Your ads run at 11pm. Your team doesn't.
 **Descriptions**
 
 ```
-{{N_NEVER_REPLIED}} never replied. Median reply {{MEDIAN_HOURS}} hours. We will run the same test on your business free — you keep the timestamps either way.
+35 take enquiries through a form. 18 have no booking at all. 8 have a real calendar, none connected to anything. We will check yours free and send what we find in 24 hours.
 ```
 ```
 The lead arrives at 23:04. The reply goes out at 09:12. A competitor answered at 23:06. We close that gap in 14 days on your existing numbers — free test first.

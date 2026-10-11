@@ -63,19 +63,14 @@ worth more than the leads.
 | Wait before judging an ad | 3× target CPL of spend |
 | Budget increase when scaling | +20%, every 3–5 days, never more |
 
-## One thing left to fill
+## Everything here ships today
 
-Four numbers come from the Day 0 timing run and are **not yet measured**. Any
-asset containing one renders it as a visible amber slot so an unmeasured
-figure cannot ship by accident:
+Every figure in every ad is measured. The 62-clinic audit — 62 checked by
+hand, 35 taking enquiries through a form, 18 with no booking mechanism, 8 with
+a real calendar, 1 whose site would not load while its ads ran — is the
+evidence base for the whole set, and both concepts are built from it.
 
-`N_TIMED` · `N_NEVER_REPLIED` · `MEDIAN_HOURS` · `FASTEST_MIN`
-
-Affected: the Tuesday Test (Meta + YouTube in-feed), the AED Number
-(LinkedIn), and the spreadsheet videos (TikTok + YouTube). Run Day 0 — one
-afternoon, roughly two hours — put the results in
-`07-REFERENCE/tokens.json`, and re-run the build.
-
-**Everything built on the 62-clinic audit ships today.** Those numbers are
-already measured: the whole carousel, 62 Clinics, both 11pm-lead videos, both
-Snapchat frames, both Google Business posts.
+That also makes the A/B test cleaner than it was. Concept A and concept B now
+carry **identical facts in opposite registers** — one as a person recounting
+an afternoon's work, one as a dataset. Nothing varies except the register, so
+whichever wins tells you something you can act on everywhere else.

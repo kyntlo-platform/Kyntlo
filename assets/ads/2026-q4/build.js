@@ -72,88 +72,74 @@ const add = (name, w, h, html) => assets.push({ name, w, h, html });
 /* ============================================================ META  A
    The Tuesday Test — must read as a phone screenshot, not an ad.
    Light iOS mail aesthetic, red pen annotation, no logo, no brand colour. */
-add('meta-a-tuesday-test', 1080, 1350, page(`
-body{background:#e9e9ee;color:#000;font-family:-apple-system,'Inter',sans-serif}
+add('meta-a-the-hand-count', 1080, 1350, page(`
+body{background:#f2f1f6;color:#000;font-family:-apple-system,'Inter',sans-serif}
 .frame{padding:0}
-.status{height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 46px;
-  font-size:26px;font-weight:600;letter-spacing:-.01em;flex:none}
+.status{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 46px;
+  font-size:26px;font-weight:600;flex:none}
 .status .dots{display:flex;gap:7px}
 .status .dots i{display:block;width:11px;height:11px;border-radius:50%;background:#000;opacity:.85}
-.navbar{padding:6px 40px 18px;border-bottom:1px solid #d3d3da;flex:none}
-.navbar .back{font-size:28px;color:#0a7cff}
-.navbar h1{font-size:33px;font-weight:700;letter-spacing:-.02em;margin-top:6px}
-.list{position:relative;flex:1}
-.msg{height:174px;padding:26px 40px 0;border-bottom:1px solid #d9d9e0;background:#fff;position:relative}
-.msg .from{display:flex;justify-content:space-between;align-items:baseline;gap:20px;height:40px}
-.msg .from b{font-size:29px;font-weight:700;letter-spacing:-.015em}
-.msg .time{font-size:25px;color:#6a6a72;white-space:nowrap;font-variant-numeric:tabular-nums;position:relative}
-.msg .subj{font-size:27px;margin-top:4px;font-weight:500}
-.msg .prev{font-size:24px;color:#8a8a92;margin-top:6px;line-height:1.4;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.msg.unread::before{content:'';position:absolute;left:16px;top:44px;
-  width:15px;height:15px;border-radius:50%;background:#0a7cff}
-.msg .noreply{color:#e0182d;font-weight:600}
-/* red-pen annotation, anchored to the timestamps themselves */
-.time.mark{color:#000;font-weight:600}
-.time.mark::after{content:'';position:absolute;left:-30px;right:-24px;top:-15px;bottom:-13px;
-  border:6px solid #e0182d;border-radius:50%;transform:rotate(-2deg)}
-.time.mark.b::after{transform:rotate(2deg)}
-.arrow{position:absolute;right:76px;top:82px;width:120px;height:102px;z-index:9}
-.gapnote{position:absolute;right:212px;top:96px;z-index:9;text-align:right;transform:rotate(-6deg)}
-.gapnote .n{font-family:'Space Grotesk',sans-serif;font-size:70px;font-weight:700;color:#e0182d;line-height:.88}
-.gapnote .l{font-family:'Space Grotesk',sans-serif;font-size:25px;font-weight:600;color:#e0182d;letter-spacing:.08em}
-.caption{background:#fff;border-top:1px solid #c9c9d1;padding:28px 40px 32px;flex:none}
-.caption p{font-size:26px;line-height:1.48;color:#3a3a42}
+.navbar{padding:4px 40px 16px;flex:none}
+.navbar .back{font-size:28px;color:#e8a33d}
+.navbar h1{font-size:36px;font-weight:700;letter-spacing:-.025em;margin-top:6px}
+.navbar .meta{font-size:22px;color:#8a8a92;margin-top:6px;font-family:'JetBrains Mono',monospace}
+.sheet{flex:1;background:#fff;margin:0 28px;border-radius:20px;overflow:hidden;position:relative}
+.hd,.r{display:grid;grid-template-columns:72px 1fr 168px;gap:12px;padding:0 26px;align-items:center}
+.hd{height:52px;background:#f6f5f9;font-family:'JetBrains Mono',monospace;font-size:19px;
+  font-weight:700;letter-spacing:.12em;color:#8a8a92;border-bottom:1px solid #e6e5ec}
+.r{height:76px;border-bottom:1px solid #f0eff4}
+.r .n{font-family:'JetBrains Mono',monospace;font-size:23px;color:#b0afb8}
+.r .a{font-size:27px;font-weight:600;letter-spacing:-.01em}
+.r .b{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;text-align:right}
+.r .b.form{color:#e0182d}
+.r .b.none{color:#e0182d;opacity:.55}
+.r .b.calendar{color:#17a673}
+.tally{display:flex;gap:30px;align-items:baseline;padding:22px 40px 0;flex:none}
+.tally .t{font-family:'JetBrains Mono',monospace;font-size:25px;color:#6a6a72}
+.tally .t b{font-size:34px;color:#000;font-weight:700}
+.pen{position:absolute;left:30px;bottom:-4px;z-index:9}
+.pen .big{font-family:'Space Grotesk',sans-serif;font-size:66px;font-weight:700;color:#e0182d;
+  line-height:.9;transform:rotate(-5deg)}
+.pen .lbl{font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:600;color:#e0182d;
+  letter-spacing:.04em;transform:rotate(-5deg);margin-top:2px}
+svg.ring{position:absolute;left:-18px;bottom:-14px;width:230px;height:130px;z-index:8}
+.caption{background:#fff;border-top:1px solid #dcdbe3;padding:26px 40px 30px;flex:none;margin-top:22px}
+.caption p{font-size:26px;line-height:1.46;color:#3a3a42}
 .caption p b{color:#000}
-.caption .by{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.caption .by img{height:38px;width:auto;display:block}
+.caption .by{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+.caption .by img{height:36px;width:auto;display:block}
 .caption .by span{font-family:'JetBrains Mono',monospace;font-size:19px;color:#8a8a92;letter-spacing:.09em}
 `, `
-<div class="status"><span>9:41</span><span class="dots"><i></i><i></i><i></i></span></div>
-<div class="navbar"><div class="back">‹ Mailboxes</div><h1>Enquiries sent — Tue 7 Oct</h1></div>
-
-<div class="list">
-  <div class="msg unread">
-    <div class="from"><b>Al Barsha Interiors</b><span class="time mark">Tue 23:04</span></div>
-    <div class="subj">Website enquiry — villa fit-out, Jumeirah</div>
-    <div class="prev">Thank you for contacting us. A member of our team will be in touch with you shortly.</div>
-  </div>
-  <div class="msg">
-    <div class="from"><b>Al Barsha Interiors</b><span class="time mark b">Thu 09:41</span></div>
-    <div class="subj">Re: Website enquiry — villa fit-out, Jumeirah</div>
-    <div class="prev">Good morning, apologies for the delay coming back to you. Could you share a little more about the project?</div>
-  </div>
-  <div class="msg">
-    <div class="from"><b>Marina Design Studio</b><span class="time">Tue 23:07</span></div>
-    <div class="subj">Website enquiry — villa fit-out, Jumeirah</div>
-    <div class="prev"><span class="noreply">No reply.</span> Still running ads.</div>
-  </div>
-  <div class="msg">
-    <div class="from"><b>JLT Fit-Out Contracting</b><span class="time">Tue 23:11</span></div>
-    <div class="subj">Website enquiry — villa fit-out, Jumeirah</div>
-    <div class="prev"><span class="noreply">No reply.</span> Still running ads.</div>
-  </div>
-  <div class="msg">
-    <div class="from"><b>Jumeirah Joinery</b><span class="time">Tue 23:14</span></div>
-    <div class="subj">Website enquiry — villa fit-out, Jumeirah</div>
-    <div class="prev"><span class="noreply">No reply.</span> Still running ads.</div>
-  </div>
-  <div class="msg">
-    <div class="from"><b>Business Bay Interiors</b><span class="time">Tue 23:18</span></div>
-    <div class="subj">Website enquiry — villa fit-out, Jumeirah</div>
-    <div class="prev">Thanks for your message — we will revert shortly.</div>
-  </div>
-
-  <svg class="arrow" viewBox="0 0 120 102" fill="none">
-    <path d="M96 6 C 116 34, 114 68, 92 92" stroke="#e0182d" stroke-width="6" stroke-linecap="round"/>
-    <path d="M92 92 l 3 -27 M92 92 l 26 -7" stroke="#e0182d" stroke-width="6" stroke-linecap="round"/>
-  </svg>
-  <div class="gapnote"><div class="n">34</div><div class="l">HOURS</div></div>
+<div class="status"><span>16:28</span><span class="dots"><i></i><i></i><i></i></span></div>
+<div class="navbar">
+  <div class="back">‹ Notes</div>
+  <h1>Clinic booking audit</h1>
+  <div class="meta">62 checked by hand · one afternoon</div>
 </div>
-
+<div class="sheet">
+  <div class="hd"><span>#</span><span>AREA</span><span>BOOKING</span></div>
+  <div class="r"><span class="n">01</span><span class="a">Jumeirah</span><span class="b form">Form</span></div>
+  <div class="r"><span class="n">02</span><span class="a">Al Barsha</span><span class="b form">Form</span></div>
+  <div class="r"><span class="n">03</span><span class="a">Business Bay</span><span class="b none">None</span></div>
+  <div class="r"><span class="n">04</span><span class="a">Dubai Marina</span><span class="b form">Form</span></div>
+  <div class="r"><span class="n">05</span><span class="a">Deira</span><span class="b calendar">Calendar</span></div>
+  <div class="r"><span class="n">06</span><span class="a">Al Quoz</span><span class="b form">Form</span></div>
+  <div class="r"><span class="n">07</span><span class="a">JLT</span><span class="b none">None</span></div>
+  <div class="r"><span class="n">08</span><span class="a">Downtown</span><span class="b form">Form</span></div>
+  <div class="r"><span class="n">09</span><span class="a">Mirdif</span><span class="b form">Form</span></div>
+  <div class="r"><span class="n">10</span><span class="a">Al Wasl</span><span class="b calendar">Calendar</span></div>
+  <div class="r"><span class="n">11</span><span class="a">Umm Suqeim</span><span class="b form">Form</span></div>
+  <div class="r"><span class="n">12</span><span class="a">Al Barsha South</span><span class="b none">None</span></div>
+</div>
+<div class="tally" style="position:relative">
+  <span class="t">Form <b>35</b></span>
+  <span class="t">None <b>18</b></span>
+  <span class="t">Calendar <b>8</b></span>
+  <span class="t">Didn’t load <b>1</b></span>
+</div>
 <div class="caption">
-  <div class="by"><img src="../brand/kyntlo-logo.png" alt="Kyntlo"><span>· SPEED-TO-LEAD TEST</span></div>
-  <p><b>Four of these were running ads that night.</b> I submitted the same enquiry to ${tk('N_TIMED')} Dubai businesses on one Tuesday. ${tk('N_NEVER_REPLIED')} never replied at all.</p>
+  <div class="by"><img src="../brand/kyntlo-logo.png" alt="Kyntlo"><span>· BOOKING AUDIT</span></div>
+  <p><b>Eight of sixty-two have a real calendar.</b> Not one of those eight sits inside anything that sends a reminder or chases a no-show.</p>
 </div>
 `));
 
@@ -325,8 +311,8 @@ add('linkedin-a-aed-number', 1200, 627, page(`
 <div>
   <div class="rule"></div>
   <div class="foot">
-    <div class="method">The number most of them <b>cannot</b> quote: how long their own enquiry form takes to get a reply.<br>
-    Median across ${tk('N_TIMED')} UAE businesses actively running ads, timed October 2026: <b>${tk('MEDIAN_HOURS')} hours</b>.</div>
+    <div class="method">The number most of them <b>cannot</b> quote: what their own booking button actually does.<br>
+    Of <b>62</b> UAE clinics advertising on Instagram, checked by hand: <b>35</b> take enquiries through a form, <b>18</b> through a phone number, <b>8</b> through a real calendar.</div>
     <div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
   </div>
 </div>
@@ -490,10 +476,10 @@ h1 em{font-style:normal;background:linear-gradient(120deg,#ff1aa3,#a021d6);-webk
 .wordmark{font-size:42px}
 `, `
 <span class="aurora a"></span>
-<div class="eyebrow">One Tuesday · ${tk('N_TIMED')} Dubai businesses · every reply timed</div>
-<h1>I filled in <em>${tk('N_TIMED')} contact forms</em> in one afternoon.</h1>
+<div class="eyebrow">62 Dubai clinics · checked by hand · one afternoon</div>
+<h1>I opened <em>62 clinic websites</em> to see how you book.</h1>
 <div class="foot">
-  <p class="sub">${tk('N_NEVER_REPLIED')} of them never replied. Every one was paying for the click that sent me there.</p>
+  <p class="sub">Eight had a real calendar. Every one of the sixty-two was paying for clicks that week.</p>
   <div class="wordmark"><img src="../brand/kyntlo-logo-white.png" alt="Kyntlo"></div>
 </div>
 `));
@@ -545,20 +531,20 @@ ${extra || ''}`;
 
 // ---- TikTok A / YouTube A : the spreadsheet, founder register
 const sheetRows = [
-  ['Al Barsha Interiors', '23:04', null],
-  ['Marina Design Studio', '23:07', null],
-  ['JLT Fit-Out Contracting', '23:11', '09:41'],
-  ['Jumeirah Joinery', '23:14', null],
-  ['Business Bay Interiors', '23:18', '11:26'],
-  ['Deira Fit-Out Co.', '23:22', null],
-  ['Al Quoz Woodworks', '23:26', null],
-  ['Palm Interiors LLC', '23:31', '14:02']
+  ['01  Jumeirah', 'Form', null],
+  ['02  Al Barsha', 'Form', null],
+  ['03  Business Bay', 'None', null],
+  ['04  Dubai Marina', 'Form', null],
+  ['05  Deira', 'Calendar', 'ok'],
+  ['06  Al Quoz', 'Form', null],
+  ['07  JLT', 'None', null],
+  ['08  Downtown', 'Form', null]
 ];
 function sheet(highlightBlank) {
   return `<div class="sheet">
-    <div class="sh"><span>COMPANY</span><span>SUBMITTED</span><span>REPLIED</span></div>
-    ${sheetRows.map(([c, s, r]) => `<div class="sr${(!r && highlightBlank) ? ' hot' : ''}">
-      <span class="c">${c}</span><span class="t">${s}</span><span class="t${r ? '' : ' blank'}">${r || '—'}</span></div>`).join('')}
+    <div class="sh"><span>CLINIC</span><span>BOOKING</span><span></span></div>
+    ${sheetRows.map(([c, kind, ok]) => `<div class="sr${(!ok && highlightBlank) ? ' hot' : ''}">
+      <span class="c">${c}</span><span class="t${ok ? '' : ' blank'}">${kind}</span><span class="t"></span></div>`).join('')}
   </div>`;
 }
 const sheetCSS = `

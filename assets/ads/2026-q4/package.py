@@ -119,22 +119,17 @@ worth more than the leads.
 | Wait before judging an ad | 3× target CPL of spend |
 | Budget increase when scaling | +20%, every 3–5 days, never more |
 
-## One thing left to fill
+## Everything here ships today
 
-Four numbers come from the Day 0 timing run and are **not yet measured**. Any
-asset containing one renders it as a visible amber slot so an unmeasured
-figure cannot ship by accident:
+Every figure in every ad is measured. The 62-clinic audit — 62 checked by
+hand, 35 taking enquiries through a form, 18 with no booking mechanism, 8 with
+a real calendar, 1 whose site would not load while its ads ran — is the
+evidence base for the whole set, and both concepts are built from it.
 
-`N_TIMED` · `N_NEVER_REPLIED` · `MEDIAN_HOURS` · `FASTEST_MIN`
-
-Affected: the Tuesday Test (Meta + YouTube in-feed), the AED Number
-(LinkedIn), and the spreadsheet videos (TikTok + YouTube). Run Day 0 — one
-afternoon, roughly two hours — put the results in
-`07-REFERENCE/tokens.json`, and re-run the build.
-
-**Everything built on the 62-clinic audit ships today.** Those numbers are
-already measured: the whole carousel, 62 Clinics, both 11pm-lead videos, both
-Snapchat frames, both Google Business posts.
+That also makes the A/B test cleaner than it was. Concept A and concept B now
+carry **identical facts in opposite registers** — one as a person recounting
+an afternoon's work, one as a dataset. Nothing varies except the register, so
+whichever wins tells you something you can act on everywhere else.
 """
 
 MANUALS = {}
@@ -197,33 +192,40 @@ small budget returns nothing.
 
 Both go in **one ad set**, so they compete on equal footing.
 
-### Ad 1 — The Tuesday Test  ·  `ad-01-the-tuesday-test.png`
+### Ad 1 — The Hand Count  ·  `ad-01-the-hand-count.png`
 
-1080×1350. Deliberately looks like a phone screenshot rather than an ad — no
-logo on the image, no brand colour, no gradient. That is the concept, not an
-oversight. The Kyntlo mark sits in the caption strip, which is where a real
-post carries it.
+1080×1350. A notes-app screenshot of the audit as it was actually kept — 62
+clinics, each tagged by what its booking button does, with the tally pencilled
+at the bottom. No logo on the image, no brand colour, no gradient. That is the
+concept, not an oversight: it reads as something a person photographed off
+their own screen, because that is what it is.
+
+Areas are shown instead of clinic names. You are about to sell to these
+businesses, and naming them in an ad that criticises their booking flow is not
+how that conversation starts well.
 
 **Primary text**
 
 ```
-Last Tuesday I filled in the contact form on {{N_TIMED}} Dubai businesses that are running ads right now.
+I spent an afternoon opening the websites of 62 Dubai clinics that were running Instagram ads that week.
 
-Not to sell them anything. Just to see how long a reply took.
+Not to sell them anything. I wanted to see what happens after someone clicks.
 
-{{N_NEVER_REPLIED}} never replied at all. The median was {{MEDIAN_HOURS}} hours.
+35 have a "Book Now" button that opens a form. Several with a free-text date field — which means a person retypes every request by hand.
 
-Every one of those businesses is paying for the click that produced my enquiry. They just weren't there when it landed.
+18 have no booking mechanism at all. The button is a phone number.
 
-The gap isn't a lazy team. It's nights, weekends, lunch, and the forty minutes reception is with someone else.
+8 have a real calendar. Not one of those eight sits inside anything that sends a reminder or chases a no-show.
 
-I'll run the same test on your business, free. You keep the timestamps whether or not we ever speak again.
+One didn't load at all, while its ads were still running.
+
+I'll do the same for your clinic, free, and send you what I find within 24 hours. You keep the notes whether or not we ever speak again.
 
 — Kyntlo
 ```
 
-**Headline** (40 char) — `We timed {{N_TIMED}} Dubai businesses`
-**Description** (30 char) — `Free lead response report`
+**Headline** (40 char) — `I checked 62 Dubai clinics by hand`
+**Description** (30 char) — `Free booking audit`
 **Call to action** — Learn more
 
 ### Ad 2 — 62 Clinics  ·  `ad-02-62-clinics.png`
@@ -406,9 +408,9 @@ Kyntlo's price.
 ```
 A missed consultation costs between AED 1,500 and AED 5,000. Most owners can quote that number without thinking.
 
-Far fewer can quote how long their own enquiry form takes to get a reply.
+Far fewer can say what their own booking button actually does.
 
-We timed {{N_TIMED}} UAE businesses that were actively running ads. The median was {{MEDIAN_HOURS}} hours. {{N_NEVER_REPLIED}} never replied at all.
+We checked 62 UAE clinics advertising on Instagram, by hand. 35 take enquiries through a form — several with a free-text date field, so a person retypes every request. 18 have no booking mechanism at all. Only 8 have a real calendar, and not one of those sits inside anything that sends a reminder or chases a no-show.
 
 None of them had a slow team. They had a gap between a lead arriving and a human seeing it — nights, weekends, and the forty minutes reception is with someone else.
 
@@ -418,6 +420,8 @@ The report is yours either way.
 ```
 
 **Headline** (70 char) — `What one missed enquiry actually costs you`
+
+Every figure here is measured. This ad ships today.
 **Call to action** — Download
 
 ### Ad 2 — the document ad  ·  `document-ad-page-01..06.png`
@@ -531,13 +535,13 @@ Both are 1080×1920, narrated, with captions burned in.
 
 ### Ad 1 — Scrolling the Spreadsheet  ·  `ad-01-scrolling-the-spreadsheet.mp4`
 
-32.6s. A screen recording of the actual timing spreadsheet. No face, no studio.
-The blank cells in the reply column are the payoff.
+A screen recording of the audit sheet itself. No face, no studio. The column
+of "Form" entries is the payoff.
 
 **Ad text** (80 char max)
 
 ```
-{{N_TIMED}} Dubai businesses. One Tuesday. {{N_NEVER_REPLIED}} never replied.
+62 Dubai clinics. 35 have a form where a calendar should be.
 ```
 
 **Call to action** — Learn more
@@ -654,7 +658,7 @@ both to the channel, then reference them in the campaign.
 **Titles**
 
 ```
-I filled in {{N_TIMED}} Dubai contact forms in one afternoon
+I checked 62 Dubai clinic websites to see how you book
 ```
 ```
 Your ads run at 11pm. Your team doesn't.
@@ -663,7 +667,7 @@ Your ads run at 11pm. Your team doesn't.
 **Descriptions**
 
 ```
-{{N_NEVER_REPLIED}} never replied. Median reply {{MEDIAN_HOURS}} hours. We will run the same test on your business free — you keep the timestamps either way.
+35 take enquiries through a form. 18 have no booking at all. 8 have a real calendar, none connected to anything. We will check yours free and send what we find in 24 hours.
 ```
 ```
 The lead arrives at 23:04. The reply goes out at 09:12. A competitor answered at 23:06. We close that gap in 14 days on your existing numbers — free test first.
@@ -1002,7 +1006,7 @@ mood.**
 # ------------------------------------------------------------------- assemble
 LAYOUT = {
     '01-META': [
-        ('meta-a-tuesday-test.png', 'ad-01-the-tuesday-test.png'),
+        ('meta-a-the-hand-count.png', 'ad-01-the-hand-count.png'),
         ('meta-b-62-clinics.png', 'ad-02-62-clinics.png'),
         ('carousel-01.png', 'carousel-frame-01.png'),
         ('carousel-02.png', 'carousel-frame-02.png'),

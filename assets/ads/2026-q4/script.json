@@ -1,22 +1,70 @@
 {
   "tiktok-a-spreadsheet": [
-    {"cap": "Last Tuesday I filled in {{N_TIMED}} Dubai businesses' contact forms.", "vo": "Last Tuesday I filled in {N_TIMED} Dubai businesses' contact forms."},
-    {"cap": "Every one of them is running ads <em>right now</em>.", "vo": "Every one of them is running ads right now."},
-    {"cap": "Column two: submitted.<br>Column three: replied.", "vo": "Column two is when I submitted. Column three is when they replied."},
-    {"cap": "<em>{{N_NEVER_REPLIED}}</em> of them are still blank.", "vo": "{N_NEVER_REPLIED} of them are still blank."},
-    {"cap": "Every one paid for the click that sent me there.", "vo": "Every one paid for the click that sent me there."},
-    {"cap": "It isn't a slow team. It's 11pm, and Friday, and lunch.", "vo": "It isn't a slow team. It's eleven at night, and Friday, and lunch."},
-    {"cap": "I'll run the same test on yours. <em>Free.</em>", "vo": "I'll run the same test on yours. Free."},
-    {"cap": "You keep the timestamps either way.", "vo": "You keep the timestamps either way."}
+    {
+      "cap": "I opened the websites of <em>62 Dubai clinics</em> running ads that week.",
+      "vo": "I opened the websites of sixty two Dubai clinics that were running ads that week."
+    },
+    {
+      "cap": "Not to sell them anything. Just to see how you book.",
+      "vo": "Not to sell them anything. Just to see how you book."
+    },
+    {
+      "cap": "Column two is what the “Book Now” button actually does.",
+      "vo": "Column two is what the Book Now button actually does."
+    },
+    {
+      "cap": "<em>35</em> of them: a form, not a calendar.",
+      "vo": "Thirty five of them: a form, not a calendar."
+    },
+    {
+      "cap": "<em>18</em> have no booking mechanism at all.",
+      "vo": "Eighteen have no booking mechanism at all."
+    },
+    {
+      "cap": "<em>8</em> have a real calendar — none of them connected to anything.",
+      "vo": "Eight have a real calendar. None of them connected to anything."
+    },
+    {
+      "cap": "Every one of the 62 was paying for clicks that week.",
+      "vo": "Every one of the sixty two was paying for clicks that week."
+    },
+    {
+      "cap": "I'll check yours. <em>Free</em>, in 24 hours.",
+      "vo": "I'll check yours. Free, in twenty four hours."
+    }
   ],
   "tiktok-b-11pm-lead": [
-    {"cap": "23:04 — the lead arrives.", "vo": "Eleven oh four at night. The lead arrives."},
-    {"cap": "The office is closed.", "vo": "The office is closed."},
-    {"cap": "09:12 — somebody replies.", "vo": "Nine twelve the next morning. Somebody replies."},
-    {"cap": "<em>Ten hours</em> later.", "vo": "Ten hours later."},
-    {"cap": "The same enquiry went to three other companies.", "vo": "The same enquiry went to three other companies."},
-    {"cap": "One of them answered at <em>23:06</em>.", "vo": "One of them answered at eleven oh six."},
-    {"cap": "Your ads run at 11pm. <em>Your team doesn't.</em>", "vo": "Your ads run at eleven at night. Your team doesn't."},
-    {"cap": "We close that gap in 14 days. Start with the free report.", "vo": "We close that gap in fourteen days. Start with the free report."}
+    {
+      "cap": "23:04 — the lead arrives.",
+      "vo": "Eleven oh four at night. The lead arrives."
+    },
+    {
+      "cap": "The office is closed.",
+      "vo": "The office is closed."
+    },
+    {
+      "cap": "09:12 — somebody replies.",
+      "vo": "Nine twelve the next morning. Somebody replies."
+    },
+    {
+      "cap": "<em>Ten hours</em> later.",
+      "vo": "Ten hours later."
+    },
+    {
+      "cap": "The same enquiry went to three other companies.",
+      "vo": "The same enquiry went to three other companies."
+    },
+    {
+      "cap": "One of them answered at <em>23:06</em>.",
+      "vo": "One of them answered at eleven oh six."
+    },
+    {
+      "cap": "Your ads run at 11pm. <em>Your team doesn't.</em>",
+      "vo": "Your ads run at eleven at night. Your team doesn't."
+    },
+    {
+      "cap": "We close that gap in 14 days. Start with the free report.",
+      "vo": "We close that gap in fourteen days. Start with the free report."
+    }
   ]
 }

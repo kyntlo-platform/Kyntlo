@@ -49,13 +49,13 @@ Both are 1080×1920, narrated, with captions burned in.
 
 ### Ad 1 — Scrolling the Spreadsheet  ·  `ad-01-scrolling-the-spreadsheet.mp4`
 
-32.6s. A screen recording of the actual timing spreadsheet. No face, no studio.
-The blank cells in the reply column are the payoff.
+A screen recording of the audit sheet itself. No face, no studio. The column
+of "Form" entries is the payoff.
 
 **Ad text** (80 char max)
 
 ```
-{{N_TIMED}} Dubai businesses. One Tuesday. {{N_NEVER_REPLIED}} never replied.
+62 Dubai clinics. 35 have a form where a calendar should be.
 ```
 
 **Call to action** — Learn more
