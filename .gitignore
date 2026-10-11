@@ -4,3 +4,4 @@
 vo-run.log
 dist/
 *.zip
+__pycache__/
