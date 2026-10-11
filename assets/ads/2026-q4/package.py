@@ -72,7 +72,9 @@ where to build the ad, what to select, what to paste and what to watch.
 | `06-GOOGLE-BUSINESS` | Business Profile | organic | 2 square profile posts |
 | `07-REFERENCE` | — | — | Voiceover script, build files, how to regenerate |
 
-**Read `00-BUDGET-20K-EGP.md` first.** At 20,000 EGP a month only Meta and
+**Read `00-RUN-THIS-CAMPAIGN.md` first** — it is the whole campaign at
+20,000 EGP a month, executable as written, with nothing left to decide.
+`00-BUDGET-20K-EGP.md` sits behind it and explains the allocation. At 20,000 EGP a month only Meta and
 Google Business are actually runnable — every other platform's own daily
 minimum is higher than its share of the budget, and TikTok's is higher than
 the entire budget. The spend shares in the table above are the full-plan
@@ -1042,6 +1044,7 @@ LAYOUT = {
 
 PKG.mkdir(parents=True)
 (PKG / '00-START-HERE.md').write_text(START)
+shutil.copy2(ROOT / 'CAMPAIGN.md', PKG / '00-RUN-THIS-CAMPAIGN.md')
 shutil.copy2(ROOT / 'BUDGET.md', PKG / '00-BUDGET-20K-EGP.md')
 
 missing = []
