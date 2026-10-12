@@ -5,5 +5,7 @@ vo-run.log
 dist/
 *.zip
 __pycache__/
-assets/ads/2026-q4/kyntlo-brand-film.mp4
-assets/ads/2026-q4/kyntlo-brand-film-poster.png
+# rendered video: the push path available here is text-only, so these
+# are regenerated from the scripts rather than committed
+assets/ads/2026-q4/kyntlo-*.mp4
+assets/ads/2026-q4/kyntlo-*-poster.png
