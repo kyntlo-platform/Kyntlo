@@ -108,5 +108,173 @@
       "sub": "Booking, reminders and recall in one place.",
       "vo": "Kyntlo. Booking, reminders and recall in one place."
     }
+  ],
+  "ad-a-uae": [
+    {
+      "cap": "7:41 PM",
+      "sub": "A new patient calls your clinic.",
+      "vo": "Seven forty one PM. A new patient calls your clinic."
+    },
+    {
+      "cap": "Nobody<br>picks up.",
+      "sub": "",
+      "vo": "Nobody picks up."
+    },
+    {
+      "cap": "Seconds later,<br>Kyntlo replies.",
+      "sub": "On WhatsApp. Automatically.",
+      "vo": "Seconds later, Kyntlo answers them on WhatsApp."
+    },
+    {
+      "cap": "It answers<br>the question.",
+      "sub": "AI that knows your services, hours and prices.",
+      "vo": "The AI answers their question."
+    },
+    {
+      "cap": "Checks your<br>calendar.",
+      "sub": "Live availability. No double bookings.",
+      "vo": "Checks your calendar."
+    },
+    {
+      "cap": "Books<br>Thursday.",
+      "sub": "Confirmed, with reminders already scheduled.",
+      "vo": "Books them in for Thursday."
+    },
+    {
+      "cap": "You find out<br>in the morning.",
+      "sub": "",
+      "vo": "You find out in the morning."
+    },
+    {
+      "cap": "__LOGO__",
+      "sub": "It answers when you can't.",
+      "vo": "Kyntlo. It answers when you can't."
+    }
+  ],
+  "ad-a-usa": [
+    {
+      "cap": "7:41 PM",
+      "sub": "A new customer calls your business.",
+      "vo": "Seven forty one PM. A new customer calls your business."
+    },
+    {
+      "cap": "You're on<br>a job.",
+      "sub": "Nobody picks up.",
+      "vo": "You're on a job. Nobody picks up."
+    },
+    {
+      "cap": "Seconds later,<br>Kyntlo texts back.",
+      "sub": "Missed-call text-back, automatically.",
+      "vo": "Seconds later, Kyntlo texts them back."
+    },
+    {
+      "cap": "It answers<br>the question.",
+      "sub": "AI that knows your services, hours and pricing.",
+      "vo": "The AI answers their question."
+    },
+    {
+      "cap": "Checks your<br>calendar.",
+      "sub": "Live availability. No double bookings.",
+      "vo": "Checks your calendar."
+    },
+    {
+      "cap": "Books<br>Thursday.",
+      "sub": "Confirmed, with reminders already scheduled.",
+      "vo": "Books them for Thursday."
+    },
+    {
+      "cap": "You find out<br>in the morning.",
+      "sub": "",
+      "vo": "You find out in the morning."
+    },
+    {
+      "cap": "__LOGO__",
+      "sub": "It answers when you can't.",
+      "vo": "Kyntlo. It answers when you can't."
+    }
+  ],
+  "ad-b-uae": [
+    {
+      "cap": "WhatsApp.",
+      "sub": "",
+      "vo": "WhatsApp."
+    },
+    {
+      "cap": "Instagram.<br>Email.<br>Two spreadsheets.",
+      "sub": "",
+      "vo": "Instagram. Email. Two spreadsheets."
+    },
+    {
+      "cap": "That's not<br>a business.",
+      "sub": "That's a scavenger hunt.",
+      "vo": "That's not a business. That's a scavenger hunt."
+    },
+    {
+      "cap": "One inbox.",
+      "sub": "Every message from every channel, in one thread per customer.",
+      "vo": "Kyntlo puts every channel in one inbox."
+    },
+    {
+      "cap": "Replies that<br>send themselves.",
+      "sub": "Follow-ups, reminders, and no-show chasing — automatic.",
+      "vo": "Replies that send themselves. Reminders that chase the no-shows."
+    },
+    {
+      "cap": "Pipeline.<br>Invoices.<br>Reviews.",
+      "sub": "Same screen.",
+      "vo": "Pipeline, invoices and reviews on the same screen."
+    },
+    {
+      "cap": "One login.<br>Nothing lost.",
+      "sub": "",
+      "vo": "One login. Nothing falls through."
+    },
+    {
+      "cap": "__LOGO__",
+      "sub": "Booking, reminders and recall in one place.",
+      "vo": "Kyntlo. Booking, reminders and recall in one place."
+    }
+  ],
+  "ad-b-usa": [
+    {
+      "cap": "Texts.",
+      "sub": "",
+      "vo": "Texts."
+    },
+    {
+      "cap": "DMs.<br>Voicemails.<br>A notepad.",
+      "sub": "",
+      "vo": "DMs. Voicemails. A notepad."
+    },
+    {
+      "cap": "That's not<br>a business.",
+      "sub": "That's a scavenger hunt.",
+      "vo": "That's not a business. That's a scavenger hunt."
+    },
+    {
+      "cap": "One inbox.",
+      "sub": "Every message from every channel, in one thread per customer.",
+      "vo": "Kyntlo puts every channel in one inbox."
+    },
+    {
+      "cap": "Replies that<br>send themselves.",
+      "sub": "Follow-ups, reminders, and no-show chasing — automatic.",
+      "vo": "Replies that send themselves. Reminders that chase the no-shows."
+    },
+    {
+      "cap": "Pipeline.<br>Invoices.<br>Reviews.",
+      "sub": "Same screen.",
+      "vo": "Pipeline, invoices and reviews on the same screen."
+    },
+    {
+      "cap": "One login.<br>Nothing lost.",
+      "sub": "",
+      "vo": "One login. Nothing falls through."
+    },
+    {
+      "cap": "__LOGO__",
+      "sub": "Booking, reminders and recall in one place.",
+      "vo": "Kyntlo. Booking, reminders and recall in one place."
+    }
   ]
 }
