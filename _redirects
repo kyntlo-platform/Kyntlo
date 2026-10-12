@@ -8,6 +8,7 @@
 /faq.html /faq 301
 /funnels.html /funnels 301
 /get-started.html /get-started 301
+/launch-offer.html /launch-offer 301
 /login.html /login 301
 /package-starter.html /package-starter 301
 /package-growth.html /package-growth 301
@@ -30,6 +31,7 @@
 /faq /faq.html 200
 /funnels /funnels.html 200
 /get-started /get-started.html 200
+/launch-offer /launch-offer.html 200
 /login /login.html 200
 /package-starter /package-starter.html 200
 /package-growth /package-growth.html 200
