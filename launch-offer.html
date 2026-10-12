@@ -196,6 +196,7 @@
         .plan__price s { color: var(--muted); font-size: 1.15rem; text-decoration-color: var(--brand-hot); }
         .plan__price strong { font-family: var(--font-display); font-size: 3rem; letter-spacing: -0.045em; line-height: 1; }
         .plan__price span { color: var(--muted); }
+        .plan__tax { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
         .plan__billing { font-size: 0.82rem; color: var(--muted); margin-bottom: 24px; }
         .plan__billing b { color: var(--green); font-weight: 700; }
         .plan ul { list-style: none; display: grid; gap: 11px; margin-bottom: 30px; }
@@ -380,7 +381,7 @@
                             <div class="stat"><dt>Due today</dt><dd>$0</dd></div>
                         </dl>
                         <div class="calc__foot">
-                            <p class="calc__fine">The exact price you'll see at checkout, billed once for the quarter after your 14-day trial. Excludes taxes and usage-based costs.</p>
+                            <p class="calc__fine">Charged once for your first 3 months when the 14-day trial ends. Plus taxes, which are shown at checkout.</p>
                             <a href="checkout.html?package=growth&amp;billing=quarterly" class="btn btn-primary" data-out="href"><span>Start free on <span data-out="name">Growth</span></span> <span class="arrow" aria-hidden="true">→</span></a>
                         </div>
                     </div>
@@ -474,13 +475,14 @@
                 <div class="section-head center reveal">
                     <p class="kicker">Limited time · Every package qualifies</p>
                     <h2 id="plans-title" class="section-title">Choose your plan, <span class="text-gradient">pay half</span></h2>
-                    <p class="section-sub">Launch pricing applies to quarterly billing on Starter, Growth and Pro. Telecom and AI usage is billed separately at wholesale rates.</p>
+                    <p class="section-sub">Launch pricing applies to quarterly billing on Starter, Growth and Pro. All prices are plus taxes, which are shown at checkout.</p>
                 </div>
                 <div class="plans">
                     <article class="plan reveal">
                         <h3>Starter</h3>
                         <p class="plan__desc">Launch CRM, booking, and lead capture.</p>
                         <div class="plan__price"><s>$90</s><strong>$45</strong><span>/mo</span></div>
+                        <p class="plan__tax">Plus taxes</p>
                         <p class="plan__billing">$135 for your first quarter · <b>save $135</b></p>
                         <ul>
                             <li>CRM contacts and opportunities</li>
@@ -495,6 +497,7 @@
                         <h3>Growth</h3>
                         <p class="plan__desc">Automate follow-up and convert more bookings.</p>
                         <div class="plan__price"><s>$270</s><strong>$135</strong><span>/mo</span></div>
+                        <p class="plan__tax">Plus taxes</p>
                         <p class="plan__billing">$405 for your first quarter · <b>save $405</b></p>
                         <ul>
                             <li>Everything in Starter</li>
@@ -510,6 +513,7 @@
                         <h3>Pro</h3>
                         <p class="plan__desc">Unlimited AI, reviews, analytics, and reactivation in one growth system.</p>
                         <div class="plan__price"><s>$490</s><strong>$245</strong><span>/mo</span></div>
+                        <p class="plan__tax">Plus taxes</p>
                         <p class="plan__billing">$735 for your first quarter · <b>save $735</b></p>
                         <ul>
                             <li>Everything in Growth</li>
@@ -535,7 +539,7 @@
                 <div class="faq reveal">
                     <details open>
                         <summary>What exactly is discounted?</summary>
-                        <p>Your first quarter (three months) on the Starter, Growth or Pro package is 50% off when you choose quarterly billing. The discount covers the package subscription. Usage-based costs such as SMS, calls, email sending and AI messages are billed separately at wholesale rates.</p>
+                        <p>Your first quarter (three months) on the Starter, Growth or Pro package is 50% off when you choose quarterly billing. The discount covers the package subscription. Taxes are added and shown at checkout, and usage-based costs such as SMS, calls, email sending and AI messages are billed separately at wholesale rates.</p>
                     </details>
                     <details>
                         <summary>Do I need a promo code?</summary>
