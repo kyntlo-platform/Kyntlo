@@ -164,8 +164,8 @@
                                 ${billingKey === "quarterly" ? '<span class="price-save">SAVE 50%</span>' : ""}
                             </div>
                             <p class="checkout-note">${billingKey === "quarterly"
-                                ? usd(quarterTotal) + " billed today for 3 months, then the package renews at " + usd(plan.monthly) + "/mo plus taxes."
-                                : usd(plan.monthly) + " billed monthly, plus taxes. Cancel anytime."}</p>
+                                ? usd(quarterTotal) + " charged once for 3 months after your 14-day free trial, then the package renews at " + usd(plan.monthly) + "/mo plus taxes."
+                                : usd(plan.monthly) + " charged monthly after your 14-day free trial, plus taxes. Cancel anytime."}</p>
                             <ul class="checkout-list">
                                 ${plan.highlights.map((item) => "<li>" + item + "</li>").join("")}
                             </ul>
