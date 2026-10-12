@@ -38,6 +38,7 @@ GEMINI_VOICE = os.environ.get('GEMINI_TTS_VOICE', 'Charon')
 # Free tier allows 3 requests a minute, so the whole script takes a few
 # minutes. Raise GEMINI_TTS_RPM on a paid key.
 GEMINI_RPM = float(os.environ.get('GEMINI_TTS_RPM', '3'))
+NO_STYLE = bool(os.environ.get('VO_NO_STYLE'))
 MIN_GAP = 60.0 / max(GEMINI_RPM, 0.1) + 1.0
 _last_call = [0.0]
 
@@ -255,7 +256,12 @@ def main():
             if source == vid:
                 print('  [%d/%d] %s' % (i, len(lines), vid), flush=True)
                 try:
-                    synth(spoken(line), wav, STYLE.get(vid, ''))
+                    # The 3.8 TTS family narrates the direction instead of
+                    # acting on it, whatever boundary the prompt draws. For
+                    # those models send the line bare: an undirected read that
+                    # is correct beats a directed one that reads the brief out.
+                    synth(spoken(line), wav,
+                          '' if NO_STYLE else STYLE.get(vid, ''))
                 except QuotaExhausted:
                     print('    daily quota reached — %s left for the next run'
                           % vid, flush=True)
