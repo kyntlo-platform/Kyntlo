@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Offer: 50% Off Your First 3 Months | Kyntlo</title>
+    <meta name="description" content="Kyntlo's limited-time launch offer: 50% off your first quarter on any package, after a 14-day free trial. CRM, funnels, booking, omnichannel inbox and AI automation in one platform.">
+    <link rel="canonical" href="https://kyntlo.ai/launch-offer/">
+    <meta property="og:title" content="Kyntlo Launch Offer: 50% off your first 3 months">
+    <meta property="og:description" content="Try Kyntlo free for 14 days, then get your first quarter at half price. For a limited time only.">
+    <meta property="og:url" content="https://kyntlo.ai/launch-offer/">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="/assets/site-shell.css?v=20260829" rel="stylesheet">
+    <script src="/assets/site-shell.js?v=20260829" defer></script>
+    <style>
+        :root {
+            --bg: #07050f;
+            --bg-2: #0d0919;
+            --text: #f5f3fa;
+            --muted: #a49fb8;
+            --line: rgba(255, 255, 255, 0.09);
+            --glass: rgba(255, 255, 255, 0.04);
+            --brand-pink: #f20089;
+            --brand-purple: #6d00c1;
+            --brand-hot: #ff1aa3;
+            --green: #35e0a1;
+            --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+            --gradient-animated: linear-gradient(-45deg, #f20089, #6d00c1, #ff1aa3, #851ada);
+            /* Text needs more contrast than the decorative gradient: #6d00c1 is 2.33:1 on the dark ground. */
+            --gradient-text: linear-gradient(-45deg, #f20089, #b06bff, #ff1aa3, #b06bff);
+            --font-display: 'Space Grotesk', 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+        .text-gradient { background: var(--gradient-text); background-size: 300% 300%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shiftBg 7s ease infinite; }
+        @keyframes shiftBg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes ping { 75%, 100% { box-shadow: 0 0 0 10px rgba(255, 26, 163, 0); } 0% { box-shadow: 0 0 0 0 rgba(255, 26, 163, 0.7); } }
+        @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes sheen { 0%, 70% { transform: translateX(-120%) skewX(-18deg); } 100% { transform: translateX(320%) skewX(-18deg); } }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        .kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-hot); margin-bottom: 18px; }
+        .kicker::before { content: ''; width: 22px; height: 2px; background: var(--gradient-kinetic); border-radius: 2px; }
+        .section { padding: 120px 0; position: relative; }
+        .section-head { max-width: 720px; margin-bottom: 56px; }
+        .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+        .section-head.center .kicker { justify-content: center; }
+        .section-title { font-family: var(--font-display); font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.08; letter-spacing: -0.035em; font-weight: 700; margin-bottom: 18px; }
+        .section-sub { color: var(--muted); font-size: 1.12rem; line-height: 1.75; }
+
+        .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 17px 30px; border-radius: 14px; font-weight: 700; font-size: 1rem; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background-color 0.3s var(--ease); overflow: hidden; }
+        .btn-primary { background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 5s ease infinite; color: #fff; box-shadow: 0 18px 40px rgba(242, 0, 137, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25); }
+        .btn-primary::after { content: ''; position: absolute; top: 0; left: 0; width: 34%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent); animation: sheen 4.5s ease-in-out infinite; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 26px 54px rgba(242, 0, 137, 0.48); }
+        .btn-ghost { background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.16); color: var(--text); }
+        .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-3px); }
+        .btn .arrow { transition: transform 0.3s var(--ease); }
+        .btn:hover .arrow { transform: translateX(4px); }
+        .btn:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--brand-hot); outline-offset: 3px; }
+
+        /* ---------- Hero ---------- */
+        .hero { position: relative; padding: 110px 0 100px; overflow: hidden; }
+        .hero__bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+        .hero__bg span { position: absolute; border-radius: 50%; filter: blur(110px); opacity: 0.42; }
+        .hero__bg span:nth-child(1) { width: 560px; height: 560px; background: var(--brand-pink); top: -180px; right: -120px; }
+        .hero__bg span:nth-child(2) { width: 520px; height: 520px; background: var(--brand-purple); bottom: -240px; left: -160px; }
+        .hero__grid-lines { position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse at 50% 40%, #000 20%, transparent 72%); -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000 20%, transparent 72%); }
+        .hero__layout { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center; }
+        .hero__badge { display: inline-flex; align-items: center; gap: 10px; padding: 9px 18px; border-radius: 999px; background: rgba(242, 0, 137, 0.1); border: 1px solid rgba(242, 0, 137, 0.35); font-family: var(--font-mono); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #ffb3dc; margin-bottom: 28px; }
+        .hero__badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-hot); animation: ping 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        .hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5.4vw, 4.4rem); line-height: 1.02; letter-spacing: -0.045em; font-weight: 700; margin-bottom: 26px; }
+        .hero h1 .strike { position: relative; display: inline-block; color: var(--muted); }
+        .hero h1 .strike::after { content: ''; position: absolute; left: -4%; right: -4%; top: 54%; height: 0.09em; background: var(--brand-hot); border-radius: 4px; transform: rotate(-6deg) scaleX(0); transform-origin: left; animation: strikeIn 0.7s var(--ease) 0.6s forwards; }
+        @keyframes strikeIn { to { transform: rotate(-6deg) scaleX(1); } }
+        .hero .lead { color: var(--muted); font-size: 1.18rem; line-height: 1.75; max-width: 560px; margin-bottom: 36px; }
+        .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+        .hero__assurances { display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--muted); font-size: 0.9rem; }
+        .hero__assurances span { display: inline-flex; align-items: center; gap: 8px; }
+        .hero__assurances span::before { content: '✓'; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: rgba(53, 224, 161, 0.14); color: var(--green); font-size: 0.7rem; font-weight: 800; }
+
+        /* Ticket */
+        .ticket-stage { perspective: 1200px; display: grid; place-items: center; }
+        .ticket { --rx: 0deg; --ry: 0deg; --gx: 50%; --gy: 50%; position: relative; width: min(100%, 440px); display: grid; grid-template-rows: auto auto; border-radius: 28px; transform: rotateX(var(--rx)) rotateY(var(--ry)); transform-style: preserve-3d; transition: transform 0.5s var(--ease); animation: floaty 7s ease-in-out infinite; filter: drop-shadow(0 40px 70px rgba(109, 0, 193, 0.45)); }
+        .ticket.is-tracking { animation-play-state: paused; transition: transform 0.12s linear; }
+        .ticket__top { position: relative; padding: 34px 34px 30px; border-radius: 28px 28px 0 0; background: var(--gradient-animated); background-size: 240% 240%; animation: shiftBg 8s ease infinite; overflow: hidden; color: #fff; }
+        .ticket__top::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at var(--gx) var(--gy), rgba(255, 255, 255, 0.35), transparent 45%); mix-blend-mode: overlay; pointer-events: none; }
+        .ticket__top::after { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.06) 0 2px, transparent 2px 14px); pointer-events: none; }
+        .ticket__label { position: relative; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.92; margin-bottom: 18px; }
+        .ticket__big { position: relative; font-family: var(--font-display); font-weight: 700; font-size: clamp(5.4rem, 13vw, 7.6rem); line-height: 0.86; letter-spacing: -0.06em; display: flex; align-items: flex-start; gap: 6px; }
+        .ticket__big small { font-size: 0.34em; line-height: 1; margin-top: 0.22em; letter-spacing: -0.02em; }
+        .ticket__big small em { display: block; font-style: normal; font-size: 0.62em; letter-spacing: 0.04em; opacity: 0.9; margin-top: 4px; }
+        .ticket__sub { position: relative; margin-top: 14px; font-weight: 600; font-size: 1.05rem; }
+        .ticket__perf { position: relative; height: 0; border-top: 2px dashed rgba(255, 255, 255, 0.28); margin: 0 22px; z-index: 2; }
+        .ticket__perf::before, .ticket__perf::after { content: ''; position: absolute; top: -15px; width: 28px; height: 28px; border-radius: 50%; background: var(--bg); }
+        .ticket__perf::before { left: -37px; }
+        .ticket__perf::after { right: -37px; }
+        .ticket__bottom { padding: 26px 34px 30px; border-radius: 0 0 28px 28px; background: #140d24; border: 1px solid rgba(255, 255, 255, 0.08); border-top: 0; display: grid; gap: 14px; }
+        .ticket__row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 0.94rem; color: var(--muted); }
+        .ticket__row strong { color: var(--text); font-family: var(--font-display); font-size: 1.04rem; }
+        .ticket__row .was { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--brand-hot); margin-right: 8px; font-weight: 500; }
+        .ticket__code { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding: 12px 16px; border-radius: 12px; border: 1px dashed rgba(255, 26, 163, 0.45); background: rgba(242, 0, 137, 0.07); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; color: #ffb3dc; }
+        .ticket__code b { color: var(--green); letter-spacing: 0.04em; }
+        .ticket__barcode { height: 34px; border-radius: 4px; background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0 2px, transparent 2px 5px, rgba(255, 255, 255, 0.55) 5px 6px, transparent 6px 9px, rgba(255, 255, 255, 0.55) 9px 12px, transparent 12px 14px); opacity: 0.35; }
+
+        /* ---------- Marquee ---------- */
+        .marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.015); overflow: hidden; padding: 20px 0; }
+        .marquee__track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
+        .marquee__track span { display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; white-space: nowrap; color: #d9d4ea; }
+        .marquee__track span::after { content: '✦'; color: var(--brand-hot); font-size: 0.85rem; }
+
+        /* ---------- Calculator ---------- */
+        .calc { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: stretch; }
+        .calc__picker { display: grid; gap: 14px; align-content: start; }
+        .plan-option { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; width: 100%; padding: 22px 22px; border-radius: 18px; border: 1px solid var(--line); background: var(--glass); color: var(--text); font: inherit; text-align: left; cursor: pointer; transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease), transform 0.3s var(--ease); }
+        .plan-option:hover { transform: translateX(4px); border-color: rgba(255, 255, 255, 0.2); }
+        .plan-option[aria-checked="true"] { border-color: rgba(242, 0, 137, 0.6); background: linear-gradient(135deg, rgba(242, 0, 137, 0.12), rgba(109, 0, 193, 0.12)); }
+        .plan-option__radio { width: 22px; height: 22px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.3); display: grid; place-items: center; transition: border-color 0.3s; }
+        .plan-option__radio::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--gradient-kinetic); transform: scale(0); transition: transform 0.3s var(--ease); }
+        .plan-option[aria-checked="true"] .plan-option__radio { border-color: var(--brand-hot); }
+        .plan-option[aria-checked="true"] .plan-option__radio::after { transform: scale(1); }
+        .plan-option__name { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .plan-option__name small { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: var(--gradient-kinetic); color: #fff; }
+        .plan-option__desc { display: block; color: var(--muted); font-size: 0.88rem; margin-top: 2px; }
+        .plan-option__price { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; text-align: right; white-space: nowrap; }
+        .plan-option__price s { display: block; color: var(--muted); font-weight: 500; font-size: 0.82rem; text-decoration-color: var(--brand-hot); }
+
+        .calc__result { position: relative; padding: 38px; border-radius: 26px; border: 1px solid rgba(255, 255, 255, 0.1); background: radial-gradient(circle at 100% 0%, rgba(242, 0, 137, 0.18), transparent 50%), radial-gradient(circle at 0% 100%, rgba(109, 0, 193, 0.22), transparent 55%), var(--bg-2); overflow: hidden; display: flex; flex-direction: column; }
+        .calc__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 26px; }
+        .calc__head h3 { font-family: var(--font-display); font-size: 1.25rem; }
+        .calc__chip { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: rgba(53, 224, 161, 0.14); color: var(--green); border: 1px solid rgba(53, 224, 161, 0.3); white-space: nowrap; }
+        .calc__bars { display: grid; gap: 18px; margin-bottom: 30px; }
+        .bar__meta { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--muted); margin-bottom: 8px; }
+        .bar__meta strong { color: var(--text); font-family: var(--font-display); font-size: 1rem; }
+        .bar__track { height: 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.06); overflow: hidden; }
+        .bar__fill { height: 100%; border-radius: inherit; width: 100%; transition: width 0.8s var(--ease); }
+        .bar--standard .bar__fill { background: rgba(255, 255, 255, 0.28); }
+        .bar--launch .bar__fill { width: 50%; background: var(--gradient-animated); background-size: 220% 220%; animation: shiftBg 5s ease infinite; }
+        .calc__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+        .stat { padding: 18px 16px; border-radius: 16px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); }
+        .stat dt { font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
+        .stat dd { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.35rem, 2.6vw, 1.85rem); letter-spacing: -0.03em; }
+        .stat--save dd { color: var(--green); }
+        .calc__foot { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+        .calc__fine { color: var(--muted); font-size: 0.82rem; max-width: 300px; }
+
+        /* ---------- Timeline ---------- */
+        .timeline { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .timeline::before { content: ''; position: absolute; top: 33px; left: 8%; right: 8%; height: 2px; background: linear-gradient(90deg, var(--brand-pink), var(--brand-purple), rgba(255, 255, 255, 0.15)); }
+        .step { position: relative; text-align: center; padding: 0 10px; }
+        .step__node { position: relative; z-index: 1; width: 68px; height: 68px; margin: 0 auto 26px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; background: var(--bg); border: 2px solid rgba(242, 0, 137, 0.55); box-shadow: 0 0 0 8px var(--bg), 0 0 36px rgba(242, 0, 137, 0.35); }
+        .step:last-child .step__node { border-color: rgba(255, 255, 255, 0.25); box-shadow: 0 0 0 8px var(--bg); }
+        .step__when { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-hot); margin-bottom: 8px; }
+        .step:last-child .step__when { color: var(--muted); }
+        .step h3 { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: -0.02em; margin-bottom: 10px; }
+        .step p { color: var(--muted); font-size: 0.98rem; max-width: 320px; margin: 0 auto; }
+        .step__price { display: inline-block; margin-top: 16px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--glass); font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; }
+
+        /* ---------- Replace ---------- */
+        .replace { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: stretch; }
+        .stack { padding: 34px; border-radius: 24px; border: 1px solid var(--line); background: var(--glass); }
+        .stack h3, .engine h3 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; }
+        .stack__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+        .stack__item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); font-size: 0.86rem; color: #cfc9df; transition: opacity 0.4s, transform 0.4s var(--ease); }
+        .stack__item img { width: 22px; height: 22px; object-fit: contain; border-radius: 5px; background: #fff; padding: 2px; flex: none; }
+        .stack__item i { font-style: normal; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 5px; background: rgba(255, 255, 255, 0.1); font-size: 0.7rem; font-weight: 800; flex: none; }
+        .stack__item s { text-decoration-color: rgba(255, 26, 163, 0.8); }
+        .stack__total { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; padding-top: 18px; border-top: 1px dashed rgba(255, 255, 255, 0.14); color: var(--muted); }
+        .stack__total strong { font-family: var(--font-display); font-size: 1.6rem; color: var(--text); text-decoration: line-through; text-decoration-color: var(--brand-hot); }
+        .engine { position: relative; padding: 34px; border-radius: 24px; border: 1px solid rgba(242, 0, 137, 0.4); background: linear-gradient(160deg, rgba(242, 0, 137, 0.16), rgba(109, 0, 193, 0.16)), var(--bg-2); display: flex; flex-direction: column; overflow: hidden; }
+        .engine__logo { width: 54px; height: 54px; border-radius: 14px; margin-bottom: 18px; box-shadow: 0 12px 30px rgba(242, 0, 137, 0.35); }
+        .engine ul { list-style: none; display: grid; gap: 10px; margin-bottom: 26px; }
+        .engine li { display: flex; gap: 10px; font-size: 0.95rem; color: #ddd7ec; }
+        .engine li::before { content: '✦'; color: var(--brand-hot); }
+        .engine__price { margin-top: auto; }
+        .engine__price span { display: block; color: var(--muted); font-size: 0.85rem; }
+        .engine__price strong { font-family: var(--font-display); font-size: 2.8rem; letter-spacing: -0.04em; line-height: 1.1; }
+        .engine__price strong small { font-size: 1rem; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+
+        /* ---------- Plans ---------- */
+        .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
+        .plan { position: relative; display: flex; flex-direction: column; padding: 34px 30px; border-radius: 24px; border: 1px solid var(--line); background: var(--glass); transition: transform 0.4s var(--ease), border-color 0.4s; }
+        .plan:hover { transform: translateY(-6px); border-color: rgba(255, 255, 255, 0.2); }
+        .plan--featured { border-color: rgba(242, 0, 137, 0.5); background: linear-gradient(180deg, rgba(242, 0, 137, 0.1), rgba(109, 0, 193, 0.05) 60%), var(--bg-2); box-shadow: 0 30px 70px rgba(109, 0, 193, 0.25); }
+        .plan__flag { position: absolute; top: -14px; left: 30px; padding: 6px 14px; border-radius: 999px; background: var(--gradient-kinetic); font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+        .plan h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 4px; }
+        .plan__desc { color: var(--muted); font-size: 0.93rem; min-height: 3em; margin-bottom: 22px; }
+        .plan__price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+        .plan__price s { color: var(--muted); font-size: 1.15rem; text-decoration-color: var(--brand-hot); }
+        .plan__price strong { font-family: var(--font-display); font-size: 3rem; letter-spacing: -0.045em; line-height: 1; }
+        .plan__price span { color: var(--muted); }
+        .plan__tax { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+        .plan__billing { font-size: 0.82rem; color: var(--muted); margin-bottom: 24px; }
+        .plan__billing b { color: var(--green); font-weight: 700; }
+        .plan ul { list-style: none; display: grid; gap: 11px; margin-bottom: 30px; }
+        .plan li { display: flex; gap: 10px; font-size: 0.94rem; color: #ddd7ec; }
+        .plan li::before { content: '✓'; flex: none; display: grid; place-items: center; width: 20px; height: 20px; margin-top: 2px; border-radius: 50%; background: rgba(242, 0, 137, 0.16); color: var(--brand-hot); font-size: 0.68rem; font-weight: 800; }
+        .plan .btn { margin-top: auto; width: 100%; }
+        .plans__note { text-align: center; color: var(--muted); font-size: 0.92rem; margin-top: 30px; }
+        .plans__note a { color: #ffb3dc; border-bottom: 1px solid rgba(255, 179, 220, 0.4); }
+
+        /* ---------- FAQ ---------- */
+        .faq { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; border: 1px solid var(--line); background: var(--glass); transition: border-color 0.3s, background-color 0.3s; }
+        .faq details[open] { border-color: rgba(242, 0, 137, 0.38); background: rgba(242, 0, 137, 0.05); }
+        .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 22px 26px; font-weight: 650; font-size: 1.04rem; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: '+'; flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: rgba(255, 255, 255, 0.07); font-size: 1.2rem; font-weight: 500; transition: transform 0.3s var(--ease), background-color 0.3s; }
+        .faq details[open] summary::after { transform: rotate(45deg); background: var(--gradient-kinetic); }
+        .faq details p { padding: 0 26px 24px; color: var(--muted); line-height: 1.75; }
+
+        /* ---------- Final CTA ---------- */
+        .final { padding: 40px 0 150px; }
+        .final__card { position: relative; overflow: hidden; padding: 80px 40px; border-radius: 32px; text-align: center; background: var(--gradient-animated); background-size: 240% 240%; animation: shiftBg 10s ease infinite; box-shadow: 0 40px 100px rgba(242, 0, 137, 0.3); }
+        .final__card::before { content: '50%'; position: absolute; right: -4%; bottom: -34%; font-family: var(--font-display); font-weight: 700; font-size: clamp(10rem, 30vw, 22rem); line-height: 1; letter-spacing: -0.06em; color: rgba(255, 255, 255, 0.08); pointer-events: none; }
+        .final__tag { position: relative; display: inline-block; margin-bottom: 20px; padding: 7px 16px; border-radius: 999px; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.4); font-family: var(--font-mono); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+        .final__card h2 { position: relative; font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 18px; }
+        .final__card p { position: relative; max-width: 560px; margin: 0 auto 34px; font-size: 1.12rem; color: rgba(255, 255, 255, 0.9); }
+        .final__actions { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+        .btn-white { background: #fff; color: #2a0640; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25); }
+        .btn-white:hover { transform: translateY(-3px); box-shadow: 0 26px 54px rgba(0, 0, 0, 0.3); }
+        .btn-outline-white { border: 1px solid rgba(255, 255, 255, 0.6); color: #fff; }
+        .btn-outline-white:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-3px); }
+
+        /* ---------- Sticky mobile bar ---------- */
+        .sticky-cta { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 9000; display: none; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 12px 12px 18px; border-radius: 18px; background: rgba(16, 10, 30, 0.92); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5); transform: translateY(140%); transition: transform 0.45s var(--ease); }
+        .sticky-cta.is-visible { transform: translateY(0); }
+        .sticky-cta p { font-size: 0.84rem; line-height: 1.3; color: var(--muted); }
+        .sticky-cta p b { display: block; color: var(--text); font-size: 0.95rem; }
+        .sticky-cta .btn { padding: 12px 18px; font-size: 0.9rem; border-radius: 12px; white-space: nowrap; }
+
+        /* ---------- Reveal ---------- */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+        .reveal.is-in { opacity: 1; transform: none; }
+        .no-js .reveal { opacity: 1; transform: none; }
+
+        @media (max-width: 1024px) {
+            .hero__layout, .calc, .replace { grid-template-columns: 1fr; }
+            .hero__layout { gap: 56px; }
+            .hero__copy { text-align: center; }
+            .hero .lead { margin-left: auto; margin-right: auto; }
+            .hero__actions, .hero__assurances { justify-content: center; }
+            .plans { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+            .plan__desc { min-height: 0; }
+        }
+        @media (max-width: 760px) {
+            .section { padding: 84px 0; }
+            .hero { padding: 64px 0 80px; }
+            .container { padding: 0 16px; }
+            .timeline { grid-template-columns: 1fr; gap: 44px; }
+            .timeline::before { display: none; }
+            .calc__result, .stack, .engine { padding: 26px 20px; }
+            .calc__stats { grid-template-columns: 1fr; }
+            .stat { display: flex; justify-content: space-between; align-items: baseline; }
+            .stack__grid { grid-template-columns: 1fr 1fr; }
+            .final__card { padding: 60px 22px; border-radius: 26px; }
+            .ticket__top { padding: 28px 24px 24px; }
+            .ticket__bottom { padding: 22px 24px 26px; }
+            .hero__actions .btn { width: 100%; }
+            .sticky-cta { display: flex; }
+            .final { padding-bottom: 120px; }
+        }
+        @media (max-width: 400px) {
+            .stack__grid { grid-template-columns: 1fr; }
+            .plan-option { grid-template-columns: auto 1fr; }
+            .plan-option__price { grid-column: 2; text-align: left; }
+            .plan-option__price s { display: inline; margin-right: 6px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .reveal { opacity: 1; transform: none; }
+            .hero h1 .strike::after { transform: rotate(-6deg) scaleX(1); }
+            .bar--launch .bar__fill { width: 50%; }
+        }
+    </style>
+</head>
+<body class="no-js" data-theme="dark">
+    <nav></nav>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__bg" aria-hidden="true"><span></span><span></span><div class="hero__grid-lines"></div></div>
+            <div class="container hero__layout">
+                <div class="hero__copy">
+                    <div class="hero__badge reveal"><span class="dot"></span> Limited-time launch offer</div>
+                    <h1 id="hero-title" class="reveal">The whole engine.<br><span class="strike">Full price.</span><br><span class="text-gradient">Half price.</span></h1>
+                    <p class="lead reveal">CRM, funnels, booking, an omnichannel inbox and AI automation in one platform. Try any package free for 14 days, then pay <strong>50% less for your first three months</strong>. Available for a limited time only.</p>
+                    <div class="hero__actions reveal">
+                        <a href="#calculator" class="btn btn-primary">Claim 50% off <span class="arrow" aria-hidden="true">→</span></a>
+                        <a href="/#book-demo" class="btn btn-ghost">Book a live demo</a>
+                    </div>
+                    <div class="hero__assurances reveal">
+                        <span>14-day free trial</span>
+                        <span>No setup fees</span>
+                        <span>Cancel anytime</span>
+                    </div>
+                </div>
+
+                <div class="ticket-stage reveal" aria-hidden="true">
+                    <div class="ticket" id="ticket">
+                        <div class="ticket__top">
+                            <div class="ticket__label"><span>Kyntlo · Launch pass</span><span>Limited time</span></div>
+                            <div class="ticket__big">50<small>%<em>OFF</em></small></div>
+                            <div class="ticket__sub">Your first 3 months, on every package</div>
+                        </div>
+                        <div class="ticket__perf"></div>
+                        <div class="ticket__bottom">
+                            <div class="ticket__row"><span>Starter</span><strong><span class="was">$90</span>$45/mo</strong></div>
+                            <div class="ticket__row"><span>Growth</span><strong><span class="was">$270</span>$135/mo</strong></div>
+                            <div class="ticket__row"><span>Pro</span><strong><span class="was">$490</span>$245/mo</strong></div>
+                            <div class="ticket__code"><span>Applied at checkout</span><b>✓ AUTO</b></div>
+                            <div class="ticket__barcode"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <span>50% off · Limited time</span><span>CRM &amp; pipelines</span><span>Funnels &amp; websites</span><span>Calendar booking</span><span>Omnichannel inbox</span><span>Workflow automation</span><span>AI chatbot</span><span>Voice AI</span><span>Reputation management</span><span>Email &amp; SMS campaigns</span>
+                <span>50% off · Limited time</span><span>CRM &amp; pipelines</span><span>Funnels &amp; websites</span><span>Calendar booking</span><span>Omnichannel inbox</span><span>Workflow automation</span><span>AI chatbot</span><span>Voice AI</span><span>Reputation management</span><span>Email &amp; SMS campaigns</span>
+            </div>
+        </div>
+
+        <!-- Calculator -->
+        <section class="section" id="calculator" aria-labelledby="calc-title">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <p class="kicker">Your launch price</p>
+                    <h2 id="calc-title" class="section-title">See exactly what you <span class="text-gradient">keep</span></h2>
+                    <p class="section-sub">Pick a package. The discount is applied to your first quarter automatically at checkout, so there's no code to copy and nothing to remember.</p>
+                </div>
+
+                <div class="calc">
+                    <div class="calc__picker reveal" role="radiogroup" aria-label="Choose a package">
+                        <button type="button" class="plan-option" role="radio" aria-checked="false" data-plan="starter">
+                            <span class="plan-option__radio" aria-hidden="true"></span>
+                            <span><span class="plan-option__name">Starter</span><span class="plan-option__desc">CRM, booking and lead capture</span></span>
+                            <span class="plan-option__price"><s>$90</s>$45/mo</span>
+                        </button>
+                        <button type="button" class="plan-option" role="radio" aria-checked="true" data-plan="growth">
+                            <span class="plan-option__radio" aria-hidden="true"></span>
+                            <span><span class="plan-option__name">Growth</span><span class="plan-option__desc">Automated follow-up and omnichannel inbox</span></span>
+                            <span class="plan-option__price"><s>$270</s>$135/mo</span>
+                        </button>
+                        <button type="button" class="plan-option" role="radio" aria-checked="false" data-plan="pro">
+                            <span class="plan-option__radio" aria-hidden="true"></span>
+                            <span><span class="plan-option__name">Pro <small>Popular</small></span><span class="plan-option__desc">Unlimited AI, Voice AI, reviews and analytics</span></span>
+                            <span class="plan-option__price"><s>$490</s>$245/mo</span>
+                        </button>
+                    </div>
+
+                    <div class="calc__result reveal" aria-live="polite">
+                        <div class="calc__head">
+                            <h3>First quarter on <span data-out="name">Growth</span></h3>
+                            <span class="calc__chip">Limited-time offer applied</span>
+                        </div>
+                        <div class="calc__bars">
+                            <div class="bar bar--standard">
+                                <div class="bar__meta"><span>Standard price, 3 months</span><strong data-out="standard">$810</strong></div>
+                                <div class="bar__track"><div class="bar__fill"></div></div>
+                            </div>
+                            <div class="bar bar--launch">
+                                <div class="bar__meta"><span>Launch price, 3 months</span><strong data-out="launch">$405</strong></div>
+                                <div class="bar__track"><div class="bar__fill"></div></div>
+                            </div>
+                        </div>
+                        <dl class="calc__stats">
+                            <div class="stat stat--save"><dt>You save</dt><dd data-out="save">$405</dd></div>
+                            <div class="stat"><dt>Effective monthly</dt><dd data-out="monthly">$135</dd></div>
+                            <div class="stat"><dt>Due today</dt><dd>$0</dd></div>
+                        </dl>
+                        <div class="calc__foot">
+                            <p class="calc__fine">Charged once for your first 3 months when the 14-day trial ends. Plus taxes, which are shown at checkout.</p>
+                            <a href="/checkout?package=growth&amp;billing=quarterly" class="btn btn-primary" data-out="href"><span>Start free on <span data-out="name">Growth</span></span> <span class="arrow" aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section" style="padding-top: 20px;" aria-labelledby="how-title">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <p class="kicker">How the offer works</p>
+                    <h2 id="how-title" class="section-title">Simple terms. <span class="text-gradient">No surprises.</span></h2>
+                    <p class="section-sub">Here is the whole journey from today to month four, with nothing hidden in the fine print.</p>
+                </div>
+                <div class="timeline">
+                    <div class="step reveal">
+                        <div class="step__node">01</div>
+                        <p class="step__when">Today</p>
+                        <h3>Start your free trial</h3>
+                        <p>Pick a package with quarterly billing and set up your workspace. You won't be charged anything today.</p>
+                        <span class="step__price">$0</span>
+                    </div>
+                    <div class="step reveal">
+                        <div class="step__node">02</div>
+                        <p class="step__when">Day 14</p>
+                        <h3>Your half-price quarter begins</h3>
+                        <p>If Kyntlo is right for you, your first three months are billed at 50% off. Cancel before then and you pay nothing.</p>
+                        <span class="step__price">From $135 for 3 months</span>
+                    </div>
+                    <div class="step reveal">
+                        <div class="step__node">03</div>
+                        <p class="step__when">Month 4</p>
+                        <h3>Standard pricing</h3>
+                        <p>After the launch quarter, your package renews at its standard price plus taxes. You can switch plans or cancel at any time.</p>
+                        <span class="step__price">From $90/mo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Replace the stack -->
+        <section class="section" style="padding-top: 40px;" aria-labelledby="stack-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">One platform, not ten</p>
+                    <h2 id="stack-title" class="section-title">Cancel the stack. <span class="text-gradient">Keep the results.</span></h2>
+                    <p class="section-sub">Most growing teams pay for a separate CRM, funnel builder, scheduler, email tool and automation layer. Kyntlo brings all of it into one workspace, and the launch offer makes switching even easier.</p>
+                </div>
+                <div class="replace">
+                    <div class="stack reveal">
+                        <h3>What it replaces</h3>
+                        <div class="stack__grid">
+                            <div class="stack__item"><img src="/assets/platform-icons/salesforce.png" alt="" loading="lazy"><s>Salesforce</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/pipedrive.png" alt="" loading="lazy"><s>Pipedrive</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/clickfunnels.png" alt="" loading="lazy"><s>ClickFunnels</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/leadpages.png" alt="" loading="lazy"><s>Leadpages</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/unbounce.png" alt="" loading="lazy"><s>Unbounce</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/jotform.png" alt="" loading="lazy"><s>Jotform</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/constantcontact.png" alt="" loading="lazy"><s>Constant Contact</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/klaviyo.png" alt="" loading="lazy"><s>Klaviyo</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/twilio.png" alt="" loading="lazy"><s>Twilio</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/acuity.png" alt="" loading="lazy"><s>Acuity</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/birdeye.png" alt="" loading="lazy"><s>Birdeye</s></div>
+                            <div class="stack__item"><img src="/assets/platform-icons/podium.png" alt="" loading="lazy"><s>Podium</s></div>
+                        </div>
+                        <div class="stack__total"><span>Typical monthly stack</span><strong>$2,488+</strong></div>
+                    </div>
+                    <div class="engine reveal">
+                        <img class="engine__logo" src="/assets/favicon.png" alt="" width="54" height="54">
+                        <h3>Kyntlo, all in one</h3>
+                        <ul>
+                            <li>CRM, pipelines and opportunities</li>
+                            <li>Funnels, websites, forms and surveys</li>
+                            <li>Calendar booking and reminders</li>
+                            <li>Email, SMS, WhatsApp and chat in one inbox</li>
+                            <li>Workflow automation and AI assistants</li>
+                        </ul>
+                        <div class="engine__price">
+                            <span>During the launch quarter</span>
+                            <strong>from $45<small>/mo</small></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plans -->
+        <section class="section" style="padding-top: 40px;" aria-labelledby="plans-title">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <p class="kicker">Limited time · Every package qualifies</p>
+                    <h2 id="plans-title" class="section-title">Choose your plan, <span class="text-gradient">pay half</span></h2>
+                    <p class="section-sub">Launch pricing applies to quarterly billing on Starter, Growth and Pro. All prices are plus taxes, which are shown at checkout.</p>
+                </div>
+                <div class="plans">
+                    <article class="plan reveal">
+                        <h3>Starter</h3>
+                        <p class="plan__desc">Launch CRM, booking, and lead capture.</p>
+                        <div class="plan__price"><s>$90</s><strong>$45</strong><span>/mo</span></div>
+                        <p class="plan__tax">Plus taxes</p>
+                        <p class="plan__billing">$135 for your first quarter · <b>save $135</b></p>
+                        <ul>
+                            <li>CRM contacts and opportunities</li>
+                            <li>Funnels, pages, forms and surveys</li>
+                            <li>Calendar booking and live chat</li>
+                            <li>Basic email campaigns</li>
+                            <li>Up to 3 users</li>
+                        </ul>
+                        <a href="/checkout?package=starter&amp;billing=quarterly" class="btn btn-ghost">Start free trial</a>
+                    </article>
+                    <article class="plan reveal">
+                        <h3>Growth</h3>
+                        <p class="plan__desc">Automate follow-up and convert more bookings.</p>
+                        <div class="plan__price"><s>$270</s><strong>$135</strong><span>/mo</span></div>
+                        <p class="plan__tax">Plus taxes</p>
+                        <p class="plan__billing">$405 for your first quarter · <b>save $405</b></p>
+                        <ul>
+                            <li>Everything in Starter</li>
+                            <li>Workflow automation and reminders</li>
+                            <li>Full omnichannel inbox, SMS and WhatsApp</li>
+                            <li>Basic AI chatbot</li>
+                            <li>Up to 10 users</li>
+                        </ul>
+                        <a href="/checkout?package=growth&amp;billing=quarterly" class="btn btn-ghost">Start free trial</a>
+                    </article>
+                    <article class="plan plan--featured reveal">
+                        <span class="plan__flag">Most popular</span>
+                        <h3>Pro</h3>
+                        <p class="plan__desc">Unlimited AI, reviews, analytics, and reactivation in one growth system.</p>
+                        <div class="plan__price"><s>$490</s><strong>$245</strong><span>/mo</span></div>
+                        <p class="plan__tax">Plus taxes</p>
+                        <p class="plan__billing">$735 for your first quarter · <b>save $735</b></p>
+                        <ul>
+                            <li>Everything in Growth</li>
+                            <li>Unlimited AI usage across the platform</li>
+                            <li>Voice AI and advanced chatbot</li>
+                            <li>Reputation management and reactivation</li>
+                            <li>Advanced analytics and unlimited pipelines</li>
+                        </ul>
+                        <a href="/checkout?package=pro&amp;billing=quarterly" class="btn btn-primary">Start free trial <span class="arrow" aria-hidden="true">→</span></a>
+                    </article>
+                </div>
+                <p class="plans__note reveal">Need something bigger or different? <a href="/contact#contact-form">Talk to sales about a customized plan</a> or <a href="/pricing">compare every feature</a>.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" style="padding-top: 40px;" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <p class="kicker">Offer details</p>
+                    <h2 id="faq-title" class="section-title">Questions, answered</h2>
+                </div>
+                <div class="faq reveal">
+                    <details open>
+                        <summary>What exactly is discounted?</summary>
+                        <p>Your first quarter (three months) on the Starter, Growth or Pro package is 50% off when you choose quarterly billing. The discount covers the package subscription. Taxes are added and shown at checkout, and usage-based costs such as SMS, calls, email sending and AI messages are billed separately at wholesale rates.</p>
+                    </details>
+                    <details>
+                        <summary>Do I need a promo code?</summary>
+                        <p>No. Choose quarterly billing and the checkout applies the 50% launch discount to your first three months automatically, at exactly the prices shown on this page. If you switch to monthly billing, the discount is removed.</p>
+                    </details>
+                    <details>
+                        <summary>Does the 14-day free trial still apply?</summary>
+                        <p>Yes. You start with a 14-day free trial and nothing is charged today. Your discounted quarter is billed only when the trial ends, and you can cancel before then at no cost.</p>
+                    </details>
+                    <details>
+                        <summary>What happens after the first three months?</summary>
+                        <p>After the launch quarter, your package renews at its standard price plus taxes. You can upgrade, downgrade or cancel at any time, and your contacts, pipelines and automations stay with you when you switch plans.</p>
+                    </details>
+                    <details>
+                        <summary>How long is the offer available?</summary>
+                        <p>For a limited time only, so start your trial now to claim it. Once you check out with the offer, your price is locked in: your first three months are billed at 50% off, even if the offer ends afterwards.</p>
+                    </details>
+                    <details>
+                        <summary>Can you help me move from my current tools?</summary>
+                        <p>Yes. <a href="/#book-demo" style="color:#ffb3dc;">Book a live demo</a> and our team will walk through your current setup, what moves over, and which package fits best.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final" aria-labelledby="final-title">
+            <div class="container">
+                <div class="final__card reveal">
+                    <p class="final__tag">Limited time only</p>
+                    <h2 id="final-title">Start free today.<br>Pay half when it counts.</h2>
+                    <p>Fourteen days to see Kyntlo running in your business, then your first three months at 50% off. The launch offer won't be around for long.</p>
+                    <div class="final__actions">
+                        <a href="#calculator" class="btn btn-white">Claim the launch offer <span class="arrow" aria-hidden="true">→</span></a>
+                        <a href="/#book-demo" class="btn btn-outline-white">Book a live demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+        <p><b>50% off your first 3 months</b>Limited time · after a 14-day free trial</p>
+        <a href="#calculator" class="btn btn-primary" tabindex="-1">Claim offer</a>
+    </div>
+
+    <footer></footer>
+
+    <script>
+        (function () {
+            "use strict";
+            document.body.classList.remove("no-js");
+
+            var plans = {
+                starter: { name: "Starter", monthly: 90 },
+                growth: { name: "Growth", monthly: 270 },
+                pro: { name: "Pro", monthly: 490 }
+            };
+            var DISCOUNT = 0.5;
+            var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            function money(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+
+            /* Animated number change */
+            function tween(el, to) {
+                var from = parseFloat((el.textContent || "0").replace(/[^0-9.]/g, "")) || 0;
+                if (reduceMotion || from === to) { el.textContent = money(to); return; }
+                var start = null;
+                function frame(t) {
+                    if (!start) start = t;
+                    var p = Math.min((t - start) / 600, 1);
+                    var eased = 1 - Math.pow(1 - p, 3);
+                    el.textContent = money(from + (to - from) * eased);
+                    if (p < 1) requestAnimationFrame(frame);
+                }
+                requestAnimationFrame(frame);
+            }
+
+            /* Calculator */
+            var options = document.querySelectorAll(".plan-option");
+            var result = document.querySelector(".calc__result");
+            function select(key, focus) {
+                var plan = plans[key];
+                if (!plan) return;
+                options.forEach(function (opt) {
+                    var on = opt.dataset.plan === key;
+                    opt.setAttribute("aria-checked", String(on));
+                    opt.tabIndex = on ? 0 : -1;
+                    if (on && focus) opt.focus();
+                });
+                var standard = plan.monthly * 3;
+                var launch = standard * (1 - DISCOUNT);
+                result.querySelectorAll('[data-out="name"]').forEach(function (el) { el.textContent = plan.name; });
+                tween(result.querySelector('[data-out="standard"]'), standard);
+                tween(result.querySelector('[data-out="launch"]'), launch);
+                tween(result.querySelector('[data-out="save"]'), standard - launch);
+                tween(result.querySelector('[data-out="monthly"]'), launch / 3);
+                result.querySelector('a[data-out="href"]').href = "/checkout?package=" + key + "&billing=quarterly";
+                try { localStorage.setItem("kyntloBillingPlan", "quarterly"); } catch (e) {}
+            }
+            options.forEach(function (opt, i) {
+                opt.addEventListener("click", function () { select(opt.dataset.plan); });
+                opt.addEventListener("keydown", function (e) {
+                    var dir = (e.key === "ArrowDown" || e.key === "ArrowRight") ? 1 : (e.key === "ArrowUp" || e.key === "ArrowLeft") ? -1 : 0;
+                    if (!dir) return;
+                    e.preventDefault();
+                    var next = options[(i + dir + options.length) % options.length];
+                    select(next.dataset.plan, true);
+                });
+            });
+            select("growth");
+
+            /* Ticket tilt */
+            var ticket = document.getElementById("ticket");
+            var stage = document.querySelector(".ticket-stage");
+            if (ticket && stage && !reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+                stage.addEventListener("pointermove", function (e) {
+                    var r = ticket.getBoundingClientRect();
+                    var x = (e.clientX - r.left) / r.width;
+                    var y = (e.clientY - r.top) / r.height;
+                    ticket.classList.add("is-tracking");
+                    ticket.style.setProperty("--ry", ((x - 0.5) * 18).toFixed(2) + "deg");
+                    ticket.style.setProperty("--rx", ((0.5 - y) * 14).toFixed(2) + "deg");
+                    ticket.style.setProperty("--gx", (x * 100).toFixed(1) + "%");
+                    ticket.style.setProperty("--gy", (y * 100).toFixed(1) + "%");
+                });
+                stage.addEventListener("pointerleave", function () {
+                    ticket.classList.remove("is-tracking");
+                    ticket.style.setProperty("--rx", "0deg");
+                    ticket.style.setProperty("--ry", "0deg");
+                });
+            }
+
+            /* Scroll reveal */
+            var reveals = document.querySelectorAll(".reveal");
+            if ("IntersectionObserver" in window && !reduceMotion) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) { entry.target.classList.add("is-in"); io.unobserve(entry.target); }
+                    });
+                }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+                reveals.forEach(function (el) { io.observe(el); });
+            } else {
+                reveals.forEach(function (el) { el.classList.add("is-in"); });
+            }
+
+            /* Sticky mobile CTA: show after the hero, hide over the final CTA */
+            var sticky = document.getElementById("sticky-cta");
+            var hero = document.querySelector(".hero");
+            var finalCard = document.querySelector(".final");
+            if (sticky && hero && finalCard && "IntersectionObserver" in window) {
+                var heroVisible = true, finalVisible = false;
+                function sync() { sticky.classList.toggle("is-visible", !heroVisible && !finalVisible); }
+                new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; sync(); }).observe(hero);
+                new IntersectionObserver(function (e) { finalVisible = e[0].isIntersecting; sync(); }).observe(finalCard);
+            }
+        })();
+    </script>
+</body>
+</html>

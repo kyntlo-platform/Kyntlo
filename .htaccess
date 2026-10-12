@@ -1,0 +1,14 @@
+# Served at https://kyntlo.ai/launch-offer/ (deployed from the deploy/launch-offer branch).
+DirectoryIndex index.html
+Options -Indexes
+
+# Never expose the Git metadata of this deployment.
+RedirectMatch 404 /\.git
+
+RewriteEngine On
+# The shared site shell (assets/site-shell.js) loads the logo with a relative
+# "assets/..." path; serve those from the site-wide /assets/ folder.
+RewriteRule ^assets/(.*)$ /assets/$1 [L]
+# Redirect /launch-offer/index.html to the clean folder URL.
+RewriteCond %{THE_REQUEST} \s/+launch-offer/index\.html[\s?] [NC]
+RewriteRule ^ /launch-offer/ [R=301,L]
