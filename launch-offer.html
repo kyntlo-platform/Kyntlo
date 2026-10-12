@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <link href="assets/site-shell.css" rel="stylesheet">
-    <script src="assets/site-shell.js" defer></script>
+    <link href="assets/site-shell.css?v=20260829" rel="stylesheet">
+    <script src="assets/site-shell.js?v=20260829" defer></script>
     <style>
         :root {
             --bg: #07050f;
@@ -29,6 +29,8 @@
             --green: #35e0a1;
             --gradient-kinetic: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
             --gradient-animated: linear-gradient(-45deg, #f20089, #6d00c1, #ff1aa3, #851ada);
+            /* Text needs more contrast than the decorative gradient: #6d00c1 is 2.33:1 on the dark ground. */
+            --gradient-text: linear-gradient(-45deg, #f20089, #b06bff, #ff1aa3, #b06bff);
             --font-display: 'Space Grotesk', 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
             --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -40,7 +42,7 @@
         img { max-width: 100%; height: auto; display: block; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-        .text-gradient { background: var(--gradient-animated); background-size: 300% 300%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shiftBg 7s ease infinite; }
+        .text-gradient { background: var(--gradient-text); background-size: 300% 300%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shiftBg 7s ease infinite; }
         @keyframes shiftBg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         @keyframes ping { 75%, 100% { box-shadow: 0 0 0 10px rgba(255, 26, 163, 0); } 0% { box-shadow: 0 0 0 0 rgba(255, 26, 163, 0.7); } }
         @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -281,7 +283,7 @@
         }
     </style>
 </head>
-<body class="no-js">
+<body class="no-js" data-theme="dark">
     <nav></nav>
 
     <main id="main-content">
@@ -435,18 +437,18 @@
                     <div class="stack reveal">
                         <h3>What it replaces</h3>
                         <div class="stack__grid">
-                            <div class="stack__item"><img src="assets/platform-logos/salesforce.png" alt="" loading="lazy"><s>Salesforce</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/pipedrive.png" alt="" loading="lazy"><s>Pipedrive</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/clickfunnels.png" alt="" loading="lazy"><s>ClickFunnels</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/leadpages.png" alt="" loading="lazy"><s>Leadpages</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/unbounce.png" alt="" loading="lazy"><s>Unbounce</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/jotform.png" alt="" loading="lazy"><s>Jotform</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/constantcontact.png" alt="" loading="lazy"><s>Constant Contact</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/klaviyo.png" alt="" loading="lazy"><s>Klaviyo</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/twilio.png" alt="" loading="lazy"><s>Twilio</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/acuity.png" alt="" loading="lazy"><s>Acuity</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/birdeye.png" alt="" loading="lazy"><s>Birdeye</s></div>
-                            <div class="stack__item"><img src="assets/platform-logos/podium.png" alt="" loading="lazy"><s>Podium</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/salesforce.png" alt="" loading="lazy"><s>Salesforce</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/pipedrive.png" alt="" loading="lazy"><s>Pipedrive</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/clickfunnels.png" alt="" loading="lazy"><s>ClickFunnels</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/leadpages.png" alt="" loading="lazy"><s>Leadpages</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/unbounce.png" alt="" loading="lazy"><s>Unbounce</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/jotform.png" alt="" loading="lazy"><s>Jotform</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/constantcontact.png" alt="" loading="lazy"><s>Constant Contact</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/klaviyo.png" alt="" loading="lazy"><s>Klaviyo</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/twilio.png" alt="" loading="lazy"><s>Twilio</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/acuity.png" alt="" loading="lazy"><s>Acuity</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/birdeye.png" alt="" loading="lazy"><s>Birdeye</s></div>
+                            <div class="stack__item"><img src="assets/platform-icons/podium.png" alt="" loading="lazy"><s>Podium</s></div>
                         </div>
                         <div class="stack__total"><span>Typical monthly stack</span><strong>$2,488+</strong></div>
                     </div>
