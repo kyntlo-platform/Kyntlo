@@ -57,14 +57,14 @@
     { id: 'v10', contact: 'c6', unread: 1, starred: false, assigned: 'Priya Shah', time: '2h', messages: [
       day('Today'),
       { type: 'call', dir: 'missed', time: '08:05', line: 'Main line · +44 20 7946 0321' },
-      { type: 'voicemail', time: '08:05', dur: '0:34', text: "Hi, it's Noah Williams. I've got a check-up on Wednesday afternoon but something's come up at work. Could you call me back to move it? Thanks." },
+      { type: 'voicemail', time: '08:05', dur: '0:34', text: "Hi, it's Noah Williams. I've got a check-up on Thursday afternoon but something's come up at work. Could you call me back to move it? Thanks." },
     ] },
     { id: 'v3', contact: 'c3', unread: 0, starred: true, assigned: 'Priya Shah', time: '3h', messages: [day('Yesterday'), data.conversations[2].messages[0], day('Today'), data.conversations[2].messages[1]].map((m) => (m.type ? m : { ...m, ch: 'whatsapp' })) },
     { id: 'v6', contact: 'c4', unread: 0, starred: false, assigned: 'Sarah Mitchell', time: '1d', messages: [
       day('Tuesday'),
       ...data.conversations[5].messages.map((m) => ({ ...m, ch: 'facebook' })),
       { type: 'call', dir: 'out', time: '15:10', by: 'Sarah Mitchell', dur: '4:12', recording: true },
-      { from: 'us', ch: 'sms', by: 'Sarah Mitchell', text: 'Lovely to speak to you, Liam. You are booked in for your implant consultation on Monday at 11:00. See you then!', time: '15:16' },
+      { from: 'us', ch: 'sms', by: 'Sarah Mitchell', text: 'Lovely to speak to you, Liam. You are booked in for your implant consultation on Tuesday at 11:00. See you then!', time: '15:16' },
     ] },
     { id: 'v4', contact: 'c7', unread: 1, starred: false, assigned: '', time: '2d', messages: [day('Monday'), ...data.conversations[3].messages.map((m) => ({ ...m, ch: 'instagram' }))] },
     { id: 'v5', contact: 'c8', unread: 0, starred: false, assigned: 'James Okafor', time: '3d', messages: [day('Sunday'), ...data.conversations[4].messages.map((m) => ({ ...m, ch: 'chat' }))] },
@@ -99,7 +99,7 @@
   const fill = (text, c) => text
     .replace(/\{\{contact\.first_name\}\}/g, c.name.startsWith('+') ? 'there' : c.name.split(' ')[0])
     .replace(/\{\{contact\.name\}\}/g, c.name);
-  const lastMsg = (v) => [...v.messages].reverse().find((m) => m.type !== 'day');
+  const lastMsg = (v) => [...v.messages].reverse().find((m) => m.type !== 'day' && m.type !== 'event' && m.ch !== 'comment');
   const lastCh = (v) => {
     const m = [...v.messages].reverse().find((x) => x.ch || x.type === 'call' || x.type === 'voicemail');
     return m.ch || 'call';
@@ -315,7 +315,7 @@
       return `<div class="cv-note" id="cv_msg_${i}"><div class="cv-meta" style="color:#b54708;margin-bottom:4px">${icon('comment', 15)} <b>Internal comment</b> · ${esc(m.by)} · ${esc(m.time)} · only your team can see this</div>${esc(m.text)}</div>`;
     }
     const side = m.from === 'them' ? 'them' : 'us';
-    const who = m.from === 'them' ? c.name.split(' ')[0] : m.from === 'ai' ? '' : m.auto ? '' : (m.by || data.me.name);
+    const who = m.from === 'them' ? (c.name.startsWith('+') ? c.name : c.name.split(' ')[0]) : m.from === 'ai' ? '' : m.auto ? '' : (m.by || data.me.name);
     return `<div class="cv-msg ${side} ${m.from === 'ai' ? 'ai' : ''} ${m.scheduled ? 'sched' : ''}" id="cv_msg_${i}">
       <div class="cv-bub">${m.subject ? `<span class="subj">${esc(m.subject)}</span>` : ''}${esc(m.text)}</div>
       ${m.attach ? `<span class="cv-att" style="margin:0">${icon('paperclip', 14)} ${esc(m.attach)}</span>` : ''}
@@ -347,8 +347,6 @@
       </div>
       <div class="cv-thread" id="cv_thread">${v.messages.map((m, i) => msgHtml(m, i, c)).join('')}</div>
       <div class="cv-comp" id="cv_composer"></div>`;
-    const th = $('#cv_thread');
-    th.scrollTop = th.scrollHeight;
     $('#cv_assign').onclick = (e) => KY.menu(e.currentTarget, [...data.team.map((t) => ({ label: t.name, icon: 'user', onClick: () => assign(v, t.name) })),
       { label: 'Unassigned', icon: 'x', onClick: () => assign(v, '') }]);
     $('#cv_star').onclick = () => { v.starred = !v.starred; drawList(); drawThread(); KY.toast(v.starred ? 'Conversation starred' : 'Star removed'); };
@@ -366,6 +364,8 @@
     }));
     if ($('#cv_sched_cancel')) $('#cv_sched_cancel').onclick = () => { v.messages = v.messages.filter((m) => !m.scheduled); drawThread(); KY.toast('Scheduled message cancelled'); };
     drawComposer(v, c);
+    const th = $('#cv_thread');
+    th.scrollTop = th.scrollHeight;
   }
 
   function assign(v, name) {
@@ -449,9 +449,9 @@
     p.style.width = width + 'px';
     p.innerHTML = html;
     document.body.appendChild(p);
+    wire(p);
     p.style.left = Math.min(r.left, innerWidth - width - 16) + 'px';
     p.style.top = Math.max(70, r.top - p.offsetHeight - 8) + 'px';
-    wire(p);
     setTimeout(() => document.addEventListener('mousedown', function off(e) {
       if (!p.contains(e.target) && !anchor.contains(e.target)) { p.remove(); document.removeEventListener('mousedown', off); }
     }), 0);
@@ -520,7 +520,7 @@
     let timer;
     const box = KY.modal({
       title: 'Call',
-      body: `<div class="cv-dial" id="cv_dialer">${avatar(c.name.startsWith('+') ? '#' : c.name, 72).replace('class="avatar"', 'class="avatar" style="margin:0 auto;width:72px;height:72px"')}
+      body: `<div class="cv-dial" id="cv_dialer"><div style="display:flex;justify-content:center">${avatar(c.name.startsWith('+') ? '#' : c.name, 72)}</div>
         <div class="big">${esc(c.name)}</div><div class="st" id="cv_dial_status">Calling ${esc(c.phone)}…</div>
         <div class="muted" style="font-size:14px;margin:-8px 0 18px">From ${esc(data.business.phone)} · Bloom main line · ${icon('mic', 14)} Recording on</div>
         <div class="ctrls">
@@ -594,7 +594,6 @@
     state.keep = state.active;
     inbox.find((v) => v.id === state.active).unread = 0;
     view.style.padding = '0';
-    view.style.overflow = 'hidden';
     view.innerHTML = `<div class="cv" id="cv_root">
         <section class="cv-list" id="cv_list_wrap"></section>
         <section class="cv-mid" id="cv_mid"></section>
@@ -698,7 +697,6 @@
     render(view, { tab, params }) {
       css();
       $$('.cv-pop').forEach((p) => p.remove());
-      view.style.overflow = '';
       if (tab === 'manual-actions') return manualView(view);
       if (tab === 'snippets') return snippetsView(view);
       if (tab === 'trigger-links') return linksView(view);

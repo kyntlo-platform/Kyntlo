@@ -1,0 +1,171 @@
+// Track A · Module 10 · Lesson 2 — Conversation AI chatbot.
+// Filmed on the demo workspace (academy/demo-app), screen: AI Agents → Conversation AI.
+export default {
+  id: 'A-10.2',
+  title: 'Kyntlo Academy 10.2 — Conversation AI chatbot',
+  description:
+    'Set up your Conversation AI chatbot: choose a bot mode (Off, Suggestive or Auto-pilot), pick channels, write its personality and goal, add actions like booking and human handover, and test it before it talks to customers.',
+  tags: ['Kyntlo', 'Kyntlo Academy', 'AI chatbot', 'Conversation AI', 'Lead response'],
+  plan: 'GROWTH+',
+  thumbnail: { kicker: 'Module 10 · Lesson 2', title: 'Your *AI chatbot*' },
+  scenes: [
+    {
+      chapter: 'Intro',
+      card: { type: 'intro', kicker: 'Module 10 · Lesson 2', title: 'Your *Conversation AI* chatbot', sub: 'Train it, choose its mode and hand off to your team.' },
+      say: "Welcome back! In this lesson, we'll set up your Conversation AI chatbot. By the end, it'll know your business, reply to customers in seconds, book appointments, and know exactly when to hand over to a real person.",
+    },
+    {
+      chapter: 'Your bots',
+      goto: '{demo}#/ai-agents/conversation-ai',
+      settle: 1,
+      say: "Go to AI Agents, then Conversation AI. Here's your list of bots. Bloom Dental has a front desk bot that answers enquiries. You can see its mode, its channels, and its knowledge base at a glance. Click the bot to open it.",
+      actions: [
+        { at: 0.4, title: 'Conversation AI', sub: 'AI Agents → Conversation AI', for: 3.6 },
+        { at: 4.4, hover: '#cai_bot_b1' },
+        { at: 4.6, highlight: '#cai_bot_b1', label: 'Bloom Front Desk Bot', for: 6 },
+        { at: 4.8, zoom: '#cai_bots', scale: 1.4, for: 6 },
+        { at: 12.6, click: '#cai_bot_b1' },
+      ],
+    },
+    {
+      chapter: 'Bot mode',
+      say: "First, the bot mode. Off means the bot stays quiet. Suggestive means it drafts a reply in Conversations, and your team reviews it before sending. Auto-pilot means it replies on its own, around the clock.",
+      actions: [
+        { at: 0.4, highlight: '#cai_modes_sec', label: 'Bot mode', for: 2.4 },
+        { at: 3.0, hover: '#cai_mode_off' },
+        { at: 5.0, hover: '#cai_mode_suggestive' },
+        { at: 5.2, zoom: '#cai_modes', scale: 1.5, for: 9 },
+        { at: 11.2, hover: '#cai_mode_auto' },
+      ],
+    },
+    {
+      chapter: 'Switching on Auto-pilot',
+      say: "Bloom has been in Suggestive mode for a week, and the drafts look great. So let's switch to Auto-pilot. You can see the new mode next to the bot's name.",
+      actions: [
+        { at: 0.6, hover: '#cai_mode_suggestive' },
+        { at: 3.6, click: '#cai_mode_auto' },
+        { at: 5.0, highlight: '#cai_mode_auto', label: 'Replies automatically', for: 2.6 },
+        { at: 8.0, hover: '#cai_modechip' },
+        { at: 8.2, zoom: '#cai_modechip', scale: 2, for: 2.4 },
+      ],
+    },
+    {
+      chapter: 'Channels & handing over',
+      say: "Next, choose where the bot can reply. Let's add WhatsApp. Below that, keep Pause the bot when a team member replies switched on. That way, the moment someone on your team jumps in, the bot steps back.",
+      actions: [
+        { at: 0.4, highlight: '#cai_channels', label: 'Where it replies', for: 3 },
+        { at: 3.6, click: '#cai_ch_whatsapp' },
+        { at: 5.6, hover: '#cai_stop_human' },
+        { at: 5.8, highlight: '#cai_human_sec', label: 'Your team takes over', for: 5.4 },
+        { at: 6.0, zoom: '#cai_human_sec', scale: 1.4, for: 5 },
+      ],
+    },
+    {
+      chapter: 'Personality & goals',
+      say: "Now open Personality and goals. This is where you train the bot. Describe who it is and how it talks, then what a successful conversation looks like. Add any rules in Additional instructions, like your prices, and things it must never do.",
+      actions: [
+        { at: 0.4, click: '#cai_t_goals' },
+        { at: 2.2, hover: '#cai_personality' },
+        { at: 2.4, highlight: '#cai_personality', label: 'Who it is', for: 3.2 },
+        { at: 6.0, hover: '#cai_goal' },
+        { at: 6.2, highlight: '#cai_goal', label: 'Its goal', for: 3.4 },
+        { at: 10.4, hover: '#cai_instructions' },
+        { at: 10.6, zoom: '#cai_instructions', scale: 1.5, for: 4.4 },
+      ],
+    },
+    {
+      chapter: 'Actions',
+      say: "Under Actions, you decide what the bot can actually do. This one books appointments into your calendars, collects contact details, and stops once the job is done. Booking actions like these are part of the advanced chatbot on Pro.",
+      actions: [
+        { at: 0.4, click: '#cai_t_actions' },
+        { at: 2.4, hover: '#cai_action_booking' },
+        { at: 2.6, highlight: '#cai_action_booking', label: 'Books appointments', for: 3 },
+        { at: 6.0, hover: '#cai_action_collect' },
+        { at: 6.2, highlight: '#cai_action_collect', label: 'Saves contact details', for: 2.6 },
+        { at: 9.0, hover: '#cai_action_stop' },
+        { at: 9.2, highlight: '#cai_action_stop', label: 'Stops when done', for: 2.6 },
+      ],
+    },
+    {
+      chapter: 'Human handover',
+      say: "Every bot needs a way out. Click Add action, then Human handover. Describe when to hand over, like when someone asks for a person, is unhappy, or mentions pain. Assign the conversation to Sarah, add a tag, and save.",
+      actions: [
+        { at: 0.6, click: '#cai_add_action' },
+        { at: 2.6, click: '#cai_act_handover' },
+        { at: 4.6, hover: '#cai_ho_when' },
+        { at: 4.8, zoom: '#cai_ho_when', scale: 1.5, for: 4 },
+        { at: 9.4, hover: '#cai_ho_user' },
+        { at: 9.6, highlight: '#cai_ho_user', label: 'Assigned to Sarah', for: 2.2 },
+        { at: 11.8, hover: '#cai_ho_tag' },
+        { at: 13.6, click: '#cai_act_save' },
+      ],
+    },
+    {
+      chapter: 'Knowledge base',
+      say: "Then open the Knowledge Base tab, and make sure your knowledge base is attached. This is where the bot finds answers about your treatments, prices and opening hours. We'll build it out in the next lesson.",
+      actions: [
+        { at: 0.4, highlight: '#cai_action_handover', label: 'Handover added', for: 2.4 },
+        { at: 3.0, click: '#cai_t_kb' },
+        { at: 4.8, hover: '#cai_kb_attach' },
+        { at: 5.0, highlight: '#cai_kb_card', label: 'Attached', for: 4 },
+      ],
+    },
+    {
+      chapter: 'Test your bot',
+      say: "Before it talks to real customers, test it. On the right, type a question, just like a customer would. How much is Invisalign? The bot answers from your price list, and offers a free scan.",
+      caption: "Before it talks to real customers, test it. On the right, type a question, just like a customer would. \"How much is Invisalign?\" The bot answers from your price list, and offers a free scan.",
+      actions: [
+        { at: 0.4, highlight: '#cai_test', label: 'Test bot', for: 3 },
+        { at: 4.0, type: 'How much is Invisalign?', into: '#cai_test_input' },
+        { at: 6.4, press: 'Enter' },
+        { at: 9.4, hover: '#cai_msgs .ai-b.bot:last-child' },
+        { at: 9.6, zoom: '#cai_msgs', scale: 1.4, for: 3.4 },
+      ],
+    },
+    {
+      chapter: 'Test a booking',
+      speed: 1,
+      say: "Let's say yes, and ask for Thursday. The bot offers two times. Pick eleven thirty, and it books the free scan, straight into your calendar.",
+      caption: "Let's say yes, and ask for Thursday. The bot offers two times. Pick 11:30, and it books the free scan, straight into your calendar.",
+      actions: [
+        { at: 0.2, type: 'Yes please, can I come in on Thursday?', into: '#cai_test_input', delay: 35 },
+        { at: 1.8, press: 'Enter' },
+        { at: 4.4, type: '11:30 please', into: '#cai_test_input', delay: 45 },
+        { at: 5.2, press: 'Enter' },
+        { at: 7.6, hover: '#cai_msgs .ai-act' },
+        { at: 7.8, highlight: '#cai_msgs .ai-act', label: 'Booked!', for: 2.4 },
+      ],
+    },
+    {
+      chapter: 'Save & track results',
+      say: "Happy with it? Click Save. Then, back on the main page, the Dashboard shows how many conversations your bot handled, appointments it booked, and chats it passed to your team. Conversation history lets you read every chat.",
+      actions: [
+        { at: 0.6, click: '#cai_save' },
+        { at: 3.0, click: '#cai_back' },
+        { at: 4.6, click: '#cai_view_dashboard' },
+        { at: 6.4, highlight: '#cai_stats', label: 'Bot results', for: 5 },
+        { at: 6.6, zoom: '#cai_stats', scale: 1.3, for: 5 },
+        { at: 13.0, hover: '#cai_view_history' },
+        { at: 13.2, highlight: '#cai_view_history', label: 'Read every chat', for: 2.6 },
+      ],
+    },
+    {
+      chapter: 'Plans & usage',
+      say: "A quick note on plans. Growth includes the basic chatbot for replies and FAQs, with each AI message billed at four cents. Pro adds the advanced bot, with unlimited messages.",
+      caption: 'A quick note on plans. Growth includes the basic chatbot for replies and FAQs, with each AI message billed at $0.04. Pro adds the advanced bot, with unlimited messages.',
+      actions: [
+        { at: 0.4, title: 'Growth: $0.04 per AI message', sub: 'Pro: advanced bot, unlimited messages', for: 6 },
+        { at: 1.0, hover: '#cai_top' },
+      ],
+    },
+    {
+      chapter: 'Pro tip',
+      card: { type: 'chapter', kicker: 'Pro tip', title: 'Start in *Suggestive* mode', sub: 'Every edit you make shows what to teach the bot.' },
+      say: "Here's a pro tip. Run a new bot in Suggestive mode for a week. Every time you edit a draft before sending it, add what you changed to its instructions or knowledge base. Then switch on Auto-pilot with confidence.",
+    },
+    {
+      card: { type: 'outro', kicker: 'Up next · Lesson 10.3', title: 'AI *knowledge base* & FAQs', sub: 'Feed it your website, documents and FAQs.', cta: 'Kyntlo [Academy]' },
+      say: "Your chatbot is live! In the next lesson, we'll build the knowledge base it learns from, with your website, your documents and your FAQs. See you there.",
+    },
+  ],
+};

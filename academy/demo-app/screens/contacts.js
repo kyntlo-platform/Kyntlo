@@ -10,8 +10,8 @@
   const all = () => [...data.contacts, ...local];
   const byId = (id) => all().find((c) => c.id === id);
   const companies = KY.data.companies = KY.data.companies || [
-    { id: 'co1', name: 'Marylebone Law LLP', phone: '+44 20 7946 0100', email: 'office@maryleboneLaw.co.uk'.toLowerCase(), website: 'marylebonelaw.co.uk', address: '22 Wimpole Street, London W1G 8GQ', owner: 'Sarah Mitchell', created: '3 Sep 2026', note: 'Staff dental plan — 10% off for employees', contacts: ['c4', 'c14'] },
-    { id: 'co2', name: 'Baker Street Fitness', phone: '+44 20 7946 0200', email: 'hello@bakerstreetfitness.co.uk', website: 'bakerstreetfitness.co.uk', address: '81 Baker Street, London W1U 6AG', owner: 'Priya Shah', created: '18 Sep 2026', note: 'Partner gym — members get a free whitening consult', contacts: ['c8', 'c18'] },
+    { id: 'co1', name: 'Marylebone Law LLP', phone: '+44 20 7946 0100', email: 'office@marylebonelaw.co.uk', website: 'marylebonelaw.co.uk', address: '22 Wimpole Street, London W1G 8GQ', owner: 'Sarah Mitchell', created: '3 Sep 2026', note: 'Staff dental plan — 10% off for employees', contacts: ['c4', 'c14'], deal: ['Marylebone Law LLP — Staff dental plan', 'Treatment Plan Sent', 1800] },
+    { id: 'co2', name: 'Baker Street Fitness', phone: '+44 20 7946 0200', email: 'hello@bakerstreetfitness.co.uk', website: 'bakerstreetfitness.co.uk', address: '81 Baker Street, London W1U 6AG', owner: 'Priya Shah', created: '18 Sep 2026', note: 'Partner gym — members get a free whitening consult', contacts: ['c8', 'c18'], deal: ['Baker Street Fitness — Member whitening offer', 'Contacted', 900] },
   ];
   const companyOf = (id) => companies.find((co) => co.contacts.includes(id));
   const treatment = (c) => ({ invisalign: 'Invisalign', whitening: 'Teeth whitening', implants: 'Dental implants', 'check-up': 'Check-up & clean' })[c.tags.find((t) => ['invisalign', 'whitening', 'implants', 'check-up'].includes(t))] || '';
@@ -47,6 +47,7 @@
     created: { label: 'Created', op: 'is within', values: () => ['Last 7 days', 'Last 30 days', 'Last 90 days'], test: (c, v) => Date.parse('21 Oct 2026') - Date.parse(c.created) <= { 'Last 7 days': 7, 'Last 30 days': 30, 'Last 90 days': 90 }[v] * 864e5 },
   };
   const state = { q: '', filters: [], list: 'All', selected: new Set(), sort: 'Date created (newest)', cols: ['phone', 'email', 'tags', 'source', 'created', 'last'] };
+  const CAMPAIGN_TAGS = ['whitening-offer-oct'];
   const lists = { All: () => true, 'Invisalign leads': (c) => c.tags.includes('invisalign'), 'New this week': (c) => /2[0-1] Oct/.test(c.created), Reactivation: (c) => c.tags.includes('reactivation') };
   const tagChip = (t) => `<span class="chip ${t === 'vip' ? 'purple' : t.includes('lead') ? 'blue' : t === 'reactivation' ? 'amber' : ''}">${esc(t)}</span>`;
   const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -146,8 +147,10 @@
     $('#ct_filter').onclick = () => filterDrawer(redraw);
     $$('[data-unf]', view).forEach((b) => (b.onclick = (e) => { e.stopPropagation(); state.filters.splice(+b.dataset.unf, 1); redraw(); }));
     if ($('#ct_clear')) $('#ct_clear').onclick = () => { state.filters = []; redraw(); };
-    $('#ct_sort').onclick = (e) => KY.menu(e.currentTarget, Object.keys(SORTS).map((s) => ({ label: s, icon: s === state.sort ? 'check' : '', onClick: () => { state.sort = s; redraw(); } })));
-    $$('.menu button').forEach(() => {});
+    $('#ct_sort').onclick = (e) => {
+      const m = KY.menu(e.currentTarget, Object.keys(SORTS).map((s) => ({ label: s, icon: s === state.sort ? 'check' : '', onClick: () => { state.sort = s; redraw(); } })));
+      $$('button', m).forEach((b, i) => (b.id = `ct_sort_${slug(Object.keys(SORTS)[i])}`));
+    };
     $('#ct_columns').onclick = () => columnsDrawer(redraw);
     $('#ct_savelist').onclick = () => KY.modal({
       title: 'Save as smart list',
@@ -176,17 +179,17 @@
     }));
     $('#ct_all').onchange = (e) => { rows.forEach((c) => (e.target.checked ? state.selected.add(c.id) : state.selected.delete(c.id))); redraw(); };
     const done = (msg) => { state.selected.clear(); redraw(); KY.toast(msg); };
-    const tagMenu = (el, remove) => KY.menu(el, (remove ? [...new Set([...state.selected].flatMap((id) => byId(id).tags))] : data.tags).map((t) => ({ label: t, icon: 'tag', onClick: () => {
+    const tagMenu = (el, remove) => { const opts = remove ? [...new Set([...state.selected].flatMap((id) => byId(id).tags))] : [...new Set([...data.tags, ...CAMPAIGN_TAGS])]; const m = KY.menu(el, opts.map((t) => ({ label: t, icon: 'tag', onClick: () => {
       const k = state.selected.size;
       state.selected.forEach((id) => { const c = byId(id); if (remove) c.tags = c.tags.filter((x) => x !== t); else if (!c.tags.includes(t)) c.tags.push(t); });
       bulkLog(remove ? `Remove tag "${t}"` : `Add tag "${t}"`, k);
       done(remove ? `Tag "${t}" removed from ${k} contacts` : `Tag "${t}" added to ${k} contacts`);
-    } })));
+    } }))); $$('button', m).forEach((b, i) => (b.id = `ct_tagopt_${slug(opts[i])}`)); };
     $('#ct_bulk_tag').onclick = (e) => tagMenu(e.currentTarget, false);
     $('#ct_bulk_untag').onclick = (e) => tagMenu(e.currentTarget, true);
     $('#ct_bulk_sms').onclick = () => bulkMessage('SMS', done);
     $('#ct_bulk_email').onclick = () => bulkMessage('Email', done);
-    $('#ct_bulk_wf').onclick = (e) => KY.menu(e.currentTarget, data.workflows.filter((w) => w.status === 'published').map((w) => ({ label: w.name, icon: 'automation', onClick: () => { bulkLog(`Add to workflow "${w.name}"`, state.selected.size); done(`${state.selected.size} contacts added to "${w.name}"`); } })));
+    $('#ct_bulk_wf').onclick = (e) => { const wfs = data.workflows.filter((w) => w.status === 'published'); const m = KY.menu(e.currentTarget, wfs.map((w) => ({ label: w.name, icon: 'automation', onClick: () => { bulkLog(`Add to workflow "${w.name}"`, state.selected.size); done(`${state.selected.size} contacts added to "${w.name}"`); } }))); $$('button', m).forEach((b, i) => (b.id = `ct_wf_${wfs[i].id}`)); };
     $('#ct_bulk_export').onclick = () => KY.modal({
       title: `Export ${state.selected.size} contacts`,
       body: `<p style="margin-top:0">Your export will include the columns you can see in this list.</p>
@@ -230,9 +233,10 @@
       $$('[data-v]', box).forEach((b) => (b.onclick = () => { draft[+b.dataset.i].value = b.dataset.v; draw(); }));
       $$('[data-rm]', box).forEach((b) => (b.onclick = () => { draft.splice(+b.dataset.rm, 1); draw(); }));
     };
-    $('#flt_add', box).onclick = (e) => KY.menu(e.currentTarget, Object.entries(FILTERS).map(([k, F]) => ({ label: F.label, icon: 'filter', onClick: () => { draft.push({ field: k, value: '' }); draw(); } })));
-    // ids for menu entries so lessons can click them
-    $('#flt_add', box).addEventListener('click', () => setTimeout(() => $$('.menu button').forEach((b, i) => (b.id = `flt_field_${Object.keys(FILTERS)[i]}`)), 0));
+    $('#flt_add', box).onclick = (e) => {
+      const m = KY.menu(e.currentTarget, Object.entries(FILTERS).map(([k, F]) => ({ label: F.label, icon: 'filter', onClick: () => { draft.push({ field: k, value: '' }); draw(); } })));
+      $$('button', m).forEach((b, i) => (b.id = `flt_field_${Object.keys(FILTERS)[i]}`));
+    };
     draw();
   }
 
@@ -257,7 +261,7 @@
         <div class="field"><label>When</label>
           <div class="ct-opt on" id="bm_now"><input type="radio" name="bmw" checked><div><b>Send all at once</b><div class="muted" style="font-size:14px">Starts as soon as you click Send</div></div></div>
           <div class="ct-opt" id="bm_drip"><input type="radio" name="bmw"><div><b>Send in drip mode</b><div class="muted" style="font-size:14px">Batches of 10 every 15 minutes — friendlier for replies</div></div></div></div>
-        <p class="muted" style="font-size:14px;margin:0">Contacts with Do Not Disturb on for ${kind === 'SMS' ? 'text messages' : 'emails'} are skipped automatically.</p>`,
+        <p class="muted" style="font-size:14px;margin:0" id="bm_dnd">Contacts with Do Not Disturb on for ${kind === 'SMS' ? 'text messages' : 'emails'} are skipped automatically.</p>`,
       actions: [{ label: 'Cancel' }, { label: 'Send', primary: true, id: 'bm_send', onClick: (close) => { close(); bulkLog(`Send ${kind}`, n); done(`${kind} queued for ${n} contacts`); } }],
     });
     $$('.ct-opt').forEach((o) => (o.onclick = () => { $$('.ct-opt').forEach((x) => { x.classList.remove('on'); $('input', x).checked = false; }); o.classList.add('on'); $('input', o).checked = true; }));
@@ -276,7 +280,7 @@
           <div class="field"><label>Contact type</label><select class="select" id="nc_type"><option>Lead</option><option>Customer</option></select></div>
           <div class="field"><label>Contact source</label><select class="select" id="nc_source"><option>Walk-in</option><option>Phone Call</option><option>Referral</option><option>Website Form</option></select></div></div>
         <div class="field"><label>Tags</label><div class="input row" style="height:auto;min-height:42px;flex-wrap:wrap;gap:6px;padding:6px 10px" id="nc_tagbox"><span id="nc_chips" class="row" style="gap:6px;flex-wrap:wrap"></span><input id="nc_tags" style="border:0;outline:0;flex:1;min-width:160px" placeholder="Type a tag and press Enter"></div></div>
-        <div class="field"><label>Assigned to</label><select class="select">${data.team.map((t) => `<option>${esc(t.name)}</option>`).join('')}</select></div>
+        <div class="field"><label>Assigned to</label><select class="select" id="nc_owner">${data.team.map((t) => `<option>${esc(t.name)}</option>`).join('')}</select></div>
         <div class="row"><button class="toggle" id="nc_dnd"></button><span>Do not disturb (all channels)</span></div>`,
       actions: [{ label: 'Cancel' }, { label: 'Save', primary: true, id: 'nc_save', onClick: (close, b) => {
         const name = `${$('#nc_first', b).value} ${$('#nc_last', b).value}`.trim() || 'New Contact';
@@ -300,7 +304,7 @@
       const em = $('#nc_email', box).value.trim().toLowerCase();
       const ph = $('#nc_phone', box).value.replace(/\D/g, '');
       const hit = all().find((c) => (em && c.email === em) || (ph.length > 9 && c.phone.replace(/\D/g, '') === ph));
-      $('#nc_dup', box).innerHTML = hit ? `<div class="ct-dup" id="nc_dupwarn">${icon('bell', 18)}<div><b>Possible duplicate.</b> ${esc(hit.name)} already has this ${em && hit.email === em ? 'email' : 'phone number'}. Saving will update that contact instead of creating a new one.</div></div>` : '';
+      $('#nc_dup', box).innerHTML = hit ? `<div class="ct-dup" id="nc_dupwarn">${icon('bell', 18)}<div><b>This contact already exists.</b> ${esc(hit.name)} has the same ${em && hit.email === em ? 'email' : 'phone number'}. <a href="#/contacts/detail/${hit.id}" id="nc_open_dup" style="font-weight:600">Open ${esc(hit.name.split(' ')[0])}'s record</a> instead of creating a duplicate.</div></div>` : '';
     };
     $('#nc_email', box).oninput = dup;
     $('#nc_phone', box).oninput = dup;
@@ -395,7 +399,7 @@
     const appts = data.appointments.filter((a) => a.contact === c.id);
     const co = companyOf(c.id);
     const msgs = convo ? convo.messages.map((m) => ({ kind: 'msg', icon: m.from === 'them' ? 'chat' : 'send', text: `${m.from === 'them' ? c.name.split(' ')[0] : m.from === 'ai' ? 'AI agent' : 'You'}: ${m.text}`, time: m.time })) : [];
-    const notes = (c._notes = c._notes || ['Prefers morning appointments. Nervous patient — offer a longer first visit.']);
+    const notes = (c._notes = c._notes || ({ c1: ['Prefers morning appointments. Nervous patient — offer a longer first visit.'], c3: ['Sensitive teeth — use the low-peroxide whitening gel.'], c4: ['Works at Marylebone Law — staff plan discount applies.'], c10: ['Wants to spread the implant cost. Send finance options.'] })[c.id] || []);
     const activity = [
       ...msgs,
       ...appts.map((a) => ({ kind: 'appt', icon: 'calendar', text: `Appointment booked: ${data.calendars.find((k) => k.id === a.calendar).name}`, time: data.week[a.day] || 'Earlier' })),
@@ -415,7 +419,7 @@
             <button class="btn sm" id="cd_call">${icon('phone', 16)} Call</button><button class="btn sm" id="cd_sms">${icon('sms', 16)} SMS</button><button class="btn sm" id="cd_email">${icon('mail', 16)} Email</button></div>
           <div style="padding:0 18px 18px;flex:1" id="cd_fields">
             <div class="ct-sec" id="cd_sec_contact">${icon('user', 18)} Contact</div>
-            ${[['First name', c.name.split(' ')[0]], ['Last name', c.name.split(' ').slice(1).join(' ')], ['Email', c.email], ['Phone', c.phone], ['Contact source', c.source], ['Assigned to', c.owner], ['Company name', co?.name || '']]
+            ${[['First name', c.name.split(' ')[0]], ['Last name', c.name.split(' ').slice(1).join(' ')], ['Email', c.email], ['Phone', c.phone], ['Contact source', c.source], ['Assigned to', c.owner], ['Company name', co?.name || c._company || '']]
               .map(([k, v]) => `<div class="field"><label>${k}</label><input class="input cd-in" id="cd_f_${slug(k)}" value="${esc(v)}"></div>`).join('')}
             <div class="ct-sec" id="cd_sec_tags">${icon('tag', 18)} Tags</div>
             <div class="row" style="flex-wrap:wrap;gap:6px" id="cd_tags">${c.tags.map((t) => `<span class="chip ${tagChip(t).match(/chip ([a-z]*)/)[1]}">${esc(t)}<span data-untag="${esc(t)}" style="cursor:pointer;display:inline-grid">${icon('x', 12)}</span></span>`).join('')}<button class="btn sm ghost" id="cd_addtag">${icon('plus', 16)} Add tag</button></div>
@@ -451,7 +455,7 @@
           <div class="row" style="margin-top:18px"><b>Tasks</b><span class="spacer"></span><button class="btn sm ghost" id="cd_addtask">${icon('plus', 16)}</button></div>
           <div id="cd_tasks"><label class="row" style="margin:10px 0"><input type="checkbox"> Follow up about treatment plan <span class="chip amber" style="margin-left:auto">Today</span></label></div>
           <div class="row" style="margin-top:18px"><b>Notes</b><span class="spacer"></span><button class="btn sm ghost" id="cd_addnote">${icon('plus', 16)}</button></div>
-          <div id="cd_notes">${notes.map((n) => `<div class="card" style="padding:12px 14px;margin:10px 0;box-shadow:none;font-size:14px">${esc(n)}</div>`).join('')}</div>
+          <div id="cd_notes">${notes.map((n) => `<div class="card" style="padding:12px 14px;margin:10px 0;box-shadow:none;font-size:14px">${esc(n)}</div>`).join('') || '<p class="muted" style="font-size:14px">No notes yet.</p>'}</div>
         </section>
       </div>`;
     KY.toggles(view);
@@ -472,7 +476,7 @@
     $('#cd_save').onclick = () => {
       CF_DEFS.forEach(([k]) => (F[k] = $(`#cd_cf_${k}`).value));
       c.name = `${$('#cd_f_first-name').value} ${$('#cd_f_last-name').value}`.trim();
-      c.email = $('#cd_f_email').value; c.phone = $('#cd_f_phone').value;
+      c.email = $('#cd_f_email').value; c.phone = $('#cd_f_phone').value; c._company = $('#cd_f_company-name').value;
       redraw(); KY.toast('Contact updated');
     };
     $('#cd_dnd_all').addEventListener('click', () => { const on = $('#cd_dnd_all').classList.contains('on'); $$('.cd-dnd').forEach((t) => t.classList.toggle('on', on)); KY.toast(on ? 'DND turned on for all channels' : 'DND turned off'); });
@@ -486,7 +490,7 @@
         ['Custom value · Whitening offer price', '{{custom_values.whitening_offer_price}}'],
       ];
       const m = KY.menu(e.currentTarget, items.map(([l, tok]) => ({ label: `${l}`, icon: l.startsWith('Custom value') ? 'key' : 'user', onClick: () => {
-        const inp = $('#cd_msg'); inp.value = (inp.value ? inp.value.replace(/\s*$/, ' ') : '') + tok + ' '; inp.focus();
+        const inp = $('#cd_msg'); inp.value = inp.value + (inp.value && !/\s$/.test(inp.value) ? ' ' : '') + tok; inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length);
       } })));
       $$('button', m).forEach((b, i) => (b.id = `cd_mf_${slug(items[i][1])}`));
       m.style.minWidth = '330px';
@@ -525,6 +529,7 @@
       actions: [{ label: 'Cancel' }, { label: 'Save note', primary: true, id: 'cd_note_save', onClick: (close, box) => {
         const t = $('#cd_note_text', box).value.trim(); if (!t) return close();
         notes.unshift(t);
+        $('#cd_notes p.muted')?.remove();
         $('#cd_notes').insertAdjacentHTML('afterbegin', `<div class="card" style="padding:12px 14px;margin:10px 0;box-shadow:none;font-size:14px;border-color:#84adff">${esc(t)}</div>`);
         activity.unshift({ kind: 'note', icon: 'note', text: `Note added: ${t}`, time: 'Just now' }); feed(); close(); KY.toast('Note saved');
       } }] });
@@ -597,7 +602,7 @@
         <div class="field"><label>Address</label><input class="input" id="co_addr"></div>
         <div class="field"><label>Owner</label><select class="select">${data.team.map((t) => `<option>${esc(t.name)}</option>`).join('')}</select></div>`,
       actions: [{ label: 'Cancel' }, { label: 'Save', primary: true, id: 'co_save', onClick: (close, b) => {
-        const co = { id: 'co' + (companies.length + 1), name: $('#co_name', b).value || 'New Company', phone: $('#co_phone', b).value, email: $('#co_email', b).value, website: $('#co_web', b).value, address: $('#co_addr', b).value, owner: data.me.name, created: '21 Oct 2026', note: '', contacts: [] };
+        const co = { id: 'co' + (companies.length + 1), name: $('#co_name', b).value || 'New Company', phone: $('#co_phone', b).value, email: $('#co_email', b).value, website: $('#co_web', b).value, address: $('#co_addr', b).value, owner: data.me.name, created: '21 Oct 2026', note: '', contacts: [], deal: ['New company opportunity', 'New Enquiry', 0] };
         companies.push(co); close(); companiesView(view); KY.toast('Company created');
       } }],
     });
@@ -620,7 +625,7 @@
           ${people.map((c) => `<tr class="click" data-id="${c.id}" id="co_person_${c.id}"><td><div class="row">${avatar(c.name, 30)}<b>${esc(c.name)}</b></div></td><td>${esc(c.email)}</td><td>${esc(c.phone)}</td><td><div class="row" style="gap:6px">${c.tags.map(tagChip).join('')}</div></td></tr>`).join('')}
           </tbody></table>
           <div class="card-b muted" style="font-size:14px">Opportunities linked to this company</div>
-          <div style="padding:0 20px 18px"><div class="card row" style="padding:12px 14px;box-shadow:none">${icon('pipeline', 18)}<b>${esc(co.name)} — Staff dental plan</b><span class="spacer"></span><span class="chip blue">Treatment Plan Sent</span><b>${money(1800)}</b></div></div>
+          <div style="padding:0 20px 18px">${co.deal[2] ? `<div class="card row" style="padding:12px 14px;box-shadow:none">${icon('pipeline', 18)}<b>${esc(co.deal[0])}</b><span class="spacer"></span><span class="chip blue">${esc(co.deal[1])}</span><b>${money(co.deal[2])}</b></div>` : '<span class="muted">No opportunities yet.</span>'}</div>
         </div>
       </div>`;
     $('#co_back').onclick = () => KY.go('#/contacts/companies');

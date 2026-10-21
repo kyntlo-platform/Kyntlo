@@ -1,0 +1,150 @@
+// Track A · Module 4 · Lesson 1 — Inbox tour.
+// Filmed on the demo workspace (Conversations → unified inbox).
+export default {
+  id: 'A-4.1',
+  title: 'Kyntlo Academy 4.1 — Inbox tour: your unified Conversations inbox',
+  description:
+    'Tour the Kyntlo Conversations inbox: the three panes, channel badges, the Unread, Recents, Starred and All views, search and filters, assigning conversations to your team, starring and marking as unread.',
+  tags: ['Kyntlo', 'Kyntlo Academy', 'Unified inbox', 'Conversations', 'HighLevel conversations'],
+  plan: 'ALL',
+  thumbnail: { kicker: 'Module 4 · Lesson 1', title: 'Your *unified inbox*' },
+  scenes: [
+    {
+      chapter: 'Intro',
+      card: { type: 'intro', kicker: 'Module 4 · Lesson 1', title: 'Inbox *tour*', sub: 'Every message from every channel, in one place.' },
+      say: "Welcome to Module four! In this lesson, we'll tour the Conversations inbox, where every message from every channel lands. By the end, you'll know how to find, filter, star and assign any conversation in seconds.",
+    },
+    {
+      chapter: 'Where it lives',
+      goto: '{demo}#/conversations/conversations/v1',
+      settle: 1,
+      say: "Click Conversations in the sidebar. This is your unified inbox. Texts, emails, WhatsApp, Facebook and Instagram messages, website chats and phone calls all arrive here, so nobody on your team has to check five different apps.",
+      actions: [
+        { at: 0.3, hover: '#sb_conversations' },
+        { at: 0.5, highlight: '#sb_conversations', label: 'Conversations', for: 2.6 },
+        { at: 3.4, title: 'Conversations', sub: 'Every channel, one inbox', for: 4 },
+        { at: 8.0, move: [1100, 520] },
+      ],
+    },
+    {
+      chapter: 'Three panes',
+      say: "The screen has three parts. On the left is your list of conversations. In the middle is the full thread with the person you've selected. And on the right are their contact details, so you always know who you're talking to.",
+      actions: [
+        { at: 1.6, hover: '#cv_items' },
+        { at: 1.8, highlight: '#cv_list_wrap', label: 'Conversation list', for: 2.8 },
+        { at: 5.0, hover: '#cv_thread' },
+        { at: 5.2, highlight: '#cv_mid', label: 'The thread', for: 3 },
+        { at: 8.8, hover: '#cv_details' },
+        { at: 9.0, highlight: '#cv_right', label: 'Contact details', for: 3.4 },
+      ],
+    },
+    {
+      chapter: 'Reading the list',
+      say: "Each row shows the contact, a preview of the last message, and how long ago it arrived. The small badge on the photo shows the channel: green for a text, blue for email, pink for Instagram. Rows in bold, with a blue number, are unread.",
+      actions: [
+        { at: 0.4, hover: '#cv_item_v9' },
+        { at: 0.6, zoom: '#cv_list_wrap', scale: 1.5, for: 9.5 },
+        { at: 4.6, hover: '#cv_item_v9 .cv-chb' },
+        { at: 6.4, hover: '#cv_item_v2 .cv-chb' },
+        { at: 7.6, hover: '#cv_item_v4 .cv-chb' },
+        { at: 9.4, hover: '#cv_item_v4 .ub' },
+        { at: 9.6, highlight: '#cv_item_v4', label: 'Unread', for: 2.6 },
+      ],
+    },
+    {
+      chapter: 'Opening a conversation',
+      say: "Click a conversation to open it. This one starts with a missed call from a new number, then an automatic text, then their reply. Opening it marks it as read, so the blue number disappears. Every message with this person, on every channel, stays together in this one thread.",
+      actions: [
+        { at: 0.6, click: '#cv_item_v9' },
+        { at: 2.0, hover: '#cv_msg_1' },
+        { at: 2.2, highlight: '#cv_msg_1', label: 'Missed call', for: 2.2 },
+        { at: 4.6, highlight: '#cv_msg_2', label: 'Automatic text', for: 2 },
+        { at: 6.8, highlight: '#cv_msg_3', label: 'Their reply', for: 2.2 },
+        { at: 9.6, hover: '#cv_item_v9' },
+        { at: 9.8, highlight: '#cv_item_v9', label: 'Now marked as read', for: 2.8 },
+      ],
+    },
+    {
+      chapter: 'Unread, Recents, Starred, All',
+      say: "Across the top are four views. Unread shows only what still needs a reply. Recents shows the latest activity. Starred holds the conversations you've flagged. And All shows everything, however old.",
+      actions: [
+        { at: 1.6, click: '#cv_f_unread' },
+        { at: 2.4, highlight: '#cv_items', label: 'Still needs a reply', for: 2.2 },
+        { at: 5.2, click: '#cv_f_recents' },
+        { at: 7.2, click: '#cv_f_starred' },
+        { at: 7.8, highlight: '#cv_items', label: 'Starred', for: 2 },
+        { at: 10.4, click: '#cv_f_all' },
+        { at: 13.2, click: '#cv_f_recents' },
+      ],
+    },
+    {
+      chapter: 'Search',
+      say: "To find something fast, use the search box. You can search by name, or by words inside the messages. Here, typing whitening finds everyone who has asked about it.",
+      caption: 'To find something fast, use the search box. You can search by name, or by words inside the messages. Here, typing "whitening" finds everyone who has asked about it.',
+      actions: [
+        { at: 1.0, type: 'whitening', into: '#cv_search', delay: 90 },
+        { at: 6.0, highlight: '#cv_items', label: 'Matches in names and messages', for: 3 },
+        { at: 9.6, press: 'Control+A' },
+        { at: 9.8, press: 'Backspace' },
+      ],
+    },
+    {
+      chapter: 'Filters',
+      say: "The filter button narrows the list further. You can show only conversations assigned to you, only unassigned ones, or a single channel. Let's find the unassigned conversations, because those have no owner yet.",
+      actions: [
+        { at: 0.6, click: '#cv_filter' },
+        { at: 1.4, highlight: '.menu', label: 'Assignment & channel filters', for: 4.4 },
+        { at: 7.4, click: '.menu button:has-text("Unassigned")' },
+        { at: 8.6, highlight: '#cv_extra', label: 'Filter on', for: 2.4 },
+      ],
+    },
+    {
+      chapter: 'Assigning conversations',
+      say: "Ava asked on Instagram about whitening for sensitive teeth. Open the conversation, click the assign button, and choose Priya, our whitening specialist. Priya is notified, and her photo now appears on the conversation.",
+      actions: [
+        { at: 0.4, click: '#cv_item_v4' },
+        { at: 2.6, click: '#cv_filter_clear' },
+        { at: 4.6, click: '#cv_assign' },
+        { at: 6.4, hover: '.menu button:has-text("Priya Shah")' },
+        { at: 8.0, click: '.menu button:has-text("Priya Shah")' },
+        { at: 9.0, highlight: '#cv_assign', label: 'Assigned to Priya', for: 3 },
+        { at: 9.2, zoom: '#cv_head', scale: 1.6, for: 3.6 },
+        { at: 12.6, highlight: '#cv_item_v4', label: 'Owner shown in the list', for: 2.6 },
+      ],
+    },
+    {
+      chapter: 'Star & mark unread',
+      say: "Star conversations you want to come back to, like a patient who's still deciding on treatment. And if you've read something but can't deal with it yet, mark it as unread, so it stays on your list.",
+      actions: [
+        { at: 0.6, click: '#cv_star' },
+        { at: 1.2, zoom: '#cv_head', scale: 1.6, for: 8 },
+        { at: 1.4, highlight: '#cv_star', label: 'Star', for: 2.6 },
+        { at: 7.0, click: '#cv_unread' },
+        { at: 7.4, highlight: '#cv_unread', label: 'Mark as unread', for: 2.6 },
+      ],
+    },
+    {
+      chapter: 'Contact panel',
+      say: "On the right, you see the contact's details, tags, opportunities and appointments, without leaving the inbox. Olivia is an open Invisalign lead, and she hasn't booked yet, so she's a perfect person to reply to first. Click View contact to open her full record.",
+      actions: [
+        { at: 0.4, click: '#cv_item_v1' },
+        { at: 2.0, hover: '#cv_details' },
+        { at: 2.2, highlight: '#cv_right', label: 'Everything about Olivia', for: 3.6 },
+        { at: 6.6, hover: '#cv_opps .card' },
+        { at: 6.8, zoom: '#cv_opps', scale: 1.8, for: 4 },
+        { at: 9.4, highlight: '#cv_appts', label: 'No booking yet', for: 3 },
+        { at: 14.6, hover: '#cv_viewcontact' },
+        { at: 14.8, highlight: '#cv_viewcontact', label: 'Full contact record', for: 2.4 },
+      ],
+    },
+    {
+      chapter: 'Pro tip',
+      card: { type: 'chapter', kicker: 'Pro tip', title: 'Give every conversation an *owner*', sub: 'Assign within the hour, then work from "Assigned to me".' },
+      say: "Here's a pro tip. Agree on one rule with your team: every new conversation gets assigned within the hour. Then each person uses the Assigned to me filter, so they only see their own work, and nothing slips through the cracks.",
+    },
+    {
+      card: { type: 'outro', kicker: 'Up next · Lesson 4.2', title: 'Replying across *channels*', sub: 'Text, email, WhatsApp, Facebook, Instagram and chat, from one thread.', cta: 'Kyntlo [Academy]' },
+      say: "That's your inbox tour! In the next lesson, you'll learn to reply on every channel, from one single thread. See you there.",
+    },
+  ],
+};

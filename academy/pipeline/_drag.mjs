@@ -1,0 +1,23 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
+const errs=[]; p.on('pageerror', e => errs.push(e.message));
+await p.goto('http://127.0.0.1:4173/academy/demo-app/index.html#/sites/funnels/f1/builder/s1', { waitUntil: 'load' });
+await p.waitForTimeout(300);
+const t = await p.locator('#pb_addel_video').boundingBox();
+await p.mouse.move(t.x+40, t.y+30); await p.mouse.down();
+const c = await p.locator('#pb_el_cta').boundingBox();
+await p.mouse.move(c.x+60, c.y+c.height-5, {steps:5});
+await p.waitForTimeout(200);
+await p.screenshot({ path: process.argv[2] + '/19.png' });
+await p.mouse.up(); await p.waitForTimeout(500);
+await p.screenshot({ path: process.argv[2] + '/20.png' });
+// inline edit
+await p.click('#pb_el_headline'); await p.keyboard.press('Control+A'); await p.keyboard.type('Your new smile starts here.');
+await p.click('#pb_mobile'); await p.waitForTimeout(400);
+await p.screenshot({ path: process.argv[2] + '/21.png' });
+await p.goto('http://127.0.0.1:4173/academy/demo-app/index.html#/sites/chat-widget/cw1'); await p.waitForTimeout(400);
+await p.click('#cw_sec_ai'); await p.click('#cw_ai'); 
+await p.fill('#cw_prev_name','Sophie Turner'); await p.fill('#cw_prev_msg','Do you have any free scans this week?'); await p.click('#cw_prev_send'); await p.waitForTimeout(300);
+await p.screenshot({ path: process.argv[2] + '/22.png' });
+console.log(errs.join('\n') || 'no errors');
+await b.close();

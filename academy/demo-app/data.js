@@ -125,7 +125,7 @@ window.KY_DATA = {
   social: [
     { id: 's1', text: '✨ Before & after: 12 weeks of Invisalign. Book your free scan today!', networks: ['instagram', 'facebook'], date: 'Tue 27 Oct, 10:00', status: 'scheduled' },
     { id: 's2', text: '🦷 Did you know? You should replace your toothbrush every 3 months.', networks: ['facebook', 'google'], date: 'Thu 29 Oct, 12:30', status: 'scheduled' },
-    { id: 's3', text: 'Meet Priya, our whitening specialist 👋', networks: ['instagram', 'linkedin'], date: 'Fri 23 Oct, 09:00', status: 'published' },
+    { id: 's3', text: 'Meet Priya, our whitening specialist 👋', networks: ['instagram', 'linkedin'], date: 'Mon 19 Oct, 09:00', status: 'published' },
   ],
   reviews: [
     { name: 'Emma Clarke', rating: 5, text: 'Absolutely love my whitening results. The team made me feel so comfortable!', source: 'Google', date: 'Today', replied: false },
