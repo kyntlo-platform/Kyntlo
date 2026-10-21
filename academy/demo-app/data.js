@@ -14,7 +14,7 @@ window.KY_DATA = {
     'New 5-star review from Emma Clarke',
     'Missed call from +44 7700 900 456 — text-back sent',
   ],
-  tags: ['invisalign', 'whitening', 'new patient', 'check-up', 'implants', 'vip', 'facebook lead', 'google lead', 'nhs', 'reactivation', 'review requested'],
+  tags: ['invisalign', 'whitening', 'new patient', 'check-up', 'implants', 'vip', 'facebook lead', 'instagram lead', 'google lead', 'nhs', 'reactivation', 'review requested'],
   contacts: [
     { id: 'c1', name: 'Olivia Bennett', email: 'olivia.bennett@mail.com', phone: '+44 7700 900101', tags: ['invisalign', 'facebook lead'], source: 'Facebook Ad', created: '21 Oct 2026', last: '5 min ago', owner: 'Sarah Mitchell', value: 3800 },
     { id: 'c2', name: 'Daniel Hughes', email: 'dan.hughes@mail.com', phone: '+44 7700 900102', tags: ['check-up', 'new patient'], source: 'Website Form', created: '20 Oct 2026', last: '1 hour ago', owner: 'James Okafor', value: 120 },
@@ -22,7 +22,7 @@ window.KY_DATA = {
     { id: 'c4', name: 'Liam Patel', email: 'liam.patel@mail.com', phone: '+44 7700 900104', tags: ['implants'], source: 'Referral', created: '17 Oct 2026', last: 'Yesterday', owner: 'Sarah Mitchell', value: 2400 },
     { id: 'c5', name: 'Sophie Turner', email: 'sophie.t@mail.com', phone: '+44 7700 900105', tags: ['invisalign', 'google lead'], source: 'Google Ad', created: '16 Oct 2026', last: 'Yesterday', owner: 'James Okafor', value: 3800 },
     { id: 'c6', name: 'Noah Williams', email: 'noah.w@mail.com', phone: '+44 7700 900106', tags: ['check-up', 'nhs'], source: 'Phone Call', created: '15 Oct 2026', last: '2 days ago', owner: 'Priya Shah', value: 90 },
-    { id: 'c7', name: 'Ava Robinson', email: 'ava.robinson@mail.com', phone: '+44 7700 900107', tags: ['whitening', 'facebook lead'], source: 'Instagram', created: '14 Oct 2026', last: '2 days ago', owner: 'Sarah Mitchell', value: 450 },
+    { id: 'c7', name: 'Ava Robinson', email: 'ava.robinson@mail.com', phone: '+44 7700 900107', tags: ['whitening', 'instagram lead'], source: 'Instagram', created: '14 Oct 2026', last: '2 days ago', owner: 'Sarah Mitchell', value: 450 },
     { id: 'c8', name: 'Mason Evans', email: 'mason.evans@mail.com', phone: '+44 7700 900108', tags: ['new patient'], source: 'Website Chat', created: '13 Oct 2026', last: '3 days ago', owner: 'James Okafor', value: 120 },
     { id: 'c9', name: 'Isla Thompson', email: 'isla.thompson@mail.com', phone: '+44 7700 900109', tags: ['invisalign', 'vip'], source: 'Referral', created: '12 Oct 2026', last: '4 days ago', owner: 'Priya Shah', value: 3800 },
     { id: 'c10', name: 'Ethan Walker', email: 'ethan.walker@mail.com', phone: '+44 7700 900110', tags: ['implants', 'google lead'], source: 'Google Ad', created: '10 Oct 2026', last: '5 days ago', owner: 'Sarah Mitchell', value: 2400 },
