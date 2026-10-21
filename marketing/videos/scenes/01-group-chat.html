@@ -1,0 +1,151 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/kit.css">
+<style>
+  #stage { background: #0b0814; }
+  .status { position: absolute; top: 0; left: 0; right: 0; height: 90px; display: flex; justify-content: space-between; align-items: center; padding: 18px 60px 0; font-weight: 600; font-size: 34px; z-index: 6; }
+  .head { position: absolute; top: 0; left: 0; right: 0; height: 270px; background: rgba(20, 15, 34, 0.92); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 5; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 22px; }
+  .head .back { position: absolute; left: 40px; bottom: 82px; font-size: 64px; color: #c58bff; }
+  .faces { display: flex; margin-bottom: 10px; }
+  .faces span { width: 74px; height: 74px; border-radius: 50%; display: grid; place-items: center; font-size: 40px; margin-left: -18px; border: 4px solid #140f22; }
+  .faces span:first-child { margin-left: 0; }
+  .head h1 { font-size: 36px; font-weight: 700; }
+  .head small { font-size: 26px; color: var(--muted); }
+  #chat { position: absolute; top: 270px; left: 0; right: 0; bottom: 210px; overflow: hidden; }
+  #list { position: absolute; left: 0; right: 0; top: 0; padding: 26px 40px; }
+  .row { overflow: hidden; }
+  .inner { display: flex; gap: 20px; align-items: flex-end; padding: 10px 0; }
+  .av { width: 76px; height: 76px; border-radius: 50%; flex: none; display: grid; place-items: center; font-size: 42px; }
+  .col { max-width: 790px; }
+  .name { font-size: 27px; font-weight: 700; margin: 0 0 6px 26px; }
+  .bub { background: #241c36; padding: 24px 34px; border-radius: 40px; border-bottom-left-radius: 12px; font-size: 42px; line-height: 1.28; }
+  .me .inner { justify-content: flex-end; }
+  .me .bub { background: var(--kinetic); border-radius: 40px; border-bottom-right-radius: 12px; border-bottom-left-radius: 40px; box-shadow: 0 10px 40px rgba(242,0,137,0.35); }
+  .me .av { order: 2; background: #fff; overflow: hidden; }
+  .me .av img { width: 100%; }
+  .me .name { text-align: right; margin: 0 26px 6px 0; }
+  .sys .inner { justify-content: center; padding: 8px 0; }
+  .sys .pill { font-size: 28px; color: var(--muted); padding: 10px 26px; border-radius: 999px; background: rgba(255,255,255,0.05); }
+  .sys.join .pill { color: #fff; background: var(--kinetic); font-weight: 700; font-size: 32px; padding: 14px 34px; box-shadow: 0 0 60px rgba(242,0,137,0.6); }
+  .dots { display: flex; gap: 10px; padding: 30px 34px; }
+  .dots i { width: 16px; height: 16px; border-radius: 50%; background: #8d86a3; display: block; }
+  .card { margin-top: 12px; background: #fff; color: #170f2a; border-radius: 30px; padding: 26px 30px; font-size: 32px; display: grid; gap: 10px; }
+  .card div { display: flex; justify-content: space-between; gap: 30px; }
+  .card b { color: var(--pink); }
+  .input { position: absolute; left: 0; right: 0; bottom: 0; height: 210px; background: #0e0a19; border-top: 1px solid rgba(255,255,255,0.06); padding: 30px 40px; }
+  .input div { height: 86px; border-radius: 999px; border: 2px solid rgba(255,255,255,0.12); color: #6f6889; font-size: 34px; padding: 22px 36px; }
+  #hook { position: absolute; left: 0; right: 0; top: 760px; z-index: 8; text-align: center; padding: 120px 60px 140px; background: linear-gradient(180deg, rgba(11,8,20,0), rgba(11,8,20,0.97) 22%, rgba(11,8,20,0.97) 78%, rgba(11,8,20,0)); }
+  #hook .cap { position: static; font-size: 96px; }
+  #hook .k { font-family: var(--mono); font-size: 34px; letter-spacing: 0.2em; color: var(--hot); margin-bottom: 24px; }
+</style></head>
+<body><div id="stage">
+  <div class="status"><span>9:41</span><span>▂▄▆ ◔ ▮</span></div>
+  <div class="head">
+    <span class="back">‹</span>
+    <div class="faces"><span style="background:#2d5bff">📝</span><span style="background:#13a37f">🗂</span><span style="background:#ff8a00">🔌</span><span style="background:#e23d6c">📅</span><span style="background:#7e57c2">📧</span></div>
+    <h1 id="title">the stack 🙃</h1><small id="members">5 members</small>
+  </div>
+  <div id="chat"><div id="list"></div></div>
+  <div class="input"><div>iMessage</div></div>
+  <div id="hook"><div class="k">POV</div><div class="cap">your software has a <span class="g">group chat.</span></div></div>
+</div>
+<script src="../lib/kit.js"></script>
+<script>
+const P = {
+  form: ['Form Builder', '📝', '#2d5bff', '#7d9bff'],
+  crm: ['The CRM', '🗂', '#13a37f', '#4fe0b8'],
+  zap: ['The Connector', '🔌', '#ff8a00', '#ffb15c'],
+  cal: ['Calendar App', '📅', '#e23d6c', '#ff7aa0'],
+  mail: ['Email Tool', '📧', '#7e57c2', '#b99bff'],
+};
+// [time, who, text]  who: key of P | 'me' | 'sys' | 'join'
+const MSGS = [
+  [1.0, 'form', 'NEW LEAD!!! Sarah wants a quote 🎉🎉'],
+  [3.3, 'crm', 'who'],
+  [4.6, 'form', 'SARAH. i sent her to you an hour ago'],
+  [6.3, 'crm', 'never arrived. ask the connector'],
+  [8.0, 'zap', 'task failed ❌ monthly limit reached'],
+  [9.9, 'cal', 'update: sarah just booked with the place down the road'],
+  [12.0, 'mail', 'ok so do i still send her the welcome sequence or'],
+  [13.6, 'crm', '…'],
+  [14.8, 'join', 'Kyntlo joined the chat'],
+  [15.9, 'me', 'next lead is mine.'],
+  [17.4, 'me', 'form, DMs, texts, calendar → <b>one record. one inbox.</b>', true],
+  [20.6, 'sys', 'Form Builder left the chat'],
+  [20.85, 'sys', 'The CRM left the chat'],
+  [21.1, 'sys', 'The Connector left the chat'],
+  [21.35, 'sys', 'Calendar App left the chat'],
+  [21.6, 'sys', 'Email Tool left the chat'],
+  [22.6, 'me', 'was it something i said'],
+];
+const END = 24.4;
+window.DURATION = 31;
+window.BED = 'lofi';
+
+const list = K.$('#list');
+const rows = [];
+MSGS.forEach(([t, who, text, card]) => {
+  const typing = who !== 'sys' && who !== 'join' ? t - 0.85 : null;
+  if (typing !== null) {
+    const r = document.createElement('div');
+    r.className = 'row' + (who === 'me' ? ' me' : '');
+    r.innerHTML = `<div class="inner">${avatar(who)}<div class="col"><div class="bub dots"><i></i><i></i><i></i></div></div></div>`;
+    list.appendChild(r);
+    rows.push({ el: r, from: typing, to: t, typing: true });
+  }
+  const r = document.createElement('div');
+  r.className = 'row ' + (who === 'me' ? 'me' : who === 'sys' ? 'sys' : who === 'join' ? 'sys join' : '');
+  if (who === 'sys' || who === 'join') r.innerHTML = `<div class="inner"><span class="pill">${text}</span></div>`;
+  else {
+    const name = who === 'me' ? 'Kyntlo' : P[who][0];
+    const color = who === 'me' ? '#ff6ac1' : P[who][3];
+    r.innerHTML = `<div class="inner">${avatar(who)}<div class="col"><div class="name" style="color:${color}">${name}</div><div class="bub">${text}</div>${card ? `<div class="card"><div>✓ Texted back <b>in seconds</b></div><div>✓ Booked <b>Thu 10:00</b></div><div>✓ Reminder <b>the day before</b></div><div>✓ Review request <b>after the visit</b></div></div>` : ''}</div></div>`;
+  }
+  list.appendChild(r);
+  rows.push({ el: r, from: t, to: Infinity, who });
+});
+function avatar(who) {
+  if (who === 'me') return '<div class="av"><img src="../../../assets/favicon.png"></div>';
+  return `<div class="av" style="background:${P[who][2]}">${P[who][1]}</div>`;
+}
+rows.forEach((r) => (r.h = r.el.firstElementChild.offsetHeight));
+
+window.SFX = [];
+MSGS.forEach(([t, who]) => window.SFX.push([t, who === 'me' ? 'send' : who === 'join' ? 'chime' : who === 'sys' ? 'tick' : 'pop']));
+window.SFX.push([0.25, 'whoosh'], [9.9, 'fail'], [END, 'boom']);
+
+window.renderFrame = (t) => {
+  // hook caption
+  const hook = K.$('#hook');
+  const hi = K.p(t, 0.05, 0.35), ho = K.p(t, 2.9, 0.4);
+  hook.style.opacity = Math.min(hi, 1 - ho);
+  hook.style.transform = `translateY(${(1 - K.out(hi)) * -40 + K.inOut(ho) * -60}px)`;
+  K.$$('#hook .cap, #hook .k').forEach((e, i) => (e.style.transform = `scale(${K.lerp(0.85, 1, K.back(K.p(t, 0.1 + i * 0.12, 0.45)))})`));
+
+  let y = 0, lastBottom = 0;
+  rows.forEach((r) => {
+    const grow = K.out(K.p(t, r.from, 0.28));
+    const shrink = r.typing ? K.out(K.p(t, r.to, 0.2)) : 0;
+    const k = grow * (1 - shrink);
+    r.el.style.height = r.h * k + 'px';
+    const inner = r.el.firstElementChild;
+    inner.style.opacity = K.clamp(k * 1.5);
+    inner.style.transform = `scale(${K.lerp(0.8, 1, K.back(K.p(t, r.from, 0.35)))})`;
+    inner.style.transformOrigin = r.who === 'me' ? 'right bottom' : r.el.classList.contains('sys') ? 'center' : 'left bottom';
+    if (r.typing) K.$$('i', r.el).forEach((d, i) => (d.style.transform = `translateY(${Math.sin(t * 9 - i * 0.9) * 6}px)`));
+    y += r.h * k;
+    if (k > 0) lastBottom = y;
+  });
+  const view = K.$('#chat').offsetHeight - 60;
+  list.style.transform = `translateY(${-Math.max(0, lastBottom - view)}px)`;
+
+  // group title reacts to the story
+  K.$('#members').textContent = t < 14.8 ? '5 members' : t < 20.6 ? '6 members' : Math.max(1, 6 - Math.floor((t - 20.6) / 0.25 + 1)) + (t > 21.6 ? ' member' : ' members');
+  K.$$('.faces span').forEach((f, i) => { const g = K.p(t, 20.6 + i * 0.25, 0.2); f.style.transform = `scale(${1 - K.inOut(g)})`; f.style.marginLeft = (i ? -18 : 0) * (1 - g) - 74 * K.inOut(g) + 'px'; });
+  K.$('#title').textContent = t < 21.8 ? 'the stack 🙃' : 'kyntlo ✨';
+
+  K.endCard(t, END, { words: [['One'], ['login.'], ['One', 1], ['inbox.', 1], ['One'], ['record'], ['per'], ['customer.']], cta: 'STACK' });
+};
+window.SFX.push([END + 0.9 + 8 * 0.07 + 0.8, 'ding']);
+renderFrame(0);
+</script></body></html>

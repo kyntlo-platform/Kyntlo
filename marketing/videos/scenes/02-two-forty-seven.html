@@ -1,0 +1,189 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/kit.css">
+<style>
+  .scene { position: absolute; inset: 0; visibility: hidden; }
+  /* lock screen */
+  #lock { background: radial-gradient(120% 80% at 50% 0%, #1d1650 0%, #0b0a24 55%, #05040f 100%); }
+  #stars i { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #fff; }
+  .date { position: absolute; top: 250px; width: 100%; text-align: center; font-size: 44px; font-weight: 600; color: #cfd3ff; }
+  .clock { position: absolute; top: 290px; width: 100%; text-align: center; font-family: var(--display); font-weight: 600; font-size: 300px; letter-spacing: -0.04em; color: #e9ebff; }
+  .notif { position: absolute; top: 720px; left: 50px; right: 50px; padding: 34px 38px; border-radius: 46px; background: rgba(235, 235, 255, 0.16); backdrop-filter: blur(30px); border: 1px solid rgba(255,255,255,0.12); }
+  .notif .top { display: flex; justify-content: space-between; font-size: 30px; color: #c9cbe8; margin-bottom: 10px; }
+  .notif .top b { display: inline-flex; align-items: center; gap: 14px; }
+  .notif .top b i { width: 46px; height: 46px; border-radius: 12px; background: #34c759; display: grid; place-items: center; font-style: normal; font-size: 28px; }
+  .notif .who { font-weight: 700; font-size: 38px; }
+  .notif .msg { font-size: 40px; line-height: 1.3; }
+  .lockcap { position: absolute; top: 1220px; left: 0; right: 0; }
+  .lockcap .cap { font-size: 86px; }
+  .zz { position: absolute; font-family: var(--display); font-weight: 800; color: #9ea4ff; }
+  /* interstitial */
+  #fork { background: var(--bg); display: grid; place-items: center; }
+  #fork .cap { position: static; font-size: 120px; }
+  /* chat */
+  .chat { background: #0d0b16; }
+  .chip { position: absolute; top: 120px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--mono); font-weight: 700; font-size: 32px; letter-spacing: 0.12em; padding: 18px 34px; border-radius: 999px; z-index: 3; }
+  #A .chip { background: #2a2638; color: #bdb7d1; }
+  #B .chip { background: var(--kinetic); color: #fff; box-shadow: 0 0 60px rgba(242,0,137,0.5); }
+  .phead { position: absolute; top: 230px; left: 0; right: 0; text-align: center; }
+  .phead .av { width: 110px; height: 110px; margin: 0 auto 12px; border-radius: 50%; background: linear-gradient(#8e8aa3, #5d5970); display: grid; place-items: center; font-size: 56px; }
+  .phead div:last-child { font-size: 32px; color: var(--muted); }
+  .thread { position: absolute; top: 470px; left: 46px; right: 46px; display: flex; flex-direction: column; gap: 22px; }
+  .ts { align-self: center; font-size: 28px; color: #7f7a93; font-weight: 600; margin-top: 10px; }
+  .b { max-width: 800px; padding: 26px 36px; border-radius: 44px; font-size: 42px; line-height: 1.3; }
+  .in { align-self: flex-start; background: #262236; border-bottom-left-radius: 12px; }
+  .out { align-self: flex-end; background: #3b82f6; border-bottom-right-radius: 12px; }
+  .ai { align-self: flex-end; background: var(--kinetic); border-bottom-right-radius: 12px; }
+  .ai small { display: block; font-size: 26px; font-weight: 700; opacity: 0.8; margin-bottom: 6px; letter-spacing: 0.04em; }
+  .cal { align-self: flex-end; background: #fff; color: #160e29; border-radius: 32px; padding: 26px 34px; font-size: 34px; display: flex; gap: 22px; align-items: center; }
+  .cal .d { width: 96px; border-radius: 18px; overflow: hidden; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+  .cal .d span { display: block; background: #f20089; color: #fff; font-size: 22px; font-weight: 800; padding: 4px 0; }
+  .cal .d b { display: block; font-size: 46px; padding: 2px 0 6px; }
+  .stamp { position: absolute; left: 50%; top: 1330px; padding: 22px 46px; border: 10px solid; border-radius: 24px; font-family: var(--display); font-weight: 900; font-size: 74px; letter-spacing: 0.02em; text-transform: uppercase; text-align: center; line-height: 1; white-space: nowrap; }
+  #A .stamp { color: #ff4d5e; border-color: #ff4d5e; }
+  #B .stamp { top: 1590px; color: #fff; border-color: #ff1aa3; background: rgba(242,0,137,0.2); }
+  .ff { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(5,4,12,0.88); z-index: 4; }
+  .ff div { text-align: center; }
+  .ff b { display: block; font-family: var(--mono); font-size: 210px; font-weight: 800; letter-spacing: -0.04em; }
+  .ff span { font-family: var(--mono); font-size: 40px; letter-spacing: 0.2em; color: var(--muted); }
+  /* rewind */
+  #rw { background: #0a0a12; z-index: 9; }
+  #rw .lines { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 6px); }
+  #rw .bar { position: absolute; left: 0; right: 0; height: 60px; background: rgba(255,255,255,0.12); filter: blur(4px); }
+  #rw .t { position: absolute; top: 760px; width: 100%; text-align: center; font-family: var(--mono); font-weight: 800; }
+  #rw .t div:first-child { font-size: 70px; color: #ff1aa3; letter-spacing: 0.1em; }
+  #rw .t div:last-child { font-size: 220px; }
+  #outro { background: var(--bg); }
+  #outro .cap { top: 720px; font-size: 104px; }
+</style></head>
+<body><div id="stage">
+  <div class="scene" id="lock">
+    <div id="stars"></div>
+    <div class="date">Thursday 23 October</div>
+    <div class="clock">2:47</div>
+    <div class="notif"><div class="top"><b><i>💬</i>MESSAGES</b><span>now</span></div><div class="who">+44 7700 900312</div><div class="msg">hi are you open tomorrow?? boiler just died, no hot water 😩</div></div>
+    <div class="lockcap"><div class="cap" id="lc1">A customer texts you<br>at <span class="g">2:47 AM.</span></div><div class="cap" id="lc2" style="position:absolute;top:0">You're asleep.<br><span class="g">Obviously.</span></div></div>
+    <div class="zz" id="z1" style="left:720px;top:1600px;font-size:70px">z</div><div class="zz" id="z2" style="left:780px;top:1560px;font-size:90px">z</div><div class="zz" id="z3" style="left:860px;top:1500px;font-size:110px">Z</div>
+  </div>
+
+  <div class="scene" id="fork"><div class="cap">Two ways<br>this goes<span class="g">.</span></div></div>
+
+  <div class="scene chat" id="A">
+    <div class="chip">TIMELINE A · YOU REPLY AT 8:31</div>
+    <div class="phead"><div class="av">👤</div><div>+44 7700 900312</div></div>
+    <div class="thread">
+      <div class="ts">Today 02:47</div>
+      <div class="b in">hi are you open tomorrow?? boiler just died, no hot water 😩</div>
+      <div class="ts">08:31</div>
+      <div class="b out">Morning! Yes, we can come out today. What's your postcode?</div>
+      <div class="b in">ah thanks but someone replied last night, they're coming at 9 👍</div>
+    </div>
+    <div class="stamp">Lost to whoever<br>was awake</div>
+    <div class="ff"><div><span>▶▶ FAST FORWARD</span><b id="ffclock">02:47</b><span>YOU, ASLEEP</span></div></div>
+  </div>
+
+  <div class="scene" id="rw"><div class="lines"></div><div class="bar" id="bar1"></div><div class="bar" id="bar2"></div><div class="t"><div>◀◀ REWIND</div><div id="rwclock">08:33</div></div></div>
+
+  <div class="scene chat" id="B">
+    <div class="chip">TIMELINE B · KYNTLO REPLIES</div>
+    <div class="phead"><div class="av">👤</div><div>+44 7700 900312</div></div>
+    <div class="thread">
+      <div class="ts">Today 02:47</div>
+      <div class="b in">hi are you open tomorrow?? boiler just died, no hot water 😩</div>
+      <div class="b ai"><small>KYNTLO AI · 02:47</small>Ah no, sorry! We've got an engineer free tomorrow at 8:00 or 11:30. Which suits?</div>
+      <div class="b in">8 please!! 🙏</div>
+      <div class="b ai"><small>KYNTLO AI · 02:48</small>Booked ✅ Thursday 8:00. Confirmation's on its way. Go back to sleep 😴</div>
+      <div class="cal"><div class="d"><span>THU</span><b>23</b></div><div><b>New booking · 08:00</b><br>Boiler repair · added to your calendar</div></div>
+    </div>
+    <div class="stamp">Booked while<br>you slept</div>
+  </div>
+
+  <div class="scene" id="outro"><div class="cap" id="o1">Whoever replies first<br><span class="g">usually gets the job.</span></div></div>
+</div>
+<script src="../lib/kit.js"></script>
+<script>
+window.DURATION = 29.5;
+window.BED = 'night';
+const END = 22.6;
+const stars = K.$('#stars');
+for (let i = 0; i < 70; i++) {
+  const s = document.createElement('i');
+  s.style.left = K.rand(i) * 1080 + 'px';
+  s.style.top = K.rand(i + 100) * 1900 + 'px';
+  stars.appendChild(s);
+}
+const A = K.$$('#A .thread > *'), B = K.$$('#B .thread > *');
+const AT = [6.3, 6.5, 8.95, 9.1, 10.3];
+const BT = [12.9, 13.0, 14.1, 15.5, 16.7, 17.8];
+window.SFX = [[0.7, 'buzz'], [3.0, 'whoosh'], [5.0, 'boom'], [9.1, 'send'], [10.3, 'pop'], [10.9, 'stamp'], [11.7, 'rewind'],
+  [14.1, 'send'], [15.5, 'pop'], [16.7, 'send'], [17.8, 'chime'], [18.6, 'stamp'], [19.7, 'whoosh'], [END, 'boom']];
+for (let i = 0; i < 12; i++) window.SFX.push([7.0 + i * 0.13, 'tick']);
+
+function sceneVis(id, a, b) {
+  const el = K.$(id);
+  el.style.visibility = a <= window.__t && window.__t < b ? 'visible' : 'hidden';
+  return el;
+}
+const fmt = (m) => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(Math.floor(m % 60)).padStart(2, '0')}`;
+
+window.renderFrame = (t) => {
+  window.__t = t;
+  // 1. lock screen
+  sceneVis('#lock', 0, 5.0);
+  K.$$('#stars i').forEach((s, i) => (s.style.opacity = 0.25 + 0.6 * Math.abs(Math.sin(t * (0.6 + K.rand(i + 7)) + i))));
+  const n = K.$('.notif');
+  const ni = K.back(K.p(t, 0.6, 0.5));
+  n.style.transform = `translateY(${(1 - ni) * -260}px) scale(${K.lerp(0.9, 1, ni)})`;
+  n.style.opacity = K.clamp(ni * 2);
+  if (t > 0.7 && t < 1.4) n.style.transform += ` translateX(${Math.sin(t * 80) * 6 * (1 - K.p(t, 0.7, 0.7))}px)`;
+  K.pop(K.$('#lc1'), t, 1.3, { end: 2.9 });
+  K.pop(K.$('#lc2'), t, 3.1, { end: 4.8 });
+  const dim = K.p(t, 3.0, 0.8);
+  K.$('#lock').style.filter = `brightness(${1 - dim * 0.45})`;
+  ['#z1', '#z2', '#z3'].forEach((z, i) => {
+    const a = K.p(t, 3.3 + i * 0.25, 0.6);
+    K.$(z).style.opacity = a * (1 - K.p(t, 4.6, 0.3));
+    K.$(z).style.transform = `translate(${Math.sin(t * 2 + i) * 10}px, ${-a * 60 - (t - 3.3) * 30}px)`;
+  });
+
+  // 2. fork
+  sceneVis('#fork', 5.0, 6.3);
+  const fc = K.$('#fork .cap');
+  const fi = K.back(K.p(t, 5.0, 0.4));
+  fc.style.transform = `scale(${K.lerp(1.6, 1, fi)})`;
+  fc.style.opacity = K.clamp(fi * 2);
+
+  // 3. timeline A
+  sceneVis('#A', 6.3, 11.75);
+  A.forEach((el, i) => K.pop(el, t, AT[i], { dy: 30 }));
+  const ff = K.$('#A .ff');
+  ff.style.opacity = K.p(t, 6.9, 0.2) * (1 - K.p(t, 8.6, 0.25));
+  ff.style.visibility = t > 6.9 && t < 8.9 ? 'visible' : 'hidden';
+  K.$('#ffclock').textContent = fmt(K.lerp(167, 511, K.inOut(K.p(t, 7.0, 1.55))));
+  const sA = K.$('#A .stamp'), sa = K.p(t, 10.9, 0.25);
+  sA.style.opacity = sa;
+  sA.style.transform = `translateX(-50%) rotate(-8deg) scale(${K.lerp(2.4, 1, K.out(sa))})`;
+
+  // 4. rewind
+  const rw = sceneVis('#rw', 11.75, 12.9);
+  K.$('#rwclock').textContent = fmt(K.lerp(513, 167, K.inOut(K.p(t, 11.8, 1.0))));
+  K.$('#bar1').style.top = ((t * 2400) % 2200) - 100 + 'px';
+  K.$('#bar2').style.top = ((t * 1700 + 900) % 2200) - 100 + 'px';
+  rw.style.transform = `translateX(${Math.sin(t * 60) * 8}px) skewX(${Math.sin(t * 23) * 2}deg)`;
+
+  // 5. timeline B
+  sceneVis('#B', 12.9, 19.75);
+  B.forEach((el, i) => K.pop(el, t, BT[i], { dy: 30 }));
+  const sB = K.$('#B .stamp'), sb = K.p(t, 18.6, 0.25);
+  sB.style.opacity = sb;
+  sB.style.transform = `translateX(-50%) rotate(-6deg) scale(${K.lerp(2.4, 1, K.out(sb))})`;
+
+  // 6. outro statement
+  sceneVis('#outro', 19.75, END + 0.3);
+  K.pop(K.$('#o1'), t, 19.8, { dy: 80 });
+
+  K.endCard(t, END, { words: [['Kyntlo'], ['answers'], ['|'], ['at', 1], ['2:47', 1], ['AM.', 1], ['|'], ["You"], ["don't"], ['have'], ['to.']], sub: 'AI replies · booking · reminders', cta: '2AM' });
+};
+window.SFX.push([END + 0.9 + 9 * 0.07 + 0.8, 'ding']);
+renderFrame(0);
+</script></body></html>

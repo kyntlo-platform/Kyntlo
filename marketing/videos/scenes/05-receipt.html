@@ -1,0 +1,117 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/kit.css">
+<style>
+  #stage { background: radial-gradient(70% 50% at 50% 45%, #2a1840 0%, #0d0818 60%, #050309 100%); }
+  .clip { position: absolute; left: 0; right: 0; top: 0; height: 1560px; overflow: hidden; z-index: 3; }
+  .paper { position: absolute; left: 70px; width: 940px; background: #f7f5ef; color: #141118; font-family: var(--mono); padding: 70px 54px 120px; box-shadow: 0 30px 80px rgba(0,0,0,0.55); }
+  .paper::before { content: ''; position: absolute; left: 0; right: 0; top: -18px; height: 18px; background: linear-gradient(-45deg, #f7f5ef 12px, transparent 0) 0 0/36px 36px, linear-gradient(45deg, #f7f5ef 12px, transparent 0) 0 0/36px 36px; background-repeat: repeat-x; }
+  .ln { overflow: hidden; }
+  .ln > div { padding: 9px 0; }
+  .c { text-align: center; font-size: 33px; letter-spacing: 0.04em; }
+  .h { text-align: center; font-size: 62px; font-weight: 800; letter-spacing: 0.02em; }
+  .s { text-align: center; font-size: 28px; color: #5c5763; }
+  .hr { border-top: 4px dashed #141118; margin: 14px 0; padding: 0 !important; }
+  .r { display: flex; justify-content: space-between; gap: 24px; font-size: 37px; line-height: 1.25; }
+  .r span:last-child { font-weight: 800; text-align: right; white-space: nowrap; }
+  .big { display: flex; justify-content: space-between; font-size: 44px; font-weight: 800; position: relative; }
+  .big .hl { position: absolute; left: -14px; top: 4px; bottom: 4px; background: rgba(255, 26, 163, 0.55); mix-blend-mode: multiply; border-radius: 6px; }
+  .bar { height: 110px; margin-top: 16px; background: repeating-linear-gradient(90deg, #141118 0 4px, transparent 4px 7px, #141118 7px 13px, transparent 13px 16px, #141118 16px 18px, transparent 18px 24px); }
+  .logo { text-align: center; } .logo img { width: 520px; filter: grayscale(1) brightness(0.25) contrast(2); }
+  .pk { color: #d4007a; }
+  .printer { position: absolute; left: 60px; right: 60px; top: 1530px; height: 420px; border-radius: 40px 40px 0 0; background: linear-gradient(180deg, #2b2733, #141119 60%); z-index: 4; box-shadow: 0 -10px 40px rgba(0,0,0,0.5); }
+  .printer::before { content: ''; position: absolute; left: 70px; right: 70px; top: 22px; height: 14px; border-radius: 8px; background: #050407; }
+  .printer .led { position: absolute; right: 90px; top: 80px; width: 22px; height: 22px; border-radius: 50%; background: #3dff8b; box-shadow: 0 0 20px #3dff8b; }
+  .printer .lbl { position: absolute; left: 90px; top: 70px; font-family: var(--mono); font-size: 26px; letter-spacing: 0.3em; color: #6f6880; }
+  #hook { position: absolute; top: 560px; left: 0; right: 0; z-index: 2; }
+  #hook .cap { position: static; font-size: 96px; }
+  #mid { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; }
+  #mid .cap { position: static; font-size: 110px; }
+</style></head>
+<body><div id="stage">
+  <div class="layer" id="aur"></div>
+  <div id="hook"><div class="cap">We printed what<br>last month <span class="g">really cost you.</span></div></div>
+  <div id="mid"><div class="cap">Same month.<br><span class="g">Different ending.</span></div></div>
+  <div class="clip">
+    <div class="paper" id="p1"></div>
+    <div class="paper" id="p2"></div>
+  </div>
+  <div class="printer"><div class="lbl">PRINTING…</div><div class="led"></div></div>
+</div>
+<script src="../lib/kit.js"></script>
+<script>
+window.DURATION = 29;
+window.BED = 'groove';
+const END = 22.2;
+const R1 = [
+  ['h', '★ LAST MONTH ★'], ['c', 'WHAT DOING IT BY HAND COST'], ['s', 'Store: your business · Cashier: you'], ['hr'],
+  ['r', '1x Lead who called at lunch', 'GONE'],
+  ['r', '3x No-shows (nobody reminded)', 'EMPTY CHAIRS'],
+  ['r', '1x Happy client, never asked', '0 REVIEWS'],
+  ['r', '12x "I\'ll post tomorrow"', '0 POSTS'],
+  ['r', '1x Form typed into CRM by hand', 'YOUR SUNDAY'],
+  ['r', '5x Logins, 5x invoices', '5 PASSWORDS'],
+  ['hr'], ['big', 'TOTAL', 'MORE THAN YOU THINK'], ['c', 'NO REFUNDS · NO RETURNS'], ['bar'],
+];
+const R2 = [
+  ['logo'], ['c', 'SAME MONTH. DIFFERENT ENDING.'], ['hr'],
+  ['r', 'Lead who called at lunch', 'TEXTED BACK <i class="pk">✓</i>'],
+  ['r', 'No-shows', 'REMINDED <i class="pk">✓</i>'],
+  ['r', 'Happy client', 'REVIEW ASKED <i class="pk">✓</i>'],
+  ['r', '"I\'ll post tomorrow"', 'MONTH SCHEDULED <i class="pk">✓</i>'],
+  ['r', 'Form → CRM', 'AUTOMATIC <i class="pk">✓</i>'],
+  ['r', 'Logins · invoices', '1 · 1 <i class="pk">✓</i>'],
+  ['hr'], ['big', 'TOTAL', 'ONE PLATFORM'], ['c', 'THANK YOU FOR NOT LOSING CUSTOMERS'], ['bar'],
+];
+function build(el, lines) {
+  el.innerHTML = lines.map(([k, a, b]) => {
+    let inner;
+    if (k === 'r' || k === 'big') inner = `<div class="${k}">${k === 'big' ? '<span class="hl"></span>' : ''}<span>${a}</span><span>${b}</span></div>`;
+    else if (k === 'logo') inner = '<div class="logo"><img src="../../../assets/kyntlo-logo-cropped.png"></div>';
+    else inner = `<div class="${k}">${a || ''}</div>`;
+    return `<div class="ln">${inner}</div>`;
+  }).join('');
+  return K.$$('.ln', el).map((ln) => ({ ln, h: ln.offsetHeight }));
+}
+const L1 = build(K.$('#p1'), R1), L2 = build(K.$('#p2'), R2);
+const SLOT = 1548, STEP = 0.52;
+const S1 = 0.9, S2 = 12.0;
+window.SFX = [[S1 - 0.6, 'whoosh'], [10.0, 'crumple'], [10.6, 'whoosh'], [20.0, 'chime'], [END, 'boom']];
+L1.forEach((_, i) => window.SFX.push([S1 + i * STEP, 'print']));
+L2.forEach((_, i) => window.SFX.push([S2 + i * STEP, 'print']));
+
+function print(paper, lines, t, start) {
+  let h = 70; // top padding emerges first
+  lines.forEach(({ h: lh }, i) => { h += lh * K.out(K.p(t, start + i * STEP, STEP * 0.8)); });
+  if (t > start + lines.length * STEP) h += 120 * K.p(t, start + lines.length * STEP, 0.4);
+  paper.style.top = SLOT - h + 'px';
+  return h;
+}
+
+window.renderFrame = (t) => {
+  K.aurora(K.$('#aur'), t, { a: 0.22 });
+  K.pop(K.$('#hook .cap'), t, 0.1, { end: 3.6, dy: 50 });
+  K.pop(K.$('#mid .cap'), t, 10.7, { end: 12.4, dy: 50 });
+  K.$('.printer .led').style.opacity = 0.5 + 0.5 * Math.sin(t * 12);
+
+  const p1 = K.$('#p1');
+  print(p1, L1, t, S1);
+  // crumple and toss
+  const c = K.p(t, 10.0, 0.7);
+  p1.style.transform = `translate(${K.inOut(c) * 900}px, ${-K.inOut(c) * 700}px) rotate(${c * 160}deg) scale(${1 - K.out(c) * 0.75})`;
+  p1.style.borderRadius = c * 120 + 'px';
+  p1.style.filter = `brightness(${1 - c * 0.3})`;
+  p1.style.visibility = c < 1 ? 'visible' : 'hidden';
+
+  const p2 = K.$('#p2');
+  print(p2, L2, t, S2);
+  p2.style.visibility = t >= S2 ? 'visible' : 'hidden';
+  const hl = K.$('#p2 .hl');
+  hl.style.width = K.out(K.p(t, 20.0, 0.5)) * 800 + 'px';
+  K.$('.printer .lbl').textContent = (t > S1 + L1.length * STEP && t < S2) || t > S2 + L2.length * STEP ? 'DONE.' : 'PRINTING…';
+
+  K.endCard(t, END, { words: [['Next'], ['month,'], ['|'], ['print'], ['a'], ['|'], ['better', 1], ['receipt.', 1]], sub: 'Follow-up · reminders · reviews · social', cta: 'RECEIPT' });
+};
+window.SFX.push([END + 0.9 + 8 * 0.07 + 0.8, 'ding']);
+renderFrame(0);
+</script></body></html>
