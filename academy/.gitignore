@@ -1,0 +1,7 @@
+output/
+.cache/
+.auth/
+assets/music/*
+!assets/music/.gitkeep
+pipeline/node_modules/
+login-failed.png

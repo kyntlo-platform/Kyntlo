@@ -1,0 +1,13 @@
+{
+  "name": "kyntlo-academy-pipeline",
+  "private": true,
+  "type": "module",
+  "description": "Records, narrates and edits Kyntlo Academy course videos.",
+  "scripts": {
+    "render": "node render.mjs",
+    "login": "node login.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.56.1"
+  }
+}
