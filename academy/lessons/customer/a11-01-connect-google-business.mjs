@@ -27,7 +27,7 @@ export default {
     },
     {
       chapter: 'Why connect Google',
-      say: "Why connect? Google reviews are often the first thing new customers see. Once connected, you can reply from Kyntlo, track your rating over time, and send people straight to your review page.",
+      say: "Why connect? Google reviews are often the first thing new customers see. Once connected, you can reply from Kyntlo, track your rating over time, and send people straight to your review page. Plus, your average rating shows up in your reports, so you can see the effect of every request you send.",
       actions: [
         { at: 0.6, hover: '#rp_sources_setup' },
         { at: 0.8, highlight: '#rp_sources_setup', label: 'Review sources', for: 4.4 },
@@ -35,7 +35,7 @@ export default {
     },
     {
       chapter: 'Before you start',
-      say: "Before you start, make sure you can sign in to the Google account that manages your business profile, as an owner or a manager. That's the account Kyntlo needs permission from.",
+      say: "Before you start, make sure you can sign in to the Google account that manages your business profile, as an owner or a manager. That's the account Kyntlo needs permission from. If someone else, like a web designer, set up your profile, ask them to add you as an owner first.",
       actions: [
         { at: 0.6, title: "You'll need", sub: 'Owner or manager access to your Google Business Profile', for: 6 },
       ],
@@ -61,7 +61,7 @@ export default {
     },
     {
       chapter: 'Choose your location',
-      say: "Back in Kyntlo, choose your business location. If you have more than one, pick the one that matches this account. Each location should have its own Kyntlo sub-account. Then click Connect location.",
+      say: "Back in Kyntlo, choose your business location. If you have more than one, pick the one that matches this account. Each location should have its own Kyntlo sub-account, so its reviews and reports stay separate. Then click Connect location.",
       actions: [
         { at: 0.6, hover: '#gbp_loc_0' },
         { at: 0.8, highlight: '#gbp_loc_0', label: 'Bloom Dental Studio', for: 3.4 },

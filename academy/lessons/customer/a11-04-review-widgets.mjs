@@ -11,13 +11,13 @@ export default {
     {
       chapter: 'Intro',
       card: { type: 'intro', kicker: 'Module 11 · Lesson 4', title: 'Review *widgets*', sub: 'Real proof from real customers, on your website.' },
-      say: "In this lesson, you'll turn your best reviews into a live widget on your website, so visitors see real proof from real customers, updated automatically.",
+      say: "In this lesson, you'll turn your best reviews into a live widget on your website, so visitors see real proof from real customers, updated automatically. No coding needed, and it takes about five minutes.",
     },
     {
       chapter: 'Why widgets',
       goto: '{demo}#/reputation/widgets',
       settle: 1,
-      say: "Social proof sells. A visitor who sees dozens of five-star reviews is far more likely to book. Widgets show your Google and Facebook reviews on any website, including your Kyntlo funnels.",
+      say: "Social proof sells. A visitor who sees dozens of five-star reviews is far more likely to book. Widgets show your Google and Facebook reviews on any website, including your Kyntlo funnels. And unlike screenshots of reviews, a widget is live, so visitors can trust it's real.",
       actions: [
         { at: 0.6, title: 'Widgets', sub: 'Your reviews, on your website', for: 4 },
         { at: 6.8, hover: '#wg_table' },
@@ -26,7 +26,7 @@ export default {
     },
     {
       chapter: 'The widget builder',
-      say: "Click New Widget to open the builder. Your settings are on the left, and a live preview of your website is on the right.",
+      say: "Click New Widget to open the builder. Your settings are on the left, and a live preview of your website is on the right, so you can see every change before anyone else does.",
       actions: [
         { at: 0.6, click: '#wg_new' },
         { at: 3.0, highlight: '#wg_settings', label: 'Settings', for: 2.6 },
@@ -35,7 +35,7 @@ export default {
     },
     {
       chapter: 'Name',
-      say: "Give it a name you'll recognise, like the page it's going on.",
+      say: "Give it a name you'll recognise, like the page it's going on. You can create as many widgets as you need, one for each page or website.",
       actions: [
         { at: 0.4, click: '#wg_name' },
         { at: 0.8, press: 'Control+A' },
@@ -44,7 +44,7 @@ export default {
     },
     {
       chapter: 'Layout',
-      say: "Now choose a layout. A carousel slides through reviews and saves space. A list suits a dedicated reviews page. A badge is a small rating seal for your header or footer. And a grid shows lots of reviews at once.",
+      say: "Now choose a layout. A carousel slides through reviews and saves space. A list suits a dedicated reviews page. A badge is a small rating seal for your header or footer. And a grid shows lots of reviews at once. Pick the one that fits the space on your page.",
       actions: [
         { at: 0.8, click: '#wg_layout_carousel' },
         { at: 4.6, click: '#wg_layout_list' },
@@ -55,7 +55,7 @@ export default {
     },
     {
       chapter: 'Sources & ratings',
-      say: "Choose your sources, Google and Facebook, and which ratings to show. Four stars and up is a good balance: it looks great, and it still feels genuine.",
+      say: "Choose your sources, Google and Facebook, and which ratings to show. Four stars and up is a good balance: it looks great, and it still feels genuine. A wall of only five-star reviews can actually look less believable.",
       actions: [
         { at: 0.6, hover: '#wg_src_google' },
         { at: 0.8, highlight: '#wg_src_google', label: 'Sources', for: 2.4 },
@@ -66,7 +66,7 @@ export default {
     },
     {
       chapter: 'Theme & display',
-      say: "Match your website with a light or dark theme, and choose what each review shows: the rating summary, reviewer photos and dates.",
+      say: "Match your website with a light or dark theme, and choose what each review shows: the rating summary, reviewer photos and dates. Every change shows up in the preview straight away.",
       actions: [
         { at: 0.8, click: '#wg_theme_dark' },
         { at: 2.8, click: '#wg_theme_light' },
@@ -77,14 +77,14 @@ export default {
     },
     {
       chapter: 'Save',
-      say: "Happy with it? Click Save widget.",
+      say: "Happy with it? Click Save widget. You can come back and change it whenever you like.",
       actions: [
         { at: 0.4, click: '#wg_save' },
       ],
     },
     {
       chapter: 'Embed code',
-      say: "Now click Get code. This short snippet is all your website needs. Click Copy code.",
+      say: "Now click Get code. This short snippet is all your website needs. You don't need to be a developer. Click Copy code.",
       actions: [
         { at: 0.4, click: '#wg_code' },
         { at: 2.0, hover: '#wg_codebox' },
@@ -113,11 +113,11 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Put reviews next to *Book now*', sub: 'Proof works best at the moment of decision.' },
-      say: "Here's a pro tip. Place your review widget right next to your main call to action, like your Book now button. Visitors hesitate at the moment they decide, and that's exactly when proof from other customers helps most.",
+      say: "Here's a pro tip. Place your review widget right next to your main call to action, like your Book now button. Visitors hesitate at the moment they decide, and that's exactly when proof from other customers helps most. Add a small badge to your header too, so your rating is visible on every page.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Module 12', title: 'Connecting *Stripe*', sub: 'Set up payments in Kyntlo.', cta: 'Kyntlo [Academy]' },
-      say: "That's the end of the Reputation module. Great job! Next, in module twelve, we'll set up payments, starting with connecting Stripe. See you there.",
+      say: "That's the end of the Reputation module. Great job! Next, in module twelve, we'll set up payments, starting with connecting Stripe, so you can take payments right inside Kyntlo. See you there.",
     },
   ],
 };

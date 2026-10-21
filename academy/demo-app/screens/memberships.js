@@ -429,7 +429,7 @@
           <div class="card" style="margin-bottom:20px"><div class="card-b"><b>${esc(g.name)}</b><div class="muted" style="font-size:14px;margin:4px 0 12px">${esc(g.desc)}</div>
             <div class="row" style="font-size:14px;gap:16px"><span><b>${g.members}</b> members</span><span><b style="color:var(--green)">●</b> 12 online</span><span><b>3</b> admins</span></div></div></div>
           <div class="card" id="cm_leader"><div class="card-h"><h3>Leaderboard</h3><span class="muted" style="font-size:13px">· 30 days</span></div><div class="card-b">
-            ${[['Isla Thompson', 142], ['Sophie Turner', 98], ['Chloe Scott', 76]].map(([n, pts], i) => `<div class="row" style="margin-bottom:12px"><b style="width:18px">${i + 1}</b>${avatar(n, 30)}<span style="flex:1">${esc(n)}</span><span class="chip purple">${pts} pts</span></div>`).join('')}
+            ${(g.id === 'g1' ? [['Isla Thompson', 142], ['Sophie Turner', 98], ['Chloe Scott', 76]] : []).map(([n, pts], i) => `<div class="row" style="margin-bottom:12px"><b style="width:18px">${i + 1}</b>${avatar(n, 30)}<span style="flex:1">${esc(n)}</span><span class="chip purple">${pts} pts</span></div>`).join('')}
             <div class="muted" style="font-size:13px">Members earn points for posts, comments and likes.</div></div></div>
         </div>
       </div>`;

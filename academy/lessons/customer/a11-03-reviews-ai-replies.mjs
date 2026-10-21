@@ -11,7 +11,7 @@ export default {
     {
       chapter: 'Intro',
       card: { type: 'intro', kicker: 'Module 11 · Lesson 3', title: 'Responding with *Reviews AI*', sub: 'On-brand replies to every review, in seconds.' },
-      say: "In this lesson, you'll reply to your reviews in seconds with Reviews AI, Kyntlo's built-in assistant that writes on-brand responses for you to check and post.",
+      say: "In this lesson, you'll reply to your reviews in seconds with Reviews AI, Kyntlo's built-in assistant that writes on-brand responses for you to check and post. You stay in control, and you save hours every month.",
     },
     {
       chapter: 'Why reply',
@@ -26,7 +26,7 @@ export default {
     },
     {
       chapter: 'Find unanswered reviews',
-      say: "Click Needs reply to see only the reviews you haven't answered yet. We have three waiting.",
+      say: "Click Needs reply to see only the reviews you haven't answered yet. We have three waiting. These are the ones to clear first.",
       actions: [
         { at: 0.6, click: '#rv_f_needs-reply' },
         { at: 2.4, highlight: '#rv_list', label: '3 to answer', for: 3 },
@@ -43,7 +43,7 @@ export default {
     },
     {
       chapter: 'Set up Reviews AI',
-      say: "First, choose a mode. Suggestive means the AI drafts a reply and you approve it. Auto-pilot means it posts replies for you automatically. Start with Suggestive, so you can see how it writes.",
+      say: "First, choose a mode. Suggestive means the AI drafts a reply and you approve it. Auto-pilot means it posts replies for you automatically. Start with Suggestive, so you can see how it writes, and fine-tune it before you let it reply on its own.",
       actions: [
         { at: 1.2, hover: '#rs_ai_suggestive' },
         { at: 1.4, highlight: '#rs_ai_suggestive', label: 'You approve each reply', for: 3.4 },
@@ -67,7 +67,7 @@ export default {
     },
     {
       chapter: 'Reply with AI',
-      say: "Back on Reviews, click Reply on Emma's five-star review, then Reply with AI. In a couple of seconds, you have a warm, personal reply that mentions her whitening.",
+      say: "Back on Reviews, click Reply on Emma's five-star review, then Reply with AI. In a couple of seconds, you have a warm, personal reply that mentions her whitening, and is signed off just the way we set up.",
       actions: [
         { at: 0.4, click: '#tab_reviews' },
         { at: 2.4, click: '#rv_reply_0' },
@@ -79,7 +79,7 @@ export default {
     },
     {
       chapter: 'Check and post',
-      say: "Always read it before you post, and change anything you like. When it sounds like you, click Post reply. It's published on Google under your business name.",
+      say: "Always read it before you post, and change anything you like. When it sounds like you, click Post reply. It's published on Google under your business name, and the review is marked as replied in Kyntlo.",
       actions: [
         { at: 0.6, highlight: '#rv_text_0', label: 'Check it first', for: 3 },
         { at: 6.6, click: '#rv_post_0' },
@@ -106,7 +106,7 @@ export default {
     },
     {
       chapter: 'Auto-pilot',
-      say: "Once you trust the replies, you can switch on Auto-pilot for four and five-star reviews, and keep handling lower ratings yourself. On the Pro plan, AI usage is included, so there's no charge per reply.",
+      say: "Once you trust the replies, you can switch on Auto-pilot for four and five-star reviews, and keep handling lower ratings yourself. On the Pro plan, AI usage is included, so there's no charge per reply. And you can switch back to Suggestive any time.",
       actions: [
         { at: 0.6, hover: '#rv_ai_banner' },
         { at: 0.8, highlight: '#rv_ai_banner', label: 'Change mode any time', for: 4 },
@@ -116,7 +116,7 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Reply within *two days*', sub: 'A thoughtful answer to a bad review builds trust.' },
-      say: "Here's a pro tip. Aim to reply to every review within two days. Quick replies show you're paying attention, and a thoughtful answer to a bad review often wins more trust than a page full of five stars.",
+      say: "Here's a pro tip. Aim to reply to every review within two days. Quick replies show you're paying attention, and a thoughtful answer to a bad review often wins more trust than a page full of five stars. Reviews AI makes that easy, even on your busiest days.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Lesson 11.4', title: 'Review *widgets*', sub: 'Show your best reviews on your website.', cta: 'Kyntlo [Academy]' },

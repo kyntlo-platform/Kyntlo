@@ -297,13 +297,13 @@
                 ['sentiment', 'Sentiment', 'smile', 'Detects whether a message is positive, neutral or negative, so you can act fast.']].map(([id, t, ic, d]) => `
                 <div class="ai-actrow" id="gs_wf_${id}" style="margin:0;padding:14px"><span class="ai-ico sm" style="background:#eef4ff;color:#3538cd">${icon(ic, 18)}</span><div><div class="t" style="font-size:15px">${t}</div><div class="d" style="font-size:13.5px;color:var(--muted)">${d}</div></div></div>`).join('')}
             </div>
-            <div class="row muted" style="padding:0 20px 16px;font-size:14px">${icon('automation', 18)}<span>In the workflow builder, click <b style="color:var(--ink-2)">Add action</b> and look in the <b style="color:var(--ink-2)">AI</b> section. Each AI step is one Workflow AI execution.</span></div>
+            <div class="row muted" id="gs_wf_where" style="padding:0 20px 16px;font-size:14px">${icon('automation', 18)}<span>In the workflow builder, click <b style="color:var(--ink-2)">Add action</b> and look in the <b style="color:var(--ink-2)">AI</b> section. Each AI step is one Workflow AI execution.</span></div>
           </div>
           <div class="card" id="gs_wf_test">
             <div class="card-h"><h3>Try it on a message</h3><span class="spacer"></span><span class="muted" style="font-size:14px">Sample inbound message</span></div>
             <div class="card-b">
               <div class="row" style="gap:8px;margin-bottom:12px">${WF_SAMPLES.map((s, i) => `<button class="btn sm ${i === S.wfSample ? 'primary' : ''}" id="gs_wf_sample${i}" data-smp="${i}">${esc(s.label)}</button>`).join('')}</div>
-              <div class="row" style="align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#f9fafb">${avatar(smp.msg.includes('Grace') ? 'Grace Wright' : smp.label === 'Complaint' ? 'Oliver King' : 'Ava Robinson', 32)}<div style="font-size:15px">${esc(smp.msg)}</div></div>
+              <div class="row" id="gs_wf_msg" style="align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#f9fafb">${avatar(smp.msg.includes('Grace') ? 'Grace Wright' : smp.label === 'Complaint' ? 'Oliver King' : 'Ava Robinson', 32)}<div style="font-size:15px">${esc(smp.msg)}</div></div>
               <div class="row" style="margin-top:14px"><button class="btn primary" id="gs_wf_run">${icon('play', 16)} Run test</button><span class="muted" style="font-size:14px" id="gs_wf_status">${ran ? 'Test complete · 3 AI steps' : 'Runs the example workflow on this message'}</span></div>
               <div id="gs_wf_results" style="margin-top:14px;display:${ran ? 'block' : 'none'}">
                 ${[['Classify message', smp.intent, 'split'], ['Summarise', smp.summary, 'note'], ['AI reply', smp.reply, 'chat']].map(([k, v, ic], i) => `
@@ -935,7 +935,7 @@ Keep answers short and friendly. Never give medical advice or promise a final pr
       </div>`;
     const useLabel = { email: 'Use in email campaign', social: 'Send to Social Planner', blog: 'Create blog post', website: 'Copy to page builder', sms: 'Use in SMS' };
     $('#cnt_use_l').textContent = useLabel[S.cntType];
-    $$('[data-ty]', body).forEach((b) => (b.onclick = () => { S.cntType = b.dataset.ty; const p = $('#cnt_prompt').value; textWriter(body); $('#cnt_prompt').value = p; }));
+    $$('[data-ty]', body).forEach((b) => (b.onclick = () => { S.cntType = b.dataset.ty; textWriter(body); }));
     $$('[data-tone]', body).forEach((b) => (b.onclick = () => { S.cntTone = b.dataset.tone; $$('[data-tone]', body).forEach((x) => x.classList.toggle('primary', x === b)); }));
     $$('[data-seg]', body).forEach((b) => (b.onclick = () => { S.cntLen = b.dataset.seg; $$('[data-seg]', body).forEach((x) => x.classList.toggle('on', x === b)); }));
     const gen = () => {

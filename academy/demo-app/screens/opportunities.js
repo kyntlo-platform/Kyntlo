@@ -58,6 +58,7 @@
     const s = document.createElement('style');
     s.id = 'css-opportunities';
     s.textContent = `
+      #toasts { pointer-events: none; }
       .op-dd { justify-content: space-between; width: 100%; font-weight: 500; color: var(--ink); }
       .op-dd span { overflow: hidden; text-overflow: ellipsis; }
       .op-wrap { display: flex; flex-direction: column; height: 100%; }

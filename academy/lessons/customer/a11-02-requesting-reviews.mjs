@@ -11,7 +11,7 @@ export default {
     {
       chapter: 'Intro',
       card: { type: 'intro', kicker: 'Module 11 · Lesson 2', title: 'Requesting reviews *automatically*', sub: 'Ask every happy customer, every time.' },
-      say: "In this lesson, you'll ask customers for reviews by text and email, one at a time or completely automatically, and track who has actually left one.",
+      say: "In this lesson, you'll ask customers for reviews by text and email, one at a time or completely automatically, and track who has actually left one. More reviews mean more trust, and better visibility on Google.",
     },
     {
       chapter: 'Why ask',
@@ -28,7 +28,7 @@ export default {
     },
     {
       chapter: 'Send a request',
-      say: "Let's send one by hand first. Click Send Review Request, then search for the contact. Mia Harris has just finished her whitening session, so let's select her.",
+      say: "Let's send one by hand first. Click Send Review Request, then search for the contact. Mia Harris has just finished her whitening session, so let's select her. The best time to ask is while the experience is fresh.",
       actions: [
         { at: 0.6, click: '#rp_send' },
         { at: 4.2, type: 'Mia', into: '#rq_search' },
@@ -38,7 +38,7 @@ export default {
     },
     {
       chapter: 'SMS or email',
-      say: "Choose SMS or email. Text messages usually get the most reviews, because people read them within minutes. The preview shows exactly what Mia will receive, with her name and your review link filled in.",
+      say: "Choose SMS or email. Text messages usually get the most reviews, because people read them within minutes. Email works well for customers who prefer it, or when you don't have a mobile number. The preview shows exactly what Mia will receive, with her name and your review link filled in.",
       actions: [
         { at: 0.6, hover: '#rq_sms' },
         { at: 0.8, highlight: '.rp-seg', label: 'SMS or email', for: 3 },
@@ -60,7 +60,7 @@ export default {
     },
     {
       chapter: 'Tracking requests',
-      say: "Here you can follow every request. Delivered means it arrived. Clicked means they opened your review link. And Reviewed means they left a review. Together, these tell you how well your asking is working.",
+      say: "Here you can follow every request. Delivered means it arrived. Clicked means they opened your review link. And Reviewed means they left a review. Together, these tell you how well your asking is working. If lots of people click but few review, try a shorter message, or a different time of day.",
       actions: [
         { at: 0.6, hover: '#rq_row_3' },
         { at: 0.8, highlight: '#rq_row_4 td:last-child', label: 'Delivered', for: 2.4 },
@@ -71,7 +71,7 @@ export default {
     },
     {
       chapter: 'Automatic requests',
-      say: "Sending by hand works, but the real win is automation. Most of these requests came from a workflow called Review Request After Visit. It sends a request automatically whenever an appointment is marked as showed. You'll build workflows like this in module nine.",
+      say: "Sending by hand works, but the real win is automation. Most of these requests came from a workflow called Review Request After Visit. It sends a request by itself whenever an appointment is marked as showed. You'll build workflows like this in module nine. Once it's on, every customer is asked, every time, without anyone on your team having to remember.",
       caption: "Sending by hand works, but the real win is automation. Most of these requests came from a workflow called Review Request After Visit. It sends a request automatically whenever an appointment is marked as showed. You'll build workflows like this in module 9.",
       actions: [
         { at: 4.4, hover: '#rq_row_2 td:nth-child(3)' },
@@ -98,7 +98,7 @@ export default {
     },
     {
       chapter: 'The message',
-      say: "You can edit the message too. Keep it short, warm and personal, and always keep the review link placeholder in it. Then click Save.",
+      say: "You can edit the message too. Keep it short, warm and personal, and always keep the review link placeholder in it. Use the customer's first name, and mention your business, so it never feels like spam. Then click Save.",
       actions: [
         { at: 0.6, hover: '#rs_sms_tpl' },
         { at: 0.8, highlight: '#rs_sms_tpl', label: 'Your SMS', for: 4 },
@@ -108,7 +108,7 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Ask at the moment of *delight*', sub: 'Right after the result, not weeks later.' },
-      say: "Here's a pro tip. Time your requests for the moment customers are happiest. For a dentist, that's right after a whitening session, or the day the braces come off. For you, it might be delivery day, or the end of a project.",
+      say: "Here's a pro tip. Time your requests for the moment customers are happiest. For a dentist, that's right after a whitening session, or the day the braces come off. For you, it might be delivery day, or the end of a project. Set your workflow's trigger to match that moment.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Lesson 11.3', title: 'Responding with *Reviews AI*', sub: 'On-brand replies in seconds.', cta: 'Kyntlo [Academy]' },

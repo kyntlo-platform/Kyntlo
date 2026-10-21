@@ -78,7 +78,7 @@ export default {
     },
     {
       chapter: 'Avoiding duplicates',
-      say: "Kyntlo spots that this number belongs to Emma Clarke, and offers to open her record instead. It recognises people by their email address and phone number, which is why it's worth collecting both.",
+      say: "Kyntlo spots that this number belongs to Emma Clarke, and offers to open her record instead. It recognises people by their email address and phone number, which is why it's worth collecting both on every form. One person, one record, means one complete history.",
       actions: [
         { at: 0.4, hover: '#nc_dupwarn' },
         { at: 0.6, highlight: '#nc_dupwarn', label: 'Already in your list', for: 4 },

@@ -60,7 +60,7 @@ export default {
     },
     {
       chapter: 'Advanced filters',
-      say: "Click Apply. Now the list shows only matching contacts, and the filter appears as a chip, so you always know what you're looking at. You can stack several filters. A contact has to match all of them to show up.",
+      say: "Click Apply. Now the list shows only matching contacts, and the filter appears as a chip, so you always know what you're looking at. Click the cross on a chip to remove it. You can stack several filters. A contact has to match all of them to show up.",
       actions: [
         { at: 0.3, click: '#flt_apply' },
         { at: 3.2, hover: '#ct_pill_0' },
@@ -70,7 +70,7 @@ export default {
     },
     {
       chapter: 'Sorting',
-      say: "Next to it is Sort. By default, your newest contacts are at the top. You can switch to oldest first, or sort alphabetically by name.",
+      say: "Next to it is Sort. By default, your newest contacts are at the top. You can switch to oldest first, or sort alphabetically by name. Alphabetical order is handy when you're working through a call list.",
       actions: [
         { at: 0.6, click: '#ct_sort' },
         { at: 2.4, highlight: '.menu', label: 'Choose an order', for: 3 },

@@ -35,7 +35,7 @@ export default {
     },
     {
       chapter: 'Contact details',
-      say: "Every field on the left can be edited. Click a field, make your change, and a Save button appears at the bottom of the panel.",
+      say: "Every field on the left can be edited. Click a field, make your change, and a Save button appears at the bottom of the panel. Here, I'll add the company Olivia works for, then save.",
       actions: [
         { at: 1.2, click: '#cd_f_company-name' },
         { at: 2.4, type: 'Studio Nine Design' },
@@ -45,7 +45,7 @@ export default {
     },
     {
       chapter: 'The timeline',
-      say: "The middle column is her timeline. Every message, booking, tag and change is logged here in order, so anyone on your team can catch up in seconds. Switch to Conversations to see just her messages.",
+      say: "The middle column is her timeline. Every message, booking, tag and change is logged here in order, so anyone on your team can catch up in seconds, even if they've never spoken to her. Switch to Conversations to see just her messages.",
       actions: [
         { at: 0.6, hover: '#cd_activity' },
         { at: 0.8, highlight: '#cd_activity', label: 'Her whole history', for: 4 },
@@ -54,7 +54,7 @@ export default {
     },
     {
       chapter: 'Replying',
-      say: "You can reply right from the record. Choose the channel, type your message and click Send. She asked about Thursday, so let's offer her a time.",
+      say: "You can reply right from the record. Choose the channel, type your message and click Send. Her reply comes back into this same thread, and into your Conversations inbox. She asked about Thursday, so let's offer her a time.",
       speed: 1.2,
       actions: [
         { at: 0.8, hover: '#cd_channels' },
@@ -76,7 +76,7 @@ export default {
     },
     {
       chapter: 'Tasks',
-      say: "Tasks are reminders with a due date and an owner. Let's remind ourselves to call Olivia tomorrow if she hasn't replied.",
+      say: "Tasks are reminders with a due date and an owner. Let's remind ourselves to call Olivia tomorrow if she hasn't replied. Tasks show up on your dashboard and in the Tasks tab, so nothing slips through the cracks.",
       actions: [
         { at: 0.6, click: '#cd_addtask' },
         { at: 2.6, type: 'Call Olivia if no reply', into: '#cd_task_title' },
@@ -98,7 +98,7 @@ export default {
     },
     {
       chapter: 'Opportunities',
-      say: "At the top on the right, opportunities show the deals linked to her, with their stage and value. We'll dig into those in module six.",
+      say: "At the top on the right, opportunities show the deals linked to her, with their stage and value. Click one to see where the deal stands. We'll dig into those in module six.",
       actions: [
         { at: 0.6, hover: '#cd_right .card' },
         { at: 0.8, highlight: '#cd_right .card', label: 'Her deal', for: 3.4 },

@@ -146,6 +146,7 @@
     const s = document.createElement('style');
     s.id = 'css-dashboard';
     s.textContent = `
+      #toasts { pointer-events: none; }
       .dw-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; align-items: start; }
       .dw { position: relative; display: flex; flex-direction: column; min-width: 0; transition: box-shadow .15s, outline-color .15s; }
       .dw .card-b { flex: 1; min-height: 0; overflow: hidden; }

@@ -12,13 +12,13 @@ export default {
     {
       chapter: 'Intro',
       card: { type: 'intro', kicker: 'Module 1 · Lesson 6', title: 'The Kyntlo *mobile app*', sub: 'Reply to leads and manage bookings on the go.' },
-      say: "In this lesson, we'll set up the Kyntlo mobile app. Leads often go to whoever replies first, so having your inbox in your pocket is one of the quickest wins in the whole course.",
+      say: "In this lesson, we'll set up the Kyntlo mobile app. Leads often go to whoever replies first, so having your inbox in your pocket is one of the quickest wins in the whole course. We'll download it, log in, and then use it just like you would on a busy day at the dental practice, between patients.",
     },
     {
       chapter: 'Download the app',
       goto: '{demo}#/mobile-app',
       settle: 1,
-      say: "Click Mobile App at the bottom of the sidebar. Scan this code with your phone's camera, or search for Kyntlo in the App Store or on Google Play. The app is included in every plan.",
+      say: "Click Mobile App at the bottom of the sidebar. Scan this code with your phone's camera, or search for Kyntlo in the App Store or on Google Play. The app is included in every plan, and it works on both iPhone and Android. Every team member can install it with their own login.",
       actions: [
         { at: 0.4, highlight: '#sb_mobile-app', label: 'Mobile App', for: 2.4 },
         { at: 3.0, highlight: '#mob_download', label: 'Scan to download', for: 4 },
@@ -56,7 +56,7 @@ export default {
     },
     {
       chapter: 'Reply to leads',
-      say: "The Conversations tab is the same inbox you have on the web. Unread messages are at the top. Olivia is asking about an Invisalign consultation, so let's open her conversation.",
+      say: "The Conversations tab is the same inbox you have on the web. Unread messages are at the top. Olivia is asking about an Invisalign consultation, so let's open her conversation. The blue badge shows how many messages are waiting.",
       actions: [
         { at: 0.4, highlight: '#mob_screen .mo-body', label: 'Your inbox', for: 3.4 },
         { at: 5.4, hover: '#mob_conv_v1' },
@@ -84,7 +84,7 @@ export default {
     },
     {
       chapter: 'Contacts & opportunities',
-      say: "Contacts lets you look anyone up and call them with one tap. And Opportunities shows your pipeline, so you can move a deal forward straight after a consultation.",
+      say: "Contacts lets you look anyone up and call them with one tap, or add a quick note after a visit. And Opportunities shows your pipeline, so you can move a deal forward straight after a consultation, while it's fresh in your mind.",
       actions: [
         { at: 0.3, click: '#mob_nav_contacts' },
         { at: 2.4, highlight: '#mob_screen .mo-body', label: 'Look up and call', for: 2.6 },
@@ -94,7 +94,7 @@ export default {
     },
     {
       chapter: 'More',
-      say: "Under More, you'll find your notifications, tasks, payments, reviews and the dialer. Calls from the dialer use your business number too, so your personal mobile stays private.",
+      say: "Under More, you'll find your notifications, tasks, payments, reviews and the dialer. Calls from the dialer use your business number too, so your personal mobile stays private. And because everything syncs, whatever you do on your phone shows up on the web straight away, and the other way round.",
       actions: [
         { at: 0.3, click: '#mob_nav_more' },
         { at: 1.6, zoom: '#mob_phone', scale: 1.3, for: 6 },
@@ -103,8 +103,8 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Reply within *five minutes*', sub: 'Turn notifications on for new leads.' },
-      say: "Here's a pro tip. Leads contacted within five minutes are far more likely to book. Keep notifications on for new leads and messages, and let the app do the reminding for you.",
-      caption: "Here's a pro tip. Leads contacted within 5 minutes are far more likely to book. Keep notifications on for new leads and messages, and let the app do the reminding for you.",
+      say: "Here's a pro tip. Leads contacted within five minutes are far more likely to book. Keep notifications on for new leads and messages, and let the app do the reminding for you. You can mute other alerts in the app's settings.",
+      caption: "Here's a pro tip. Leads contacted within 5 minutes are far more likely to book. Keep notifications on for new leads and messages, and let the app do the reminding for you. You can mute other alerts in the app's settings.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Lesson 2.1', title: 'Reading your *dashboard*', sub: 'Module 2: Dashboard & Reporting', cta: 'Kyntlo [Academy]' },

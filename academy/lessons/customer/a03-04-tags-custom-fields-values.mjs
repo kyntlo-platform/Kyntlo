@@ -54,7 +54,7 @@ export default {
     },
     {
       chapter: 'Custom fields',
-      say: "Now scroll down to Additional info. These are custom fields. They hold the details that standard fields don't cover, like treatment interest, last visit date, or preferred dentist.",
+      say: "Now scroll down to Additional info. These are custom fields. They hold the details that standard fields don't cover, like treatment interest, last visit date, or preferred dentist. Unlike a tag, a field holds a value that can be different for every contact.",
       actions: [
         { at: 0.6, hover: '#cd_sec_custom' },
         { at: 2.6, highlight: '#cd_custom', label: 'Custom fields', for: 4.4 },
@@ -72,7 +72,7 @@ export default {
     },
     {
       chapter: 'Creating fields',
-      say: "You create new custom fields in Settings, under Custom Fields. Pick a field type, like text, date, dropdown or checkbox, and group related fields into folders. We'll walk through Settings in module fourteen.",
+      say: "You create new custom fields in Settings, under Custom Fields. Pick a field type, like text, date, dropdown or checkbox, and group related fields into folders. Your forms can fill in custom fields too, so the details people type in land right on their record. We'll walk through Settings in module fourteen.",
       actions: [
         { at: 0.8, hover: '#sb_settings' },
         { at: 1.0, highlight: '#sb_settings', label: 'Settings › Custom Fields', for: 4 },

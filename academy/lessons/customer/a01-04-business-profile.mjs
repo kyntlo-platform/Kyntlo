@@ -17,7 +17,7 @@ export default {
     {
       chapter: 'Finding Business Profile',
       goto: '{demo}#/dashboard',
-      say: "Click Settings at the bottom of the sidebar. Business Profile is the first page in the settings menu, under My Business.",
+      say: "Click Settings at the bottom of the sidebar. Business Profile is the first page in the settings menu, under My Business. If you can't see Settings, ask the account owner, because only admins can change these details.",
       actions: [
         { at: 0.4, hover: '#sb_settings' },
         { at: 0.6, highlight: '#sb_settings', label: 'Settings', for: 2 },
@@ -67,7 +67,7 @@ export default {
     },
     {
       chapter: 'Address & time zone',
-      say: "Now the time zone, which is more important than it looks. It controls when appointments show, when reminders and workflows send, and how your reports count each day. Pick the time zone where your business operates, then click Update Address.",
+      say: "Now the time zone, which is more important than it looks. It controls when appointments show, when reminders and workflows send, and how your reports count each day. Pick the time zone where your business operates, then click Update Address. If your team travels, that's fine: the business time zone is what customers book against.",
       actions: [
         { at: 0.4, click: '#bp_timezone' },
         { at: 1.6, zoom: '.menu', scale: 1.5, for: 4 },
@@ -120,7 +120,7 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Copy your legal details *word for word*', sub: 'Mismatches are the top reason registrations get rejected.' },
-      say: "Here's a pro tip. Copy your legal name, registration number and address word for word from your official documents. Even a small mismatch is the most common reason phone registrations get rejected.",
+      say: "Here's a pro tip. Copy your legal name, registration number and address word for word from your official documents. Even a small mismatch is the most common reason phone registrations get rejected, and every resubmission adds days of waiting.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Lesson 1.5', title: 'Inviting your team & *permissions*', sub: 'Add users, roles, permissions and calendars.', cta: 'Kyntlo [Academy]' },

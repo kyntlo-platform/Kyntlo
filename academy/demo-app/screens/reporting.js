@@ -117,6 +117,7 @@
     const s = document.createElement('style');
     s.id = 'css-reporting';
     s.textContent = `
+      #toasts { pointer-events: none; }
       .rp-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
       .rp-kpis.six { grid-template-columns: repeat(6, 1fr); }
       .rp-kpi { padding: 14px 18px; }

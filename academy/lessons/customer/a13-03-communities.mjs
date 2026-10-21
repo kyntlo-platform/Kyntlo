@@ -11,13 +11,13 @@ export default {
     {
       chapter: 'Intro',
       card: { type: 'intro', kicker: 'Module 13 · Lesson 3', title: '*Communities*', sub: 'A private space for your members.' },
-      say: "In this lesson, you'll set up a community in Kyntlo: a private space where your members can talk, learn and support each other, right alongside your courses.",
+      say: "In this lesson, you'll set up a community in Kyntlo: a private space where your members can talk, learn and support each other, right alongside your courses. A good community keeps members engaged, and keeps them paying.",
     },
     {
       chapter: 'Groups',
       goto: '{demo}#/memberships/communities',
       settle: 1,
-      say: "Communities live in Memberships. Each community is made of groups. Think of a group as your own private social network, with no ads, and no algorithm deciding who sees your posts.",
+      say: "Communities live in Memberships. Each community is made of groups. Think of a group as your own private social network, with no ads, and no algorithm deciding who sees your posts. Every member sees everything you share.",
       actions: [
         { at: 0.6, title: 'Communities', sub: 'Your own private social network', for: 4 },
         { at: 5.8, hover: '#cm_group_g1' },
@@ -26,7 +26,7 @@ export default {
     },
     {
       chapter: 'Create a group',
-      say: "To start a new one, click Create Group and give it a name. It gets its own web address on your member portal.",
+      say: "To start a new one, click Create Group and give it a name. It gets its own web address on your member portal, the same place members log in to watch your courses.",
       actions: [
         { at: 0.6, click: '#cm_new' },
         { at: 2.4, type: 'Invisalign Support Group', into: '#cm_name' },
@@ -65,7 +65,7 @@ export default {
     },
     {
       chapter: 'Sections & channels',
-      say: "Channels can be open to everyone, or limited to admins, like Announcements, so important news never gets buried.",
+      say: "Channels can be open to everyone, or limited to admins, like Announcements, so important news never gets buried under everyday chat.",
       actions: [
         { at: 0.6, click: '#cm_ch_announcements' },
         { at: 2.6, highlight: '#cm_ch_announcements', label: 'Admins only', for: 3 },
@@ -83,7 +83,7 @@ export default {
     },
     {
       chapter: 'Posting',
-      say: "Now let's post. Click the composer, and add a title and your message. You can attach images, files or video. Click Post, and members are notified.",
+      say: "Now let's post. Click the composer, and add a title and your message. You can attach images, files or video. Click Post, and members are notified. Pin your most important posts, so new members see them first.",
       speed: 1.3,
       actions: [
         { at: 0.6, click: '#cm_compose' },
@@ -95,7 +95,7 @@ export default {
     },
     {
       chapter: 'Learning',
-      say: "The Learning tab links your courses to the group, so members can watch a lesson and then talk about it, in the same place.",
+      say: "The Learning tab links your courses to the group, so members can watch a lesson and then talk about it, in the same place. Discussion helps people actually use what they learn.",
       actions: [
         { at: 0.6, click: '#cm_tab_learning' },
         { at: 2.4, highlight: '#cm_main', label: 'Courses inside the group', for: 3.4 },
@@ -103,7 +103,7 @@ export default {
     },
     {
       chapter: 'Leaderboard',
-      say: "And on the right is the leaderboard. Members earn points for posting, commenting and liking. A little friendly competition keeps people coming back.",
+      say: "And on the right is the leaderboard. Members earn points for posting, commenting and liking. A little friendly competition keeps people coming back. You can even reward the top members, like a free whitening top-up each month.",
       actions: [
         { at: 0.6, hover: '#cm_leader' },
         { at: 0.8, highlight: '#cm_leader', label: 'Points & ranks', for: 4 },
@@ -122,7 +122,7 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Post a *weekly* prompt', sub: 'Ask one simple question, reply to every answer.' },
-      say: "Here's a pro tip. Communities thrive on rhythm. Post one simple question every week, like, share your smile win of the week, and reply to every answer. Within a month, your members will start the conversations themselves.",
+      say: "Here's a pro tip. Communities thrive on rhythm. Post one simple question every week, like, share your smile win of the week, and reply to every answer. Within a month, your members will start the conversations themselves. That's when a community really starts to run itself.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Module 14', title: 'Settings & *integrations*', sub: 'Phone numbers, email, integrations and billing.', cta: 'Kyntlo [Academy]' },

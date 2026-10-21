@@ -11,7 +11,7 @@ export default {
     {
       chapter: 'Intro',
       card: { type: 'intro', kicker: 'Module 3 · Lesson 6', title: 'Companies & *duplicates*', sub: 'Keep your database clean and trustworthy.' },
-      say: "In the final lesson of the Contacts module, you'll learn to keep your database clean. We'll group people under companies, merge duplicate contacts, and bring back anyone who was deleted by mistake.",
+      say: "In the final lesson of the Contacts module, you'll learn to keep your database clean. We'll group people under companies, merge duplicate contacts, and bring back anyone who was deleted by mistake. A clean database means accurate reports, and automations you can trust.",
     },
     {
       chapter: 'Companies',
@@ -25,7 +25,7 @@ export default {
     },
     {
       chapter: 'Add a company',
-      say: "To add one, click Add Company. Fill in the name, phone number and website, then save.",
+      say: "To add one, click Add Company. Fill in the name, phone number and website, then save. You can add the address and an owner from your team too.",
       speed: 1.3,
       actions: [
         { at: 0.6, click: '#co_add' },
@@ -37,7 +37,8 @@ export default {
     },
     {
       chapter: 'Inside a company',
-      say: "Open a company to see its details, the people linked to it, and its opportunities, all in one place.",
+      say: "Open a company to see its details, the people linked to it, and its opportunities, all in one place. Here's Marylebone Law, a local firm whose staff get ten percent off with Bloom.",
+      caption: "Open a company to see its details, the people linked to it, and its opportunities, all in one place. Here's Marylebone Law, a local firm whose staff get 10% off with Bloom.",
       actions: [
         { at: 0.6, click: '#co_row_co1' },
         { at: 2.4, highlight: '#co_people', label: 'People & deals', for: 3.4 },
@@ -45,7 +46,7 @@ export default {
     },
     {
       chapter: 'Inside a company',
-      say: "To link someone, click Add contact and pick them from the list. Now, when Noah calls, your team can see straight away that he's on the Marylebone Law staff plan.",
+      say: "To link someone, click Add contact and pick them from the list. You can link as many people as you like. Now, when Noah calls, your team can see straight away that he's on the Marylebone Law staff plan.",
       actions: [
         { at: 0.6, click: '#co_addcontact' },
         { at: 2.2, click: '#co_pick_c6' },
@@ -54,7 +55,7 @@ export default {
     },
     {
       chapter: 'Spotting duplicates',
-      say: "Now, duplicates. They happen to everyone. Olivia filled in a Facebook form, then later chatted on our website as Liv, with a different email. Kyntlo had no way to know it was the same person.",
+      say: "Now, duplicates. They happen to everyone. Olivia filled in a Facebook form, then later chatted on our website as Liv, with a different email. Kyntlo had no way to know it was the same person. Search by surname, and both records appear side by side.",
       actions: [
         { at: 0.4, click: '#tab_smart-lists' },
         { at: 2.0, type: 'bennett', into: '#ct_search' },
@@ -63,7 +64,7 @@ export default {
     },
     {
       chapter: 'Merging contacts',
-      say: "Tick both contacts. When exactly two are selected, a Merge button appears in the bulk action bar.",
+      say: "Tick both contacts. When exactly two are selected, a Merge button appears in the bulk action bar. You can only merge two contacts at a time, which keeps it safe and easy to check.",
       actions: [
         { at: 0.6, click: '#ct_sel_c1' },
         { at: 1.6, click: '#ct_sel_c19' },
@@ -92,7 +93,7 @@ export default {
     },
     {
       chapter: 'Merging contacts',
-      say: "And now there's just one Olivia, with her complete history in one place.",
+      say: "And now there's just one Olivia, with her complete history in one place. Your reports count her once, and your automations won't message her twice.",
       actions: [
         { at: 0.4, highlight: '#ct_row_c1', label: 'One clean record', for: 3 },
       ],
@@ -108,7 +109,7 @@ export default {
     },
     {
       chapter: 'Restoring contacts',
-      say: "Charlotte is back on your contact list, with her history. So before you re-create someone by hand, always check Restore first.",
+      say: "Charlotte is back on your contact list, with her history. So before you re-create someone by hand, always check Restore first. Restoring keeps their original history, which a new record never could.",
       actions: [
         { at: 0.4, click: '#tab_smart-lists' },
         { at: 1.6, click: '#ct_search' },

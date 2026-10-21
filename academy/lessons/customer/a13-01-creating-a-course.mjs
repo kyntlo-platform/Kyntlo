@@ -11,7 +11,7 @@ export default {
     {
       chapter: 'Intro',
       card: { type: 'intro', kicker: 'Module 13 · Lesson 1', title: 'Creating a *course*', sub: 'Products, categories and lessons.' },
-      say: "Welcome to Memberships! In this lesson, you'll create an online course in Kyntlo. We'll set up a product, organise it into categories, add a video lesson, and publish it.",
+      say: "Welcome to Memberships! In this lesson, you'll create an online course in Kyntlo. We'll set up a product, organise it into categories, add a video lesson, and publish it. By the end, you'll have a real course your customers can log in and watch.",
     },
     {
       chapter: 'Courses in Kyntlo',
@@ -27,7 +27,7 @@ export default {
     },
     {
       chapter: 'Why a course',
-      say: "Courses aren't just for coaches. A clinic can share aftercare videos, a gym can share workout plans, and an agency can onboard new clients. Anything you explain again and again can become a course.",
+      say: "Courses aren't just for coaches. A clinic can share aftercare videos, a gym can share workout plans, and an agency can onboard new clients. Anything you explain again and again can become a course. You record it once, and every customer gets the same great explanation, any time they need it.",
       actions: [
         { at: 0.6, title: 'Teach once', sub: 'Aftercare, onboarding, how-tos, training', for: 6 },
         { at: 7.0, move: [900, 420] },
@@ -45,7 +45,7 @@ export default {
     },
     {
       chapter: 'Create a product',
-      say: "Click Create product, and you land in the product builder. It's empty for now.",
+      say: "Click Create product, and you land in the product builder. It's empty for now. On the right are the product details, and the offers it belongs to.",
       actions: [
         { at: 0.4, click: '#np_create' },
         { at: 2.4, highlight: '#pb_empty', label: 'Your new course', for: 2.6 },
@@ -63,7 +63,7 @@ export default {
     },
     {
       chapter: 'Lessons',
-      say: "Each category holds lessons. Click Add Lesson to open the lesson editor.",
+      say: "Each category holds lessons. Click Add Lesson to open the lesson editor. A lesson can be a video, text, or both.",
       actions: [
         { at: 0.6, hover: '#pb_cat_k6' },
         { at: 0.8, highlight: '#pb_cat_k6', label: 'Category', for: 2 },
@@ -83,7 +83,7 @@ export default {
     },
     {
       chapter: 'Lesson text',
-      say: "Underneath, add text, like notes, steps or a transcript. Members can read along, and it helps anyone who prefers reading to watching.",
+      say: "Underneath, add text, like notes, steps or a transcript. Members can read along, and it helps anyone who prefers reading to watching, or who's somewhere they can't play sound.",
       speed: 1.4,
       actions: [
         { at: 0.6, type: 'For the first 48 hours, skip coffee, tea, red wine and curry. If it would stain a white shirt, it can stain your teeth.', into: '#le_body', delay: 22 },
@@ -91,7 +91,7 @@ export default {
     },
     {
       chapter: 'Downloads',
-      say: "You can attach downloads too, like a printable food guide.",
+      say: "You can attach downloads too, like a printable food guide, a checklist or a worksheet.",
       actions: [
         { at: 0.6, click: '#le_attach' },
         { at: 1.4, highlight: '#le_files', label: 'Downloadable PDF', for: 2.4 },
@@ -121,7 +121,7 @@ export default {
     },
     {
       chapter: 'Preview',
-      say: "Click Preview to see exactly what members see: the lessons on the left, the video and notes on the right, and their progress as they go.",
+      say: "Click Preview to see exactly what members see: the lessons on the left, the video and notes on the right, and their progress as they go. Members mark lessons complete, and you can see their progress in Analytics.",
       actions: [
         { at: 0.6, click: '#pb_preview' },
         { at: 2.4, hover: '#pv_portal' },
@@ -131,7 +131,7 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Keep lessons *short*', sub: 'One idea per lesson, under five minutes.' },
-      say: "Here's a pro tip. Keep each lesson to one idea, and under five minutes. Short lessons get finished, and people who finish a lesson come back for the next one.",
+      say: "Here's a pro tip. Keep each lesson to one idea, and under five minutes. Short lessons get finished, and people who finish a lesson come back for the next one. And short videos are much easier to update when something changes.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Lesson 13.2', title: 'Selling *access*', sub: 'Offers, checkout and automatic enrolment.', cta: 'Kyntlo [Academy]' },

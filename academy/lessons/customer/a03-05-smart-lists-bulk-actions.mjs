@@ -17,7 +17,7 @@ export default {
       chapter: 'Why bulk actions',
       goto: '{demo}#/contacts',
       settle: 1,
-      say: "Bulk actions save you hours. Instead of opening contacts one by one, you select a group and act on all of them together. It all starts with getting the right people on screen.",
+      say: "Bulk actions save you hours. Instead of opening contacts one by one, you select a group and act on all of them together. Tag a group, message them, add them to an automation, or export them. It all starts with getting the right people on screen.",
       actions: [
         { at: 0.6, title: 'Bulk actions', sub: 'Many contacts, one click', for: 4 },
         { at: 6.0, move: [1000, 600] },
@@ -55,7 +55,7 @@ export default {
     },
     {
       chapter: 'Bulk tag',
-      say: "First, let's tag them, so we can track who got this offer. Click Add tag and choose the tag. It's added to every selected contact at once.",
+      say: "First, let's tag them, so we can track who got this offer. Click Add tag and choose the tag. It's added to every selected contact at once. Later, you can filter by this tag to see exactly who received the offer, and who booked.",
       actions: [
         { at: 1.6, click: '#ct_bulk_tag' },
         { at: 3.6, click: '#ct_tagopt_whitening-offer-oct' },
@@ -64,7 +64,7 @@ export default {
     },
     {
       chapter: 'Bulk SMS',
-      say: "Now let's send them a text. Select them again, click Send SMS, and write your message. Placeholders like first name make every text personal.",
+      say: "Now let's send them a text. Select them again, click Send SMS, and write your message. Placeholders like first name make every text personal, even when it goes to hundreds of people.",
       speed: 1.3,
       actions: [
         { at: 0.6, click: '#ct_all' },
@@ -85,7 +85,7 @@ export default {
     },
     {
       chapter: 'Bulk SMS',
-      say: "A quick note: text messaging is included from the Growth plan. On Starter, you can still send bulk emails the same way.",
+      say: "A quick note: text messaging is included from the Growth plan. On Starter, you can still send bulk emails the same way, using the Send email button right next to it.",
       actions: [
         { at: 0.6, title: 'SMS', sub: 'Included from the Growth plan', for: 4 },
       ],
@@ -106,7 +106,7 @@ export default {
     },
     {
       chapter: 'Bulk Actions log',
-      say: "Every bulk action is logged under Bulk Actions, with who started it, how many contacts it touched, and its progress. If something doesn't look right, this is the first place to check.",
+      say: "Every bulk action is logged under Bulk Actions, with who started it, how many contacts it touched, and its progress. If something doesn't look right, this is the first place to check. Long-running sends, like drip messages, show their progress here as they go.",
       actions: [
         { at: 0.6, click: '#tab_bulk-actions' },
         { at: 2.4, hover: '#bulk_actions_0' },

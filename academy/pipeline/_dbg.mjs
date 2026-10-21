@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
+p.on('pageerror', e => console.log('ERR', e.message));
+await p.goto('http://127.0.0.1:4173/academy/demo-app/index.html#/sites/funnels/f1/builder/s1'); await p.waitForTimeout(300);
+await p.click('#pb_el_cta'); await p.click('#pb_mobile'); await p.waitForTimeout(300);
+const bb = await p.locator('#pb_el_headline').boundingBox(); console.log(bb);
+await p.locator('#pb_el_headline').evaluate(el => el.scrollIntoView({block:'center'}));
+const bb2 = await p.locator('#pb_el_headline').boundingBox(); console.log(bb2);
+console.log(await p.evaluate(([x,y]) => { const n = document.elementFromPoint(x,y); return n.outerHTML.slice(0,150); }, [bb2.x+bb2.width/2, bb2.y+bb2.height/2]));
+await p.mouse.click(bb2.x+bb2.width/2, bb2.y+bb2.height/2); await p.waitForTimeout(200);
+console.log(await p.evaluate(() => document.querySelector('#pb_props .hd').textContent));
+await b.close();

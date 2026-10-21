@@ -11,7 +11,7 @@ export default {
     {
       chapter: 'Intro',
       card: { type: 'intro', kicker: 'Module 13 · Lesson 2', title: 'Selling *access*', sub: 'Offers, checkout and automatic enrolment.' },
-      say: "In this lesson, you'll turn your courses into something people can buy. You'll create an offer, set a price, and let Kyntlo enrol buyers automatically.",
+      say: "In this lesson, you'll turn your courses into something people can buy. You'll create an offer, set a price, and let Kyntlo enrol buyers automatically, without lifting a finger.",
     },
     {
       chapter: 'Offers explained',
@@ -26,7 +26,7 @@ export default {
     },
     {
       chapter: 'Offers explained',
-      say: "Bloom's current offers are free. Invisalign patients get their course at no cost, as part of their treatment. Now let's create a paid membership.",
+      say: "Bloom's current offers are free. Invisalign patients get their course at no cost, as part of their treatment. Free offers are great for adding value to a service you already sell. Now let's create a paid membership.",
       actions: [
         { at: 0.6, hover: '#of_row_of1' },
         { at: 0.8, highlight: '#of_row_of1', label: 'Free with treatment', for: 4 },
@@ -64,7 +64,7 @@ export default {
     },
     {
       chapter: 'Automatic access',
-      say: "On the right are the access settings. With automatic access on, the moment a payment succeeds, the buyer is enrolled in everything in the offer, and gets an email with their login link. No manual work for you.",
+      say: "On the right are the access settings. With automatic access on, the moment a payment succeeds, the buyer is enrolled in everything in the offer, and gets an email with their login link. No manual work for you, and no waiting for the customer.",
       actions: [
         { at: 0.6, hover: '#of_access' },
         { at: 0.8, highlight: '#of_access', label: 'Enrolment on autopilot', for: 5 },
@@ -73,7 +73,7 @@ export default {
     },
     {
       chapter: 'Publish',
-      say: "Click Publish offer. It's live, and ready to sell.",
+      say: "Click Publish offer. It's live, and ready to sell. You can edit the offer later, and existing members keep their access.",
       actions: [
         { at: 0.4, click: '#of_publish' },
       ],
@@ -103,7 +103,7 @@ export default {
     },
     {
       chapter: 'Automatic enrolment',
-      say: "Payment done, and Emma is enrolled automatically. Her login email is already on its way.",
+      say: "Payment done, and Emma is enrolled automatically. Her login email is already on its way. If a subscription payment fails or she cancels, her access can be removed automatically too.",
       actions: [
         { at: 0.4, hover: '#co_form' },
         { at: 0.6, highlight: '#co_form', label: 'Enrolled automatically', for: 3.4 },

@@ -124,6 +124,7 @@
     const s = document.createElement('style');
     s.id = 'css-payments';
     s.textContent = `
+      #toasts { pointer-events: none; }
       .pay-dd { justify-content: space-between; width: 100%; font-weight: 500; color: var(--ink); }
       .pay-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 18px; }
       .pay-stats .card { padding: 16px 20px; }

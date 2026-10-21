@@ -63,6 +63,7 @@
     s.id = 'css-calendars';
     s.textContent = `
       body:has(#cal_ed_body) #toasts, body:has(#cal_conn_list) #toasts { pointer-events: none; }
+      body:has(#cal_ed_body) #toasts { top: 140px; }
       .kc-wrap { display: grid; grid-template-columns: minmax(0,1fr) 300px; gap: 20px; }
       .kc-grid { display: grid; grid-template-columns: 70px repeat(5, 1fr); }
       .kc-dayh { padding: 12px 10px; border-bottom: 1px solid var(--line-soft); border-left: 1px solid var(--line-soft); text-align: center; }
@@ -105,7 +106,7 @@
       .kc-type .ic { width: 44px; height: 44px; border-radius: 10px; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; flex: none; }
       .kc-type.on .ic { background: var(--blue); color: #fff; }
       .kc-ed { display: grid; grid-template-columns: 290px minmax(0,1fr); gap: 22px; align-items: start; }
-      .kc-nav { position: sticky; top: 0; padding: 8px; }
+      .kc-nav { position: sticky; top: 56px; padding: 8px; }
       .kc-nav a { display: flex; align-items: center; gap: 10px; padding: 11px 12px; border-radius: 8px; color: var(--ink-2); font-weight: 500; font-size: 15px; }
       .kc-nav a:hover { background: #f2f4f7; }
       .kc-nav a.on { background: var(--blue-soft); color: #004eeb; font-weight: 600; }
@@ -447,7 +448,7 @@
     if (!k) return KY.go('#/calendars/settings');
     const isClass = k.type === 'Class';
     view.innerHTML = `
-      <div class="row" style="margin-bottom:18px;gap:12px">
+      <div class="row" id="cal_ed_head" style="margin:-22px -24px 18px;padding:14px 24px;gap:12px;position:sticky;top:-22px;z-index:6;background:var(--bg);border-bottom:1px solid var(--line-soft)">
         <a class="btn ghost icon" id="cal_ed_back" href="#/calendars/settings">${icon('left', 20)}</a>
         <span class="kc-dot" style="background:${k.color};width:16px;height:16px"></span>
         <h1 style="margin:0;font-size:22px" id="cal_ed_title">${esc(k.name)}</h1><span class="chip">${esc(TYPE_LABEL[k.type])}</span>

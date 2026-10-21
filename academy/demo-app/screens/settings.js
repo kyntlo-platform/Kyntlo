@@ -559,10 +559,10 @@
   function dnsView(main, d) {
     const recs = dnsRecords(d.name);
     main.innerHTML = `${head(d.name, 'Add these records at your domain provider (GoDaddy, Cloudflare, 123 Reg…), then click Verify.',
-        `<button class="btn" id="es_back">${icon('left', 18)} Back</button><button class="btn primary" id="es_verify">${icon('check', 18)} Verify</button>`)}
+        '')}
       <div class="card" style="margin-bottom:16px"><div class="card-b row">
-        <span>Status</span><span id="es_status">${chip(d.status)}</span><span class="spacer"></span>
-        <span class="muted" style="font-size:14px">DNS changes can take up to 24–48 hours to spread.</span></div></div>
+        <button class="btn" id="es_back">${icon('left', 18)} Back</button><span>Status</span><span id="es_status">${chip(d.status)}</span><span class="spacer"></span>
+        <span class="muted" style="font-size:14px">DNS changes can take up to 24–48 hours to spread.</span><button class="btn primary" id="es_verify">${icon('check', 18)} Verify</button></div></div>
       <div class="card" id="es_dns_card">
         <div class="card-h"><h3>DNS Records</h3><span class="spacer"></span><button class="btn sm" id="es_auto">${icon('bolt', 16)} Add records automatically</button></div>
         ${table('es_dns', ['Type', 'Host / Name', 'Value', 'Purpose', 'Status', ''], recs.map(([t, h, v, p], i) => `
@@ -576,6 +576,7 @@
       $('#es_status').innerHTML = chip('Checking DNS…', 'amber');
       setTimeout(() => {
         d.status = 'Verified';
+        if (!$('#es_status')) { if (!S.domains.some((x) => x.isDefault)) d.isDefault = true; return; }
         if (!S.domains.some((x) => x.isDefault)) d.isDefault = true;
         $('#es_status').innerHTML = chip('Verified') + (d.isDefault ? ' <span class="chip blue">Default sending domain</span>' : '');
         $$('.es-rs', main).forEach((c) => (c.innerHTML = chip('Verified')));
@@ -745,7 +746,7 @@
         $('#int_account', box).onclick = () => { step++; draw(); };
       } else if (step === 1) {
         f.innerHTML = `<div class="bold" style="font-size:18px;margin-bottom:6px">Kyntlo wants to access your ${esc(n)} account</div>
-          ${['See and manage your business listing and reviews', 'Read and reply to messages', 'View performance data'].map((t) => `<div class="row" style="margin:10px 0"><span style="color:var(--blue)">${icon('check', 18)}</span>${t}</div>`).join('')}
+          ${({ zoom: ['Create and manage Zoom meetings for your appointments', 'See your Zoom user profile'], quickbooks: ['Create and update invoices and customers', 'Read payments'], tiktok: ['Read lead form submissions', 'Publish posts'], linkedin: ['Read lead form submissions', 'Publish posts to your page'] }[k] || ['See and manage your business listing and reviews', 'Read and reply to messages', 'View performance data']).map((t) => `<div class="row" style="margin:10px 0"><span style="color:var(--blue)">${icon('check', 18)}</span>${t}</div>`).join('')}
           <p class="muted" style="font-size:14px">You can remove access at any time from Settings → Integrations.</p>
           <div class="row"><span class="spacer"></span><button class="btn">Cancel</button><button class="btn primary" id="int_allow">Allow</button></div>`;
         $('#int_allow', box).onclick = () => { if (steps === 2) finish(); else { step++; draw(); } };

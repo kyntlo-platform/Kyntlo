@@ -84,7 +84,7 @@ export default {
     {
       chapter: 'A social post',
       speed: 1,
-      say: "Let's try a social post. Choose Social post, describe it, and pick Short, because short posts get read. Click Generate, and you get a post with emojis and hashtags, ready to go.",
+      say: "Let's try a social post. Choose Social post, describe it, and pick Short, because short posts get read. Click Generate, and you get a short post with emojis and a clear call to action.",
       actions: [
         { at: 0.4, click: '#cnt_type_social' },
         { at: 1.6, type: 'Instagram post for our free Invisalign 3D scan', into: '#cnt_prompt', delay: 35 },

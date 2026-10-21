@@ -69,7 +69,7 @@ export default {
     },
     {
       chapter: 'Add balance',
-      say: "To top up, click Add Balance. Choose an amount, check the card, and confirm. The new balance shows straight away.",
+      say: "To top up, click Add Balance. Choose an amount, check the card, and confirm. The new balance shows straight away. Top-ups are charged to the card saved on your account, and they appear in your wallet transactions.",
       actions: [
         { at: 0.4, click: '#bl_add_balance' },
         { at: 2.0, click: '#bl_amt_100' },
@@ -92,9 +92,10 @@ export default {
     },
     {
       chapter: 'Transactions & invoices',
-      say: "Wallet transactions lists every top-up and usage charge, so you can see exactly where the money went. And the Invoices tab keeps your monthly plan invoices, ready to download for your accountant.",
+      say: "Wallet transactions lists every top-up and usage charge, including the monthly rental for your phone numbers, so you can see exactly where the money went. And the Invoices tab keeps your monthly plan invoices, ready to download for your accountant.",
       actions: [
         { at: 0.4, highlight: '#bl_tx_card', label: 'Every top-up and charge', for: 4.4 },
+        { at: 5.6, scroll: -2000, ms: 700 },
         { at: 6.6, click: '#billing_tab_invoices' },
         { at: 8.2, highlight: '#bl_invoices', label: 'Plan invoices', for: 3 },
       ],
@@ -102,7 +103,7 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Review usage *once a month*', sub: 'A sudden jump usually means a workflow needs a look.' },
-      say: "Here's a pro tip. Glance at your usage summary once a month. If one line suddenly jumps, it's usually a workflow sending more often than you meant, and it's an easy fix once you spot it.",
+      say: "Here's a pro tip. Glance at your usage summary once a month. If one line suddenly jumps, it's usually a workflow sending more often than you meant, and it's an easy fix once you spot it. Your execution logs will show you which one.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Lesson 14.5', title: 'Data, privacy & *DND*', sub: 'Consent, unsubscribes and exports.', cta: 'Kyntlo [Academy]' },

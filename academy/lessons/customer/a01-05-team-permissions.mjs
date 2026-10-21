@@ -18,8 +18,8 @@ export default {
       chapter: 'My Staff',
       goto: '{demo}#/settings/my-staff',
       settle: 1,
-      say: "Go to Settings, then My Staff. Here's everyone who can log in to this account. Your plan sets how many users you can have: up to three on Starter, ten on Growth, and twenty-five on Pro.",
-      caption: "Go to Settings, then My Staff. Here's everyone who can log in to this account. Your plan sets how many users you can have: up to 3 on Starter, 10 on Growth, and 25 on Pro.",
+      say: "Go to Settings, then My Staff. Here's everyone who can log in to this account. Your plan sets how many users you can have: up to three on Starter, ten on Growth, and twenty-five on Pro. Give everyone their own login. Shared logins make it impossible to see who did what.",
+      caption: "Go to Settings, then My Staff. Here's everyone who can log in to this account. Your plan sets how many users you can have: up to 3 on Starter, 10 on Growth, and 25 on Pro. Give everyone their own login. Shared logins make it impossible to see who did what.",
       actions: [
         { at: 0.4, highlight: '#ss_menu_my-staff', label: 'My Staff', for: 2.4 },
         { at: 3.2, highlight: '#ms_table', label: 'Your team', for: 4 },
@@ -50,7 +50,7 @@ export default {
     },
     {
       chapter: 'Permissions',
-      say: "Payments, marketing, automation and settings stay off. And Bulk Actions stays off too, because it includes exporting your contact list. Only give that to people who really need it.",
+      say: "Payments, marketing, automation and settings stay off. And Bulk Actions stays off too, because it includes exporting your contact list. Only give that to people who really need it. Remember, permissions apply everywhere: on the web and in the mobile app, so Tom sees exactly the same areas on his phone.",
       actions: [
         { at: 0.4, highlight: '#ms_perm_payments', label: 'Off', for: 2.4 },
         { at: 2.8, highlight: '#ms_perm_settings', label: 'Off', for: 2.4 },
@@ -81,7 +81,7 @@ export default {
     },
     {
       chapter: 'The invitation',
-      say: "Tom now appears in the list, with an invitation sent. He'll get an email to set his own password, so you never need to share logins. To change his access later, just click the pencil icon.",
+      say: "Tom now appears in the list, with an invitation sent. He'll get an email to set his own password, so you never need to share logins. To change his access later, just click the pencil icon. And if someone leaves, delete their user straight away, and reassign their contacts to a colleague.",
       actions: [
         { at: 0.4, highlight: '#ms_row_3', label: 'Invite sent', for: 4 },
         { at: 0.6, zoom: '#ms_row_3', scale: 1.4, for: 4 },

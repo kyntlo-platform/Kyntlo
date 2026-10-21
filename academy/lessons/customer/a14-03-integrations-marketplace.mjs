@@ -18,7 +18,7 @@ export default {
       chapter: 'Integrations',
       goto: '{demo}#/settings/integrations',
       settle: 1,
-      say: "Open Settings, then Integrations. Each card is an account you can connect. A green Connected label means it's working. Bloom's Facebook and Instagram are already connected, so let's add the rest.",
+      say: "Open Settings, then Integrations. Each card is an account you can connect. A green Connected label means it's working. Bloom's Facebook and Instagram are already connected, so let's add the rest. Connections are made once for the whole account, so your team doesn't need to repeat them.",
       actions: [
         { at: 0.4, highlight: '#ss_menu_integrations', label: 'Integrations', for: 2.4 },
         { at: 3.2, highlight: '#int_grid', label: 'Your connected accounts', for: 3.6 },
@@ -28,7 +28,7 @@ export default {
     },
     {
       chapter: 'Google',
-      say: "Start with Google. It powers your Google Business Profile reviews and messages, plus Google Ads and Analytics reporting. Click Connect, and choose the Google account that manages your business listing.",
+      say: "Start with Google. It powers your Google Business Profile reviews and messages, plus Google Ads and Analytics reporting. Click Connect, and choose the Google account that manages your business listing. It must be an owner or manager of the listing, otherwise your location won't appear in the list.",
       actions: [
         { at: 0.4, highlight: '#int_google', label: 'Reviews, messages & ads', for: 4 },
         { at: 7.0, click: '#int_google_connect' },
@@ -59,7 +59,7 @@ export default {
     },
     {
       chapter: 'Manage & disconnect',
-      say: "To change what's connected, click Manage. And if you ever need to remove access, click Disconnect. Kyntlo stops syncing straight away.",
+      say: "To change what's connected, for example to add another Facebook page, click Manage. And if you ever need to remove access, click Disconnect. Kyntlo stops syncing straight away. If a connection ever stops working, usually after a password change, disconnect and connect again.",
       actions: [
         { at: 0.4, hover: '#int_facebook_manage' },
         { at: 0.6, highlight: '#int_facebook_manage', label: 'Manage', for: 2.4 },
@@ -68,7 +68,7 @@ export default {
     },
     {
       chapter: 'Stripe',
-      say: "What about payments? Stripe is connected from Payments, Integrations, so it sits with your invoices and products. We set it up step by step in Module 12.",
+      say: "What about payments? Stripe is connected from Payments, Integrations, so it sits with your invoices and products. We set it up step by step in Module 12, including how to take deposits automatically when patients book online.",
       actions: [
         { at: 0.4, highlight: '#int_stripe', label: 'Lives in Payments', for: 4 },
         { at: 4.6, hover: '#int_stripe_go' },
@@ -86,7 +86,7 @@ export default {
     },
     {
       chapter: 'Install an app',
-      say: "Bloom's team wants new-lead alerts in Slack. Search for Slack, and click Install. Read what the app will be able to access, then click Allow and Install.",
+      say: "Bloom's team wants new-lead alerts in Slack. Search for Slack, and click Install. Read what the app will be able to access, then click Allow and Install. Only install apps you trust, because they can read your account data. Most apps then have their own settings page, where you choose things like which Slack channel gets the alerts.",
       actions: [
         { at: 0.3, click: '#mk_cat_all' },
         { at: 1.6, type: 'slack', into: '#mk_search' },
@@ -97,7 +97,7 @@ export default {
     },
     {
       chapter: 'Installed apps',
-      say: "The Installed Apps tab lists everything added to this account, so you can review your apps from time to time, and remove any you no longer use.",
+      say: "The Installed Apps tab lists everything added to this account, so you can review your apps from time to time, and remove any you no longer use. Some apps charge their own fee, which is always shown before you install.",
       actions: [
         { at: 0.4, click: '#tab_installed' },
         { at: 2.0, highlight: '#mk_grid', label: 'Everything you have installed', for: 4.4 },
