@@ -107,10 +107,10 @@ export default {
       say: "To answer what's this charge, match it here. Wallet transactions list every top-up and usage charge. Invoices lists the plan invoices, which can be downloaded as P D Fs. If a charge appears in neither, or the amounts don't add up, collect the details and escalate to billing. Refunds and credits follow the current Kyntlo policy, so never promise one yourself.",
       caption: "To answer \"what's this charge?\", match it here. Wallet transactions list every top-up and usage charge. Invoices lists the plan invoices, which can be downloaded as PDFs. If a charge appears in neither, or the amounts don't add up, collect the details and escalate to billing. Refunds and credits follow the current Kyntlo policy, so never promise one yourself.",
       actions: [
-        { at: 0.4, run: (p) => p.evaluate(() => document.querySelector('#bl_tx_card').scrollIntoView({ block: 'center' })) },
         { at: 1.0, highlight: '#bl_tx_card', label: 'Top-ups & usage', for: 4 },
-        { at: 6.4, click: '#billing_tab_invoices' },
-        { at: 7.8, highlight: '#bl_invoices', label: 'Plan invoices', for: 4 },
+        { at: 5.6, run: (p) => p.evaluate(() => document.querySelector('#billing_tab_invoices').scrollIntoView({ block: 'center', behavior: 'smooth' })) },
+        { at: 6.6, click: '#billing_tab_invoices' },
+        { at: 8.0, highlight: '#bl_invoices', label: 'Plan invoices', for: 4 },
         { at: 17.0, title: 'Refunds & credits', sub: 'Follow the current Kyntlo policy', for: 4 },
       ],
     },

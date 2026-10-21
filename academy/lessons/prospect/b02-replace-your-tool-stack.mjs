@@ -3,7 +3,7 @@
 // plan prices and the quarterly offer from pricing.html.
 export default {
   id: 'B2',
-  title: 'Replace a $2,488/mo Tool Stack with One Platform — Kyntlo',
+  title: 'Replace a $2,488+/mo Tool Stack with One Platform — Kyntlo',
   description:
     'CRM, funnels, website, forms, email, SMS, booking, automation and reviews: see what Kyntlo replaces, what a typical stack of separate tools costs, and how one platform with one invoice compares.',
   tags: ['Kyntlo', 'Software stack', 'CRM pricing', 'All-in-one CRM', 'Small business tools', 'HubSpot alternative'],

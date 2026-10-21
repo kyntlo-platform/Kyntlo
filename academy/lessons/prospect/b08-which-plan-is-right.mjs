@@ -60,15 +60,15 @@ export default {
     {
       chapter: 'Quarterly billing',
       goto: '{site}/pricing.html',
-      setup: [{ run: (p) => p.evaluate(() => scrollTo(0, document.querySelector('.billing-offer').getBoundingClientRect().top + scrollY - 40)) }],
+      setup: [{ run: (p) => p.evaluate(() => scrollTo({ top: document.querySelector('.billing-offer').getBoundingClientRect().top + scrollY - 40, behavior: 'instant' })) }],
       settle: 2.5,
       say: "Choose quarterly billing, and your first three months are half price: forty-five dollars a month for Starter, a hundred and thirty-five for Growth, or two hundred and forty-five for Pro. After that, your plan renews at the normal monthly price.",
       caption: "Choose quarterly billing, and your first 3 months are half price: $45 a month for Starter, $135 for Growth, or $245 for Pro. After that, your plan renews at the normal monthly price.",
       actions: [
         { at: 0.4, highlight: '.billing-offer', label: '50% off your first 3 months', for: 3.4 },
-        { at: 4.2, highlight: '.pricing-card >> nth=0', label: 'Starter · $45/mo', for: 2.4 },
-        { at: 6.8, highlight: '.pricing-card >> nth=1', label: 'Growth · $135/mo', for: 2.4 },
-        { at: 9.6, highlight: '.pricing-card >> nth=2', label: 'Pro · $245/mo', for: 2.4 },
+        { at: 4.2, highlight: '.pricing-card >> nth=0 >> .pricing-header', label: 'Starter · $45/mo', for: 2.4 },
+        { at: 6.8, highlight: '.pricing-card >> nth=1 >> .pricing-header', label: 'Growth · $135/mo', for: 2.4 },
+        { at: 9.6, highlight: '.pricing-card >> nth=2 >> .pricing-header', label: 'Pro · $245/mo', for: 2.4 },
         { at: 12.4, click: '.billing-tab[data-billing="monthly"]' },
         { at: 13.0, title: 'Then the normal monthly price', sub: '$90 · $270 · $490 a month, plus taxes', for: 3.4 },
       ],
@@ -79,7 +79,7 @@ export default {
       setup: [{ run: async (p) => {
         await p.click('#usageAccordionBtn');
         await p.waitForTimeout(1200);
-        await p.evaluate(() => scrollTo(0, document.querySelector('.usage-grid').getBoundingClientRect().top + scrollY - 260));
+        await p.evaluate(() => scrollTo({ top: document.querySelector('.usage-grid').getBoundingClientRect().top + scrollY - 260, behavior: 'instant' }));
       } }],
       settle: 2,
       say: "On top of your plan, things like texts, calls and emails are pay-as-you-go, at wholesale rates, with no markup. You only pay for what you use. And on Pro, AI usage is unlimited.",
