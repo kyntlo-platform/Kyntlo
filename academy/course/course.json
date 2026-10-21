@@ -1,8 +1,8 @@
 {
   "title": "Kyntlo Academy",
-  "totalSeconds": 462,
-  "lessons": 76,
-  "rendered": 2,
+  "totalSeconds": 13561,
+  "lessons": 75,
+  "rendered": 75,
   "modules": [
     {
       "module": 1,
@@ -42,9 +42,9 @@
             "Getting started",
             "HighLevel"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 180.1,
+          "rendered": true,
+          "youtubeDescription": "Find your way around Kyntlo in a few minutes: logging in, the account switcher, search, the sidebar, module tabs, the top bar, Ask AI, notifications and Settings.\n\nChapters:\n0:00 Intro\n0:12 Logging in\n0:27 The dashboard\n0:40 Account switcher\n0:55 Search\n1:07 The sidebar\n1:25 Module tabs\n1:39 Conversations, calendars & opportunities\n1:55 The top bar\n2:11 Ask AI\n2:23 Launchpad & Settings\n2:41 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMtutorial #Gettingstarted #HighLevel"
         },
         {
           "file": "a01-03-launchpad",
@@ -53,7 +53,7 @@
           "id": "A-1.3",
           "title": "Your Launchpad: first-day setup checklist",
           "plan": "ALL",
-          "description": "Work through the Launchpad checklist: connect your Google Business Profile and Facebook & Instagram, install the website chat widget, and get the mobile app, so your account is ready to capture leads on day one.",
+          "description": "Work through the Launchpad checklist: connect your Google Business Profile and Facebook & Instagram, install the website chat widget, and set up your email and phone, so your account is ready to capture leads on day one.",
           "tags": [
             "Kyntlo",
             "Kyntlo Academy",
@@ -62,9 +62,9 @@
             "Google Business Profile",
             "Chat widget"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 166.466667,
+          "rendered": true,
+          "youtubeDescription": "Work through the Launchpad checklist: connect your Google Business Profile and Facebook & Instagram, install the website chat widget, and set up your email and phone, so your account is ready to capture leads on day one.\n\nChapters:\n0:00 Intro\n0:13 What Launchpad is\n0:25 Google Business Profile\n0:39 Google Business Profile\n0:50 Facebook & Instagram\n1:09 Chat widget\n1:26 Chat widget\n1:39 Email\n1:57 Phone number\n2:14 Your progress\n2:24 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Gettingstarted #Launchpad #GoogleBusinessProfile #Chatwidget"
         },
         {
           "file": "a01-04-business-profile",
@@ -81,9 +81,9 @@
             "Business profile",
             "Settings"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 183.3,
+          "rendered": true,
+          "youtubeDescription": "Set up your Business Profile in Kyntlo: upload your logo, add your business details and address, choose the right time zone, and fill in the legal and compliance information used for phone and messaging registration.\n\nChapters:\n0:00 Intro\n0:12 Finding Business Profile\n0:27 Logo\n0:43 Business details\n0:59 Business details\n1:11 Address & time zone\n1:21 Address & time zone\n1:42 Legal & compliance\n1:59 Authorized representative\n2:10 General settings\n2:25 My Profile\n2:37 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Gettingstarted #Businessprofile #Settings"
         },
         {
           "file": "a01-05-team-permissions",
@@ -100,27 +100,9 @@
             "Team",
             "User permissions"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
-        },
-        {
-          "file": "a01-06-mobile-app",
-          "module": 1,
-          "lesson": 6,
-          "id": "A-1.6",
-          "title": "The Kyntlo mobile app",
-          "plan": "ALL",
-          "description": "Install the Kyntlo mobile app, log in, turn on notifications, reply to leads from your inbox, and check your calendar, contacts and pipeline on the go.",
-          "tags": [
-            "Kyntlo",
-            "Kyntlo Academy",
-            "Getting started",
-            "Mobile app"
-          ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 163.4,
+          "rendered": true,
+          "youtubeDescription": "Add team members in Settings → My Staff, choose their permissions and role, limit them to their own contacts, set their phone number, and assign them to booking calendars.\n\nChapters:\n0:00 Intro\n0:11 My Staff\n0:29 Add an employee\n0:40 Permissions\n0:56 Permissions\n1:11 Roles\n1:28 Call settings\n1:38 The invitation\n1:57 Calendar assignment\n2:09 Calendar assignment\n2:20 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Gettingstarted #Team #Userpermissions"
         }
       ]
     },
@@ -142,9 +124,9 @@
             "CRM dashboard",
             "Sales reporting"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 177.466667,
+          "rendered": true,
+          "youtubeDescription": "Understand every part of your Kyntlo dashboard: navigation, dashboards and date ranges, opportunity status, opportunity value, conversion rate, the funnel and stage distribution, and per-widget pipeline filters.\n\nChapters:\n0:00 Intro\n0:12 Your home screen\n0:24 Where the numbers come from\n0:34 Finding your way around\n0:46 The sidebar\n1:02 Dashboards & date range\n1:15 Opportunity status\n1:27 Opportunity value\n1:43 Conversion rate\n1:58 Funnel & stages\n2:10 Filtering a widget\n2:23 Ask AI\n2:33 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMdashboard #Salesreporting"
         },
         {
           "file": "a02-02-customising-dashboards",
@@ -160,9 +142,9 @@
             "CRM dashboard",
             "Custom dashboards"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 190.833333,
+          "rendered": true,
+          "youtubeDescription": "Make the dashboard your own: edit mode, resizing and rearranging widgets, widget settings, adding widgets, and building a separate dashboard for each role in your team.\n\nChapters:\n0:00 Intro\n0:12 Why customise\n0:28 Edit mode\n0:41 Resize a widget\n0:52 Rearrange widgets\n1:05 Widget settings\n1:18 Add a widget\n1:32 Save your changes\n1:49 A dashboard per role\n2:00 Build it\n2:11 Switching dashboards\n2:24 Ideas for each role\n2:44 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMdashboard #Customdashboards"
         },
         {
           "file": "a02-03-ads-reporting",
@@ -179,9 +161,9 @@
             "Facebook Ads",
             "Attribution"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 196.577,
+          "rendered": true,
+          "youtubeDescription": "Connect your Google Ads and Facebook ad accounts, read clicks, cost and cost per lead, and use the Attribution Report to see which sources actually bring in leads and revenue.\n\nChapters:\n0:00 Intro\n0:13 Where ads reporting lives\n0:28 Connect Google Ads\n0:41 Reading the Google report\n0:56 Cost per conversion\n1:11 Campaigns & keywords\n1:25 Facebook Ads\n1:39 Facebook campaigns\n1:54 Attribution report\n2:09 Sources & campaigns\n2:21 First vs last attribution\n2:37 Making decisions\n2:51 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #GoogleAds #FacebookAds #Attribution"
         },
         {
           "file": "a02-04-call-appointment-agent-reports",
@@ -198,9 +180,9 @@
             "Appointment report",
             "Team performance"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 182.5,
+          "rendered": true,
+          "youtubeDescription": "Use Call Reporting, the Appointment Report and Agent Reporting to see how many calls you answer, how many patients show up, and how each team member is performing.\n\nChapters:\n0:00 Intro\n0:12 Call Reporting\n0:25 When calls are missed\n0:40 Calls by source\n0:57 Recordings & filters\n1:11 Appointment Report\n1:22 How patients book\n1:36 Show rate by calendar\n1:50 Agent Reporting\n2:02 Reading it fairly\n2:19 Speed of reply\n2:36 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Calltracking #Appointmentreport #Teamperformance"
         }
       ]
     },
@@ -242,9 +224,9 @@
             "Import contacts",
             "CSV import"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 175.766667,
+          "rendered": true,
+          "youtubeDescription": "Add contacts by hand, import a CSV spreadsheet, map columns to Kyntlo fields and custom fields, and keep duplicates out of your CRM.\n\nChapters:\n0:00 Intro\n0:12 Where contacts come from\n0:27 Add a contact\n0:37 Add a contact\n0:46 Add a contact\n0:56 Add a contact\n1:07 Avoiding duplicates\n1:15 Avoiding duplicates\n1:33 Import a spreadsheet\n1:44 Map your fields\n1:57 Import options\n2:08 Import options\n2:19 Start the import\n2:29 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMtutorial #Importcontacts #CSVimport"
         },
         {
           "file": "a03-03-inside-a-contact-record",
@@ -261,9 +243,9 @@
             "Contact record",
             "Do Not Disturb"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 170.366667,
+          "rendered": true,
+          "youtubeDescription": "Tour the Kyntlo contact record: contact details, the activity timeline, replying, notes, tasks, appointments, opportunities and Do Not Disturb.\n\nChapters:\n0:00 Intro\n0:11 Opening a contact\n0:19 Three columns\n0:32 Contact details\n0:44 The timeline\n0:59 Replying\n1:14 Notes\n1:22 Tasks\n1:35 Appointments\n1:45 Opportunities\n1:56 Do Not Disturb\n2:07 Do Not Disturb\n2:24 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMtutorial #Contactrecord #DoNotDisturb"
         },
         {
           "file": "a03-04-tags-custom-fields-values",
@@ -281,9 +263,9 @@
             "Custom fields",
             "Custom values"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 180.633333,
+          "rendered": true,
+          "youtubeDescription": "Organise your Kyntlo data so automations can use it: when to use a tag, a custom field or a custom value, and how to personalise messages with them.\n\nChapters:\n0:00 Intro\n0:14 Three tools, three jobs\n0:32 Tags\n0:38 Tags\n0:49 Why tags matter\n1:03 Custom fields\n1:20 Custom fields\n1:32 Creating fields\n1:52 Custom values\n2:05 Personalise a message\n2:19 Personalise a message\n2:34 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMtutorial #Tags #Customfields #Customvalues"
         },
         {
           "file": "a03-05-smart-lists-bulk-actions",
@@ -301,9 +283,9 @@
             "Bulk SMS",
             "Export contacts"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 172.4,
+          "rendered": true,
+          "youtubeDescription": "Segment your contacts with smart lists and filters, then tag, text, email, enrol and export whole groups at once with bulk actions.\n\nChapters:\n0:00 Intro\n0:12 Why bulk actions\n0:29 Smart lists\n0:39 Build a segment\n0:49 Select contacts\n0:59 Bulk tag\n1:14 Bulk SMS\n1:27 Bulk SMS\n1:40 Bulk SMS\n1:51 Workflows & export\n2:08 Bulk Actions log\n2:24 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMtutorial #Smartlists #BulkSMS #Exportcontacts"
         },
         {
           "file": "a03-06-companies-duplicates",
@@ -320,9 +302,9 @@
             "Merge duplicates",
             "Companies"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 176.8,
+          "rendered": true,
+          "youtubeDescription": "Keep your Kyntlo database clean: group contacts under companies, merge duplicate contacts without losing history, and restore contacts deleted by mistake.\n\nChapters:\n0:00 Intro\n0:17 Companies\n0:29 Add a company\n0:39 Inside a company\n0:51 Inside a company\n1:04 Spotting duplicates\n1:21 Merging contacts\n1:33 Merging contacts\n1:46 Merging contacts\n1:58 Merging contacts\n2:08 Restoring contacts\n2:17 Restoring contacts\n2:29 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMtutorial #Mergeduplicates #Companies"
         }
       ]
     },
@@ -345,9 +327,9 @@
             "Conversations",
             "HighLevel conversations"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 185.4,
+          "rendered": true,
+          "youtubeDescription": "Tour the Kyntlo Conversations inbox: the three panes, channel badges, the Unread, Recents, Starred and All views, search and filters, assigning conversations to your team, starring and marking as unread.\n\nChapters:\n0:00 Intro\n0:14 Where it lives\n0:30 Three panes\n0:44 Reading the list\n1:00 Opening a conversation\n1:18 Unread, Recents, Starred, All\n1:31 Search\n1:43 Filters\n1:57 Assigning conversations\n2:13 Star & mark unread\n2:25 Contact panel\n2:42 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Unifiedinbox #Conversations #HighLevelconversations"
         },
         {
           "file": "a04-02-replying-across-channels",
@@ -366,9 +348,9 @@
             "Instagram DMs",
             "HighLevel conversations"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 179.233333,
+          "rendered": true,
+          "youtubeDescription": "Reply to customers on any channel from one thread in Kyntlo: SMS, email, WhatsApp, Facebook Messenger, Instagram DMs and website live chat, plus internal comments for your team.\n\nChapters:\n0:00 Intro\n0:13 One thread per person\n0:26 Channel labels & AI replies\n0:39 The composer\n0:54 Reply by text\n1:10 WhatsApp\n1:32 Email\n1:47 Facebook & Instagram\n2:02 Live chat\n2:20 Internal comments\n2:32 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Unifiedinbox #SMS #WhatsApp #InstagramDMs #HighLevelconversations"
         },
         {
           "file": "a04-03-snippets-templates-scheduling",
@@ -386,9 +368,9 @@
             "Schedule message",
             "HighLevel conversations"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 174.166667,
+          "rendered": true,
+          "youtubeDescription": "Reply faster in Kyntlo Conversations: create snippets with custom values, insert them in one click, use email templates, and schedule messages to send later.\n\nChapters:\n0:00 Intro\n0:12 Why snippets\n0:27 Custom values\n0:39 Add a snippet\n0:55 Save it\n1:10 Use a snippet\n1:26 Email templates\n1:39 Schedule a message\n1:52 Scheduled\n2:03 Write now, send later\n2:17 More composer tools\n2:29 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Snippets #Cannedresponses #Schedulemessage #HighLevelconversations"
         },
         {
           "file": "a04-04-chat-widget",
@@ -405,9 +387,9 @@
             "Live chat",
             "Lead capture"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 187.533333,
+          "rendered": true,
+          "youtubeDescription": "Turn website visitors into conversations: choose live chat or SMS, style the chat bubble, write your greeting, pick the contact form fields, switch on Conversation AI, test the widget and install it on any website.\n\nChapters:\n0:00 Intro\n0:12 Where it lives\n0:27 Live chat or SMS\n0:45 Style & colours\n1:03 Greeting\n1:19 Contact form\n1:34 Conversation AI\n1:46 Acknowledgement\n1:57 Test it\n2:09 Get the code\n2:18 Install it\n2:34 On Kyntlo pages\n2:43 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Chatwidget #Livechat #Leadcapture"
         },
         {
           "file": "a04-05-calls-missed-call-text-back",
@@ -425,9 +407,9 @@
             "Voicemail",
             "HighLevel phone system"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 170.533333,
+          "rendered": true,
+          "youtubeDescription": "Make and log calls from the Kyntlo inbox, listen to call recordings and voicemail transcripts, and use missed-call text-back to turn missed calls into booked appointments.\n\nChapters:\n0:00 Intro\n0:12 Calls in the thread\n0:25 Call recordings\n0:38 Making a call\n0:53 After the call\n1:08 Voicemail\n1:20 Calling back\n1:30 Missed-call text-back\n1:43 From missed call to booking\n1:56 New callers become contacts\n2:10 How it is set up\n2:23 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Missedcalltextback #Callrecording #Voicemail #HighLevelphonesystem"
         }
       ]
     },
@@ -451,9 +433,9 @@
             "Round robin",
             "HighLevel calendars"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 172.5,
+          "rendered": true,
+          "youtubeDescription": "Personal booking, round robin, class booking, collective booking, service menu and event calendars: what each Kyntlo calendar type does, and which one to use for every kind of appointment.\n\nChapters:\n0:00 Intro\n0:12 Where calendars live\n0:26 Choosing a type\n0:40 Personal Booking\n0:53 Round Robin\n1:07 Class Booking\n1:19 Collective Booking\n1:33 Service Menu\n1:47 Event Calendar\n2:00 Types in your list\n2:12 Which one should I pick?\n2:29 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Onlinebooking #Calendars #Roundrobin #HighLevelcalendars"
         },
         {
           "file": "a05-02-first-booking-calendar",
@@ -471,9 +453,9 @@
             "Availability",
             "HighLevel calendars"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 179.466667,
+          "rendered": true,
+          "youtubeDescription": "Build a booking calendar in Kyntlo step by step: name and booking link, team member and location, meeting duration, weekly hours, date-specific hours, buffers, minimum notice and booking limits.\n\nChapters:\n0:00 Intro\n0:11 Create the calendar\n0:25 Name & booking link\n0:40 Team member & location\n0:53 Duration\n1:08 Weekly hours\n1:25 Date-specific hours\n1:37 Buffers & notice\n1:51 Booking limits\n2:06 Save & share\n2:23 Preview\n2:36 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Onlinebooking #Bookingcalendar #Availability #HighLevelcalendars"
         },
         {
           "file": "a05-03-booking-forms-payments",
@@ -491,9 +473,9 @@
             "Stripe",
             "HighLevel calendars"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 181.866667,
+          "rendered": true,
+          "youtubeDescription": "Collect the right information when people book a Kyntlo calendar, take a deposit through Stripe, choose what happens after booking, and send booking confirmations automatically.\n\nChapters:\n0:00 Intro\n0:11 Open the calendar\n0:25 The default form\n0:38 A custom form\n0:53 Consent\n1:03 Accept payments\n1:17 Deposit amount\n1:30 Receipt description\n1:46 After booking\n1:58 Confirmations\n2:11 Auto-confirm\n2:28 Test it\n2:39 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Onlinebooking #Bookingdeposits #Stripe #HighLevelcalendars"
         },
         {
           "file": "a05-04-google-outlook-sync",
@@ -511,9 +493,9 @@
             "Double booking",
             "HighLevel calendars"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 179.433333,
+          "rendered": true,
+          "youtubeDescription": "Connect Google Calendar or Outlook to Kyntlo, choose a linked calendar for two-way sync, add conflict calendars so private plans block your availability, and add Zoom or Google Meet links.\n\nChapters:\n0:00 Intro\n0:11 Why connect\n0:24 One connection per person\n0:39 Connect Outlook\n0:50 Linked calendar\n1:04 Conflict calendars\n1:18 What to leave out\n1:30 Save\n1:40 What two-way sync means\n1:57 Managing a connection\n2:10 Check your time zone\n2:23 Video meetings\n2:36 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #GoogleCalendarsync #Outlookcalendar #Doublebooking #HighLevelcalendars"
         },
         {
           "file": "a05-05-managing-appointments",
@@ -531,9 +513,9 @@
             "Calendar view",
             "HighLevel calendars"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 180.305,
+          "rendered": true,
+          "youtubeDescription": "Run your diary in Kyntlo: read the calendar view, filter by calendar and team member, book appointments by hand, reschedule, update statuses, mark no-shows, cancel, and use the appointment list.\n\nChapters:\n0:00 Intro\n0:11 The calendar view\n0:26 Views & filters\n0:44 Book an appointment\n1:00 Pick the details\n1:14 Appointment details\n1:28 Reschedule\n1:42 Update the status\n1:58 No-shows\n2:10 Cancel\n2:26 Appointment List\n2:38 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Appointments #No-shows #Calendarview #HighLevelcalendars"
         },
         {
           "file": "a05-06-automatic-reminders",
@@ -551,9 +533,9 @@
             "SMS reminders",
             "HighLevel calendars"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 182.233333,
+          "rendered": true,
+          "youtubeDescription": "Cut no-shows with automatic email and SMS appointment reminders in Kyntlo: notifications vs reminders, adding a reminder, timing and message templates, consent and DND, and when to use a workflow instead.\n\nChapters:\n0:00 Intro\n0:11 Why reminders work\n0:27 Notifications tab\n0:44 Reminders\n1:00 Add a reminder\n1:14 Timing & message\n1:31 Save the reminder\n1:46 Consent & DND\n2:05 Save\n2:19 Going further with workflows\n2:36 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Appointmentreminders #No-shows #SMSreminders #HighLevelcalendars"
         }
       ]
     },
@@ -576,9 +558,9 @@
             "Opportunities",
             "CRM"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 184.666667,
+          "rendered": true,
+          "youtubeDescription": "What opportunities and pipelines are, how stages, values and statuses (open, won, lost, abandoned) work, why stage and status are separate, and how many pipelines each Kyntlo plan includes.\n\nChapters:\n0:00 Intro\n0:14 Contacts vs opportunities\n0:30 What a pipeline is\n0:43 Stages\n1:01 Counts & values\n1:12 Opportunity cards\n1:28 Why values matter\n1:47 Statuses\n2:01 Stage vs status\n2:15 Lost reasons\n2:26 More than one pipeline\n2:41 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Salespipeline #Opportunities #CRM"
         },
         {
           "file": "a06-02-building-a-pipeline",
@@ -595,9 +577,9 @@
             "Pipeline stages",
             "CRM setup"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 175.866667,
+          "rendered": true,
+          "youtubeDescription": "Plan your sales stages, create a new pipeline, name and add stages, drag them into the right order, choose which stages appear in your charts, and edit an existing pipeline safely.\n\nChapters:\n0:00 Intro\n0:12 Plan your stages first\n0:33 The Pipelines tab\n0:46 Create a pipeline\n0:55 Name your stages\n1:04 Add stages\n1:11 Reorder stages\n1:24 Funnel & pie charts\n1:37 Save\n1:48 See it on the board\n2:05 Editing a pipeline\n2:20 Pipelines on your plan\n2:31 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Salespipeline #Pipelinestages #CRMsetup"
         },
         {
           "file": "a06-03-working-the-board",
@@ -614,9 +596,9 @@
             "Opportunities",
             "Bulk actions"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 173.9,
+          "rendered": true,
+          "youtubeDescription": "Work your pipeline every day: drag deals between stages, move them from the card menu, update status and lost reasons, add opportunities, search and filter, switch to list view and use bulk actions.\n\nChapters:\n0:00 Intro\n0:12 Drag a deal\n0:26 Move from the card menu\n0:38 Mark a deal as won\n0:50 Lost, with a reason\n1:02 Add an opportunity\n1:16 Create it\n1:24 Search & filters\n1:37 Filter by owner\n1:47 List view\n2:01 Bulk actions\n2:14 Back to the board\n2:28 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Salespipeline #Opportunities #Bulkactions"
         },
         {
           "file": "a06-04-pipeline-reporting",
@@ -633,9 +615,9 @@
             "Conversion rate",
             "Sales funnel"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 178.7,
+          "rendered": true,
+          "youtubeDescription": "Turn your pipeline into numbers: opportunity status and value, conversion rate, the stage-by-stage funnel, stage distribution, column totals, lost reasons and won value per team member.\n\nChapters:\n0:00 Intro\n0:13 Where pipeline reports live\n0:26 Status & value\n0:39 Conversion rate\n0:56 Find the leak in the funnel\n1:12 Fixing the leak\n1:27 Stage distribution\n1:41 Totals on the board\n1:56 Why deals are lost\n2:10 Won value per person\n2:30 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Pipelinereporting #Conversionrate #Salesfunnel"
         }
       ]
     },
@@ -658,9 +640,9 @@
             "Website builder",
             "Landing pages"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 168.266667,
+          "rendered": true,
+          "youtubeDescription": "Understand the difference between a funnel and a website in Kyntlo, when to use each one, and how they work together to turn visitors into booked appointments.\n\nChapters:\n0:00 Intro\n0:13 The Sites area\n0:28 What a funnel is\n0:46 Funnel steps\n1:00 Why funnels convert\n1:13 What a website is\n1:30 Website pages\n1:43 Which one when?\n1:56 Working together\n2:14 One builder for both\n2:26 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Funnels #Websitebuilder #Landingpages"
         },
         {
           "file": "a07-02-funnel-from-template",
@@ -677,9 +659,9 @@
             "Landing page",
             "Funnel builder"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 167.141,
+          "rendered": true,
+          "youtubeDescription": "Create a complete funnel in minutes: pick a template from the library, preview it, make it yours with your logo, headline, button and images, then save, publish and set a clean URL.\n\nChapters:\n0:00 Intro\n0:09 New funnel\n0:23 Templates library\n0:36 Preview first\n0:47 Name your funnel\n0:58 Your new steps\n1:11 Your logo & phone\n1:21 Headline\n1:30 Button & colours\n1:42 Images\n1:54 Save & publish\n2:02 Clean URL\n2:13 Next steps\n2:23 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Funneltemplates #Landingpage #Funnelbuilder"
         },
         {
           "file": "a07-03-page-builder",
@@ -696,9 +678,9 @@
             "Landing page",
             "Drag and drop"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 200.333333,
+          "rendered": true,
+          "youtubeDescription": "Master the Kyntlo drag-and-drop page builder: how sections, rows, columns and elements fit together, editing text and styles, adding elements, mobile view, preview, save and publish.\n\nChapters:\n0:00 Intro\n0:12 Builder tour\n0:28 How pages are built\n0:43 Rows & columns\n0:57 Elements\n1:11 Editing text\n1:23 Styling\n1:35 Adding elements\n1:47 Element settings\n2:01 Rows & sections\n2:17 Mobile view\n2:30 Hide on mobile\n2:44 Preview & publish\n2:56 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Pagebuilder #Landingpage #Draganddrop"
         },
         {
           "file": "a07-04-forms-surveys",
@@ -715,9 +697,9 @@
             "Surveys",
             "Lead capture"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 183.2,
+          "rendered": true,
+          "youtubeDescription": "Build lead forms that fill your CRM: standard and custom fields, required fields, conditional logic, what happens on submit, notifications, styling and embedding. Plus multi-step surveys with progress bars and jump logic.\n\nChapters:\n0:00 Intro\n0:13 Your forms\n0:28 The form builder\n0:36 Standard & custom fields\n0:53 Add a field\n1:04 Conditional logic\n1:19 On submit\n1:33 Notifications & follow-up\n1:48 Styles\n1:57 Embed anywhere\n2:10 On Kyntlo pages\n2:18 Surveys\n2:29 Slides & logic\n2:42 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Formbuilder #Surveys #Leadcapture"
         },
         {
           "file": "a07-05-connecting-your-domain",
@@ -734,9 +716,9 @@
             "DNS",
             "SSL"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 184.166667,
+          "rendered": true,
+          "youtubeDescription": "Put your funnels and websites on your own web address: add a domain or subdomain, create the DNS records at your domain provider, verify them, link the domain to a funnel with a default page, and get free SSL.\n\nChapters:\n0:00 Intro\n0:12 Your domains\n0:26 Domain or subdomain?\n0:44 Add a domain\n0:55 Enter the address\n1:03 DNS records\n1:19 At your provider\n1:35 Verify\n1:47 Link the domain\n1:59 Default page\n2:10 Free SSL\n2:24 Your new URL\n2:32 URL redirects\n2:42 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Customdomain #DNS #SSL"
         },
         {
           "file": "a07-06-funnel-stats-ab-seo",
@@ -753,9 +735,9 @@
             "A/B testing",
             "SEO"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 171.5,
+          "rendered": true,
+          "youtubeDescription": "Measure and improve your funnels: read page views, opt-ins and opt-in rates, find where visitors drop off, run an A/B split test and declare a winner, then set SEO meta data and tracking code.\n\nChapters:\n0:00 Intro\n0:12 Funnel stats\n0:28 All vs. uniques\n0:41 Find the leak\n0:56 Create an A/B test\n1:08 Change one thing\n1:18 Traffic split\n1:30 Reading results\n1:44 Declare a winner\n1:53 SEO meta data\n2:06 Writing a good title\n2:19 Tracking code\n2:30 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Funnelanalytics #A/Btesting #SEO"
         },
         {
           "file": "a07-07-blogs-qr-codes",
@@ -772,9 +754,9 @@
             "QR codes",
             "Content AI"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 174.5,
+          "rendered": true,
+          "youtubeDescription": "Publish blog posts that bring in search traffic, draft them faster with Content AI, set slugs and meta descriptions, schedule posts, then create trackable QR codes that bring offline visitors to your pages.\n\nChapters:\n0:00 Intro\n0:12 Your blog\n0:25 Categories & authors\n0:35 New post\n0:46 Content AI\n0:59 Review & edit\n1:10 Post settings\n1:21 Schedule it\n1:30 QR codes\n1:43 Create a QR code\n1:54 Track it with UTMs\n2:06 Design & download\n2:18 Measuring results\n2:28 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Blog #QRcodes #ContentAI"
         }
       ]
     },
@@ -797,9 +779,9 @@
             "Email builder",
             "Email templates"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 169.433333,
+          "rendered": true,
+          "youtubeDescription": "Design a branded marketing email in Kyntlo: start from a template, edit text and buttons, add personalised merge fields, drag in new elements, check the mobile view and send yourself a test.\n\nChapters:\n0:00 Intro\n0:12 Where emails live\n0:25 Choose a template\n0:41 The builder\n0:55 Name your campaign\n1:04 Personalise with merge fields\n1:18 Edit the button\n1:32 Drag in new elements\n1:47 Check the mobile view\n2:00 Send a test email\n2:13 Save your work\n2:27 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Emailmarketing #Emailbuilder #Emailtemplates"
         },
         {
           "file": "a08-02-sending-email-campaign",
@@ -816,9 +798,9 @@
             "Email campaigns",
             "Newsletter"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 186.866667,
+          "rendered": true,
+          "youtubeDescription": "Send an email campaign in Kyntlo: choose your audience by tag or smart list, set the sender, write a subject line and preview text, test it, schedule it, and read the results.\n\nChapters:\n0:00 Intro\n0:11 Open your draft\n0:24 Choose your audience\n0:39 Who gets skipped\n0:52 Sender details\n1:09 Subject line & preview text\n1:25 Test before you send\n1:37 Schedule it\n1:50 Sending in batches\n2:03 Confirm & schedule\n2:15 Reading the results\n2:30 Links & recipients\n2:44 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Emailmarketing #Emailcampaigns #Newsletter"
         },
         {
           "file": "a08-03-email-deliverability",
@@ -835,9 +817,9 @@
             "SPF DKIM DMARC",
             "Email marketing"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 201.6,
+          "rendered": true,
+          "youtubeDescription": "Get your Kyntlo emails into the inbox, not the spam folder: read your bounce and complaint numbers, set up a dedicated sending domain, turn on email verification, warm up with batches and keep your list healthy.\n\nChapters:\n0:00 Intro\n0:11 What deliverability means\n0:25 Healthy numbers\n0:40 Why use your own domain\n0:56 Add a sending domain\n1:09 DNS records explained\n1:25 Verify the domain\n1:39 Email verification\n1:55 Warm up a new domain\n2:10 Send in batches\n2:23 Write like a human\n2:37 Keep your list clean\n2:54 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Emaildeliverability #SPFDKIMDMARC #Emailmarketing"
         },
         {
           "file": "a08-04-sms-whatsapp-broadcasts",
@@ -854,9 +836,9 @@
             "WhatsApp marketing",
             "Text message compliance"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 199.433333,
+          "rendered": true,
+          "youtubeDescription": "Send text message and WhatsApp broadcasts the right way: consent and opt-outs, reusable SMS templates with a segment counter, Meta-approved WhatsApp templates, and bulk sending from Contacts in drip mode.\n\nChapters:\n0:00 Intro\n0:17 Consent comes first\n0:36 SMS templates\n0:51 Create a text template\n1:06 Characters & segments\n1:23 Add opt-out text\n1:38 WhatsApp templates\n1:52 Template approval\n2:09 Send a broadcast\n2:23 Drip mode\n2:40 Track progress\n2:54 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #SMSmarketing #WhatsAppmarketing #Textmessagecompliance"
         },
         {
           "file": "a08-05-social-planner",
@@ -873,9 +855,9 @@
             "Social Planner",
             "Content AI"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 180.833333,
+          "rendered": true,
+          "youtubeDescription": "Plan and schedule social media posts in Kyntlo: connect Facebook, Instagram, Google Business Profile, LinkedIn, TikTok and X, use the calendar and list views, write posts with Content AI, preview them per network and set up recurring posts.\n\nChapters:\n0:00 Intro\n0:11 Your social calendar\n0:25 Connect your accounts\n0:39 Week & list views\n0:54 Create a post\n1:06 Write with Content AI\n1:23 Add an image\n1:35 Preview each network\n1:49 Google Business posts\n2:04 Schedule it\n2:20 Recurring posts\n2:34 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Socialmediascheduling #SocialPlanner #ContentAI"
         },
         {
           "file": "a08-06-trigger-links",
@@ -892,9 +874,9 @@
             "Link tracking",
             "Marketing automation"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 164.466667,
+          "rendered": true,
+          "youtubeDescription": "Use trigger links in Kyntlo to see exactly which contacts clicked a link in your emails and texts, and start automations when they do: create a link, copy its key, use it in a campaign and read the click analytics.\n\nChapters:\n0:00 Intro\n0:12 What trigger links are\n0:26 Create a link\n0:40 Copy the link key\n0:51 Use it in an email\n1:05 What happens on a click\n1:19 Act on clicks\n1:36 Analyze your links\n1:48 Who clicked\n2:00 Trigger links vs email stats\n2:17 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Triggerlinks #Linktracking #Marketingautomation"
         }
       ]
     },
@@ -917,9 +899,9 @@
             "Marketing automation",
             "HighLevel workflows"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 199.466667,
+          "rendered": true,
+          "youtubeDescription": "Understand the logic behind every Kyntlo workflow: triggers decide who enters, actions run top to bottom, waits pause, and If/Else conditions send each contact down the right path.\n\nChapters:\n0:00 Intro\n0:15 Where workflows live\n0:30 Open a workflow\n0:41 Triggers: the \"when\"\n0:57 Trigger filters\n1:16 Actions: the \"what\"\n1:37 Waits\n1:52 Conditions: If/Else\n2:10 One contact at a time\n2:25 Draft & publish\n2:38 Your plan\n2:51 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Workflows #Marketingautomation #HighLevelworkflows"
         },
         {
           "file": "a09-02-first-workflow-new-lead",
@@ -936,9 +918,9 @@
             "Lead follow-up",
             "Speed to lead"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 190.201,
+          "rendered": true,
+          "youtubeDescription": "Build your first Kyntlo workflow from scratch: a form trigger with a filter, an instant SMS with custom values, a team notification, a wait and a follow-up email. Then test it and publish it.\n\nChapters:\n0:00 Intro\n0:14 Why speed matters\n0:29 Create the workflow\n0:41 Name it\n0:51 Add the trigger\n1:05 Send an instant SMS\n1:16 Personalise with custom values\n1:31 Notify your team\n1:43 Wait, then follow up\n2:00 Workflow settings\n2:16 Test it\n2:32 Publish\n2:43 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Workflows #Leadfollow-up #Speedtolead"
         },
         {
           "file": "a09-03-if-else-waits-goals",
@@ -955,9 +937,9 @@
             "If/Else",
             "Marketing automation"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 179.133333,
+          "rendered": true,
+          "youtubeDescription": "Make your workflows react to what people do: use Wait steps, split contacts with If/Else branches, and use Goal Events to stop chasing people who already did what you wanted.\n\nChapters:\n0:00 Intro\n0:16 The starting point\n0:29 Wait options\n0:44 A simple time delay\n0:56 Add an If/Else\n1:11 Two lanes\n1:23 The Replied branch\n1:35 The None branch\n1:47 Goal events\n2:05 If the goal is not met\n2:16 The whole picture\n2:31 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Workflows #If/Else #Marketingautomation"
         },
         {
           "file": "a09-04-appointment-workflows",
@@ -974,9 +956,9 @@
             "Appointment reminders",
             "No-shows"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 182.166667,
+          "rendered": true,
+          "youtubeDescription": "Cut no-shows with appointment workflows: confirm every booking, send reminders timed to the appointment, recover no-shows automatically and ask happy patients for a review.\n\nChapters:\n0:00 Intro\n0:14 The Appointments folder\n0:25 Trigger: booked appointment\n0:41 Instant confirmation\n0:55 Reminders timed to the appointment\n1:10 A second reminder\n1:24 Allow re-entry\n1:37 No-show recovery\n1:51 A friendly second chance\n2:05 Review request after the visit\n2:18 Keep reminders running\n2:34 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Workflows #Appointmentreminders #No-shows"
         },
         {
           "file": "a09-05-pipeline-automation",
@@ -993,9 +975,9 @@
             "Pipelines",
             "Opportunities"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 177.006,
+          "rendered": true,
+          "youtubeDescription": "Keep your pipeline up to date without dragging cards: use workflows to create and move opportunities, tag contacts, create tasks for your team, and react when deals are won.\n\nChapters:\n0:00 Intro\n0:16 The plan\n0:28 Create the workflow\n0:36 Trigger: a booking\n0:48 Create or update the opportunity\n1:05 Two important switches\n1:23 Tag the contact\n1:35 Create a task\n1:47 Publish\n2:01 Opportunity triggers\n2:16 When a deal is won\n2:31 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Workflows #Pipelines #Opportunities"
         },
         {
           "file": "a09-06-recipes-templates",
@@ -1012,9 +994,9 @@
             "Workflow recipes",
             "Missed call text back"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 167.766667,
+          "rendered": true,
+          "youtubeDescription": "Start new automations in seconds: browse the workflow recipes, set up Missed Call Text Back from a recipe, customise the message and settings, and clone your own proven workflows.\n\nChapters:\n0:00 Intro\n0:13 Find the recipes\n0:22 What is on the menu\n0:46 Preview a recipe\n0:59 Use the recipe\n1:13 Check the trigger\n1:24 Make the message yours\n1:41 Name it & publish\n1:50 Clone your own workflows\n2:04 Organise in folders\n2:22 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Workflows #Workflowrecipes #Missedcalltextback"
         },
         {
           "file": "a09-07-webhooks-sheets-premium",
@@ -1032,9 +1014,9 @@
             "Google Sheets",
             "Integrations"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 175.2,
+          "rendered": true,
+          "youtubeDescription": "Connect Kyntlo to your other tools without Zapier: start workflows from an inbound webhook, add rows to Google Sheets, send data out with webhooks, and understand how premium actions are billed.\n\nChapters:\n0:00 Intro\n0:14 What premium means\n0:30 The example\n0:44 Inbound webhook trigger\n0:54 Fetch a sample\n1:07 Create the contact\n1:22 Google Sheets action\n1:32 Map the columns\n1:48 Sending data out\n2:06 Configure the webhook\n2:18 Other premium actions\n2:29 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Workflows #Webhooks #GoogleSheets #Integrations"
         },
         {
           "file": "a09-08-execution-logs",
@@ -1051,9 +1033,9 @@
             "Troubleshooting",
             "Execution logs"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 191.4,
+          "rendered": true,
+          "youtubeDescription": "Find out exactly why a contact didn't get a message or didn't move: check the publish status, the trigger filters, Enrollment History and Execution Logs, and fix the cause.\n\nChapters:\n0:00 Intro\n0:13 The four checks\n0:28 1. Is it published?\n0:41 2. Did they enrol?\n0:56 3. Check the trigger\n1:14 4. Read the execution logs\n1:28 Executed, skipped, failed\n1:42 View the details\n1:55 Fix it on the contact\n2:09 Failed steps\n2:24 Waiting is normal\n2:38 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Workflows #Troubleshooting #Executionlogs"
         }
       ]
     },
@@ -1077,9 +1059,9 @@
             "Voice AI",
             "Pricing"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 185.266667,
+          "rendered": true,
+          "youtubeDescription": "Meet Kyntlo's AI employees (Conversation AI, Voice AI, Knowledge Base, Content AI, Workflow AI and Reviews AI) and see exactly which ones are included on Starter, Growth and Pro, and what pay-as-you-go AI usage costs.\n\nChapters:\n0:00 Intro\n0:13 Where AI lives\n0:25 Your plan\n0:41 Conversation AI\n0:57 Voice AI & Knowledge Base\n1:09 Content, Workflow & Reviews AI\n1:26 Plans compared\n1:40 What Pro adds\n1:55 Pay-as-you-go rates\n2:12 What it costs in practice\n2:29 Your learning path\n2:43 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #AIforbusiness #AIchatbot #VoiceAI #Pricing"
         },
         {
           "file": "a10-02-conversation-ai-chatbot",
@@ -1096,9 +1078,9 @@
             "Conversation AI",
             "Lead response"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 204.066667,
+          "rendered": true,
+          "youtubeDescription": "Set up your Conversation AI chatbot: choose a bot mode (Off, Suggestive or Auto-pilot), pick channels, write its personality and goal, add actions like booking and human handover, and test it before it talks to customers.\n\nChapters:\n0:00 Intro\n0:14 Your bots\n0:29 Bot mode\n0:44 Switching on Auto-pilot\n0:54 Channels & handing over\n1:07 Personality & goals\n1:23 Actions\n1:39 Human handover\n1:54 Knowledge base\n2:07 Test your bot\n2:19 Test a booking\n2:30 Save & track results\n2:45 Plans & usage\n2:58 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #AIchatbot #ConversationAI #Leadresponse"
         },
         {
           "file": "a10-03-knowledge-base-faqs",
@@ -1115,9 +1097,9 @@
             "Knowledge base",
             "FAQs"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 177.866667,
+          "rendered": true,
+          "youtubeDescription": "Teach your AI agents about your business: crawl your website, add FAQs with exact answers, upload documents like price lists, check training status, then test what your chatbot has learned.\n\nChapters:\n0:00 Intro\n0:12 Your knowledge base\n0:26 Sources\n0:39 Add a source\n0:56 Web crawler\n1:11 Train the pages\n1:21 Training status\n1:33 Add an FAQ\n1:46 Why FAQs matter\n2:02 Upload a file\n2:16 Test what it learned\n2:33 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #AIchatbot #Knowledgebase #FAQs"
         },
         {
           "file": "a10-04-voice-ai-receptionist",
@@ -1134,9 +1116,9 @@
             "AI receptionist",
             "Phone answering"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 179.2,
+          "rendered": true,
+          "youtubeDescription": "Set up a Voice AI receptionist that answers your phone: pick a voice, write the greeting and goals, set working hours, route calls to your team, book appointments, send a text after every call, and review call logs with summaries and transcripts.\n\nChapters:\n0:00 Intro\n0:12 Voice AI agents\n0:29 Choose a voice\n0:39 Greeting\n0:52 Prompt & goals\n1:07 Phone & availability\n1:22 Call transfer\n1:35 Booking & follow-up text\n1:47 After every call\n1:56 Test the agent\n2:08 Call logs\n2:22 Summary & transcript\n2:34 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #VoiceAI #AIreceptionist #Phoneanswering"
         },
         {
           "file": "a10-05-content-ai",
@@ -1153,9 +1135,9 @@
             "AI writing",
             "Social media"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 183.076,
+          "rendered": true,
+          "youtubeDescription": "Use Content AI to write emails, social posts, blog posts and website copy in your brand voice, choose the tone and length, send the result straight to your campaigns, and generate images for your posts.\n\nChapters:\n0:00 Intro\n0:12 Where to find it\n0:31 Choose what to write\n0:44 Describe it\n0:53 Tone & length\n1:07 Your email\n1:19 Use it\n1:36 A social post\n1:49 Send to Social Planner\n1:57 Generate images\n2:13 Pick your favourite\n2:24 History\n2:37 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #ContentAI #AIwriting #Socialmedia"
         },
         {
           "file": "a10-06-ai-in-workflows",
@@ -1172,9 +1154,9 @@
             "Automation",
             "AI for business"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 183.033333,
+          "rendered": true,
+          "youtubeDescription": "Add AI steps to your automations with Workflow AI: classify incoming messages, summarise conversations into notes, write AI replies, and route complaints to a person. Includes a worked example of AI inbox triage.\n\nChapters:\n0:00 Intro\n0:15 What is Workflow AI?\n0:31 Classify & summarise\n0:50 AI reply & sentiment\n1:03 Finding AI actions\n1:20 Example: AI inbox triage\n1:33 Test a booking request\n1:47 Test a price question\n2:01 Complaints go to a person\n2:16 Bots can start workflows\n2:31 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #WorkflowAI #Automation #AIforbusiness"
         }
       ]
     },
@@ -1197,9 +1179,9 @@
             "Google Business Profile",
             "Google reviews"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 170.5,
+          "rendered": true,
+          "youtubeDescription": "Connect your Google Business Profile to Kyntlo Reputation, pull your Google reviews in, and set the review link your review requests will use.\n\nChapters:\n0:00 Intro\n0:12 Reputation before connecting\n0:25 Why connect Google\n0:44 Before you start\n1:02 Sign in with Google\n1:09 Give permission\n1:17 Choose your location\n1:32 Reviews imported\n1:43 Managing the connection\n1:53 Your review link\n2:03 Your review link\n2:15 QR code\n2:25 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Reputationmanagement #GoogleBusinessProfile #Googlereviews"
         },
         {
           "file": "a11-02-requesting-reviews",
@@ -1216,9 +1198,9 @@
             "Review requests",
             "Google reviews"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 170.033333,
+          "rendered": true,
+          "youtubeDescription": "Send review requests by SMS and email, track who clicked and who reviewed, and set Kyntlo to ask every customer automatically with smart follow-ups.\n\nChapters:\n0:00 Intro\n0:14 Why ask\n0:26 Send a request\n0:40 SMS or email\n0:59 Send a request\n1:05 Tracking requests\n1:24 Automatic requests\n1:48 Timing & follow-ups\n1:54 Timing & follow-ups\n2:09 The message\n2:23 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Reputationmanagement #Reviewrequests #Googlereviews"
         },
         {
           "file": "a11-03-reviews-ai-replies",
@@ -1235,9 +1217,9 @@
             "Reviews AI",
             "Reply to reviews"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 172.266667,
+          "rendered": true,
+          "youtubeDescription": "Reply to Google and Facebook reviews from Kyntlo in seconds: set up Reviews AI with your tone and instructions, generate on-brand replies, and handle negative reviews well.\n\nChapters:\n0:00 Intro\n0:14 Why reply\n0:29 Find unanswered reviews\n0:37 Set up Reviews AI\n0:43 Set up Reviews AI\n1:00 Your brand voice\n1:15 Reply with AI\n1:29 Check and post\n1:42 Negative reviews\n1:55 Negative reviews\n2:07 Auto-pilot\n2:24 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Reputationmanagement #ReviewsAI #Replytoreviews"
         },
         {
           "file": "a11-04-review-widgets",
@@ -1254,9 +1236,9 @@
             "Review widget",
             "Social proof"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 169.266667,
+          "rendered": true,
+          "youtubeDescription": "Build a review widget in Kyntlo: choose a layout, sources, minimum rating and theme, then copy the embed code onto your website or Kyntlo funnel.\n\nChapters:\n0:00 Intro\n0:13 Why widgets\n0:32 The widget builder\n0:43 Name\n0:52 Layout\n1:10 Sources & ratings\n1:24 Theme & display\n1:36 Save\n1:42 Embed code\n1:49 Add it to your site\n2:05 Always up to date\n2:17 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Reputationmanagement #Reviewwidget #Socialproof"
         }
       ]
     },
@@ -1279,9 +1261,9 @@
             "Payments",
             "Online payments"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 172.4,
+          "rendered": true,
+          "youtubeDescription": "Connect Stripe so you can take card payments on invoices, payment links, order forms, calendar bookings and Text2Pay. Covers what you need before you start, test mode, and adding PayPal.\n\nChapters:\n0:00 Intro\n0:13 Where to connect\n0:33 Before you start\n0:47 Connect Stripe\n0:58 Authorise the connection\n1:15 Connected\n1:29 Where the money goes\n1:46 Test mode\n2:01 Adding PayPal\n2:15 Where payments show up\n2:28 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Stripe #Payments #Onlinepayments"
         },
         {
           "file": "a12-02-products-prices-invoices",
@@ -1298,9 +1280,9 @@
             "Products",
             "Payments"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 173.366667,
+          "rendered": true,
+          "youtubeDescription": "Create a product with a one-time and a monthly price, then build an invoice: add the customer and items, tax, a due date and payment settings, send it by email and SMS, and record a payment.\n\nChapters:\n0:00 Intro\n0:10 Why products first\n0:26 Create a product\n0:37 A one-time price\n0:44 A recurring price\n1:00 Save the product\n1:07 Start an invoice\n1:20 Customer & items\n1:34 Tax\n1:50 Due date & payment settings\n2:04 Send by email & SMS\n2:15 Record a payment\n2:29 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Invoices #Products #Payments"
         },
         {
           "file": "a12-03-payment-links-text-to-pay",
@@ -1317,9 +1299,9 @@
             "Text2Pay",
             "Order forms"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 174.133333,
+          "rendered": true,
+          "youtubeDescription": "Get paid faster: create a reusable payment link, text a one-off payment request with Text2Pay, and understand how funnel order forms feed your Orders and Transactions.\n\nChapters:\n0:00 Intro\n0:13 Payment links\n0:26 Create a payment link\n0:36 Checkout options\n0:51 Share your link\n1:06 Text2Pay\n1:24 Send a Text2Pay request\n1:38 Track it like an invoice\n1:49 Order forms\n2:02 Upsells & order bumps\n2:16 Every payment in one place\n2:28 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Paymentlinks #Text2Pay #Orderforms"
         },
         {
           "file": "a12-04-subscriptions-transactions",
@@ -1336,9 +1318,9 @@
             "Refunds",
             "Recurring revenue"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 183.769,
+          "rendered": true,
+          "youtubeDescription": "Manage recurring revenue: read your subscriptions and their statuses, recover past-due payments, cancel a subscription the right way, find any payment in Transactions and issue a full or partial refund.\n\nChapters:\n0:00 Intro\n0:14 Your subscriptions\n0:25 Where they come from\n0:39 Subscription statuses\n0:53 Rescue a failed payment\n1:07 Cancel a subscription\n1:20 Transactions\n1:34 Payment details\n1:46 Issue a partial refund\n1:58 After a refund\n2:12 Full refunds\n2:22 Failed payments & exports\n2:35 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Subscriptions #Refunds #Recurringrevenue"
         }
       ]
     },
@@ -1361,9 +1343,9 @@
             "Online course",
             "Course builder"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 175.266667,
+          "rendered": true,
+          "youtubeDescription": "Build an online course in Kyntlo Memberships: create a product, organise it into categories, add a video lesson with notes and downloads, publish it and preview it as a member.\n\nChapters:\n0:00 Intro\n0:16 Courses in Kyntlo\n0:32 Why a course\n0:52 Create a product\n1:00 Create a product\n1:09 Categories\n1:18 Lessons\n1:26 Video\n1:36 Lesson text\n1:48 Downloads\n1:54 Publish\n2:07 Save\n2:16 Preview\n2:30 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Memberships #Onlinecourse #Coursebuilder"
         },
         {
           "file": "a13-02-selling-access",
@@ -1380,9 +1362,9 @@
             "Sell online courses",
             "Membership site"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 172.2,
+          "rendered": true,
+          "youtubeDescription": "Sell your Kyntlo courses with offers: bundle products, set a free, one-time, subscription or payment-plan price, share the checkout link, and let buyers be enrolled automatically.\n\nChapters:\n0:00 Intro\n0:11 Offers explained\n0:24 Offers explained\n0:38 Create an offer\n0:48 What's included\n0:56 Pricing\n1:12 Automatic access\n1:28 Publish\n1:36 Share your offer\n1:52 Test the checkout\n2:03 Automatic enrolment\n2:16 Automatic enrolment\n2:31 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Memberships #Sellonlinecourses #Membershipsite"
         },
         {
           "file": "a13-03-communities",
@@ -1399,9 +1381,9 @@
             "Online community",
             "Communities"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 171.181,
+          "rendered": true,
+          "youtubeDescription": "Create a private community in Kyntlo Memberships: groups, channels, posts, linked courses, the leaderboard and inviting members.\n\nChapters:\n0:00 Intro\n0:13 Groups\n0:28 Create a group\n0:38 Create a group\n0:51 Inside a group\n1:02 Sections & channels\n1:15 Sections & channels\n1:24 Add a channel\n1:31 Posting\n1:46 Learning\n1:57 Leaderboard\n2:12 Invite members\n2:22 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Memberships #Onlinecommunity #Communities"
         }
       ]
     },
@@ -1425,9 +1407,9 @@
             "Call forwarding",
             "Settings"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 192.433333,
+          "rendered": true,
+          "youtubeDescription": "Buy a business phone number, choose between local and mobile numbers, set up call forwarding and caller ID, pick your default outbound number, and understand the Trust Center: regulatory bundles, A2P 10DLC and number porting.\n\nChapters:\n0:00 Intro\n0:14 Why a business number\n0:29 Number types\n0:47 Buy a number\n0:59 Buy a number\n1:13 Call forwarding & caller ID\n1:23 Call forwarding & caller ID\n1:38 Call forwarding & caller ID\n1:48 Default outbound number\n2:01 Trust Center\n2:20 A2P 10DLC\n2:38 Number porting\n2:48 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Phonenumbers #A2P10DLC #Callforwarding #Settings"
         },
         {
           "file": "a14-02-email-services",
@@ -1446,9 +1428,9 @@
             "DMARC",
             "Settings"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 173.366667,
+          "rendered": true,
+          "youtubeDescription": "Set up a dedicated sending domain in Kyntlo: add a subdomain, copy the SPF, DKIM, MX, tracking and DMARC records to your DNS provider, verify the domain, and turn on email verification.\n\nChapters:\n0:00 Intro\n0:09 Why it matters\n0:29 Add your domain\n0:44 DNS records\n1:01 SPF & DKIM\n1:16 MX, tracking & DMARC\n1:33 Add records automatically\n1:43 Verify\n1:59 Your sending domain\n2:16 Email verification\n2:29 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Emaildeliverability #SPF #DKIM #DMARC #Settings"
         },
         {
           "file": "a14-03-integrations-marketplace",
@@ -1466,9 +1448,9 @@
             "Google Business Profile",
             "Zoom"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 178.333333,
+          "rendered": true,
+          "youtubeDescription": "Connect Google, Facebook & Instagram and Zoom from Settings → Integrations, see where Stripe lives, and install extra apps like Slack from the App Marketplace.\n\nChapters:\n0:00 Intro\n0:10 Integrations\n0:29 Google\n0:48 Google\n0:58 Zoom\n1:12 Manage & disconnect\n1:30 Stripe\n1:45 App Marketplace\n2:01 Install an app\n2:22 Installed apps\n2:36 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Integrations #AppMarketplace #GoogleBusinessProfile #Zoom"
         },
         {
           "file": "a14-04-usage-wallet-billing",
@@ -1486,9 +1468,9 @@
             "Wholesale rates",
             "Settings"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 168.2,
+          "rendered": true,
+          "youtubeDescription": "Understand how Kyntlo billing works: your plan subscription, your wallet balance, the usage summary at wholesale rates (email, SMS, calls, AI), adding balance, auto recharge, transactions and invoices.\n\nChapters:\n0:00 Intro\n0:11 Your plan\n0:27 Your wallet\n0:41 Usage summary\n0:56 Email & SMS\n1:17 Calls & AI\n1:37 Add balance\n1:50 Auto recharge\n2:07 Transactions & invoices\n2:23 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Billing #Wallet #Wholesalerates #Settings"
         },
         {
           "file": "a14-05-data-privacy-dnd",
@@ -1506,9 +1488,9 @@
             "Consent",
             "Data privacy"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 184.733333,
+          "rendered": true,
+          "youtubeDescription": "Respect consent in Kyntlo: use Do Not Disturb per channel, understand automatic opt-outs (STOP replies and unsubscribes), record marketing consent with a custom field, export a contact's data, restore deleted contacts and check the audit log.\n\nChapters:\n0:00 Intro\n0:11 Why consent matters\n0:32 Do Not Disturb\n0:50 Do Not Disturb\n1:08 Automatic opt-outs\n1:26 Record consent\n1:35 Record consent\n1:47 Data requests\n1:58 Deleting data\n2:11 Audit logs\n2:25 Limit access\n2:39 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #GDPR #DoNotDisturb #Consent #Dataprivacy"
         }
       ]
     },
@@ -1531,9 +1513,9 @@
             "Lead to booking",
             "Marketing automation"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 194.9,
+          "rendered": true,
+          "youtubeDescription": "Put the whole course together: follow one lead from your funnel and form, through an instant-reply workflow and your pipeline, to a booked appointment, reminders and a review request.\n\nChapters:\n0:00 Intro\n0:16 The system\n0:35 1. The funnel\n0:49 2. The form\n1:02 3. The instant-reply workflow\n1:16 4. The pipeline\n1:31 5. The calendar\n1:42 6. Confirmations & reminders\n1:58 7. The review request\n2:09 8. Reputation\n2:22 Test it end to end\n2:37 Measure it\n2:49 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Capstone #Leadtobooking #Marketingautomation"
         },
         {
           "file": "a15-02-30-day-action-plan",
@@ -1550,9 +1532,9 @@
             "Getting started",
             "CRM setup"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 173.533333,
+          "rendered": true,
+          "youtubeDescription": "Know exactly what to set up, and in which order: a four-week plan covering foundations, lead capture, automated follow-up and growth, plus the weekly habits that keep Kyntlo working for you.\n\nChapters:\n0:00 Intro\n0:13 The plan\n0:29 Week 1 · Foundations\n0:35 Your Launchpad\n0:47 Bring in your contacts\n1:00 Week 2 · Capture\n1:06 Funnel, form & chat\n1:21 Week 3 · Follow-up\n1:26 Your first three workflows\n1:44 Week 4 · Grow\n1:51 Reviews, campaigns & AI\n2:07 Weekly habits\n2:21 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Actionplan #Gettingstarted #CRMsetup"
         }
       ]
     }

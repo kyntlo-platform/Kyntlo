@@ -42,5 +42,5 @@ available to you.
 
 ## Course stats
 
-- 15 modules · 76 lessons · 0.1 hours of video
+- 15 modules · 75 lessons · 3.8 hours of video
 - English narration and captions
