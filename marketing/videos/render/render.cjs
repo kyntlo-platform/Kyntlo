@@ -47,7 +47,7 @@ const stillsArg = rest.indexOf('--stills') >= 0 ? rest[rest.indexOf('--stills') 
   const wav = outFile.replace(/\.mp4$/, '.wav');
   fs.writeFileSync(cues, JSON.stringify(meta));
   execFileSync('python3', [path.join(__dirname, 'audio.py'), cues, wav], { stdio: 'inherit' });
-  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', silent, '-i', wav, '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', outFile]);
+  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', silent, '-i', wav, '-c:v', 'copy', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '44100', '-c:a', 'aac', '-b:a', '192k', '-shortest', outFile]);
   [silent, cues, wav].forEach((f) => fs.unlinkSync(f));
   console.log('wrote', outFile);
 })();
