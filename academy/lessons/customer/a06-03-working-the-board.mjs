@@ -136,7 +136,7 @@ export default {
     },
     {
       chapter: 'List view',
-      say: "Prefer a spreadsheet? Switch to list view. You get every deal in one table, with its stage, status, value and owner, and a total at the bottom. Click any row to open it.",
+      say: "Prefer a spreadsheet? Switch to list view. You get every deal in one table, with its stage, status, value and owner, and a total at the bottom. Click any row to open it, or use Sort to put your biggest deals first.",
       actions: [
         { at: 0.4, click: '#op_view_list' },
         { at: 1.8, highlight: '#op_table thead', label: 'One row per deal', for: 3.6 },
@@ -158,7 +158,7 @@ export default {
     },
     {
       chapter: 'Back to the board',
-      say: "You can also move stage, change status, add a tag or delete in bulk. When you're done, switch back to the board view.",
+      say: "You can also move stage, change status, add a tag or delete in bulk. Every change is saved instantly, and shows up on the contact's record, and on your dashboard. When you're done, switch back to the board view.",
       actions: [
         { at: 0.6, hover: '#op_views' },
         { at: 3.8, click: '#op_view_board' },

@@ -21,8 +21,8 @@ export default {
       goto: '{demo}#/payments/integrations',
       setup: [{ run: (page) => page.evaluate(() => { KY.payments.stripe = false; KY.payments.testMode = false; KY.go(location.hash); }) }],
       settle: 1,
-      say: "Open Payments in the sidebar, then the Integrations tab. This is where every payment provider lives. Stripe is the one we recommend. You can also connect PayPal, Square, Authorize dot net or NMI.",
-      caption: 'Open Payments in the sidebar, then the Integrations tab. This is where every payment provider lives. Stripe is the one we recommend. You can also connect PayPal, Square, Authorize.net or NMI.',
+      say: "Open Payments in the sidebar, then the Integrations tab. This is where every payment provider lives. Stripe is the one we recommend. You can also connect PayPal, Square, Authorize dot net or NMI. Each business account connects its own provider, so if you run two locations, each one is paid separately.",
+      caption: 'Open Payments in the sidebar, then the Integrations tab. This is where every payment provider lives. Stripe is the one we recommend. You can also connect PayPal, Square, Authorize.net or NMI. Each business account connects its own provider, so if you run two locations, each one is paid separately.',
       actions: [
         { at: 0.4, hover: '#sb_payments' },
         { at: 0.6, highlight: '#sb_payments', label: 'Payments', for: 2.4 },
@@ -53,7 +53,7 @@ export default {
     },
     {
       chapter: 'Authorise the connection',
-      say: "Click Connect with Stripe. Stripe asks you to choose the account for this business. Check the name and currency, pounds for a UK business, then click Connect.",
+      say: "Click Connect with Stripe. Stripe asks you to choose the account for this business. Check the name and currency, pounds for a UK business, then click Connect. If you're creating a brand new Stripe account, it only takes a few minutes, and you'll come straight back here afterwards.",
       actions: [
         { at: 0.6, click: '#stripe_go' },
         { at: 2.2, highlight: '.stripe-o', label: 'This happens on Stripe', for: 3.6 },
@@ -69,6 +69,16 @@ export default {
         { at: 0.4, highlight: '#int_stripe', label: 'Connected', for: 3.6 },
         { at: 0.6, zoom: '#int_stripe', scale: 1.6, for: 7 },
         { at: 10.4, hover: '#int_stripe_manage' },
+      ],
+    },
+    {
+      chapter: 'Where the money goes',
+      say: "So where does the money go? Stripe collects each payment, takes its card fee, and pays the rest into your bank account on a regular schedule, usually every few days. You'll find every payout and every fee in your Stripe dashboard, and every payment in Kyntlo's Transactions tab.",
+      actions: [
+        { at: 0.6, title: 'Payment → Stripe → your bank', sub: 'Payouts arrive every few days', for: 6 },
+        { at: 8.6, hover: '#int_stripe_manage' },
+        { at: 8.8, highlight: '#int_stripe_manage', label: 'Payouts & fees', for: 3 },
+        { at: 12.6, hover: '#tab_transactions' },
       ],
     },
     {

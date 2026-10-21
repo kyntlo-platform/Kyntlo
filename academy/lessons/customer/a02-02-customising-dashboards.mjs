@@ -107,7 +107,7 @@ export default {
     },
     {
       chapter: 'Save your changes',
-      say: "Happy with it? Click Save. If you change your mind while editing, Cancel puts everything back the way it was.",
+      say: "Happy with it? Click Save. If you change your mind while editing, Cancel puts everything back the way it was. Remember that changes to a shared dashboard show up for everyone who can see it, so if you just want to experiment, duplicate it first, and play with your own copy.",
       actions: [
         { at: 0.6, hover: '#dash_cancel' },
         { at: 0.8, highlight: '#dash_cancel', label: 'Undo all changes', for: 2.4 },
@@ -153,6 +153,15 @@ export default {
         { at: 8.0, click: '#dash_more' },
         { at: 9.0, highlight: '.menu', label: 'Dashboard options', for: 2.6 },
         { at: 11.8, click: '.menu button:has-text("Set as my default")' },
+      ],
+    },
+    {
+      chapter: 'Ideas for each role',
+      say: "Not sure where to start? Here are some ideas. For the owner: opportunity value, conversion rate and the funnel. For the front desk: appointments, tasks and manual actions. And for whoever runs your marketing: the lead source report, next to conversion rate, so they can see which channels bring in patients, not just enquiries.",
+      actions: [
+        { at: 2.6, title: 'Owner', sub: 'Opportunity value · Conversion rate · Funnel', for: 4.4 },
+        { at: 7.4, title: 'Front desk', sub: 'Appointments · Tasks · Manual actions', for: 4.4 },
+        { at: 12.4, title: 'Marketing', sub: 'Lead source report · Conversion rate', for: 5.4 },
       ],
     },
     {

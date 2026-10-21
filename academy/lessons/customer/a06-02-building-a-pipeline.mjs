@@ -41,7 +41,7 @@ export default {
       chapter: 'Plan your stages first',
       goto: '{demo}#/opportunities/pipelines',
       settle: 1,
-      say: "Before you click anything, write down the steps a customer goes through with you. Make each stage something that has already happened, like consultation booked. That way, anyone on the team can tell exactly where a deal belongs.",
+      say: "Before you click anything, write down the steps a customer goes through with you. Make each stage something that has already happened, like consultation booked. That way, anyone on the team can tell exactly where a deal belongs. For implants, that might be: new lead, contacted, consultation booked, treatment plan sent, deposit paid, and treatment started.",
       actions: [
         { at: 0.6, title: 'Plan on paper first', sub: 'One stage = one thing that has happened', for: 6 },
         { at: 7.0, move: [1000, 520] },
@@ -112,7 +112,7 @@ export default {
     },
     {
       chapter: 'Save',
-      say: "When you're happy, click Create. The new pipeline appears in your list, with all six stages in order.",
+      say: "When you're happy, click Create. The new pipeline appears in your list, with all six stages in order. Its open value is zero for now, because it doesn't have any deals yet.",
       actions: [
         { at: 0.4, click: '#pl_save' },
         { at: 2.4, highlight: '#pl_table tbody tr:last-child', label: 'Dental Implants', for: 3.6 },
@@ -120,7 +120,7 @@ export default {
     },
     {
       chapter: 'See it on the board',
-      say: "Back on the Opportunities tab, pick it from the pipeline menu. There's your new board, with one empty column for each stage, ready for its first deal.",
+      say: "Back on the Opportunities tab, pick it from the pipeline menu. There's your new board, with one empty column for each stage, ready for its first deal. From now on, whenever you add an opportunity, or a workflow creates one, you can choose this pipeline and its stage.",
       actions: [
         { at: 0.4, click: '#tab_opportunities' },
         { at: 2.0, click: '#op_pipeline' },

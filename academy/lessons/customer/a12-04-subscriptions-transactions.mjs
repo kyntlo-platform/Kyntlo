@@ -118,6 +118,14 @@ export default {
       ],
     },
     {
+      chapter: 'Full refunds',
+      say: "For a full refund, just leave it set to full refund. The whole amount goes back, and the payment is marked as refunded, like Oliver's check-up payment here.",
+      actions: [
+        { at: 0.6, hover: '#tx_row_t7' },
+        { at: 2.4, highlight: '#tx_row_t7', label: 'Refunded in full', for: 3.6 },
+      ],
+    },
+    {
       chapter: 'Failed payments & exports',
       say: "Further down, Grace's failed payment shows the reason it was declined. And when your accountant asks for figures at the end of the month, click Export, to download every transaction as a spreadsheet.",
       actions: [

@@ -52,7 +52,7 @@ export default {
     },
     {
       chapter: 'Share your link',
-      say: "Click Create link, and it's ready. Copy it into a text, an email, a social post or your website. There's a QR code too. Print it at reception, and patients can pay from their phone.",
+      say: "Click Create link, and it's ready. Copy it into a text, an email, a social post or your website. There's a QR code too. Print it at reception, and patients can pay from their phone. When an offer ends, just switch its link off.",
       actions: [
         { at: 0.4, click: '#plk_save' },
         { at: 2.0, highlight: '#plk_url', label: 'Your link', for: 3 },
@@ -64,7 +64,7 @@ export default {
     },
     {
       chapter: 'Text2Pay',
-      say: "Next, Text2Pay. It's perfect for a one-off amount for one person, like a deposit. You'll find it on the Invoices tab. It creates a quick invoice, and texts the payment link straight to the patient's phone.",
+      say: "Next, Text2Pay. It's perfect for a one-off amount for one person, like a deposit. You'll find it on the Invoices tab. It creates a quick invoice, and texts the payment link straight to the patient's phone. It's ideal straight after a phone call, when someone has just said yes.",
       actions: [
         { at: 0.4, click: '#tab_invoices' },
         { at: 3.6, hover: '#pay_text2pay' },

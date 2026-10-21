@@ -39,7 +39,7 @@ export default {
     },
     {
       chapter: 'Calls by source',
-      say: "Calls by source shows which tracking number each call came in on. Give your website, your Google ads and your Google Business Profile their own numbers, and you'll know exactly which one makes the phone ring.",
+      say: "Calls by source shows which tracking number each call came in on. Give your website, your Google ads and your Google Business Profile their own numbers, and you'll know exactly which one makes the phone ring. You set up those tracking numbers in Settings, under Phone Numbers.",
       actions: [
         { at: 0.4, highlight: '#rp_call_src_card', label: 'One number per source', for: 4.4 },
         { at: 0.6, hover: '#rp_call_src_card svg' },
@@ -110,6 +110,15 @@ export default {
         { at: 0.6, highlight: '#rp_ag_row_priya', label: 'Most won', for: 3.6 },
         { at: 5.0, highlight: '#rp_ag_row_james', label: 'Most calls', for: 4 },
         { at: 5.2, zoom: '#rp_ag_table', scale: 1.3, for: 6.4 },
+      ],
+    },
+    {
+      chapter: 'Speed of reply',
+      say: "The last column is the average first reply: how long a new message waits for a human answer. In sales, speed matters more than almost anything else. A lead who hears back within minutes is far more likely to book. If one person is much slower, look at their workload first.",
+      actions: [
+        { at: 0.6, hover: '#rp_ag_table th:last-child' },
+        { at: 0.8, highlight: '#rp_ag_table th:last-child', label: 'Average first reply', for: 3.6 },
+        { at: 5.0, zoom: '#rp_ag_table', scale: 1.3, for: 6 },
       ],
     },
     {

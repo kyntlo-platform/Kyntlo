@@ -82,7 +82,7 @@ export default {
     },
     {
       chapter: 'Totals on the board',
-      say: "For a quick check without the dashboard, the board itself is a report. Each column shows its count and value, and the total for the whole pipeline sits at the top right.",
+      say: "For a quick check without the dashboard, the board itself is a report. Each column shows its count and value, and the total for the whole pipeline sits at the top right. In list view, the same total sits at the bottom of the table.",
       actions: [
         { at: 0.4, click: '#sb_opportunities' },
         { at: 2.4, highlight: '#op_colh_3', label: 'Count & value per stage', for: 3.4 },
@@ -106,7 +106,7 @@ export default {
     },
     {
       chapter: 'Won value per person',
-      say: "On the Pro plan, Reporting also shows each team member's pipeline. Agent Reporting lists the deals each person owns, how many they've won, and the value of those wins.",
+      say: "On the Pro plan, Reporting also shows each team member's pipeline. Agent Reporting lists the deals each person owns, how many they've won, and the value of those wins. Use it alongside the funnel. If one person's deals keep stalling at the same stage, a little coaching on that step can make a real difference.",
       actions: [
         { at: 0.4, click: '#sb_reporting' },
         { at: 1.6, click: '#tab_agents' },

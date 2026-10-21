@@ -38,7 +38,7 @@ export default {
     },
     {
       chapter: 'Stages',
-      say: "Each column is a stage. New enquiry, contacted, consultation booked, treatment plan sent, and won. As a deal moves forward, its card moves one column to the right.",
+      say: "Each column is a stage. New enquiry, contacted, consultation booked, treatment plan sent, and won. As a deal moves forward, its card moves one column to the right. Put your stages in the order things really happen, so the board reads like a story, from left to right.",
       actions: [
         { at: 1.4, hover: '#op_colh_0' },
         { at: 2.8, hover: '#op_colh_1' },
@@ -69,8 +69,8 @@ export default {
     },
     {
       chapter: 'Why values matter',
-      say: "Always add a value, even if it's an estimate. Values are what turn a list of names into a forecast. Here, everything in this pipeline adds up to twenty-four thousand seven hundred and forty pounds.",
-      caption: "Always add a value, even if it's an estimate. Values are what turn a list of names into a forecast. Here, everything in this pipeline adds up to £24,740.",
+      say: "Always add a value, even if it's an estimate. Values are what turn a list of names into a forecast. If you don't know the exact amount yet, use your average price, and update it once the plan is agreed. Here, everything in this pipeline adds up to twenty-four thousand seven hundred and forty pounds.",
+      caption: "Always add a value, even if it's an estimate. Values are what turn a list of names into a forecast. If you don't know the exact amount yet, use your average price, and update it once the plan is agreed. Here, everything in this pipeline adds up to £24,740.",
       actions: [
         { at: 0.6, hover: '#op_card_o1 .kv:nth-of-type(4)' },
         { at: 6.4, hover: '#op_summary' },
