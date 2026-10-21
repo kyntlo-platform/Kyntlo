@@ -751,7 +751,6 @@
     });
     const first = owner.pages[0];
     const fs = first.ab ? { views: first.ab.a.views + first.ab.b.views, optins: first.ab.a.optins + first.ab.b.optins } : first;
-    const total = owner.pages.reduce((a, s) => a + (s.ab ? s.ab.a.optins + s.ab.b.optins : s.optins), 0);
     const draw = () => {
       body.innerHTML = `
         <div class="row" style="margin-bottom:16px"><button class="btn" id="fn_stats_range">${icon('calendar', 18)} ${range} ${icon('chevron', 16)}</button>
@@ -759,7 +758,7 @@
           <button class="btn" id="fn_stats_reset">${icon('restore', 18)} Reset Stats</button></div>
         <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px" id="fn_stats_tiles">
           <div class="card stat"><div class="k">Page views (first ${isWeb ? 'page' : 'step'})</div><div class="v st-num">${num(fs.views)}</div></div>
-          <div class="card stat"><div class="k">Opt-ins (all ${isWeb ? 'pages' : 'steps'})</div><div class="v st-num">${num(total)}</div></div>
+          <div class="card stat"><div class="k">Opt-ins (first ${isWeb ? 'page' : 'step'})</div><div class="v st-num">${num(fs.optins)}</div></div>
           <div class="card stat"><div class="k">Opt-in rate (first ${isWeb ? 'page' : 'step'})</div><div class="v st-num">${pct(fs.optins, fs.views)}</div></div>
           <div class="card stat"><div class="k">Sales</div><div class="v st-num">£0</div></div></div>
         <div class="card"><table class="t" id="fn_stats_table"><thead>
