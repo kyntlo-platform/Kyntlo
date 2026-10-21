@@ -40,7 +40,9 @@ window.K = (() => {
     });
   }
 
-  // Shared end card. words: array of [text, gradient?]
+  // Shared ending: a CTA card at `start`, then the brand outro (K mark, wordmark, "Own Tomorrow.").
+  // words: array of [text, gradient?]; '|' forces a line break.
+  const OUTRO_AT = 4.6, OUTRO_LEN = 4.2;
   function endCard(t, start, { words, sub, cta: keyword }) {
     let el = $('#end');
     if (!el) {
@@ -48,23 +50,42 @@ window.K = (() => {
       el.id = 'end';
       el.innerHTML = `<div class="punch">${words.map(([w, g]) => (w === '|' ? '<br>' : `<span class="w${g ? ' g' : ''}">${w}</span>`)).join('')}</div>
         ${sub ? `<div class="sub">${sub}</div>` : ''}
-        <img src="../../../assets/kyntlo-logo-cropped.png" alt="">
-        <div class="tag">Own Tomorrow.</div>
         <div class="cta">Comment <b>${keyword}</b></div>`;
       $('#stage').appendChild(el);
+      const o = document.createElement('div');
+      o.id = 'brand-outro';
+      o.innerHTML = `<div class="glow"></div><div class="ring"><img src="../../../assets/favicon.png" alt=""></div>
+        <img class="word" src="../../../assets/kyntlo-logo-cropped.png" alt="Kyntlo"><div class="tag">Own Tomorrow.</div>`;
+      $('#stage').appendChild(o);
     }
     el.style.opacity = p(t, start, 0.25);
     el.style.visibility = t >= start ? 'visible' : 'hidden';
+    const n = $$('.punch .w', el).length;
     $$('.punch .w', el).forEach((w, i) => pop(w, t, start + 0.15 + i * 0.07, { dy: 60, scale: 0.7 }));
-    const subEl = $('.sub', el); if (subEl) pop(subEl, t, start + 0.4 + words.length * 0.07, { dy: 20 });
-    const base = start + 0.9 + words.length * 0.07;
-    pop($('img', el), t, base, { dy: 0, scale: 0.6, dur: 0.6 });
-    pop($('.tag', el), t, base + 0.35, { dy: 20 });
-    const cta = $('.cta', el);
-    pop(cta, t, base + 0.8, { dy: 50, scale: 0.6 });
-    if (t > base + 1.3) cta.style.transform += ` scale(${1 + Math.sin((t - base) * 5) * 0.025})`;
-    return base + 0.8; // time the CTA lands (for SFX)
+    const subEl = $('.sub', el); if (subEl) pop(subEl, t, start + 0.35 + n * 0.07, { dy: 20 });
+    const ctaEl = $('.cta', el), ctaAt = start + 0.7 + n * 0.07;
+    pop(ctaEl, t, ctaAt, { dy: 50, scale: 0.6 });
+    if (t > ctaAt + 0.5) ctaEl.style.transform += ` scale(${1 + Math.sin((t - ctaAt) * 5) * 0.025})`;
+
+    const o = $('#brand-outro'), oa = start + OUTRO_AT;
+    o.style.opacity = p(t, oa, 0.35);
+    o.style.visibility = t >= oa ? 'visible' : 'hidden';
+    const ring = $('.ring', o);
+    pop(ring, t, oa + 0.1, { dy: 0, scale: 0.4, dur: 0.6 });
+    if (t > oa + 0.7) ring.style.transform += ` scale(${1 + Math.sin((t - oa) * 2.4) * 0.015})`;
+    pop($('.word', o), t, oa + 0.5, { dy: 30, scale: 0.85, dur: 0.6 });
+    pop($('.tag', o), t, oa + 1.0, { dy: 30, scale: 0.9 });
+    const glow = $('.glow', o);
+    glow.style.opacity = p(t, oa + 0.1, 0.8);
+    glow.style.transform = `scale(${0.9 + Math.sin((t - oa) * 1.5) * 0.06})`;
   }
 
-  return { clamp, p, lerp, out, inOut, back, $, $$, pop, rand, aurora, endCard };
+  // Registers the ending's sound and voice-over and returns the total video duration.
+  function ending(end, ctaLine) {
+    window.SFX.push([end, 'whoosh'], [end + OUTRO_AT, 'boom'], [end + OUTRO_AT + 1.0, 'chime']);
+    window.VO.push([end + 0.35, ctaLine], [end + OUTRO_AT + 0.5, 'Kyntlo. Own tomorrow.']);
+    return end + OUTRO_AT + OUTRO_LEN;
+  }
+
+  return { clamp, p, lerp, out, inOut, back, $, $$, pop, rand, aurora, endCard, ending };
 })();

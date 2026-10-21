@@ -1,8 +1,14 @@
 # Kyntlo short-form videos: batch 2
 
-Five 9:16 videos (1080×1920, 30 fps, 27–31 s, with sound) for Reels, TikTok, Shorts, Facebook and LinkedIn.
+Five 9:16 videos (1080×1920, 30 fps, about 30–33 s, with voice-over) for Reels, TikTok, Shorts, Facebook and LinkedIn.
 Each video is an HTML animation in `scenes/`, rendered frame by frame by `render/render.cjs`.
-The music bed and sound effects are synthesized by `render/audio.py`, so there is nothing to license.
+`render/audio.py` builds the soundtrack:
+
+- **Voice-over**: each scene's `window.VO` lines, spoken by Kokoro TTS (open-source, voice `af_heart`).
+- **Music**: a soft synthesized bed that ducks under the voice, so there is nothing to license.
+- **Sound effects**: a few quiet accents at key moments only.
+
+Every video ends the same way: a call-to-action card ("Comment WORD"), then the brand outro (the K mark in a circle, the Kyntlo wordmark, "Own Tomorrow.") with the voice saying "Kyntlo. Own tomorrow."
 
 ## What was wrong with batch 1
 
@@ -27,7 +33,8 @@ Problems with that template:
 | Story | Feature list | Problem → twist → Kyntlo as the payoff, about 60% of the way through |
 | Product | Says what it does | Shows the outcome: the booking, the text-back, the calendar entry |
 | Numbers | Unverified stats | No performance claims. The speedrun is labelled "illustrative" on screen |
-| Sound | (n/a) | Each video has its own music and sound effects (message pops, typewriter, printer, stamps) |
+| Sound | (n/a) | Narrated voice-over, a calm music bed that ducks under the voice, and a few sound accents |
+| Ending | Caption sign-off | CTA card, then a dedicated "Kyntlo. Own Tomorrow." brand outro, spoken and on screen |
 | Rewatch / share | Low | Built-in reasons to share: "this is literally our tools", "tag the person who replies at 9" |
 
 ## The five videos
@@ -132,4 +139,14 @@ NODE_PATH=$(npm root -g) node render.cjs ../scenes/01-group-chat.html ../out/kyn
 # quick stills for review:
 ./preview.sh ../scenes/01-group-chat.html /tmp/v1 1.5,9,19
 ```
-Requires Node with Playwright (Chromium), ffmpeg, and Python 3 with numpy.
+Add `--audio` to write only the soundtrack, which is a quick way to check voice-over timing. Overlapping lines are reported.
+
+Requirements:
+
+- Node with Playwright (Chromium), ffmpeg, and Python 3 with numpy.
+- Voice-over: `pip install kokoro-onnx`, then put the model files in `render/.vo-cache/` (git-ignored):
+  ```bash
+  curl -L -o render/.vo-cache/kokoro.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+  curl -L -o render/.vo-cache/voices.bin  https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+  ```
+  Pick another voice with `VO_VOICE=bf_emma` (British) or similar.

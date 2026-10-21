@@ -40,9 +40,16 @@
 </div>
 <script src="../lib/kit.js"></script>
 <script>
-window.DURATION = 29;
+window.VO = [
+  [0.3, 'We printed what last month really cost you.'],
+  [3.3, 'The lead who called at lunch. Gone. Three no-shows. A happy client nobody asked for a review.'],
+  [9.35, 'Total? More than you think.'],
+  [11.3, 'Same month, with Kyntlo.'],
+  [13.4, 'Every lead texted back. Every client reminded. Reviews requested. A month of posts, scheduled.'],
+  [20.6, 'Total: one platform.'],
+];
 window.BED = 'groove';
-const END = 22.2;
+const END = 22.9;
 const R1 = [
   ['h', '★ LAST MONTH ★'], ['c', 'WHAT DOING IT BY HAND COST'], ['s', 'Store: your business · Cashier: you'], ['hr'],
   ['r', '1x Lead who called at lunch', 'GONE'],
@@ -74,9 +81,10 @@ function build(el, lines) {
   return K.$$('.ln', el).map((ln) => ({ ln, h: ln.offsetHeight }));
 }
 const L1 = build(K.$('#p1'), R1), L2 = build(K.$('#p2'), R2);
-const SLOT = 1548, STEP = 0.52;
-const S1 = 0.9, S2 = 12.0;
-window.SFX = [[S1 - 0.6, 'whoosh'], [10.0, 'crumple'], [10.6, 'whoosh'], [20.0, 'chime'], [END, 'boom']];
+const SLOT = 1548, STEP = 0.62;
+const S1 = 0.9, S2 = 12.9;
+window.SFX = [[S1 - 0.6, 'whoosh'], [10.6, 'crumple'], [11.2, 'whoosh'], [21.0, 'chime']];
+window.DURATION = K.ending(END, 'Next month, print a better receipt. Comment RECEIPT.');
 L1.forEach((_, i) => window.SFX.push([S1 + i * STEP, 'print']));
 L2.forEach((_, i) => window.SFX.push([S2 + i * STEP, 'print']));
 
@@ -91,13 +99,13 @@ function print(paper, lines, t, start) {
 window.renderFrame = (t) => {
   K.aurora(K.$('#aur'), t, { a: 0.22 });
   K.pop(K.$('#hook .cap'), t, 0.1, { end: 3.6, dy: 50 });
-  K.pop(K.$('#mid .cap'), t, 10.7, { end: 12.4, dy: 50 });
+  K.pop(K.$('#mid .cap'), t, 11.3, { end: 12.9, dy: 50 });
   K.$('.printer .led').style.opacity = 0.5 + 0.5 * Math.sin(t * 12);
 
   const p1 = K.$('#p1');
   print(p1, L1, t, S1);
   // crumple and toss
-  const c = K.p(t, 10.0, 0.7);
+  const c = K.p(t, 10.6, 0.7);
   p1.style.transform = `translate(${K.inOut(c) * 900}px, ${-K.inOut(c) * 700}px) rotate(${c * 160}deg) scale(${1 - K.out(c) * 0.75})`;
   p1.style.borderRadius = c * 120 + 'px';
   p1.style.filter = `brightness(${1 - c * 0.3})`;
@@ -107,11 +115,10 @@ window.renderFrame = (t) => {
   print(p2, L2, t, S2);
   p2.style.visibility = t >= S2 ? 'visible' : 'hidden';
   const hl = K.$('#p2 .hl');
-  hl.style.width = K.out(K.p(t, 20.0, 0.5)) * 800 + 'px';
+  hl.style.width = K.out(K.p(t, 21.0, 0.5)) * 800 + 'px';
   K.$('.printer .lbl').textContent = (t > S1 + L1.length * STEP && t < S2) || t > S2 + L2.length * STEP ? 'DONE.' : 'PRINTING…';
 
   K.endCard(t, END, { words: [['Next'], ['month,'], ['|'], ['print'], ['a'], ['|'], ['better', 1], ['receipt.', 1]], sub: 'Follow-up · reminders · reviews · social', cta: 'RECEIPT' });
 };
-window.SFX.push([END + 0.9 + 8 * 0.07 + 0.8, 'ding']);
 renderFrame(0);
 </script></body></html>

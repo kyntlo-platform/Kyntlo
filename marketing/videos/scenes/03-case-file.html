@@ -51,11 +51,22 @@
 </div>
 <script src="../lib/kit.js"></script>
 <script>
-window.DURATION = 31;
+window.VO = [
+  [0.4, 'Case four one two. The call nobody answered.'],
+  [3.5, "You're up a ladder. It rings six times."],
+  [6.1, 'No voicemail. Nobody leaves voicemail.'],
+  [8.7, 'So they call the next business on Google.'],
+  [11.1, "They've booked. Not with you."],
+  [13.4, 'Case reopened. Same call, with Kyntlo.'],
+  [16.5, 'You still miss it. But Kyntlo texts them back, instantly.'],
+  [19.9, "They reply, and the job's booked."],
+  [22.6, 'Case closed.'],
+];
 window.BED = 'noir';
 const END = 24.3;
 const CPS = 34;
-window.SFX = [[10.9, 'stamp'], [2.3, 'stamp'], [12.3, 'whoosh'], [23.0, 'stamp'], [18.0, 'pop'], [END, 'boom']];
+window.SFX = [[10.9, 'stamp'], [2.3, 'stamp'], [12.3, 'whoosh'], [23.0, 'stamp'], [18.0, 'pop']];
+window.DURATION = K.ending(END, "Missed calls don't have to be missed customers. Comment CALL.");
 
 // typewriter setup: each [data-type] element reveals its text from its start time
 const typed = K.$$('[data-type]').map((el) => {
@@ -111,6 +122,5 @@ window.renderFrame = (t) => {
 
   K.endCard(t, END, { words: [['Missed'], ['calls'], ["don't"], ['|'], ['have'], ['to'], ['be'], ['|'], ['missed', 1], ['customers.', 1]], sub: 'Missed-call text-back · Voice AI', cta: 'CALL' });
 };
-window.SFX.push([END + 0.9 + 10 * 0.07 + 0.8, 'ding']);
 renderFrame(0);
 </script></body></html>

@@ -21,8 +21,7 @@
   .bub { background: #241c36; padding: 24px 34px; border-radius: 40px; border-bottom-left-radius: 12px; font-size: 42px; line-height: 1.28; }
   .me .inner { justify-content: flex-end; }
   .me .bub { background: var(--kinetic); border-radius: 40px; border-bottom-right-radius: 12px; border-bottom-left-radius: 40px; box-shadow: 0 10px 40px rgba(242,0,137,0.35); }
-  .me .av { order: 2; background: #fff; overflow: hidden; }
-  .me .av img { width: 100%; }
+  .me .av { order: 2; }
   .me .name { text-align: right; margin: 0 26px 6px 0; }
   .sys .inner { justify-content: center; padding: 8px 0; }
   .sys .pill { font-size: 28px; color: var(--muted); padding: 10px 26px; border-radius: 999px; background: rgba(255,255,255,0.05); }
@@ -79,7 +78,16 @@ const MSGS = [
   [22.6, 'me', 'was it something i said'],
 ];
 const END = 24.4;
-window.DURATION = 31;
+window.VO = [
+  [0.2, "This is your software's group chat."],
+  [3.3, 'Form Builder gets a new lead. The CRM never hears about her.'],
+  [7.9, 'The connector hits its limit.'],
+  [9.9, 'And Sarah books with someone else.'],
+  [12.1, 'Nobody noticed.'],
+  [14.8, 'Then Kyntlo joined.'],
+  [16.3, 'Forms, DMs, texts and the calendar, on one record, in one inbox.'],
+  [20.5, 'Everyone else left the chat.'],
+];
 window.BED = 'lofi';
 
 const list = K.$('#list');
@@ -105,14 +113,15 @@ MSGS.forEach(([t, who, text, card]) => {
   rows.push({ el: r, from: t, to: Infinity, who });
 });
 function avatar(who) {
-  if (who === 'me') return '<div class="av"><img src="../../../assets/favicon.png"></div>';
+  if (who === 'me') return '<div class="av k-avatar"><img src="../../../assets/favicon.png" alt=""></div>';
   return `<div class="av" style="background:${P[who][2]}">${P[who][1]}</div>`;
 }
 rows.forEach((r) => (r.h = r.el.firstElementChild.offsetHeight));
 
 window.SFX = [];
 MSGS.forEach(([t, who]) => window.SFX.push([t, who === 'me' ? 'send' : who === 'join' ? 'chime' : who === 'sys' ? 'tick' : 'pop']));
-window.SFX.push([0.25, 'whoosh'], [9.9, 'fail'], [END, 'boom']);
+window.SFX.push([0.25, 'whoosh']);
+window.DURATION = K.ending(END, "One login, one inbox. Comment STACK and we'll show you.");
 
 window.renderFrame = (t) => {
   // hook caption
@@ -146,6 +155,5 @@ window.renderFrame = (t) => {
 
   K.endCard(t, END, { words: [['One'], ['login.'], ['One', 1], ['inbox.', 1], ['One'], ['record'], ['per'], ['customer.']], cta: 'STACK' });
 };
-window.SFX.push([END + 0.9 + 8 * 0.07 + 0.8, 'ding']);
 renderFrame(0);
 </script></body></html>

@@ -102,7 +102,16 @@
 </div>
 <script src="../lib/kit.js"></script>
 <script>
-window.DURATION = 29.5;
+window.VO = [
+  [0.3, 'A customer texts you at two forty-seven in the morning.'],
+  [3.2, "You're asleep. Obviously."],
+  [5.0, 'There are two ways this goes.'],
+  [6.6, 'One. You reply when you wake up.'],
+  [9.3, 'By then, someone else has already got the job.'],
+  [13.0, "Two. Kyntlo's AI replies instantly, with your real time slots."],
+  [17.3, 'The job is booked while you sleep.'],
+  [19.8, 'Whoever replies first usually gets the job.'],
+];
 window.BED = 'night';
 const END = 22.6;
 const stars = K.$('#stars');
@@ -116,8 +125,8 @@ const A = K.$$('#A .thread > *'), B = K.$$('#B .thread > *');
 const AT = [6.3, 6.5, 8.95, 9.1, 10.3];
 const BT = [12.9, 13.0, 14.1, 15.5, 16.7, 17.8];
 window.SFX = [[0.7, 'buzz'], [3.0, 'whoosh'], [5.0, 'boom'], [9.1, 'send'], [10.3, 'pop'], [10.9, 'stamp'], [11.7, 'rewind'],
-  [14.1, 'send'], [15.5, 'pop'], [16.7, 'send'], [17.8, 'chime'], [18.6, 'stamp'], [19.7, 'whoosh'], [END, 'boom']];
-for (let i = 0; i < 12; i++) window.SFX.push([7.0 + i * 0.13, 'tick']);
+  [14.1, 'send'], [15.5, 'pop'], [16.7, 'send'], [17.8, 'chime'], [18.6, 'stamp'], [19.7, 'whoosh']];
+window.DURATION = K.ending(END, 'Comment two A M, and we will show you how it works.');
 
 function sceneVis(id, a, b) {
   const el = K.$(id);
@@ -184,6 +193,5 @@ window.renderFrame = (t) => {
 
   K.endCard(t, END, { words: [['Kyntlo'], ['answers'], ['|'], ['at', 1], ['2:47', 1], ['AM.', 1], ['|'], ["You"], ["don't"], ['have'], ['to.']], sub: 'AI replies · booking · reminders', cta: '2AM' });
 };
-window.SFX.push([END + 0.9 + 9 * 0.07 + 0.8, 'ding']);
 renderFrame(0);
 </script></body></html>

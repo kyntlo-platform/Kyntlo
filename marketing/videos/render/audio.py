@@ -1,9 +1,13 @@
 """Synthesize a soundtrack (music bed + timed sound effects) for a rendered scene.
 
 usage: python3 audio.py cues.json out.wav
-cues.json: {"duration": seconds, "bed": "lofi|night|noir|chip|groove", "sfx": [[t, "name"], ...]}
+cues.json: {"duration": seconds, "bed": "lofi|night|noir|drive|groove", "sfx": [[t, "name"], ...],
+            "vo": [[t, "line"], ...], "voSpeed": 1.0}
+Voice-over uses Kokoro TTS (pip install kokoro-onnx); model files go in render/.vo-cache/.
 """
+import hashlib
 import json
+import os
 import sys
 import wave
 
@@ -186,16 +190,19 @@ SFX = {k[4:]: v for k, v in list(globals().items()) if k.startswith("sfx_")}
 
 
 # ---------- music beds ----------
+# Soft electric-piano chords, sub bass and a light kick. Kept low and ducked under the voice-over.
+def keys(freq, sec):
+    t = t_axis(sec)
+    w = np.sin(2 * np.pi * freq * t) + 0.25 * np.sin(4 * np.pi * freq * t) + 0.08 * np.sin(2 * np.pi * freq * 1.003 * t)
+    return w * env(len(t), 0.01, 1.4)
+
+
 def kick():
-    return tone(np.linspace(120, 45, int(0.3 * SR)), 0.3, decay=0.12) * 0.9
+    return tone(np.linspace(110, 45, int(0.3 * SR)), 0.3, decay=0.1)
 
 
-def hat():
-    return noise(0.05, 0.015, 1) * 0.25
-
-
-def snare():
-    return mx(noise(0.2, 0.06, 2) * 0.35, tone(190, 0.15, decay=0.05) * 0.2)
+def shaker():
+    return noise(0.06, 0.02, 3) * 0.2
 
 
 def place(buf, clip, sec, gain=1.0):
@@ -211,75 +218,107 @@ def midi(n):
 
 
 BEDS = {
-    #       bpm, chord roots (midi), minor?, drums, lead style
-    "lofi": (88, [57, 53, 48, 55], True, "lofi", "pad"),
-    "night": (70, [50, 46, 53, 48], True, "soft", "pad"),
-    "noir": (64, [45, 45, 41, 40], True, "noir", "pad"),
-    "chip": (140, [57, 53, 60, 55], True, "four", "arp"),
-    "groove": (100, [52, 48, 55, 50], True, "lofi", "pluck"),
+    # bpm, chords (midi notes), kick pattern (beats), shaker on 8ths
+    "lofi": (84, [(53, 57, 60, 64), (52, 55, 59, 62), (50, 53, 57, 60), (48, 52, 55, 59)], (0, 2.5), True),
+    "night": (70, [(57, 60, 64, 67), (53, 57, 60, 64), (48, 52, 55, 59), (55, 59, 62, 66)], (0,), False),
+    "noir": (66, [(50, 53, 57, 60), (46, 50, 53, 57), (43, 46, 50, 55), (45, 49, 52, 57)], (0,), True),
+    "drive": (112, [(48, 52, 55, 60), (43, 47, 50, 55), (45, 48, 52, 57), (41, 45, 48, 53)], (0, 1, 2, 3), True),
+    "groove": (96, [(43, 47, 50, 55), (40, 43, 47, 52), (36, 40, 43, 48), (38, 42, 45, 50)], (0, 2.5), True),
 }
 
 
 def bed(kind, dur):
-    bpm, roots, minor, drums, lead = BEDS[kind]
+    bpm, chords, kicks, shake = BEDS.get(kind, BEDS["lofi"])
     beat = 60 / bpm
-    buf = np.zeros(int((dur + 2) * SR))
     bar = beat * 4
-    nbars = int(dur / bar) + 2
-    third = 3 if minor else 4
-    for b in range(nbars):
-        root = roots[b % len(roots)]
-        t0 = b * bar
-        chord = [root, root + third, root + 7, root + 12 if lead != "arp" else root + 10]
-        if lead in ("pad", "pluck"):
+    buf = np.zeros(int((dur + 3) * SR))
+    for b in range(int(dur / bar) + 2):
+        chord, t0 = chords[b % len(chords)], b * bar
+        for hit in (0, 1.5, 3):
             for n in chord:
-                dec = bar * 0.9 if lead == "pad" else 0.5
-                for k in range(1 if lead == "pad" else 4):
-                    place(buf, tone(midi(n + 12), bar if lead == "pad" else 0.6, "sine", dec, attack=0.25 if lead == "pad" else 0.005), t0 + k * beat, 0.05)
-        if lead == "arp":
-            seq = [chord[i % 4] + 12 * (i // 4 % 2) for i in range(16)]
-            for i, n in enumerate(seq):
-                place(buf, tone(midi(n + 12), beat / 4, "square", 0.06), t0 + i * beat / 4, 0.06)
-        place(buf, tone(midi(root - 12), bar * 0.95, "tri", bar * 0.5, attack=0.01), t0, 0.28)
-        for q in range(4):
-            tq = t0 + q * beat
-            if drums == "four":
-                place(buf, kick(), tq, 0.5)
-                place(buf, hat(), tq + beat / 2, 0.6)
-                if q % 2:
-                    place(buf, snare(), tq, 0.4)
-            elif drums == "lofi":
-                if q in (0, 2):
-                    place(buf, kick(), tq + (0.04 if q == 2 else 0), 0.45)
-                if q in (1, 3):
-                    place(buf, snare(), tq, 0.3)
-                place(buf, hat(), tq, 0.35)
-                place(buf, hat(), tq + beat * 0.55, 0.25)
-            elif drums == "noir":
-                if q == 0:
-                    place(buf, kick(), tq, 0.35)
-                place(buf, noise(0.08, 0.03, 1) * 0.1, tq + beat / 2, 0.6)  # brushed
-            elif drums == "soft":
-                if q == 0:
-                    place(buf, kick(), tq, 0.2)
-                place(buf, hat(), tq + beat / 2, 0.15)
+                place(buf, keys(midi(n + 12), 1.8), t0 + hit * beat, 0.07)
+        place(buf, tone(midi(chord[0] - 12), bar * 0.9, "sine", bar * 0.6, attack=0.02), t0, 0.35)
+        for k in kicks:
+            place(buf, kick(), t0 + k * beat, 0.3)
+        if shake:
+            for e in range(8):
+                place(buf, shaker(), t0 + e * beat / 2, 0.5 if e % 2 else 0.25)
     buf = buf[: int(dur * SR)]
-    fade = int(1.2 * SR)
+    fade = int(1.5 * SR)
     buf[-fade:] *= np.linspace(1, 0, fade)
-    buf[: int(0.3 * SR)] *= np.linspace(0, 1, int(0.3 * SR))
+    buf[: int(0.5 * SR)] *= np.linspace(0, 1, int(0.5 * SR))
     return buf
+
+
+# Sound effects are kept sparse and quiet; anything not listed here is dropped.
+FX_GAIN = {"pop": 0.35, "send": 0.3, "whoosh": 0.5, "stamp": 0.6, "chime": 0.45, "boom": 0.45,
+           "buzz": 0.5, "rewind": 0.3, "ding": 0.4, "confetti": 0.35, "crumple": 0.45}
+
+
+# ---------- voice-over ----------
+VO_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".vo-cache")
+TTS_MODEL = os.environ.get("KOKORO_MODEL", os.path.join(VO_DIR, "kokoro.onnx"))
+TTS_VOICES = os.environ.get("KOKORO_VOICES", os.path.join(VO_DIR, "voices.bin"))
+VOICE = os.environ.get("VO_VOICE", "af_heart")
+_tts = None
+
+
+def speak(text, speed):
+    global _tts
+    os.makedirs(VO_DIR, exist_ok=True)
+    key = hashlib.sha1(f"{VOICE}|{speed}|{text}".encode()).hexdigest()[:16]
+    cached = os.path.join(VO_DIR, key + ".npy")
+    if os.path.exists(cached):
+        return np.load(cached)
+    if _tts is None:
+        from kokoro_onnx import Kokoro
+        _tts = Kokoro(TTS_MODEL, TTS_VOICES)
+    samples, sr = _tts.create(text, voice=VOICE, speed=speed, lang="en-us")
+    # resample to the mix rate
+    x = np.interp(np.arange(int(len(samples) * SR / sr)) * sr / SR, np.arange(len(samples)), samples)
+    nz = np.nonzero(np.abs(x) > 0.01)[0]  # trim leading/trailing silence
+    x = x[max(0, nz[0] - 400): nz[-1] + 2000] if len(nz) else x
+    np.save(cached, x)
+    return x
+
+
+def voice_track(lines, total, speed):
+    buf = np.zeros(total)
+    spans = []
+    for idx, (t, text) in enumerate(lines):
+        clip = speak(text, speed)
+        nxt = lines[idx + 1][0] if idx + 1 < len(lines) else total / SR
+        end = t + len(clip) / SR
+        if end > nxt - 0.1:
+            print(f"  VO overlap: '{text[:40]}' ends {end:.2f}s, next line at {nxt:.2f}s", file=sys.stderr)
+        clip = clip / max(1e-9, np.abs(clip).max()) * 0.9
+        place(buf, clip, t)
+        spans.append((t, end))
+    return buf, spans
+
+
+def duck(n, spans, depth=0.3, ramp=0.15):
+    g = np.ones(n)
+    for a, b in spans:
+        i, j = int((a - ramp) * SR), int((b + ramp) * SR)
+        g[max(0, i):j] = depth
+    k = int(ramp * SR)
+    return np.convolve(g, np.ones(k) / k, mode="same")
 
 
 def main():
     cues = json.load(open(sys.argv[1]))
     dur = cues["duration"]
+    n = int(dur * SR)
     music = bed(cues.get("bed", "lofi"), dur)
-    music /= max(1e-9, np.abs(music).max())
-    mix = music * 0.22
-    fx = np.zeros_like(mix)
+    music = music / max(1e-9, np.abs(music).max()) * 0.32
+    vo, spans = voice_track(sorted(cues.get("vo", [])), n, cues.get("voSpeed", 1.0))
+    music *= duck(n, spans)
+    fx = np.zeros(n)
     for t, name in cues["sfx"]:
-        place(fx, SFX[name](), t, 1.0)
-    mix = mix + fx * 0.9
+        if name in FX_GAIN:
+            place(fx, SFX[name](), t, FX_GAIN[name])
+    mix = music + fx + vo
     peak = np.abs(mix).max()
     if peak > 0.95:
         mix *= 0.95 / peak
