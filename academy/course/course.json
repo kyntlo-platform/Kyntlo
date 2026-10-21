@@ -1,0 +1,140 @@
+{
+  "title": "Kyntlo Academy",
+  "totalSeconds": 143,
+  "lessons": 3,
+  "rendered": 1,
+  "modules": [
+    {
+      "module": 1,
+      "name": "Getting Started",
+      "lessons": [
+        {
+          "file": "a01-01-welcome",
+          "module": 1,
+          "lesson": 1,
+          "id": "A-1.1",
+          "title": "Welcome to Kyntlo: the platform, the packages & which plan fits you",
+          "plan": "ALL",
+          "description": "Start here. What Kyntlo is, a quick tour of everything inside it, the four Kyntlo packages (Starter, Growth, Pro and Customized), how billing works, and how to choose the right plan for your business.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Kyntlo pricing",
+            "CRM for small business",
+            "Getting started"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a01-02-interface-tour",
+          "module": 1,
+          "lesson": 2,
+          "id": "A-1.2",
+          "title": "Logging in & the Kyntlo interface tour",
+          "plan": "ALL",
+          "description": "Find your way around Kyntlo in five minutes: the sidebar, the top bar, search, notifications and where every tool lives.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "CRM tutorial",
+            "Getting started"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
+    },
+    {
+      "module": 2,
+      "name": "Dashboard & Reporting",
+      "lessons": [
+        {
+          "file": "a02-01-reading-your-dashboard",
+          "module": 2,
+          "lesson": 1,
+          "id": "A-2.1",
+          "title": "Reading your dashboard",
+          "plan": "ALL",
+          "description": "Understand every part of your Kyntlo dashboard: navigation, date ranges, opportunity status, revenue, conversion rate and pipeline widgets.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "CRM dashboard",
+            "Sales reporting"
+          ],
+          "seconds": 142.769,
+          "rendered": true,
+          "youtubeDescription": "Understand every part of your Kyntlo dashboard: navigation, date ranges, opportunity status, revenue, conversion rate and pipeline widgets.\n\nChapters:\n0:00 Intro\n0:11 Your home screen\n0:21 Finding your way around\n0:32 The sidebar\n0:49 Date range & dashboards\n1:01 Opportunity status\n1:16 Revenue\n1:27 Conversion rate\n1:43 Funnel & stages\n1:53 Ask AI\n2:03 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMdashboard #Salesreporting"
+        }
+      ]
+    },
+    {
+      "module": 3,
+      "name": "Contacts / CRM",
+      "lessons": []
+    },
+    {
+      "module": 4,
+      "name": "Conversations: the Unified Inbox",
+      "lessons": []
+    },
+    {
+      "module": 5,
+      "name": "Calendars & Booking",
+      "lessons": []
+    },
+    {
+      "module": 6,
+      "name": "Opportunities & Pipelines",
+      "lessons": []
+    },
+    {
+      "module": 7,
+      "name": "Sites: Funnels, Websites & Forms",
+      "lessons": []
+    },
+    {
+      "module": 8,
+      "name": "Marketing: Email, SMS & Social",
+      "lessons": []
+    },
+    {
+      "module": 9,
+      "name": "Automation: Workflows",
+      "lessons": []
+    },
+    {
+      "module": 10,
+      "name": "AI in Kyntlo",
+      "lessons": []
+    },
+    {
+      "module": 11,
+      "name": "Reputation",
+      "lessons": []
+    },
+    {
+      "module": 12,
+      "name": "Payments",
+      "lessons": []
+    },
+    {
+      "module": 13,
+      "name": "Memberships & Courses",
+      "lessons": []
+    },
+    {
+      "module": 14,
+      "name": "Settings & Integrations",
+      "lessons": []
+    },
+    {
+      "module": 15,
+      "name": "Capstone",
+      "lessons": []
+    }
+  ]
+}
