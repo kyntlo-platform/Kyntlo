@@ -15,6 +15,19 @@ available to you.
 
 - Getting Started
 - Dashboard & Reporting
+- Contacts / CRM
+- Conversations: the Unified Inbox
+- Calendars & Booking
+- Opportunities & Pipelines
+- Sites: Funnels, Websites & Forms
+- Marketing: Email, SMS & Social
+- Automation: Workflows
+- AI in Kyntlo
+- Reputation
+- Payments
+- Memberships & Courses
+- Settings & Integrations
+- Capstone
 
 ## Who this course is for
 
@@ -29,5 +42,5 @@ available to you.
 
 ## Course stats
 
-- 2 modules · 3 lessons · 0.0 hours of video
+- 15 modules · 76 lessons · 0.1 hours of video
 - English narration and captions

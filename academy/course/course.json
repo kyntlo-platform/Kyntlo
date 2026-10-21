@@ -1,8 +1,8 @@
 {
   "title": "Kyntlo Academy",
-  "totalSeconds": 143,
-  "lessons": 3,
-  "rendered": 1,
+  "totalSeconds": 462,
+  "lessons": 76,
+  "rendered": 2,
   "modules": [
     {
       "module": 1,
@@ -23,9 +23,9 @@
             "CRM for small business",
             "Getting started"
           ],
-          "seconds": null,
-          "rendered": false,
-          "youtubeDescription": ""
+          "seconds": 298.2,
+          "rendered": true,
+          "youtubeDescription": "Start here. What Kyntlo is, a quick tour of everything inside it, the four Kyntlo packages (Starter, Growth, Pro and Customized), how billing works, and how to choose the right plan for your business.\n\nChapters:\n0:00 Welcome\n0:14 The problem Kyntlo solves\n0:34 What is Kyntlo?\n0:50 A quick tour\n1:04 Every tool, one sidebar\n1:21 Pipelines, sites & marketing\n1:37 Automation, AI & reviews\n1:53 The four packages\n2:08 Starter\n2:31 Growth\n2:54 Pro\n3:20 Customized\n3:39 Billing & usage\n4:00 Which plan fits you?\n4:19 Free trial & upgrades\n4:32 How this course works\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #Kyntlopricing #CRMforsmallbusiness #Gettingstarted"
         },
         {
           "file": "a01-02-interface-tour",
@@ -34,12 +34,89 @@
           "id": "A-1.2",
           "title": "Logging in & the Kyntlo interface tour",
           "plan": "ALL",
-          "description": "Find your way around Kyntlo in five minutes: the sidebar, the top bar, search, notifications and where every tool lives.",
+          "description": "Find your way around Kyntlo in a few minutes: logging in, the account switcher, search, the sidebar, module tabs, the top bar, Ask AI, notifications and Settings.",
           "tags": [
             "Kyntlo",
             "Kyntlo Academy",
             "CRM tutorial",
-            "Getting started"
+            "Getting started",
+            "HighLevel"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a01-03-launchpad",
+          "module": 1,
+          "lesson": 3,
+          "id": "A-1.3",
+          "title": "Your Launchpad: first-day setup checklist",
+          "plan": "ALL",
+          "description": "Work through the Launchpad checklist: connect your Google Business Profile and Facebook & Instagram, install the website chat widget, and get the mobile app, so your account is ready to capture leads on day one.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Getting started",
+            "Launchpad",
+            "Google Business Profile",
+            "Chat widget"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a01-04-business-profile",
+          "module": 1,
+          "lesson": 4,
+          "id": "A-1.4",
+          "title": "Business profile & branding",
+          "plan": "ALL",
+          "description": "Set up your Business Profile in Kyntlo: upload your logo, add your business details and address, choose the right time zone, and fill in the legal and compliance information used for phone and messaging registration.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Getting started",
+            "Business profile",
+            "Settings"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a01-05-team-permissions",
+          "module": 1,
+          "lesson": 5,
+          "id": "A-1.5",
+          "title": "Inviting your team & user permissions",
+          "plan": "ALL",
+          "description": "Add team members in Settings → My Staff, choose their permissions and role, limit them to their own contacts, set their phone number, and assign them to booking calendars.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Getting started",
+            "Team",
+            "User permissions"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a01-06-mobile-app",
+          "module": 1,
+          "lesson": 6,
+          "id": "A-1.6",
+          "title": "The Kyntlo mobile app",
+          "plan": "ALL",
+          "description": "Install the Kyntlo mobile app, log in, turn on notifications, reply to leads from your inbox, and check your calendar, contacts and pipeline on the go.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Getting started",
+            "Mobile app"
           ],
           "seconds": null,
           "rendered": false,
@@ -58,83 +135,1426 @@
           "id": "A-2.1",
           "title": "Reading your dashboard",
           "plan": "ALL",
-          "description": "Understand every part of your Kyntlo dashboard: navigation, date ranges, opportunity status, revenue, conversion rate and pipeline widgets.",
+          "description": "Understand every part of your Kyntlo dashboard: navigation, dashboards and date ranges, opportunity status, opportunity value, conversion rate, the funnel and stage distribution, and per-widget pipeline filters.",
           "tags": [
             "Kyntlo",
             "Kyntlo Academy",
             "CRM dashboard",
             "Sales reporting"
           ],
-          "seconds": 142.769,
-          "rendered": true,
-          "youtubeDescription": "Understand every part of your Kyntlo dashboard: navigation, date ranges, opportunity status, revenue, conversion rate and pipeline widgets.\n\nChapters:\n0:00 Intro\n0:11 Your home screen\n0:21 Finding your way around\n0:32 The sidebar\n0:49 Date range & dashboards\n1:01 Opportunity status\n1:16 Revenue\n1:27 Conversion rate\n1:43 Funnel & stages\n1:53 Ask AI\n2:03 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMdashboard #Salesreporting"
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a02-02-customising-dashboards",
+          "module": 2,
+          "lesson": 2,
+          "id": "A-2.2",
+          "title": "Customising dashboards",
+          "plan": "ALL",
+          "description": "Make the dashboard your own: edit mode, resizing and rearranging widgets, widget settings, adding widgets, and building a separate dashboard for each role in your team.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "CRM dashboard",
+            "Custom dashboards"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a02-03-ads-reporting",
+          "module": 2,
+          "lesson": 3,
+          "id": "A-2.3",
+          "title": "Google & Facebook ads reporting",
+          "plan": "PRO",
+          "description": "Connect your Google Ads and Facebook ad accounts, read clicks, cost and cost per lead, and use the Attribution Report to see which sources actually bring in leads and revenue.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Google Ads",
+            "Facebook Ads",
+            "Attribution"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a02-04-call-appointment-agent-reports",
+          "module": 2,
+          "lesson": 4,
+          "id": "A-2.4",
+          "title": "Call, appointment & agent reports",
+          "plan": "PRO",
+          "description": "Use Call Reporting, the Appointment Report and Agent Reporting to see how many calls you answer, how many patients show up, and how each team member is performing.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Call tracking",
+            "Appointment report",
+            "Team performance"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
         }
       ]
     },
     {
       "module": 3,
       "name": "Contacts / CRM",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a03-01-contact-list",
+          "module": 3,
+          "lesson": 1,
+          "id": "A-3.1",
+          "title": "The contact list",
+          "plan": "ALL",
+          "description": "Find anyone in seconds: search, advanced filters, sorting and columns in your Kyntlo contact list, and how to save the views you use every day as smart lists.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "CRM tutorial",
+            "Contacts",
+            "Smart lists"
+          ],
+          "seconds": 164.1,
+          "rendered": true,
+          "youtubeDescription": "Find anyone in seconds: search, advanced filters, sorting and columns in your Kyntlo contact list, and how to save the views you use every day as smart lists.\n\nChapters:\n0:00 Intro\n0:13 Your contacts\n0:27 Reading the list\n0:38 Search\n0:48 Advanced filters\n1:00 Advanced filters\n1:17 Sorting\n1:30 Columns\n1:44 Columns\n1:49 Smart lists\n1:59 Smart lists\n2:10 Smart lists\n2:18 Pro tip\n\nStart your free 14-day Kyntlo trial: https://kyntlo.ai/trial\n\n#Kyntlo #KyntloAcademy #CRMtutorial #Contacts #Smartlists"
+        },
+        {
+          "file": "a03-02-adding-importing-contacts",
+          "module": 3,
+          "lesson": 2,
+          "id": "A-3.2",
+          "title": "Adding & importing contacts",
+          "plan": "ALL",
+          "description": "Add contacts by hand, import a CSV spreadsheet, map columns to Kyntlo fields and custom fields, and keep duplicates out of your CRM.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "CRM tutorial",
+            "Import contacts",
+            "CSV import"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a03-03-inside-a-contact-record",
+          "module": 3,
+          "lesson": 3,
+          "id": "A-3.3",
+          "title": "Inside a contact record",
+          "plan": "ALL",
+          "description": "Tour the Kyntlo contact record: contact details, the activity timeline, replying, notes, tasks, appointments, opportunities and Do Not Disturb.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "CRM tutorial",
+            "Contact record",
+            "Do Not Disturb"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a03-04-tags-custom-fields-values",
+          "module": 3,
+          "lesson": 4,
+          "id": "A-3.4",
+          "title": "Tags, custom fields & custom values",
+          "plan": "ALL",
+          "description": "Organise your Kyntlo data so automations can use it: when to use a tag, a custom field or a custom value, and how to personalise messages with them.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "CRM tutorial",
+            "Tags",
+            "Custom fields",
+            "Custom values"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a03-05-smart-lists-bulk-actions",
+          "module": 3,
+          "lesson": 5,
+          "id": "A-3.5",
+          "title": "Smart lists & bulk actions",
+          "plan": "ALL",
+          "description": "Segment your contacts with smart lists and filters, then tag, text, email, enrol and export whole groups at once with bulk actions.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "CRM tutorial",
+            "Smart lists",
+            "Bulk SMS",
+            "Export contacts"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a03-06-companies-duplicates",
+          "module": 3,
+          "lesson": 6,
+          "id": "A-3.6",
+          "title": "Companies & restoring / merging duplicates",
+          "plan": "ALL",
+          "description": "Keep your Kyntlo database clean: group contacts under companies, merge duplicate contacts without losing history, and restore contacts deleted by mistake.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "CRM tutorial",
+            "Merge duplicates",
+            "Companies"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 4,
       "name": "Conversations: the Unified Inbox",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a04-01-inbox-tour",
+          "module": 4,
+          "lesson": 1,
+          "id": "A-4.1",
+          "title": "Inbox tour: your unified Conversations inbox",
+          "plan": "ALL",
+          "description": "Tour the Kyntlo Conversations inbox: the three panes, channel badges, the Unread, Recents, Starred and All views, search and filters, assigning conversations to your team, starring and marking as unread.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Unified inbox",
+            "Conversations",
+            "HighLevel conversations"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a04-02-replying-across-channels",
+          "module": 4,
+          "lesson": 2,
+          "id": "A-4.2",
+          "title": "Replying across channels: SMS, email, WhatsApp, Facebook, Instagram & chat",
+          "plan": "ALL",
+          "description": "Reply to customers on any channel from one thread in Kyntlo: SMS, email, WhatsApp, Facebook Messenger, Instagram DMs and website live chat, plus internal comments for your team.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Unified inbox",
+            "SMS",
+            "WhatsApp",
+            "Instagram DMs",
+            "HighLevel conversations"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a04-03-snippets-templates-scheduling",
+          "module": 4,
+          "lesson": 3,
+          "id": "A-4.3",
+          "title": "Snippets, templates & scheduled messages",
+          "plan": "ALL",
+          "description": "Reply faster in Kyntlo Conversations: create snippets with custom values, insert them in one click, use email templates, and schedule messages to send later.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Snippets",
+            "Canned responses",
+            "Schedule message",
+            "HighLevel conversations"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a04-04-chat-widget",
+          "module": 4,
+          "lesson": 4,
+          "id": "A-4.4",
+          "title": "Setting up the website chat widget",
+          "plan": "ALL",
+          "description": "Turn website visitors into conversations: choose live chat or SMS, style the chat bubble, write your greeting, pick the contact form fields, switch on Conversation AI, test the widget and install it on any website.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Chat widget",
+            "Live chat",
+            "Lead capture"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a04-05-calls-missed-call-text-back",
+          "module": 4,
+          "lesson": 5,
+          "id": "A-4.5",
+          "title": "Calls, voicemail & missed-call text-back",
+          "plan": "PRO",
+          "description": "Make and log calls from the Kyntlo inbox, listen to call recordings and voicemail transcripts, and use missed-call text-back to turn missed calls into booked appointments.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Missed call text back",
+            "Call recording",
+            "Voicemail",
+            "HighLevel phone system"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 5,
       "name": "Calendars & Booking",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a05-01-calendar-types",
+          "module": 5,
+          "lesson": 1,
+          "id": "A-5.1",
+          "title": "Calendar types explained",
+          "plan": "ALL",
+          "description": "Personal booking, round robin, class booking, collective booking, service menu and event calendars: what each Kyntlo calendar type does, and which one to use for every kind of appointment.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Online booking",
+            "Calendars",
+            "Round robin",
+            "HighLevel calendars"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a05-02-first-booking-calendar",
+          "module": 5,
+          "lesson": 2,
+          "id": "A-5.2",
+          "title": "Creating your first booking calendar",
+          "plan": "ALL",
+          "description": "Build a booking calendar in Kyntlo step by step: name and booking link, team member and location, meeting duration, weekly hours, date-specific hours, buffers, minimum notice and booking limits.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Online booking",
+            "Booking calendar",
+            "Availability",
+            "HighLevel calendars"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a05-03-booking-forms-payments",
+          "module": 5,
+          "lesson": 3,
+          "id": "A-5.3",
+          "title": "Booking forms, confirmations & payments",
+          "plan": "ALL",
+          "description": "Collect the right information when people book a Kyntlo calendar, take a deposit through Stripe, choose what happens after booking, and send booking confirmations automatically.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Online booking",
+            "Booking deposits",
+            "Stripe",
+            "HighLevel calendars"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a05-04-google-outlook-sync",
+          "module": 5,
+          "lesson": 4,
+          "id": "A-5.4",
+          "title": "Connecting Google & Outlook calendars",
+          "plan": "ALL",
+          "description": "Connect Google Calendar or Outlook to Kyntlo, choose a linked calendar for two-way sync, add conflict calendars so private plans block your availability, and add Zoom or Google Meet links.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Google Calendar sync",
+            "Outlook calendar",
+            "Double booking",
+            "HighLevel calendars"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a05-05-managing-appointments",
+          "module": 5,
+          "lesson": 5,
+          "id": "A-5.5",
+          "title": "Managing appointments: book, reschedule, cancel & no-shows",
+          "plan": "ALL",
+          "description": "Run your diary in Kyntlo: read the calendar view, filter by calendar and team member, book appointments by hand, reschedule, update statuses, mark no-shows, cancel, and use the appointment list.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Appointments",
+            "No-shows",
+            "Calendar view",
+            "HighLevel calendars"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a05-06-automatic-reminders",
+          "module": 5,
+          "lesson": 6,
+          "id": "A-5.6",
+          "title": "Automatic appointment reminders",
+          "plan": "GROWTH+",
+          "description": "Cut no-shows with automatic email and SMS appointment reminders in Kyntlo: notifications vs reminders, adding a reminder, timing and message templates, consent and DND, and when to use a workflow instead.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Appointment reminders",
+            "No-shows",
+            "SMS reminders",
+            "HighLevel calendars"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 6,
       "name": "Opportunities & Pipelines",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a06-01-pipelines-explained",
+          "module": 6,
+          "lesson": 1,
+          "id": "A-6.1",
+          "title": "Pipelines explained",
+          "plan": "ALL",
+          "description": "What opportunities and pipelines are, how stages, values and statuses (open, won, lost, abandoned) work, why stage and status are separate, and how many pipelines each Kyntlo plan includes.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Sales pipeline",
+            "Opportunities",
+            "CRM"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a06-02-building-a-pipeline",
+          "module": 6,
+          "lesson": 2,
+          "id": "A-6.2",
+          "title": "Building a pipeline",
+          "plan": "ALL",
+          "description": "Plan your sales stages, create a new pipeline, name and add stages, drag them into the right order, choose which stages appear in your charts, and edit an existing pipeline safely.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Sales pipeline",
+            "Pipeline stages",
+            "CRM setup"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a06-03-working-the-board",
+          "module": 6,
+          "lesson": 3,
+          "id": "A-6.3",
+          "title": "Working the board",
+          "plan": "ALL",
+          "description": "Work your pipeline every day: drag deals between stages, move them from the card menu, update status and lost reasons, add opportunities, search and filter, switch to list view and use bulk actions.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Sales pipeline",
+            "Opportunities",
+            "Bulk actions"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a06-04-pipeline-reporting",
+          "module": 6,
+          "lesson": 4,
+          "id": "A-6.4",
+          "title": "Pipeline reporting",
+          "plan": "ALL",
+          "description": "Turn your pipeline into numbers: opportunity status and value, conversion rate, the stage-by-stage funnel, stage distribution, column totals, lost reasons and won value per team member.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Pipeline reporting",
+            "Conversion rate",
+            "Sales funnel"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 7,
       "name": "Sites: Funnels, Websites & Forms",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a07-01-funnels-vs-websites",
+          "module": 7,
+          "lesson": 1,
+          "id": "A-7.1",
+          "title": "Funnels vs. websites",
+          "plan": "ALL",
+          "description": "Understand the difference between a funnel and a website in Kyntlo, when to use each one, and how they work together to turn visitors into booked appointments.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Funnels",
+            "Website builder",
+            "Landing pages"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a07-02-funnel-from-template",
+          "module": 7,
+          "lesson": 2,
+          "id": "A-7.2",
+          "title": "Build a funnel from a template",
+          "plan": "ALL",
+          "description": "Create a complete funnel in minutes: pick a template from the library, preview it, make it yours with your logo, headline, button and images, then save, publish and set a clean URL.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Funnel templates",
+            "Landing page",
+            "Funnel builder"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a07-03-page-builder",
+          "module": 7,
+          "lesson": 3,
+          "id": "A-7.3",
+          "title": "The page builder in depth",
+          "plan": "ALL",
+          "description": "Master the Kyntlo drag-and-drop page builder: how sections, rows, columns and elements fit together, editing text and styles, adding elements, mobile view, preview, save and publish.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Page builder",
+            "Landing page",
+            "Drag and drop"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a07-04-forms-surveys",
+          "module": 7,
+          "lesson": 4,
+          "id": "A-7.4",
+          "title": "Forms & surveys",
+          "plan": "ALL",
+          "description": "Build lead forms that fill your CRM: standard and custom fields, required fields, conditional logic, what happens on submit, notifications, styling and embedding. Plus multi-step surveys with progress bars and jump logic.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Form builder",
+            "Surveys",
+            "Lead capture"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a07-05-connecting-your-domain",
+          "module": 7,
+          "lesson": 5,
+          "id": "A-7.5",
+          "title": "Connecting your domain",
+          "plan": "ALL",
+          "description": "Put your funnels and websites on your own web address: add a domain or subdomain, create the DNS records at your domain provider, verify them, link the domain to a funnel with a default page, and get free SSL.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Custom domain",
+            "DNS",
+            "SSL"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a07-06-funnel-stats-ab-seo",
+          "module": 7,
+          "lesson": 6,
+          "id": "A-7.6",
+          "title": "Funnel stats, A/B tests & SEO",
+          "plan": "ALL",
+          "description": "Measure and improve your funnels: read page views, opt-ins and opt-in rates, find where visitors drop off, run an A/B split test and declare a winner, then set SEO meta data and tracking code.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Funnel analytics",
+            "A/B testing",
+            "SEO"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a07-07-blogs-qr-codes",
+          "module": 7,
+          "lesson": 7,
+          "id": "A-7.7",
+          "title": "Blogs & QR codes",
+          "plan": "ALL",
+          "description": "Publish blog posts that bring in search traffic, draft them faster with Content AI, set slugs and meta descriptions, schedule posts, then create trackable QR codes that bring offline visitors to your pages.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Blog",
+            "QR codes",
+            "Content AI"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 8,
       "name": "Marketing: Email, SMS & Social",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a08-01-email-builder-templates",
+          "module": 8,
+          "lesson": 1,
+          "id": "A-8.1",
+          "title": "Email builder & templates",
+          "plan": "ALL",
+          "description": "Design a branded marketing email in Kyntlo: start from a template, edit text and buttons, add personalised merge fields, drag in new elements, check the mobile view and send yourself a test.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Email marketing",
+            "Email builder",
+            "Email templates"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a08-02-sending-email-campaign",
+          "module": 8,
+          "lesson": 2,
+          "id": "A-8.2",
+          "title": "Sending an email campaign",
+          "plan": "ALL",
+          "description": "Send an email campaign in Kyntlo: choose your audience by tag or smart list, set the sender, write a subject line and preview text, test it, schedule it, and read the results.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Email marketing",
+            "Email campaigns",
+            "Newsletter"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a08-03-email-deliverability",
+          "module": 8,
+          "lesson": 3,
+          "id": "A-8.3",
+          "title": "Email deliverability basics",
+          "plan": "ALL",
+          "description": "Get your Kyntlo emails into the inbox, not the spam folder: read your bounce and complaint numbers, set up a dedicated sending domain, turn on email verification, warm up with batches and keep your list healthy.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Email deliverability",
+            "SPF DKIM DMARC",
+            "Email marketing"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a08-04-sms-whatsapp-broadcasts",
+          "module": 8,
+          "lesson": 4,
+          "id": "A-8.4",
+          "title": "SMS & WhatsApp broadcasts",
+          "plan": "GROWTH+",
+          "description": "Send text message and WhatsApp broadcasts the right way: consent and opt-outs, reusable SMS templates with a segment counter, Meta-approved WhatsApp templates, and bulk sending from Contacts in drip mode.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "SMS marketing",
+            "WhatsApp marketing",
+            "Text message compliance"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a08-05-social-planner",
+          "module": 8,
+          "lesson": 5,
+          "id": "A-8.5",
+          "title": "Social Planner",
+          "plan": "ALL",
+          "description": "Plan and schedule social media posts in Kyntlo: connect Facebook, Instagram, Google Business Profile, LinkedIn, TikTok and X, use the calendar and list views, write posts with Content AI, preview them per network and set up recurring posts.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Social media scheduling",
+            "Social Planner",
+            "Content AI"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a08-06-trigger-links",
+          "module": 8,
+          "lesson": 6,
+          "id": "A-8.6",
+          "title": "Trigger links & link tracking",
+          "plan": "ALL",
+          "description": "Use trigger links in Kyntlo to see exactly which contacts clicked a link in your emails and texts, and start automations when they do: create a link, copy its key, use it in a campaign and read the click analytics.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Trigger links",
+            "Link tracking",
+            "Marketing automation"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 9,
       "name": "Automation: Workflows",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a09-01-how-workflows-think",
+          "module": 9,
+          "lesson": 1,
+          "id": "A-9.1",
+          "title": "How workflows think: triggers, actions & conditions",
+          "plan": "GROWTH+",
+          "description": "Understand the logic behind every Kyntlo workflow: triggers decide who enters, actions run top to bottom, waits pause, and If/Else conditions send each contact down the right path.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Workflows",
+            "Marketing automation",
+            "HighLevel workflows"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a09-02-first-workflow-new-lead",
+          "module": 9,
+          "lesson": 2,
+          "id": "A-9.2",
+          "title": "Your first workflow: new-lead follow-up",
+          "plan": "GROWTH+",
+          "description": "Build your first Kyntlo workflow from scratch: a form trigger with a filter, an instant SMS with custom values, a team notification, a wait and a follow-up email. Then test it and publish it.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Workflows",
+            "Lead follow-up",
+            "Speed to lead"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a09-03-if-else-waits-goals",
+          "module": 9,
+          "lesson": 3,
+          "id": "A-9.3",
+          "title": "If/Else, waits & goals",
+          "plan": "GROWTH+",
+          "description": "Make your workflows react to what people do: use Wait steps, split contacts with If/Else branches, and use Goal Events to stop chasing people who already did what you wanted.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Workflows",
+            "If/Else",
+            "Marketing automation"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a09-04-appointment-workflows",
+          "module": 9,
+          "lesson": 4,
+          "id": "A-9.4",
+          "title": "Appointment workflows: confirmations, reminders & no-shows",
+          "plan": "GROWTH+",
+          "description": "Cut no-shows with appointment workflows: confirm every booking, send reminders timed to the appointment, recover no-shows automatically and ask happy patients for a review.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Workflows",
+            "Appointment reminders",
+            "No-shows"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a09-05-pipeline-automation",
+          "module": 9,
+          "lesson": 5,
+          "id": "A-9.5",
+          "title": "Pipeline automation: move deals and create tasks",
+          "plan": "GROWTH+",
+          "description": "Keep your pipeline up to date without dragging cards: use workflows to create and move opportunities, tag contacts, create tasks for your team, and react when deals are won.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Workflows",
+            "Pipelines",
+            "Opportunities"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a09-06-recipes-templates",
+          "module": 9,
+          "lesson": 6,
+          "id": "A-9.6",
+          "title": "Workflow recipes & templates",
+          "plan": "GROWTH+",
+          "description": "Start new automations in seconds: browse the workflow recipes, set up Missed Call Text Back from a recipe, customise the message and settings, and clone your own proven workflows.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Workflows",
+            "Workflow recipes",
+            "Missed call text back"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a09-07-webhooks-sheets-premium",
+          "module": 9,
+          "lesson": 7,
+          "id": "A-9.7",
+          "title": "Webhooks, Google Sheets & premium actions",
+          "plan": "PRO",
+          "description": "Connect Kyntlo to your other tools without Zapier: start workflows from an inbound webhook, add rows to Google Sheets, send data out with webhooks, and understand how premium actions are billed.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Workflows",
+            "Webhooks",
+            "Google Sheets",
+            "Integrations"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a09-08-execution-logs",
+          "module": 9,
+          "lesson": 8,
+          "id": "A-9.8",
+          "title": "Troubleshooting workflows with execution logs",
+          "plan": "GROWTH+",
+          "description": "Find out exactly why a contact didn't get a message or didn't move: check the publish status, the trigger filters, Enrollment History and Execution Logs, and fix the cause.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Workflows",
+            "Troubleshooting",
+            "Execution logs"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 10,
       "name": "AI in Kyntlo",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a10-01-ai-overview-plans",
+          "module": 10,
+          "lesson": 1,
+          "id": "A-10.1",
+          "title": "AI overview: what's available on your plan",
+          "plan": "GROWTH+",
+          "description": "Meet Kyntlo's AI employees (Conversation AI, Voice AI, Knowledge Base, Content AI, Workflow AI and Reviews AI) and see exactly which ones are included on Starter, Growth and Pro, and what pay-as-you-go AI usage costs.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "AI for business",
+            "AI chatbot",
+            "Voice AI",
+            "Pricing"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a10-02-conversation-ai-chatbot",
+          "module": 10,
+          "lesson": 2,
+          "id": "A-10.2",
+          "title": "Conversation AI chatbot",
+          "plan": "GROWTH+",
+          "description": "Set up your Conversation AI chatbot: choose a bot mode (Off, Suggestive or Auto-pilot), pick channels, write its personality and goal, add actions like booking and human handover, and test it before it talks to customers.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "AI chatbot",
+            "Conversation AI",
+            "Lead response"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a10-03-knowledge-base-faqs",
+          "module": 10,
+          "lesson": 3,
+          "id": "A-10.3",
+          "title": "AI knowledge base & FAQs",
+          "plan": "GROWTH+",
+          "description": "Teach your AI agents about your business: crawl your website, add FAQs with exact answers, upload documents like price lists, check training status, then test what your chatbot has learned.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "AI chatbot",
+            "Knowledge base",
+            "FAQs"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a10-04-voice-ai-receptionist",
+          "module": 10,
+          "lesson": 4,
+          "id": "A-10.4",
+          "title": "Voice AI receptionist",
+          "plan": "PRO",
+          "description": "Set up a Voice AI receptionist that answers your phone: pick a voice, write the greeting and goals, set working hours, route calls to your team, book appointments, send a text after every call, and review call logs with summaries and transcripts.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Voice AI",
+            "AI receptionist",
+            "Phone answering"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a10-05-content-ai",
+          "module": 10,
+          "lesson": 5,
+          "id": "A-10.5",
+          "title": "Content AI",
+          "plan": "ADD-ON",
+          "description": "Use Content AI to write emails, social posts, blog posts and website copy in your brand voice, choose the tone and length, send the result straight to your campaigns, and generate images for your posts.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Content AI",
+            "AI writing",
+            "Social media"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a10-06-ai-in-workflows",
+          "module": 10,
+          "lesson": 6,
+          "id": "A-10.6",
+          "title": "AI inside workflows",
+          "plan": "PRO",
+          "description": "Add AI steps to your automations with Workflow AI: classify incoming messages, summarise conversations into notes, write AI replies, and route complaints to a person. Includes a worked example of AI inbox triage.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Workflow AI",
+            "Automation",
+            "AI for business"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 11,
       "name": "Reputation",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a11-01-connect-google-business",
+          "module": 11,
+          "lesson": 1,
+          "id": "A-11.1",
+          "title": "Connecting Google Business Profile",
+          "plan": "PRO",
+          "description": "Connect your Google Business Profile to Kyntlo Reputation, pull your Google reviews in, and set the review link your review requests will use.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Reputation management",
+            "Google Business Profile",
+            "Google reviews"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a11-02-requesting-reviews",
+          "module": 11,
+          "lesson": 2,
+          "id": "A-11.2",
+          "title": "Requesting reviews automatically",
+          "plan": "PRO",
+          "description": "Send review requests by SMS and email, track who clicked and who reviewed, and set Kyntlo to ask every customer automatically with smart follow-ups.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Reputation management",
+            "Review requests",
+            "Google reviews"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a11-03-reviews-ai-replies",
+          "module": 11,
+          "lesson": 3,
+          "id": "A-11.3",
+          "title": "Responding with Reviews AI",
+          "plan": "PRO",
+          "description": "Reply to Google and Facebook reviews from Kyntlo in seconds: set up Reviews AI with your tone and instructions, generate on-brand replies, and handle negative reviews well.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Reputation management",
+            "Reviews AI",
+            "Reply to reviews"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a11-04-review-widgets",
+          "module": 11,
+          "lesson": 4,
+          "id": "A-11.4",
+          "title": "Review widgets",
+          "plan": "PRO",
+          "description": "Build a review widget in Kyntlo: choose a layout, sources, minimum rating and theme, then copy the embed code onto your website or Kyntlo funnel.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Reputation management",
+            "Review widget",
+            "Social proof"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 12,
       "name": "Payments",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a12-01-connecting-stripe",
+          "module": 12,
+          "lesson": 1,
+          "id": "A-12.1",
+          "title": "Connecting Stripe",
+          "plan": "ALL",
+          "description": "Connect Stripe so you can take card payments on invoices, payment links, order forms, calendar bookings and Text2Pay. Covers what you need before you start, test mode, and adding PayPal.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Stripe",
+            "Payments",
+            "Online payments"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a12-02-products-prices-invoices",
+          "module": 12,
+          "lesson": 2,
+          "id": "A-12.2",
+          "title": "Products, prices & invoices",
+          "plan": "ALL",
+          "description": "Create a product with a one-time and a monthly price, then build an invoice: add the customer and items, tax, a due date and payment settings, send it by email and SMS, and record a payment.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Invoices",
+            "Products",
+            "Payments"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a12-03-payment-links-text-to-pay",
+          "module": 12,
+          "lesson": 3,
+          "id": "A-12.3",
+          "title": "Payment links, Text2Pay & order forms",
+          "plan": "ALL",
+          "description": "Get paid faster: create a reusable payment link, text a one-off payment request with Text2Pay, and understand how funnel order forms feed your Orders and Transactions.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Payment links",
+            "Text2Pay",
+            "Order forms"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a12-04-subscriptions-transactions",
+          "module": 12,
+          "lesson": 4,
+          "id": "A-12.4",
+          "title": "Subscriptions & transactions",
+          "plan": "ALL",
+          "description": "Manage recurring revenue: read your subscriptions and their statuses, recover past-due payments, cancel a subscription the right way, find any payment in Transactions and issue a full or partial refund.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Subscriptions",
+            "Refunds",
+            "Recurring revenue"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 13,
       "name": "Memberships & Courses",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a13-01-creating-a-course",
+          "module": 13,
+          "lesson": 1,
+          "id": "A-13.1",
+          "title": "Creating a course",
+          "plan": "PRO",
+          "description": "Build an online course in Kyntlo Memberships: create a product, organise it into categories, add a video lesson with notes and downloads, publish it and preview it as a member.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Memberships",
+            "Online course",
+            "Course builder"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a13-02-selling-access",
+          "module": 13,
+          "lesson": 2,
+          "id": "A-13.2",
+          "title": "Selling access",
+          "plan": "PRO",
+          "description": "Sell your Kyntlo courses with offers: bundle products, set a free, one-time, subscription or payment-plan price, share the checkout link, and let buyers be enrolled automatically.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Memberships",
+            "Sell online courses",
+            "Membership site"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a13-03-communities",
+          "module": 13,
+          "lesson": 3,
+          "id": "A-13.3",
+          "title": "Communities",
+          "plan": "PRO",
+          "description": "Create a private community in Kyntlo Memberships: groups, channels, posts, linked courses, the leaderboard and inviting members.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Memberships",
+            "Online community",
+            "Communities"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 14,
       "name": "Settings & Integrations",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a14-01-phone-numbers",
+          "module": 14,
+          "lesson": 1,
+          "id": "A-14.1",
+          "title": "Phone numbers & caller ID",
+          "plan": "ALL",
+          "description": "Buy a business phone number, choose between local and mobile numbers, set up call forwarding and caller ID, pick your default outbound number, and understand the Trust Center: regulatory bundles, A2P 10DLC and number porting.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Phone numbers",
+            "A2P 10DLC",
+            "Call forwarding",
+            "Settings"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a14-02-email-services",
+          "module": 14,
+          "lesson": 2,
+          "id": "A-14.2",
+          "title": "Email services & sending domain",
+          "plan": "ALL",
+          "description": "Set up a dedicated sending domain in Kyntlo: add a subdomain, copy the SPF, DKIM, MX, tracking and DMARC records to your DNS provider, verify the domain, and turn on email verification.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Email deliverability",
+            "SPF",
+            "DKIM",
+            "DMARC",
+            "Settings"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a14-03-integrations-marketplace",
+          "module": 14,
+          "lesson": 3,
+          "id": "A-14.3",
+          "title": "Integrations & App Marketplace",
+          "plan": "ALL",
+          "description": "Connect Google, Facebook & Instagram and Zoom from Settings → Integrations, see where Stripe lives, and install extra apps like Slack from the App Marketplace.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Integrations",
+            "App Marketplace",
+            "Google Business Profile",
+            "Zoom"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a14-04-usage-wallet-billing",
+          "module": 14,
+          "lesson": 4,
+          "id": "A-14.4",
+          "title": "Usage, wallet & billing",
+          "plan": "ALL",
+          "description": "Understand how Kyntlo billing works: your plan subscription, your wallet balance, the usage summary at wholesale rates (email, SMS, calls, AI), adding balance, auto recharge, transactions and invoices.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Billing",
+            "Wallet",
+            "Wholesale rates",
+            "Settings"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a14-05-data-privacy-dnd",
+          "module": 14,
+          "lesson": 5,
+          "id": "A-14.5",
+          "title": "Data, privacy & DND",
+          "plan": "ALL",
+          "description": "Respect consent in Kyntlo: use Do Not Disturb per channel, understand automatic opt-outs (STOP replies and unsubscribes), record marketing consent with a custom field, export a contact's data, restore deleted contacts and check the audit log.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "GDPR",
+            "Do Not Disturb",
+            "Consent",
+            "Data privacy"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     },
     {
       "module": 15,
       "name": "Capstone",
-      "lessons": []
+      "lessons": [
+        {
+          "file": "a15-01-lead-to-booking-system",
+          "module": 15,
+          "lesson": 1,
+          "id": "A-15.1",
+          "title": "Build a complete lead-to-booking system",
+          "plan": "GROWTH+",
+          "description": "Put the whole course together: follow one lead from your funnel and form, through an instant-reply workflow and your pipeline, to a booked appointment, reminders and a review request.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Capstone",
+            "Lead to booking",
+            "Marketing automation"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        },
+        {
+          "file": "a15-02-30-day-action-plan",
+          "module": 15,
+          "lesson": 2,
+          "id": "A-15.2",
+          "title": "Your 30-day Kyntlo action plan",
+          "plan": "GROWTH+",
+          "description": "Know exactly what to set up, and in which order: a four-week plan covering foundations, lead capture, automated follow-up and growth, plus the weekly habits that keep Kyntlo working for you.",
+          "tags": [
+            "Kyntlo",
+            "Kyntlo Academy",
+            "Action plan",
+            "Getting started",
+            "CRM setup"
+          ],
+          "seconds": null,
+          "rendered": false,
+          "youtubeDescription": ""
+        }
+      ]
     }
   ]
 }

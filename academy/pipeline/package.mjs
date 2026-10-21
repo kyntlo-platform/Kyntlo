@@ -76,6 +76,35 @@ for (const m of byModule) {
       `**Title:** Kyntlo Academy ${l.module}.${l.lesson} — ${l.title}`, '', '**Description:**', '', '```', l.youtubeDescription || l.description, '```', '');
   }
 }
+// Marketing videos (Track B, public) and support playbooks (Track C, internal / unlisted).
+async function track(dir, pattern, folder) {
+  const out = [];
+  for (const f of (await fs.readdir(path.join(ACADEMY, 'lessons', dir))).filter((f) => pattern.test(f)).sort()) {
+    const { default: l } = await import(pathToFileURL(path.join(ACADEMY, 'lessons', dir, f)).href);
+    const name = f.replace(/\.mjs$/, '');
+    const video = path.join(OUTPUT, `${name}.mp4`);
+    const rendered = await exists(video);
+    const item = { file: name, title: l.title, seconds: rendered ? await duration(video) : null,
+      description: rendered ? (await fs.readFile(path.join(OUTPUT, `${name}.youtube.txt`), 'utf8')).split('\n').slice(2).join('\n').trim() : l.description || '' };
+    if (rendered) {
+      const target = path.join(COURSE, folder);
+      await fs.mkdir(target, { recursive: true });
+      for (const [ext, as] of [['mp4', 'mp4'], ['srt', 'srt'], ['thumb.png', 'thumbnail.png']]) {
+        await fs.link(path.join(OUTPUT, `${name}.${ext}`), path.join(target, `${safe(l.title)}.${as}`)).catch(() => {});
+      }
+    }
+    out.push(item);
+  }
+  return out;
+}
+const marketing = await track('prospect', /^b\d\d-.+\.mjs$/, 'Kyntlo Academy/Marketing Videos');
+const support = await track('support', /^c\d\d-.+\.mjs$/, 'Kyntlo Academy/Support Team (internal)');
+const section = (heading, intro, items) => [heading, '', intro, '', ...items.flatMap((v) => [
+  `### ${v.title}${v.seconds ? ` (${clock(v.seconds)})` : ' (not rendered yet)'}`, '', '**Description:**', '', '```', v.description, '```', ''])];
+yt.push(...section('## Playlist: Kyntlo — Product Videos (public)',
+  'The course trailer (`b00`) goes on the course page and channel trailer; the rest are short public product videos.', marketing));
+yt.push(...section('## Support team playbooks (unlisted or private — internal only)',
+  'Do not publish these publicly. Upload as **Unlisted** or keep them in your internal knowledge base.', support));
 await fs.writeFile(path.join(COURSE, 'youtube.md'), yt.join('\n'));
 
 const learn = byModule.filter((m) => m.lessons.length).map((m) => `- ${m.name}`);
