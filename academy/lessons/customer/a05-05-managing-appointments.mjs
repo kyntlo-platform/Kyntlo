@@ -1,0 +1,151 @@
+// Track A · Module 5 · Lesson 5 — Managing appointments.
+// Filmed on the demo workspace (Calendars → Calendar View and Appointment List).
+export default {
+  id: 'A-5.5',
+  title: 'Kyntlo Academy 5.5 — Managing appointments: book, reschedule, cancel & no-shows',
+  description:
+    'Run your diary in Kyntlo: read the calendar view, filter by calendar and team member, book appointments by hand, reschedule, update statuses, mark no-shows, cancel, and use the appointment list.',
+  tags: ['Kyntlo', 'Kyntlo Academy', 'Appointments', 'No-shows', 'Calendar view', 'HighLevel calendars'],
+  plan: 'ALL',
+  thumbnail: { kicker: 'Module 5 · Lesson 5', title: 'Manage your *appointments*' },
+  scenes: [
+    {
+      chapter: 'Intro',
+      card: { type: 'intro', kicker: 'Module 5 · Lesson 5', title: 'Managing *appointments*', sub: 'Book, reschedule, cancel and handle no-shows.' },
+      say: "In this lesson, you'll learn to run your diary day to day: booking appointments by hand, rescheduling, cancelling, and keeping every status up to date, including no-shows.",
+    },
+    {
+      chapter: 'The calendar view',
+      goto: '{demo}#/calendars/calendar',
+      settle: 1,
+      say: "This is the Calendar View. Each block is an appointment, coloured by its calendar, so you can read your week at a glance. The dot in the corner shows the status: green for confirmed, orange for unconfirmed, and red for a no-show.",
+      actions: [
+        { at: 0.6, title: 'Calendar View', sub: 'Your whole week at a glance', for: 4 },
+        { at: 4.6, hover: '#cal_appt_a2' },
+        { at: 4.8, highlight: '#cal_filter_cals', label: 'Colour = calendar', for: 3 },
+        { at: 9.6, hover: '#cal_appt_a6' },
+        { at: 9.8, zoom: '#cal_appt_a6', scale: 2, for: 2.4 },
+        { at: 12.4, hover: '#cal_appt_x2' },
+        { at: 12.6, highlight: '#cal_appt_x2', label: 'Unconfirmed', for: 2 },
+        { at: 14.8, hover: '#cal_appt_a7' },
+        { at: 15.0, highlight: '#cal_appt_a7', label: 'No-show', for: 2 },
+      ],
+    },
+    {
+      chapter: 'Views & filters',
+      say: "Switch between day, week and month at the top. On the right, filter by calendar or by team member. Untick James, and you only see Sarah's and Priya's appointments. Tick him again to bring them back.",
+      actions: [
+        { at: 0.6, hover: '#cal_mode' },
+        { at: 0.8, highlight: '#cal_mode', label: 'Day · Week · Month', for: 2.8 },
+        { at: 4.6, hover: '#cal_filter_users' },
+        { at: 6.2, click: '#cal_filter_users input[data-hide="u:James Okafor"]' },
+        { at: 7.0, highlight: '#cal_grid', label: "James's appointments hidden", for: 3 },
+        { at: 11.0, click: '#cal_filter_users input[data-hide="u:James Okafor"]' },
+      ],
+    },
+    {
+      chapter: 'Book an appointment',
+      say: "Most patients book online, but when someone phones or messages, book it yourself. Olivia asked for Thursday, so click New, then Appointment.",
+      actions: [
+        { at: 4.0, click: '#cal_new' },
+        { at: 5.4, click: '.menu button:has-text("Appointment")' },
+        { at: 6.6, highlight: '.modal', label: 'Book appointment', for: 2.4 },
+      ],
+    },
+    {
+      chapter: 'Pick the details',
+      say: "Choose the calendar, search for the contact, then pick the day and one of the free times. Kyntlo only shows slots that are genuinely available. Click Book appointment, and Olivia gets her confirmation automatically.",
+      actions: [
+        { at: 0.6, hover: '#cal_na_cal' },
+        { at: 1.0, run: (p) => p.selectOption('#cal_na_cal', 'k2') },
+        { at: 1.2, highlight: '#cal_na_cal', label: 'Invisalign Free Scan', for: 2 },
+        { at: 3.4, type: 'Olivia', into: '#cal_na_contact', delay: 90 },
+        { at: 4.6, click: '#cal_na_pick_c1' },
+        { at: 6.4, click: '#cal_na_day_3' },
+        { at: 7.6, highlight: '#cal_na_slots', label: 'Only free times', for: 2.6 },
+        { at: 10.4, click: '#cal_na_slot_1430' },
+        { at: 12.6, click: '#cal_na_book' },
+        { at: 13.6, highlight: '#cal_day_3', label: 'Booked: Thu 14:30', for: 2.8 },
+      ],
+    },
+    {
+      chapter: 'Appointment details',
+      say: "Click any appointment to open its details: who it's with, when and where, the patient's contact details, and the full history of what's happened to it.",
+      actions: [
+        { at: 0.6, click: '#cal_appt_a2' },
+        { at: 2.0, highlight: '#cal_drawer', label: 'Everything about this booking', for: 4 },
+        { at: 6.4, hover: '#cal_dr_history' },
+        { at: 6.6, highlight: '#cal_dr_history', label: 'History', for: 2.4 },
+      ],
+    },
+    {
+      chapter: 'Reschedule',
+      say: "Liam can't make Tuesday any more. Click Reschedule, pick the new day and time, and confirm. Liam is notified automatically, and his calendar invite is updated too.",
+      actions: [
+        { at: 1.6, click: '#cal_dr_resched' },
+        { at: 3.4, click: '#cal_rs_day_3' },
+        { at: 4.8, click: '#cal_rs_slot_1100' },
+        { at: 6.2, click: '#cal_rs_save' },
+        { at: 7.2, highlight: '#cal_dr_when', label: 'Moved to Thursday 11:00', for: 3 },
+        { at: 10.6, click: '#cal_dr_done' },
+      ],
+    },
+    {
+      chapter: 'Update the status',
+      say: "The status tells everyone what actually happened. Daniel came in for his check-up, so open his appointment, click the status, and choose Showed. Your reports, and your automations, rely on these statuses.",
+      actions: [
+        { at: 0.6, click: '#cal_appt_a1' },
+        { at: 4.6, click: '#cal_dr_status' },
+        { at: 5.6, highlight: '.menu', label: 'Every status', for: 2.4 },
+        { at: 8.4, click: '.menu button:has-text("Showed")' },
+        { at: 9.4, highlight: '#cal_dr_status', label: 'Showed', for: 2.4 },
+        { at: 12.6, click: '#cal_dr_done' },
+      ],
+    },
+    {
+      chapter: 'No-shows',
+      say: "If a patient doesn't turn up, open the appointment and click Mark no-show. It's striped in red on the calendar, and in Module nine, you'll send a friendly re-booking text whenever this happens.",
+      caption: "If a patient doesn't turn up, open the appointment and click Mark no-show. It's striped in red on the calendar, and in Module 9, you'll send a friendly re-booking text whenever this happens.",
+      actions: [
+        { at: 0.6, click: '#cal_appt_x3' },
+        { at: 3.0, click: '#cal_dr_noshow' },
+        { at: 4.6, click: '#cal_dr_done' },
+        { at: 5.6, hover: '#cal_appt_x3' },
+        { at: 5.8, highlight: '#cal_appt_x3', label: 'No-show', for: 3 },
+        { at: 6.0, zoom: '#cal_appt_x3', scale: 2, for: 3.4 },
+      ],
+    },
+    {
+      chapter: 'Cancel',
+      say: "To cancel, open the appointment and click Cancel. The time opens up again for other patients, and the patient receives a cancellation message.",
+      actions: [
+        { at: 0.6, click: '#cal_appt_a8' },
+        { at: 3.0, click: '#cal_dr_cancel' },
+        { at: 4.6, click: '#cal_dr_done' },
+        { at: 5.6, highlight: '#cal_appt_a8', label: 'Cancelled', for: 2.8 },
+      ],
+    },
+    {
+      chapter: 'Appointment List',
+      say: "Prefer a list? The Appointment List tab shows every booking in a table. Switch between upcoming and cancelled, filter by calendar or team member, or search for a patient by name.",
+      actions: [
+        { at: 0.6, click: '#tab_appointments' },
+        { at: 2.2, highlight: '#cal_al_table', label: 'Every booking', for: 3 },
+        { at: 5.8, click: '#cal_al_cancelled' },
+        { at: 7.4, click: '#cal_al_upcoming' },
+        { at: 8.6, hover: '#cal_al_cal' },
+        { at: 8.8, run: (p) => p.selectOption('#cal_al_cal', 'k3') },
+        { at: 9.0, highlight: '#cal_al_cal', label: 'Check-up & Clean only', for: 2.6 },
+      ],
+    },
+    {
+      chapter: 'Pro tip',
+      card: { type: 'chapter', kicker: 'Pro tip', title: 'Close the day in *two minutes*', sub: 'Mark every appointment Showed or No-show.' },
+      say: "Here's a pro tip. At the end of each day, mark every appointment as Showed or No-show. It takes two minutes, and it powers your show-rate reports, your no-show follow-ups, and your review requests.",
+    },
+    {
+      card: { type: 'outro', kicker: 'Up next · Lesson 5.6', title: 'Automatic *reminders*', sub: 'Cut no-shows with email and text reminders.', cta: 'Kyntlo [Academy]' },
+      say: "Your diary is under control! In the next lesson, we'll cut no-shows with automatic email and text reminders. See you there.",
+    },
+  ],
+};

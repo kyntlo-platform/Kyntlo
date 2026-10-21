@@ -334,7 +334,7 @@
     view.innerHTML = `
       <div class="page-head"><h1>Appointment List</h1><span class="chip">${rows.length} appointments</span>
         <div class="actions"><button class="btn primary" id="cal_al_new">${icon('plus', 18)} New appointment</button></div></div>
-      <div class="kc-tabs2" id="cal_al_tabs">${[['upcoming', 'Upcoming'], ['cancelled', 'Cancelled'], ['all', 'All']].map(([k, l]) => `<a id="cal_al_${k}" data-t="${k}" class="${listState.tab === k ? 'on' : ''}" href="javascript:void 0">${l}</a>`).join('')}</div>
+      <div class="kc-tabs2" id="cal_al_tabs">${[['upcoming', 'Upcoming'], ['cancelled', 'Cancelled'], ['all', 'All']].map(([k, l]) => `<a id="cal_al_${k}" data-t="${k}" class="${listState.tab === k ? 'on' : ''}" style="cursor:pointer">${l}</a>`).join('')}</div>
       <div class="card">
         <div class="row" style="padding:14px 16px;border-bottom:1px solid var(--line-soft);gap:10px">
           <div class="search" style="width:300px"><span>${icon('search', 18)}</span><input class="input" id="cal_al_search" placeholder="Search by contact" value="${esc(listState.q)}"></div>
@@ -676,7 +676,7 @@
             <div class="row" style="gap:8px;margin:22px 0 6px">${icon('ban', 18)}<b>Conflict calendars</b></div>
             <p class="muted" style="margin:0 0 10px;font-size:14px">Kyntlo checks these for busy times, so nobody can book you when you're already busy. Nothing is written to them.</p>
             <div id="cal_conn_conflicts">
-              ${[['Bloom work', 'Google', true], ['Family', 'Google', false], ['UK Holidays', 'Google', false], ...(st.outlook ? [['Calendar', 'Outlook', true]] : [])].map(([n, src, on], i) => `<label class="row" style="padding:9px 0;border-bottom:1px solid var(--line-soft);cursor:pointer"><input type="checkbox" id="cal_conn_cf_${i}" ${on ? 'checked' : ''} style="width:17px;height:17px">
+              ${[['Bloom work', 'Google', true], ['Family', 'Google', false], ['UK Holidays', 'Google', false], ...(st.outlook ? [['Calendar', 'Outlook', false]] : [])].map(([n, src, on], i) => `<label class="row" style="padding:9px 0;border-bottom:1px solid var(--line-soft);cursor:pointer"><input type="checkbox" id="cal_conn_cf_${i}" ${on ? 'checked' : ''} style="width:17px;height:17px">
                 <span style="color:${src === 'Google' ? '#4285f4' : '#0f6cbd'}">${icon(src === 'Google' ? 'google' : 'outlook', 18)}</span><b style="font-weight:500">${n}</b><span class="muted" style="font-size:14px">· ${src}</span></label>`).join('')}
             </div>
             <div class="row" style="margin-top:16px"><span class="muted" style="font-size:14px">${icon('clock', 14)} Last synced 2 minutes ago</span><span class="spacer"></span><button class="btn primary" id="cal_conn_save">Save</button></div>

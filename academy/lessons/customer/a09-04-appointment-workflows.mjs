@@ -37,7 +37,7 @@ export default {
     },
     {
       chapter: 'Instant confirmation',
-      say: "The first action confirms the booking straight away. Notice the appointment custom value. Kyntlo fills in the real date and time of each person's appointment, so one message works for every booking.",
+      say: "The first action confirms the booking straight away. Notice the appointment custom value. Kyntlo fills in the real date and time of each person's appointment, so one message works for every booking, whatever the date.",
       actions: [
         { at: 0.4, click: '#wf_node_s1' },
         { at: 2.2, highlight: '#wfa_message', label: '{{appointment.start_time}}', for: 4.6 },
@@ -58,7 +58,7 @@ export default {
     },
     {
       chapter: 'A second reminder',
-      say: "After the day-before reminder, a second wait sends one more text two hours before the appointment, with the address. Two reminders like this can make a big difference to your show rate.",
+      say: "After the day-before reminder, a second wait sends one more text two hours before the appointment, with the address. Two reminders like this can make a big difference to your show rate, and your team never has to send them by hand.",
       actions: [
         { at: 0.4, hover: '#wf_node_s4' },
         { at: 0.6, highlight: '#wf_node_s4', label: 'Day before', for: 3 },

@@ -95,7 +95,7 @@ export default {
     },
     {
       chapter: 'Publish',
-      say: "Here's the finished workflow: booking in, deal moved, contact tagged, task created. Switch it to Publish and save. From now on, nobody has to remember to drag that card.",
+      say: "Here's the finished workflow: booking in, deal moved, contact tagged, task created. Switch it to Publish and save. From now on, nobody has to remember to drag that card, even on your busiest days.",
       actions: [
         { at: 0.4, highlight: '#wf_flow', label: 'Booking → deal → tag → task', for: 4.4 },
         { at: 5.6, click: '#wf_publish' },

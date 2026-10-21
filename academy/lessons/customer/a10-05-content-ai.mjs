@@ -49,7 +49,7 @@ export default {
     },
     {
       chapter: 'Tone & length',
-      say: "Pick a tone of voice. Friendly suits Bloom's brand. Then choose a length. Medium is right for most emails. Click Generate.",
+      say: "Pick a tone of voice. Friendly suits Bloom's brand. Then choose a length. Medium is right for most emails. Professional works well for clinical topics, and Playful for social media. Click Generate.",
       actions: [
         { at: 0.4, hover: '#cnt_tones' },
         { at: 0.6, highlight: '#cnt_tones', label: 'Tone of voice', for: 3 },
@@ -71,7 +71,7 @@ export default {
     },
     {
       chapter: 'Use it',
-      say: "Always read it through, and make it sound like you. Not quite right? Click Regenerate for a fresh version. When you're happy, click Use in email campaign to drop it straight into the email builder.",
+      say: "Content AI gives you a strong first draft, but you know your patients best. Always read it through, and make it sound like you. Not quite right? Click Regenerate for a fresh version. When you're happy, click Use in email campaign to drop it straight into the email builder.",
       actions: [
         { at: 0.6, hover: '#cnt_out' },
         { at: 4.6, hover: '#cnt_regen' },
@@ -107,7 +107,7 @@ export default {
     {
       chapter: 'Generate images',
       speed: 1,
-      say: "Content AI creates images, too. Open the Image tab, and describe what you need. Choose a style, and a size. Portrait suits Instagram posts.",
+      say: "Content AI creates images, too. Open the Image tab, and describe what you need: the scene, the lighting and the mood, just as you'd brief a photographer. Choose a style, and a size. Portrait suits Instagram posts.",
       actions: [
         { at: 0.4, click: '#cnt_view_image' },
         { at: 2.2, type: 'A bright, modern dental studio with plants, morning light', into: '#cnt_img_prompt', delay: 30 },
@@ -131,7 +131,7 @@ export default {
     },
     {
       chapter: 'History',
-      say: "Finally, the History tab keeps everything you've generated, and where you used it, so you can always find that great subject line again.",
+      say: "Finally, the History tab keeps everything you've generated, and where you used it, so you can always find that great subject line again. It's also a quick way to see what worked before, and reuse it.",
       actions: [
         { at: 0.4, click: '#cnt_view_history' },
         { at: 2.2, highlight: '#cnt_history', label: 'Everything you generated', for: 4 },

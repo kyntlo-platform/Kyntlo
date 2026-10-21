@@ -26,7 +26,7 @@ export default {
     },
     {
       chapter: 'What is on the menu',
-      say: "There's appointment confirmation and reminders, Fast Five, which contacts new leads within five minutes, review requests, no-show nurture, missed call text back, a birthday template, and customer reactivation. Each one is a full workflow you can change however you like.",
+      say: "There's appointment confirmation and reminders, Fast Five, which contacts new leads within five minutes, review requests, no-show nurture, missed call text back, a birthday template, and customer reactivation. Each one is a full workflow you can change however you like. Think of them as a tested starting point, built around the situations that cost businesses the most customers.",
       actions: [
         { at: 0.4, hover: '#wfr_appointment_confirmation_reminder' },
         { at: 3.0, hover: '#wfr_fast_five' },
@@ -49,7 +49,7 @@ export default {
     },
     {
       chapter: 'Use the recipe',
-      say: "Click Use this recipe. Kyntlo creates a new workflow with everything already in place, saved as a draft. Nothing runs until you publish it.",
+      say: "Click Use this recipe. Kyntlo creates a new workflow with everything already in place, saved as a draft. Nothing runs until you publish it, so you can explore it safely, and change anything you like first.",
       actions: [
         { at: 0.4, click: '#wfr_use' },
         { at: 2.6, highlight: '#wf_flow', label: 'Ready-made, as a draft', for: 3.6 },
@@ -69,7 +69,7 @@ export default {
     {
       chapter: 'Make the message yours',
       speed: 1.3,
-      say: "Then make the message sound like you. Open the SMS, replace the text with your own words, and save. Mention your business name, so the caller knows exactly who's texting.",
+      say: "Then make the message sound like you. Open the SMS, replace the text with your own words, and save. Mention your business name, so the caller knows exactly who's texting. A short, warm message that invites a reply works far better than a long one.",
       actions: [
         { at: 0.4, click: '#wf_node_s1' },
         { at: 1.8, click: '#wfa_message' },
@@ -103,7 +103,7 @@ export default {
     },
     {
       chapter: 'Organise in folders',
-      say: "As your list grows, use Create Folder to keep things tidy. Group workflows by purpose, like leads, appointments and reviews, so you and your team can always find the right one.",
+      say: "As your list grows, use Create Folder to keep things tidy. Group workflows by purpose, like leads, appointments and reviews, so you and your team can always find the right one. A tidy list also makes it much easier to spot old workflows you no longer need.",
       actions: [
         { at: 0.4, click: '#wf_create_folder' },
         { at: 1.8, type: 'Seasonal Offers', into: '#wf_folder_name', delay: 50 },

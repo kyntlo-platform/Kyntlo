@@ -74,7 +74,7 @@ export default {
     },
     {
       chapter: 'Map the columns',
-      say: "Then map each column in your sheet to a custom value. Name goes in the name column, email in the email column, and so on. Every new enquiry adds a fresh row, automatically. Save the action.",
+      say: "Then map each column in your sheet to a custom value. Name goes in the name column, email in the email column, and so on. Every new enquiry adds a fresh row, automatically, so the sheet is always up to date. Save the action.",
       actions: [
         { at: 0.4, scroll: 260, ms: 900 },
         { at: 1.6, highlight: '#wfa_map', label: 'Column → custom value', for: 5 },

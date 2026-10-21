@@ -40,7 +40,7 @@ export default {
     },
     {
       chapter: 'Add a source',
-      say: "To teach it something new, click Add source. You can crawl web pages, add FAQs, upload files, or type information in as rich text. Let's start with the web crawler.",
+      say: "To teach it something new, click Add source. You can crawl web pages, add FAQs, upload files, or type information in as rich text. Rich text is handy for things that aren't on your website yet, like a new offer. Let's start with the web crawler.",
       actions: [
         { at: 0.6, click: '#kb_add' },
         { at: 2.4, highlight: '#kb_add_body', label: 'Four kinds of source', for: 5 },
@@ -99,7 +99,7 @@ export default {
     },
     {
       chapter: 'Why FAQs matter',
-      say: "Save it. FAQs are the most reliable source, because the AI uses your answer word for word. Use them for prices, policies and anything you never want the AI to guess.",
+      say: "Save it. FAQs are the most reliable source, because the AI uses your answer word for word. Use them for prices, policies and anything you never want the AI to guess. Keep each answer short, and update it whenever a price changes.",
       actions: [
         { at: 0.6, click: '#kb_faq_save' },
         { at: 2.6, hover: '#kb_src_s2' },
@@ -120,7 +120,7 @@ export default {
     },
     {
       chapter: 'Test what it learned',
-      say: "Now let's check that it worked. Open Conversation AI, and the front desk bot. In the test panel, ask about payment plans. The bot answers using the FAQ you just added.",
+      say: "Now let's check that it worked. Open Conversation AI, and the front desk bot. In the test panel, ask about payment plans. The bot answers using the FAQ you just added. And if it can't find an answer, it says so, and hands over to your team instead of guessing.",
       actions: [
         { at: 0.6, click: '#tab_conversation-ai' },
         { at: 2.6, click: '#cai_bot_b1' },

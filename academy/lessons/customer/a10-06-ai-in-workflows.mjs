@@ -21,7 +21,7 @@ export default {
       chapter: 'What is Workflow AI?',
       goto: '{demo}#/ai-agents/getting-started',
       settle: 1,
-      say: "In AI Agents, on the Getting Started tab, you'll find Workflow AI. It adds AI steps to the workflows you build in Automation. Click Open to see what it can do.",
+      say: "In AI Agents, on the Getting Started tab, you'll find Workflow AI. It adds AI steps to the workflows you build in Automation. Think of it as a smart assistant sitting inside every automation. Click Open to see what it can do.",
       actions: [
         { at: 0.6, hover: '#gs_card_workflow' },
         { at: 0.8, highlight: '#gs_card_workflow', label: 'Workflow AI', for: 5 },
@@ -31,7 +31,7 @@ export default {
     },
     {
       chapter: 'Classify & summarise',
-      say: "There are a few AI actions to know. Classify message sorts a message into categories you choose, like a booking request, a price question or a complaint. Summarise turns a long conversation into a short note for your team.",
+      say: "There are a few AI actions to know. Classify message sorts a message into categories you choose, like a booking request, a price question or a complaint. You choose the categories, in plain English. Summarise turns a long conversation into a short note for your team.",
       actions: [
         { at: 0.4, highlight: '#gs_wf_actions', label: 'AI actions', for: 2.6 },
         { at: 3.2, hover: '#gs_wf_classify' },
@@ -52,8 +52,8 @@ export default {
     },
     {
       chapter: 'Finding AI actions',
-      say: "In the workflow builder, click Add action, and look in the AI section. Each AI step is one Workflow AI execution. That's unlimited on Pro, and six cents a run on Growth.",
-      caption: "In the workflow builder, click Add action, and look in the AI section. Each AI step is one Workflow AI execution. That's unlimited on Pro, and $0.06 a run on Growth.",
+      say: "In the workflow builder, click Add action, and look in the AI section. Each AI step saves its result, so the next steps can use it, and each one is a single Workflow AI execution. That's unlimited on Pro, and six cents a run on Growth.",
+      caption: "In the workflow builder, click Add action, and look in the AI section. Each AI step saves its result, so the next steps can use it, and each one is a single Workflow AI execution. That's unlimited on Pro, and $0.06 a run on Growth.",
       actions: [
         { at: 0.4, hover: '#gs_wf_where' },
         { at: 0.6, zoom: '#gs_wf_where', scale: 1.7, for: 5 },
@@ -77,7 +77,7 @@ export default {
     },
     {
       chapter: 'Test a booking request',
-      say: "Let's test it. Grace asks to book a check-up next week. Click Run test. AI labels it a booking request, writes a one-line summary, and replies with two available times.",
+      say: "Let's test it. Grace asks to book a check-up next week. Click Run test, and watch each step light up. AI labels it a booking request, writes a one-line summary, and replies with two available times.",
       actions: [
         { at: 0.4, hover: '#gs_wf_sample0' },
         { at: 0.6, highlight: '#gs_wf_msg', label: "Grace's message", for: 2.8 },
@@ -104,7 +104,7 @@ export default {
     },
     {
       chapter: 'Complaints go to a person',
-      say: "And a complaint? AI spots it, but it doesn't reply. Instead, the workflow assigns it to Sarah with a note, so a real person handles it. Unhappy customers should always hear from a human.",
+      say: "And a complaint? AI spots it, but it doesn't reply. Instead, the workflow assigns it to Sarah with a note, so a real person handles it, just as a good receptionist would. Unhappy customers should always hear from a human.",
       actions: [
         { at: 0.4, click: '#gs_wf_sample2' },
         { at: 2.2, click: '#gs_wf_run' },
@@ -131,7 +131,7 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Always keep a *human path*', sub: 'Route complaints and negative sentiment to your team.' },
-      say: "Here's a pro tip. In every AI workflow, add a branch for complaints or negative sentiment that goes to a real person. And test with your own real messages before you publish it.",
+      say: "Here's a pro tip. In every AI workflow, add a branch for complaints or negative sentiment that goes to a real person. And test with your own real messages before you publish it. Start with one simple workflow, like summarising new enquiries, and build from there.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Module 11', title: 'Reputation: connect *Google Business Profile*', sub: 'Pull every review into Kyntlo.', cta: 'Kyntlo [Academy]' },

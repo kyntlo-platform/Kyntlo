@@ -901,7 +901,7 @@
     drawCanvas(); drawPanel(); drawProps(); updTop();
 
     $('#pb_back').onclick = () => KY.go(`${base(kind)}/${owner.id}/steps/${step.id}`);
-    const device = (d) => { B.device = d; drawCanvas(); drawProps(); updTop(); const n = B.sel && $(`#pb_${B.sel.type === 'el' ? 'el_' : ''}${B.sel.id}`); if (n) n.scrollIntoView({ block: 'center' }); else $('#pb_stage').scrollTop = 0; };
+    const device = (d) => { B.device = d; drawCanvas(); drawProps(); updTop(); $('#pb_stage').scrollTop = 0; };
     $('#pb_desktop').onclick = () => device('desktop');
     $('#pb_mobile').onclick = () => device('mobile');
     $('#pb_undo').onclick = () => { if (!B.past.length) return; B.future.push(snap()); restore(B.past.pop()); };
@@ -1411,7 +1411,7 @@
     if (type === 'submit' && form.fields.some((f) => f.type === 'submit')) { KY.toast('This form already has a submit button', 'warn'); return; }
     const labels = { radio: 'Choose one', checkbox: 'Select all that apply', dropdown: 'Choose an option', terms: 'I agree to the terms and conditions.', html: 'Add a short note or instructions here.', single: 'Your question', multi: 'Your question', file: 'Upload a file', signature: 'Signature', date: 'Pick a date', submit: 'Submit' };
     const f = fld(std ? key : `${key}_${uid++}`, type, std ? label : labels[k] || label, ph, { custom: FPAL[1][1].some((x) => x[0] === k) || !std, options: options ? [...options] : ['radio', 'checkbox', 'dropdown'].includes(type) ? ['Option 1', 'Option 2', 'Option 3'] : undefined });
-    const sub = form.fields.findIndex((x) => x.type === 'submit');
+    const sub = form.fields.findIndex((x) => x.type === 'submit' || (type !== 'terms' && x.type === 'terms'));
     const at = type === 'submit' || sub < 0 ? form.fields.length : sub;
     form.fields.splice(at, 0, f);
     FB.sel = at;
