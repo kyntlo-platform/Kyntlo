@@ -59,7 +59,7 @@
     'Pipeline Stage Changed': [['In pipeline', pipelines], ['Pipeline stage', allStages]],
     'Payment Received': [['Product', data.products.map((p) => p.name)]],
     'Facebook Lead Form Submitted': [['Page', ['Bloom Dental Studio']]],
-    'Trigger Link Clicked': [['Trigger link', ['Book your free scan', 'Leave a review']]],
+    'Trigger Link Clicked': [['Trigger link', ['Book Online', 'Whitening £199 Offer', 'Leave a Google Review', 'Book a Check-up']]],
     'Customer Replied': [['Reply channel', ['SMS', 'Email', 'WhatsApp', 'Facebook', 'Instagram']]],
   };
 
