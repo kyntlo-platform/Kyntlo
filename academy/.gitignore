@@ -6,3 +6,4 @@ assets/music/*
 pipeline/node_modules/
 login-failed.png
 course/Kyntlo Academy/
+*.part

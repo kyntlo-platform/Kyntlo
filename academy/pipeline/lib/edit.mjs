@@ -153,7 +153,9 @@ export async function assemble({ lesson, raw, scenes, narrations, timeline, work
   await ffmpeg([...inputs, ...extra, '-filter_complex', graph, '-map', '[vout]', '-map', '[aout]',
     '-t', total.toFixed(3),
     '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-r', String(FPS),
-    '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', out]);
+    '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', '-f', 'mp4', `${out}.part`]);
+  // Only a complete file gets the final name, so an interrupted render is never mistaken for a finished one.
+  await fs.rename(`${out}.part`, out);
 
   return { music };
 }
