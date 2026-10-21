@@ -54,6 +54,13 @@ async function check(file) {
   console.log(`  ✔ all ${lesson.scenes.length} scenes ran; screenshots in ${dir}`);
 }
 
+// --voice: only generate (and cache) the narration, so recording later isn't slowed by it.
+async function voice(file) {
+  const { default: lesson } = await import(pathToFileURL(file).href);
+  const n = await narrateAll(lesson.scenes.map((s) => s.say || ''));
+  console.log(`  ♪ ${path.basename(file)}: ${n.length} lines, ${clock(n.reduce((a, x) => a + x.seconds, 0))} of narration`);
+}
+
 async function render(file, opts) {
   const { default: lesson } = await import(pathToFileURL(file).href);
   const name = path.basename(file, '.mjs');
@@ -102,10 +109,11 @@ if (!files.length) {
   process.exit(1);
 }
 const checking = args.includes('--check');
+const voicing = args.includes('--voice');
 let failed = 0;
 for (const f of files) {
   try {
-    await (checking ? check(f) : render(f, { headed }));
+    await (checking ? check(f) : voicing ? voice(f) : render(f, { headed }));
   } catch (e) {
     failed++;
     console.error(`  ✘ ${path.basename(f)}: ${e.message}`);
