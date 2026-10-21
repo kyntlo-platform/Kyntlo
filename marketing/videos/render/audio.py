@@ -256,24 +256,64 @@ FX_GAIN = {"pop": 0.35, "send": 0.3, "whoosh": 0.5, "stamp": 0.6, "chime": 0.45,
 
 
 # ---------- voice-over ----------
+# Two engines: Gemini TTS (Google AI Studio) when GEMINI_API_KEY is set, otherwise Kokoro (local, open-source).
 VO_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".vo-cache")
 TTS_MODEL = os.environ.get("KOKORO_MODEL", os.path.join(VO_DIR, "kokoro.onnx"))
 TTS_VOICES = os.environ.get("KOKORO_VOICES", os.path.join(VO_DIR, "voices.bin"))
-VOICE = os.environ.get("VO_VOICE", "af_heart")
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+ENGINE = os.environ.get("VO_ENGINE", "gemini" if GEMINI_KEY else "kokoro")
+GEMINI_MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-2.5-pro-preview-tts")
+VOICE = os.environ.get("VO_VOICE", "Sulafat" if ENGINE == "gemini" else "af_heart")
+DEFAULT_STYLE = ("Read this as the narrator of a short social video for a small-business software brand. "
+                 "Warm, confident and conversational, with natural pauses and a hint of wit. Not salesy, not rushed")
 _tts = None
 
 
-def speak(text, speed):
+def gemini_tts(text, style, voice):
+    """Returns (float samples, sample rate) from the Gemini API (24 kHz, 16-bit mono PCM)."""
+    import base64
+    import time
+    import urllib.error
+    import urllib.request
+
+    body = json.dumps({
+        "contents": [{"parts": [{"text": f"{style}: {text}"}]}],
+        "generationConfig": {
+            "responseModalities": ["AUDIO"],
+            "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}},
+        },
+    }).encode()
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+    for attempt in range(5):
+        req = urllib.request.Request(url, body, {"Content-Type": "application/json", "x-goog-api-key": GEMINI_KEY})
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                data = json.load(r)
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 500, 503) and attempt < 4:
+                time.sleep(2 ** attempt * 3)
+                continue
+            raise SystemExit(f"Gemini TTS failed ({e.code}): {e.read()[:400]!r}")
+    pcm = base64.b64decode(data["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
+    return np.frombuffer(pcm, dtype="<i2").astype(np.float64) / 32768, 24000
+
+
+def speak(text, speed, style=None):
     global _tts
     os.makedirs(VO_DIR, exist_ok=True)
-    key = hashlib.sha1(f"{VOICE}|{speed}|{text}".encode()).hexdigest()[:16]
+    style = style or DEFAULT_STYLE
+    key = hashlib.sha1(f"{ENGINE}|{GEMINI_MODEL if ENGINE == 'gemini' else ''}|{VOICE}|{speed}|{style}|{text}".encode()).hexdigest()[:16]
     cached = os.path.join(VO_DIR, key + ".npy")
     if os.path.exists(cached):
         return np.load(cached)
-    if _tts is None:
-        from kokoro_onnx import Kokoro
-        _tts = Kokoro(TTS_MODEL, TTS_VOICES)
-    samples, sr = _tts.create(text, voice=VOICE, speed=speed, lang="en-us")
+    if ENGINE == "gemini":
+        samples, sr = gemini_tts(text, style, VOICE)
+    else:
+        if _tts is None:
+            from kokoro_onnx import Kokoro
+            _tts = Kokoro(TTS_MODEL, TTS_VOICES)
+        samples, sr = _tts.create(text, voice=VOICE, speed=speed, lang="en-us")
     # resample to the mix rate
     x = np.interp(np.arange(int(len(samples) * SR / sr)) * sr / SR, np.arange(len(samples)), samples)
     nz = np.nonzero(np.abs(x) > 0.01)[0]  # trim leading/trailing silence
@@ -282,12 +322,27 @@ def speak(text, speed):
     return x
 
 
-def voice_track(lines, total, speed):
+def stretch(x, rate):
+    """Speed a clip up by `rate` without changing pitch (ffmpeg atempo)."""
+    import subprocess
+    pcm = (np.clip(x, -1, 1) * 32767).astype("<i2").tobytes()
+    out = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "s16le", "-ar", str(SR), "-ac", "1", "-i", "-",
+                          "-af", f"atempo={rate:.3f}", "-f", "s16le", "-"], input=pcm, capture_output=True, check=True).stdout
+    return np.frombuffer(out, dtype="<i2").astype(np.float64) / 32768
+
+
+def voice_track(lines, total, speed, style=None):
+    print(f"  voice-over: {ENGINE} ({VOICE})", file=sys.stderr)
     buf = np.zeros(total)
     spans = []
     for idx, (t, text) in enumerate(lines):
-        clip = speak(text, speed)
+        clip = speak(text, speed, style)
         nxt = lines[idx + 1][0] if idx + 1 < len(lines) else total / SR
+        room = nxt - 0.15 - t
+        if len(clip) / SR > room > 0:
+            rate = (len(clip) / SR) / room
+            if rate <= 1.18:  # small overrun: tighten the read instead of overlapping
+                clip = stretch(clip, rate)
         end = t + len(clip) / SR
         if end > nxt - 0.1:
             print(f"  VO overlap: '{text[:40]}' ends {end:.2f}s, next line at {nxt:.2f}s", file=sys.stderr)
@@ -312,7 +367,7 @@ def main():
     n = int(dur * SR)
     music = bed(cues.get("bed", "lofi"), dur)
     music = music / max(1e-9, np.abs(music).max()) * 0.32
-    vo, spans = voice_track(sorted(cues.get("vo", [])), n, cues.get("voSpeed", 1.0))
+    vo, spans = voice_track(sorted(cues.get("vo", [])), n, cues.get("voSpeed", 1.0), cues.get("voStyle"))
     music *= duck(n, spans)
     fx = np.zeros(n)
     for t, name in cues["sfx"]:

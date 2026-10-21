@@ -19,7 +19,7 @@ const audioOnly = rest.includes('--audio'); // write just the soundtrack to <out
   await page.evaluate(() => document.fonts.ready);
   await page.evaluate(() => window.renderFrame(0));
   await page.waitForTimeout(300);
-  const meta = await page.evaluate(() => ({ duration: window.DURATION, sfx: window.SFX || [], bed: window.BED || 'lofi', vo: window.VO || [], voSpeed: window.VO_SPEED || 1.0 }));
+  const meta = await page.evaluate(() => ({ duration: window.DURATION, sfx: window.SFX || [], bed: window.BED || 'lofi', vo: window.VO || [], voSpeed: window.VO_SPEED || 1.0, voStyle: window.VO_STYLE || null }));
 
   if (audioOnly) {
     fs.writeFileSync(outFile + '.cues.json', JSON.stringify(meta));

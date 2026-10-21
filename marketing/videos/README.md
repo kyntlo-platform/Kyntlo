@@ -4,7 +4,7 @@ Five 9:16 videos (1080×1920, 30 fps, about 30–33 s, with voice-over) for Reel
 Each video is an HTML animation in `scenes/`, rendered frame by frame by `render/render.cjs`.
 `render/audio.py` builds the soundtrack:
 
-- **Voice-over**: each scene's `window.VO` lines, spoken by Kokoro TTS (open-source, voice `af_heart`).
+- **Voice-over**: each scene's `window.VO` lines, read in the style set by `window.VO_STYLE`. Uses Gemini TTS (Google AI Studio) when `GEMINI_API_KEY` is set, otherwise Kokoro (open-source, local). A line that slightly overruns its slot is sped up to fit, without changing pitch.
 - **Music**: a soft synthesized bed that ducks under the voice, so there is nothing to license.
 - **Sound effects**: a few quiet accents at key moments only.
 
@@ -150,3 +150,5 @@ Requirements:
   curl -L -o render/.vo-cache/voices.bin  https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
   ```
   Pick another voice with `VO_VOICE=bf_emma` (British) or similar.
+- Gemini voice-over: set `GEMINI_API_KEY` (a Google AI Studio key). The defaults are model `gemini-2.5-pro-preview-tts` and voice `Sulafat`; override them with `GEMINI_TTS_MODEL` and `VO_VOICE` (e.g. `Kore`, `Charon`, `Puck`, `Achird`).
+- Render all five at once: `render/render-all.sh`.
