@@ -4,7 +4,7 @@ export default {
   id: 'A-1.3',
   title: 'Kyntlo Academy 1.3 — Your Launchpad: first-day setup checklist',
   description:
-    'Work through the Launchpad checklist: connect your Google Business Profile and Facebook & Instagram, install the website chat widget, and get the mobile app, so your account is ready to capture leads on day one.',
+    'Work through the Launchpad checklist: connect your Google Business Profile and Facebook & Instagram, install the website chat widget, and set up your email and phone, so your account is ready to capture leads on day one.',
   tags: ['Kyntlo', 'Kyntlo Academy', 'Getting started', 'Launchpad', 'Google Business Profile', 'Chat widget'],
   plan: 'ALL',
   thumbnail: { kicker: 'Module 1 · Lesson 3', title: 'Your *Launchpad* checklist' },
@@ -22,7 +22,7 @@ export default {
       say: "Click Launchpad near the top of the sidebar. Each step connects one of the places your customers already reach you. Your progress is tracked at the top, so you can always see what's left.",
       actions: [
         { at: 0.4, highlight: '#sb_launchpad', label: 'Launchpad', for: 2.4 },
-        { at: 3.0, highlight: '#lp_steps', label: 'Six setup steps', for: 3.4 },
+        { at: 3.0, highlight: '#lp_steps', label: 'Five setup steps', for: 3.4 },
         { at: 7.4, hover: '#lp_progress' },
         { at: 7.6, zoom: '#lp_progress', scale: 1.8, for: 3 },
       ],
@@ -103,22 +103,12 @@ export default {
       ],
     },
     {
-      chapter: 'Mobile app',
-      goto: '{demo}#/launchpad',
-      say: "Last, the mobile app. Click Get the app, then scan the code with your phone's camera, or text yourself a download link. Log in with the same details you use here. Once it's installed, mark the step as done.",
-      actions: [
-        { at: 0.4, click: '#lp_mobile_btn' },
-        { at: 2.0, zoom: '.modal', scale: 1.4, for: 4 },
-        { at: 6.4, click: '#lp_sms_link' },
-        { at: 10.6, click: '#lp_mobile_done' },
-      ],
-    },
-    {
       chapter: 'Your progress',
-      say: "And look at that: four of the six steps are done. Email and phone are still open, and they'll stay on your checklist until you finish them, so nothing gets forgotten.",
+      goto: '{demo}#/launchpad',
+      say: "And look at that: three of the five steps are done. Email and phone are still open, and they'll stay on your checklist until you finish them, so nothing gets forgotten.",
       actions: [
         { at: 0.4, zoom: '#lp_progress', scale: 1.8, for: 3.4 },
-        { at: 0.6, highlight: '#lp_progress', label: 'Four of six done', for: 3.2 },
+        { at: 0.6, highlight: '#lp_progress', label: 'Three of five done', for: 3.2 },
         { at: 5.0, highlight: '#lp_step_email', label: 'Still to do', for: 3 },
       ],
     },

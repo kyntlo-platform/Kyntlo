@@ -34,7 +34,7 @@ Lessons run 3–6 minutes. Every lesson follows the same structure:
 | 1.3 | Your Launchpad: first-day setup checklist | Connect email, phone, Google/Facebook, chat widget, mobile app |
 | 1.4 | Business profile & branding | Set business info, logo, time zone, address, legal details |
 | 1.5 | Inviting your team & user permissions | Add users, roles, permissions, calendar assignment |
-| 1.6 | The Kyntlo mobile app | Install, log in, reply to leads and manage bookings on the go |
+| 1.6 | The Kyntlo mobile app *(on hold until the app is in the App Store and Google Play; script in `lessons/drafts/`)* | Install, log in, reply to leads and manage bookings on the go |
 
 ### Module 2 — Dashboard & Reporting (`ALL`, advanced `PRO`)
 | # | Lesson | You'll learn to |
@@ -122,7 +122,7 @@ Lessons run 3–6 minutes. Every lesson follows the same structure:
 | 10.3 | AI knowledge base & FAQs | Feed it your website, docs and FAQs |
 | 10.4 | Voice AI receptionist `PRO` | Answer and route calls with AI |
 | 10.5 | Content AI | Write emails, posts and pages, generate images |
-| 10.6 | AI inside workflows `PRO` | Classify, summarise and reply automatically |
+| 10.6 | AI inside workflows `PRO` (Pro only) | Classify, summarise and reply automatically |
 
 ### Module 11 — Reputation (`PRO`)
 | # | Lesson | You'll learn to |
@@ -162,7 +162,7 @@ Lessons run 3–6 minutes. Every lesson follows the same structure:
 | 15.1 | Build a complete lead-to-booking system | Funnel → form → pipeline → workflow → calendar → review request |
 | 15.2 | Your 30-day Kyntlo action plan | What to set up, in which order |
 
-**Track A total: 15 modules · 77 lessons · ≈5–6 hours**
+**Track A total: 15 modules · 75 published lessons (+1.6 on hold) · ≈4–5 hours**
 
 ---
 

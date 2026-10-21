@@ -135,7 +135,7 @@ export default {
       say: "Here's a pro tip. Get into the habit of pressing control K. It's the quickest way to find any contact, from any page, without touching the sidebar.",
     },
     {
-      card: { type: 'outro', kicker: 'Up next · Lesson 1.3', title: 'Your *Launchpad* setup checklist', sub: 'Connect Google, Facebook, your chat widget and the mobile app.', cta: 'Kyntlo [Academy]' },
+      card: { type: 'outro', kicker: 'Up next · Lesson 1.3', title: 'Your *Launchpad* setup checklist', sub: 'Connect Google, Facebook, your chat widget, email and phone.', cta: 'Kyntlo [Academy]' },
       say: "That's the tour! Next up, we'll work through your Launchpad, the checklist that gets your account ready to capture leads. See you there.",
     },
   ],

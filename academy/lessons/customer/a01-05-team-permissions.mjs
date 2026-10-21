@@ -50,7 +50,7 @@ export default {
     },
     {
       chapter: 'Permissions',
-      say: "Payments, marketing, automation and settings stay off. And Bulk Actions stays off too, because it includes exporting your contact list. Only give that to people who really need it. Remember, permissions apply everywhere: on the web and in the mobile app, so Tom sees exactly the same areas on his phone.",
+      say: "Payments, marketing, automation and settings stay off. And Bulk Actions stays off too, because it includes exporting your contact list. Only give that to people who really need it. Tom will only ever see the areas you switch on for him.",
       actions: [
         { at: 0.4, highlight: '#ms_perm_payments', label: 'Off', for: 2.4 },
         { at: 2.8, highlight: '#ms_perm_settings', label: 'Off', for: 2.4 },
@@ -115,8 +115,8 @@ export default {
       say: "Here's a pro tip. Start every new team member with the least access they need. It's easy to switch a permission on later, but much harder to undo a mistake, like a bulk message sent to the wrong list.",
     },
     {
-      card: { type: 'outro', kicker: 'Up next · Lesson 1.6', title: 'The Kyntlo *mobile app*', sub: 'Reply to leads and manage bookings on the go.', cta: 'Kyntlo [Academy]' },
-      say: "Your team is set up! In the last lesson of this module, we'll install the Kyntlo mobile app, so you can reply to leads from anywhere. See you there.",
+      card: { type: 'outro', kicker: 'Up next · Lesson 2.1', title: 'Reading your *dashboard*', sub: 'Know exactly how your business is doing, at a glance.', cta: 'Kyntlo [Academy]' },
+      say: "Your team is set up! That wraps up Module one. Next, we'll learn to read your dashboard, so you always know how your business is doing. See you there.",
     },
   ],
 };

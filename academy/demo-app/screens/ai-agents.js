@@ -198,7 +198,7 @@
   // ---------- Helpers ----------
   const seg = (items, cur, pfx) => `<div class="ai-seg">${items.map(([id, label, ic]) =>
     `<button id="${pfx}_${String(id).toLowerCase().replace(/[^a-z0-9]/g, '')}" data-seg="${id}" class="${id === cur ? 'on' : ''}">${ic ? icon(ic, 17) : ''}${esc(label)}</button>`).join('')}</div>`;
-  const planChip = (p) => ({ growth: '<span class="chip blue">Growth+</span>', pro: '<span class="chip ai-pro">Pro</span>', usage: '<span class="chip amber">Pay per use · Unlimited on Pro</span>', wf: '<span class="chip blue">Growth+ · Unlimited on Pro</span>', all: '<span class="chip green">All plans</span>' })[p];
+  const planChip = (p) => ({ growth: '<span class="chip blue">Growth+</span>', pro: '<span class="chip ai-pro">Pro</span>', usage: '<span class="chip amber">Pay per use · Unlimited on Pro</span>', wf: '<span class="chip ai-pro">Pro</span>', all: '<span class="chip green">All plans</span>' })[p];
   const MODES = { off: ['Off', 'gray'], suggestive: ['Suggestive', 'amber'], auto: ['Auto-pilot', 'green'] };
   const modeChip = (m) => `<span class="chip ${MODES[m][1]}">${MODES[m][0]}</span>`;
   const CH_ICON = { SMS: 'sms', Facebook: 'facebook', Instagram: 'instagram', WhatsApp: 'whatsapp', 'Live Chat': 'chat' };
@@ -219,7 +219,7 @@
     ['Knowledge Base', '✕', '✓', '✓'],
     ['Voice AI receptionist', '✕', '✕', '✓'],
     ['Content AI (text & images)', 'Pay per use', 'Pay per use', 'Unlimited'],
-    ['Workflow AI actions', '✕', 'Pay per use', 'Unlimited'],
+    ['Workflow AI actions', '✕', '✕', '✓ Included'],
     ['Reviews AI', '✕', '✕', 'Unlimited'],
     ['AI usage', 'Wholesale rates', 'Wholesale rates', 'Unlimited, included'],
   ];

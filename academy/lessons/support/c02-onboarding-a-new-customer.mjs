@@ -23,7 +23,7 @@ export default {
       chapter: 'Launchpad',
       goto: '{demo}#/launchpad',
       settle: 1.5,
-      say: "Day one starts in Launchpad, the setup checklist at the top of the sidebar. It covers Google Business Profile, Facebook and Instagram, the chat widget, email, a phone number and the mobile app. The progress bar shows how far the customer has got, so it's the quickest way to see where they are when they contact you.",
+      say: "Day one starts in Launchpad, the setup checklist at the top of the sidebar. It covers Google Business Profile, Facebook and Instagram, the chat widget, email and a phone number. The progress bar shows how far the customer has got, so it's the quickest way to see where they are when they contact you.",
       actions: [
         { at: 0.5, highlight: '#sb_launchpad', label: 'Launchpad', for: 2.4 },
         { at: 3.4, highlight: '#lp_steps', label: 'Six setup steps', for: 6 },

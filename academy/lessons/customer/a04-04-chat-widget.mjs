@@ -136,7 +136,7 @@ export default {
     {
       chapter: 'Pro tip',
       card: { type: 'chapter', kicker: 'Pro tip', title: 'Reply within *five minutes*', sub: 'Turn on mobile notifications for new chats.' },
-      say: "Here's a pro tip. Speed wins. Leads who get a reply within five minutes are far more likely to book, so turn on push notifications in the Kyntlo mobile app and answer new chats wherever you are.",
+      say: "Here's a pro tip. Speed wins. Leads who get a reply within five minutes are far more likely to book, so turn on new-message notifications and answer new chats the moment they arrive.",
     },
     {
       card: { type: 'outro', kicker: 'Up next · Lesson 4.5', title: 'Calls & *missed-call text-back*', sub: 'Never lose a caller again.', cta: 'Kyntlo [Academy]' },

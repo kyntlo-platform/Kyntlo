@@ -97,8 +97,8 @@ export default {
     },
     {
       chapter: 'Pay-as-you-go rates',
-      say: "On plans without unlimited AI, usage is billed at wholesale cost, with no markup. Conversation AI is four cents per message. Content AI is eighteen cents per thousand words. And Workflow AI is six cents each time an AI step runs.",
-      caption: "On plans without unlimited AI, usage is billed at wholesale cost, with no markup. Conversation AI is $0.04 per message. Content AI is $0.18 per 1,000 words. And Workflow AI is $0.06 each time an AI step runs.",
+      say: "On plans without unlimited AI, usage is billed at wholesale cost, with no markup. Conversation AI is four cents per message. And Content AI is eighteen cents per thousand words. AI steps inside workflows come with Pro.",
+      caption: "On plans without unlimited AI, usage is billed at wholesale cost, with no markup. Conversation AI is $0.04 per message. And Content AI is $0.18 per 1,000 words. AI steps inside workflows come with Pro.",
       actions: [
         { at: 0.4, hover: '#gs_rates' },
         { at: 0.6, highlight: '#gs_rates', label: 'Wholesale AI rates', for: 4 },
@@ -107,7 +107,7 @@ export default {
         { at: 8.0, hover: '#gs_rate_1' },
         { at: 8.2, highlight: '#gs_rate_1', label: 'Per 1,000 words', for: 2.6 },
         { at: 11.4, hover: '#gs_rate_2' },
-        { at: 11.6, highlight: '#gs_rate_2', label: 'Per AI step', for: 2.8 },
+        { at: 11.6, highlight: '#gs_rate_2', label: 'Workflow AI · Pro plan', for: 2.8 },
       ],
     },
     {

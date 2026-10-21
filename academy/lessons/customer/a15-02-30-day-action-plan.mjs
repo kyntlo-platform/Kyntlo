@@ -28,7 +28,7 @@ export default {
       chapter: 'Your Launchpad',
       goto: '{demo}#/launchpad',
       settle: 1,
-      say: "Start with the Launchpad. Work through the checklist: connect your email and phone, link Google and Facebook, and install the mobile app. Then, in Settings, complete your business profile, set your time zone, and invite your team.",
+      say: "Start with the Launchpad. Work through the checklist: connect your email and phone, and link Google and Facebook. Then, in Settings, complete your business profile, set your time zone, and invite your team.",
       actions: [
         { at: 0.4, highlight: '#sb_launchpad', label: 'Launchpad', for: 2.6 },
         { at: 3.2, highlight: '#lp_steps', label: 'Your first-day checklist', for: 5.4 },

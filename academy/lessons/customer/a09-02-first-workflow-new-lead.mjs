@@ -85,7 +85,7 @@ export default {
     },
     {
       chapter: 'Notify your team',
-      say: "Now let your team know. Add Send Internal Notification. By default it alerts the user assigned to the contact, inside Kyntlo and in the mobile app, so the right person can call them back quickly.",
+      say: "Now let your team know. Add Send Internal Notification. By default it alerts the user assigned to the contact, inside Kyntlo, so the right person can call them back quickly.",
       actions: [
         { at: 0.4, click: '#wf_plus_end' },
         { at: 2.0, click: '#wfa_send_internal_notification' },

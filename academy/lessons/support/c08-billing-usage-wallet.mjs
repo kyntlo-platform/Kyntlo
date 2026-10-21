@@ -93,8 +93,8 @@ export default {
       chapter: 'AI usage by plan',
       goto: '{demo}#/settings/billing/wallet',
       settle: 1.5,
-      say: "AI depends on the plan. On Pro, AI usage is unlimited, so it shows as included. On Starter and Growth, AI is pay as you go. For example, four cents per Conversation AI message, and six cents per Workflow AI run. Phone charges still apply to calls handled by AI, on every plan.",
-      caption: "AI depends on the plan. On Pro, AI usage is unlimited, so it shows as included. On Starter and Growth, AI is pay as you go. For example, $0.04 per Conversation AI message, and $0.06 per Workflow AI run. Phone charges still apply to calls handled by AI, on every plan.",
+      say: "AI depends on the plan. On Pro, AI usage is unlimited, so it shows as included. On Starter and Growth, AI is pay as you go. For example, four cents per Conversation AI message, or eighteen cents per thousand words of Content AI. Phone charges still apply to calls handled by AI, on every plan.",
+      caption: "AI depends on the plan. On Pro, AI usage is unlimited, so it shows as included. On Starter and Growth, AI is pay as you go. For example, $0.04 per Conversation AI message, or $0.18 per 1,000 words of Content AI. Phone charges still apply to calls handled by AI, on every plan.",
       actions: [
         { at: 0.5, run: (p) => p.evaluate(() => document.querySelector('#bl_usage_6').scrollIntoView({ block: 'center' })) },
         { at: 1.0, zoom: '#bl_usage', scale: 1.35, for: 12 },

@@ -52,12 +52,12 @@ export default {
     },
     {
       chapter: 'Finding AI actions',
-      say: "In the workflow builder, click Add action, and look in the AI section. Each AI step saves its result, so the next steps can use it, and each one is a single Workflow AI execution. That's unlimited on Pro, and six cents a run on Growth.",
-      caption: "In the workflow builder, click Add action, and look in the AI section. Each AI step saves its result, so the next steps can use it, and each one is a single Workflow AI execution. That's unlimited on Pro, and $0.06 a run on Growth.",
+      say: "In the workflow builder, click Add action, and look in the AI section. Each AI step saves its result, so the next steps can use it, and each one is a single Workflow AI execution. AI steps in workflows are part of the Pro plan.",
+      caption: "In the workflow builder, click Add action, and look in the AI section. Each AI step saves its result, so the next steps can use it, and each one is a single Workflow AI execution. AI steps in workflows are part of the Pro plan.",
       actions: [
         { at: 0.4, hover: '#gs_wf_where' },
         { at: 0.6, zoom: '#gs_wf_where', scale: 1.7, for: 5 },
-        { at: 6.4, title: 'Workflow AI', sub: 'Unlimited on Pro · $0.06 per run on Growth', for: 4.4 },
+        { at: 6.4, title: 'Workflow AI', sub: 'Included on the Pro plan', for: 4.4 },
       ],
     },
     {

@@ -55,7 +55,6 @@
     ['widget', 'Install the chat widget on your website', 'Turn website visitors into conversations. Messages land in your inbox.', icon('chat', 26), 'Install'],
     ['email', 'Set up your email', 'Send from your own domain so your emails reach the inbox.', icon('mail', 26), 'Set up'],
     ['phone', 'Get a business phone number', 'Call and text customers from a number that belongs to your business.', icon('phone', 26), 'Get number'],
-    ['mobile', 'Download the mobile app', 'Reply to leads and manage bookings from your phone.', icon('mobile', 26), 'Get the app'],
   ];
 
   function oauth(name, logo, onDone, pickLabel, picks) {
@@ -105,12 +104,6 @@
             </div>`).join('')}
         </div>
         <div class="grid">
-          <div class="card" id="lp_app_card"><div class="card-b" style="text-align:center">
-            <div class="bold" style="font-size:17px">Get the Kyntlo mobile app</div>
-            <div class="muted" style="font-size:14px;margin:4px 0 14px">Scan with your phone's camera</div>
-            <div style="display:inline-block;padding:10px;border:1px solid var(--line-soft);border-radius:12px">${KY.qr(11, 170)}</div>
-            <div class="row" style="justify-content:center;margin-top:12px;gap:8px"><span class="chip">${icon('mobile', 14)} iPhone</span><span class="chip">${icon('mobile', 14)} Android</span></div>
-          </div></div>
           <div class="card" id="lp_help"><div class="card-b row" style="align-items:flex-start">
             <span style="color:var(--purple)">${icon('book', 24)}</span>
             <div><b>Need a hand?</b><div class="muted" style="font-size:14.5px;margin:4px 0 10px">Watch Kyntlo Academy or ask Ask AI how to do anything.</div><button class="btn sm" id="lp_ask_ai">${icon('ai', 16)} Ask AI</button></div></div></div>
