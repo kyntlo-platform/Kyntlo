@@ -18,7 +18,7 @@ export default {
       chapter: 'Open the calendar',
       goto: '{demo}#/calendars/settings',
       settle: 1,
-      say: "We'll set up Bloom's implant consultation, a longer appointment where a no-show really hurts. Open it from Calendar Settings, then go to the Forms and Payment tab.",
+      say: "We'll set up Bloom's implant consultation, a longer appointment where a no-show really hurts. Open it from Calendar Settings, then go to the Forms and Payment tab. The same steps work on any calendar you create.",
       actions: [
         { at: 0.6, hover: '#cal_row_k5' },
         { at: 0.8, highlight: '#cal_row_k5', label: 'Implant Consultation', for: 3 },
@@ -79,7 +79,7 @@ export default {
     },
     {
       chapter: 'Receipt description',
-      say: "Add a short description. It appears on the patient's receipt, so they know exactly what they paid for, and that it counts towards their treatment.",
+      say: "Add a short description. It appears on the patient's receipt, so they know exactly what they paid for, and that it counts towards their treatment. Every payment is also recorded against the contact, and listed under Payments, so your records stay tidy.",
       actions: [
         { at: 0.6, hover: '#cal_ed_paydesc' },
         { at: 0.8, highlight: '#cal_ed_paydesc', label: 'Shown on the receipt', for: 4 },
@@ -105,11 +105,11 @@ export default {
     },
     {
       chapter: 'Auto-confirm',
-      say: "Further down, Auto-confirm marks new bookings as Confirmed straight away. Switch it off if you'd rather review each booking yourself first. Then click Save.",
+      say: "Further down, Auto-confirm marks new bookings as Confirmed straight away. Switch it off if you'd rather review each booking yourself first. With a deposit taken, auto-confirm makes sense, because the patient has already committed. Then click Save.",
       actions: [
         { at: 0.6, hover: '#cal_ed_autoconfirm' },
         { at: 0.8, highlight: '#cal_ed_opt_confirm', label: 'Auto-confirm', for: 4 },
-        { at: 7.4, click: '#cal_ed_save' },
+        { at: 11.0, click: '#cal_ed_save' },
       ],
     },
     {
