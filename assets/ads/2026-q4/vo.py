@@ -83,6 +83,22 @@ def spoken(line):
     return line
 
 
+def strip_c2pa(pcm):
+    """Drop the content-credentials manifest Gemini appends to the audio.
+
+    The response payload is PCM followed, on several models, by a C2PA
+    provenance manifest. Written straight to a wav it plays as roughly 126ms
+    of full-scale noise after the last word. A JUMBF superbox is a four-byte
+    big-endian length then the ASCII tag 'jumb', so the boundary is exact:
+    everything before it is audio, everything after it is not.
+    """
+    i = pcm.find(b'jumb')
+    if i < 4:
+        return pcm
+    cut = i - 4
+    return pcm[:cut - (cut % 2)]
+
+
 def pcm_to_wav(pcm, path, rate=24000, channels=1, width=2):
     with wave.open(str(path), 'wb') as w:
         w.setnchannels(channels)
@@ -154,7 +170,7 @@ def gemini_synth(text, out_wav, style='', attempt=0):
     for bit in part.get('mimeType', '').split(';'):
         if bit.strip().startswith('rate='):
             rate = int(bit.split('=')[1])
-    pcm_to_wav(base64.b64decode(part['data']), out_wav, rate=rate)
+    pcm_to_wav(strip_c2pa(base64.b64decode(part['data'])), out_wav, rate=rate)
 
 
 def list_models():

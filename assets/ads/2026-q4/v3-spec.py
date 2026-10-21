@@ -16,9 +16,12 @@ import json, pathlib
 
 ROOT = pathlib.Path(__file__).parent
 
-CTA = {"look": "brand", "sec": 3.4,
-       "line": "Booking, reminders and recall<br>in one place.",
-       "vo": "Kyntlo. It answers when you can't."}
+# The outro is the mark and three words. Nothing else earns a place there:
+# a strapline and a URL under a logo is the shape of an ad that does not
+# trust its own last line.
+CTA = {"look": "brand", "sec": 3.2, "line": "Own Tomorrow",
+       "wav": "v3-outro.wav",
+       "vo": "Kyntlo. Own tomorrow."}
 
 ADS = {
 # ---------------------------------------------------------------- S-tier VSL
@@ -37,8 +40,8 @@ ADS = {
     {"look": "editorial", "sec": 4.0, "kind": "line",
      "text": "The minutes<br>a request sits<br>before a human<br>sees it.",
      "vo": "The minutes a request sits before a human sees it."},
-    {"look": "editorial", "sec": 4.4, "kind": "big",
-     "text": "At 8pm<br>that gap is<br>the <em>whole night</em>.",
+    {"look": "clock", "sec": 4.4, "mark": "one working day",
+     "cap": "At 8pm that gap is<br>the <em>whole night</em>.",
      "sub": "Over a weekend, longer.",
      "vo": "At eight PM that gap is the whole night. Over a weekend, longer."},
     {"look": "editorial", "sec": 3.8, "kind": "line",
@@ -93,6 +96,11 @@ ADS = {
      "label": "had a real calendar", "cold": True,
      "note": "Not one sent a reminder or chased a no-show.",
      "vo": "Eight had a real calendar. Not one of those eight sent a reminder, or chased a no show."},
+    {"look": "bars", "sec": 4.2, "mark": "four checks, one afternoon",
+     "cap": "Same 62 clinics.<br>Four questions.",
+     "rows": [["opened a form", 35], ["no booking at all", 18],
+              ["ran it on WhatsApp", 43], ["a real calendar", 8]],
+     "of": 62},
     {"look": "audit", "sec": 4.0, "kind": "intro",
      "head": "The whole set",
      "text": "All 62 were paying<br>for clicks<br>that same week.",
@@ -152,6 +160,7 @@ ADS = {
     {"look": "objection", "sec": 4.4,
      "q": "“Switching sounds<br>like a nightmare.”",
      "a": "Nothing switches for 14 days.<br>Same number, same channels.",
+     "viz": "days14",
      "vo": "Switching sounds like a nightmare. Nothing switches for fourteen days. Same number, same channels."},
     {"look": "objection", "sec": 4.2,
      "q": "“What if it<br>doesn't work?”",

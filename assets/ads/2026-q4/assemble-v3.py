@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Assemble the five v3 ads: frames + narration + per-ad bed.
 
-Run: python3 assemble-v3.py [adId ...]   ->  kyntlo-<adId>.mp4
+Run: python3 assemble-v3.py <light|dark> [adId ...]  ->  kyntlo-<adId>-<theme>.mp4
 
 The picture was cut to the narration by v3-fit.py, so every line already has
 room and the only audio work left is placement, ducking and loudness. The bed
@@ -17,7 +17,7 @@ FFMPEG = '/usr/local/lib/python3.11/dist-packages/imageio_ffmpeg/binaries/ffmpeg
 FPS = 30
 FINAL = json.loads((ROOT / 'v3-final.json').read_text())
 PLAN = json.loads((ROOT / 'v3-vofit.json').read_text())
-VO = ROOT / 'vo'
+VO = ROOT / 'vo' / 'clean'
 
 
 def tempo_wav(name, tempo):
@@ -33,17 +33,17 @@ def tempo_wav(name, tempo):
     return dst
 
 
-def build(ad):
-    src = ROOT / 'frames' / ad
+def build(ad, theme):
+    src = ROOT / 'frames' / (ad + '-' + theme)
     frames = sorted(src.glob('f*.png'))
     if not frames:
-        print('  %s: no frames — run v3-scenes.js first' % ad)
+        print('  %s-%s: no frames — run v3-scenes.js first' % (ad, theme))
         return
     total = len(frames) / FPS
     bed = ROOT / ('bed-%s.wav' % ad)
     if not bed.exists():
         sys.exit('missing %s — run music-v3.py' % bed.name)
-    out = ROOT / ('kyntlo-%s.mp4' % ad)
+    out = ROOT / ('kyntlo-%s-%s.mp4' % (ad, theme))
 
     cues = [(tempo_wav(c['wav'], c['tempo']), c['at']) for c in PLAN[ad]]
     args = [FFMPEG, '-y',
@@ -56,7 +56,10 @@ def build(ad):
     for n, (_, at) in enumerate(cues):
         ms = int(at * 1000)
         fc.append('[%d:a]adelay=%d|%d[n%d]' % (n + 2, ms, ms, n))
-    fc.append('%samix=inputs=%d:normalize=0,dynaudnorm=f=200:g=7:p=0.75[voall]'
+    # no dynaudnorm here: it rides the gain inside every gap between
+    # words, which lifts the noise floor exactly where a listener notices.
+    # The lines are levelled once, offline, by v3-clean-vo.py instead.
+    fc.append('%samix=inputs=%d:normalize=0[voall]'
               % (''.join('[n%d]' % n for n in range(len(cues))), len(cues)))
     # a filter label is consumed once, so the voice is split: one copy drives
     # the sidechain, the other is what you hear
@@ -80,14 +83,17 @@ def build(ad):
         print(r.stderr[-2500:]); sys.exit('ffmpeg failed on ' + ad)
 
     # a poster frame from the hook, for the ad manager's thumbnail slot
-    poster = ROOT / ('kyntlo-%s-poster.png' % ad)
+    poster = ROOT / ('kyntlo-%s-%s-poster.png' % (ad, theme))
     subprocess.run([FFMPEG, '-y', '-i', str(out), '-ss', '1.2', '-frames:v', '1',
                     str(poster)], check=True, capture_output=True)
-    print('  %-14s %5.1fs  %4.1f MB  %s-tier %s' %
-          (ad, total, out.stat().st_size / 1e6, FINAL[ad]['tier'],
+    print('  %-14s %-5s %5.1fs  %4.1f MB  %s-tier %s' %
+          (ad, theme, total, out.stat().st_size / 1e6, FINAL[ad]['tier'],
            FINAL[ad]['format']))
 
 
 if __name__ == '__main__':
-    for a in (sys.argv[1:] or list(FINAL)):
-        build(a)
+    theme = sys.argv[1] if len(sys.argv) > 1 else 'dark'
+    if theme not in ('light', 'dark'):
+        sys.exit('first argument is the theme: light or dark')
+    for a in (sys.argv[2:] or list(FINAL)):
+        build(a, theme)

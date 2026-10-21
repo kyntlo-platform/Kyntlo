@@ -11,12 +11,14 @@ A line is sped up to 1.25x at most. Beyond that the read stops sounding
 considered, which is the whole register of this campaign, so past that point
 the scene widens instead.
 
-Run after v3-vo.py: python3 v3-fit.py  ->  v3-final.json, v3-vofit.json
+Reads the cleaned lines in vo/clean, so run v3-clean-vo.py first.
+
+Run: python3 v3-fit.py  ->  v3-final.json, v3-vofit.json
 """
 import json, pathlib, subprocess, sys, wave
 
 ROOT = pathlib.Path(__file__).parent
-VO = ROOT / 'vo'
+VO = ROOT / 'vo' / 'clean'   # artifact-stripped, levelled
 FFMPEG = '/usr/local/lib/python3.11/dist-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2'
 SPEC = json.loads((ROOT / 'v3.json').read_text())
 
@@ -36,7 +38,9 @@ def main():
         for i, sc in enumerate(a['scenes'], 1):
             sc = dict(sc)
             line = sc.get('vo')
-            w = VO / ('%s-s%02d.wav' % (ad, i))
+            # a scene can name its own file: the outro is one recording
+            # shared by all five ads rather than five requests for one line
+            w = VO / (sc.get('wav') or '%s-s%02d.wav' % (ad, i))
             if line and not w.exists():
                 missing.append('%s s%02d' % (ad, i))
                 scenes.append(sc); t += sc['sec']; continue
