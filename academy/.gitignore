@@ -5,3 +5,4 @@ assets/music/*
 !assets/music/.gitkeep
 pipeline/node_modules/
 login-failed.png
+course/Kyntlo Academy/

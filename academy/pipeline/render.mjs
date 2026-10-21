@@ -9,7 +9,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { chromium } from 'playwright';
 import { CACHE, CARD_HTML, ENV, LEAD, OUTPUT, WRITTEN } from './lib/config.mjs';
-import { narrate } from './lib/tts.mjs';
+import { narrateAll } from './lib/tts.mjs';
 import { record } from './lib/record.mjs';
 import { assemble, timeline } from './lib/edit.mjs';
 import { cues, toAss, toSrt } from './lib/subtitles.mjs';
@@ -62,8 +62,7 @@ async function render(file, opts) {
   await fs.mkdir(OUTPUT, { recursive: true });
   console.log(`\n▶ ${lesson.id} — ${lesson.title}`);
 
-  const narrations = [];
-  for (const s of lesson.scenes) narrations.push(await narrate(s.say || ''));
+  const narrations = await narrateAll(lesson.scenes.map((s) => s.say || ''));
   const draft = narrations.some((n) => n.draft);
   console.log(`  ♪ narration ready (${draft ? 'DRAFT: silent, no voice engine' : narrations[0].engine})`);
 

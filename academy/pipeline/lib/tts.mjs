@@ -40,26 +40,32 @@ async function gemini(text, wav) {
   await fs.rm(pcm);
 }
 
-async function kokoro(text, wav) {
-  const tmp = wav.replace(/\.wav$/, '.k.wav');
+// Kokoro loads its model once per process, so a whole lesson is voiced in one batch.
+async function kokoro(jobs) {
+  const items = jobs.map(({ text, wav }) => ({ text, out: wav.replace(/\.wav$/, '.k.wav'), wav }));
   await new Promise((resolve, reject) => {
     const p = spawn('python3', ['-I', KOKORO, MODELS], { stdio: ['pipe', 'ignore', 'pipe'] });
     let err = '';
     p.stderr.on('data', (d) => (err += d));
     p.on('close', (c) => (c ? reject(new Error(`Kokoro TTS failed: ${err.slice(-1500)}`)) : resolve()));
-    p.stdin.end(JSON.stringify([{ text, out: tmp }]));
+    p.stdin.end(JSON.stringify(items.map(({ text, out }) => ({ text, out }))));
   });
-  await ffmpeg(['-i', tmp, '-af', TRIM, '-ar', '48000', '-ac', '2', wav]);
-  await fs.rm(tmp);
+  for (const { out, wav } of items) {
+    await ffmpeg(['-i', out, '-af', TRIM, '-ar', '48000', '-ac', '2', wav]);
+    await fs.rm(out);
+  }
 }
 
+// Each engine voices a batch of { text, wav } jobs.
+const oneByOne = (fn) => async (jobs) => { for (const j of jobs) await fn(j.text, j.wav); };
+
 async function engine() {
-  if (ENV.geminiKey) return { name: `gemini:${ENV.ttsModel}:${VOICE.name}`, make: gemini };
+  if (ENV.geminiKey) return { name: `gemini:${ENV.ttsModel}:${VOICE.name}`, make: oneByOne(gemini) };
   try {
     await fs.access(path.join(MODELS, 'kokoro-v1.0.onnx'));
     return { name: `kokoro:${process.env.KOKORO_VOICE || 'af_heart'}`, make: kokoro };
   } catch {
-    return { name: 'draft', make: draft };
+    return { name: 'draft', make: oneByOne(draft) };
   }
 }
 
@@ -71,16 +77,19 @@ async function draft(text, wav) {
   await ffmpeg(['-f', 'lavfi', '-i', `anullsrc=r=48000:cl=stereo`, '-t', secs.toFixed(2), wav]);
 }
 
-export async function narrate(text) {
+// Voices every text (cached by content), returning { file, seconds, draft, engine } per text.
+export async function narrateAll(texts) {
   const { name, make } = await engine();
-  const key = crypto.createHash('sha1').update(`${name}\n${VOICE.style}\n${text}`).digest('hex');
   const dir = path.join(CACHE, 'tts');
   await fs.mkdir(dir, { recursive: true });
-  const wav = path.join(dir, `${key.slice(0, 16)}.wav`);
-  try {
-    await fs.access(wav);
-  } catch {
-    await make(text, wav);
+  const wavs = texts.map((text) => {
+    const key = crypto.createHash('sha1').update(`${name}\n${VOICE.style}\n${text}`).digest('hex');
+    return path.join(dir, `${key.slice(0, 16)}.wav`);
+  });
+  const missing = [];
+  for (const [i, wav] of wavs.entries()) {
+    if (!(await fs.access(wav).then(() => true, () => false)) && !missing.some((m) => m.wav === wav)) missing.push({ text: texts[i], wav });
   }
-  return { file: wav, seconds: await duration(wav), draft: name === 'draft', engine: name };
+  if (missing.length) await make(missing);
+  return Promise.all(wavs.map(async (file) => ({ file, seconds: await duration(file), draft: name === 'draft', engine: name })));
 }

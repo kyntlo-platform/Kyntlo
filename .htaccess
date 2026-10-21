@@ -3,6 +3,9 @@ DirectoryIndex index.html
 
 RewriteEngine On
 
+# Kyntlo Academy production files (scripts, demo workspace) are not part of the public site.
+RewriteRule ^academy(/|$) - [F,L]
+
 # Redirect public .html URLs to clean URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ %1 [R=301,L]

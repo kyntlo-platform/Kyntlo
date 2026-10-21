@@ -21,7 +21,7 @@
   h1 em { font-style:normal; background:linear-gradient(90deg,var(--pink),var(--purple)); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .sub { font-size:3.3vh; color:var(--muted); margin-top:2.6vh; max-width:34em; line-height:1.4; font-family:Inter, system-ui, sans-serif; }
   .bar { height:.7vh; width:0; background:linear-gradient(90deg,var(--pink),var(--purple)); border-radius:9px; margin-top:4.4vh; }
-  .plan { align-self:flex-start; margin-top:3.4vh; font-size:2.3vh; font-weight:700; color:var(--purple); border:2px solid currentColor; padding:.8vh 1.8vh; border-radius:999px; font-family:Inter, system-ui, sans-serif; }
+  .planbadge { align-self:flex-start; margin-top:3.4vh; font-size:2.3vh; font-weight:700; color:var(--purple); border:2px solid currentColor; padding:.8vh 1.8vh; border-radius:999px; font-family:Inter, system-ui, sans-serif; }
   .cta { align-self:flex-start; margin-top:4.6vh; font-size:3.2vh; font-weight:700; color:#fff; background:var(--ink); padding:2vh 3.6vh; border-radius:16px; box-shadow:0 18px 40px rgba(18,11,31,.25); }
   .cta span { color:#ff5fb8; }
   .corner { position:absolute; right:4vw; bottom:4vh; font-size:2.2vh; color:var(--muted); font-weight:600; letter-spacing:.06em; }
@@ -33,6 +33,30 @@
   .play .d1 { animation-delay:.1s } .play .d2 { animation-delay:.3s } .play .d3 { animation-delay:.5s } .play .d4 { animation-delay:.75s } .play .d5 { animation-delay:1s }
   @keyframes rise { to { opacity:1; transform:none; } }
   @keyframes grow { to { width:22vw; } }
+
+  /* Plan cards: one plan in detail, or all plans side by side. */
+  .plan .stage, .plans .stage { justify-content:flex-start; padding-top:8vh; }
+  .plan h1, .plans h1 { font-size:7vh; margin-top:2.4vh; }
+  .price { display:flex; align-items:baseline; gap:1.2vh; margin-top:2vh; }
+  .price b { font-size:8vh; font-weight:800; letter-spacing:-.02em; }
+  .price span { font-size:3vh; color:var(--muted); }
+  .promo { display:inline-block; margin-top:1.4vh; font:600 2.4vh Inter, system-ui, sans-serif; color:#027a48; background:#ecfdf3; border:1px solid #abefc6; padding:.8vh 1.6vh; border-radius:999px; }
+  .cols { display:grid; grid-template-columns:1.1fr 1fr; gap:5vw; margin-top:4vh; }
+  .items { list-style:none; padding:0; margin:0; display:grid; gap:1.5vh; font:500 2.7vh Inter, system-ui, sans-serif; }
+  .items li { display:flex; gap:1.2vh; align-items:flex-start; }
+  .items li::before { content:'✓'; flex:none; width:3.4vh; height:3.4vh; border-radius:50%; display:grid; place-items:center; color:#fff; font-size:1.9vh; font-weight:800; background:linear-gradient(135deg,var(--pink),var(--purple)); }
+  .items li.no { color:#98a2b3; } .items li.no::before { content:'–'; background:#d0d5dd; }
+  .best { background:#fff; border-radius:2.4vh; padding:3.2vh 3.4vh; box-shadow:0 2vh 5vh rgba(18,11,31,.1); align-self:start; }
+  .best small { display:block; font:700 2vh Inter, system-ui, sans-serif; letter-spacing:.12em; text-transform:uppercase; color:var(--pink); margin-bottom:1.4vh; }
+  .best p { margin:0; font:500 3vh/1.45 Inter, system-ui, sans-serif; color:var(--ink); }
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:2.2vw; margin-top:5vh; }
+  .pc { background:#fff; border-radius:2.4vh; padding:3.4vh 2.8vh; box-shadow:0 2vh 5vh rgba(18,11,31,.1); border:2px solid transparent; }
+  .pc.hot { border-color:var(--pink); box-shadow:0 2vh 6vh rgba(242,0,137,.25); }
+  .pc .n { font-size:3.6vh; font-weight:800; }
+  .pc .p { font-size:5vh; font-weight:800; margin-top:1vh; } .pc .p span { font-size:2.4vh; color:var(--muted); font-weight:600; }
+  .pc .t { font:500 2.4vh/1.4 Inter, system-ui, sans-serif; color:var(--muted); margin-top:1.6vh; }
+  .pc .tag { display:inline-block; font:700 1.7vh Inter, system-ui, sans-serif; letter-spacing:.1em; text-transform:uppercase; color:#fff; background:linear-gradient(90deg,var(--pink),var(--purple)); padding:.6vh 1.2vh; border-radius:999px; margin-bottom:1.4vh; }
+  .play .items li, .play .pc { opacity:0; animation:rise .6s cubic-bezier(.2,.8,.2,1) forwards; }
 
   .chapter .stage { align-items:flex-start; }
   .chapter h1 { font-size:10vh; }
@@ -49,9 +73,10 @@
   <div class="kicker in d2" id="kicker"></div>
   <h1 class="in d3" id="title"></h1>
   <div class="sub in d4" id="sub"></div>
-  <div class="plan in d5" id="plan"></div>
+  <div class="planbadge in d5" id="plan"></div>
   <div class="bar"></div>
   <div class="cta in d5" id="cta"></div>
+  <div id="extra"></div>
 </div>
 <div class="corner in d5" id="corner">KYNTLO ACADEMY</div>
 <script>
@@ -75,6 +100,26 @@
   const cta = document.getElementById('cta');
   if (cta) cta.innerHTML = cta.innerHTML.replace(/\[(.+?)\]/g, '<span>$1</span>');
   if (type === 'chapter') document.querySelector('.logo').remove();
+
+  // plan: price, promo, items ("a|b|-c" — a leading "-" marks not included), best (who it suits)
+  // plans: p1..p4 as "Name|$90|/mo|tagline" (a trailing "|hot" highlights one)
+  const extra = document.getElementById('extra');
+  const escape = (v) => v.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+  if (type === 'plan' || type === 'plans') document.querySelector('.logo').remove();
+  if (type === 'plan') {
+    const items = (q.get('items') || '').split('|').filter(Boolean);
+    extra.innerHTML = `
+      <div class="price in d3"><b>${escape(q.get('price') || '')}</b><span>${escape(q.get('per') || '')}</span></div>
+      ${q.get('promo') ? `<div class="promo in d4">${escape(q.get('promo'))}</div>` : ''}
+      <div class="cols"><ul class="items">${items.map((it, i) => `<li class="${it.startsWith('-') ? 'no' : ''}" style="animation-delay:${0.6 + i * 0.12}s">${escape(it.replace(/^-/, ''))}</li>`).join('')}</ul>
+      ${q.get('best') ? `<div class="best in d5"><small>Best for</small><p>${escape(q.get('best'))}</p></div>` : ''}</div>`;
+  }
+  if (type === 'plans') {
+    const cards = ['p1', 'p2', 'p3', 'p4'].map((k) => q.get(k)).filter(Boolean).map((v) => v.split('|'));
+    extra.innerHTML = `<div class="grid4">${cards.map(([n, p, per, t, hot], i) => `
+      <div class="pc ${hot ? 'hot' : ''}" style="animation-delay:${0.5 + i * 0.18}s">${hot ? '<div class="tag">Most popular</div>' : ''}
+        <div class="n">${escape(n)}</div><div class="p">${escape(p)} <span>${escape(per || '')}</span></div><div class="t">${escape(t || '')}</div></div>`).join('')}</div>`;
+  }
   window.__kyPlay = () => document.body.classList.add('play');
   if (type === 'thumb') __kyPlay();
 </script>
