@@ -93,6 +93,7 @@ export default {
       say: "One status worries customers but shouldn't: Waiting. The contact is paused on a wait step, or held until the workflow's time window opens. Here, Olivia is on a one-day wait, and the details say exactly when she'll continue. Nothing is broken.",
       actions: [
         { at: 0.1, run: (p) => p.evaluate(() => document.querySelectorAll('.overlay, .drawer, .menu').forEach((e) => e.remove())) },
+        { at: 0.2, run: (p) => p.fill('#wfl_search', '') },
         { at: 0.5, click: '#wfl_status' },
         { at: 1.6, click: opt('Waiting') },
         { at: 3.4, click: '#wfl_view_0' },

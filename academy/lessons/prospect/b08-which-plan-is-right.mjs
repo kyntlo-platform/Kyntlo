@@ -60,7 +60,7 @@ export default {
     {
       chapter: 'Quarterly billing',
       goto: '{site}/pricing.html',
-      setup: [{ run: (p) => p.evaluate(() => scrollTo(0, document.querySelector('.billing-offer').getBoundingClientRect().top + scrollY - 140)) }],
+      setup: [{ run: (p) => p.evaluate(() => scrollTo(0, document.querySelector('.billing-offer').getBoundingClientRect().top + scrollY - 40)) }],
       settle: 2.5,
       say: "Choose quarterly billing, and your first three months are half price: forty-five dollars a month for Starter, a hundred and thirty-five for Growth, or two hundred and forty-five for Pro. After that, your plan renews at the normal monthly price.",
       caption: "Choose quarterly billing, and your first 3 months are half price: $45 a month for Starter, $135 for Growth, or $245 for Pro. After that, your plan renews at the normal monthly price.",
@@ -69,7 +69,7 @@ export default {
         { at: 4.2, highlight: '.pricing-card >> nth=0', label: 'Starter · $45/mo', for: 2.4 },
         { at: 6.8, highlight: '.pricing-card >> nth=1', label: 'Growth · $135/mo', for: 2.4 },
         { at: 9.6, highlight: '.pricing-card >> nth=2', label: 'Pro · $245/mo', for: 2.4 },
-        { at: 12.4, click: '.billing-tab >> nth=0' },
+        { at: 12.4, click: '.billing-tab[data-billing="monthly"]' },
         { at: 13.0, title: 'Then the normal monthly price', sub: '$90 · $270 · $490 a month, plus taxes', for: 3.4 },
       ],
     },
