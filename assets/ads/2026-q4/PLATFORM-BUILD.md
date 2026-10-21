@@ -224,6 +224,28 @@ campaign, so it is the right home; nothing needs moving.
 
 ---
 
+## 8. Creative since this was written (2026-10-21)
+
+The four video ads listed above still point at the **v2** media and carry v2
+names. They have been superseded: see `V3-BUILD.md` and `v3-copy.md` for five
+new creatives in five formats, built after the v2 phone-mockup device was
+identified as the weakest format in the Meta taxonomy.
+
+| File | Ad | Length | Role |
+|---|---|---|---|
+| `kyntlo-v3-vsl.mp4` | VSL (S-tier) | 38.1s | cold |
+| `kyntlo-v3-audit.mp4` | Amateur investigation (A) | 41.8s | cold |
+| `kyntlo-v3-stack.mp4` | David & Goliath (A) | 30.4s | cold |
+| `kyntlo-v3-objections.mp4` | Objection handling (B) | 25.7s | retargeting |
+| `kyntlo-v3-timeline.mp4` | Educational infographic (B) | 35.1s | retargeting |
+
+Repointing the live ads still waits on the same blocker as everything else in
+§6: media has to be uploaded to the Media Library from the account before an
+ad can reference it. Nothing in the campaign has been published, so no live
+delivery is affected by the swap.
+
+---
+
 *Built against sub-account `SXEax5cL2rAbWWyQLo4s`, 2026-10-11. Every ID here
 is live — they are the handles for attaching media, setting the pixel, and
 publishing.*
