@@ -33,7 +33,7 @@ export default {
     },
     {
       chapter: 'Views & filters',
-      say: "Switch between day, week and month at the top. On the right, filter by calendar or by team member. Untick James, and you only see Sarah's and Priya's appointments. Tick him again to bring them back.",
+      say: "Switch between day, week and month at the top. On the right, filter by calendar or by team member. Untick James, and you only see Sarah's and Priya's appointments. Tick him again to bring them back. Filters are handy for front-desk staff who manage one clinician's diary.",
       actions: [
         { at: 0.6, hover: '#cal_mode' },
         { at: 0.8, highlight: '#cal_mode', label: 'Day · Week · Month', for: 2.8 },
@@ -45,7 +45,7 @@ export default {
     },
     {
       chapter: 'Book an appointment',
-      say: "Most patients book online, but when someone phones or messages, book it yourself. Olivia asked for Thursday, so click New, then Appointment.",
+      say: "Most patients book online, but when someone phones or messages, book it yourself. Olivia asked for Thursday, so click New, then Appointment. Booking by hand works just like online booking: confirmations and reminders still go out.",
       actions: [
         { at: 4.0, click: '#cal_new' },
         { at: 5.4, click: '.menu button:has-text("Appointment")' },
@@ -64,13 +64,13 @@ export default {
         { at: 6.4, click: '#cal_na_day_3' },
         { at: 7.6, highlight: '#cal_na_slots', label: 'Only free times', for: 2.6 },
         { at: 10.4, click: '#cal_na_slot_1430' },
-        { at: 12.6, click: '#cal_na_book' },
-        { at: 13.6, highlight: '#cal_day_3', label: 'Booked: Thu 14:30', for: 2.8 },
+        { at: 11.4, click: '#cal_na_book' },
+        { at: 12.2, highlight: '#cal_day_3', label: 'Booked: Thu 14:30', for: 2.8 },
       ],
     },
     {
       chapter: 'Appointment details',
-      say: "Click any appointment to open its details: who it's with, when and where, the patient's contact details, and the full history of what's happened to it.",
+      say: "Click any appointment to open its details: who it's with, when and where, the patient's contact details, and the full history of what's happened to it. You can also add internal notes that only your team can see.",
       actions: [
         { at: 0.6, click: '#cal_appt_a2' },
         { at: 2.0, highlight: '#cal_drawer', label: 'Everything about this booking', for: 4 },
@@ -80,7 +80,7 @@ export default {
     },
     {
       chapter: 'Reschedule',
-      say: "Liam can't make Tuesday any more. Click Reschedule, pick the new day and time, and confirm. Liam is notified automatically, and his calendar invite is updated too.",
+      say: "Liam can't make Tuesday any more. Click Reschedule, pick the new day and time, and confirm. Liam is notified automatically, and his calendar invite is updated too. There's no need to cancel and rebook.",
       actions: [
         { at: 1.6, click: '#cal_dr_resched' },
         { at: 3.4, click: '#cal_rs_day_3' },
@@ -92,7 +92,7 @@ export default {
     },
     {
       chapter: 'Update the status',
-      say: "The status tells everyone what actually happened. Daniel came in for his check-up, so open his appointment, click the status, and choose Showed. Your reports, and your automations, rely on these statuses.",
+      say: "The status tells everyone what actually happened. Daniel came in for his check-up, so open his appointment, click the status, and choose Showed. Your reports, and your automations, rely on these statuses, including the show rate on your dashboard.",
       actions: [
         { at: 0.6, click: '#cal_appt_a1' },
         { at: 4.6, click: '#cal_dr_status' },
@@ -117,7 +117,7 @@ export default {
     },
     {
       chapter: 'Cancel',
-      say: "To cancel, open the appointment and click Cancel. The time opens up again for other patients, and the patient receives a cancellation message.",
+      say: "To cancel, open the appointment and click Cancel. The time opens up again for other patients, and the patient receives a cancellation message. If you'd rather keep the patient, reschedule instead, so the booking and its history stay together.",
       actions: [
         { at: 0.6, click: '#cal_appt_a8' },
         { at: 3.0, click: '#cal_dr_cancel' },
@@ -130,7 +130,7 @@ export default {
       say: "Prefer a list? The Appointment List tab shows every booking in a table. Switch between upcoming and cancelled, filter by calendar or team member, or search for a patient by name.",
       actions: [
         { at: 0.6, click: '#tab_appointments' },
-        { at: 2.2, highlight: '#cal_al_table', label: 'Every booking', for: 3 },
+        { at: 2.2, highlight: '#cal_al_table thead', label: 'Every booking, in one table', for: 3 },
         { at: 5.8, click: '#cal_al_cancelled' },
         { at: 7.4, click: '#cal_al_upcoming' },
         { at: 8.6, hover: '#cal_al_cal' },

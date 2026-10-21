@@ -152,7 +152,7 @@ export async function assemble({ lesson, raw, scenes, narrations, timeline, work
 
   await ffmpeg([...inputs, ...extra, '-filter_complex', graph, '-map', '[vout]', '-map', '[aout]',
     '-t', total.toFixed(3),
-    '-c:v', 'libx264', '-preset', 'slow', '-crf', '18', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-r', String(FPS),
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-r', String(FPS),
     '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', out]);
 
   return { music };

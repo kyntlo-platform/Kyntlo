@@ -435,16 +435,19 @@
   }
 
   // ================= Subscriptions =================
+  let subFilter = 'all';
   function subsTab(view) {
     const active = P.subs.filter((s) => ['active', 'trialing'].includes(s.status));
     const mrr = P.subs.filter((s) => s.status === 'active').reduce((a, s) => a + s.amount, 0);
     view.innerHTML = `${head('Subscriptions', `${P.subs.length} subscriptions`)}
       ${stats([['Active subscriptions', active.length, 'restore'], ['Monthly recurring revenue', m2(mrr), 'chart', 'var(--green)'], ['Trialing', P.subs.filter((s) => s.status === 'trialing').length, 'clock', '#5925dc'], ['Past due', P.subs.filter((s) => s.status === 'past_due').length, 'bell', 'var(--amber)']])}
+      <div class="pay-sub" id="sub_filters">${[['all', 'All'], ['active', 'Active'], ['trialing', 'Trialing'], ['past_due', 'Past due'], ['canceled', 'Cancelled']].map(([k, l]) => `<button class="btn sm ${subFilter === k ? 'primary' : ''}" data-sf="${k}" id="sub_f_${k}">${l}</button>`).join('')}</div>
       <div class="card"><table class="t" id="sub_table"><thead><tr><th>Customer</th><th>Product</th><th>Amount</th><th>Status</th><th>Next payment</th><th>Started</th><th>Provider</th></tr></thead>
-        <tbody>${P.subs.map((s) => `<tr class="click" id="sub_row_${s.id}" data-sub="${s.id}"><td><div class="row">${avatar(contact(s.contact).name, 30)}<span class="bold">${esc(contact(s.contact).name)}</span></div></td>
+        <tbody>${P.subs.filter((s) => subFilter === 'all' || s.status === subFilter).map((s) => `<tr class="click" id="sub_row_${s.id}" data-sub="${s.id}"><td><div class="row">${avatar(contact(s.contact).name, 30)}<span class="bold">${esc(contact(s.contact).name)}</span></div></td>
           <td>${esc(s.product)}${s.count ? ` <span class="muted" style="font-size:13px">· payment ${s.count}</span>` : ''}</td><td class="bold">${m2(s.amount)} <span class="muted" style="font-weight:400">/ month</span></td><td>${chip(s.status)}</td>
           <td class="muted">${esc(s.next)}</td><td class="muted">${esc(s.started)}</td><td><div class="row" style="gap:6px"><img src="${LOGO('stripe')}" style="height:18px;width:auto" alt="Stripe"></div></td></tr>`).join('')}</tbody></table></div>`;
     $$('[data-sub]', view).forEach((tr) => (tr.onclick = () => subDrawer(view, P.subs.find((s) => s.id === tr.dataset.sub))));
+    $$('[data-sf]', view).forEach((b) => (b.onclick = () => { subFilter = b.dataset.sf; subsTab(view); }));
   }
 
   function subDrawer(view, s) {

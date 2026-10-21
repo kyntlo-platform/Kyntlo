@@ -28,7 +28,7 @@ export default {
     },
     {
       chapter: 'Notifications tab',
-      say: "Go to Notifications and Additional Options. At the top are the notifications that go out when something happens: a booking, a reschedule, or a cancellation. Each one uses a template you can edit.",
+      say: "Go to Notifications and Additional Options. At the top are the notifications that go out when something happens: a booking, a reschedule, or a cancellation. Each one uses a template you can edit. Keep them short and friendly, and always include your phone number.",
       actions: [
         { at: 0.6, click: '#cal_ed_tab_notifications' },
         { at: 3.2, hover: '#cal_ed_n_booked' },
@@ -39,8 +39,8 @@ export default {
     },
     {
       chapter: 'Reminders',
-      say: "Below those are reminders, which are sent a set time before the appointment. This calendar already sends an email twenty-four hours before, and a text message two hours before.",
-      caption: 'Below those are reminders, which are sent a set time before the appointment. This calendar already sends an email 24 hours before, and a text message 2 hours before.',
+      say: "Below those are reminders, which are sent a set time before the appointment. This calendar already sends an email twenty-four hours before, and a text message two hours before. Each one goes out automatically, timed to that patient's appointment.",
+      caption: 'Below those are reminders, which are sent a set time before the appointment. This calendar already sends an email 24 hours before, and a text message 2 hours before. Each one goes out automatically, timed to that patient\'s appointment.',
       actions: [
         { at: 0.6, hover: '#cal_ed_rem_toggle' },
         { at: 0.8, highlight: '#cal_ed_sec_reminders', label: 'Before the appointment', for: 3.6 },
@@ -61,8 +61,8 @@ export default {
     },
     {
       chapter: 'Timing & message',
-      say: "Choose when it goes out: forty-eight hours before. Then write the message. The words in curly brackets are custom values, so each patient's name, appointment and time fill in automatically.",
-      caption: "Choose when it goes out: 48 hours before. Then write the message. The words in curly brackets are custom values, so each patient's name, appointment and time fill in automatically.",
+      say: "Choose when it goes out: forty-eight hours before. Then write the message. The words in curly brackets are custom values, so each patient's name, appointment and time fill in automatically. Mention what to bring, and how to reschedule if plans change.",
+      caption: "Choose when it goes out: 48 hours before. Then write the message. The words in curly brackets are custom values, so each patient's name, appointment and time fill in automatically. Mention what to bring, and how to reschedule if plans change.",
       actions: [
         { at: 0.6, hover: '#cal_rem_when' },
         { at: 1.6, run: (p) => p.selectOption('#cal_rem_when', '48 hours') },
@@ -83,8 +83,8 @@ export default {
     },
     {
       chapter: 'Consent & DND',
-      say: "One important rule: only text people who've agreed to receive messages. That's why the booking form from lesson five point three asks for consent. And contacts marked Do Not Disturb never receive texts at all.",
-      caption: "One important rule: only text people who've agreed to receive messages. That's why the booking form from lesson 5.3 asks for consent. And contacts marked Do Not Disturb never receive texts at all.",
+      say: "One important rule: only text people who've agreed to receive messages. That's why the booking form from lesson five point three asks for consent. And contacts marked Do Not Disturb never receive texts at all. Respecting that keeps your number in good standing with the phone networks.",
+      caption: "One important rule: only text people who've agreed to receive messages. That's why the booking form from lesson 5.3 asks for consent. And contacts marked Do Not Disturb never receive texts at all. Respecting that keeps your number in good standing with the phone networks.",
       actions: [
         { at: 0.6, title: 'Consent first', sub: 'Only text people who agreed to hear from you', for: 5 },
         { at: 8.0, title: 'Do Not Disturb', sub: 'DND contacts never receive texts', for: 4.4 },
@@ -92,7 +92,7 @@ export default {
     },
     {
       chapter: 'Save',
-      say: "Click Save, and every future booking on this calendar gets these reminders automatically. Repeat the same steps for each of your calendars.",
+      say: "Click Save, and every future booking on this calendar gets these reminders automatically. Repeat the same steps for each of your calendars. Reminders work for appointments you book by hand too, not just online bookings.",
       actions: [
         { at: 0.6, click: '#cal_ed_save' },
         { at: 1.6, highlight: '#cal_ed_save', label: 'Saved', for: 2 },
