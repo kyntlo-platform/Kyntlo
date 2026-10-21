@@ -24,6 +24,7 @@ export const ENV = {
   appUrl: (process.env.KYNTLO_APP_URL || 'https://hub.kyntlo.ai').replace(/\/$/, ''),
   locationId: process.env.KYNTLO_LOCATION_ID || '',
   siteUrl: (process.env.KYNTLO_SITE_URL || 'http://127.0.0.1:4173').replace(/\/$/, ''),
+  demoUrl: process.env.KYNTLO_DEMO_URL || 'http://127.0.0.1:4173/academy/demo-app/index.html',
   geminiKey: process.env.GEMINI_API_KEY || '',
   ttsModel: process.env.GEMINI_TTS_MODEL || 'gemini-2.5-pro-preview-tts',
 };
@@ -58,5 +59,6 @@ export function expand(url) {
   return url
     .replaceAll('{app}', ENV.appUrl)
     .replaceAll('{loc}', ENV.locationId)
-    .replaceAll('{site}', ENV.siteUrl);
+    .replaceAll('{site}', ENV.siteUrl)
+    .replaceAll('{demo}', ENV.demoUrl);
 }

@@ -41,6 +41,19 @@ async function thumbnail(lesson, file) {
   await browser.close();
 }
 
+// --check: run every action against the app quickly, save a screenshot per scene, no video.
+async function check(file) {
+  const { default: lesson } = await import(pathToFileURL(file).href);
+  const name = path.basename(file, '.mjs');
+  const dir = path.join(CACHE, 'check', name);
+  await fs.rm(dir, { recursive: true, force: true });
+  await fs.mkdir(dir, { recursive: true });
+  const words = lesson.scenes.reduce((n, s) => n + (s.say || '').split(/\s+/).filter(Boolean).length, 0);
+  console.log(`\n▶ CHECK ${lesson.id} — ${lesson.title}  (~${clock(words / 2.5 + lesson.scenes.length * 1.5)} at narration pace)`);
+  await record(lesson, lesson.scenes.map(() => ({ seconds: 0 })), null, { check: dir });
+  console.log(`  ✔ all ${lesson.scenes.length} scenes ran; screenshots in ${dir}`);
+}
+
 async function render(file, opts) {
   const { default: lesson } = await import(pathToFileURL(file).href);
   const name = path.basename(file, '.mjs');
@@ -89,4 +102,14 @@ if (!files.length) {
   console.error('Usage: node render.mjs <lesson.mjs | lessons-folder> [...] [--headed]');
   process.exit(1);
 }
-for (const f of files) await render(f, { headed });
+const checking = args.includes('--check');
+let failed = 0;
+for (const f of files) {
+  try {
+    await (checking ? check(f) : render(f, { headed }));
+  } catch (e) {
+    failed++;
+    console.error(`  ✘ ${path.basename(f)}: ${e.message}`);
+  }
+}
+process.exit(failed ? 1 : 0);

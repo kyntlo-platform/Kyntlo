@@ -153,7 +153,9 @@ function screenUrl(screen) {
 
 // Plays the lesson in a real browser and records it. Returns the raw video and,
 // for each scene, where it sits in that video and what to zoom.
-export async function record(lesson, narrations, rawFile, { headed = false } = {}) {
+// With `check` set to a folder, nothing is recorded: every action runs as fast as
+// possible to prove the selectors work, and each scene's end state is screenshotted.
+export async function record(lesson, narrations, rawFile, { headed = false, check = null } = {}) {
   const browser = await chromium.launch({ headless: !headed });
   let state;
   try { await fs.access(AUTH_STATE); state = AUTH_STATE; } catch {}
@@ -167,8 +169,10 @@ export async function record(lesson, narrations, rawFile, { headed = false } = {
   await context.addInitScript({ path: new URL(OVERLAY).pathname });
   const page = await context.newPage();
   const cursor = new Cursor(page);
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
   const cdp = await context.newCDPSession(page);
-  const sink = new FrameSink(rawFile);
+  const sink = check ? { push() {}, async close() {}, t0: 0 } : new FrameSink(rawFile);
   cdp.on('Page.screencastFrame', ({ data, metadata, sessionId }) => {
     sink.push(Buffer.from(data, 'base64'), metadata.timestamp ?? now());
     cdp.send('Page.screencastFrameAck', { sessionId }).catch(() => {});
@@ -177,7 +181,7 @@ export async function record(lesson, narrations, rawFile, { headed = false } = {
   const scenes = [];
   try {
     await page.goto('about:blank');
-    await cdp.send('Page.startScreencast', {
+    if (!check) await cdp.send('Page.startScreencast', {
       format: 'jpeg', quality: 92, maxWidth: VIDEO.width, maxHeight: VIDEO.height, everyNthFrame: 1,
     });
     for (const [i, s] of lesson.scenes.entries()) {
@@ -200,19 +204,28 @@ export async function record(lesson, narrations, rawFile, { headed = false } = {
       if (s.card) await page.evaluate(() => window.__kyPlay?.());
       const target = s.duration ?? (LEAD + (narrations[i]?.seconds ?? 0) + TAIL);
       for (const a of s.actions || []) {
-        if (a.at !== undefined) await sleep((start + a.at * scene.speed - now()) * 1000);
-        await perform(page, cursor, a, scene, start);
+        if (a.at !== undefined && !check) await sleep((start + a.at * scene.speed - now()) * 1000);
+        try {
+          await perform(page, cursor, a, scene, start);
+        } catch (e) {
+          throw new Error(`Scene ${i + 1}, action ${JSON.stringify(a).slice(0, 120)}: ${e.message.split('\n')[0]}`);
+        }
+        if (check) await sleep(250);
       }
-      await sleep((start + target * scene.speed - now()) * 1000);
+      if (check) {
+        await sleep(400);
+        await page.screenshot({ path: `${check}/scene-${String(i + 1).padStart(2, '0')}.png` });
+      } else await sleep((start + target * scene.speed - now()) * 1000);
       // Screencast frames lag slightly behind real time; give the last one a moment to land.
       await sleep(150);
       Object.assign(scene, { start, end: now() });
       scenes.push(scene);
       const over = (scene.end - start) / scene.speed - target;
-      process.stdout.write(`  ● recorded scene ${i + 1}/${lesson.scenes.length}` +
+      if (!check) process.stdout.write(`  ● recorded scene ${i + 1}/${lesson.scenes.length}` +
         (over > 0.5 ? `  (actions ran ${over.toFixed(1)}s past the narration)` : '') + '\n');
     }
-    await cdp.send('Page.stopScreencast');
+    if (!check) await cdp.send('Page.stopScreencast');
+    if (errors.length) throw new Error(`JavaScript errors on the page:\n${errors.join('\n')}`);
   } finally {
     await sink.close(now());
     await browser.close();
