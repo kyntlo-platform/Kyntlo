@@ -63,6 +63,8 @@ async function find(page, sel, timeout = 10000) {
 }
 
 async function rectOf(page, sel) {
+  // On a screen stage, targets are {x, y, w, h} in screenshot pixels.
+  if (sel && typeof sel === 'object' && !Array.isArray(sel)) return page.evaluate((r) => window.__kyMap(r), sel);
   const box = await (await find(page, sel)).boundingBox();
   return { x: box.x, y: box.y, width: box.width, height: box.height };
 }
@@ -99,6 +101,7 @@ async function perform(page, cursor, a, scene, sceneStart) {
   } else if (a.click) {
     await cursor.to(a.click);
     await sleep(120);
+    scene.clicks.push(now() - sceneStart);
     await page.mouse.down();
     await sleep(90);
     await page.mouse.up();
@@ -138,10 +141,14 @@ async function perform(page, cursor, a, scene, sceneStart) {
   }
 }
 
-function cardUrl(card) {
-  const u = pathToFileURL(CARD_HTML);
+function cardUrl(card, file = CARD_HTML) {
+  const u = pathToFileURL(file);
   for (const [k, v] of Object.entries(card)) u.searchParams.set(k, v);
   return u.href;
+}
+
+function screenUrl(screen) {
+  return cardUrl(screen, CARD_HTML.replace(/card\.html$/, 'screen.html'));
 }
 
 // Plays the lesson in a real browser and records it. Returns the raw video and,
@@ -174,9 +181,15 @@ export async function record(lesson, narrations, rawFile, { headed = false } = {
       format: 'jpeg', quality: 92, maxWidth: VIDEO.width, maxHeight: VIDEO.height, everyNthFrame: 1,
     });
     for (const [i, s] of lesson.scenes.entries()) {
-      const scene = { index: i, speed: s.speed ?? 1, zooms: [] };
+      const scene = { index: i, speed: s.speed ?? 1, zooms: [], clicks: [] };
       // Off-camera setup: this part of the recording is cut out in the edit.
       if (s.card) await page.goto(cardUrl(s.card.type === 'intro' && lesson.plan ? { plan: lesson.plan, ...s.card } : s.card), { waitUntil: 'load' });
+      if (s.screen) {
+        await page.goto(screenUrl(s.screen), { waitUntil: 'load' });
+        await page.waitForSelector('body[data-ready]', { timeout: 10000 }).catch(async () => {
+          throw new Error(`Screen image did not load: ${s.screen.img} (${await page.title()})`);
+        });
+      }
       if (s.goto) await page.goto(expand(s.goto), { waitUntil: 'networkidle' }).catch(() => {});
       for (const a of s.setup || []) await perform(page, cursor, a, scene, now());
       await page.evaluate((hide) => { if (window.__ky) window.__ky.hideCursor = hide; }, !!s.card).catch(() => {});

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kyntlo Academy screen stage</title>
+<style>
+  :root { --pink:#f20089; --purple:#6d00c1; --ink:#120b1f; --paper:#f7f4fb; }
+  * { box-sizing:border-box; margin:0; }
+  html, body { width:100%; height:100%; overflow:hidden; background:var(--paper); font-family:Inter, system-ui, sans-serif; }
+  .blob { position:absolute; border-radius:50%; filter:blur(100px); opacity:.5; }
+  .b1 { width:900px; height:900px; background:#ff5fb8; left:-300px; top:-380px; }
+  .b2 { width:900px; height:900px; background:#9b4dff; right:-300px; bottom:-420px; }
+  .window { position:absolute; border-radius:14px; overflow:hidden; background:#fff; box-shadow:0 40px 90px rgba(18,11,31,.28), 0 0 0 1px rgba(18,11,31,.08); }
+  .chrome { height:44px; display:flex; align-items:center; gap:8px; padding:0 18px; background:#f1eef6; border-bottom:1px solid #e3deec; }
+  .dot { width:12px; height:12px; border-radius:50%; }
+  .url { margin-left:22px; flex:0 1 520px; height:28px; border-radius:8px; background:#fff; display:flex; align-items:center; gap:8px; padding:0 12px; font-size:14px; color:#4b4360; box-shadow:inset 0 0 0 1px #e3deec; }
+  .url svg { width:12px; height:12px; }
+  .window img { display:block; width:100%; }
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="window" id="win">
+  <div class="chrome">
+    <span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span>
+    <div class="url"><svg viewBox="0 0 24 24"><path fill="#28a745" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg><span id="url"></span></div>
+  </div>
+  <img id="shot" alt="">
+</div>
+<script>
+  // Shows a real screenshot of the app in a browser frame. Lessons target
+  // spots on it in screenshot pixels; __kyMap converts them to page pixels.
+  const q = new URLSearchParams(location.search);
+  const CHROME = 44;
+  const img = document.getElementById('shot');
+  document.getElementById('url').textContent = q.get('url') || 'hub.kyntlo.ai';
+  img.src = '../../../' + q.get('img'); // path relative to the repository root
+  let scale = 1, offX = 0, offY = 0;
+  img.onerror = () => { document.title = 'missing image'; };
+  img.onload = () => {
+    const maxW = innerWidth - 160, maxH = innerHeight - 120 - CHROME;
+    scale = Math.min(maxW / img.naturalWidth, maxH / img.naturalHeight);
+    const w = img.naturalWidth * scale, h = img.naturalHeight * scale + CHROME;
+    offX = (innerWidth - w) / 2;
+    offY = (innerHeight - h) / 2;
+    Object.assign(document.getElementById('win').style, { left: offX + 'px', top: offY + 'px', width: w + 'px' });
+    document.body.dataset.ready = '1';
+  };
+  window.__kyMap = ({ x, y, w, h }) => ({ x: offX + x * scale, y: offY + CHROME + y * scale, width: w * scale, height: h * scale });
+</script>
+</body>
+</html>

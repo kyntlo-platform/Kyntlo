@@ -1,34 +1,34 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { LEAD, MUSIC_DIR, TAIL, VIDEO, XFADE } from './config.mjs';
-import { ffmpeg } from './run.mjs';
+import { fileURLToPath } from 'node:url';
+import { CACHE, LEAD, MUSIC_DIR, TAIL, VIDEO, XFADE } from './config.mjs';
+import { ffmpeg, run } from './run.mjs';
 
 const { width: W, height: H, fps: FPS } = VIDEO;
 const EASE = 0.7; // seconds to ease in/out of a zoom
 
-// Smooth zoom: scale the frame up per-frame, then crop a fixed 1920x1080
-// window that follows the target, clamped to the frame edges.
+// Smooth zoom with zoompan, which (unlike scale+crop) re-evaluates position on
+// every frame. The frame is upscaled 2x first so the pan moves in half-pixel
+// steps instead of visibly jittering.
+const UP = 2;
 function zoomFilter(zooms) {
   if (!zooms.length) return '';
   const ss = (a) => `(${a})*(${a})*(3-2*(${a}))`; // smoothstep
   const terms = zooms.map(({ t, for: d, scale }) => {
-    const up = ss(`clip((t-${t.toFixed(3)})/${EASE},0,1)`);
-    const down = ss(`clip((t-${(t + d + EASE).toFixed(3)})/${EASE},0,1)`);
+    const up = ss(`clip((it-${t.toFixed(3)})/${EASE},0,1)`);
+    const down = ss(`clip((it-${(t + d + EASE).toFixed(3)})/${EASE},0,1)`);
     return `${(scale - 1).toFixed(3)}*${up}*(1-${down})`;
   });
-  const z = `(1+${terms.join('+')})`;
-  // Centre of attention eases between targets; outside a zoom it doesn't matter (z=1).
-  const cx = zooms.reduce((acc, { t, rect }, i) => {
-    const c = rect.x + rect.width / 2;
-    return i === 0 ? `${c}` : `if(gte(t,${(t - EASE).toFixed(3)}),${c},${acc})`;
-  }, '');
-  const cy = zooms.reduce((acc, { t, rect }, i) => {
-    const c = rect.y + rect.height / 2;
-    return i === 0 ? `${c}` : `if(gte(t,${(t - EASE).toFixed(3)}),${c},${acc})`;
+  // Centre of attention switches between targets while zoomed out (z=1), so it never jumps on screen.
+  const centre = (axis) => zooms.reduce((acc, { t, rect }, i) => {
+    const c = UP * (axis === 'x' ? rect.x + rect.width / 2 : rect.y + rect.height / 2);
+    return i === 0 ? `${c.toFixed(1)}` : `if(gte(it,${(t - EASE).toFixed(3)}),${c.toFixed(1)},${acc})`;
   }, '');
   return (
-    `scale=w='2*trunc(${W}*${z}/2)':h='2*trunc(${H}*${z}/2)':eval=frame:flags=bicubic,` +
-    `crop=${W}:${H}:x='clip(${cx}*iw/${W}-${W / 2},0,iw-${W})':y='clip(${cy}*ih/${H}-${H / 2},0,ih-${H})',`
+    `scale=${W * UP}:${H * UP}:flags=bicubic,` +
+    `zoompan=z='1+${terms.join('+')}':` +
+    `x='clip(${centre('x')}-iw/zoom/2,0,iw-iw/zoom)':y='clip(${centre('y')}-ih/zoom/2,0,ih-ih/zoom)':` +
+    `d=1:s=${W}x${H}:fps=${FPS},`
   );
 }
 
@@ -43,21 +43,62 @@ async function sceneClip(raw, scene, seconds, file) {
     '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '12', file]);
 }
 
-async function sceneAudio(narration, seconds, file) {
-  const ms = Math.round(LEAD * 1000);
-  await ffmpeg(['-i', narration.file, '-af', `adelay=${ms}|${ms},apad,atrim=0:${seconds.toFixed(3)}`,
-    '-ar', '48000', '-ac', '2', '-c:a', 'pcm_s16le', file]);
+// Sound effects are synthesised once and cached: a soft UI click and a gentle
+// airy whoosh under each cross-dissolve.
+async function sfx() {
+  const dir = path.join(CACHE, 'sfx');
+  const click = path.join(dir, 'click.wav');
+  const whoosh = path.join(dir, 'whoosh.wav');
+  try {
+    await fs.access(whoosh);
+  } catch {
+    await fs.mkdir(dir, { recursive: true });
+    await ffmpeg(['-f', 'lavfi', '-i',
+      'aevalsrc=0.5*sin(2*PI*1500*t)*exp(-t*120)+0.25*sin(2*PI*3100*t)*exp(-t*200):s=48000:d=0.09',
+      '-af', 'highpass=f=600,volume=0.55', '-ac', '2', click]);
+    await ffmpeg(['-f', 'lavfi', '-i', 'anoisesrc=color=pink:amplitude=0.6:d=0.9:r=48000:seed=3',
+      '-af', 'bandpass=f=900:width_type=o:w=2.2,afade=t=in:d=0.45:curve=qsin,afade=t=out:st=0.45:d=0.45:curve=qsin,volume=0.22',
+      '-ac', '2', whoosh]);
+  }
+  return { click, whoosh };
 }
 
+async function sceneAudio(narration, seconds, file, { clicks, whoosh }) {
+  const fx = await sfx();
+  const ms = (t) => Math.max(0, Math.round(t * 1000));
+  const inputs = ['-i', narration.file];
+  const parts = [`[0:a]adelay=${ms(LEAD)}|${ms(LEAD)}[n]`];
+  const labels = ['[n]'];
+  clicks.forEach((t, k) => {
+    inputs.push('-i', fx.click);
+    parts.push(`[${k + 1}:a]adelay=${ms(t)}|${ms(t)}[c${k}]`);
+    labels.push(`[c${k}]`);
+  });
+  if (whoosh) {
+    inputs.push('-i', fx.whoosh);
+    parts.push(`[${clicks.length + 1}:a]anull[w]`);
+    labels.push('[w]');
+  }
+  const graph = `${parts.join(';')};${labels.join('')}amix=inputs=${labels.length}:normalize=0:duration=longest,` +
+    `apad,atrim=0:${seconds.toFixed(3)}`;
+  await ffmpeg([...inputs, '-filter_complex', graph, '-ar', '48000', '-ac', '2', '-c:a', 'pcm_s16le', file]);
+}
+
+// A licensed track from assets/music/ if there is one, else Kyntlo's own generated bed.
 async function musicTrack(lesson) {
   if (lesson.music === false) return null;
+  const files = (await fs.readdir(MUSIC_DIR).catch(() => []))
+    .filter((f) => /\.(mp3|wav|m4a|ogg|flac)$/i.test(f)).sort();
+  const pick = lesson.music ? files.find((f) => f.startsWith(lesson.music)) : files[0];
+  if (pick) return path.join(MUSIC_DIR, pick);
+  const own = path.join(CACHE, 'music', 'kyntlo-ambient.wav');
   try {
-    const files = (await fs.readdir(MUSIC_DIR)).filter((f) => /\.(mp3|wav|m4a|ogg|flac)$/i.test(f)).sort();
-    const pick = lesson.music ? files.find((f) => f.startsWith(lesson.music)) : files[0];
-    return pick ? path.join(MUSIC_DIR, pick) : null;
+    await fs.access(own);
   } catch {
-    return null;
+    await fs.mkdir(path.dirname(own), { recursive: true });
+    await run('python3', ['-I', fileURLToPath(new URL('../music.py', import.meta.url)), own]);
   }
+  return own;
 }
 
 // Builds the finished lesson: scene clips joined with cross-dissolves, narration,
@@ -70,7 +111,10 @@ export async function assemble({ lesson, raw, scenes, narrations, timeline, work
     const v = path.join(work, `scene-${String(i).padStart(2, '0')}.mp4`);
     const a = path.join(work, `scene-${String(i).padStart(2, '0')}.wav`);
     await sceneClip(raw, s, durations[i], v);
-    await sceneAudio(narrations[i], durations[i], a);
+    await sceneAudio(narrations[i], durations[i], a, {
+      clicks: s.clicks.map((t) => t / s.speed),
+      whoosh: i > 0 && lesson.whoosh !== false,
+    });
     clips.push(v);
     audios.push(a);
     process.stdout.write(`  ✂ edited scene ${i + 1}/${scenes.length}\n`);
@@ -98,7 +142,7 @@ export async function assemble({ lesson, raw, scenes, narrations, timeline, work
   if (music) {
     const m = 2 * n;
     extra = ['-stream_loop', '-1', '-i', music];
-    graph += `[${m}:a]aresample=48000,aformat=channel_layouts=stereo,volume=${lesson.musicVolume ?? 0.16},atrim=0:${total.toFixed(3)}[bed];`;
+    graph += `[${m}:a]aresample=48000,aformat=channel_layouts=stereo,volume=${lesson.musicVolume ?? 0.2},atrim=0:${total.toFixed(3)}[bed];`;
     graph += `[bed][key]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=450[ducked];`;
     graph += `[voice][ducked]amix=inputs=2:normalize=0:duration=first,`;
   } else {

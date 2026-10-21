@@ -18,15 +18,21 @@ lesson script ─► narration (Gemini TTS, voice "Aoede") ─► recording (Chr
              ─► lesson.mp4 + lesson.srt + YouTube description with chapters + thumbnail
 ```
 
-1. **Narration.** Each scene's `say` text is spoken by Gemini TTS. Without a
-   `GEMINI_API_KEY` the pipeline renders a silent *draft* (`*.draft.mp4`) timed
-   at natural speaking pace, so footage and edits can be reviewed first.
+1. **Narration.** Each scene's `say` text is spoken by the first available engine:
+   - **Gemini TTS** (voice `Aoede`) when `GEMINI_API_KEY` is set.
+   - **Kokoro** (open-source, Apache-2.0, voice `af_heart`), running locally, when its
+     model files are in `.cache/models/` (`pip install kokoro-onnx soundfile`, then download
+     `kokoro-v1.0.onnx` and `voices-v1.0.bin` from the
+     [kokoro-onnx releases](https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.0)).
+     `KOKORO_VOICE` / `KOKORO_SPEED` adjust it.
+   - Otherwise a silent *draft* (`*.draft.mp4`) timed at natural speaking pace.
 2. **Recording.** A real browser plays the lesson. The recorder adds an animated
    cursor, click ripples, spotlight highlights with labels, and lower-third
    titles. Each scene lasts as long as its narration.
 3. **Edit.** ffmpeg cuts out loading time between scenes, applies speed changes
    and smooth zoom-ins, joins scenes with cross-dissolves, burns in subtitles,
-   ducks the music under the voice, normalises loudness (−16 LUFS) and fades in and out.
+   adds soft click sounds and transition whooshes, ducks the music under the voice,
+   normalises loudness (−16 LUFS) and fades in and out.
 
 ## Setup (one time)
 
@@ -45,9 +51,11 @@ app loads: `*.kyntlo.ai`, `*.leadconnectorhq.com`, `*.msgsndr.com`,
 `*.gohighlevel.com`, `storage.googleapis.com`, `cdn.jsdelivr.net`. If a
 recording shows blank panels, the run prints which hosts were refused.
 
-Music: drop royalty-free tracks licensed for commercial social use into
-`assets/music/` (they're not committed). The first file alphabetically is used,
-or set `music: 'filename-prefix'` in a lesson; `music: false` turns it off.
+Music: by default every video uses Kyntlo's own ambient bed, composed by
+`pipeline/music.py` (original, free to use anywhere). To use licensed tracks
+instead, drop them into `assets/music/` (not committed): the first file
+alphabetically is used, or set `music: 'filename-prefix'` in a lesson;
+`music: false` turns music off.
 
 ```bash
 cd academy/pipeline
@@ -91,6 +99,11 @@ export default {
   ],
 };
 ```
+
+**Before live app access**, a scene can show a real screenshot of the app in a
+`hub.kyntlo.ai` browser frame with `screen: { img: 'assets/….png', url: 'hub.kyntlo.ai/…' }`.
+Targets are then `{ x, y, w, h }` in screenshot pixels instead of selectors (see
+`lessons/customer/a02-01-reading-your-dashboard.mjs`).
 
 Actions: `goto`, `click`, `hover`, `move: [x, y]`, `type` (+`into`), `press`,
 `scroll` (+`ms`), `highlight` (+`label`, `for`), `zoom` (+`scale`, `for`),

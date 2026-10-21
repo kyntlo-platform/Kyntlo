@@ -49,6 +49,9 @@ export const WRITTEN = [
   [/\bfourteen-day\b/gi, '14-day'],
   [/\bninety seconds\b/gi, '90 seconds'],
   [/\bfifteen modules\b/gi, '15 modules'],
+  [/\bcontrol K\b/g, 'Ctrl + K'],
+  [/\btwenty-five percent\b/gi, '25%'],
+  [/\bthirty days\b/gi, '30 days'],
 ];
 
 export function expand(url) {

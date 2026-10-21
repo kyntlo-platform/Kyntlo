@@ -52,7 +52,7 @@ async function render(file, opts) {
   const narrations = [];
   for (const s of lesson.scenes) narrations.push(await narrate(s.say || ''));
   const draft = narrations.some((n) => n.draft);
-  console.log(`  ♪ narration ready (${draft ? 'DRAFT: silent, no GEMINI_API_KEY' : 'Gemini ' + ENV.ttsModel})`);
+  console.log(`  ♪ narration ready (${draft ? 'DRAFT: silent, no voice engine' : narrations[0].engine})`);
 
   const raw = path.join(work, 'raw.mp4');
   const scenes = await record(lesson, narrations, raw, opts);
