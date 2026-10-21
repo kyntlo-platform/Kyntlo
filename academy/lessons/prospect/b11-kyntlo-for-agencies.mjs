@@ -49,7 +49,7 @@ export default {
       say: "Automate the follow-up: an instant reply to every new lead, nurture emails and texts, and notifications for your team.",
       actions: [
         { at: 0.4, title: 'Workflows', sub: 'Follow-up on autopilot · Growth+', for: 3.2 },
-        { at: 3.6, click: '#wf_folder_lead-nurture' },
+        { at: 3.6, click: '#wf_folder_lead_nurture' },
         { at: 4.6, highlight: '#wf_table tbody', label: 'Lead nurture', for: 3 },
       ],
     },
