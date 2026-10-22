@@ -1,0 +1,231 @@
+1
+00:00:00,500 --> 00:00:05,682
+In this lesson, you'll turn your best
+reviews into a live widget on your website,
+
+2
+00:00:05,682 --> 00:00:10,161
+so visitors see real proof from real
+customers, updated automatically.
+
+3
+00:00:10,161 --> 00:00:13,359
+No coding needed, and it
+takes about five minutes.
+
+4
+00:00:14,212 --> 00:00:15,484
+Social proof sells.
+
+5
+00:00:15,484 --> 00:00:20,439
+A visitor who sees dozens of five-star
+reviews is far more likely to book.
+
+6
+00:00:20,439 --> 00:00:24,523
+Widgets show your Google and
+Facebook reviews on any website,
+
+7
+00:00:24,523 --> 00:00:26,531
+including your Kyntlo funnels.
+
+8
+00:00:26,531 --> 00:00:30,013
+And unlike screenshots of
+reviews, a widget is live,
+
+9
+00:00:30,013 --> 00:00:32,156
+so visitors can trust it's real.
+
+10
+00:00:33,007 --> 00:00:35,127
+Click New Widget to open the builder.
+
+11
+00:00:35,127 --> 00:00:39,827
+Your settings are on the left, and a live
+preview of your website is on the right,
+
+12
+00:00:39,827 --> 00:00:42,807
+so you can see every change
+before anyone else does.
+
+13
+00:00:43,657 --> 00:00:47,493
+Give it a name you'll recognise,
+like the page it's going on.
+
+14
+00:00:47,493 --> 00:00:52,083
+You can create as many widgets as you
+need, one for each page or website.
+
+15
+00:00:52,934 --> 00:00:54,289
+Now choose a layout.
+
+16
+00:00:54,289 --> 00:00:57,677
+A carousel slides through
+reviews and saves space.
+
+17
+00:00:57,677 --> 00:01:00,252
+A list suits a dedicated reviews page.
+
+18
+00:01:00,252 --> 00:01:04,114
+A badge is a small rating seal
+for your header or footer.
+
+19
+00:01:04,114 --> 00:01:06,892
+And a grid shows lots of reviews at once.
+
+20
+00:01:06,892 --> 00:01:10,009
+Pick the one that fits
+the space on your page.
+
+21
+00:01:10,859 --> 00:01:15,199
+Choose your sources, Google and
+Facebook, and which ratings to show.
+
+22
+00:01:15,199 --> 00:01:20,306
+Four stars and up is a good balance: it
+looks great, and it still feels genuine.
+
+23
+00:01:20,306 --> 00:01:24,582
+A wall of only five-star reviews
+can actually look less believable.
+
+24
+00:01:25,430 --> 00:01:28,232
+Match your website with
+a light or dark theme,
+
+25
+00:01:28,232 --> 00:01:33,166
+and choose what each review shows: the
+rating summary, reviewer photos and dates.
+
+26
+00:01:33,166 --> 00:01:36,272
+Every change shows up in
+the preview straight away.
+
+27
+00:01:37,121 --> 00:01:37,906
+Happy with it?
+
+28
+00:01:37,906 --> 00:01:38,914
+Click Save widget.
+
+29
+00:01:38,914 --> 00:01:41,716
+You can come back and
+change it whenever you like.
+
+30
+00:01:42,566 --> 00:01:43,742
+Now click Get code.
+
+31
+00:01:43,742 --> 00:01:46,528
+This short snippet is
+all your website needs.
+
+32
+00:01:46,528 --> 00:01:48,571
+You don't need to be a developer.
+
+33
+00:01:48,571 --> 00:01:49,561
+Click Copy code.
+
+34
+00:01:50,410 --> 00:01:54,896
+Paste it into your website
+wherever the reviews should appear.
+
+35
+00:01:54,896 --> 00:02:00,830
+In a Kyntlo funnel or website, add a Custom
+JS or HTML element and paste it there.
+
+36
+00:02:00,830 --> 00:02:05,461
+On WordPress, Wix or Squarespace,
+use their HTML or embed block.
+
+37
+00:02:06,310 --> 00:02:07,626
+You only do this once.
+
+38
+00:02:07,626 --> 00:02:12,410
+Every new review that matches your settings
+appears in the widget automatically.
+
+39
+00:02:12,410 --> 00:02:17,433
+And if you change the layout later, just
+save it here, and your website updates too.
+
+40
+00:02:18,283 --> 00:02:19,311
+Here's a pro tip.
+
+41
+00:02:19,311 --> 00:02:23,179
+Place your review widget right
+next to your main call to action,
+
+42
+00:02:23,179 --> 00:02:24,751
+like your Book now button.
+
+43
+00:02:24,751 --> 00:02:27,410
+Visitors hesitate at
+the moment they decide,
+
+44
+00:02:27,410 --> 00:02:31,158
+and that's exactly when proof
+from other customers helps most.
+
+45
+00:02:31,158 --> 00:02:35,873
+Add a small badge to your header too,
+so your rating is visible on every page.
+
+46
+00:02:36,731 --> 00:02:39,237
+That's the end of the Reputation module.
+
+47
+00:02:39,237 --> 00:02:39,863
+Great job!
+
+48
+00:02:39,863 --> 00:02:44,813
+Next, in module twelve, we'll set up
+payments, starting with connecting Stripe,
+
+49
+00:02:44,813 --> 00:02:47,632
+so you can take payments
+right inside Kyntlo.
+
+50
+00:02:47,632 --> 00:02:48,509
+See you there.

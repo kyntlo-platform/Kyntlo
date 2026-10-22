@@ -1,0 +1,268 @@
+1
+00:00:00,500 --> 00:00:03,698
+In this lesson, we'll go
+deep into the page builder,
+
+2
+00:00:03,698 --> 00:00:07,818
+the drag and drop editor behind
+every funnel and website in Kyntlo.
+
+3
+00:00:07,818 --> 00:00:12,184
+Once you understand how a page is
+put together, you can build anything.
+
+4
+00:00:13,036 --> 00:00:16,916
+Here's Bloom's Invisalign landing
+page, open in the builder.
+
+5
+00:00:16,916 --> 00:00:21,959
+Along the top: switch between desktop
+and mobile view, undo and redo, preview,
+
+6
+00:00:21,959 --> 00:00:23,059
+save and publish.
+
+7
+00:00:23,059 --> 00:00:26,421
+Elements are on the left,
+settings are on the right,
+
+8
+00:00:26,421 --> 00:00:28,555
+and your page sits in the middle.
+
+9
+00:00:29,406 --> 00:00:34,160
+Every page is built from four building
+blocks, nested inside each other.
+
+10
+00:00:34,160 --> 00:00:35,744
+Open Layers to see them.
+
+11
+00:00:35,744 --> 00:00:40,828
+Sections are the big horizontal bands
+of your page, like the hero at the top.
+
+12
+00:00:40,828 --> 00:00:43,337
+Click one, and it's outlined in green.
+
+13
+00:00:44,189 --> 00:00:48,004
+Inside each section are rows,
+and rows split into columns.
+
+14
+00:00:48,004 --> 00:00:53,004
+This hero row has two columns: text on
+the left, and the image on the right.
+
+15
+00:00:53,004 --> 00:00:57,411
+On a phone, those columns stack on
+top of each other automatically.
+
+16
+00:00:58,260 --> 00:01:02,670
+And inside columns are elements:
+the headlines, paragraphs, images,
+
+17
+00:01:02,670 --> 00:01:05,632
+buttons and forms your
+visitors actually see.
+
+18
+00:01:05,632 --> 00:01:07,672
+Click any element to select it.
+
+19
+00:01:07,672 --> 00:01:11,556
+It gets a blue outline, and
+its settings open on the right.
+
+20
+00:01:12,408 --> 00:01:16,179
+To change the words, just click
+the text on the page and type.
+
+21
+00:01:16,179 --> 00:01:19,889
+Select the headline, highlight
+the text, and write a new one.
+
+22
+00:01:19,889 --> 00:01:23,051
+What you see is exactly
+what your visitors will see.
+
+23
+00:01:23,883 --> 00:01:26,286
+The settings panel controls the look.
+
+24
+00:01:26,286 --> 00:01:30,377
+Change the font size and weight,
+the alignment, and the colour.
+
+25
+00:01:30,377 --> 00:01:35,248
+Spacing sets the gap above and below,
+so you never need to add empty lines.
+
+26
+00:01:36,098 --> 00:01:38,335
+To add something new, click the plus.
+
+27
+00:01:38,335 --> 00:01:42,022
+Drag an element from the panel
+and drop it where you want it.
+
+28
+00:01:42,022 --> 00:01:44,742
+A blue line shows exactly
+where it will land.
+
+29
+00:01:44,742 --> 00:01:47,281
+Let's drop a video right below the button.
+
+30
+00:01:48,130 --> 00:01:51,430
+The new video is selected,
+so its settings are ready.
+
+31
+00:01:51,430 --> 00:01:55,416
+Paste the link from YouTube, Vimeo
+or Wistia, and add a caption.
+
+32
+00:01:55,416 --> 00:01:59,712
+Every element type has its own
+settings, like the action of a button,
+
+33
+00:01:59,712 --> 00:02:01,082
+or which form to show.
+
+34
+00:02:01,909 --> 00:02:04,573
+The same panel adds rows and sections.
+
+35
+00:02:04,573 --> 00:02:06,886
+Rows come in one to four columns.
+
+36
+00:02:06,886 --> 00:02:11,443
+Sections come in four widths: full
+width, wide, medium and small.
+
+37
+00:02:11,443 --> 00:02:14,667
+Medium and small work
+well for forms and text,
+
+38
+00:02:14,667 --> 00:02:17,542
+because shorter lines are easier to read.
+
+39
+00:02:18,392 --> 00:02:20,115
+Now switch to mobile view.
+
+40
+00:02:20,115 --> 00:02:22,699
+Columns stack, and text shrinks to fit.
+
+41
+00:02:22,699 --> 00:02:25,350
+You can set a separate mobile font size,
+
+42
+00:02:25,350 --> 00:02:28,531
+so the headline isn't too
+big on a small screen.
+
+43
+00:02:28,531 --> 00:02:30,651
+That change only affects phones.
+
+44
+00:02:31,477 --> 00:02:34,459
+You can also hide an
+element on one device.
+
+45
+00:02:34,459 --> 00:02:40,214
+Large images can slow a phone down, so
+select the hero image and switch off Show on
+
+46
+00:02:40,214 --> 00:02:40,699
+mobile.
+
+47
+00:02:40,699 --> 00:02:43,889
+It stays on desktop, and
+disappears on phones.
+
+48
+00:02:44,738 --> 00:02:49,253
+Before you publish, preview the page
+exactly as visitors will see it,
+
+49
+00:02:49,253 --> 00:02:50,888
+on mobile and on desktop.
+
+50
+00:02:50,888 --> 00:02:53,571
+Then exit the preview, save, and publish.
+
+51
+00:02:53,571 --> 00:02:56,450
+Changes aren't live
+until you click Publish.
+
+52
+00:02:57,299 --> 00:02:58,380
+Here's a pro tip.
+
+53
+00:02:58,380 --> 00:03:02,577
+Most visitors arrive on a phone,
+especially from social media ads.
+
+54
+00:03:02,577 --> 00:03:06,010
+So check every page in mobile
+view before you publish,
+
+55
+00:03:06,010 --> 00:03:09,762
+and make sure the main button
+is visible without scrolling.
+
+56
+00:03:10,611 --> 00:03:13,453
+You now know your way
+around the page builder.
+
+57
+00:03:13,453 --> 00:03:18,642
+Next, we'll build forms and surveys, add
+conditional logic, and embed them anywhere.
+
+58
+00:03:18,642 --> 00:03:19,507
+See you there.

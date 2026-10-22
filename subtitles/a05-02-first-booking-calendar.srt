@@ -1,0 +1,249 @@
+1
+00:00:00,500 --> 00:00:03,978
+In this lesson, we'll build a
+booking calendar from scratch.
+
+2
+00:00:03,978 --> 00:00:08,789
+By the end, patients will be able to book
+you online, only at the times you choose,
+
+3
+00:00:08,789 --> 00:00:11,165
+with breathing room between appointments.
+
+4
+00:00:12,021 --> 00:00:16,342
+Bloom Dental wants patients to
+book emergency appointments online.
+
+5
+00:00:16,342 --> 00:00:19,223
+In Calendar Settings,
+click Create Calendar.
+
+6
+00:00:19,223 --> 00:00:23,478
+Emergencies are always seen by
+Sarah, so choose Personal Booking,
+
+7
+00:00:23,478 --> 00:00:24,722
+and click Continue.
+
+8
+00:00:25,572 --> 00:00:26,965
+Start with the details.
+
+9
+00:00:26,965 --> 00:00:30,661
+Give the calendar a clear name,
+because patients will see it.
+
+10
+00:00:30,661 --> 00:00:34,236
+Kyntlo builds the booking link
+from the name automatically,
+
+11
+00:00:34,236 --> 00:00:36,356
+and you can shorten it if you like.
+
+12
+00:00:36,356 --> 00:00:39,991
+Then add a short description,
+so people know what to expect.
+
+13
+00:00:40,843 --> 00:00:43,558
+Next, choose who this calendar books with.
+
+14
+00:00:43,558 --> 00:00:44,398
+That's Sarah.
+
+15
+00:00:44,398 --> 00:00:46,337
+Then set the meeting location.
+
+16
+00:00:46,337 --> 00:00:51,573
+Ours is in person at the practice, and
+the address is added to every confirmation
+
+17
+00:00:51,573 --> 00:00:52,865
+and calendar invite.
+
+18
+00:00:53,714 --> 00:00:55,924
+Now open the Availability tab.
+
+19
+00:00:55,924 --> 00:00:57,986
+First, the meeting duration.
+
+20
+00:00:57,986 --> 00:01:00,859
+Emergency appointments take 30 minutes.
+
+21
+00:01:00,859 --> 00:01:05,646
+The slot interval controls how
+often a new start time is offered.
+
+22
+00:01:05,646 --> 00:01:08,445
+Every 30 minutes keeps the diary tidy.
+
+23
+00:01:09,297 --> 00:01:11,849
+Below that are your weekly working hours.
+
+24
+00:01:11,849 --> 00:01:14,650
+Switch each day on or
+off, and set the times.
+
+25
+00:01:14,650 --> 00:01:19,691
+Let's switch on Saturday mornings too,
+because toothache doesn't wait for Monday.
+
+26
+00:01:19,691 --> 00:01:24,671
+If you take a lunch break, use the plus
+button to add a second time range on the
+
+27
+00:01:24,671 --> 00:01:25,231
+same day.
+
+28
+00:01:26,081 --> 00:01:30,311
+Date-specific hours override your
+normal week for a single day.
+
+29
+00:01:30,311 --> 00:01:32,593
+Bank holidays are already blocked.
+
+30
+00:01:32,593 --> 00:01:37,025
+Let's add Christmas Eve as unavailable
+too, so nobody can book it.
+
+31
+00:01:37,877 --> 00:01:39,530
+Now the scheduling rules.
+
+32
+00:01:39,530 --> 00:01:42,968
+A buffer adds breathing
+room after each appointment,
+
+33
+00:01:42,968 --> 00:01:45,150
+for notes and resetting the room.
+
+34
+00:01:45,150 --> 00:01:48,720
+Minimum scheduling notice
+stops last-minute surprises.
+
+35
+00:01:48,720 --> 00:01:51,563
+For emergencies, 1
+hour's notice is enough.
+
+36
+00:01:52,411 --> 00:01:55,207
+Booking limits protect
+the rest of your day.
+
+37
+00:01:55,207 --> 00:01:58,892
+We'll allow a maximum of 4
+emergency appointments per day,
+
+38
+00:01:58,892 --> 00:02:01,561
+and let patients book up to 30 days ahead.
+
+39
+00:02:01,561 --> 00:02:05,755
+That way, emergencies never squeeze
+out your routine appointments.
+
+40
+00:02:06,605 --> 00:02:09,015
+Click Save, and your calendar is live.
+
+41
+00:02:09,015 --> 00:02:13,580
+Use Copy link to share the booking
+page on your website, in your emails,
+
+42
+00:02:13,580 --> 00:02:15,799
+or on your Google Business Profile.
+
+43
+00:02:15,799 --> 00:02:19,477
+Patients only ever see times
+when Sarah is genuinely free,
+
+44
+00:02:19,477 --> 00:02:22,711
+because Kyntlo checks her
+other appointments first.
+
+45
+00:02:23,561 --> 00:02:28,388
+Click Preview to see exactly what patients
+see: the calendar name, the length,
+
+46
+00:02:28,388 --> 00:02:32,905
+the location, and a calendar with only
+the times that are genuinely free.
+
+47
+00:02:32,905 --> 00:02:35,937
+Pick a time, and they're
+asked for their details.
+
+48
+00:02:36,792 --> 00:02:37,822
+Here's a pro tip.
+
+49
+00:02:37,822 --> 00:02:42,368
+Before you share the link, book a test
+appointment yourself, on your phone.
+
+50
+00:02:42,368 --> 00:02:47,035
+You'll spot a confusing name, a missing
+day, or a wrong time zone in seconds,
+
+51
+00:02:47,035 --> 00:02:48,672
+before a real patient does.
+
+52
+00:02:49,526 --> 00:02:51,309
+Your first calendar is live!
+
+53
+00:02:51,309 --> 00:02:56,594
+In the next lesson, we'll collect the right
+details at booking, send confirmations,
+
+54
+00:02:56,594 --> 00:02:57,804
+and take a deposit.
+
+55
+00:02:57,804 --> 00:02:58,695
+See you there.

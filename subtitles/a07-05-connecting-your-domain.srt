@@ -1,0 +1,238 @@
+1
+00:00:00,500 --> 00:00:03,104
+Your pages deserve your own web address.
+
+2
+00:00:03,104 --> 00:00:07,922
+In this lesson, you'll connect a domain
+to Kyntlo, set up the DNS records,
+
+3
+00:00:07,922 --> 00:00:10,266
+and get a free security certificate.
+
+4
+00:00:10,266 --> 00:00:12,024
+It's easier than it sounds.
+
+5
+00:00:12,896 --> 00:00:15,086
+Go to Sites, then Domains.
+
+6
+00:00:15,086 --> 00:00:19,719
+Bloom's main website already
+runs on bloomdental.co.uk.
+
+7
+00:00:19,719 --> 00:00:26,204
+The green padlock means SSL is issued,
+so the site loads securely over https.
+
+8
+00:00:27,055 --> 00:00:28,700
+First, a quick decision.
+
+9
+00:00:28,700 --> 00:00:32,880
+A root domain, like yourbusiness.co.uk,
+is your main address.
+
+10
+00:00:32,880 --> 00:00:37,335
+A subdomain adds a word in front,
+like offers.yourbusiness.co.uk.
+
+11
+00:00:37,335 --> 00:00:42,132
+If your main website lives somewhere
+else, use a subdomain for Kyntlo,
+
+12
+00:00:42,132 --> 00:00:44,599
+so your existing site keeps working.
+
+13
+00:00:45,450 --> 00:00:46,498
+Click Add Domain.
+
+14
+00:00:46,498 --> 00:00:50,383
+If you already own the domain,
+choose connect a domain you own.
+
+15
+00:00:50,383 --> 00:00:54,947
+You can also buy a new one right here,
+and Kyntlo sets up the DNS for you.
+
+16
+00:00:55,797 --> 00:00:59,427
+Bloom wants a separate
+address for its ad campaigns,
+
+17
+00:00:59,427 --> 00:01:03,546
+so we'll type offers.bloomdental.co.uk,
+and click Continue.
+
+18
+00:01:04,395 --> 00:01:07,566
+Now Kyntlo shows the DNS record to create.
+
+19
+00:01:07,566 --> 00:01:11,114
+DNS is simply the address
+book of the internet.
+
+20
+00:01:11,114 --> 00:01:14,361
+For a subdomain, you
+need one CNAME record.
+
+21
+00:01:14,361 --> 00:01:19,193
+For a root domain, you'll see an
+A record, plus a CNAME for www.
+
+22
+00:01:20,042 --> 00:01:25,505
+In another tab, log in to wherever
+you bought your domain, like GoDaddy,
+
+23
+00:01:25,505 --> 00:01:27,098
+Namecheap or 123-reg.
+
+24
+00:01:27,098 --> 00:01:32,030
+Open the DNS settings, add the
+record exactly as shown, and save.
+
+25
+00:01:32,030 --> 00:01:34,761
+Use the copy buttons to avoid typos.
+
+26
+00:01:35,612 --> 00:01:37,902
+Back in Kyntlo, click Verify Records.
+
+27
+00:01:37,902 --> 00:01:42,729
+Changes usually work within minutes, but
+can take up to a day or two to spread
+
+28
+00:01:42,729 --> 00:01:43,966
+across the internet.
+
+29
+00:01:43,966 --> 00:01:47,494
+If it doesn't verify straight
+away, just try again later.
+
+30
+00:01:48,344 --> 00:01:50,620
+Now choose what this domain shows.
+
+31
+00:01:50,620 --> 00:01:54,704
+Link it to a funnel, and pick
+the Invisalign Free Scan Offer.
+
+32
+00:01:54,704 --> 00:01:59,056
+A domain can also point to a
+website, a blog, or a client portal.
+
+33
+00:01:59,906 --> 00:02:03,879
+The default page is what people
+see when they type just the domain,
+
+34
+00:02:03,879 --> 00:02:05,184
+with nothing after it.
+
+35
+00:02:05,184 --> 00:02:06,608
+Choose your opt-in step.
+
+36
+00:02:06,608 --> 00:02:10,284
+You can also pick a page to show
+when someone mistypes a link.
+
+37
+00:02:11,134 --> 00:02:12,316
+Click Add Domain.
+
+38
+00:02:12,316 --> 00:02:15,862
+Kyntlo issues a free SSL
+certificate automatically.
+
+39
+00:02:15,862 --> 00:02:19,756
+It shows as issuing for a few
+minutes, then turns green.
+
+40
+00:02:19,756 --> 00:02:24,207
+That padlock tells visitors, and
+Google, that your page is safe.
+
+41
+00:02:25,057 --> 00:02:28,609
+Open the funnel, and every step
+now lives on the new address.
+
+42
+00:02:28,609 --> 00:02:32,394
+You can change a funnel's domain
+at any time in its Settings tab.
+
+43
+00:02:33,248 --> 00:02:34,388
+One last feature.
+
+44
+00:02:34,388 --> 00:02:39,350
+If you rename a page, add a URL redirect
+from the old path to the new one,
+
+45
+00:02:39,350 --> 00:02:42,233
+so old links and Google
+results still work.
+
+46
+00:02:43,082 --> 00:02:44,185
+Here's a pro tip.
+
+47
+00:02:44,185 --> 00:02:49,443
+When you're in your DNS settings, only
+add or change the records Kyntlo asks for.
+
+48
+00:02:49,443 --> 00:02:53,531
+Never delete your MX records,
+because those deliver your email.
+
+49
+00:02:54,386 --> 00:02:56,586
+You're now live on your own domain.
+
+50
+00:02:56,586 --> 00:03:00,861
+Next, we'll read your funnel stats,
+run an A/B test, and set up SEO,
+
+51
+00:03:00,861 --> 00:03:02,495
+so you can keep improving.
+
+52
+00:03:02,495 --> 00:03:03,375
+See you there.

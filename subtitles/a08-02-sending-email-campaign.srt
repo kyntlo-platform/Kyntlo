@@ -1,0 +1,267 @@
+1
+00:00:00,500 --> 00:00:03,150
+In the last lesson, you designed an email.
+
+2
+00:00:03,150 --> 00:00:04,348
+Now let's send one!
+
+3
+00:00:04,348 --> 00:00:09,143
+You'll choose exactly who gets it, write
+a subject line people want to open,
+
+4
+00:00:09,143 --> 00:00:11,604
+schedule it, and then read the results.
+
+5
+00:00:12,454 --> 00:00:17,373
+Here in Marketing, Emails, we have a
+draft ready to go: the November check-up
+
+6
+00:00:17,373 --> 00:00:17,948
+reminder.
+
+7
+00:00:17,948 --> 00:00:21,271
+Click it to open the builder,
+give it one last look,
+
+8
+00:00:21,271 --> 00:00:24,210
+then click Send or
+schedule in the top corner.
+
+9
+00:00:25,060 --> 00:00:26,574
+Step one is recipients.
+
+10
+00:00:26,574 --> 00:00:31,314
+You can send to all contacts, a smart
+list, or anyone with certain tags.
+
+11
+00:00:31,314 --> 00:00:35,659
+This reminder is only for patients
+due a check-up, so choose Tags,
+
+12
+00:00:35,659 --> 00:00:36,844
+and pick check-up.
+
+13
+00:00:36,844 --> 00:00:39,544
+Kyntlo shows you how many people that is.
+
+14
+00:00:40,394 --> 00:00:42,167
+Notice the note underneath.
+
+15
+00:00:42,167 --> 00:00:46,566
+Anyone who unsubscribed, or has
+email turned off in Do Not Disturb,
+
+16
+00:00:46,566 --> 00:00:48,207
+is skipped automatically.
+
+17
+00:00:48,207 --> 00:00:51,950
+You never have to clean the
+list by hand before you send.
+
+18
+00:00:52,798 --> 00:00:54,326
+Step two is the sender.
+
+19
+00:00:54,326 --> 00:00:57,846
+Use a name people recognise,
+like your business name,
+
+20
+00:00:57,846 --> 00:01:00,502
+and an email address on your own domain.
+
+21
+00:01:00,502 --> 00:01:05,484
+The green badge means your dedicated
+sending domain is set up and verified.
+
+22
+00:01:05,484 --> 00:01:08,672
+We'll cover why that
+matters in the next lesson.
+
+23
+00:01:09,522 --> 00:01:11,614
+Step three is your subject line.
+
+24
+00:01:11,614 --> 00:01:13,379
+Keep it short and personal.
+
+25
+00:01:13,379 --> 00:01:16,909
+Type it, then add the first
+name merge field in front.
+
+26
+00:01:16,909 --> 00:01:22,138
+The preview text is the grey line people
+see next to the subject in their inbox.
+
+27
+00:01:22,138 --> 00:01:24,688
+Use it to give one more reason to open.
+
+28
+00:01:25,538 --> 00:01:28,613
+Always send yourself a
+test before the real thing.
+
+29
+00:01:28,613 --> 00:01:32,857
+Click Send test email, then check
+it on your phone and your computer.
+
+30
+00:01:32,857 --> 00:01:37,593
+Look for typos, broken links, and make
+sure the first name fills in properly.
+
+31
+00:01:38,442 --> 00:01:39,935
+Step 4: when to send.
+
+32
+00:01:39,935 --> 00:01:42,209
+Send now goes out straight away.
+
+33
+00:01:42,209 --> 00:01:47,042
+Schedule lets you pick a date and
+time, in your account's time zone.
+
+34
+00:01:47,042 --> 00:01:50,027
+Let's choose Tuesday 3 November, at 10:00.
+
+35
+00:01:50,878 --> 00:01:53,726
+For big lists, there's
+also Send in batches.
+
+36
+00:01:53,726 --> 00:01:58,257
+Kyntlo sends a set number of emails,
+waits, then sends the next group.
+
+37
+00:01:58,257 --> 00:02:00,846
+It's gentler on your sending reputation.
+
+38
+00:02:00,846 --> 00:02:03,111
+You'll use this in the next lesson.
+
+39
+00:02:03,961 --> 00:02:05,198
+Now click Schedule.
+
+40
+00:02:05,198 --> 00:02:10,276
+Kyntlo shows a quick summary: the campaign,
+how many people, and exactly when.
+
+41
+00:02:10,276 --> 00:02:11,903
+Confirm, and you're done.
+
+42
+00:02:11,903 --> 00:02:15,093
+Your campaign now shows
+as scheduled in the list.
+
+43
+00:02:15,942 --> 00:02:19,648
+Once a campaign has gone out,
+click it to see the results.
+
+44
+00:02:19,648 --> 00:02:22,716
+Delivered, opened and
+clicked are the big three.
+
+45
+00:02:22,716 --> 00:02:26,614
+Open rates are estimates, because
+some email apps hide opens,
+
+46
+00:02:26,614 --> 00:02:29,745
+so clicks are the most
+reliable sign of interest.
+
+47
+00:02:30,595 --> 00:02:33,347
+Link activity shows which
+links people clicked,
+
+48
+00:02:33,347 --> 00:02:35,630
+so you know what caught their interest.
+
+49
+00:02:35,630 --> 00:02:39,435
+And the recipients list shows who
+did what, one person at a time.
+
+50
+00:02:39,435 --> 00:02:42,128
+Someone who clicked to
+book but didn't finish?
+
+51
+00:02:42,128 --> 00:02:44,001
+That's a perfect person to call.
+
+52
+00:02:44,852 --> 00:02:45,852
+Here's a pro tip.
+
+53
+00:02:45,852 --> 00:02:48,617
+The best time to send
+depends on your audience.
+
+54
+00:02:48,617 --> 00:02:52,323
+Try a weekday morning one month,
+and an early evening the next.
+
+55
+00:02:52,323 --> 00:02:55,323
+Compare the click rates,
+and stick with the winner.
+
+56
+00:02:56,171 --> 00:02:58,135
+You've sent your first campaign!
+
+57
+00:02:58,135 --> 00:03:02,800
+Next, we'll make sure your emails land
+in the inbox and not the spam folder,
+
+58
+00:03:02,800 --> 00:03:05,255
+with a few simple deliverability basics.
+
+59
+00:03:05,255 --> 00:03:06,114
+See you there.

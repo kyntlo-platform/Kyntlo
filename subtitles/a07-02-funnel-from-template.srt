@@ -1,0 +1,234 @@
+1
+00:00:00,500 --> 00:00:05,040
+In this lesson, you'll build a complete
+funnel without starting from a blank page.
+
+2
+00:00:05,040 --> 00:00:08,971
+We'll pick a template, make it look
+like your business, and publish it.
+
+3
+00:00:08,971 --> 00:00:09,469
+Let's go.
+
+4
+00:00:10,337 --> 00:00:13,525
+Go to Sites, then Funnels,
+and click New Funnel.
+
+5
+00:00:13,525 --> 00:00:18,707
+You can start from blank, use a template,
+or let Funnels AI draft one for you.
+
+6
+00:00:18,707 --> 00:00:23,223
+Funnels AI is billed per funnel,
+so today we'll use a free template.
+
+7
+00:00:24,075 --> 00:00:26,637
+Click From Template to open the library.
+
+8
+00:00:26,637 --> 00:00:30,033
+Use the categories on the
+left to narrow things down.
+
+9
+00:00:30,033 --> 00:00:34,389
+There are designs for dental and
+health practices, local businesses,
+
+10
+00:00:34,389 --> 00:00:35,670
+and lead generation.
+
+11
+00:00:36,520 --> 00:00:38,826
+Before you choose, preview the template.
+
+12
+00:00:38,826 --> 00:00:43,380
+Check it on mobile too, because that's
+where most of your visitors will see it.
+
+13
+00:00:43,380 --> 00:00:47,589
+This one has a clear headline, a short
+form, and a strong call to action.
+
+14
+00:00:48,441 --> 00:00:49,304
+Happy with it?
+
+15
+00:00:49,304 --> 00:00:53,128
+Click Use, and give your funnel
+a name you'll recognise later.
+
+16
+00:00:53,128 --> 00:00:58,186
+Bloom is launching dental implants, so
+we'll call it Dental Implants Consultation.
+
+17
+00:00:59,051 --> 00:01:03,932
+And just like that, you have a three-step
+funnel: an opt-in page, a booking page,
+
+18
+00:01:03,932 --> 00:01:05,198
+and a thank-you page.
+
+19
+00:01:05,198 --> 00:01:08,271
+Each step is still a draft,
+so nothing is live yet.
+
+20
+00:01:08,271 --> 00:01:10,742
+Let's open the first step and click Edit.
+
+21
+00:01:11,591 --> 00:01:13,249
+Welcome to the page builder.
+
+22
+00:01:13,249 --> 00:01:14,493
+First, make it yours.
+
+23
+00:01:14,493 --> 00:01:17,633
+Click the business name at
+the top and type your own.
+
+24
+00:01:17,633 --> 00:01:21,423
+In the settings panel on the
+right, update the phone number too.
+
+25
+00:01:22,249 --> 00:01:25,619
+Now the headline, the most
+important words on the page.
+
+26
+00:01:25,619 --> 00:01:27,457
+Say exactly what visitors get.
+
+27
+00:01:27,457 --> 00:01:30,213
+Click it, select the
+text, and type your own.
+
+28
+00:01:31,038 --> 00:01:32,099
+Select the button.
+
+29
+00:01:32,099 --> 00:01:36,756
+Here you can change its text, its colour,
+and what happens when someone clicks.
+
+30
+00:01:36,756 --> 00:01:39,467
+In this template, it
+scrolls down to the form.
+
+31
+00:01:39,467 --> 00:01:41,825
+Let's switch the colour to Bloom's teal.
+
+32
+00:01:42,675 --> 00:01:45,341
+Swap the template image for one of yours.
+
+33
+00:01:45,341 --> 00:01:48,983
+Select the image, click Replace
+image, and pick a photo.
+
+34
+00:01:48,983 --> 00:01:53,925
+Then add alt text, a short description
+that helps Google and screen readers.
+
+35
+00:01:54,775 --> 00:01:55,971
+Click Save as you go.
+
+36
+00:01:55,971 --> 00:01:59,216
+When you're ready for the
+world to see it, click Publish.
+
+37
+00:01:59,216 --> 00:02:02,177
+The status at the top tells
+you everything is saved.
+
+38
+00:02:03,027 --> 00:02:06,369
+Back in the funnel, give the
+step a clean web address.
+
+39
+00:02:06,369 --> 00:02:09,216
+Open the step menu,
+choose Edit name and path,
+
+40
+00:02:09,216 --> 00:02:13,423
+and type something short and
+descriptive, like implant consultation.
+
+41
+00:02:14,271 --> 00:02:17,792
+Repeat the same edits on the
+booking and thank-you steps,
+
+42
+00:02:17,792 --> 00:02:20,016
+so the whole journey looks like you.
+
+43
+00:02:20,016 --> 00:02:23,166
+In lesson 7.5, we'll connect
+your own domain to it.
+
+44
+00:02:24,018 --> 00:02:25,114
+Here's a pro tip.
+
+45
+00:02:25,114 --> 00:02:29,691
+Templates are laid out to convert,
+so resist the urge to redesign them.
+
+46
+00:02:29,691 --> 00:02:34,269
+Keep the structure, and spend your
+time on the words: a clear headline,
+
+47
+00:02:34,269 --> 00:02:36,912
+real benefits, and one obvious next step.
+
+48
+00:02:37,762 --> 00:02:39,423
+Your first funnel is live!
+
+49
+00:02:39,423 --> 00:02:44,469
+Next, we'll go deeper into the page
+builder: sections, rows, columns, elements,
+
+50
+00:02:44,469 --> 00:02:45,491
+and mobile view.
+
+51
+00:02:45,491 --> 00:02:46,386
+See you there.

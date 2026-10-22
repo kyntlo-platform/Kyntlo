@@ -1,0 +1,254 @@
+1
+00:00:00,500 --> 00:00:03,696
+Posting on social media
+every day can eat your time.
+
+2
+00:00:03,696 --> 00:00:07,076
+In this lesson, you'll use
+the Social Planner to write,
+
+3
+00:00:07,076 --> 00:00:11,625
+schedule and manage posts for all your
+social accounts, from one calendar.
+
+4
+00:00:12,478 --> 00:00:15,420
+You'll find it under
+Marketing, Social Planner.
+
+5
+00:00:15,420 --> 00:00:18,048
+The calendar shows everything at a glance.
+
+6
+00:00:18,048 --> 00:00:21,992
+Blue posts are scheduled, and
+green ones are already published.
+
+7
+00:00:21,992 --> 00:00:25,434
+The little icons show which
+accounts each post goes to.
+
+8
+00:00:26,282 --> 00:00:28,175
+First, connect your accounts.
+
+9
+00:00:28,175 --> 00:00:29,676
+Click Connect accounts.
+
+10
+00:00:29,676 --> 00:00:34,899
+You can link a Facebook page, Instagram,
+your Google Business Profile, LinkedIn,
+
+11
+00:00:34,899 --> 00:00:35,747
+TikTok and X.
+
+12
+00:00:35,747 --> 00:00:39,598
+Click Connect, log in to that
+network once, and you're set.
+
+13
+00:00:40,449 --> 00:00:43,225
+Switch to Week for a
+closer look at timings.
+
+14
+00:00:43,225 --> 00:00:47,263
+Or switch to List, where you can
+filter by scheduled, published,
+
+15
+00:00:47,263 --> 00:00:48,778
+drafts and failed posts.
+
+16
+00:00:48,778 --> 00:00:53,636
+Failed is worth checking now and then,
+usually it just means an account needs
+
+17
+00:00:53,636 --> 00:00:54,456
+reconnecting.
+
+18
+00:00:55,309 --> 00:00:56,710
+Now let's create one.
+
+19
+00:00:56,710 --> 00:00:57,712
+Click New Post.
+
+20
+00:00:57,712 --> 00:00:59,914
+At the top, choose where it goes.
+
+21
+00:00:59,914 --> 00:01:02,850
+Facebook and Instagram
+are already selected.
+
+22
+00:01:02,850 --> 00:01:06,588
+Let's add LinkedIn too, so
+we reach local professionals.
+
+23
+00:01:07,443 --> 00:01:08,501
+Stuck for words?
+
+24
+00:01:08,501 --> 00:01:11,740
+Click Content AI, and
+describe the post you want.
+
+25
+00:01:11,740 --> 00:01:15,112
+Here, an invitation to our
+Invisalign open evening.
+
+26
+00:01:15,112 --> 00:01:20,598
+Click Generate, and in seconds you have a
+friendly draft, with emojis and hashtags.
+
+27
+00:01:20,598 --> 00:01:23,441
+Always read it, and
+make it sound like you.
+
+28
+00:01:24,296 --> 00:01:28,595
+Posts with an image get far more
+attention, and Instagram needs one.
+
+29
+00:01:28,595 --> 00:01:32,198
+Click Add media, and pick a
+file from your Media Storage.
+
+30
+00:01:32,198 --> 00:01:34,727
+It appears straight away in the preview.
+
+31
+00:01:35,576 --> 00:01:38,579
+On the right, preview the
+post for each network.
+
+32
+00:01:38,579 --> 00:01:42,458
+Instagram shows the image first,
+with your caption underneath.
+
+33
+00:01:42,458 --> 00:01:44,585
+LinkedIn looks more like Facebook.
+
+34
+00:01:44,585 --> 00:01:48,776
+Check each one, because long text
+gets cut off in different places.
+
+35
+00:01:49,627 --> 00:01:50,822
+Don't forget Google.
+
+36
+00:01:50,822 --> 00:01:55,724
+Posts to your Google Business Profile show
+up on your listing in Google Search and
+
+37
+00:01:55,724 --> 00:01:58,473
+Maps, right where local
+customers are looking.
+
+38
+00:01:58,473 --> 00:02:02,239
+Keep them short, because Google
+only shows the first few lines,
+
+39
+00:02:02,239 --> 00:02:04,570
+and they come with a handy Book button.
+
+40
+00:02:05,418 --> 00:02:07,558
+Finally, pick when it goes out.
+
+41
+00:02:07,558 --> 00:02:13,079
+Let's choose Thursday 5 November at 18:00,
+when people are scrolling after work.
+
+42
+00:02:13,079 --> 00:02:16,392
+Click Schedule, and there
+it is on the calendar.
+
+43
+00:02:16,392 --> 00:02:19,843
+You could also post it
+now, or save it as a draft.
+
+44
+00:02:20,695 --> 00:02:22,738
+Some posts are worth repeating.
+
+45
+00:02:22,738 --> 00:02:25,506
+Our Smile Tip Tuesday goes out every week.
+
+46
+00:02:25,506 --> 00:02:30,317
+Open it, and you'll see Recurring post
+switched on, set to repeat weekly.
+
+47
+00:02:30,317 --> 00:02:34,205
+It's perfect for evergreen
+tips, opening hours and reviews.
+
+48
+00:02:35,054 --> 00:02:36,138
+Here's a pro tip.
+
+49
+00:02:36,138 --> 00:02:40,922
+Give each weekday a theme, like tips
+on Tuesday and team stories on Friday.
+
+50
+00:02:40,922 --> 00:02:44,940
+Then set aside one hour a month
+to schedule everything at once.
+
+51
+00:02:44,940 --> 00:02:48,831
+You'll post consistently without
+thinking about it every day.
+
+52
+00:02:49,688 --> 00:02:52,094
+Your social media is now on autopilot.
+
+53
+00:02:52,094 --> 00:02:56,021
+In the last lesson of this module,
+you'll learn trigger links,
+
+54
+00:02:56,021 --> 00:02:59,187
+so you can see exactly who
+clicked, and act on it.
+
+55
+00:02:59,187 --> 00:03:00,074
+See you there.

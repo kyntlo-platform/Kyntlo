@@ -1,0 +1,231 @@
+1
+00:00:00,500 --> 00:00:01,047
+Hi there!
+
+2
+00:00:01,047 --> 00:00:05,665
+In this lesson, we're opening up Contacts,
+the heart of your Kyntlo account.
+
+3
+00:00:05,665 --> 00:00:09,737
+You'll learn to search, filter,
+sort and arrange your contact list,
+
+4
+00:00:09,737 --> 00:00:13,079
+and to save the views you
+use every day as smart lists.
+
+5
+00:00:13,933 --> 00:00:18,164
+Every lead and customer who reaches
+you, from a form, a phone call,
+
+6
+00:00:18,164 --> 00:00:20,753
+a chat or an ad, lands here as a contact.
+
+7
+00:00:20,753 --> 00:00:24,479
+Think of it as one shared
+address book for your whole team,
+
+8
+00:00:24,479 --> 00:00:27,068
+with each person's full history attached.
+
+9
+00:00:27,919 --> 00:00:32,433
+Each row shows a person's phone number,
+email, tags, where they came from,
+
+10
+00:00:32,433 --> 00:00:34,324
+and when they were last active.
+
+11
+00:00:34,324 --> 00:00:38,473
+The number at the top tells you how
+many contacts you have in total.
+
+12
+00:00:39,323 --> 00:00:42,484
+The quickest way to find
+someone is the search bar.
+
+13
+00:00:42,484 --> 00:00:45,954
+Type part of a name, an email
+address or a phone number,
+
+14
+00:00:45,954 --> 00:00:48,310
+and the list narrows down as you type.
+
+15
+00:00:49,160 --> 00:00:53,663
+To narrow the list by what you know
+about people, use Advanced Filters.
+
+16
+00:00:53,663 --> 00:00:57,533
+Click Add filter, choose a field,
+like Tag, and pick a value.
+
+17
+00:00:57,533 --> 00:01:00,387
+Let's find everyone
+interested in Invisalign.
+
+18
+00:01:01,237 --> 00:01:02,007
+Click Apply.
+
+19
+00:01:02,007 --> 00:01:06,880
+Now the list shows only matching contacts,
+and the filter appears as a chip,
+
+20
+00:01:06,880 --> 00:01:09,574
+so you always know what you're looking at.
+
+21
+00:01:09,574 --> 00:01:12,075
+Click the cross on a chip to remove it.
+
+22
+00:01:12,075 --> 00:01:13,999
+You can stack several filters.
+
+23
+00:01:13,999 --> 00:01:16,949
+A contact has to match
+all of them to show up.
+
+24
+00:01:17,799 --> 00:01:18,996
+Next to it is Sort.
+
+25
+00:01:18,996 --> 00:01:22,019
+By default, your newest
+contacts are at the top.
+
+26
+00:01:22,019 --> 00:01:25,987
+You can switch to oldest first,
+or sort alphabetically by name.
+
+27
+00:01:25,987 --> 00:01:30,270
+Alphabetical order is handy when
+you're working through a call list.
+
+28
+00:01:31,121 --> 00:01:33,230
+Want to see different information?
+
+29
+00:01:33,230 --> 00:01:34,098
+Click Columns.
+
+30
+00:01:34,098 --> 00:01:39,123
+Tick the fields you care about, like the
+team member each contact is assigned to,
+
+31
+00:01:39,123 --> 00:01:41,914
+or a custom field such
+as treatment interest.
+
+32
+00:01:41,914 --> 00:01:44,085
+And untick the ones you don't need.
+
+33
+00:01:44,936 --> 00:01:49,101
+Click Apply, and the list now shows
+exactly what your team needs at a glance.
+
+34
+00:01:49,951 --> 00:01:51,242
+Here's the best part.
+
+35
+00:01:51,242 --> 00:01:55,732
+Once your filters, sort and columns
+look right, click Save as smart list,
+
+36
+00:01:55,732 --> 00:01:56,900
+and give it a name.
+
+37
+00:01:56,900 --> 00:01:59,053
+We'll call it Invisalign call list.
+
+38
+00:01:59,903 --> 00:02:03,455
+Your new smart list appears
+as a tab next to the others.
+
+39
+00:02:03,455 --> 00:02:04,913
+It isn't a frozen copy.
+
+40
+00:02:04,913 --> 00:02:10,114
+It updates itself, so new Invisalign leads
+appear in it the moment they're tagged.
+
+41
+00:02:10,964 --> 00:02:12,887
+Click All to go back to everyone.
+
+42
+00:02:12,887 --> 00:02:15,627
+You can also share a
+smart list with teammates,
+
+43
+00:02:15,627 --> 00:02:17,842
+so everybody works from the same view.
+
+44
+00:02:18,692 --> 00:02:19,760
+Here's a pro tip.
+
+45
+00:02:19,760 --> 00:02:23,529
+Create one smart list for every
+job your team does each day.
+
+46
+00:02:23,529 --> 00:02:28,177
+For example, new leads from this week,
+or patients who are due a check-up.
+
+47
+00:02:28,177 --> 00:02:32,825
+Then your morning routine is simple:
+open the list, work through it, done.
+
+48
+00:02:33,676 --> 00:02:35,211
+That's your contact list!
+
+49
+00:02:35,211 --> 00:02:39,879
+In the next lesson, you'll add contacts
+by hand, import a whole spreadsheet,
+
+50
+00:02:39,879 --> 00:02:42,458
+and learn how Kyntlo keeps duplicates out.
+
+51
+00:02:42,458 --> 00:02:43,318
+See you there.

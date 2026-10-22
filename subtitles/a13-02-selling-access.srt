@@ -1,0 +1,251 @@
+1
+00:00:00,500 --> 00:00:04,704
+In this lesson, you'll turn your
+courses into something people can buy.
+
+2
+00:00:04,704 --> 00:00:09,381
+You'll create an offer, set a price, and
+let Kyntlo enrol buyers automatically,
+
+3
+00:00:09,381 --> 00:00:10,861
+without lifting a finger.
+
+4
+00:00:11,712 --> 00:00:13,029
+Here's the key idea.
+
+5
+00:00:13,029 --> 00:00:15,466
+Members never buy a product directly.
+
+6
+00:00:15,466 --> 00:00:17,639
+They get access through an offer.
+
+7
+00:00:17,639 --> 00:00:21,195
+An offer bundles one or more
+products, sets the price,
+
+8
+00:00:21,195 --> 00:00:24,356
+and grants access when
+someone pays or signs up.
+
+9
+00:00:25,208 --> 00:00:27,236
+Bloom's current offers are free.
+
+10
+00:00:27,236 --> 00:00:32,052
+Invisalign patients get their course
+at no cost, as part of their treatment.
+
+11
+00:00:32,052 --> 00:00:36,424
+Free offers are great for adding
+value to a service you already sell.
+
+12
+00:00:36,424 --> 00:00:38,642
+Now let's create a paid membership.
+
+13
+00:00:39,493 --> 00:00:41,703
+Click Create Offer and give it a name.
+
+14
+00:00:41,703 --> 00:00:46,471
+We'll call it Bloom Smile Club, a monthly
+membership for patients who want to keep
+
+15
+00:00:46,471 --> 00:00:47,867
+their smile at its best.
+
+16
+00:00:48,717 --> 00:00:50,014
+Choose what's included.
+
+17
+00:00:50,014 --> 00:00:54,130
+We'll add the Smile Care at Home
+course, plus our members-only community,
+
+18
+00:00:54,130 --> 00:00:56,272
+which we'll set up in the next lesson.
+
+19
+00:00:57,128 --> 00:00:58,004
+Now, pricing.
+
+20
+00:00:58,004 --> 00:01:03,128
+An offer can be free, a one-time payment,
+a payment plan, or a subscription.
+
+21
+00:01:03,128 --> 00:01:05,420
+Choose Subscription and enter £15.
+
+22
+00:01:05,420 --> 00:01:08,724
+Members are billed every
+month until they cancel,
+
+23
+00:01:08,724 --> 00:01:12,364
+through the Stripe account
+you connected in module 12.
+
+24
+00:01:13,219 --> 00:01:15,568
+On the right are the access settings.
+
+25
+00:01:15,568 --> 00:01:19,123
+With automatic access on, the
+moment a payment succeeds,
+
+26
+00:01:19,123 --> 00:01:22,234
+the buyer is enrolled in
+everything in the offer,
+
+27
+00:01:22,234 --> 00:01:24,774
+and gets an email with their login link.
+
+28
+00:01:24,774 --> 00:01:28,329
+No manual work for you, and
+no waiting for the customer.
+
+29
+00:01:29,179 --> 00:01:30,423
+Click Publish offer.
+
+30
+00:01:30,423 --> 00:01:32,226
+It's live, and ready to sell.
+
+31
+00:01:32,226 --> 00:01:36,516
+You can edit the offer later, and
+existing members keep their access.
+
+32
+00:01:37,367 --> 00:01:39,313
+Share it with the checkout link.
+
+33
+00:01:39,313 --> 00:01:43,936
+Put it in an email, a text message, or
+behind a Join button on your website.
+
+34
+00:01:43,936 --> 00:01:46,673
+If you'd rather sell
+through a Kyntlo funnel,
+
+35
+00:01:46,673 --> 00:01:49,836
+attach this offer to the
+product in your order form,
+
+36
+00:01:49,836 --> 00:01:52,087
+and buyers are enrolled the same way.
+
+37
+00:01:52,937 --> 00:01:53,800
+Let's test it.
+
+38
+00:01:53,800 --> 00:01:55,219
+Click Preview checkout.
+
+39
+00:01:55,219 --> 00:01:59,905
+This is what buyers see: what's included,
+the price, and a secure card form.
+
+40
+00:01:59,905 --> 00:02:02,064
+We'll make a test purchase as Emma.
+
+41
+00:02:04,271 --> 00:02:07,613
+Payment done, and Emma is
+enrolled automatically.
+
+42
+00:02:07,613 --> 00:02:10,204
+Her login email is already on its way.
+
+43
+00:02:10,204 --> 00:02:13,409
+If a subscription payment
+fails or she cancels,
+
+44
+00:02:13,409 --> 00:02:16,410
+her access can be removed
+automatically too.
+
+45
+00:02:17,259 --> 00:02:21,502
+On the Courses dashboard, Emma now
+appears under Recent enrolments,
+
+46
+00:02:21,502 --> 00:02:23,149
+with the offer she joined.
+
+47
+00:02:23,149 --> 00:02:25,935
+You can also grant an
+offer from a workflow,
+
+48
+00:02:25,935 --> 00:02:30,685
+for example giving every new Invisalign
+patient their course automatically.
+
+49
+00:02:31,534 --> 00:02:32,552
+Here's a pro tip.
+
+50
+00:02:32,552 --> 00:02:37,042
+Before you charge for a course, give
+it away free to a few loyal customers.
+
+51
+00:02:37,042 --> 00:02:41,952
+Their feedback will make it better, and
+their results become the testimonials that
+
+52
+00:02:41,952 --> 00:02:43,209
+sell your paid offer.
+
+53
+00:02:44,189 --> 00:02:45,413
+You're ready to sell!
+
+54
+00:02:45,413 --> 00:02:50,190
+In the next lesson, we'll build the
+members-only community we just included in our
+
+55
+00:02:50,190 --> 00:02:50,539
+offer.
+
+56
+00:02:50,539 --> 00:02:51,355
+See you there.

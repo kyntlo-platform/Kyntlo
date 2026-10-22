@@ -1,0 +1,249 @@
+1
+00:00:00,500 --> 00:00:04,290
+In module six, you moved deals
+through your pipeline by hand.
+
+2
+00:00:04,290 --> 00:00:07,770
+That works, until things get
+busy and cards stop moving.
+
+3
+00:00:07,770 --> 00:00:12,057
+In this lesson, workflows will keep
+your pipeline up to date for you,
+
+4
+00:00:12,057 --> 00:00:15,723
+and create tasks so your team
+always knows what to do next.
+
+5
+00:00:16,571 --> 00:00:17,496
+Here's the plan.
+
+6
+00:00:17,496 --> 00:00:20,155
+When someone books a new
+patient consultation,
+
+7
+00:00:20,155 --> 00:00:23,392
+their deal should move to the
+Consultation Booked stage,
+
+8
+00:00:23,392 --> 00:00:27,900
+the contact should be tagged, and someone
+should get a task to prepare for the
+
+9
+00:00:27,900 --> 00:00:28,247
+visit.
+
+10
+00:00:29,098 --> 00:00:33,810
+Create a new workflow from scratch,
+and name it so the purpose is obvious:
+
+11
+00:00:33,810 --> 00:00:35,720
+Consultation Booked, Pipeline.
+
+12
+00:00:36,570 --> 00:00:39,275
+The trigger is Customer
+Booked Appointment.
+
+13
+00:00:39,275 --> 00:00:42,735
+Add a filter for the New
+Patient Consultation calendar,
+
+14
+00:00:42,735 --> 00:00:46,509
+so check-ups and whitening
+sessions don't move deals around.
+
+15
+00:00:46,509 --> 00:00:47,893
+Then save the trigger.
+
+16
+00:00:49,088 --> 00:00:51,583
+Now add Create, or Update Opportunity.
+
+17
+00:00:51,583 --> 00:00:56,245
+Choose the Patient Journey pipeline,
+and the Consultation Booked stage.
+
+18
+00:00:56,245 --> 00:01:00,710
+If the contact already has a deal
+in this pipeline, Kyntlo moves it.
+
+19
+00:01:00,710 --> 00:01:02,220
+If not, it creates one.
+
+20
+00:01:02,220 --> 00:01:04,781
+So it works for brand-new bookings too.
+
+21
+00:01:05,631 --> 00:01:07,760
+Two switches at the bottom matter.
+
+22
+00:01:07,760 --> 00:01:10,265
+Allow duplicate opportunities stays off,
+
+23
+00:01:10,265 --> 00:01:14,210
+so one person never ends up with
+three copies of the same deal.
+
+24
+00:01:14,210 --> 00:01:18,155
+And the first switch lets a deal
+move back to an earlier stage,
+
+25
+00:01:18,155 --> 00:01:21,724
+which is useful if someone
+books again after going quiet.
+
+26
+00:01:21,724 --> 00:01:22,726
+Save the action.
+
+27
+00:01:23,581 --> 00:01:26,508
+Next, add a contact tag:
+consultation booked.
+
+28
+00:01:26,508 --> 00:01:29,824
+Tags like this are what
+your other workflows check.
+
+29
+00:01:29,824 --> 00:01:32,816
+Remember the If/Else in
+our new lead workflow?
+
+30
+00:01:32,816 --> 00:01:34,767
+It looks for exactly this tag.
+
+31
+00:01:35,624 --> 00:01:36,645
+Finally, a task.
+
+32
+00:01:36,645 --> 00:01:41,752
+Add Task, give it a clear title, like
+Prepare consultation notes, and assign it.
+
+33
+00:01:41,752 --> 00:01:46,284
+It appears in the assigned user's
+task list, and on the contact record,
+
+34
+00:01:46,284 --> 00:01:47,369
+due the next day.
+
+35
+00:01:48,221 --> 00:01:53,709
+Here's the finished workflow: booking in,
+deal moved, contact tagged, task created.
+
+36
+00:01:53,709 --> 00:01:55,692
+Switch it to Publish and save.
+
+37
+00:01:55,692 --> 00:02:01,047
+From now on, nobody has to remember to
+drag that card, even on your busiest days.
+
+38
+00:02:01,899 --> 00:02:05,110
+Workflows can also start
+from the pipeline itself.
+
+39
+00:02:05,110 --> 00:02:08,256
+Open the trigger list and
+search for opportunity.
+
+40
+00:02:08,256 --> 00:02:13,201
+You can react when a deal is created,
+when its status changes to won or lost,
+
+41
+00:02:13,201 --> 00:02:16,283
+when it moves to a stage,
+or when it goes stale.
+
+42
+00:02:17,134 --> 00:02:19,075
+Here's one Bloom already uses.
+
+43
+00:02:19,075 --> 00:02:23,538
+When an opportunity in the Patient
+Journey pipeline is marked as won,
+
+44
+00:02:23,538 --> 00:02:27,742
+the contact is tagged as a patient,
+and receives a welcome email.
+
+45
+00:02:27,742 --> 00:02:31,494
+A great first impression,
+without anyone lifting a finger.
+
+46
+00:02:32,344 --> 00:02:33,401
+Here's a pro tip.
+
+47
+00:02:33,401 --> 00:02:38,004
+Let workflows handle the predictable
+moves in the middle of your pipeline,
+
+48
+00:02:38,004 --> 00:02:39,435
+like enquiry to booked.
+
+49
+00:02:39,435 --> 00:02:42,110
+But let a person mark
+deals as won or lost.
+
+50
+00:02:42,110 --> 00:02:46,402
+That keeps your reports honest, and
+your revenue numbers trustworthy.
+
+51
+00:02:47,261 --> 00:02:49,337
+Your pipeline now updates itself.
+
+52
+00:02:49,337 --> 00:02:53,803
+In the next lesson, you'll learn how
+to start new workflows in seconds,
+
+53
+00:02:53,803 --> 00:02:55,376
+using ready-made recipes.
+
+54
+00:02:55,376 --> 00:02:56,256
+See you there!

@@ -1,0 +1,237 @@
+1
+00:00:00,500 --> 00:00:04,002
+Most businesses use a few
+other tools alongside Kyntlo.
+
+2
+00:00:04,002 --> 00:00:07,885
+In this lesson, you'll connect
+them directly from a workflow.
+
+3
+00:00:07,885 --> 00:00:12,405
+We'll receive data with an inbound
+webhook, add rows to a Google Sheet,
+
+4
+00:00:12,405 --> 00:00:14,506
+and send data out to another app.
+
+5
+00:00:15,358 --> 00:00:17,064
+These are premium features.
+
+6
+00:00:17,064 --> 00:00:22,183
+They're included on the Pro plan, and each
+time a premium trigger or action runs,
+
+7
+00:00:22,183 --> 00:00:24,015
+a small usage charge applies.
+
+8
+00:00:24,015 --> 00:00:27,617
+You'll find the current rates
+on the Kyntlo pricing page.
+
+9
+00:00:27,617 --> 00:00:30,334
+In the builder, look
+for the premium badge.
+
+10
+00:00:31,184 --> 00:00:32,436
+Here's the example.
+
+11
+00:00:32,436 --> 00:00:35,401
+Bloom's website is built
+on another platform,
+
+12
+00:00:35,401 --> 00:00:38,234
+and its enquiry form
+needs to reach Kyntlo.
+
+13
+00:00:38,234 --> 00:00:43,571
+Every enquiry should become a contact,
+and a row in the practice manager's Google
+
+14
+00:00:43,571 --> 00:00:43,966
+Sheet.
+
+15
+00:00:44,816 --> 00:00:46,759
+The trigger is Inbound Webhook.
+
+16
+00:00:46,759 --> 00:00:48,889
+Kyntlo gives you a unique address.
+
+17
+00:00:48,889 --> 00:00:53,777
+Copy it, and paste it into your other
+app, as the place to send new enquiries.
+
+18
+00:00:54,627 --> 00:00:59,501
+Then send one test enquiry from that
+app, and click Fetch sample requests.
+
+19
+00:00:59,501 --> 00:01:03,979
+Kyntlo shows the data it received:
+name, email, phone and treatment.
+
+20
+00:01:03,979 --> 00:01:07,075
+Now it knows which fields
+are available to map.
+
+21
+00:01:07,930 --> 00:01:13,231
+The first action, Create Contact, maps
+that incoming data onto contact fields.
+
+22
+00:01:13,231 --> 00:01:18,872
+The first name, email and phone from the
+webhook become a real contact in your CRM,
+
+23
+00:01:18,872 --> 00:01:21,794
+with tags so you know
+where they came from.
+
+24
+00:01:22,644 --> 00:01:23,887
+Next, Google Sheets.
+
+25
+00:01:23,887 --> 00:01:28,426
+Connect your Google account once, then
+choose what to do: create, update,
+
+26
+00:01:28,426 --> 00:01:29,918
+look up or delete a row.
+
+27
+00:01:29,918 --> 00:01:32,343
+Pick the spreadsheet and the worksheet.
+
+28
+00:01:33,329 --> 00:01:36,987
+Then map each column in your
+sheet to a custom value.
+
+29
+00:01:36,987 --> 00:01:41,612
+Name goes in the name column, email
+in the email column, and so on.
+
+30
+00:01:41,612 --> 00:01:45,063
+Every new enquiry adds a
+fresh row, automatically,
+
+31
+00:01:45,063 --> 00:01:47,410
+so the sheet is always up to date.
+
+32
+00:01:47,410 --> 00:01:48,514
+Save the action.
+
+33
+00:01:49,369 --> 00:01:51,635
+Data can travel the other way too.
+
+34
+00:01:51,635 --> 00:01:53,901
+Click plus and search for webhook.
+
+35
+00:01:53,901 --> 00:01:57,632
+The standard Webhook action
+posts contact data to a URL.
+
+36
+00:01:57,632 --> 00:02:02,164
+Custom Webhook is the premium
+version, where you control the method,
+
+37
+00:02:02,164 --> 00:02:05,896
+headers and body, for tools
+that need a specific format.
+
+38
+00:02:06,744 --> 00:02:09,572
+Enter the address your
+other tool gave you,
+
+39
+00:02:09,572 --> 00:02:13,123
+check the body uses the right
+custom values, and save.
+
+40
+00:02:13,123 --> 00:02:17,661
+Now every enquiry is also sent to
+that system, the moment it arrives.
+
+41
+00:02:18,512 --> 00:02:23,514
+You'll find a few more premium actions
+in the list, such as Custom Code,
+
+42
+00:02:23,514 --> 00:02:26,779
+and the AI actions, like
+GPT Powered by OpenAI.
+
+43
+00:02:26,779 --> 00:02:29,211
+We'll use those in the next module.
+
+44
+00:02:30,063 --> 00:02:31,124
+Here's a pro tip.
+
+45
+00:02:31,124 --> 00:02:36,241
+When you connect another tool, send one
+test record, and then open Execution Logs.
+
+46
+00:02:36,241 --> 00:02:39,548
+You'll see exactly what was
+sent, and what came back,
+
+47
+00:02:39,548 --> 00:02:42,232
+before real customer
+data flows through it.
+
+48
+00:02:43,081 --> 00:02:46,042
+Your workflows can now
+talk to your other tools.
+
+49
+00:02:46,042 --> 00:02:50,855
+In the final lesson of this module,
+you'll learn to troubleshoot any workflow,
+
+50
+00:02:50,855 --> 00:02:53,569
+using enrollment history
+and execution logs.
+
+51
+00:02:53,569 --> 00:02:54,433
+See you there!

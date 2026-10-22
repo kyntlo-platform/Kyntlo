@@ -1,0 +1,224 @@
+1
+00:00:00,500 --> 00:00:05,595
+In this lesson, we'll work through your
+Launchpad, the setup checklist in Kyntlo.
+
+2
+00:00:05,595 --> 00:00:09,054
+In about 15 minutes, your
+Google profile, social pages,
+
+3
+00:00:09,054 --> 00:00:13,079
+website chat and phone will all
+be feeding leads into one place.
+
+4
+00:00:13,937 --> 00:00:16,505
+Click Launchpad near
+the top of the sidebar.
+
+5
+00:00:16,505 --> 00:00:20,590
+Each step connects one of the places
+your customers already reach you.
+
+6
+00:00:20,590 --> 00:00:24,733
+Your progress is tracked at the top,
+so you can always see what's left.
+
+7
+00:00:25,583 --> 00:00:27,020
+Let's start with Google.
+
+8
+00:00:27,020 --> 00:00:31,751
+Connecting your Google Business Profile
+brings your Google reviews and messages
+
+9
+00:00:31,751 --> 00:00:34,925
+into Kyntlo, so you can
+reply without switching apps.
+
+10
+00:00:34,925 --> 00:00:39,237
+Click Connect, then choose the Google
+account that manages your listing.
+
+11
+00:00:40,088 --> 00:00:42,051
+Google asks you to allow access.
+
+12
+00:00:42,051 --> 00:00:45,486
+Click Allow, then pick the
+business location to connect.
+
+13
+00:00:45,486 --> 00:00:48,124
+If you have more than
+one practice or shop,
+
+14
+00:00:48,124 --> 00:00:50,639
+choose the one that matches this account.
+
+15
+00:00:51,492 --> 00:00:53,441
+Next, Facebook and Instagram.
+
+16
+00:00:53,441 --> 00:00:58,884
+Connect the Facebook page for your business,
+and tick your Instagram account too.
+
+17
+00:00:58,884 --> 00:01:03,723
+Instagram needs to be a business or
+creator account linked to that page.
+
+18
+00:01:03,723 --> 00:01:09,099
+Once it's connected, Messenger and Instagram
+messages land in your Conversations
+
+19
+00:01:09,099 --> 00:01:09,503
+inbox.
+
+20
+00:01:10,352 --> 00:01:11,612
+Now the chat widget.
+
+21
+00:01:11,612 --> 00:01:14,384
+It adds a small chat
+bubble to your website,
+
+22
+00:01:14,384 --> 00:01:19,613
+and every message goes straight to your
+inbox, with the visitor saved as a contact.
+
+23
+00:01:19,613 --> 00:01:20,495
+Click Install.
+
+24
+00:01:20,495 --> 00:01:24,463
+You can copy the code yourself,
+email it to your web developer,
+
+25
+00:01:24,463 --> 00:01:26,227
+or use the WordPress plugin.
+
+26
+00:01:27,078 --> 00:01:31,759
+The code goes just before the closing
+body tag on every page of your site.
+
+27
+00:01:31,759 --> 00:01:35,870
+Copy it, add it to your website,
+then mark the step as installed.
+
+28
+00:01:35,870 --> 00:01:39,412
+We'll style the widget and
+test it properly in Module 4.
+
+29
+00:01:40,261 --> 00:01:43,959
+Set up your email takes you
+to Email Services in Settings.
+
+30
+00:01:43,959 --> 00:01:46,891
+This is where you add
+your own sending domain,
+
+31
+00:01:46,891 --> 00:01:51,418
+so your emails come from your business
+and land in the inbox, not spam.
+
+32
+00:01:51,418 --> 00:01:54,414
+It needs a few changes
+at your domain provider,
+
+33
+00:01:54,414 --> 00:01:57,028
+so we give it a full lesson in Module 14.
+
+34
+00:01:57,877 --> 00:02:01,169
+Get a business phone number
+opens the Phone System.
+
+35
+00:02:01,169 --> 00:02:05,815
+A Kyntlo number lets you call and
+text customers from one shared number,
+
+36
+00:02:05,815 --> 00:02:09,559
+with every call and message
+saved on the contact's record.
+
+37
+00:02:09,559 --> 00:02:13,689
+Buying a number and registering
+it is also covered in Module 14.
+
+38
+00:02:14,540 --> 00:02:17,458
+And look at that: three of
+the five steps are done.
+
+39
+00:02:17,458 --> 00:02:22,208
+Email and phone are still open, and they'll
+stay on your checklist until you finish
+
+40
+00:02:22,208 --> 00:02:24,039
+them, so nothing gets forgotten.
+
+41
+00:02:24,892 --> 00:02:25,939
+Here's a pro tip.
+
+42
+00:02:25,939 --> 00:02:30,188
+Always connect Google and Facebook
+with an account the business owns,
+
+43
+00:02:30,188 --> 00:02:32,343
+not a team member's personal login.
+
+44
+00:02:32,343 --> 00:02:36,468
+If that person ever leaves, your
+reviews and messages keep flowing.
+
+45
+00:02:37,353 --> 00:02:38,071
+Great work!
+
+46
+00:02:38,071 --> 00:02:42,119
+Next, we'll fill in your business
+profile: your logo, address,
+
+47
+00:02:42,119 --> 00:02:43,946
+time zone and legal details.
+
+48
+00:02:43,946 --> 00:02:45,709
+See you in the next lesson.

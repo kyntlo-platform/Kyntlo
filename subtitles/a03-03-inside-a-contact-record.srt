@@ -1,0 +1,230 @@
+1
+00:00:00,500 --> 00:00:05,350
+In this lesson, we'll open a contact and
+look at everything Kyntlo knows about
+
+2
+00:00:05,350 --> 00:00:08,459
+them: their details, their
+timeline, notes, tasks,
+
+3
+00:00:08,459 --> 00:00:11,009
+appointments and Do Not Disturb settings.
+
+4
+00:00:11,862 --> 00:00:14,235
+From your contact list, click any name.
+
+5
+00:00:14,235 --> 00:00:19,347
+Let's open Olivia Bennett, a new Invisalign
+lead who found us through a Facebook ad.
+
+6
+00:00:20,197 --> 00:00:22,463
+A contact record has three columns.
+
+7
+00:00:22,463 --> 00:00:24,276
+On the left are her details.
+
+8
+00:00:24,276 --> 00:00:27,319
+In the middle is her
+activity and conversation.
+
+9
+00:00:27,319 --> 00:00:31,850
+And on the right are her opportunities,
+appointments, tasks and notes.
+
+10
+00:00:32,700 --> 00:00:35,073
+Every field on the left can be edited.
+
+11
+00:00:35,073 --> 00:00:40,007
+Click a field, make your change, and a
+Save button appears at the bottom of the
+
+12
+00:00:40,007 --> 00:00:40,381
+panel.
+
+13
+00:00:40,381 --> 00:00:43,816
+Here, I'll add the company
+Olivia works for, then save.
+
+14
+00:00:44,668 --> 00:00:46,859
+The middle column is her timeline.
+
+15
+00:00:46,859 --> 00:00:50,919
+Every message, booking, tag and
+change is logged here in order,
+
+16
+00:00:50,919 --> 00:00:56,333
+so anyone on your team can catch up in
+seconds, even if they've never spoken to her.
+
+17
+00:00:56,333 --> 00:00:59,491
+Switch to Conversations
+to see just her messages.
+
+18
+00:01:00,342 --> 00:01:02,614
+You can reply right from the record.
+
+19
+00:01:02,614 --> 00:01:05,958
+Choose the channel, type
+your message and click Send.
+
+20
+00:01:05,958 --> 00:01:10,879
+Her reply comes back into this same
+thread, and into your Conversations inbox.
+
+21
+00:01:10,879 --> 00:01:14,160
+She asked about Thursday,
+so let's offer her a time.
+
+22
+00:01:14,986 --> 00:01:18,553
+On the right, notes are for
+anything your team should remember.
+
+23
+00:01:18,553 --> 00:01:21,440
+Click the plus next to
+Notes, type it in, and save.
+
+24
+00:01:22,573 --> 00:01:25,627
+Tasks are reminders with
+a due date and an owner.
+
+25
+00:01:25,627 --> 00:01:29,928
+Let's remind ourselves to call Olivia
+tomorrow if she hasn't replied.
+
+26
+00:01:29,928 --> 00:01:33,231
+Tasks show up on your
+dashboard and in the Tasks tab,
+
+27
+00:01:33,231 --> 00:01:35,475
+so nothing slips through the cracks.
+
+28
+00:01:36,325 --> 00:01:38,653
+You can book appointments from here too.
+
+29
+00:01:38,653 --> 00:01:42,612
+Click the plus next to Appointments,
+choose the calendar and a time,
+
+30
+00:01:42,612 --> 00:01:44,707
+and Kyntlo sends her a confirmation.
+
+31
+00:01:46,323 --> 00:01:50,379
+At the top on the right, opportunities
+show the deals linked to her,
+
+32
+00:01:50,379 --> 00:01:51,990
+with their stage and value.
+
+33
+00:01:51,990 --> 00:01:54,316
+Click one to see where the deal stands.
+
+34
+00:01:54,316 --> 00:01:56,404
+We'll dig into those in module six.
+
+35
+00:01:57,254 --> 00:02:00,715
+Finally, scroll down the
+left side to Do Not Disturb.
+
+36
+00:02:00,715 --> 00:02:05,614
+If someone asks you to stop messaging
+them, switch on DND for that channel,
+
+37
+00:02:05,614 --> 00:02:07,508
+or for every channel at once.
+
+38
+00:02:08,358 --> 00:02:11,848
+With DND on, Kyntlo blocks
+messages on those channels,
+
+39
+00:02:11,848 --> 00:02:14,886
+including ones from
+automations and bulk sends.
+
+40
+00:02:14,886 --> 00:02:20,121
+It's how you respect people's wishes and
+stay on the right side of privacy rules.
+
+41
+00:02:20,121 --> 00:02:23,999
+Olivia is happy to hear from
+us, so I'll switch it back off.
+
+42
+00:02:24,850 --> 00:02:25,886
+Here's a pro tip.
+
+43
+00:02:25,886 --> 00:02:29,236
+After every phone call, take
+ten seconds to add a note.
+
+44
+00:02:29,236 --> 00:02:32,466
+When a colleague picks up
+the conversation next week,
+
+45
+00:02:32,466 --> 00:02:34,903
+they'll know exactly where things stand,
+
+46
+00:02:34,903 --> 00:02:37,888
+and your customer never
+has to repeat themselves.
+
+47
+00:02:38,740 --> 00:02:40,412
+That's the contact record!
+
+48
+00:02:40,412 --> 00:02:44,141
+Next, we'll look at tags,
+custom fields and custom values,
+
+49
+00:02:44,141 --> 00:02:48,706
+the three tools that make your
+automations and messages truly personal.
+
+50
+00:02:48,706 --> 00:02:49,607
+See you there.

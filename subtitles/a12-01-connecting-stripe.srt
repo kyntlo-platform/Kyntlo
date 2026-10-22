@@ -1,0 +1,238 @@
+1
+00:00:00,500 --> 00:00:03,330
+Welcome to Module 12,
+all about getting paid!
+
+2
+00:00:03,330 --> 00:00:07,983
+Before Kyntlo can take a single card
+payment, it needs a payment provider.
+
+3
+00:00:07,983 --> 00:00:12,887
+In this lesson, we'll connect Stripe,
+test it safely, and see where it's used.
+
+4
+00:00:13,737 --> 00:00:17,532
+Open Payments in the sidebar,
+then the Integrations tab.
+
+5
+00:00:17,532 --> 00:00:20,446
+This is where every
+payment provider lives.
+
+6
+00:00:20,446 --> 00:00:22,547
+Stripe is the one we recommend.
+
+7
+00:00:22,547 --> 00:00:26,477
+You can also connect PayPal,
+Square, Authorize.net or NMI.
+
+8
+00:00:26,477 --> 00:00:31,695
+Each business account connects its own
+provider, so if you run two locations,
+
+9
+00:00:31,695 --> 00:00:33,593
+each one is paid separately.
+
+10
+00:00:34,448 --> 00:00:38,536
+Before you connect, have three
+things ready: your business details,
+
+11
+00:00:38,536 --> 00:00:42,564
+the bank account you want your
+money paid into, and some photo ID.
+
+12
+00:00:42,564 --> 00:00:47,202
+Stripe asks for these to verify your
+business, and it's a legal requirement.
+
+13
+00:00:48,053 --> 00:00:50,325
+Now click Connect on the Stripe card.
+
+14
+00:00:50,325 --> 00:00:52,412
+Kyntlo explains what happens next.
+
+15
+00:00:52,412 --> 00:00:56,465
+You'll go to Stripe, where you can
+sign in to an existing account,
+
+16
+00:00:56,465 --> 00:00:58,245
+or create a new one for free.
+
+17
+00:00:59,096 --> 00:01:00,630
+Click Connect with Stripe.
+
+18
+00:01:00,630 --> 00:01:03,933
+Stripe asks you to choose the
+account for this business.
+
+19
+00:01:03,933 --> 00:01:08,298
+Check the name and currency, pounds
+for a UK business, then click Connect.
+
+20
+00:01:08,298 --> 00:01:12,722
+If you're creating a brand new Stripe
+account, it only takes a few minutes,
+
+21
+00:01:12,722 --> 00:01:15,435
+and you'll come straight
+back here afterwards.
+
+22
+00:01:16,286 --> 00:01:17,180
+And that's it.
+
+23
+00:01:17,180 --> 00:01:21,716
+The Stripe card now says connected,
+and shows the account and the mode.
+
+24
+00:01:21,716 --> 00:01:23,633
+Live mode means real payments.
+
+25
+00:01:23,633 --> 00:01:28,872
+You can open your Stripe dashboard from
+here at any time, to see payouts and fees.
+
+26
+00:01:29,723 --> 00:01:31,395
+So where does the money go?
+
+27
+00:01:31,395 --> 00:01:34,430
+Stripe collects each
+payment, takes its card fee,
+
+28
+00:01:34,430 --> 00:01:38,332
+and pays the rest into your bank
+account on a regular schedule,
+
+29
+00:01:38,332 --> 00:01:39,756
+usually every few days.
+
+30
+00:01:39,756 --> 00:01:43,720
+You'll find every payout and every
+fee in your Stripe dashboard,
+
+31
+00:01:43,720 --> 00:01:46,631
+and every payment in
+Kyntlo's Transactions tab.
+
+32
+00:01:47,480 --> 00:01:49,549
+Want to try things out first?
+
+33
+00:01:49,549 --> 00:01:51,761
+Switch on test mode at the top.
+
+34
+00:01:51,761 --> 00:01:54,329
+Test payments never move real money.
+
+35
+00:01:54,329 --> 00:01:57,825
+Stripe's test card number
+is 4242 4242 4242 4242.
+
+36
+00:01:57,825 --> 00:02:01,036
+When you're done, switch
+test mode off again.
+
+37
+00:02:01,888 --> 00:02:03,810
+Some customers prefer PayPal.
+
+38
+00:02:03,810 --> 00:02:06,195
+You can connect it alongside Stripe.
+
+39
+00:02:06,195 --> 00:02:11,430
+You’ll need a Client ID and Secret key
+from the Apps & Credentials page of your
+
+40
+00:02:11,430 --> 00:02:13,219
+PayPal Developer dashboard.
+
+41
+00:02:13,219 --> 00:02:15,340
+Make sure you use the Live ones.
+
+42
+00:02:16,190 --> 00:02:21,059
+Once Stripe is connected, you can take
+card payments everywhere in Kyntlo: on
+
+43
+00:02:21,059 --> 00:02:24,853
+invoices, payment links and
+Text2Pay, on funnel order forms,
+
+44
+00:02:24,853 --> 00:02:28,015
+and as deposits when someone
+books an appointment.
+
+45
+00:02:28,865 --> 00:02:29,930
+Here's a pro tip.
+
+46
+00:02:29,930 --> 00:02:35,004
+Once you're live, send yourself a £1
+payment link, and pay it with your own card.
+
+47
+00:02:35,004 --> 00:02:38,950
+Check it appears in Transactions
+and in Stripe, then refund it.
+
+48
+00:02:38,950 --> 00:02:43,334
+Now you know the whole journey works,
+before a customer ever tries it.
+
+49
+00:02:44,185 --> 00:02:45,919
+You're ready to take payments!
+
+50
+00:02:45,919 --> 00:02:49,271
+In the next lesson, we'll set
+up your products and prices,
+
+51
+00:02:49,271 --> 00:02:50,832
+and send our first invoice.
+
+52
+00:02:50,832 --> 00:02:51,641
+See you there.

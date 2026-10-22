@@ -1,0 +1,98 @@
+1
+00:00:00,500 --> 00:00:04,676
+Welcome to Kyntlo Academy, the
+complete course: 15 modules,
+
+2
+00:00:04,676 --> 00:00:09,205
+from your very first login to a
+business that runs on autopilot.
+
+3
+00:00:10,059 --> 00:00:13,612
+First, you'll find your way
+around, read your dashboard,
+
+4
+00:00:13,612 --> 00:00:15,960
+and bring every contact into one CRM.
+
+5
+00:00:16,809 --> 00:00:19,610
+Then you'll answer every
+message from one inbox,
+
+6
+00:00:19,610 --> 00:00:22,002
+and let customers book themselves online.
+
+7
+00:00:22,852 --> 00:00:25,029
+You'll track every deal in your pipeline,
+
+8
+00:00:25,029 --> 00:00:27,683
+and build funnels and
+websites that capture leads.
+
+9
+00:00:28,532 --> 00:00:31,190
+You'll send email, text
+and social campaigns,
+
+10
+00:00:31,190 --> 00:00:34,144
+and build workflows that
+do the follow-up for you.
+
+11
+00:00:34,995 --> 00:00:38,097
+You'll put AI to work on
+your chats and phone calls,
+
+12
+00:00:38,097 --> 00:00:40,662
+and collect five-star
+reviews on autopilot.
+
+13
+00:00:41,510 --> 00:00:44,602
+Then you'll take payments,
+sell courses and memberships,
+
+14
+00:00:44,602 --> 00:00:47,583
+and set up your phone numbers,
+email and integrations.
+
+15
+00:00:48,580 --> 00:00:53,183
+And in the final module, you'll put it
+all together: a complete lead-to-booking
+
+16
+00:00:53,183 --> 00:00:55,513
+system, plus a 30-day plan to launch it.
+
+17
+00:00:56,377 --> 00:01:00,767
+Every lesson is short, focused on
+one task, with every click on screen.
+
+18
+00:01:00,767 --> 00:01:04,044
+And a plan badge shows which
+plan each feature needs.
+
+19
+00:01:04,897 --> 00:01:05,298
+Ready?
+
+20
+00:01:05,298 --> 00:01:06,636
+Start with lesson 1.
+
+21
+00:01:06,636 --> 00:01:12,055
+And if you don't have an account yet,
+start your free 14-day trial, at kyntlo.ai.

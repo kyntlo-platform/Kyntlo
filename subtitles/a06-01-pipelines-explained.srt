@@ -1,0 +1,253 @@
+1
+00:00:00,500 --> 00:00:01,851
+Welcome to Module 6!
+
+2
+00:00:01,851 --> 00:00:07,460
+Here, we'll look at Opportunities, where
+you track every deal from first enquiry to
+
+3
+00:00:07,460 --> 00:00:08,541
+paying customer.
+
+4
+00:00:08,541 --> 00:00:13,069
+In this lesson, we'll cover the
+building blocks: pipelines, stages,
+
+5
+00:00:13,069 --> 00:00:14,420
+values and statuses.
+
+6
+00:00:15,272 --> 00:00:17,254
+First, a contact is a person.
+
+7
+00:00:17,254 --> 00:00:21,081
+An opportunity is a deal you
+might win with that person.
+
+8
+00:00:21,081 --> 00:00:22,994
+Olivia Bennett is a contact.
+
+9
+00:00:22,994 --> 00:00:26,274
+Olivia's Invisalign
+treatment is an opportunity.
+
+10
+00:00:26,274 --> 00:00:29,896
+One contact can have several
+opportunities over time.
+
+11
+00:00:30,747 --> 00:00:35,429
+A pipeline is your sales process,
+laid out as stages from left to right.
+
+12
+00:00:35,429 --> 00:00:40,696
+This one, called Patient Journey, follows
+a new patient from their first enquiry,
+
+13
+00:00:40,696 --> 00:00:42,777
+all the way to booked treatment.
+
+14
+00:00:43,627 --> 00:00:45,124
+Each column is a stage.
+
+15
+00:00:45,124 --> 00:00:49,941
+New enquiry, contacted, consultation
+booked, treatment plan sent, and won.
+
+16
+00:00:49,941 --> 00:00:54,107
+As a deal moves forward, its card
+moves one column to the right.
+
+17
+00:00:54,107 --> 00:00:59,509
+Put your stages in the order things really
+happen, so the board reads like a story,
+
+18
+00:00:59,509 --> 00:01:00,746
+from left to right.
+
+19
+00:01:01,595 --> 00:01:06,425
+The top of each column shows how
+many deals are in that stage,
+
+20
+00:01:06,425 --> 00:01:08,216
+and what they're worth.
+
+21
+00:01:08,216 --> 00:01:11,800
+New Enquiry has 3
+opportunities, worth £7,690.
+
+22
+00:01:12,649 --> 00:01:14,575
+Each card is one opportunity.
+
+23
+00:01:14,575 --> 00:01:19,424
+It shows the deal name, the contact,
+where the lead came from, the value,
+
+24
+00:01:19,424 --> 00:01:20,487
+and who owns it.
+
+25
+00:01:20,487 --> 00:01:26,000
+The icons along the bottom let you call,
+text or email them, or add a task or note,
+
+26
+00:01:26,000 --> 00:01:27,727
+without leaving the board.
+
+27
+00:01:28,579 --> 00:01:31,824
+Always add a value, even
+if it's an estimate.
+
+28
+00:01:31,824 --> 00:01:35,645
+Values are what turn a list
+of names into a forecast.
+
+29
+00:01:35,645 --> 00:01:40,187
+If you don't know the exact amount
+yet, use your average price,
+
+30
+00:01:40,187 --> 00:01:42,927
+and update it once the plan is agreed.
+
+31
+00:01:42,927 --> 00:01:46,749
+Here, everything in this
+pipeline adds up to £24,740.
+
+32
+00:01:47,599 --> 00:01:50,036
+Every opportunity also has a status.
+
+33
+00:01:50,036 --> 00:01:52,609
+Open means you're still working on it.
+
+34
+00:01:52,609 --> 00:01:54,234
+Won means they said yes.
+
+35
+00:01:54,234 --> 00:01:55,859
+Lost means they said no.
+
+36
+00:01:55,859 --> 00:02:00,665
+And abandoned means they went quiet,
+or you've decided to stop chasing.
+
+37
+00:02:01,516 --> 00:02:05,641
+Here's the part people often miss:
+stage and status are separate.
+
+38
+00:02:05,641 --> 00:02:09,386
+Dragging a card into the Won
+column doesn't mark it as won.
+
+39
+00:02:09,386 --> 00:02:11,988
+Open the card, and set its status to Won,
+
+40
+00:02:11,988 --> 00:02:14,908
+because the status is
+what your reports count.
+
+41
+00:02:15,759 --> 00:02:20,422
+When you mark a deal as lost, choose
+a reason, like price, or no response.
+
+42
+00:02:20,422 --> 00:02:25,274
+After a few months, those reasons tell
+you exactly what to fix in your offer,
+
+43
+00:02:25,274 --> 00:02:26,409
+or your follow-up.
+
+44
+00:02:27,263 --> 00:02:31,205
+You can also run separate
+pipelines for different services.
+
+45
+00:02:31,205 --> 00:02:35,748
+The Starter plan includes one
+pipeline, Growth includes up to three,
+
+46
+00:02:35,748 --> 00:02:37,151
+and Pro is unlimited.
+
+47
+00:02:37,151 --> 00:02:41,093
+Here, Invisalign has its own
+pipeline, with its own stages.
+
+48
+00:02:41,946 --> 00:02:43,024
+Here's a pro tip.
+
+49
+00:02:43,024 --> 00:02:47,207
+Create a new pipeline only when
+the steps are genuinely different,
+
+50
+00:02:47,207 --> 00:02:50,693
+like a long Invisalign journey
+versus a quick check-up.
+
+51
+00:02:50,693 --> 00:02:52,785
+Don't create one per team member.
+
+52
+00:02:52,785 --> 00:02:55,194
+Use the owner filter for that instead.
+
+53
+00:02:56,043 --> 00:02:57,931
+Now you know how pipelines work.
+
+54
+00:02:57,931 --> 00:03:00,822
+In the next lesson, we'll
+build one from scratch,
+
+55
+00:03:00,822 --> 00:03:03,064
+and put its stages in the right order.
+
+56
+00:03:03,064 --> 00:03:03,890
+See you there!

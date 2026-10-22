@@ -1,0 +1,139 @@
+1
+00:00:00,500 --> 00:00:03,724
+How many logins does it
+take to run your business?
+
+2
+00:00:03,724 --> 00:00:08,818
+A CRM here, a booking app there, an email
+tool, a text tool, a website builder.
+
+3
+00:00:08,818 --> 00:00:10,107
+Let's add it all up.
+
+4
+00:00:10,962 --> 00:00:12,747
+Here's a typical stack.
+
+5
+00:00:12,747 --> 00:00:15,385
+Pipedrive or HubSpot for your CRM.
+
+6
+00:00:15,385 --> 00:00:17,325
+ClickFunnels for funnels.
+
+7
+00:00:17,325 --> 00:00:19,964
+WordPress or Wix for your website.
+
+8
+00:00:19,964 --> 00:00:21,438
+Typeform for forms.
+
+9
+00:00:21,438 --> 00:00:22,990
+Mailchimp for email.
+
+10
+00:00:22,990 --> 00:00:25,240
+And Twilio for text messages.
+
+11
+00:00:26,095 --> 00:00:29,938
+Then Calendly for bookings,
+Zapier to glue it all together,
+
+12
+00:00:29,938 --> 00:00:32,153
+and Birdeye or Podium for reviews.
+
+13
+00:00:32,153 --> 00:00:35,215
+That's nine tools, nine
+logins, and nine bills.
+
+14
+00:00:36,066 --> 00:00:40,887
+Added up, a stack like that
+can cost $2,488+ a month.
+
+15
+00:00:40,887 --> 00:00:44,071
+And none of it talks to each other.
+
+16
+00:00:44,921 --> 00:00:49,741
+Kyntlo replaces all nine, with one
+platform, one login and one invoice.
+
+17
+00:00:49,741 --> 00:00:55,036
+And because it's all connected, your
+customer data finally lives in one place.
+
+18
+00:00:55,909 --> 00:01:00,613
+Every customer has one record, with their
+conversations, appointments and deals,
+
+19
+00:01:00,613 --> 00:01:01,377
+all together.
+
+20
+00:01:02,228 --> 00:01:05,354
+Your funnels, website and
+forms are built right here,
+
+21
+00:01:05,354 --> 00:01:07,950
+and every lead drops
+straight into your CRM.
+
+22
+00:01:08,799 --> 00:01:13,479
+And instead of gluing apps together with
+Zapier, workflows connect your forms,
+
+23
+00:01:13,479 --> 00:01:15,699
+calendar, emails and texts, natively.
+
+24
+00:01:16,550 --> 00:01:18,326
+So what does Kyntlo cost?
+
+25
+00:01:18,326 --> 00:01:20,244
+Plans start at $90 a month.
+
+26
+00:01:20,244 --> 00:01:26,139
+Choose quarterly billing, and your first
+3 months are half price, from $45 a month.
+
+27
+00:01:26,993 --> 00:01:32,530
+Texts, calls, emails and AI are pay-as-you-go,
+at wholesale rates, with no markup.
+
+28
+00:01:32,530 --> 00:01:38,135
+Just pick the plan with the tools you need:
+automation and texting start on Growth,
+
+29
+00:01:38,135 --> 00:01:39,890
+and reviews come with Pro.
+
+30
+00:01:40,740 --> 00:01:44,279
+Stop paying for tools that
+don't talk to each other.
+
+31
+00:01:44,279 --> 00:01:47,615
+Start your free 14-day
+trial today, at kyntlo.ai.

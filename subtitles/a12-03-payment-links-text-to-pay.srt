@@ -1,0 +1,248 @@
+1
+00:00:00,500 --> 00:00:01,345
+Welcome back!
+
+2
+00:00:01,345 --> 00:00:06,545
+Invoices are great for treatment plans,
+but sometimes you just need to get paid,
+
+3
+00:00:06,545 --> 00:00:07,065
+quickly.
+
+4
+00:00:07,065 --> 00:00:11,875
+In this lesson, we'll cover three
+faster options: payment links, Text2Pay,
+
+5
+00:00:11,875 --> 00:00:12,915
+and order forms.
+
+6
+00:00:13,767 --> 00:00:17,587
+A payment link is a checkout
+page for one or more products,
+
+7
+00:00:17,587 --> 00:00:19,206
+with its own web address.
+
+8
+00:00:19,206 --> 00:00:22,702
+You create it once, and share
+it as often as you like.
+
+9
+00:00:22,702 --> 00:00:26,004
+This whitening link has
+already been paid 14 times.
+
+10
+00:00:26,856 --> 00:00:29,146
+Let's make one for a check-up and clean.
+
+11
+00:00:29,146 --> 00:00:32,353
+Click Create payment link,
+name it, and add the product.
+
+12
+00:00:32,353 --> 00:00:36,304
+Prices come straight from your
+product list, so they're always right.
+
+13
+00:00:37,153 --> 00:00:39,331
+Choose what the checkout asks for.
+
+14
+00:00:39,331 --> 00:00:43,238
+Collecting a phone number is
+handy for appointment reminders.
+
+15
+00:00:43,238 --> 00:00:47,914
+You can also allow coupon codes, and
+decide what happens after payment: a
+
+16
+00:00:47,914 --> 00:00:51,053
+confirmation page, or a
+page on your own website.
+
+17
+00:00:51,903 --> 00:00:54,057
+Click Create link, and it's ready.
+
+18
+00:00:54,057 --> 00:00:57,920
+Copy it into a text, an email,
+a social post or your website.
+
+19
+00:00:57,920 --> 00:00:59,314
+There's a QR code too.
+
+20
+00:00:59,314 --> 00:01:03,177
+Print it at reception, and
+patients can pay from their phone.
+
+21
+00:01:03,177 --> 00:01:06,028
+When an offer ends, just
+switch its link off.
+
+22
+00:01:06,879 --> 00:01:07,830
+Next, Text2Pay.
+
+23
+00:01:07,830 --> 00:01:11,949
+It's perfect for a one-off amount
+for one person, like a deposit.
+
+24
+00:01:11,949 --> 00:01:14,167
+You'll find it on the Invoices tab.
+
+25
+00:01:14,167 --> 00:01:19,237
+It creates a quick invoice, and texts the
+payment link straight to the patient's
+
+26
+00:01:19,237 --> 00:01:19,617
+phone.
+
+27
+00:01:19,617 --> 00:01:24,117
+It's ideal straight after a phone
+call, when someone has just said yes.
+
+28
+00:01:24,966 --> 00:01:28,515
+Pick the customer, Liam Patel,
+and his number fills in.
+
+29
+00:01:28,515 --> 00:01:31,741
+Choose the item: the implant
+consultation deposit.
+
+30
+00:01:31,741 --> 00:01:35,290
+The message on the right is
+exactly what Liam will see.
+
+31
+00:01:35,290 --> 00:01:38,323
+Click Send, and he can
+pay in a couple of taps.
+
+32
+00:01:39,155 --> 00:01:43,412
+Because Text2Pay creates an invoice,
+you can track it here like any other.
+
+33
+00:01:43,412 --> 00:01:46,576
+You can also send payment
+requests from a conversation,
+
+34
+00:01:46,576 --> 00:01:48,704
+while you're chatting with a patient.
+
+35
+00:01:49,554 --> 00:01:50,932
+Finally, order forms.
+
+36
+00:01:50,932 --> 00:01:53,557
+These live on your funnels and websites.
+
+37
+00:01:53,557 --> 00:01:57,626
+You add an order form element
+to a page in the funnel builder,
+
+38
+00:01:57,626 --> 00:01:59,529
+which we covered in Module 7.
+
+39
+00:01:59,529 --> 00:02:02,154
+Every purchase shows up here, in Orders.
+
+40
+00:02:03,004 --> 00:02:05,997
+Order forms are best when
+you're selling online.
+
+41
+00:02:05,997 --> 00:02:10,051
+They support order bumps, like
+adding the smile plan at checkout,
+
+42
+00:02:10,051 --> 00:02:12,296
+and one-click upsells after payment.
+
+43
+00:02:12,296 --> 00:02:16,225
+Here, Ava bought whitening, and
+added the smile plan as a bump.
+
+44
+00:02:17,075 --> 00:02:20,884
+Wherever the money comes from,
+it all lands in Transactions.
+
+45
+00:02:20,884 --> 00:02:25,835
+The source column tells you whether each
+payment came from an invoice, a link,
+
+46
+00:02:25,835 --> 00:02:28,565
+Text2Pay, a subscription,
+or an order form.
+
+47
+00:02:29,415 --> 00:02:30,466
+Here's a pro tip.
+
+48
+00:02:30,466 --> 00:02:35,044
+Use a payment link for anything you
+sell again and again at a fixed price.
+
+49
+00:02:35,044 --> 00:02:38,013
+Use Text2Pay for a one-off
+amount to one person.
+
+50
+00:02:38,013 --> 00:02:43,085
+And use an order form when you're selling
+on your website, so you can add upsells.
+
+51
+00:02:43,941 --> 00:02:46,586
+Now you have three fast ways to get paid.
+
+52
+00:02:46,586 --> 00:02:50,650
+In the final lesson of this
+module, we'll manage subscriptions,
+
+53
+00:02:50,650 --> 00:02:52,457
+failed payments and refunds.
+
+54
+00:02:52,457 --> 00:02:53,360
+See you there!

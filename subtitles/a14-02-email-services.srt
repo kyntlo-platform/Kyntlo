@@ -1,0 +1,214 @@
+1
+00:00:00,500 --> 00:00:03,709
+In this lesson, we'll connect
+your own sending domain,
+
+2
+00:00:03,709 --> 00:00:07,215
+so the emails you send from
+Kyntlo come from your business,
+
+3
+00:00:07,215 --> 00:00:09,474
+and land in the inbox instead of spam.
+
+4
+00:00:10,356 --> 00:00:12,744
+Open Settings, then Email Services.
+
+5
+00:00:12,744 --> 00:00:17,112
+Right now, Bloom's emails go out
+through a shared Kyntlo domain.
+
+6
+00:00:17,112 --> 00:00:22,503
+That works for testing, but Gmail, Yahoo
+and Outlook now expect bulk senders to
+
+7
+00:00:22,503 --> 00:00:23,800
+prove who they are.
+
+8
+00:00:23,800 --> 00:00:29,532
+A dedicated domain does exactly that, and
+keeps your sending reputation yours alone.
+
+9
+00:00:30,382 --> 00:00:31,602
+Click Add Domain.
+
+10
+00:00:31,602 --> 00:00:34,830
+Use a subdomain, like
+mail.bloomdental.co.uk.
+
+11
+00:00:34,830 --> 00:00:39,207
+It keeps marketing email separate
+from your everyday mailbox,
+
+12
+00:00:39,207 --> 00:00:44,230
+so if a campaign ever has a bad day,
+your normal email isn't affected.
+
+13
+00:00:45,080 --> 00:00:47,934
+Kyntlo now shows the DNS records to add.
+
+14
+00:00:47,934 --> 00:00:50,789
+DNS is the address book for your domain,
+
+15
+00:00:50,789 --> 00:00:55,284
+and you change it wherever you
+bought the domain, like GoDaddy,
+
+16
+00:00:55,284 --> 00:00:56,854
+Cloudflare or 123 Reg.
+
+17
+00:00:56,854 --> 00:01:00,922
+Add each record exactly as
+shown, using the copy buttons.
+
+18
+00:01:01,772 --> 00:01:04,356
+The first two are the most important.
+
+19
+00:01:04,356 --> 00:01:08,198
+SPF lists who is allowed to
+send email for your domain.
+
+20
+00:01:08,198 --> 00:01:11,341
+DKIM adds a digital
+signature to every email,
+
+21
+00:01:11,341 --> 00:01:16,509
+so inboxes can tell it really came
+from you and wasn't changed on the way.
+
+22
+00:01:17,357 --> 00:01:21,668
+The two MX records handle bounces
+and replies for the subdomain.
+
+23
+00:01:21,668 --> 00:01:24,902
+The CNAME record powers
+open and click tracking.
+
+24
+00:01:24,902 --> 00:01:29,617
+And DMARC tells inboxes what to do
+with email that fails these checks.
+
+25
+00:01:29,617 --> 00:01:33,322
+If you don't have a DMARC
+record yet, add this one too.
+
+26
+00:01:34,170 --> 00:01:35,009
+Short on time?
+
+27
+00:01:35,009 --> 00:01:39,623
+If your domain is with a supported
+provider, click Add records automatically,
+
+28
+00:01:39,623 --> 00:01:42,919
+sign in to your provider,
+and Kyntlo adds them for you.
+
+29
+00:01:43,769 --> 00:01:46,166
+Once the records are in, click Verify.
+
+30
+00:01:46,166 --> 00:01:50,644
+Changes can take anything from a few
+minutes to a day or two to spread,
+
+31
+00:01:50,644 --> 00:01:54,996
+so if it doesn't verify straight
+away, come back later and try again.
+
+32
+00:01:54,996 --> 00:01:58,654
+Here, every record checks out,
+and the domain is verified.
+
+33
+00:01:59,504 --> 00:02:04,840
+Back on Email Services, your new domain
+is verified and set as the default.
+
+34
+00:02:04,840 --> 00:02:10,531
+From now on, your campaigns, workflows
+and one-to-one emails all go out from it.
+
+35
+00:02:10,531 --> 00:02:16,080
+If you send very large volumes, a dedicated
+IP is also available as an add-on.
+
+36
+00:02:16,929 --> 00:02:19,072
+One more tab: Email Verification.
+
+37
+00:02:19,072 --> 00:02:23,748
+Kyntlo can check new addresses before
+you send to them, for $0.005 each.
+
+38
+00:02:23,748 --> 00:02:28,878
+Invalid addresses are skipped, which
+protects the reputation you've just built.
+
+39
+00:02:29,727 --> 00:02:30,825
+Here's a pro tip.
+
+40
+00:02:30,825 --> 00:02:33,473
+A brand new domain has no reputation yet.
+
+41
+00:02:33,473 --> 00:02:38,123
+For the first couple of weeks, send
+to your most engaged contacts first,
+
+42
+00:02:38,123 --> 00:02:40,125
+and grow your volume gradually.
+
+43
+00:02:40,125 --> 00:02:43,225
+Inboxes learn to trust
+you much faster that way.
+
+44
+00:02:44,078 --> 00:02:46,751
+Your emails are ready
+to land in the inbox!
+
+45
+00:02:46,751 --> 00:02:51,661
+Next, we'll connect your other tools with
+integrations and the App Marketplace.
+
+46
+00:02:51,661 --> 00:02:52,531
+See you there.

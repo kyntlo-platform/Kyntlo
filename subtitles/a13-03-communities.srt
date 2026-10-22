@@ -1,0 +1,236 @@
+1
+00:00:00,500 --> 00:00:05,220
+In this lesson, you'll set up a community
+in Kyntlo: a private space where your
+
+2
+00:00:05,220 --> 00:00:09,820
+members can talk, learn and support each
+other, right alongside your courses.
+
+3
+00:00:09,820 --> 00:00:13,525
+A good community keeps members
+engaged, and keeps them paying.
+
+4
+00:00:14,374 --> 00:00:16,428
+Communities live in Memberships.
+
+5
+00:00:16,428 --> 00:00:18,547
+Each community is made of groups.
+
+6
+00:00:18,547 --> 00:00:22,720
+Think of a group as your own
+private social network, with no ads,
+
+7
+00:00:22,720 --> 00:00:25,674
+and no algorithm deciding
+who sees your posts.
+
+8
+00:00:25,674 --> 00:00:28,177
+Every member sees everything you share.
+
+9
+00:00:29,028 --> 00:00:32,450
+To start a new one, click
+Create Group and give it a name.
+
+10
+00:00:32,450 --> 00:00:35,400
+It gets its own web address
+on your member portal,
+
+11
+00:00:35,400 --> 00:00:38,468
+the same place members log
+in to watch your courses.
+
+12
+00:00:39,319 --> 00:00:40,628
+Choose who can join.
+
+13
+00:00:40,628 --> 00:00:43,638
+A private group is only
+for people you invite,
+
+14
+00:00:43,638 --> 00:00:46,517
+or people who buy an
+offer that includes it.
+
+15
+00:00:46,517 --> 00:00:49,592
+A public group is open
+to anyone with the link.
+
+16
+00:00:49,592 --> 00:00:51,163
+Then click Create group.
+
+17
+00:00:52,013 --> 00:00:56,088
+Your new group starts with a general
+channel, ready for its first post.
+
+18
+00:00:56,088 --> 00:01:00,047
+Let's go back and look at an
+established group, the Bloom Smile Club,
+
+19
+00:01:00,047 --> 00:01:02,630
+from the offer we created
+in the last lesson.
+
+20
+00:01:03,479 --> 00:01:08,898
+Along the top are the group's sections:
+the feed, learning, members, a leaderboard,
+
+21
+00:01:08,898 --> 00:01:10,531
+events and an about page.
+
+22
+00:01:10,531 --> 00:01:15,101
+On the left are channels, which keep
+conversations organised by topic.
+
+23
+00:01:15,951 --> 00:01:20,726
+Channels can be open to everyone, or
+limited to admins, like Announcements,
+
+24
+00:01:20,726 --> 00:01:24,291
+so important news never gets
+buried under everyday chat.
+
+25
+00:01:25,141 --> 00:01:29,862
+To add one, click the plus next to Channels,
+give it a name, choose who can post,
+
+26
+00:01:29,862 --> 00:01:30,678
+and create it.
+
+27
+00:01:32,303 --> 00:01:33,307
+Now let's post.
+
+28
+00:01:33,307 --> 00:01:36,852
+Click the composer, and add
+a title and your message.
+
+29
+00:01:36,852 --> 00:01:39,395
+You can attach images, files or video.
+
+30
+00:01:39,395 --> 00:01:41,870
+Click Post, and members are notified.
+
+31
+00:01:41,870 --> 00:01:45,951
+Pin your most important posts,
+so new members see them first.
+
+32
+00:01:46,770 --> 00:01:49,639
+The Learning tab links
+your courses to the group,
+
+33
+00:01:49,639 --> 00:01:53,855
+so members can watch a lesson and
+then talk about it, in the same place.
+
+34
+00:01:53,855 --> 00:01:56,959
+Discussion helps people
+actually use what they learn.
+
+35
+00:01:57,810 --> 00:02:00,079
+And on the right is the leaderboard.
+
+36
+00:02:00,079 --> 00:02:03,545
+Members earn points for
+posting, commenting and liking.
+
+37
+00:02:03,545 --> 00:02:07,011
+A little friendly competition
+keeps people coming back.
+
+38
+00:02:07,011 --> 00:02:11,863
+You can even reward the top members,
+like a free whitening top-up each month.
+
+39
+00:02:12,714 --> 00:02:17,928
+To grow your group, click Invite members,
+and share the link or send email invites.
+
+40
+00:02:17,928 --> 00:02:22,200
+Or include the group in a paid
+offer, and buyers join automatically.
+
+41
+00:02:23,051 --> 00:02:24,127
+Here's a pro tip.
+
+42
+00:02:24,127 --> 00:02:25,963
+Communities thrive on rhythm.
+
+43
+00:02:25,963 --> 00:02:30,775
+Post one simple question every week,
+like, share your smile win of the week,
+
+44
+00:02:30,775 --> 00:02:32,421
+and reply to every answer.
+
+45
+00:02:32,421 --> 00:02:36,790
+Within a month, your members will
+start the conversations themselves.
+
+46
+00:02:36,790 --> 00:02:40,082
+That's when a community
+really starts to run itself.
+
+47
+00:02:40,932 --> 00:02:43,396
+That's the end of the Memberships module.
+
+48
+00:02:43,396 --> 00:02:43,997
+Well done!
+
+49
+00:02:43,997 --> 00:02:47,063
+Next, in module fourteen,
+we'll head into Settings,
+
+50
+00:02:47,063 --> 00:02:49,587
+starting with phone numbers and caller ID.
+
+51
+00:02:49,587 --> 00:02:50,428
+See you there.

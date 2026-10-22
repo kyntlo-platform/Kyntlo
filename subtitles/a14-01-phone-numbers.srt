@@ -1,0 +1,270 @@
+1
+00:00:00,500 --> 00:00:04,106
+Welcome to Module 14, where we
+finish setting up your account.
+
+2
+00:00:04,106 --> 00:00:08,526
+In this lesson, we'll buy a business
+phone number, forward its calls to you,
+
+3
+00:00:08,526 --> 00:00:13,063
+and make sure carriers trust it, so your
+calls get answered and your texts get
+
+4
+00:00:13,063 --> 00:00:13,644
+delivered.
+
+5
+00:00:14,501 --> 00:00:16,653
+Open Settings, then Phone System.
+
+6
+00:00:16,653 --> 00:00:21,609
+A Kyntlo number means every call and
+text is saved on the customer's record,
+
+7
+00:00:21,609 --> 00:00:26,956
+your missed calls can trigger automations,
+and your personal mobile stays private.
+
+8
+00:00:26,956 --> 00:00:28,912
+Bloom already has two numbers.
+
+9
+00:00:29,762 --> 00:00:31,929
+Look at the capabilities column.
+
+10
+00:00:31,929 --> 00:00:35,315
+The London landline can
+take calls, but in the UK,
+
+11
+00:00:35,315 --> 00:00:37,617
+landline numbers can't send texts.
+
+12
+00:00:37,617 --> 00:00:39,649
+The mobile number can do both.
+
+13
+00:00:39,649 --> 00:00:43,576
+If you want to text customers,
+you need a number with SMS.
+
+14
+00:00:43,576 --> 00:00:46,827
+Texting is included on
+the Growth and Pro plans.
+
+15
+00:00:47,676 --> 00:00:49,925
+To add a number, click Add Number.
+
+16
+00:00:49,925 --> 00:00:52,041
+Choose the country and the type.
+
+17
+00:00:52,041 --> 00:00:55,216
+Local numbers look familiar
+to nearby customers.
+
+18
+00:00:55,216 --> 00:00:56,803
+Mobile numbers can text.
+
+19
+00:00:56,803 --> 00:00:59,382
+Toll-free numbers are free for callers.
+
+20
+00:01:00,233 --> 00:01:02,729
+Pick a number from the list and click Buy.
+
+21
+00:01:02,729 --> 00:01:05,462
+You'll see what it
+supports and what it costs.
+
+22
+00:01:05,462 --> 00:01:09,860
+The monthly rental and your call and
+text usage come out of your wallet at
+
+23
+00:01:09,860 --> 00:01:10,811
+wholesale rates.
+
+24
+00:01:10,811 --> 00:01:13,128
+Click Confirm purchase, and it's yours.
+
+25
+00:01:13,979 --> 00:01:15,970
+Now let's decide where calls go.
+
+26
+00:01:15,970 --> 00:01:18,024
+Click Configure on the main line.
+
+27
+00:01:18,024 --> 00:01:21,384
+In Forward calls to, enter
+the phone that should ring.
+
+28
+00:01:21,384 --> 00:01:22,939
+Here it's Sarah's mobile.
+
+29
+00:01:23,789 --> 00:01:27,345
+Pass caller's number controls
+caller ID on forwarded calls.
+
+30
+00:01:27,345 --> 00:01:31,986
+Switched on, your mobile shows the
+customer's number, not your Kyntlo number.
+
+31
+00:01:31,986 --> 00:01:36,507
+The whisper message tells you it's a
+business call before you're connected,
+
+32
+00:01:36,507 --> 00:01:38,194
+so you answer the right way.
+
+33
+00:01:39,045 --> 00:01:41,741
+If you record calls,
+switch on Record calls,
+
+34
+00:01:41,741 --> 00:01:44,436
+and let callers know
+they're being recorded.
+
+35
+00:01:44,436 --> 00:01:48,051
+Choose how long it rings before
+voicemail, then click Save.
+
+36
+00:01:48,902 --> 00:01:51,940
+Below the list is your
+default outbound number.
+
+37
+00:01:51,940 --> 00:01:56,012
+This is the caller ID customers
+see when you call or text them,
+
+38
+00:01:56,012 --> 00:01:58,727
+unless a team member has their own number.
+
+39
+00:01:58,727 --> 00:02:01,183
+Use the number customers already know.
+
+40
+00:02:02,034 --> 00:02:03,801
+Next, the Trust Center tab.
+
+41
+00:02:03,801 --> 00:02:08,973
+Carriers want to know who is behind a
+number before they deliver your calls and
+
+42
+00:02:08,973 --> 00:02:09,365
+texts.
+
+43
+00:02:09,365 --> 00:02:13,686
+Your customer profile uses the
+details from your business profile.
+
+44
+00:02:13,686 --> 00:02:18,595
+UK numbers also need a regulatory
+bundle, a proof of your business address.
+
+45
+00:02:18,595 --> 00:02:20,100
+Both are approved here.
+
+46
+00:02:20,951 --> 00:02:26,994
+If you text customers from a US local
+number, you also need A2P 10DLC registration.
+
+47
+00:02:26,994 --> 00:02:32,892
+You register your brand, then a campaign
+describing the messages you send and how
+
+48
+00:02:32,892 --> 00:02:33,911
+people opt in.
+
+49
+00:02:33,911 --> 00:02:37,843
+Until it's approved, US
+carriers may block your texts.
+
+50
+00:02:38,693 --> 00:02:40,795
+Already have a number customers know?
+
+51
+00:02:40,795 --> 00:02:43,068
+Use Number Porting to move it to Kyntlo.
+
+52
+00:02:43,068 --> 00:02:46,761
+Keep it active with your old
+provider until the move is complete,
+
+53
+00:02:46,761 --> 00:02:48,579
+so you don't miss a single call.
+
+54
+00:02:49,430 --> 00:02:50,481
+Here's a pro tip.
+
+55
+00:02:50,481 --> 00:02:54,622
+Put your Kyntlo number everywhere
+customers find you: your website,
+
+56
+00:02:54,622 --> 00:02:58,022
+your Google profile, your
+ads and your email signature.
+
+57
+00:02:58,022 --> 00:03:02,967
+That way every call is tracked, and missed
+calls can get an automatic text back.
+
+58
+00:03:03,819 --> 00:03:05,525
+Your phone system is ready!
+
+59
+00:03:05,525 --> 00:03:10,769
+Next, we'll set up your own email sending
+domain, so your emails land in the inbox.
+
+60
+00:03:10,769 --> 00:03:11,654
+See you there.

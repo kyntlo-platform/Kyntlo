@@ -1,0 +1,244 @@
+1
+00:00:00,500 --> 00:00:03,244
+Welcome to the last lesson of Module 10!
+
+2
+00:00:03,244 --> 00:00:06,536
+So far, your AI agents
+have talked to customers.
+
+3
+00:00:06,536 --> 00:00:11,337
+Now, we'll put AI inside your
+automations, so every message is sorted,
+
+4
+00:00:11,337 --> 00:00:15,041
+summarised and answered,
+without you lifting a finger.
+
+5
+00:00:15,889 --> 00:00:20,523
+In AI Agents, on the Getting Started
+tab, you'll find Workflow AI.
+
+6
+00:00:20,523 --> 00:00:24,596
+It adds AI steps to the workflows
+you build in Automation.
+
+7
+00:00:24,596 --> 00:00:29,160
+Think of it as a smart assistant
+sitting inside every automation.
+
+8
+00:00:29,160 --> 00:00:31,477
+Click Open to see what it can do.
+
+9
+00:00:32,328 --> 00:00:34,659
+There are a few AI actions to know.
+
+10
+00:00:34,659 --> 00:00:38,654
+Classify message sorts a message
+into categories you choose,
+
+11
+00:00:38,654 --> 00:00:42,384
+like a booking request, a
+price question or a complaint.
+
+12
+00:00:42,384 --> 00:00:45,314
+You choose the categories,
+in plain English.
+
+13
+00:00:45,314 --> 00:00:49,842
+Summarise turns a long conversation
+into a short note for your team.
+
+14
+00:00:50,694 --> 00:00:55,002
+AI reply writes and sends an
+answer using your knowledge base,
+
+15
+00:00:55,002 --> 00:00:58,199
+or hands the chat to
+your Conversation AI bot.
+
+16
+00:00:58,199 --> 00:01:03,063
+And Sentiment tells you if a message
+is positive, neutral or negative.
+
+17
+00:01:03,915 --> 00:01:08,836
+In the workflow builder, click Add
+action, and look in the AI section.
+
+18
+00:01:08,836 --> 00:01:13,054
+Each AI step saves its result,
+so the next steps can use it,
+
+19
+00:01:13,054 --> 00:01:16,358
+and each one is a single
+Workflow AI execution.
+
+20
+00:01:16,358 --> 00:01:19,663
+AI steps in workflows
+are part of the Pro plan.
+
+21
+00:01:20,512 --> 00:01:23,268
+Here's a real example: AI inbox triage.
+
+22
+00:01:23,268 --> 00:01:26,872
+When a customer replies,
+AI classifies the message,
+
+23
+00:01:26,872 --> 00:01:29,487
+and saves a summary to their contact.
+
+24
+00:01:29,487 --> 00:01:33,162
+Then an If/Else step sends
+it down the right branch.
+
+25
+00:01:34,012 --> 00:01:34,939
+Let's test it.
+
+26
+00:01:34,939 --> 00:01:37,589
+Grace asks to book a check-up next week.
+
+27
+00:01:37,589 --> 00:01:40,570
+Click Run test, and
+watch each step light up.
+
+28
+00:01:40,570 --> 00:01:44,412
+AI labels it a booking request,
+writes a one-line summary,
+
+29
+00:01:44,412 --> 00:01:46,863
+and replies with two available times.
+
+30
+00:01:47,712 --> 00:01:50,521
+Now a price question about whitening.
+
+31
+00:01:50,521 --> 00:01:53,786
+This time, it goes down
+the pricing branch,
+
+32
+00:01:53,786 --> 00:01:58,570
+and the AI answers from your
+knowledge base: whitening is £199,
+
+33
+00:01:58,570 --> 00:02:00,847
+and gentle on sensitive teeth.
+
+34
+00:02:01,697 --> 00:02:02,757
+And a complaint?
+
+35
+00:02:02,757 --> 00:02:05,009
+AI spots it, but it doesn't reply.
+
+36
+00:02:05,009 --> 00:02:10,506
+Instead, the workflow assigns it to Sarah
+with a note, so a real person handles it,
+
+37
+00:02:10,506 --> 00:02:12,757
+just as a good receptionist would.
+
+38
+00:02:12,757 --> 00:02:16,069
+Unhappy customers should
+always hear from a human.
+
+39
+00:02:16,928 --> 00:02:18,788
+It works the other way, too.
+
+40
+00:02:18,788 --> 00:02:23,173
+In Conversation AI, a bot can
+trigger a workflow mid-conversation.
+
+41
+00:02:23,173 --> 00:02:27,957
+Open the bot's Actions, click Add
+action, and choose Trigger a workflow.
+
+42
+00:02:27,957 --> 00:02:31,013
+For example, to start
+your new lead follow-up.
+
+43
+00:02:31,864 --> 00:02:32,987
+Here's a pro tip.
+
+44
+00:02:32,987 --> 00:02:38,339
+In every AI workflow, add a branch for
+complaints or negative sentiment that goes
+
+45
+00:02:38,339 --> 00:02:39,463
+to a real person.
+
+46
+00:02:39,463 --> 00:02:43,361
+And test with your own real
+messages before you publish it.
+
+47
+00:02:43,361 --> 00:02:47,524
+Start with one simple workflow,
+like summarising new enquiries,
+
+48
+00:02:47,524 --> 00:02:48,911
+and build from there.
+
+49
+00:02:49,761 --> 00:02:51,529
+That's Module 10 complete!
+
+50
+00:02:51,529 --> 00:02:54,182
+You've met every AI employee in Kyntlo.
+
+51
+00:02:54,182 --> 00:02:57,786
+Next, in Module 11, we'll
+look after your reputation,
+
+52
+00:02:57,786 --> 00:03:01,322
+starting by connecting your
+Google Business Profile.
+
+53
+00:03:01,322 --> 00:03:02,274
+See you there.

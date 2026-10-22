@@ -1,0 +1,231 @@
+1
+00:00:00,500 --> 00:00:02,427
+Hi, and welcome to Module 10!
+
+2
+00:00:02,427 --> 00:00:05,550
+Kyntlo has a whole team
+of AI helpers built in.
+
+3
+00:00:05,550 --> 00:00:09,205
+In this first lesson, I'll
+show you what each one does,
+
+4
+00:00:09,205 --> 00:00:12,660
+and exactly which of them
+are included on your plan.
+
+5
+00:00:13,526 --> 00:00:16,564
+All of Kyntlo's AI
+tools live in one place.
+
+6
+00:00:16,564 --> 00:00:18,824
+In the sidebar, click AI Agents.
+
+7
+00:00:18,824 --> 00:00:24,687
+The Getting Started tab is your home base:
+an overview of every AI employee in your
+
+8
+00:00:24,687 --> 00:00:25,252
+account.
+
+9
+00:00:26,102 --> 00:00:28,126
+This banner shows your plan.
+
+10
+00:00:28,126 --> 00:00:32,392
+This demo account is on Pro,
+so every AI agent is unlocked,
+
+11
+00:00:32,392 --> 00:00:34,778
+with unlimited AI usage included.
+
+12
+00:00:34,778 --> 00:00:37,597
+Below it, each card is one AI employee,
+
+13
+00:00:37,597 --> 00:00:41,212
+with a badge for the lowest
+plan that includes it.
+
+14
+00:00:42,062 --> 00:00:44,336
+Conversation AI is your chatbot.
+
+15
+00:00:44,336 --> 00:00:50,234
+It replies to messages on SMS, Facebook,
+Instagram, WhatsApp and your website chat.
+
+16
+00:00:50,234 --> 00:00:54,214
+It answers questions, and it
+can even book appointments.
+
+17
+00:00:54,214 --> 00:00:56,772
+It's available from the Growth plan.
+
+18
+00:00:57,623 --> 00:01:01,304
+Voice AI is an AI receptionist
+that answers your phone.
+
+19
+00:01:01,304 --> 00:01:02,710
+That's a Pro feature.
+
+20
+00:01:02,710 --> 00:01:07,529
+And the Knowledge Base is what all
+your agents learn from: your website,
+
+21
+00:01:07,529 --> 00:01:09,470
+your FAQs and your documents.
+
+22
+00:01:10,320 --> 00:01:15,586
+Content AI writes emails, social posts
+and website copy, and creates images.
+
+23
+00:01:15,586 --> 00:01:18,980
+Workflow AI adds smart
+steps to your automations.
+
+24
+00:01:18,980 --> 00:01:23,622
+And Reviews AI helps you reply to
+your Google and Facebook reviews.
+
+25
+00:01:23,622 --> 00:01:25,978
+We'll cover that one in Module 11.
+
+26
+00:01:26,828 --> 00:01:28,666
+Now click Plans and usage.
+
+27
+00:01:28,666 --> 00:01:31,565
+This table shows what each plan includes.
+
+28
+00:01:31,565 --> 00:01:34,322
+Starter doesn't include the AI chatbot.
+
+29
+00:01:34,322 --> 00:01:40,260
+Growth adds a basic chatbot for automated
+replies and FAQs, plus the knowledge base.
+
+30
+00:01:41,111 --> 00:01:45,732
+Pro unlocks the advanced chatbot,
+with multi-step conversations,
+
+31
+00:01:45,732 --> 00:01:49,559
+bookings and actions, plus
+the Voice AI receptionist.
+
+32
+00:01:49,559 --> 00:01:55,336
+Most importantly, Pro includes unlimited
+AI usage, so you never pay per message.
+
+33
+00:01:56,185 --> 00:02:02,693
+On plans without unlimited AI, usage is
+billed at wholesale cost, with no markup.
+
+34
+00:02:02,693 --> 00:02:05,666
+Conversation AI is $0.04 per message.
+
+35
+00:02:05,666 --> 00:02:08,879
+And Content AI is $0.18 per 1,000 words.
+
+36
+00:02:08,879 --> 00:02:12,093
+AI steps inside workflows come with Pro.
+
+37
+00:02:12,945 --> 00:02:17,546
+So, if your chatbot sends 1,000
+messages in a month on Growth,
+
+38
+00:02:17,546 --> 00:02:19,698
+that's about $40 of AI usage.
+
+39
+00:02:19,698 --> 00:02:23,854
+As you grow, Pro's unlimited
+AI often works out cheaper.
+
+40
+00:02:23,854 --> 00:02:28,900
+And on a Customized plan, you pick
+exactly the AI features you need.
+
+41
+00:02:29,749 --> 00:02:31,828
+Here's the plan for this module.
+
+42
+00:02:31,828 --> 00:02:36,052
+Next, we'll set up the chatbot,
+then feed it your knowledge base.
+
+43
+00:02:36,052 --> 00:02:40,666
+After that, we'll build a Voice AI
+receptionist, write content with AI,
+
+44
+00:02:40,666 --> 00:02:43,330
+and finish with AI inside your workflows.
+
+45
+00:02:44,185 --> 00:02:45,248
+Here's a pro tip.
+
+46
+00:02:45,248 --> 00:02:48,998
+Build your knowledge base before
+you switch on any AI agent.
+
+47
+00:02:48,998 --> 00:02:53,936
+Every agent learns from it, so good
+answers there mean good answers everywhere.
+
+48
+00:02:54,787 --> 00:02:56,236
+That's your AI toolkit!
+
+49
+00:02:56,236 --> 00:03:00,141
+In the next lesson, we'll set
+up your Conversation AI chatbot,
+
+50
+00:03:00,141 --> 00:03:03,605
+and teach it to answer
+questions and book appointments.
+
+51
+00:03:03,605 --> 00:03:04,487
+See you there.

@@ -1,0 +1,240 @@
+1
+00:00:00,500 --> 00:00:05,087
+In this lesson, you'll add contacts
+to Kyntlo in two ways: one at a time,
+
+2
+00:00:05,087 --> 00:00:07,035
+and in bulk from a spreadsheet.
+
+3
+00:00:07,035 --> 00:00:12,250
+You'll also see how Kyntlo stops the same
+person from ending up on your list twice.
+
+4
+00:00:13,131 --> 00:00:17,849
+Most contacts arrive on their own, from
+your forms, calendars, chats and calls.
+
+5
+00:00:17,849 --> 00:00:22,269
+But sometimes you'll want to add someone
+by hand, like a walk-in customer.
+
+6
+00:00:22,269 --> 00:00:27,286
+And when you first move to Kyntlo, you'll
+want to bring your existing list with you.
+
+7
+00:00:28,136 --> 00:00:30,273
+Let's start with a single contact.
+
+8
+00:00:30,273 --> 00:00:33,793
+Click Add Contact, and a panel
+slides in from the right.
+
+9
+00:00:33,793 --> 00:00:37,501
+Fill in their first and last
+name, and their email address.
+
+10
+00:00:38,327 --> 00:00:40,316
+Then add their mobile number.
+
+11
+00:00:40,316 --> 00:00:43,952
+Always include the country
+code, like +44 for the UK,
+
+12
+00:00:43,952 --> 00:00:46,216
+so your text messages reach them.
+
+13
+00:00:47,066 --> 00:00:48,811
+Add a tag to describe them.
+
+14
+00:00:48,811 --> 00:00:50,426
+Type it, and press Enter.
+
+15
+00:00:50,426 --> 00:00:55,725
+Tags are labels you'll use to filter your
+list, and to start automations later on.
+
+16
+00:00:56,574 --> 00:01:00,018
+You can also choose who on
+your team owns this contact,
+
+17
+00:01:00,018 --> 00:01:04,151
+and switch on Do Not Disturb if
+they've asked not to be contacted.
+
+18
+00:01:04,151 --> 00:01:05,153
+Then click Save.
+
+19
+00:01:05,153 --> 00:01:07,408
+Ruby is now at the top of your list.
+
+20
+00:01:08,258 --> 00:01:11,002
+Kyntlo also watches for
+duplicates as you type.
+
+21
+00:01:11,002 --> 00:01:15,322
+Let's try adding someone with a phone
+number that's already in the system.
+
+22
+00:01:16,173 --> 00:01:19,647
+Kyntlo spots that this number
+belongs to Emma Clarke,
+
+23
+00:01:19,647 --> 00:01:22,137
+and offers to open her record instead.
+
+24
+00:01:22,137 --> 00:01:26,135
+It recognises people by their
+email address and phone number,
+
+25
+00:01:26,135 --> 00:01:29,675
+which is why it's worth
+collecting both on every form.
+
+26
+00:01:29,675 --> 00:01:33,017
+One person, one record,
+means one complete history.
+
+27
+00:01:33,867 --> 00:01:34,776
+Now for bulk.
+
+28
+00:01:34,776 --> 00:01:38,345
+First, export your old
+contact list as a .csv file,
+
+29
+00:01:38,345 --> 00:01:41,354
+from a spreadsheet or
+your previous system.
+
+30
+00:01:41,354 --> 00:01:44,153
+Then click Import, and drop the file in.
+
+31
+00:01:45,004 --> 00:01:49,250
+Next, Kyntlo matches each column
+in your file to a field in Kyntlo.
+
+32
+00:01:49,250 --> 00:01:50,265
+Check every row.
+
+33
+00:01:50,265 --> 00:01:54,321
+Columns like treatment and last
+visit can go into custom fields,
+
+34
+00:01:54,321 --> 00:01:57,046
+and anything you don't
+need can be skipped.
+
+35
+00:01:57,896 --> 00:01:59,592
+Then choose how to import.
+
+36
+00:01:59,592 --> 00:02:02,593
+Create and update is
+usually the right choice.
+
+37
+00:02:02,593 --> 00:02:08,073
+New people are added, and anyone you already
+have is updated, instead of duplicated.
+
+38
+00:02:08,923 --> 00:02:13,378
+Add a tag to every imported contact,
+so you can find this batch later.
+
+39
+00:02:13,378 --> 00:02:16,496
+And confirm these people
+agreed to hear from you.
+
+40
+00:02:16,496 --> 00:02:19,551
+Only import contacts who
+have given you consent.
+
+41
+00:02:20,403 --> 00:02:21,533
+Click Start import.
+
+42
+00:02:21,533 --> 00:02:26,116
+Kyntlo works through the file in the
+background, so you can carry on working.
+
+43
+00:02:26,116 --> 00:02:28,913
+You can follow its progress
+under Bulk Actions.
+
+44
+00:02:29,762 --> 00:02:30,884
+Here's a pro tip.
+
+45
+00:02:30,884 --> 00:02:34,913
+Spend ten minutes tidying your
+spreadsheet before you import.
+
+46
+00:02:34,913 --> 00:02:39,139
+Remove blank rows, put first and
+last names in separate columns,
+
+47
+00:02:39,139 --> 00:02:41,714
+and add country codes to phone numbers.
+
+48
+00:02:41,714 --> 00:02:43,893
+Clean data now saves hours later.
+
+49
+00:02:44,745 --> 00:02:46,082
+Your contacts are in!
+
+50
+00:02:46,082 --> 00:02:50,285
+Next, we'll open a contact record
+and explore everything it holds,
+
+51
+00:02:50,285 --> 00:02:54,106
+from the activity timeline to
+notes, tasks and appointments.
+
+52
+00:02:54,106 --> 00:02:54,997
+See you there.

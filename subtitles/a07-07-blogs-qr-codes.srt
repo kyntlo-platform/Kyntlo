@@ -1,0 +1,228 @@
+1
+00:00:00,500 --> 00:00:03,024
+In this final lesson of the Sites module,
+
+2
+00:00:03,024 --> 00:00:07,333
+you'll publish a blog post that helps
+new patients find you on Google,
+
+3
+00:00:07,333 --> 00:00:11,765
+and create QR codes that turn posters
+and leaflets into trackable leads.
+
+4
+00:00:12,616 --> 00:00:14,180
+Go to Sites, then Blogs.
+
+5
+00:00:14,180 --> 00:00:18,807
+Every post answers a question your
+customers are already searching for,
+
+6
+00:00:18,807 --> 00:00:20,828
+like how much Invisalign costs.
+
+7
+00:00:20,828 --> 00:00:25,520
+Each one is a new way for people to
+find you, long after you publish it.
+
+8
+00:00:26,370 --> 00:00:31,054
+Categories group related posts together,
+and Authors shows who wrote what.
+
+9
+00:00:31,054 --> 00:00:35,231
+Both help readers, and search
+engines, make sense of your content.
+
+10
+00:00:36,080 --> 00:00:39,082
+Click New Blog Post, and
+start with the title.
+
+11
+00:00:39,082 --> 00:00:42,802
+Write it the way people search,
+as a question if you can.
+
+12
+00:00:42,802 --> 00:00:46,588
+Notice the URL slug fills in
+automatically from the title.
+
+13
+00:00:47,441 --> 00:00:49,038
+Staring at a blank page?
+
+14
+00:00:49,038 --> 00:00:53,897
+Click Content AI, describe what the
+post should cover, and choose a tone.
+
+15
+00:00:53,897 --> 00:00:58,756
+Content AI is billed by usage on
+Starter and Growth, and included on Pro.
+
+16
+00:00:59,607 --> 00:01:01,980
+In seconds, you have a full first draft.
+
+17
+00:01:01,980 --> 00:01:04,947
+Always read it through and
+make it sound like you.
+
+18
+00:01:04,947 --> 00:01:09,812
+Check prices and facts, and add a personal
+touch, like a story from your practice.
+
+19
+00:01:10,663 --> 00:01:12,745
+On the right are the post settings.
+
+20
+00:01:12,745 --> 00:01:16,670
+The meta description is the snippet
+Google shows under your title.
+
+21
+00:01:16,670 --> 00:01:20,774
+Add alt text to the featured image,
+and choose a category and author.
+
+22
+00:01:21,624 --> 00:01:23,446
+When it's ready, click Publish.
+
+23
+00:01:23,446 --> 00:01:25,856
+Publish it now, or schedule it for later,
+
+24
+00:01:25,856 --> 00:01:29,912
+so you can write several posts in
+one sitting and release one a week.
+
+25
+00:01:30,764 --> 00:01:31,692
+Now, QR codes.
+
+26
+00:01:31,692 --> 00:01:34,477
+They connect the real world to your pages.
+
+27
+00:01:34,477 --> 00:01:39,913
+A poster in your window, a leaflet, or a
+business card can send people straight to
+
+28
+00:01:39,913 --> 00:01:43,029
+a funnel, a booking
+calendar, or a review page.
+
+29
+00:01:43,878 --> 00:01:48,556
+Click Create QR Code and give it a name
+that says where it will be printed.
+
+30
+00:01:48,556 --> 00:01:50,178
+Then choose where it goes.
+
+31
+00:01:50,178 --> 00:01:53,733
+We'll send this leaflet to
+the Invisalign free scan page.
+
+32
+00:01:54,583 --> 00:01:56,296
+Leave tracking switched on.
+
+33
+00:01:56,296 --> 00:01:58,770
+Kyntlo adds UTM parameters to the link,
+
+34
+00:01:58,770 --> 00:02:03,275
+so every lead from this leaflet shows
+its source on the contact record.
+
+35
+00:02:03,275 --> 00:02:05,686
+Name the campaign after the print run.
+
+36
+00:02:06,511 --> 00:02:09,733
+Pick a colour and add
+your logo in the centre.
+
+37
+00:02:09,733 --> 00:02:11,974
+Then create it, and download it.
+
+38
+00:02:11,974 --> 00:02:17,717
+Choose PNG for everyday use, or SVG for
+print, because it stays sharp at any size.
+
+39
+00:02:18,566 --> 00:02:21,710
+Visits from the QR code
+appear in your funnel stats,
+
+40
+00:02:21,710 --> 00:02:24,611
+and new leads carry the
+leaflet as their source.
+
+41
+00:02:24,611 --> 00:02:28,177
+So you finally know whether
+that print run paid for itself.
+
+42
+00:02:29,027 --> 00:02:30,075
+Here's a pro tip.
+
+43
+00:02:30,075 --> 00:02:32,539
+Before you send anything to the printer,
+
+44
+00:02:32,539 --> 00:02:37,590
+scan the QR code with two different phones,
+and make sure it opens the right page.
+
+45
+00:02:37,590 --> 00:02:39,007
+Reprints are expensive.
+
+46
+00:02:39,914 --> 00:02:42,193
+That's the Sites module complete!
+
+47
+00:02:42,193 --> 00:02:46,543
+You can now build funnels,
+websites, forms, blogs and QR codes.
+
+48
+00:02:46,543 --> 00:02:51,308
+Next, in Module 8, we'll start
+marketing to your contacts with email,
+
+49
+00:02:51,308 --> 00:02:52,758
+SMS and social media.
+
+50
+00:02:52,758 --> 00:02:53,725
+See you there.

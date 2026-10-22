@@ -1,0 +1,241 @@
+1
+00:00:00,500 --> 00:00:03,237
+In the final lesson of
+the Contacts module,
+
+2
+00:00:03,237 --> 00:00:05,847
+you'll learn to keep your database clean.
+
+3
+00:00:05,847 --> 00:00:09,730
+We'll group people under companies,
+merge duplicate contacts,
+
+4
+00:00:09,730 --> 00:00:12,850
+and bring back anyone who
+was deleted by mistake.
+
+5
+00:00:12,850 --> 00:00:17,369
+A clean database means accurate
+reports, and automations you can trust.
+
+6
+00:00:18,225 --> 00:00:19,927
+Let's start with Companies.
+
+7
+00:00:19,927 --> 00:00:24,845
+If you work with businesses, a company
+record groups everyone who works there.
+
+8
+00:00:24,845 --> 00:00:28,879
+Bloom, for example, runs staff
+dental plans for local employers.
+
+9
+00:00:29,729 --> 00:00:31,564
+To add one, click Add Company.
+
+10
+00:00:31,564 --> 00:00:34,866
+Fill in the name, phone
+number and website, then save.
+
+11
+00:00:34,866 --> 00:00:38,290
+You can add the address and
+an owner from your team too.
+
+12
+00:00:39,523 --> 00:00:44,938
+Open a company to see its details, the
+people linked to it, and its opportunities,
+
+13
+00:00:44,938 --> 00:00:46,061
+all in one place.
+
+14
+00:00:46,061 --> 00:00:50,750
+Here's Marylebone Law, a local firm
+whose staff get 10% off with Bloom.
+
+15
+00:00:51,599 --> 00:00:55,472
+To link someone, click Add contact
+and pick them from the list.
+
+16
+00:00:55,472 --> 00:00:57,932
+You can link as many people as you like.
+
+17
+00:00:57,932 --> 00:01:02,912
+Now, when Noah calls, your team can see
+straight away that he's on the Marylebone
+
+18
+00:01:02,912 --> 00:01:03,834
+Law staff plan.
+
+19
+00:01:04,684 --> 00:01:05,736
+Now, duplicates.
+
+20
+00:01:05,736 --> 00:01:07,315
+They happen to everyone.
+
+21
+00:01:07,315 --> 00:01:12,250
+Olivia filled in a Facebook form, then
+later chatted on our website as Liv,
+
+22
+00:01:12,250 --> 00:01:13,763
+with a different email.
+
+23
+00:01:13,763 --> 00:01:16,986
+Kyntlo had no way to know
+it was the same person.
+
+24
+00:01:16,986 --> 00:01:20,671
+Search by surname, and both
+records appear side by side.
+
+25
+00:01:21,520 --> 00:01:22,756
+Tick both contacts.
+
+26
+00:01:22,756 --> 00:01:27,767
+When exactly two are selected, a Merge
+button appears in the bulk action bar.
+
+27
+00:01:27,767 --> 00:01:33,038
+You can only merge two contacts at a time,
+which keeps it safe and easy to check.
+
+28
+00:01:33,892 --> 00:01:34,657
+Click Merge.
+
+29
+00:01:34,657 --> 00:01:37,911
+First, choose which contact
+to keep as the primary.
+
+30
+00:01:37,911 --> 00:01:40,781
+Then, for each field,
+pick the value to keep.
+
+31
+00:01:40,781 --> 00:01:45,694
+We'll keep Olivia's full first name,
+her original email and her phone number.
+
+32
+00:01:46,545 --> 00:01:49,737
+Tags are combined, and
+the conversations, notes,
+
+33
+00:01:49,737 --> 00:01:53,395
+tasks and appointments from
+both records come together.
+
+34
+00:01:53,395 --> 00:01:56,787
+Merging can't be undone,
+so take a moment to check.
+
+35
+00:01:56,787 --> 00:01:58,517
+Then click Merge contacts.
+
+36
+00:01:59,366 --> 00:02:03,795
+And now there's just one Olivia, with
+her complete history in one place.
+
+37
+00:02:03,795 --> 00:02:08,348
+Your reports count her once, and your
+automations won't message her twice.
+
+38
+00:02:09,197 --> 00:02:10,313
+Finally, Restore.
+
+39
+00:02:10,313 --> 00:02:15,568
+If someone deletes a contact by mistake,
+open the Restore tab, find the contact,
+
+40
+00:02:15,568 --> 00:02:16,750
+and click Restore.
+
+41
+00:02:17,600 --> 00:02:21,085
+Charlotte is back on your
+contact list, with her history.
+
+42
+00:02:21,085 --> 00:02:25,243
+So before you re-create someone by
+hand, always check Restore first.
+
+43
+00:02:25,243 --> 00:02:29,584
+Restoring keeps their original history,
+which a new record never could.
+
+44
+00:02:30,435 --> 00:02:31,462
+Here's a pro tip.
+
+45
+00:02:31,462 --> 00:02:36,055
+Once a month, search your list for
+common surnames and check for duplicates.
+
+46
+00:02:36,055 --> 00:02:39,560
+Merge them, and link business
+contacts to their companies.
+
+47
+00:02:39,560 --> 00:02:43,428
+Ten minutes a month keeps your
+reports and automations accurate.
+
+48
+00:02:44,277 --> 00:02:46,833
+That's the end of the Contacts module.
+
+49
+00:02:46,833 --> 00:02:47,505
+Well done!
+
+50
+00:02:47,505 --> 00:02:50,667
+Next, in module four,
+we'll open Conversations,
+
+51
+00:02:50,667 --> 00:02:55,106
+the unified inbox where every
+email, text and chat comes together.
+
+52
+00:02:55,106 --> 00:02:56,047
+See you there.

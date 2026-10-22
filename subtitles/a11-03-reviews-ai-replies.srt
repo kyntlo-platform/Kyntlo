@@ -1,0 +1,244 @@
+1
+00:00:00,500 --> 00:00:05,121
+In this lesson, you'll reply to your
+reviews in seconds with Reviews AI,
+
+2
+00:00:05,121 --> 00:00:10,192
+Kyntlo's built-in assistant that writes
+on-brand responses for you to check and
+
+3
+00:00:10,192 --> 00:00:10,513
+post.
+
+4
+00:00:10,513 --> 00:00:13,850
+You stay in control, and
+you save hours every month.
+
+5
+00:00:14,700 --> 00:00:16,451
+Replying to reviews matters.
+
+6
+00:00:16,451 --> 00:00:20,639
+It thanks happy customers, it shows
+future customers that you care,
+
+7
+00:00:20,639 --> 00:00:24,703
+and it's your chance to put things
+right when someone is unhappy.
+
+8
+00:00:24,703 --> 00:00:29,080
+The Reviews tab brings every Google
+and Facebook review into one list.
+
+9
+00:00:29,931 --> 00:00:33,821
+Click Needs reply to see only the
+reviews you haven't answered yet.
+
+10
+00:00:33,821 --> 00:00:35,098
+We have three waiting.
+
+11
+00:00:35,098 --> 00:00:37,072
+These are the ones to clear first.
+
+12
+00:00:37,922 --> 00:00:41,731
+Before we reply, let's teach
+the AI how we like to sound.
+
+13
+00:00:41,731 --> 00:00:43,469
+Click Reviews AI settings.
+
+14
+00:00:44,319 --> 00:00:45,697
+First, choose a mode.
+
+15
+00:00:45,697 --> 00:00:49,503
+Suggestive means the AI drafts
+a reply and you approve it.
+
+16
+00:00:49,503 --> 00:00:53,178
+Auto-pilot means it posts
+replies for you automatically.
+
+17
+00:00:53,178 --> 00:00:56,591
+Start with Suggestive, so
+you can see how it writes,
+
+18
+00:00:56,591 --> 00:01:00,003
+and fine-tune it before you
+let it reply on its own.
+
+19
+00:01:00,853 --> 00:01:02,105
+Then set the voice.
+
+20
+00:01:02,105 --> 00:01:06,654
+Pick a tone, choose how replies are
+signed off, and add instructions.
+
+21
+00:01:06,654 --> 00:01:10,807
+For example: mention the treatment,
+keep it to a few sentences,
+
+22
+00:01:10,807 --> 00:01:14,432
+and for low ratings, apologise
+and invite them to call.
+
+23
+00:01:14,432 --> 00:01:15,092
+Then save.
+
+24
+00:01:15,942 --> 00:01:20,882
+Back on Reviews, click Reply on Emma's
+five-star review, then Reply with AI.
+
+25
+00:01:20,882 --> 00:01:23,483
+In a couple of seconds, you have a warm,
+
+26
+00:01:23,483 --> 00:01:26,278
+personal reply that
+mentions her whitening,
+
+27
+00:01:26,278 --> 00:01:28,943
+and is signed off just the way we set up.
+
+28
+00:01:29,792 --> 00:01:33,479
+Always read it before you post,
+and change anything you like.
+
+29
+00:01:33,479 --> 00:01:36,018
+When it sounds like you, click Post reply.
+
+30
+00:01:36,018 --> 00:01:39,040
+It's published on Google
+under your business name,
+
+31
+00:01:39,040 --> 00:01:41,821
+and the review is marked
+as replied in Kyntlo.
+
+32
+00:01:42,675 --> 00:01:43,830
+Now a harder one.
+
+33
+00:01:43,830 --> 00:01:47,295
+Grace gave three stars
+because she waited too long.
+
+34
+00:01:47,295 --> 00:01:52,593
+Watch how the AI handles it: it thanks
+her, apologises without making excuses,
+
+35
+00:01:52,593 --> 00:01:55,039
+and offers a way to talk it through.
+
+36
+00:01:55,888 --> 00:02:01,467
+For reviews like this, a real name and a
+direct phone number turn a complaint into
+
+37
+00:02:01,467 --> 00:02:02,488
+a conversation.
+
+38
+00:02:02,488 --> 00:02:06,434
+The AI already included both,
+because of our instructions.
+
+39
+00:02:06,434 --> 00:02:07,591
+Click Post reply.
+
+40
+00:02:08,444 --> 00:02:13,622
+Once you trust the replies, you can switch
+on Auto-pilot for four and five-star
+
+41
+00:02:13,622 --> 00:02:16,899
+reviews, and keep handling
+lower ratings yourself.
+
+42
+00:02:16,899 --> 00:02:21,487
+On the Pro plan, AI usage is included,
+so there's no charge per reply.
+
+43
+00:02:21,487 --> 00:02:24,567
+And you can switch back
+to Suggestive any time.
+
+44
+00:02:25,418 --> 00:02:26,564
+Here's a pro tip.
+
+45
+00:02:26,564 --> 00:02:29,597
+Aim to reply to every
+review within two days.
+
+46
+00:02:29,597 --> 00:02:32,495
+Quick replies show
+you're paying attention,
+
+47
+00:02:32,495 --> 00:02:37,954
+and a thoughtful answer to a bad review
+often wins more trust than a page full of
+
+48
+00:02:37,954 --> 00:02:38,695
+five stars.
+
+49
+00:02:38,695 --> 00:02:42,334
+Reviews AI makes that easy,
+even on your busiest days.
+
+50
+00:02:43,209 --> 00:02:44,299
+That's Reviews AI!
+
+51
+00:02:44,299 --> 00:02:48,902
+In the last lesson of this module,
+you'll show off your best reviews on your
+
+52
+00:02:48,902 --> 00:02:50,658
+website with a review widget.
+
+53
+00:02:50,658 --> 00:02:51,506
+See you there.

@@ -1,0 +1,229 @@
+1
+00:00:00,500 --> 00:00:05,309
+In this lesson, we'll look after your
+customers' data and their choices: who you're
+
+2
+00:00:05,309 --> 00:00:10,060
+allowed to contact, how opt-outs work, and
+what to do when someone asks for a copy
+
+3
+00:00:10,060 --> 00:00:10,871
+of their data.
+
+4
+00:00:11,722 --> 00:00:16,314
+Privacy laws like GDPR in the UK
+and Europe, and the TCPA in the US,
+
+5
+00:00:16,314 --> 00:00:20,299
+say you need permission before
+you send marketing messages.
+
+6
+00:00:20,299 --> 00:00:23,946
+Carriers and inbox providers
+watch for complaints too.
+
+7
+00:00:23,946 --> 00:00:28,066
+Kyntlo gives you the tools to
+stay on the right side of both.
+
+8
+00:00:28,066 --> 00:00:31,713
+Rules differ by country, so
+check what applies to you.
+
+9
+00:00:32,564 --> 00:00:35,885
+Open a contact, and
+scroll to Do Not Disturb.
+
+10
+00:00:35,885 --> 00:00:40,903
+DND stops Kyntlo sending on a
+channel: emails, text messages, calls,
+
+11
+00:00:40,903 --> 00:00:42,232
+WhatsApp and more.
+
+12
+00:00:42,232 --> 00:00:46,881
+Olivia has asked for no more
+texts, so switch on Text messages.
+
+13
+00:00:46,881 --> 00:00:49,833
+Her emails and calls carry on as normal.
+
+14
+00:00:50,683 --> 00:00:55,206
+DND all channels blocks every
+outgoing message in one switch.
+
+15
+00:00:55,206 --> 00:01:00,766
+And Inbound calls & SMS blocks their
+replies too, which is useful for spam.
+
+16
+00:01:00,766 --> 00:01:04,325
+DND also overrides your
+workflows and campaigns,
+
+17
+00:01:04,325 --> 00:01:08,180
+so a contact who opted out
+is skipped automatically.
+
+18
+00:01:09,031 --> 00:01:12,888
+Most of the time, you won't
+need to switch this yourself.
+
+19
+00:01:12,888 --> 00:01:17,691
+When someone replies STOP to a text,
+Kyntlo turns on text DND for them.
+
+20
+00:01:17,691 --> 00:01:21,751
+When they click unsubscribe in
+an email, email DND turns on.
+
+21
+00:01:21,751 --> 00:01:26,284
+Never switch these back on unless
+the customer clearly asks you to.
+
+22
+00:01:27,135 --> 00:01:30,724
+It also helps to record when
+someone gave you permission.
+
+23
+00:01:30,724 --> 00:01:34,816
+In Settings, Custom Fields, click
+Add Field, and choose Checkbox.
+
+24
+00:01:35,665 --> 00:01:39,046
+Name it Marketing consent,
+put it in a Consent folder,
+
+25
+00:01:39,046 --> 00:01:41,801
+and write the exact
+wording people agree to.
+
+26
+00:01:41,801 --> 00:01:44,243
+Add this field to your forms, unticked,
+
+27
+00:01:44,243 --> 00:01:47,499
+so every new lead's choice
+is saved on their record.
+
+28
+00:01:48,349 --> 00:01:52,840
+Sometimes a customer asks for a copy
+of the data you hold about them.
+
+29
+00:01:52,840 --> 00:01:55,964
+In Contacts, tick their
+name, and choose Export.
+
+30
+00:01:55,964 --> 00:01:58,567
+You'll get a CSV file you can send them.
+
+31
+00:01:59,419 --> 00:02:03,287
+If someone asks you to delete
+their data, delete the contact.
+
+32
+00:02:03,287 --> 00:02:07,979
+Deleted contacts stay in the Restore
+tab for a while, in case of mistakes,
+
+33
+00:02:07,979 --> 00:02:11,530
+so you can bring one back if
+it was removed by accident.
+
+34
+00:02:12,380 --> 00:02:16,803
+Finally, Audit Logs in Settings
+shows who changed what, and when.
+
+35
+00:02:16,803 --> 00:02:20,681
+Here's Sarah turning on text
+DND for Olivia this morning.
+
+36
+00:02:20,681 --> 00:02:25,580
+If a customer ever asks how their
+data was handled, this is your record.
+
+37
+00:02:26,429 --> 00:02:30,620
+And remember lesson 1.5: only
+give the Bulk Actions permission,
+
+38
+00:02:30,620 --> 00:02:34,545
+which includes exporting, to
+the people who really need it.
+
+39
+00:02:34,545 --> 00:02:39,136
+The fewer people who can download
+your contact list, the safer it is.
+
+40
+00:02:39,985 --> 00:02:40,998
+Here's a pro tip.
+
+41
+00:02:40,998 --> 00:02:44,929
+Never import a list of people who
+haven't agreed to hear from you,
+
+42
+00:02:44,929 --> 00:02:46,239
+even if you bought it.
+
+43
+00:02:46,239 --> 00:02:51,004
+Complaints from one bad list can get your
+number blocked and your emails sent to
+
+44
+00:02:51,004 --> 00:02:52,076
+spam for everyone.
+
+45
+00:02:52,927 --> 00:02:56,480
+That's Module 14 done, and
+your account is fully set up!
+
+46
+00:02:56,480 --> 00:03:01,555
+In Module 15, we'll put everything together
+and build a complete lead-to-booking
+
+47
+00:03:01,555 --> 00:03:03,078
+system, start to finish.
+
+48
+00:03:03,078 --> 00:03:03,966
+See you there.

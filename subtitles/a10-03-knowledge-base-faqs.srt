@@ -1,0 +1,248 @@
+1
+00:00:00,500 --> 00:00:01,328
+Welcome back!
+
+2
+00:00:01,328 --> 00:00:04,515
+Your AI agents are only
+as good as what they know.
+
+3
+00:00:04,515 --> 00:00:08,721
+In this lesson, we'll build your
+knowledge base from your website,
+
+4
+00:00:08,721 --> 00:00:12,417
+your documents and your FAQs,
+so every answer is accurate.
+
+5
+00:00:13,268 --> 00:00:15,814
+Go to AI Agents, then Knowledge Base.
+
+6
+00:00:15,814 --> 00:00:21,456
+Bloom Dental has one knowledge base, and
+both the front desk chatbot and the Voice
+
+7
+00:00:21,456 --> 00:00:23,039
+AI receptionist use it.
+
+8
+00:00:23,039 --> 00:00:26,135
+Update it once, and
+every agent gets smarter.
+
+9
+00:00:26,986 --> 00:00:30,595
+Everything it knows comes from
+these sources: the website,
+
+10
+00:00:30,595 --> 00:00:34,640
+a list of frequently asked questions,
+and an uploaded price list.
+
+11
+00:00:34,640 --> 00:00:39,308
+Each one shows its training status, so
+you can see what the AI has learned.
+
+12
+00:00:40,156 --> 00:00:43,048
+To teach it something
+new, click Add source.
+
+13
+00:00:43,048 --> 00:00:46,203
+You can crawl web pages,
+add FAQs, upload files,
+
+14
+00:00:46,203 --> 00:00:48,569
+or type information in as rich text.
+
+15
+00:00:48,569 --> 00:00:53,827
+Rich text is handy for things that aren't
+on your website yet, like a new offer.
+
+16
+00:00:53,827 --> 00:00:55,996
+Let's start with the web crawler.
+
+17
+00:00:56,845 --> 00:00:59,162
+Enter the address you want to crawl.
+
+18
+00:00:59,162 --> 00:01:02,251
+Bloom has new blog posts,
+so we'll add the blog.
+
+19
+00:01:02,251 --> 00:01:07,014
+Then choose how much to crawl: just
+this page, every page under this path,
+
+20
+00:01:07,014 --> 00:01:08,301
+or the whole domain.
+
+21
+00:01:08,301 --> 00:01:11,004
+All pages under this path is perfect here.
+
+22
+00:01:11,856 --> 00:01:13,196
+Click Start crawling.
+
+23
+00:01:13,196 --> 00:01:15,685
+Kyntlo finds every page under the blog.
+
+24
+00:01:15,685 --> 00:01:20,790
+Untick any you don't want the AI to learn
+from, then click Train selected pages.
+
+25
+00:01:21,643 --> 00:01:24,580
+The blog appears in your
+list, marked Training.
+
+26
+00:01:24,580 --> 00:01:27,018
+After a moment, it switches to Trained.
+
+27
+00:01:27,018 --> 00:01:30,767
+If you change your website
+later, click the re-train button,
+
+28
+00:01:30,767 --> 00:01:33,580
+so your AI always has
+the latest information.
+
+29
+00:01:34,431 --> 00:01:35,153
+Next, FAQs.
+
+30
+00:01:35,153 --> 00:01:36,993
+Click Add source, then FAQs.
+
+31
+00:01:36,993 --> 00:01:41,787
+Type the question the way customers
+ask it: "Do you offer payment plans?"
+
+32
+00:01:41,787 --> 00:01:45,137
+Then write the answer
+exactly as you want it given.
+
+33
+00:01:46,605 --> 00:01:47,153
+Save it.
+
+34
+00:01:47,153 --> 00:01:52,706
+FAQs are the most reliable source, because
+the AI uses your answer word for word.
+
+35
+00:01:52,706 --> 00:01:57,780
+Use them for prices, policies and
+anything you never want the AI to guess.
+
+36
+00:01:57,780 --> 00:02:02,099
+Keep each answer short, and update
+it whenever a price changes.
+
+37
+00:02:02,948 --> 00:02:04,240
+Finally, documents.
+
+38
+00:02:04,240 --> 00:02:08,797
+Click Add source, then File upload,
+and drop in a PDF or Word file.
+
+39
+00:02:08,797 --> 00:02:11,585
+Here's Bloom's whitening aftercare guide.
+
+40
+00:02:11,585 --> 00:02:15,733
+Click Upload and train, and it's
+added to the knowledge base.
+
+41
+00:02:16,584 --> 00:02:18,638
+Now let's check that it worked.
+
+42
+00:02:18,638 --> 00:02:21,619
+Open Conversation AI,
+and the front desk bot.
+
+43
+00:02:21,619 --> 00:02:24,467
+In the test panel, ask
+about payment plans.
+
+44
+00:02:24,467 --> 00:02:27,448
+The bot answers using
+the FAQ you just added.
+
+45
+00:02:27,448 --> 00:02:30,296
+And if it can't find
+an answer, it says so,
+
+46
+00:02:30,296 --> 00:02:33,476
+and hands over to your
+team instead of guessing.
+
+47
+00:02:34,327 --> 00:02:35,451
+Here's a pro tip.
+
+48
+00:02:35,451 --> 00:02:38,758
+Once a week, read your
+bot's conversation history.
+
+49
+00:02:38,758 --> 00:02:44,115
+Any question it couldn't answer, or passed
+to your team, should become a new FAQ.
+
+50
+00:02:44,115 --> 00:02:46,695
+Your AI gets smarter every single week.
+
+51
+00:02:47,549 --> 00:02:50,233
+Your AI now knows your
+business inside out.
+
+52
+00:02:50,233 --> 00:02:52,855
+In the next lesson, we'll give it a voice,
+
+53
+00:02:52,855 --> 00:02:56,225
+and set up an AI receptionist
+that answers your phone.
+
+54
+00:02:56,225 --> 00:02:57,099
+See you there.

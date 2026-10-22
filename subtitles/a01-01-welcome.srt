@@ -1,0 +1,391 @@
+1
+00:00:00,500 --> 00:00:02,535
+Hi, and welcome to Kyntlo Academy!
+
+2
+00:00:02,535 --> 00:00:04,211
+I'm really glad you're here.
+
+3
+00:00:04,211 --> 00:00:07,264
+In this first lesson, I'll
+show you what Kyntlo is,
+
+4
+00:00:07,264 --> 00:00:11,574
+walk you through everything inside
+it, and explain each of our packages,
+
+5
+00:00:11,574 --> 00:00:14,508
+so you know exactly which
+one fits your business.
+
+6
+00:00:15,358 --> 00:00:17,231
+Let's start with the problem.
+
+7
+00:00:17,231 --> 00:00:22,140
+Most growing businesses juggle a pile
+of separate tools: a CRM for contacts,
+
+8
+00:00:22,140 --> 00:00:26,726
+another app for bookings, another
+for email, another for text messages,
+
+9
+00:00:26,726 --> 00:00:29,115
+a website builder, and a review tool.
+
+10
+00:00:29,115 --> 00:00:34,347
+Each one has its own login and its own
+bill, and none of them talk to each other.
+
+11
+00:00:35,200 --> 00:00:38,479
+Kyntlo brings all of that
+together in one platform.
+
+12
+00:00:38,479 --> 00:00:42,916
+One login, one invoice, and one
+place where every lead, conversation,
+
+13
+00:00:42,916 --> 00:00:44,588
+booking and payment lives.
+
+14
+00:00:44,588 --> 00:00:49,346
+Because everything is connected, Kyntlo
+can follow up with people for you,
+
+15
+00:00:49,346 --> 00:00:50,246
+automatically.
+
+16
+00:00:51,096 --> 00:00:52,681
+Here's what it looks like.
+
+17
+00:00:52,681 --> 00:00:56,949
+This is a demo account for a dental
+clinic called Bloom Dental Studio.
+
+18
+00:00:56,949 --> 00:01:01,400
+Your dashboard shows your business at
+a glance: your deals, your revenue,
+
+19
+00:01:01,400 --> 00:01:03,778
+and how many leads turn into customers.
+
+20
+00:01:04,629 --> 00:01:06,932
+Every tool lives in the sidebar.
+
+21
+00:01:06,932 --> 00:01:11,466
+Conversations is one inbox for
+email, text, WhatsApp, Facebook,
+
+22
+00:01:11,466 --> 00:01:13,410
+Instagram and website chat.
+
+23
+00:01:13,410 --> 00:01:16,361
+Calendars lets customers book themselves.
+
+24
+00:01:16,361 --> 00:01:21,111
+And Contacts is your CRM, with the
+full history of every customer.
+
+25
+00:01:21,960 --> 00:01:27,280
+Opportunities shows your sales pipeline,
+so you always know where every deal stands.
+
+26
+00:01:27,280 --> 00:01:31,840
+Sites is where you build funnels,
+websites and forms that capture leads.
+
+27
+00:01:31,840 --> 00:01:37,097
+And Marketing handles your email campaigns,
+text broadcasts and social media posts.
+
+28
+00:01:37,947 --> 00:01:40,734
+Automation is where Kyntlo works for you,
+
+29
+00:01:40,734 --> 00:01:44,678
+following up with every lead
+and reminding every customer.
+
+30
+00:01:44,678 --> 00:01:49,097
+AI Agents can answer chats and
+even phone calls around the clock.
+
+31
+00:01:49,097 --> 00:01:53,448
+And Reputation helps you collect
+five-star reviews on autopilot.
+
+32
+00:01:54,297 --> 00:01:56,307
+Now, let's talk about packages.
+
+33
+00:01:56,307 --> 00:02:00,521
+Kyntlo comes in four plans: Starter,
+Growth, Pro, and Customized.
+
+34
+00:02:00,521 --> 00:02:02,726
+They all run on the same platform.
+
+35
+00:02:02,726 --> 00:02:05,708
+The difference is which
+tools are switched on,
+
+36
+00:02:05,708 --> 00:02:08,366
+and how many people can use your account.
+
+37
+00:02:09,216 --> 00:02:10,751
+Starter is $90 a month.
+
+38
+00:02:10,751 --> 00:02:16,023
+It gives you the CRM, one sales pipeline,
+funnels and pages, forms and surveys,
+
+39
+00:02:16,023 --> 00:02:21,295
+online booking, a live chat widget for
+your website, and basic email campaigns,
+
+40
+00:02:21,295 --> 00:02:22,496
+for up to 3 users.
+
+41
+00:02:22,496 --> 00:02:27,301
+Starter is perfect if you're getting
+organised, and you want your leads,
+
+42
+00:02:27,301 --> 00:02:31,371
+bookings and customers in one
+place before adding automation.
+
+43
+00:02:32,222 --> 00:02:33,772
+Growth is $270 a month.
+
+44
+00:02:33,772 --> 00:02:38,759
+You get everything in Starter, plus 2
+to 3 pipelines, workflow automation,
+
+45
+00:02:38,759 --> 00:02:44,151
+automatic appointment reminders, the full
+inbox with text messages and WhatsApp,
+
+46
+00:02:44,151 --> 00:02:47,049
+and a basic AI chatbot,
+for up to 10 users.
+
+47
+00:02:47,049 --> 00:02:50,755
+Choose Growth if leads are
+slipping through the cracks,
+
+48
+00:02:50,755 --> 00:02:53,923
+and you want follow-up
+to happen automatically.
+
+49
+00:02:54,772 --> 00:02:58,066
+Pro is our most popular
+plan, at $490 a month.
+
+50
+00:02:58,066 --> 00:03:02,577
+It unlocks everything: unlimited
+AI usage, unlimited pipelines,
+
+51
+00:03:02,577 --> 00:03:07,804
+the advanced AI chatbot and Voice AI
+receptionist, missed-call text-back,
+
+52
+00:03:07,804 --> 00:03:12,100
+the reputation manager for
+reviews, memberships and courses,
+
+53
+00:03:12,100 --> 00:03:16,181
+call tracking and advanced
+analytics, for up to 25 users.
+
+54
+00:03:16,181 --> 00:03:20,405
+Pro is for businesses that want
+AI doing the heavy lifting.
+
+55
+00:03:21,255 --> 00:03:24,895
+And if your business doesn't
+fit a box, there's Customized.
+
+56
+00:03:24,895 --> 00:03:29,522
+You choose exactly which features you
+want, with limits sized to your team.
+
+57
+00:03:29,522 --> 00:03:33,471
+It can include multiple brands
+or branches, custom integrations,
+
+58
+00:03:33,471 --> 00:03:37,049
+campaign management by our
+team, and dedicated onboarding.
+
+59
+00:03:37,049 --> 00:03:39,146
+You only pay for the mix you pick.
+
+60
+00:03:39,996 --> 00:03:45,204
+You can pay monthly, or choose quarterly
+billing and get 50% off your first 3
+
+61
+00:03:45,204 --> 00:03:45,677
+months.
+
+62
+00:03:45,677 --> 00:03:49,735
+That's enough runway to set up
+properly and train your team.
+
+63
+00:03:49,735 --> 00:03:53,591
+After that, your plan renews
+at the normal monthly price.
+
+64
+00:03:53,591 --> 00:03:58,122
+Things like text messages, calls
+and AI messages are pay-as-you-go,
+
+65
+00:03:58,122 --> 00:04:00,354
+at wholesale cost with no markup.
+
+66
+00:04:01,204 --> 00:04:03,165
+So, which plan is right for you?
+
+67
+00:04:03,165 --> 00:04:04,942
+Ask yourself three questions.
+
+68
+00:04:04,942 --> 00:04:06,658
+How many people will use it?
+
+69
+00:04:06,658 --> 00:04:08,926
+Which channels do your customers use?
+
+70
+00:04:08,926 --> 00:04:12,358
+And how much work do you want
+AI to take off your plate?
+
+71
+00:04:12,358 --> 00:04:14,442
+Getting organised, choose Starter.
+
+72
+00:04:14,442 --> 00:04:17,261
+Losing leads to slow
+follow-up, choose Growth.
+
+73
+00:04:17,261 --> 00:04:19,467
+Ready for AI everywhere, choose Pro.
+
+74
+00:04:20,317 --> 00:04:24,457
+Every plan starts with a 14-day
+free trial, with no setup fees.
+
+75
+00:04:24,457 --> 00:04:26,232
+And you're never locked in.
+
+76
+00:04:26,232 --> 00:04:29,978
+You can upgrade or downgrade
+any time, and your contacts,
+
+77
+00:04:29,978 --> 00:04:32,607
+pipelines and automations come with you.
+
+78
+00:04:33,458 --> 00:04:38,215
+This course has 15 modules, from your
+first login all the way to building a
+
+79
+00:04:38,215 --> 00:04:40,244
+complete lead-to-booking system.
+
+80
+00:04:40,244 --> 00:04:43,098
+Each lesson is short
+and focused on one task.
+
+81
+00:04:43,098 --> 00:04:48,236
+Some features belong to Growth or Pro, so
+look for the plan badge at the start of
+
+82
+00:04:48,236 --> 00:04:48,997
+each lesson.
+
+83
+00:04:49,846 --> 00:04:51,775
+Alright, that's the big picture!
+
+84
+00:04:51,775 --> 00:04:56,597
+In the next lesson, we'll log in and take
+a proper tour of the Kyntlo interface.
+
+85
+00:04:56,597 --> 00:04:57,440
+See you there.

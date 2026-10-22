@@ -1,0 +1,238 @@
+1
+00:00:00,500 --> 00:00:03,875
+So far, our workflows send
+the same steps to everyone.
+
+2
+00:00:03,875 --> 00:00:07,437
+In this lesson, you'll make
+them react to what people do.
+
+3
+00:00:07,437 --> 00:00:12,375
+We'll use waits to give people time,
+If/Else to send them down different paths,
+
+4
+00:00:12,375 --> 00:00:15,874
+and goals to stop chasing
+anyone who's already said yes.
+
+5
+00:00:16,724 --> 00:00:19,715
+Here's Bloom's recall
+workflow, still a draft.
+
+6
+00:00:19,715 --> 00:00:22,381
+When a contact gets the reactivation tag,
+
+7
+00:00:22,381 --> 00:00:25,763
+it sends one text inviting
+them back for a check-up.
+
+8
+00:00:25,763 --> 00:00:27,063
+Then it simply ends.
+
+9
+00:00:27,063 --> 00:00:29,469
+Let's turn it into something smarter.
+
+10
+00:00:30,319 --> 00:00:32,626
+First, give people time to answer.
+
+11
+00:00:32,626 --> 00:00:33,711
+Add a Wait step.
+
+12
+00:00:33,711 --> 00:00:37,171
+Open the Wait for menu,
+and you'll see the options.
+
+13
+00:00:37,171 --> 00:00:41,920
+A time delay, a time relative to an
+appointment, a condition, a reply,
+
+14
+00:00:41,920 --> 00:00:44,091
+a link click, or an email event.
+
+15
+00:00:44,940 --> 00:00:47,139
+A simple time delay works well here.
+
+16
+00:00:47,139 --> 00:00:50,071
+Choose Time Delay, set
+it to two days, and save.
+
+17
+00:00:50,071 --> 00:00:52,514
+Two days is long enough to feel relaxed,
+
+18
+00:00:52,514 --> 00:00:55,874
+and short enough that they
+still remember your message.
+
+19
+00:00:56,723 --> 00:00:57,896
+Now the decision.
+
+20
+00:00:57,896 --> 00:00:59,275
+Add an If/Else step.
+
+21
+00:00:59,275 --> 00:01:04,656
+Name the first branch Replied, then set
+the condition: contact replied is yes.
+
+22
+00:01:04,656 --> 00:01:09,141
+Anyone who doesn't match goes down
+the None branch automatically.
+
+23
+00:01:11,919 --> 00:01:13,779
+And there they are: two lanes.
+
+24
+00:01:13,779 --> 00:01:18,182
+Every contact is checked at this
+point, and goes down exactly one path.
+
+25
+00:01:18,182 --> 00:01:23,206
+Each lane has its own plus buttons, so
+you can give each group different actions.
+
+26
+00:01:24,056 --> 00:01:27,682
+People who replied are interested,
+so they deserve a human.
+
+27
+00:01:27,682 --> 00:01:32,353
+In the Replied lane, add a task for the
+front desk: call to book a check-up.
+
+28
+00:01:32,353 --> 00:01:34,811
+The team will see it in their task list.
+
+29
+00:01:35,664 --> 00:01:40,254
+People who didn't reply get a different
+nudge, through a different channel.
+
+30
+00:01:40,254 --> 00:01:42,152
+In the None lane, add an email.
+
+31
+00:01:42,152 --> 00:01:44,967
+Some people ignore texts
+but read every email,
+
+32
+00:01:44,967 --> 00:01:47,477
+so a second channel often wins them back.
+
+33
+00:01:48,329 --> 00:01:49,310
+Finally, a goal.
+
+34
+00:01:49,310 --> 00:01:54,216
+A Goal Event watches for the result you
+want, here, the consultation booked tag.
+
+35
+00:01:54,216 --> 00:01:57,895
+The moment a contact gets it,
+from anywhere in the workflow,
+
+36
+00:01:57,895 --> 00:02:01,636
+they jump straight to the goal
+and skip the steps in between.
+
+37
+00:02:01,636 --> 00:02:04,763
+No more reminders for people
+who've already booked.
+
+38
+00:02:05,613 --> 00:02:10,366
+You also decide what happens if someone
+reaches the goal without meeting it.
+
+39
+00:02:10,366 --> 00:02:13,868
+They can carry on, wait until
+the goal is met, or leave.
+
+40
+00:02:13,868 --> 00:02:16,494
+Here, choose End this workflow, then save.
+
+41
+00:02:17,349 --> 00:02:19,554
+Zoom out to see the whole workflow.
+
+42
+00:02:19,554 --> 00:02:24,406
+One text, a two-day wait, then a branch:
+a phone call for people who replied,
+
+43
+00:02:24,406 --> 00:02:29,005
+and an email for everyone else, with
+a goal to stop as soon as they book.
+
+44
+00:02:29,005 --> 00:02:31,652
+Save it as a draft until you've tested it.
+
+45
+00:02:32,500 --> 00:02:33,595
+Here's a pro tip.
+
+46
+00:02:33,595 --> 00:02:38,106
+Follow each lane to its end, and
+ask: what happens to this person now?
+
+47
+00:02:38,106 --> 00:02:42,809
+Every path should finish with a human
+follow-up, a goal, or a clear stop,
+
+48
+00:02:42,809 --> 00:02:46,482
+so nobody gets forgotten, and
+nobody gets chased forever.
+
+49
+00:02:47,344 --> 00:02:50,722
+You can now build workflows
+that think for themselves.
+
+50
+00:02:50,722 --> 00:02:55,475
+Next, we'll put this to work on
+appointments, with confirmations, reminders,
+
+51
+00:02:55,475 --> 00:02:57,477
+and a no-show recovery workflow.
+
+52
+00:02:57,477 --> 00:02:58,352
+See you there!

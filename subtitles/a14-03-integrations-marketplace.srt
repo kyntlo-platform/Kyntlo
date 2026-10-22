@@ -1,0 +1,238 @@
+1
+00:00:00,500 --> 00:00:05,041
+In this lesson, we'll connect Kyntlo
+to the other tools your business uses,
+
+2
+00:00:05,041 --> 00:00:09,885
+like Google, Facebook and Zoom, and add
+extra features from the App Marketplace.
+
+3
+00:00:10,733 --> 00:00:12,844
+Open Settings, then Integrations.
+
+4
+00:00:12,844 --> 00:00:15,403
+Each card is an account you can connect.
+
+5
+00:00:15,403 --> 00:00:18,154
+A green Connected label
+means it's working.
+
+6
+00:00:18,154 --> 00:00:23,015
+Bloom's Facebook and Instagram are
+already connected, so let's add the rest.
+
+7
+00:00:23,015 --> 00:00:26,086
+Connections are made once
+for the whole account,
+
+8
+00:00:26,086 --> 00:00:28,709
+so your team doesn't need to repeat them.
+
+9
+00:00:29,558 --> 00:00:30,672
+Start with Google.
+
+10
+00:00:30,672 --> 00:00:34,386
+It powers your Google Business
+Profile reviews and messages,
+
+11
+00:00:34,386 --> 00:00:36,862
+plus Google Ads and Analytics reporting.
+
+12
+00:00:36,862 --> 00:00:41,814
+Click Connect, and choose the Google
+account that manages your business listing.
+
+13
+00:00:41,814 --> 00:00:44,662
+It must be an owner or
+manager of the listing,
+
+14
+00:00:44,662 --> 00:00:47,695
+otherwise your location
+won't appear in the list.
+
+15
+00:00:48,545 --> 00:00:52,009
+Review what Kyntlo will be
+able to do, and click Allow.
+
+16
+00:00:52,009 --> 00:00:56,607
+Then choose the business location to
+connect, and click Connect location.
+
+17
+00:00:56,607 --> 00:00:58,560
+That's it: Google is connected.
+
+18
+00:00:59,413 --> 00:01:02,488
+If you hold online
+consultations, connect Zoom.
+
+19
+00:01:02,488 --> 00:01:06,218
+Then, when you set a calendar's
+meeting location to Zoom,
+
+20
+00:01:06,218 --> 00:01:09,751
+every booking gets its own
+meeting link automatically,
+
+21
+00:01:09,751 --> 00:01:12,238
+in the confirmation and the reminders.
+
+22
+00:01:13,087 --> 00:01:18,329
+To change what's connected, for example to
+add another Facebook page, click Manage.
+
+23
+00:01:18,329 --> 00:01:21,866
+And if you ever need to remove
+access, click Disconnect.
+
+24
+00:01:21,866 --> 00:01:24,076
+Kyntlo stops syncing straight away.
+
+25
+00:01:24,076 --> 00:01:28,371
+If a connection ever stops working,
+usually after a password change,
+
+26
+00:01:28,371 --> 00:01:30,202
+disconnect and connect again.
+
+27
+00:01:31,053 --> 00:01:32,362
+What about payments?
+
+28
+00:01:32,362 --> 00:01:35,504
+Stripe is connected from
+Payments, Integrations,
+
+29
+00:01:35,504 --> 00:01:38,319
+so it sits with your
+invoices and products.
+
+30
+00:01:38,319 --> 00:01:40,872
+We set it up step by step in Module 12,
+
+31
+00:01:40,872 --> 00:01:45,520
+including how to take deposits
+automatically when patients book online.
+
+32
+00:01:46,369 --> 00:01:49,636
+For everything else,
+there's the App Marketplace.
+
+33
+00:01:49,636 --> 00:01:54,103
+Click Open App Marketplace, or App
+Marketplace in the main sidebar.
+
+34
+00:01:54,103 --> 00:01:59,370
+Apps add extra features to Kyntlo, from
+accounting and e-commerce to team chat.
+
+35
+00:01:59,370 --> 00:02:01,436
+Browse by category on the left.
+
+36
+00:02:02,287 --> 00:02:04,960
+Bloom's team wants
+new-lead alerts in Slack.
+
+37
+00:02:04,960 --> 00:02:07,146
+Search for Slack, and click Install.
+
+38
+00:02:07,146 --> 00:02:11,459
+Read what the app will be able to
+access, then click Allow and Install.
+
+39
+00:02:11,459 --> 00:02:15,651
+Only install apps you trust, because
+they can read your account data.
+
+40
+00:02:15,651 --> 00:02:18,323
+Most apps then have
+their own settings page,
+
+41
+00:02:18,323 --> 00:02:22,272
+where you choose things like which
+Slack channel gets the alerts.
+
+42
+00:02:23,121 --> 00:02:26,871
+The Installed Apps tab lists
+everything added to this account,
+
+43
+00:02:26,871 --> 00:02:31,711
+so you can review your apps from time to
+time, and remove any you no longer use.
+
+44
+00:02:31,711 --> 00:02:36,126
+Some apps charge their own fee, which
+is always shown before you install.
+
+45
+00:02:36,978 --> 00:02:38,032
+Here's a pro tip.
+
+46
+00:02:38,032 --> 00:02:42,747
+Before paying for a connector like
+Zapier, check what Kyntlo can already do.
+
+47
+00:02:42,747 --> 00:02:46,592
+Workflows can send webhooks and
+update Google Sheets directly,
+
+48
+00:02:46,592 --> 00:02:49,631
+which often covers it for
+a fraction of the cost.
+
+49
+00:02:50,501 --> 00:02:51,932
+Your tools are connected!
+
+50
+00:02:51,932 --> 00:02:56,682
+Next, we'll look at billing: your wallet,
+your usage, and how wholesale rates work.
+
+51
+00:02:56,682 --> 00:02:57,483
+See you there.

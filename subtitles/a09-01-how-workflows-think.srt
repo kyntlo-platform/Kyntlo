@@ -1,0 +1,266 @@
+1
+00:00:00,500 --> 00:00:02,532
+Welcome to the automation module!
+
+2
+00:00:02,532 --> 00:00:06,103
+Before we build anything, let's
+learn how workflows think.
+
+3
+00:00:06,103 --> 00:00:10,598
+Once you understand three simple ideas,
+triggers, actions and conditions,
+
+4
+00:00:10,598 --> 00:00:15,031
+you'll be able to read any workflow,
+and build your own with confidence.
+
+5
+00:00:15,887 --> 00:00:18,855
+Workflows live under
+Automation, in the sidebar.
+
+6
+00:00:18,855 --> 00:00:20,896
+Here's the list for Bloom Dental.
+
+7
+00:00:20,896 --> 00:00:25,780
+You can group workflows into folders,
+and for each one you can see whether it's
+
+8
+00:00:25,780 --> 00:00:29,861
+published or still a draft, and
+how many contacts it has enrolled.
+
+9
+00:00:30,716 --> 00:00:35,791
+Let's open the Lead Nurture folder, and
+look at the workflow that follows up every
+
+10
+00:00:35,791 --> 00:00:37,029
+new Invisalign lead.
+
+11
+00:00:37,029 --> 00:00:41,114
+Reading a real one is the fastest
+way to understand how they work.
+
+12
+00:00:41,965 --> 00:00:44,239
+Every workflow starts with a trigger.
+
+13
+00:00:44,239 --> 00:00:48,601
+The trigger is the when: the event
+that adds a contact to the workflow.
+
+14
+00:00:48,601 --> 00:00:50,199
+This one has two triggers.
+
+15
+00:00:50,199 --> 00:00:53,333
+A contact enters when they
+submit the website form,
+
+16
+00:00:53,333 --> 00:00:55,914
+or when they fill in a Facebook lead form.
+
+17
+00:00:55,914 --> 00:00:57,204
+Either one is enough.
+
+18
+00:00:58,053 --> 00:01:00,019
+Triggers usually have filters.
+
+19
+00:01:00,019 --> 00:01:01,855
+Click a trigger to see them.
+
+20
+00:01:01,855 --> 00:01:04,804
+This filter says: form
+is Invisalign Enquiry.
+
+21
+00:01:04,804 --> 00:01:07,360
+So only that form starts this workflow.
+
+22
+00:01:07,360 --> 00:01:11,489
+Someone filling in your general
+contact form won't be enrolled.
+
+23
+00:01:11,489 --> 00:01:16,077
+Filters are how you make sure the
+right people get the right messages.
+
+24
+00:01:16,928 --> 00:01:19,187
+Under the trigger come the actions.
+
+25
+00:01:19,187 --> 00:01:23,575
+Actions are the what: everything
+the workflow does for that contact.
+
+26
+00:01:23,575 --> 00:01:25,381
+They run from top to bottom.
+
+27
+00:01:25,381 --> 00:01:30,738
+Here, Kyntlo creates an opportunity in the
+pipeline, sends an instant text message,
+
+28
+00:01:30,738 --> 00:01:33,964
+and notifies the team
+member assigned to the lead.
+
+29
+00:01:33,964 --> 00:01:36,997
+All within seconds of
+the form being submitted.
+
+30
+00:01:37,848 --> 00:01:38,838
+Next is a wait.
+
+31
+00:01:38,838 --> 00:01:44,382
+A wait pauses the contact right here, in
+this case for one day, before they move on.
+
+32
+00:01:44,382 --> 00:01:49,133
+Waits are what turn a single message
+into a friendly follow-up sequence,
+
+33
+00:01:49,133 --> 00:01:51,905
+instead of five messages arriving at once.
+
+34
+00:01:52,754 --> 00:01:54,277
+Then comes a condition.
+
+35
+00:01:54,277 --> 00:01:59,375
+This If/Else step asks a question: has
+the contact booked a consultation yet?
+
+36
+00:01:59,375 --> 00:02:02,222
+Contacts who have, go
+down the Booked path.
+
+37
+00:02:02,222 --> 00:02:07,585
+Everyone else goes down the None path,
+and gets a gentle email and one more text.
+
+38
+00:02:07,585 --> 00:02:10,234
+Each contact only ever travels one path.
+
+39
+00:02:11,088 --> 00:02:12,375
+Here's the key idea.
+
+40
+00:02:12,375 --> 00:02:15,272
+A workflow runs separately
+for every contact.
+
+41
+00:02:15,272 --> 00:02:20,485
+Olivia might be waiting on day one, while
+Sophie has already booked and finished.
+
+42
+00:02:20,485 --> 00:02:25,377
+You can see exactly who's in the workflow,
+and where, in Enrollment History.
+
+43
+00:02:26,226 --> 00:02:28,394
+Finally, the switch at the top right.
+
+44
+00:02:28,394 --> 00:02:30,797
+A workflow only runs when it's published.
+
+45
+00:02:30,797 --> 00:02:34,958
+While it's a draft, you can build
+and test safely, and nothing is sent.
+
+46
+00:02:34,958 --> 00:02:38,240
+When you're happy, switch it
+to Publish, and click Save.
+
+47
+00:02:39,091 --> 00:02:42,994
+Workflow automation is included
+on the Growth and Pro plans.
+
+48
+00:02:42,994 --> 00:02:48,134
+A handful of premium actions, like Google
+Sheets and custom webhooks, need Pro,
+
+49
+00:02:48,134 --> 00:02:50,931
+and we'll cover those
+later in this module.
+
+50
+00:02:51,780 --> 00:02:52,824
+Here's a pro tip.
+
+51
+00:02:52,824 --> 00:02:56,261
+Before you build, describe
+the workflow in one sentence.
+
+52
+00:02:56,261 --> 00:03:00,128
+When someone submits the Invisalign
+form, text them right away,
+
+53
+00:03:00,128 --> 00:03:03,197
+and if they haven't booked
+after a day, follow up.
+
+54
+00:03:03,197 --> 00:03:08,292
+The when is your trigger, the do is your
+actions, and the unless is your condition.
+
+55
+00:03:09,140 --> 00:03:11,099
+Now you know how workflows think.
+
+56
+00:03:11,099 --> 00:03:15,967
+In the next lesson, we'll build your first
+one from scratch, a new lead follow-up,
+
+57
+00:03:15,967 --> 00:03:17,867
+and test it before it goes live.
+
+58
+00:03:17,867 --> 00:03:18,698
+See you there!

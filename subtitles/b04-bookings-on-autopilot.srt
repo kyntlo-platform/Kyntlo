@@ -1,0 +1,105 @@
+1
+00:00:00,500 --> 00:00:03,917
+What if your diary filled
+itself, reminded every customer,
+
+2
+00:00:03,917 --> 00:00:07,157
+and chased every no-show,
+without you lifting a finger?
+
+3
+00:00:07,157 --> 00:00:07,981
+Let's see how.
+
+4
+00:00:08,838 --> 00:00:10,638
+This is your Kyntlo calendar.
+
+5
+00:00:10,638 --> 00:00:14,237
+Every booking, for every member
+of your team, in one view.
+
+6
+00:00:14,237 --> 00:00:15,416
+Day, week or month.
+
+7
+00:00:16,268 --> 00:00:19,611
+Customers book themselves
+from a simple booking page,
+
+8
+00:00:19,611 --> 00:00:22,323
+and only see times that
+are genuinely free.
+
+9
+00:00:22,323 --> 00:00:26,675
+Share the link on your website, in
+emails, or on your Google profile.
+
+10
+00:00:27,528 --> 00:00:29,001
+Then Kyntlo takes over.
+
+11
+00:00:29,001 --> 00:00:33,484
+It confirms every booking, and sends
+reminders before the appointment,
+
+12
+00:00:33,484 --> 00:00:35,597
+by email and text, automatically.
+
+13
+00:00:36,455 --> 00:00:41,318
+This calendar sends an email 24 hours
+before, and a text 2 hours before.
+
+14
+00:00:41,318 --> 00:00:43,953
+You choose the timing, and the message.
+
+15
+00:00:44,804 --> 00:00:49,122
+And when someone doesn't turn up, your
+team marks the appointment as a no-show,
+
+16
+00:00:49,122 --> 00:00:49,832
+in one click.
+
+17
+00:00:50,684 --> 00:00:53,104
+That starts a no-show recovery workflow.
+
+18
+00:00:53,104 --> 00:00:57,340
+It waits 30 minutes, then sends a
+friendly text with a link to rebook.
+
+19
+00:00:57,340 --> 00:01:01,939
+And if they still haven't rebooked, it
+creates a task for your team to call.
+
+20
+00:01:02,789 --> 00:01:05,673
+Online booking comes
+with every Kyntlo plan.
+
+21
+00:01:05,673 --> 00:01:09,475
+Automatic reminders and no-show
+workflows start on Growth.
+
+22
+00:01:10,326 --> 00:01:12,412
+Let your calendar run itself.
+
+23
+00:01:12,412 --> 00:01:15,937
+Start your free 14-day
+trial today, at kyntlo.ai.

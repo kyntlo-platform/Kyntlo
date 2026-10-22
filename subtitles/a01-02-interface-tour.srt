@@ -1,0 +1,256 @@
+1
+00:00:00,500 --> 00:00:01,310
+Welcome back!
+
+2
+00:00:01,310 --> 00:00:06,043
+In this lesson, we'll log in and take
+a guided tour of the Kyntlo interface.
+
+3
+00:00:06,043 --> 00:00:09,469
+By the end, you'll know
+exactly where everything lives,
+
+4
+00:00:09,469 --> 00:00:11,711
+and the quickest ways to get around.
+
+5
+00:00:12,565 --> 00:00:18,006
+To sign in, go to hub.kyntlo.ai, and log
+in with the email address you used when
+
+6
+00:00:18,006 --> 00:00:18,958
+you signed up.
+
+7
+00:00:18,958 --> 00:00:22,630
+Bookmark the page, because
+this is your new home base.
+
+8
+00:00:22,630 --> 00:00:27,459
+If you ever forget your password,
+use the reset link on the login page.
+
+9
+00:00:28,309 --> 00:00:30,953
+Once you're in, you
+land on your dashboard.
+
+10
+00:00:30,953 --> 00:00:34,951
+It's a snapshot of how the business
+is doing: your opportunities,
+
+11
+00:00:34,951 --> 00:00:37,841
+revenue and conversion
+rate, all on one screen.
+
+12
+00:00:37,841 --> 00:00:39,993
+We'll read it properly in Module 2.
+
+13
+00:00:40,843 --> 00:00:42,924
+Top left is your account switcher.
+
+14
+00:00:42,924 --> 00:00:45,495
+It shows which business you're working in.
+
+15
+00:00:45,495 --> 00:00:49,473
+If you run more than one location,
+click it to jump between them.
+
+16
+00:00:49,473 --> 00:00:52,717
+Everything you see, contacts,
+calendars and settings,
+
+17
+00:00:52,717 --> 00:00:54,982
+belongs to the account selected here.
+
+18
+00:00:55,832 --> 00:00:57,157
+Just below is search.
+
+19
+00:00:57,157 --> 00:01:01,384
+Click it, or press Ctrl + K from
+anywhere, and start typing a name,
+
+20
+00:01:01,384 --> 00:01:02,772
+email or phone number.
+
+21
+00:01:02,772 --> 00:01:06,684
+Pick a result, and you're straight
+into that contact's record.
+
+22
+00:01:07,535 --> 00:01:10,980
+On the left is the sidebar,
+where every tool lives.
+
+23
+00:01:10,980 --> 00:01:15,642
+The everyday ones sit at the top:
+conversations, calendars, contacts,
+
+24
+00:01:15,642 --> 00:01:17,466
+opportunities and payments.
+
+25
+00:01:17,466 --> 00:01:23,005
+Below the line are the tools that help you
+grow: AI agents, marketing, automation,
+
+26
+00:01:23,005 --> 00:01:25,167
+sites, reputation and reporting.
+
+27
+00:01:26,015 --> 00:01:29,671
+Click any tool, and its own
+tabs appear along the top bar.
+
+28
+00:01:29,671 --> 00:01:34,272
+In Contacts, for example, you'll find
+smart lists, bulk actions, restore,
+
+29
+00:01:34,272 --> 00:01:35,533
+tasks and companies.
+
+30
+00:01:35,533 --> 00:01:39,441
+Whenever you're looking for a
+feature, check these tabs first.
+
+31
+00:01:40,291 --> 00:01:43,789
+Conversations is your unified
+inbox, with every email,
+
+32
+00:01:43,789 --> 00:01:47,092
+text and social message in
+one thread per customer.
+
+33
+00:01:47,092 --> 00:01:49,036
+Calendars holds your bookings.
+
+34
+00:01:49,036 --> 00:01:52,598
+And Opportunities shows your
+sales pipeline as a board,
+
+35
+00:01:52,598 --> 00:01:55,578
+so you can see every
+deal and where it stands.
+
+36
+00:01:56,429 --> 00:01:58,027
+Now the top right corner.
+
+37
+00:01:58,027 --> 00:02:03,332
+The green phone button opens the dialer,
+so you can call from your business number.
+
+38
+00:02:03,332 --> 00:02:08,509
+The bell shows your notifications: new
+leads, bookings, reviews and missed calls.
+
+39
+00:02:08,509 --> 00:02:11,066
+And your initials open your own profile.
+
+40
+00:02:11,919 --> 00:02:15,051
+Next to the bell is Ask AI,
+your built-in assistant.
+
+41
+00:02:15,051 --> 00:02:19,268
+Ask it about your business, like how
+many new leads came in this week,
+
+42
+00:02:19,268 --> 00:02:23,002
+or how to set something up, and
+it answers using your account.
+
+43
+00:02:23,853 --> 00:02:25,382
+Two more places to know.
+
+44
+00:02:25,382 --> 00:02:29,458
+Launchpad, near the top of the
+sidebar, is your setup checklist.
+
+45
+00:02:29,458 --> 00:02:33,981
+And Settings, at the very bottom, is
+where your business profile, team,
+
+46
+00:02:33,981 --> 00:02:36,274
+phone numbers and integrations live.
+
+47
+00:02:36,274 --> 00:02:39,905
+Opening Settings swaps the
+sidebar for the settings menu.
+
+48
+00:02:39,905 --> 00:02:41,434
+Click Go Back to return.
+
+49
+00:02:42,284 --> 00:02:43,338
+Here's a pro tip.
+
+50
+00:02:43,338 --> 00:02:45,817
+Get into the habit of pressing Ctrl + K.
+
+51
+00:02:45,817 --> 00:02:49,351
+It's the quickest way to find
+any contact, from any page,
+
+52
+00:02:49,351 --> 00:02:51,148
+without touching the sidebar.
+
+53
+00:02:52,012 --> 00:02:52,890
+That's the tour!
+
+54
+00:02:52,890 --> 00:02:55,251
+Next up, we'll work
+through your Launchpad,
+
+55
+00:02:55,251 --> 00:02:58,546
+the checklist that gets your
+account ready to capture leads.
+
+56
+00:02:58,546 --> 00:02:59,314
+See you there.

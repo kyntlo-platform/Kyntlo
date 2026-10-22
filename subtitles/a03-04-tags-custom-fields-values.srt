@@ -1,0 +1,246 @@
+1
+00:00:00,500 --> 00:00:05,785
+In this lesson, you'll learn the three
+ways to organise information in Kyntlo:
+
+2
+00:00:05,785 --> 00:00:08,359
+tags, custom fields and custom values.
+
+3
+00:00:08,359 --> 00:00:13,711
+Get these right, and your filters,
+automations and messages all become far more
+
+4
+00:00:13,711 --> 00:00:14,321
+powerful.
+
+5
+00:00:15,177 --> 00:00:16,761
+Here's the short version.
+
+6
+00:00:16,761 --> 00:00:20,626
+Tags are simple labels that put
+people into groups, like vip.
+
+7
+00:00:20,626 --> 00:00:25,378
+Custom fields store a detail about one
+contact, like their last visit date.
+
+8
+00:00:25,378 --> 00:00:30,257
+And custom values store a detail about
+your business, like your booking link,
+
+9
+00:00:30,257 --> 00:00:31,905
+that you reuse everywhere.
+
+10
+00:00:32,826 --> 00:00:34,111
+Let's start with tags.
+
+11
+00:00:34,111 --> 00:00:35,747
+Here's Emma Clarke's record.
+
+12
+00:00:35,747 --> 00:00:38,376
+Her tags sit on the
+left: whitening, and vip.
+
+13
+00:00:39,226 --> 00:00:41,293
+Click Add tag and start typing.
+
+14
+00:00:41,293 --> 00:00:45,828
+Kyntlo suggests tags you already
+use, so reuse one whenever you can.
+
+15
+00:00:45,828 --> 00:00:48,696
+If you really need a
+new tag, click Create.
+
+16
+00:00:49,548 --> 00:00:51,937
+Tags are the glue of your automations.
+
+17
+00:00:51,937 --> 00:00:54,892
+A workflow can start the
+moment a tag is added,
+
+18
+00:00:54,892 --> 00:00:58,664
+like sending a thank-you when
+someone is tagged review left.
+
+19
+00:00:58,664 --> 00:01:03,002
+And in your contact list, you can
+filter everyone by tag in a second.
+
+20
+00:01:03,852 --> 00:01:06,176
+Now scroll down to Additional info.
+
+21
+00:01:06,176 --> 00:01:07,769
+These are custom fields.
+
+22
+00:01:07,769 --> 00:01:13,080
+They hold the details that standard fields
+don't cover, like treatment interest,
+
+23
+00:01:13,080 --> 00:01:15,603
+last visit date, or preferred dentist.
+
+24
+00:01:15,603 --> 00:01:20,648
+Unlike a tag, a field holds a value
+that can be different for every contact.
+
+25
+00:01:21,498 --> 00:01:24,752
+You update them like any
+other field, then click Save.
+
+26
+00:01:24,752 --> 00:01:28,729
+Because they're real fields, you
+can filter by them, sort by them,
+
+27
+00:01:28,729 --> 00:01:31,802
+and even show them as
+columns in your contact list.
+
+28
+00:01:32,652 --> 00:01:36,668
+You create new custom fields in
+Settings, under Custom Fields.
+
+29
+00:01:36,668 --> 00:01:40,360
+Pick a field type, like text,
+date, dropdown or checkbox,
+
+30
+00:01:40,360 --> 00:01:42,821
+and group related fields into folders.
+
+31
+00:01:42,821 --> 00:01:45,476
+Your forms can fill in custom fields too,
+
+32
+00:01:45,476 --> 00:01:49,168
+so the details people type in
+land right on their record.
+
+33
+00:01:49,168 --> 00:01:52,213
+We'll walk through Settings
+in module fourteen.
+
+34
+00:01:53,063 --> 00:01:54,742
+Custom values are different.
+
+35
+00:01:54,742 --> 00:01:57,560
+They belong to your
+business, not to a contact.
+
+36
+00:01:57,560 --> 00:02:02,056
+Think of your booking link, your phone
+number, or this month's offer price.
+
+37
+00:02:02,056 --> 00:02:05,174
+You set them once, in
+Settings, under Custom Values.
+
+38
+00:02:06,026 --> 00:02:08,296
+Here's where it all comes together.
+
+39
+00:02:08,296 --> 00:02:12,381
+In the message box, click Custom
+values to insert placeholders.
+
+40
+00:02:12,381 --> 00:02:15,299
+Contact fields fill in
+each person's details,
+
+41
+00:02:15,299 --> 00:02:18,412
+and custom values fill
+in your business details.
+
+42
+00:02:19,885 --> 00:02:24,291
+When you send it, Kyntlo swaps each
+placeholder for the real value.
+
+43
+00:02:24,291 --> 00:02:27,382
+Emma sees her own name,
+the price and the link.
+
+44
+00:02:27,382 --> 00:02:30,933
+And if the price changes,
+you update one custom value,
+
+45
+00:02:30,933 --> 00:02:33,760
+and every message that
+uses it updates too.
+
+46
+00:02:34,611 --> 00:02:35,713
+Here's a pro tip.
+
+47
+00:02:35,713 --> 00:02:38,822
+Agree on a naming style
+for tags with your team,
+
+48
+00:02:38,822 --> 00:02:43,811
+like lowercase words joined with hyphens,
+and write down what each tag means.
+
+49
+00:02:43,811 --> 00:02:48,476
+A tidy tag list keeps your filters
+and automations reliable as you grow.
+
+50
+00:02:49,385 --> 00:02:50,816
+Your data is organised!
+
+51
+00:02:50,816 --> 00:02:55,482
+In the next lesson, we'll put it to
+work with smart lists and bulk actions,
+
+52
+00:02:55,482 --> 00:02:58,966
+so you can tag, message and
+export whole groups at once.
+
+53
+00:02:58,966 --> 00:02:59,837
+See you there.

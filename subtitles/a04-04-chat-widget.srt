@@ -1,0 +1,265 @@
+1
+00:00:00,500 --> 00:00:01,295
+Welcome back!
+
+2
+00:00:01,295 --> 00:00:04,107
+In this lesson, you'll
+set up the chat widget,
+
+3
+00:00:04,107 --> 00:00:08,999
+the little bubble in the corner of your
+website that turns curious visitors into
+
+4
+00:00:08,999 --> 00:00:10,161
+real conversations.
+
+5
+00:00:10,161 --> 00:00:12,606
+We'll style it, test it, and install it.
+
+6
+00:00:13,491 --> 00:00:16,325
+You'll find it under
+Sites, then Chat Widget.
+
+7
+00:00:16,325 --> 00:00:20,041
+Here's why it matters: most
+people won't pick up the phone,
+
+8
+00:00:20,041 --> 00:00:22,308
+but they will type a quick question.
+
+9
+00:00:22,308 --> 00:00:27,535
+Every chat becomes a contact in your CRM,
+and the conversation lands in your inbox.
+
+10
+00:00:28,385 --> 00:00:29,552
+Open your widget.
+
+11
+00:00:29,552 --> 00:00:31,473
+First, choose the chat type.
+
+12
+00:00:31,473 --> 00:00:35,934
+Live Chat keeps the conversation
+inside the widget, in real time.
+
+13
+00:00:35,934 --> 00:00:41,219
+SMS and Email collects the visitor's
+details, and you reply by text or email,
+
+14
+00:00:41,219 --> 00:00:45,336
+so the conversation follows
+them after they leave your site.
+
+15
+00:00:46,187 --> 00:00:47,663
+Next, style and colours.
+
+16
+00:00:47,663 --> 00:00:50,369
+Pick a theme colour
+that matches your brand,
+
+17
+00:00:50,369 --> 00:00:53,013
+and choose which corner
+the bubble sits in.
+
+18
+00:00:53,013 --> 00:00:55,350
+Then give the bubble a friendly label.
+
+19
+00:00:55,350 --> 00:01:00,024
+Something like questions, chat with us,
+works much better than a plain icon.
+
+20
+00:01:00,024 --> 00:01:02,976
+The live preview on the
+right updates as you go.
+
+21
+00:01:03,824 --> 00:01:08,100
+In Chat window, write the greeting
+people see when they open the chat.
+
+22
+00:01:08,100 --> 00:01:12,987
+Keep it warm and specific to your business,
+and tell them how quickly you reply.
+
+23
+00:01:12,987 --> 00:01:16,652
+You can also show a small pop-up
+prompt after a few seconds,
+
+24
+00:01:16,652 --> 00:01:18,790
+to start the conversation for them.
+
+25
+00:01:19,617 --> 00:01:23,768
+Under Contact form, choose what
+visitors fill in before they chat.
+
+26
+00:01:23,768 --> 00:01:26,598
+Name, phone and a message
+are usually enough.
+
+27
+00:01:26,598 --> 00:01:29,366
+Every extra field means
+fewer people finish.
+
+28
+00:01:29,366 --> 00:01:33,895
+Leave the consent text switched on,
+so you're allowed to text them back.
+
+29
+00:01:34,746 --> 00:01:38,900
+On Growth and Pro, you can let
+Conversation AI answer first.
+
+30
+00:01:38,900 --> 00:01:44,233
+It replies instantly, even at midnight,
+using what you teach it in AI Agents,
+
+31
+00:01:44,233 --> 00:01:46,241
+then hands over to your team.
+
+32
+00:01:47,092 --> 00:01:48,870
+Finally, the acknowledgement.
+
+33
+00:01:48,870 --> 00:01:52,364
+This message appears straight
+after someone sends a chat,
+
+34
+00:01:52,364 --> 00:01:56,717
+so they know a real person has it
+and roughly when to expect an answer.
+
+35
+00:01:57,567 --> 00:02:00,273
+Now test it, exactly like a visitor would.
+
+36
+00:02:00,273 --> 00:02:03,559
+Fill in the form in the
+preview and send a message.
+
+37
+00:02:03,559 --> 00:02:06,459
+You'll see the
+acknowledgement, the AI reply,
+
+38
+00:02:06,459 --> 00:02:09,101
+and a new chat arriving in Conversations.
+
+39
+00:02:09,918 --> 00:02:10,830
+Happy with it?
+
+40
+00:02:10,830 --> 00:02:12,524
+Click Save, then Get Code.
+
+41
+00:02:12,524 --> 00:02:14,087
+Copy this short snippet.
+
+42
+00:02:14,087 --> 00:02:18,190
+It's the same code for every
+page, so you only install it once.
+
+43
+00:02:19,047 --> 00:02:24,280
+On WordPress, Wix or Squarespace, paste
+it into the footer or custom code setting,
+
+44
+00:02:24,280 --> 00:02:26,386
+just before the closing body tag.
+
+45
+00:02:26,386 --> 00:02:27,279
+Not technical?
+
+46
+00:02:27,279 --> 00:02:29,832
+Email it straight to your web developer.
+
+47
+00:02:29,832 --> 00:02:33,852
+And on Kyntlo funnels and websites,
+you don't need code at all.
+
+48
+00:02:34,703 --> 00:02:37,306
+Just open your funnel or website settings,
+
+49
+00:02:37,306 --> 00:02:40,591
+pick your widget from the
+Chat widget menu, and save.
+
+50
+00:02:40,591 --> 00:02:43,381
+It then appears on every
+page of that funnel.
+
+51
+00:02:44,230 --> 00:02:45,350
+Here's a pro tip.
+
+52
+00:02:45,350 --> 00:02:46,075
+Speed wins.
+
+53
+00:02:46,075 --> 00:02:50,686
+Leads who get a reply within five
+minutes are far more likely to book,
+
+54
+00:02:50,686 --> 00:02:56,023
+so turn on new-message notifications and
+answer new chats the moment they arrive.
+
+55
+00:02:56,873 --> 00:02:59,579
+Your website is now
+open for conversations!
+
+56
+00:02:59,579 --> 00:03:03,480
+Next, we'll set up calls, voicemail
+and missed-call text-back,
+
+57
+00:03:03,480 --> 00:03:05,871
+so no caller slips through the cracks.
+
+58
+00:03:05,871 --> 00:03:06,752
+See you there.

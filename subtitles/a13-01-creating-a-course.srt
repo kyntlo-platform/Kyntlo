@@ -1,0 +1,247 @@
+1
+00:00:00,500 --> 00:00:01,968
+Welcome to Memberships!
+
+2
+00:00:01,968 --> 00:00:05,607
+In this lesson, you'll create
+an online course in Kyntlo.
+
+3
+00:00:05,607 --> 00:00:10,204
+We'll set up a product, organise it
+into categories, add a video lesson,
+
+4
+00:00:10,204 --> 00:00:11,162
+and publish it.
+
+5
+00:00:11,162 --> 00:00:15,886
+By the end, you'll have a real course
+your customers can log in and watch.
+
+6
+00:00:16,743 --> 00:00:21,238
+Memberships is where you build
+courses, member areas and communities.
+
+7
+00:00:21,238 --> 00:00:23,193
+It's included on the Pro plan.
+
+8
+00:00:23,193 --> 00:00:25,799
+In Kyntlo, a course is called a product.
+
+9
+00:00:25,799 --> 00:00:29,122
+Bloom already has two: one
+for Invisalign patients,
+
+10
+00:00:29,122 --> 00:00:31,988
+and one about caring
+for your smile at home.
+
+11
+00:00:32,839 --> 00:00:34,948
+Courses aren't just for coaches.
+
+12
+00:00:34,948 --> 00:00:39,363
+A clinic can share aftercare videos,
+a gym can share workout plans,
+
+13
+00:00:39,363 --> 00:00:41,868
+and an agency can onboard new clients.
+
+14
+00:00:41,868 --> 00:00:45,624
+Anything you explain again
+and again can become a course.
+
+15
+00:00:45,624 --> 00:00:50,303
+You record it once, and every customer
+gets the same great explanation,
+
+16
+00:00:50,303 --> 00:00:51,753
+any time they need it.
+
+17
+00:00:52,603 --> 00:00:53,837
+Click Create Product.
+
+18
+00:00:53,837 --> 00:00:56,363
+Give it a clear title,
+Whitening Aftercare,
+
+19
+00:00:56,363 --> 00:00:59,888
+and a short description that
+tells members what they'll get.
+
+20
+00:01:00,705 --> 00:01:04,191
+Click Create product, and you
+land in the product builder.
+
+21
+00:01:04,191 --> 00:01:05,333
+It's empty for now.
+
+22
+00:01:05,333 --> 00:01:09,359
+On the right are the product details,
+and the offers it belongs to.
+
+23
+00:01:10,222 --> 00:01:14,454
+Courses are organised into
+categories, like chapters in a book.
+
+24
+00:01:14,454 --> 00:01:18,417
+Click Add Category, name it,
+Your first 48 hours, and save.
+
+25
+00:01:19,267 --> 00:01:21,100
+Each category holds lessons.
+
+26
+00:01:21,100 --> 00:01:23,914
+Click Add Lesson to
+open the lesson editor.
+
+27
+00:01:23,914 --> 00:01:26,467
+A lesson can be a video, text, or both.
+
+28
+00:01:27,317 --> 00:01:30,127
+Give the lesson a title,
+then add your video.
+
+29
+00:01:30,127 --> 00:01:34,622
+Upload a file straight from your
+computer, or paste a link from YouTube,
+
+30
+00:01:34,622 --> 00:01:35,621
+Vimeo or Wistia.
+
+31
+00:01:37,286 --> 00:01:40,885
+Underneath, add text, like
+notes, steps or a transcript.
+
+32
+00:01:40,885 --> 00:01:45,770
+Members can read along, and it helps
+anyone who prefers reading to watching,
+
+33
+00:01:45,770 --> 00:01:48,405
+or who's somewhere they can't play sound.
+
+34
+00:01:49,211 --> 00:01:52,540
+You can attach downloads too,
+like a printable food guide,
+
+35
+00:01:52,540 --> 00:01:54,089
+a checklist or a worksheet.
+
+36
+00:01:54,939 --> 00:01:56,163
+Now set the status.
+
+37
+00:01:56,163 --> 00:02:00,347
+Draft lessons are hidden from
+members, so you can build in peace.
+
+38
+00:02:00,347 --> 00:02:02,536
+When it's ready, choose Published.
+
+39
+00:02:02,536 --> 00:02:07,494
+You can also drip content, releasing a
+lesson a few days after someone joins.
+
+40
+00:02:08,389 --> 00:02:09,071
+Click Save.
+
+41
+00:02:09,071 --> 00:02:12,602
+Back in the builder, the lesson
+sits inside its category.
+
+42
+00:02:12,602 --> 00:02:16,566
+You can drag lessons and categories
+to reorder them at any time.
+
+43
+00:02:17,416 --> 00:02:21,667
+Click Preview to see exactly what
+members see: the lessons on the left,
+
+44
+00:02:21,667 --> 00:02:25,498
+the video and notes on the right,
+and their progress as they go.
+
+45
+00:02:25,498 --> 00:02:29,988
+Members mark lessons complete, and you
+can see their progress in Analytics.
+
+46
+00:02:30,837 --> 00:02:31,897
+Here's a pro tip.
+
+47
+00:02:31,897 --> 00:02:35,200
+Keep each lesson to one
+idea, and under five minutes.
+
+48
+00:02:35,200 --> 00:02:40,247
+Short lessons get finished, and people
+who finish a lesson come back for the next
+
+49
+00:02:40,247 --> 00:02:40,496
+one.
+
+50
+00:02:40,496 --> 00:02:44,609
+And short videos are much easier
+to update when something changes.
+
+51
+00:02:45,458 --> 00:02:47,065
+Your first course is built!
+
+52
+00:02:47,065 --> 00:02:51,708
+In the next lesson, you'll turn it into
+something people can buy, with offers,
+
+53
+00:02:51,708 --> 00:02:53,672
+checkout and automatic enrolment.
+
+54
+00:02:53,672 --> 00:02:54,505
+See you there.

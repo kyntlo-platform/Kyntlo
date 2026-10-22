@@ -1,0 +1,248 @@
+1
+00:00:00,500 --> 00:00:04,638
+In this lesson, you'll connect your
+Google or Outlook calendar to Kyntlo.
+
+2
+00:00:04,638 --> 00:00:08,549
+Once it's done, your bookings appear
+in the calendar you already use,
+
+3
+00:00:08,549 --> 00:00:10,816
+and you'll never be double-booked again.
+
+4
+00:00:11,669 --> 00:00:12,327
+Why bother?
+
+5
+00:00:12,327 --> 00:00:17,293
+Without a connection, Kyntlo can't see the
+dentist's appointment you put in Google,
+
+6
+00:00:17,293 --> 00:00:21,482
+or the school run in Outlook, so a
+patient could book that exact time.
+
+7
+00:00:21,482 --> 00:00:23,995
+Go to Calendar Settings, then Connections.
+
+8
+00:00:24,845 --> 00:00:26,431
+Connections are personal.
+
+9
+00:00:26,431 --> 00:00:31,251
+Each team member connects their own
+calendar, while logged in as themselves.
+
+10
+00:00:31,251 --> 00:00:35,628
+Sarah's Google Calendar is already
+connected, along with Google Meet.
+
+11
+00:00:35,628 --> 00:00:38,990
+Ask every team member to do
+this in their first week.
+
+12
+00:00:39,839 --> 00:00:44,229
+Sarah also uses Outlook for her
+personal life, so let's add that too.
+
+13
+00:00:44,229 --> 00:00:47,473
+Click Connect, sign in with
+your Microsoft account,
+
+14
+00:00:47,473 --> 00:00:50,082
+and allow Kyntlo to access your calendar.
+
+15
+00:00:50,931 --> 00:00:53,320
+Now the important part: configuration.
+
+16
+00:00:53,320 --> 00:00:55,897
+The linked calendar is your two-way sync.
+
+17
+00:00:55,897 --> 00:00:58,411
+Every new Kyntlo booking is added to it,
+
+18
+00:00:58,411 --> 00:01:02,120
+and anything you put in it
+blocks your Kyntlo availability.
+
+19
+00:01:02,120 --> 00:01:04,446
+Choose the calendar you use for work.
+
+20
+00:01:05,295 --> 00:01:08,429
+Conflict calendars are only
+checked for busy times.
+
+21
+00:01:08,429 --> 00:01:10,149
+Kyntlo never writes to them.
+
+22
+00:01:10,149 --> 00:01:13,345
+Tick your family calendar
+and your Outlook calendar,
+
+23
+00:01:13,345 --> 00:01:17,892
+so private plans block bookings, without
+patients ever seeing the details.
+
+24
+00:01:18,742 --> 00:01:21,946
+Leave out calendars that
+don't reflect your own time,
+
+25
+00:01:21,946 --> 00:01:25,875
+like a public holidays calendar
+or a colleague's shared calendar.
+
+26
+00:01:25,875 --> 00:01:29,926
+Otherwise, their events could block
+slots you're actually free for.
+
+27
+00:01:30,775 --> 00:01:31,438
+Click Save.
+
+28
+00:01:31,438 --> 00:01:34,994
+From now on, Kyntlo keeps
+everything in sync automatically,
+
+29
+00:01:34,994 --> 00:01:37,224
+and you can see when it last checked.
+
+30
+00:01:37,224 --> 00:01:40,298
+New bookings will show up
+in Google within moments.
+
+31
+00:01:41,148 --> 00:01:43,615
+Here's what two-way
+sync means in practice.
+
+32
+00:01:43,615 --> 00:01:47,631
+When a patient books, the appointment
+appears in your linked calendar,
+
+33
+00:01:47,631 --> 00:01:48,549
+with their name.
+
+34
+00:01:48,549 --> 00:01:53,369
+When you add a lunch meeting in Google,
+that time disappears from your booking page.
+
+35
+00:01:53,369 --> 00:01:57,270
+And if you move a Kyntlo appointment,
+the event in Google moves too.
+
+36
+00:01:58,120 --> 00:02:01,384
+Changed your email address,
+or leaving the business?
+
+37
+00:02:01,384 --> 00:02:05,840
+Use the three-dot menu next to a
+connection to manage or disconnect it.
+
+38
+00:02:05,840 --> 00:02:09,731
+Your existing Kyntlo appointments
+stay exactly where they are.
+
+39
+00:02:10,580 --> 00:02:12,584
+One last check: your time zone.
+
+40
+00:02:12,584 --> 00:02:16,333
+Open Preferences, and make
+sure it matches where you work.
+
+41
+00:02:16,333 --> 00:02:18,401
+For Bloom, that's Europe/London.
+
+42
+00:02:18,401 --> 00:02:22,797
+If the time zones don't match,
+synced events can appear an hour out.
+
+43
+00:02:23,646 --> 00:02:28,730
+While you're here, connect Zoom or Google
+Meet if you offer online consultations.
+
+44
+00:02:28,730 --> 00:02:32,245
+Then choose it as the meeting
+location in your calendar,
+
+45
+00:02:32,245 --> 00:02:36,011
+and Kyntlo adds a unique video
+link to every online booking.
+
+46
+00:02:36,861 --> 00:02:37,934
+Here's a pro tip.
+
+47
+00:02:37,934 --> 00:02:39,448
+Test the sync both ways.
+
+48
+00:02:39,448 --> 00:02:44,496
+Add a busy event in Google, and check
+that the time disappears from your booking
+
+49
+00:02:44,496 --> 00:02:44,812
+page.
+
+50
+00:02:44,812 --> 00:02:49,292
+Then book a test appointment in
+Kyntlo, and check it appears in Google.
+
+51
+00:02:50,148 --> 00:02:50,991
+You're synced!
+
+52
+00:02:50,991 --> 00:02:55,811
+In the next lesson, we'll manage appointments
+day to day: booking, rescheduling,
+
+53
+00:02:55,811 --> 00:02:57,799
+cancelling and handling no-shows.
+
+54
+00:02:57,799 --> 00:02:58,643
+See you there.

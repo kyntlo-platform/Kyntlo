@@ -1,0 +1,222 @@
+1
+00:00:00,500 --> 00:00:03,406
+In this lesson, we'll make
+sense of your Kyntlo bill.
+
+2
+00:00:03,406 --> 00:00:06,751
+You'll learn the difference
+between your plan and your usage,
+
+3
+00:00:06,751 --> 00:00:11,192
+how to read your wallet, and how to make
+sure your calls and messages never stop.
+
+4
+00:00:12,062 --> 00:00:14,155
+Open Settings, then Billing.
+
+5
+00:00:14,155 --> 00:00:15,950
+Your bill has two parts.
+
+6
+00:00:15,950 --> 00:00:19,389
+The first is your plan,
+a fixed monthly price.
+
+7
+00:00:19,389 --> 00:00:22,678
+Bloom is on Pro, at
+$490 a month plus taxes.
+
+8
+00:00:22,678 --> 00:00:26,939
+It covers all the features,
+your users, and your hosting.
+
+9
+00:00:27,792 --> 00:00:33,055
+The second part is usage: the emails,
+texts and calls you actually send and make.
+
+10
+00:00:33,055 --> 00:00:35,135
+These are paid from your wallet.
+
+11
+00:00:35,135 --> 00:00:36,889
+Open Wallet & Transactions.
+
+12
+00:00:36,889 --> 00:00:41,633
+Here's your current balance, and usage
+is deducted from it as it happens.
+
+13
+00:00:42,483 --> 00:00:45,169
+Below is your usage summary for the month.
+
+14
+00:00:45,169 --> 00:00:49,518
+For each service, you see how much
+you used, the rate, and the cost.
+
+15
+00:00:49,518 --> 00:00:52,972
+These are wholesale rates,
+with no markup from Kyntlo.
+
+16
+00:00:52,972 --> 00:00:56,106
+You pay what the telecom
+and AI providers charge.
+
+17
+00:00:56,954 --> 00:01:00,603
+Email is very cheap: $0.00135 per email.
+
+18
+00:01:00,603 --> 00:01:05,255
+Bloom's newsletter to 2,140
+patients cost under $3.
+
+19
+00:01:05,255 --> 00:01:08,995
+Texts are billed per segment, at $0.0158.
+
+20
+00:01:08,995 --> 00:01:15,106
+One segment is up to 160 characters,
+and emojis shorten that to 70,
+
+21
+00:01:15,106 --> 00:01:16,931
+so keep texts short.
+
+22
+00:01:17,782 --> 00:01:23,768
+Calls are billed per minute: $0.028 to
+make a call, and $0.017 to receive one.
+
+23
+00:01:23,768 --> 00:01:28,834
+And on Pro, AI usage is unlimited,
+so Conversation AI, Content AI,
+
+24
+00:01:28,834 --> 00:01:32,211
+Reviews AI and Workflow
+AI show as included.
+
+25
+00:01:32,211 --> 00:01:36,662
+On other plans, they're charged
+at the rates you see here.
+
+26
+00:01:37,518 --> 00:01:39,317
+To top up, click Add Balance.
+
+27
+00:01:39,317 --> 00:01:42,171
+Choose an amount, check
+the card, and confirm.
+
+28
+00:01:42,171 --> 00:01:44,404
+The new balance shows straight away.
+
+29
+00:01:44,404 --> 00:01:47,754
+Top-ups are charged to the
+card saved on your account,
+
+30
+00:01:47,754 --> 00:01:50,483
+and they appear in your
+wallet transactions.
+
+31
+00:01:51,334 --> 00:01:54,044
+Better still, switch on auto recharge.
+
+32
+00:01:54,044 --> 00:01:57,396
+Here, whenever Bloom's
+balance falls below $10,
+
+33
+00:01:57,396 --> 00:02:00,248
+the wallet adds $40 from the saved card.
+
+34
+00:02:00,248 --> 00:02:06,025
+That way, reminders, missed-call text-backs
+and phone calls never stop because of
+
+35
+00:02:06,025 --> 00:02:07,166
+an empty wallet.
+
+36
+00:02:08,016 --> 00:02:11,416
+Wallet transactions lists
+every top-up and usage charge,
+
+37
+00:02:11,416 --> 00:02:14,574
+including the monthly rental
+for your phone numbers,
+
+38
+00:02:14,574 --> 00:02:17,245
+so you can see exactly
+where the money went.
+
+39
+00:02:17,245 --> 00:02:20,524
+And the Invoices tab keeps
+your monthly plan invoices,
+
+40
+00:02:20,524 --> 00:02:22,832
+ready to download for your accountant.
+
+41
+00:02:23,683 --> 00:02:24,749
+Here's a pro tip.
+
+42
+00:02:24,749 --> 00:02:27,384
+Glance at your usage summary once a month.
+
+43
+00:02:27,384 --> 00:02:32,340
+If one line suddenly jumps, it's usually
+a workflow sending more often than you
+
+44
+00:02:32,340 --> 00:02:35,162
+meant, and it's an easy
+fix once you spot it.
+
+45
+00:02:35,162 --> 00:02:37,923
+Your execution logs
+will show you which one.
+
+46
+00:02:38,775 --> 00:02:41,537
+Now you know exactly
+what you're paying for.
+
+47
+00:02:41,537 --> 00:02:46,558
+In the last lesson of this module, we'll
+cover data, privacy and do not disturb.
+
+48
+00:02:46,558 --> 00:02:47,437
+See you there.

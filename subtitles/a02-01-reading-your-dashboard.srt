@@ -1,0 +1,237 @@
+1
+00:00:00,500 --> 00:00:01,025
+Hi there!
+
+2
+00:00:01,025 --> 00:00:04,061
+In this lesson, we'll explore
+your Kyntlo dashboard,
+
+3
+00:00:04,061 --> 00:00:06,805
+the first screen you see
+every time you log in.
+
+4
+00:00:06,805 --> 00:00:09,607
+By the end, you'll know
+what every number means,
+
+5
+00:00:09,607 --> 00:00:12,117
+and how to use it to
+make better decisions.
+
+6
+00:00:12,966 --> 00:00:13,638
+Here it is.
+
+7
+00:00:13,638 --> 00:00:18,096
+Think of the dashboard as your business
+at a glance: your sales pipeline,
+
+8
+00:00:18,096 --> 00:00:22,798
+the money in it, and how well you're
+turning enquiries into paying customers,
+
+9
+00:00:22,798 --> 00:00:23,897
+all on one screen.
+
+10
+00:00:24,750 --> 00:00:29,278
+Most of these widgets read from Opportunities,
+the deals in your sales pipelines.
+
+11
+00:00:29,278 --> 00:00:32,576
+So the more carefully your team
+keeps each deal up to date,
+
+12
+00:00:32,576 --> 00:00:34,532
+the more you can trust this screen.
+
+13
+00:00:35,383 --> 00:00:37,052
+On the left is the sidebar.
+
+14
+00:00:37,052 --> 00:00:41,625
+At the top, you'll see which business
+account you're in, and a search bar.
+
+15
+00:00:41,625 --> 00:00:45,890
+Press Ctrl + K from anywhere to jump
+straight to a contact or a page.
+
+16
+00:00:46,739 --> 00:00:48,483
+Below that are your tools.
+
+17
+00:00:48,483 --> 00:00:53,110
+The everyday ones sit at the top:
+conversations, calendars, contacts,
+
+18
+00:00:53,110 --> 00:00:54,921
+opportunities and payments.
+
+19
+00:00:54,921 --> 00:00:59,482
+Further down are AI agents, marketing,
+automation and your websites.
+
+20
+00:00:59,482 --> 00:01:02,030
+Settings is always at the very bottom.
+
+21
+00:01:02,880 --> 00:01:06,896
+At the top of the page, choose
+which dashboard you're looking at,
+
+22
+00:01:06,896 --> 00:01:08,873
+or click New to create your own.
+
+23
+00:01:08,873 --> 00:01:13,384
+On the right, the date range controls
+the period that every widget shows.
+
+24
+00:01:13,384 --> 00:01:15,114
+Here, it's the last 30 days.
+
+25
+00:01:15,964 --> 00:01:17,347
+Now for the widgets.
+
+26
+00:01:17,347 --> 00:01:22,949
+Opportunity status counts the deals in
+your pipeline, and shows where they stand.
+
+27
+00:01:22,949 --> 00:01:27,375
+Here there are 16: 9 still open,
+4 won, 2 lost, and 1 abandoned.
+
+28
+00:01:28,224 --> 00:01:32,030
+Opportunity value turns
+those deals into money.
+
+29
+00:01:32,030 --> 00:01:36,646
+Each bar shows what the deals
+with that status are worth.
+
+30
+00:01:36,646 --> 00:01:42,882
+Open deals add up to nearly £17,000,
+and the whole pipeline is worth £24,740.
+
+31
+00:01:43,734 --> 00:01:46,663
+Conversion rate is the number to watch.
+
+32
+00:01:46,663 --> 00:01:50,644
+It's the share of your
+opportunities that you've won.
+
+33
+00:01:50,644 --> 00:01:54,550
+25% means one in every four
+became a paying patient.
+
+34
+00:01:54,550 --> 00:01:58,306
+Underneath is the revenue
+from those wins: £7,100.
+
+35
+00:01:59,155 --> 00:02:02,914
+Further down, the funnel shows
+how many deals reach each stage,
+
+36
+00:02:02,914 --> 00:02:06,195
+and what percentage make it
+from one stage to the next.
+
+37
+00:02:06,195 --> 00:02:10,312
+Stage distribution shows where your
+open deals are sitting right now.
+
+38
+00:02:11,162 --> 00:02:13,130
+Each widget has its own filter.
+
+39
+00:02:13,130 --> 00:02:16,494
+Right now they all show the
+Patient Journey pipeline.
+
+40
+00:02:16,494 --> 00:02:20,049
+Pick a different pipeline,
+and only that widget changes,
+
+41
+00:02:20,049 --> 00:02:22,969
+so you can compare two
+pipelines side by side.
+
+42
+00:02:23,821 --> 00:02:28,790
+And if you ever have a question about your
+numbers, click Ask AI in the top corner.
+
+43
+00:02:28,790 --> 00:02:33,101
+It can explain a trend, or point you
+to what needs your attention today.
+
+44
+00:02:33,952 --> 00:02:35,029
+Here's a pro tip.
+
+45
+00:02:35,029 --> 00:02:39,910
+Make checking your conversion rate a
+weekly habit, on the same day each week.
+
+46
+00:02:39,910 --> 00:02:44,917
+If it drops, look first at how quickly
+your team follows up with new enquiries.
+
+47
+00:02:44,917 --> 00:02:46,692
+Speed is usually the reason.
+
+48
+00:02:47,542 --> 00:02:48,808
+That's your dashboard!
+
+49
+00:02:48,808 --> 00:02:52,663
+In the next lesson, I'll show you
+how to build your own dashboards,
+
+50
+00:02:52,663 --> 00:02:55,885
+with exactly the widgets each
+person on your team needs.
+
+51
+00:02:55,885 --> 00:02:56,691
+See you there.

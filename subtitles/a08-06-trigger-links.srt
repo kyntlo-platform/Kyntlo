@@ -1,0 +1,228 @@
+1
+00:00:00,500 --> 00:00:03,369
+A normal link tells you
+how many people clicked.
+
+2
+00:00:03,369 --> 00:00:08,212
+A trigger link tells you who clicked, and
+can start an automation the moment they
+
+3
+00:00:08,212 --> 00:00:08,391
+do.
+
+4
+00:00:08,391 --> 00:00:12,217
+In this lesson, you'll create
+one, use it, and read the results.
+
+5
+00:00:13,071 --> 00:00:16,112
+Trigger links live under
+Marketing, Trigger Links.
+
+6
+00:00:16,112 --> 00:00:20,126
+Each one has a name, the web address
+it points to, and a link key.
+
+7
+00:00:20,126 --> 00:00:22,619
+You put the key in your emails and texts,
+
+8
+00:00:22,619 --> 00:00:26,086
+and Kyntlo turns it into a
+tracked link for each contact.
+
+9
+00:00:26,936 --> 00:00:30,488
+Let's create one for our
+November check-up reminder.
+
+10
+00:00:30,488 --> 00:00:31,512
+Click Add Link.
+
+11
+00:00:31,512 --> 00:00:34,244
+Give it a name your team will recognise,
+
+12
+00:00:34,244 --> 00:00:39,025
+then paste the full web address of
+the page, including the https part.
+
+13
+00:00:39,025 --> 00:00:39,776
+Click Save.
+
+14
+00:00:40,627 --> 00:00:43,278
+Your new link is in the
+list, with its own key.
+
+15
+00:00:43,278 --> 00:00:43,898
+Click Copy.
+
+16
+00:00:43,898 --> 00:00:47,846
+The key looks a little technical,
+but you don't need to understand it.
+
+17
+00:00:47,846 --> 00:00:50,948
+Just paste it wherever you
+would normally paste a link.
+
+18
+00:00:51,798 --> 00:00:54,853
+Here's our check-up reminder
+email in the builder.
+
+19
+00:00:54,853 --> 00:00:57,970
+Click the button, and in
+the website address field,
+
+20
+00:00:57,970 --> 00:01:01,086
+paste the link key instead
+of a normal web address.
+
+21
+00:01:01,086 --> 00:01:05,424
+You can do the same in text messages,
+and in workflow emails and texts.
+
+22
+00:01:06,275 --> 00:01:11,464
+When the email goes out, every contact gets
+their own personal version of that link.
+
+23
+00:01:11,464 --> 00:01:16,406
+So when Olivia clicks it, Kyntlo knows
+it was Olivia, records it on her contact,
+
+24
+00:01:16,406 --> 00:01:19,062
+and then sends her
+straight on to the page.
+
+25
+00:01:19,913 --> 00:01:21,667
+Here's where it gets powerful.
+
+26
+00:01:21,667 --> 00:01:26,402
+In Automation, a workflow can start with
+the trigger called Trigger Link Clicked.
+
+27
+00:01:26,402 --> 00:01:31,312
+For example, tag everyone who clicked, and
+create a task for your team to call them.
+
+28
+00:01:31,312 --> 00:01:34,059
+Workflows are part of
+the Growth and Pro plans,
+
+29
+00:01:34,059 --> 00:01:36,398
+and we'll build them in the next module.
+
+30
+00:01:37,248 --> 00:01:41,035
+Back in Trigger Links, open the
+Analyze tab and choose a link.
+
+31
+00:01:41,035 --> 00:01:45,860
+You'll see total clicks, and unique
+clicks, which counts each person only once.
+
+32
+00:01:45,860 --> 00:01:48,304
+The chart shows which days were busiest.
+
+33
+00:01:49,154 --> 00:01:52,065
+And here's the real gold:
+the people who clicked.
+
+34
+00:01:52,065 --> 00:01:53,312
+These are warm leads.
+
+35
+00:01:53,312 --> 00:01:55,926
+They saw your offer and
+wanted to know more.
+
+36
+00:01:55,926 --> 00:02:00,501
+A quick, friendly message to each of
+them often turns a click into a booking.
+
+37
+00:02:01,351 --> 00:02:06,418
+You might wonder how this differs from
+the link report in your email statistics.
+
+38
+00:02:06,418 --> 00:02:08,445
+That report covers one campaign.
+
+39
+00:02:08,445 --> 00:02:12,055
+A trigger link follows the
+same offer across every email,
+
+40
+00:02:12,055 --> 00:02:15,918
+text and post you use it in,
+keeps a history on each contact,
+
+41
+00:02:15,918 --> 00:02:17,502
+and can start a workflow.
+
+42
+00:02:18,352 --> 00:02:19,442
+Here's a pro tip.
+
+43
+00:02:19,442 --> 00:02:23,802
+Create one trigger link per offer,
+and use it everywhere: in emails,
+
+44
+00:02:23,802 --> 00:02:25,277
+texts and social posts.
+
+45
+00:02:25,277 --> 00:02:30,663
+Then one workflow can follow up with every
+interested person, wherever they clicked.
+
+46
+00:02:31,516 --> 00:02:33,333
+That's the end of Module 8!
+
+47
+00:02:33,333 --> 00:02:38,448
+You can now design emails, send campaigns,
+text, post and track every click.
+
+48
+00:02:38,448 --> 00:02:42,756
+Next, in Module 9, we'll put it
+all on autopilot with workflows.
+
+49
+00:02:42,756 --> 00:02:43,698
+See you there.

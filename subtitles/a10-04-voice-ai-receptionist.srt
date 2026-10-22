@@ -1,0 +1,250 @@
+1
+00:00:00,500 --> 00:00:01,304
+Welcome back!
+
+2
+00:00:01,304 --> 00:00:03,406
+Missed calls are missed customers.
+
+3
+00:00:03,406 --> 00:00:08,166
+In this lesson, we'll set up a Voice AI
+receptionist that answers your phone,
+
+4
+00:00:08,166 --> 00:00:12,618
+books appointments, and puts urgent
+calls straight through to your team.
+
+5
+00:00:13,482 --> 00:00:15,708
+Go to AI Agents, then Voice AI.
+
+6
+00:00:15,708 --> 00:00:18,365
+Voice AI is included on the Pro plan.
+
+7
+00:00:18,365 --> 00:00:22,961
+At the top, you can see how your
+agent is doing: calls answered,
+
+8
+00:00:22,961 --> 00:00:26,049
+appointments booked,
+and calls transferred.
+
+9
+00:00:26,049 --> 00:00:28,203
+Bloom's agent is called Rosie.
+
+10
+00:00:28,203 --> 00:00:29,280
+Let's open her.
+
+11
+00:00:30,130 --> 00:00:32,694
+Under Agent goals, start with the voice.
+
+12
+00:00:32,694 --> 00:00:34,488
+Press play to hear each one.
+
+13
+00:00:34,488 --> 00:00:36,732
+Pick a voice that suits your brand.
+
+14
+00:00:36,732 --> 00:00:39,167
+Bloom uses Emma, a warm British voice.
+
+15
+00:00:40,018 --> 00:00:43,436
+Next, the greeting: the first
+thing every caller hears.
+
+16
+00:00:43,436 --> 00:00:47,662
+Keep it short and friendly, and
+always say it's a virtual assistant.
+
+17
+00:00:47,662 --> 00:00:51,825
+Callers appreciate the honesty,
+and it sets the right expectations.
+
+18
+00:00:52,676 --> 00:00:53,713
+Then the prompt.
+
+19
+00:00:53,713 --> 00:00:58,706
+Tell Rosie who she is, and list her
+goals in order: answer questions from the
+
+20
+00:00:58,706 --> 00:01:02,401
+knowledge base, book new
+patients, transfer urgent calls,
+
+21
+00:01:02,401 --> 00:01:04,282
+and otherwise take a message.
+
+22
+00:01:04,282 --> 00:01:07,135
+Add rules, like never
+giving medical advice.
+
+23
+00:01:07,985 --> 00:01:12,582
+Under Phone and availability,
+choose which number Rosie answers.
+
+24
+00:01:12,582 --> 00:01:14,522
+Then set her working hours.
+
+25
+00:01:14,522 --> 00:01:19,191
+Bloom has her on from 7am until
+10pm, so she catches early calls,
+
+26
+00:01:19,191 --> 00:01:21,992
+lunchtime rushes and evening enquiries.
+
+27
+00:01:22,841 --> 00:01:24,186
+Now the Actions tab.
+
+28
+00:01:24,186 --> 00:01:27,480
+Call transfer routes
+callers to the right person.
+
+29
+00:01:27,480 --> 00:01:30,303
+A dental emergency goes straight to Sarah.
+
+30
+00:01:30,303 --> 00:01:32,320
+Billing questions go to Priya.
+
+31
+00:01:32,320 --> 00:01:35,480
+And anyone who asks for
+a person goes to James.
+
+32
+00:01:36,330 --> 00:01:41,478
+Turn on Appointment booking, so Rosie can
+book callers straight into your calendars.
+
+33
+00:01:41,478 --> 00:01:46,197
+And with Send SMS after the call, every
+caller gets a friendly text with your
+
+34
+00:01:46,197 --> 00:01:46,994
+booking link.
+
+35
+00:01:47,844 --> 00:01:50,083
+Finally, keep your team in the loop.
+
+36
+00:01:50,083 --> 00:01:54,187
+Rosie saves a summary and transcript
+of every call to the contact,
+
+37
+00:01:54,187 --> 00:01:56,551
+and can email the summary to you, too.
+
+38
+00:01:57,404 --> 00:02:02,250
+Before going live, click Test agent,
+and have a real conversation with Rosie,
+
+39
+00:02:02,250 --> 00:02:03,634
+right in your browser.
+
+40
+00:02:03,634 --> 00:02:07,913
+Ask the questions your customers
+ask, and listen to how she answers.
+
+41
+00:02:08,764 --> 00:02:13,196
+Once Rosie is live, every call
+appears in Call logs, with who called,
+
+42
+00:02:13,196 --> 00:02:15,637
+how long it lasted, and what happened.
+
+43
+00:02:15,637 --> 00:02:20,134
+This morning, Olivia called about
+Invisalign, and Rosie booked her in.
+
+44
+00:02:20,134 --> 00:02:22,318
+Click the call to see the details.
+
+45
+00:02:23,172 --> 00:02:27,531
+Here's the call summary, the actions
+Rosie took, and the full transcript.
+
+46
+00:02:27,531 --> 00:02:29,800
+Press play to listen to the recording.
+
+47
+00:02:29,800 --> 00:02:33,741
+It's the quickest way to check
+she's saying exactly what you want.
+
+48
+00:02:34,591 --> 00:02:35,659
+Here's a pro tip.
+
+49
+00:02:35,659 --> 00:02:37,794
+Listen to Rosie's first ten calls.
+
+50
+00:02:37,794 --> 00:02:40,747
+Whenever she hesitates
+or gets something wrong,
+
+51
+00:02:40,747 --> 00:02:44,452
+add the answer to your knowledge
+base, or tweak her prompt.
+
+52
+00:02:44,452 --> 00:02:46,965
+A few small fixes make a big difference.
+
+53
+00:02:47,836 --> 00:02:50,712
+Your phone is now
+answered around the clock!
+
+54
+00:02:50,712 --> 00:02:55,549
+In the next lesson, we'll use Content
+AI to write emails and social posts,
+
+55
+00:02:55,549 --> 00:02:57,509
+and create images, in seconds.
+
+56
+00:02:57,509 --> 00:02:58,425
+See you there.

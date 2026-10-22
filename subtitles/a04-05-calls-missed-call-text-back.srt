@@ -1,0 +1,241 @@
+1
+00:00:00,500 --> 00:00:05,227
+In this lesson, you'll see how phone
+calls work inside Kyntlo: making calls,
+
+2
+00:00:05,227 --> 00:00:10,328
+listening to recordings and voicemails,
+and the feature that wins back lost leads,
+
+3
+00:00:10,328 --> 00:00:11,696
+missed-call text-back.
+
+4
+00:00:12,551 --> 00:00:15,501
+Calls live in the same
+thread as your messages.
+
+5
+00:00:15,501 --> 00:00:20,334
+Here's Liam: a Facebook message, then
+a phone call, then a confirmation text.
+
+6
+00:00:20,334 --> 00:00:25,355
+Every call is logged automatically, with
+who handled it, and how long it lasted.
+
+7
+00:00:26,207 --> 00:00:28,872
+Call recording is
+included on the Pro plan.
+
+8
+00:00:28,872 --> 00:00:30,484
+Press play to listen back.
+
+9
+00:00:30,484 --> 00:00:35,132
+It's great for training new staff, or
+for checking exactly what was agreed.
+
+10
+00:00:35,132 --> 00:00:38,045
+Do let callers know that
+calls may be recorded.
+
+11
+00:00:38,899 --> 00:00:42,716
+To call someone, click the phone
+icon at the top of the thread.
+
+12
+00:00:42,716 --> 00:00:47,200
+Kyntlo calls from your business number,
+so the patient sees your practice,
+
+13
+00:00:47,200 --> 00:00:48,715
+not your personal mobile.
+
+14
+00:00:48,715 --> 00:00:52,774
+You can mute, open the keypad, or
+transfer the call to a colleague.
+
+15
+00:00:53,626 --> 00:00:58,234
+When you hang up, the call and its
+recording are added to the conversation,
+
+16
+00:00:58,234 --> 00:01:00,998
+so anyone on your team
+can see what happened.
+
+17
+00:01:00,998 --> 00:01:04,930
+Answered calls, missed calls and
+voicemails all appear this way,
+
+18
+00:01:04,930 --> 00:01:08,064
+so the inbox doubles as
+your complete call history.
+
+19
+00:01:08,915 --> 00:01:11,828
+If nobody answers, callers
+can leave a voicemail.
+
+20
+00:01:11,828 --> 00:01:14,623
+It arrives in the inbox
+like any other message,
+
+21
+00:01:14,623 --> 00:01:16,941
+with a player and a written transcript,
+
+22
+00:01:16,941 --> 00:01:20,390
+so you can see what it's about
+without even pressing play.
+
+23
+00:01:21,240 --> 00:01:24,689
+Noah wants to move his check-up,
+so the next step is clear.
+
+24
+00:01:24,689 --> 00:01:28,899
+Priya owns this conversation, and she
+can call him back from right here,
+
+25
+00:01:28,899 --> 00:01:29,776
+with one click.
+
+26
+00:01:30,625 --> 00:01:31,633
+Now the big one.
+
+27
+00:01:31,633 --> 00:01:36,609
+When a call goes unanswered, most people
+simply ring the next business on their
+
+28
+00:01:36,609 --> 00:01:36,924
+list.
+
+29
+00:01:36,924 --> 00:01:39,002
+Missed-call text-back fixes that.
+
+30
+00:01:39,002 --> 00:01:43,600
+Seconds after a missed call, Kyntlo
+sends a friendly text, automatically.
+
+31
+00:01:44,451 --> 00:01:45,333
+And it worked.
+
+32
+00:01:45,333 --> 00:01:48,419
+Instead of a lost caller,
+we have a conversation,
+
+33
+00:01:48,419 --> 00:01:52,135
+and a patient with a chipped
+tooth asking to be seen today.
+
+34
+00:01:52,135 --> 00:01:56,291
+Reply, book them in, and that
+missed call has turned into revenue.
+
+35
+00:01:57,142 --> 00:01:58,986
+Look at the panel on the right.
+
+36
+00:01:58,986 --> 00:02:01,306
+This caller wasn't in our contacts yet,
+
+37
+00:02:01,306 --> 00:02:04,518
+so Kyntlo created a new
+contact from the phone number.
+
+38
+00:02:04,518 --> 00:02:06,838
+Click Add name once you know who it is,
+
+39
+00:02:06,838 --> 00:02:09,931
+and every future call and
+message is linked to them.
+
+40
+00:02:10,782 --> 00:02:13,495
+Behind the scenes, this
+runs as a workflow.
+
+41
+00:02:13,495 --> 00:02:17,597
+When a call is missed, the workflow
+sends your text-back message.
+
+42
+00:02:17,597 --> 00:02:20,248
+Bloom's is called "Missed Call Text-Back",
+
+43
+00:02:20,248 --> 00:02:23,150
+and you'll build one
+step by step in Module 9.
+
+44
+00:02:24,004 --> 00:02:25,102
+Here's a pro tip.
+
+45
+00:02:25,102 --> 00:02:28,719
+Write your text-back message
+like a person, not a robot.
+
+46
+00:02:28,719 --> 00:02:33,692
+Say who you are, apologise for missing
+the call, and ask one simple question,
+
+47
+00:02:33,692 --> 00:02:35,177
+like "How can we help?"
+
+48
+00:02:35,177 --> 00:02:38,794
+A question gets far more
+replies than a link on its own.
+
+49
+00:02:39,644 --> 00:02:41,349
+That wraps up Conversations!
+
+50
+00:02:41,349 --> 00:02:43,784
+In Module 5, we'll move on to calendars,
+
+51
+00:02:43,784 --> 00:02:48,898
+starting with the different calendar types,
+and which one fits each kind of booking.
+
+52
+00:02:48,898 --> 00:02:49,750
+See you there.

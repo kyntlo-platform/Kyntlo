@@ -1,0 +1,249 @@
+1
+00:00:00,500 --> 00:00:03,019
+Forms are how visitors become contacts.
+
+2
+00:00:03,019 --> 00:00:06,830
+In this lesson, you'll build
+a form, add conditional logic,
+
+3
+00:00:06,830 --> 00:00:11,158
+decide what happens when someone
+submits it, and embed it anywhere.
+
+4
+00:00:11,158 --> 00:00:12,902
+Then we'll look at surveys.
+
+5
+00:00:13,750 --> 00:00:15,381
+Go to Sites, then Forms.
+
+6
+00:00:15,381 --> 00:00:20,274
+Here are Bloom's forms, with how many
+submissions each one has received.
+
+7
+00:00:20,274 --> 00:00:25,303
+The Analyze tab shows conversion rates,
+and Submissions lists every entry.
+
+8
+00:00:25,303 --> 00:00:27,953
+Let's open the Invisalign Enquiry form.
+
+9
+00:00:28,803 --> 00:00:30,602
+The form builder has three parts.
+
+10
+00:00:30,602 --> 00:00:33,002
+Fields on the left,
+your form in the middle,
+
+11
+00:00:33,002 --> 00:00:36,328
+and the settings for whichever
+field you select on the right.
+
+12
+00:00:37,176 --> 00:00:39,963
+Standard fields, like
+name, phone and email,
+
+13
+00:00:39,963 --> 00:00:42,561
+fill in the contact record automatically.
+
+14
+00:00:42,561 --> 00:00:47,565
+Custom fields store anything else you
+need, like which treatment someone wants.
+
+15
+00:00:47,565 --> 00:00:52,823
+Every answer is saved on the contact, so
+you can filter and automate with it later.
+
+16
+00:00:53,674 --> 00:00:56,002
+To add a field, click it in the list.
+
+17
+00:00:56,002 --> 00:01:00,093
+We'll add a Radio question, then
+give it a label and two options.
+
+18
+00:01:00,093 --> 00:01:04,624
+Bloom wants to know whether Invisalign
+enquirers have had braces before.
+
+19
+00:01:05,449 --> 00:01:08,889
+That question only makes
+sense for Invisalign leads.
+
+20
+00:01:08,889 --> 00:01:11,734
+So open Options and
+add a conditional rule.
+
+21
+00:01:11,734 --> 00:01:15,836
+If the treatment is Invisalign,
+then show the braces question.
+
+22
+00:01:15,836 --> 00:01:19,541
+Everyone else never sees it,
+which keeps the form short.
+
+23
+00:01:20,391 --> 00:01:23,386
+Next, decide what happens
+after someone submits.
+
+24
+00:01:23,386 --> 00:01:26,942
+You can show a thank-you
+message, or send them to a page.
+
+25
+00:01:26,942 --> 00:01:31,933
+A dedicated thank-you page is great,
+because you can track it as a conversion in
+
+26
+00:01:31,933 --> 00:01:32,993
+your ad accounts.
+
+27
+00:01:33,842 --> 00:01:38,986
+Switch on email notifications, so your
+team knows the moment a lead arrives.
+
+28
+00:01:38,986 --> 00:01:42,912
+To tag the contact, send a
+text, or create an opportunity,
+
+29
+00:01:42,912 --> 00:01:46,229
+build a workflow with the
+Form Submitted trigger.
+
+30
+00:01:46,229 --> 00:01:47,989
+We cover that in Module 9.
+
+31
+00:01:48,841 --> 00:01:53,266
+In Styles, match the form to your
+brand: button colour, background, width,
+
+32
+00:01:53,266 --> 00:01:55,717
+and whether labels show above each field.
+
+33
+00:01:55,717 --> 00:01:56,674
+Then click Save.
+
+34
+00:01:58,148 --> 00:02:01,485
+To use the form on another
+website, click Integrate.
+
+35
+00:02:01,485 --> 00:02:06,684
+Choose a layout, like inline or popup,
+then copy the embed code and paste it into
+
+36
+00:02:06,684 --> 00:02:07,326
+your site.
+
+37
+00:02:07,326 --> 00:02:10,535
+There's also a direct link
+you can share anywhere.
+
+38
+00:02:11,388 --> 00:02:14,818
+On your Kyntlo funnels and
+websites, you don't need any code.
+
+39
+00:02:14,818 --> 00:02:18,473
+Just add a Form element in the
+page builder and choose this form.
+
+40
+00:02:19,324 --> 00:02:22,940
+Surveys work like forms, but
+ask one question per slide.
+
+41
+00:02:22,940 --> 00:02:26,555
+They feel like a quick quiz,
+so more people finish them.
+
+42
+00:02:26,555 --> 00:02:28,944
+Here's Bloom's Smile Assessment Quiz.
+
+43
+00:02:29,795 --> 00:02:35,038
+Each slide holds one or two questions, and
+the progress bar shows how close people
+
+44
+00:02:35,038 --> 00:02:35,997
+are to the end.
+
+45
+00:02:35,997 --> 00:02:39,514
+Slide logic lets you jump
+past slides that don't apply,
+
+46
+00:02:39,514 --> 00:02:42,263
+or disqualify people
+who aren't a good fit.
+
+47
+00:02:43,114 --> 00:02:44,195
+Here's a pro tip.
+
+48
+00:02:44,195 --> 00:02:46,484
+Every field you add costs you leads.
+
+49
+00:02:46,484 --> 00:02:50,999
+Ask only for what you need to follow
+up, usually name, phone and email,
+
+50
+00:02:50,999 --> 00:02:53,161
+and collect everything else later.
+
+51
+00:02:54,017 --> 00:02:56,363
+Your forms are ready to collect leads.
+
+52
+00:02:56,363 --> 00:03:01,056
+Next, we'll connect your own domain,
+so your pages live at your business web
+
+53
+00:03:01,056 --> 00:03:01,550
+address.
+
+54
+00:03:01,550 --> 00:03:02,414
+See you there.

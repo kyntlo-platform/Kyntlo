@@ -1,0 +1,126 @@
+1
+00:00:00,500 --> 00:00:04,175
+Running a clinic means phones
+ringing, patients to remind,
+
+2
+00:00:04,175 --> 00:00:07,027
+and a diary that never
+stays full on its own.
+
+3
+00:00:07,027 --> 00:00:10,512
+Here's how clinics use Kyntlo
+to stay on top of it all.
+
+4
+00:00:11,377 --> 00:00:14,766
+Meet Bloom Dental Studio,
+a demo clinic in London.
+
+5
+00:00:14,766 --> 00:00:18,765
+Patients, bookings, messages
+and revenue, all in one place.
+
+6
+00:00:19,617 --> 00:00:23,857
+Every patient has one record, with
+their details, tags, conversations,
+
+7
+00:00:23,857 --> 00:00:26,341
+and the treatments they're interested in.
+
+8
+00:00:27,190 --> 00:00:32,445
+Patients book online, straight into the
+right calendar: new patient consultations,
+
+9
+00:00:32,445 --> 00:00:35,522
+check-ups, whitening, or
+a free Invisalign scan.
+
+10
+00:00:36,375 --> 00:00:40,938
+Confirmations and reminders go out
+automatically, by email and text,
+
+11
+00:00:40,938 --> 00:00:42,682
+so fewer chairs sit empty.
+
+12
+00:00:42,682 --> 00:00:45,434
+And when a patient misses an appointment,
+
+13
+00:00:45,434 --> 00:00:48,654
+a no-show workflow offers
+an easy way to rebook.
+
+14
+00:00:49,507 --> 00:00:52,914
+When the front desk is busy
+and a call goes unanswered,
+
+15
+00:00:52,914 --> 00:00:56,258
+missed-call text-back texts
+the caller within seconds.
+
+16
+00:00:56,258 --> 00:01:00,036
+Here, that turned into a new
+patient asking to be seen today.
+
+17
+00:01:00,886 --> 00:01:05,317
+Voice AI can answer calls in a natural
+voice, answer common questions,
+
+18
+00:01:05,317 --> 00:01:09,749
+and book patients in, while urgent
+calls are transferred to your team.
+
+19
+00:01:10,598 --> 00:01:14,393
+After each visit, Kyntlo asks
+happy patients for a review,
+
+20
+00:01:14,393 --> 00:01:17,140
+and Reviews AI helps you reply in seconds.
+
+21
+00:01:17,991 --> 00:01:22,282
+And a recall campaign brings patients
+back when their 6-month check-up is due.
+
+22
+00:01:23,131 --> 00:01:25,694
+Online booking comes with every plan.
+
+23
+00:01:25,694 --> 00:01:28,535
+Reminders and automation start on Growth.
+
+24
+00:01:28,535 --> 00:01:34,146
+And Voice AI, missed-call text-back,
+reviews and reactivation campaigns come with
+
+25
+00:01:34,146 --> 00:01:34,424
+Pro.
+
+26
+00:01:35,284 --> 00:01:37,255
+Give your front desk a break.
+
+27
+00:01:37,255 --> 00:01:40,586
+Start your free 14-day
+trial today, at kyntlo.ai.

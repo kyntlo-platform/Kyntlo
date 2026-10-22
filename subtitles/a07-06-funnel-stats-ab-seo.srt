@@ -1,0 +1,227 @@
+1
+00:00:00,500 --> 00:00:02,963
+Publishing a funnel is only the start.
+
+2
+00:00:02,963 --> 00:00:06,528
+In this lesson, you'll learn
+to read your funnel stats,
+
+3
+00:00:06,528 --> 00:00:09,510
+run an A/B test to find
+out what works better,
+
+4
+00:00:09,510 --> 00:00:12,427
+and set up SEO so people
+can find your pages.
+
+5
+00:00:13,362 --> 00:00:15,922
+Open your funnel and click Stats.
+
+6
+00:00:15,922 --> 00:00:22,050
+Across the top are the headline numbers:
+how many people viewed the first page,
+
+7
+00:00:22,050 --> 00:00:25,153
+how many opted in, and your opt-in rate.
+
+8
+00:00:25,153 --> 00:00:28,256
+Here, 4,820 views turned into 412 leads.
+
+9
+00:00:29,111 --> 00:00:31,652
+The table breaks this down step by step.
+
+10
+00:00:31,652 --> 00:00:33,113
+All counts every visit.
+
+11
+00:00:33,113 --> 00:00:37,434
+Uniques counts each person once,
+even if they came back three times.
+
+12
+00:00:37,434 --> 00:00:41,245
+Uniques is the truer picture
+of how many people you reached.
+
+13
+00:00:42,096 --> 00:00:44,052
+Now look for the biggest drop.
+
+14
+00:00:44,052 --> 00:00:47,963
+Of the people who reached the
+booking page, only 43% booked.
+
+15
+00:00:47,963 --> 00:00:53,048
+That's the step to work on first, because
+small gains there turn straight into
+
+16
+00:00:53,048 --> 00:00:53,895
+appointments.
+
+17
+00:00:53,895 --> 00:00:56,373
+Use the date range to compare periods.
+
+18
+00:00:57,222 --> 00:01:00,100
+Instead of guessing
+what to change, test it.
+
+19
+00:01:00,100 --> 00:01:04,941
+Go to Steps, open the step you want
+to improve, and click Create A/B Test.
+
+20
+00:01:04,941 --> 00:01:08,080
+Kyntlo makes Variation B
+as a copy of your page.
+
+21
+00:01:08,931 --> 00:01:14,010
+Edit Variation B and change just one thing,
+so you know what made the difference.
+
+22
+00:01:14,010 --> 00:01:16,456
+The headline is a great place to start.
+
+23
+00:01:16,456 --> 00:01:17,773
+Save, then head back.
+
+24
+00:01:19,349 --> 00:01:21,070
+Both versions are now live.
+
+25
+00:01:21,070 --> 00:01:24,257
+Visitors are split between
+them, 50/50 by default.
+
+26
+00:01:24,257 --> 00:01:29,548
+Use the slider if you'd rather send less
+traffic to the new version while you build
+
+27
+00:01:29,548 --> 00:01:30,249
+confidence.
+
+28
+00:01:31,099 --> 00:01:36,441
+Here's a test Bloom has been running
+for three weeks on the whitening offer.
+
+29
+00:01:36,441 --> 00:01:39,885
+Variation B converts at
+9.5%, against 6.8% for A.
+
+30
+00:01:39,885 --> 00:01:44,523
+With over a thousand visitors each,
+that's a result you can trust.
+
+31
+00:01:45,373 --> 00:01:48,741
+So go to Steps and click
+Declare Winner on Variation B.
+
+32
+00:01:48,741 --> 00:01:53,273
+All traffic now goes to the better
+page, and you can start your next test.
+
+33
+00:01:54,123 --> 00:01:54,660
+Now SEO.
+
+34
+00:01:54,660 --> 00:01:58,347
+In the page builder, open
+Settings, then SEO Meta Data.
+
+35
+00:01:58,347 --> 00:02:02,772
+The title and description are what
+Google shows in search results,
+
+36
+00:02:02,772 --> 00:02:05,923
+and what appears when
+someone shares your link.
+
+37
+00:02:06,773 --> 00:02:12,163
+Keep the title under 60 characters, with
+the service and the location people search
+
+38
+00:02:12,163 --> 00:02:12,422
+for.
+
+39
+00:02:12,422 --> 00:02:14,500
+The preview updates as you type.
+
+40
+00:02:14,500 --> 00:02:17,812
+Add a social image too, so
+shared links look great.
+
+41
+00:02:20,300 --> 00:02:25,152
+Finally, to measure your ads, paste your
+Meta Pixel or Google tag into the head
+
+42
+00:02:25,152 --> 00:02:27,547
+tracking code in the funnel's Settings.
+
+43
+00:02:27,547 --> 00:02:29,942
+It's added to every step automatically.
+
+44
+00:02:30,793 --> 00:02:31,896
+Here's a pro tip.
+
+45
+00:02:31,896 --> 00:02:36,826
+Test one change at a time, and wait
+until each version has had a few hundred
+
+46
+00:02:36,826 --> 00:02:38,578
+visitors before you decide.
+
+47
+00:02:38,578 --> 00:02:40,329
+Small samples can fool you.
+
+48
+00:02:41,180 --> 00:02:44,191
+Now you can measure and
+improve every funnel.
+
+49
+00:02:44,191 --> 00:02:49,813
+Next, we'll publish blog posts and create
+QR codes to bring offline visitors online.
+
+50
+00:02:49,813 --> 00:02:50,750
+See you there.

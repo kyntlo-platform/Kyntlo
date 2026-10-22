@@ -1,0 +1,262 @@
+1
+00:00:00,500 --> 00:00:03,587
+A great email only works
+if people actually see it.
+
+2
+00:00:03,587 --> 00:00:08,491
+In this lesson, you'll learn the simple
+habits and settings that keep your emails
+
+3
+00:00:08,491 --> 00:00:10,973
+in the inbox, and out of the spam folder.
+
+4
+00:00:11,823 --> 00:00:17,454
+Gmail, Outlook and Yahoo decide where your
+email lands based on your reputation as
+
+5
+00:00:17,454 --> 00:00:18,072
+a sender.
+
+6
+00:00:18,072 --> 00:00:23,428
+Two numbers on your campaign statistics
+tell you how that reputation is doing:
+
+7
+00:00:23,428 --> 00:00:25,419
+bounces, and spam complaints.
+
+8
+00:00:26,269 --> 00:00:30,206
+A bounce is an address that
+couldn't receive your email.
+
+9
+00:00:30,206 --> 00:00:31,753
+Keep bounces under 2%.
+
+10
+00:00:31,753 --> 00:00:35,339
+A spam complaint is someone
+clicking 'report spam'.
+
+11
+00:00:35,339 --> 00:00:38,222
+Keep those under 1 in every 1,000 emails.
+
+12
+00:00:38,222 --> 00:00:40,612
+This campaign is well inside both.
+
+13
+00:00:41,462 --> 00:00:45,363
+The biggest single improvement
+is a dedicated sending domain.
+
+14
+00:00:45,363 --> 00:00:50,288
+Without one, your emails go out from a
+shared domain used by many businesses.
+
+15
+00:00:50,288 --> 00:00:55,661
+With your own, your emails show your name,
+and your reputation belongs to you alone.
+
+16
+00:00:56,509 --> 00:01:01,399
+Click Add Domain, and enter a
+subdomain, like mail.bloomdental.co.uk.
+
+17
+00:01:01,399 --> 00:01:07,140
+Using a subdomain keeps your marketing
+email separate from your everyday mailbox,
+
+18
+00:01:07,140 --> 00:01:08,983
+so it can never affect it.
+
+19
+00:01:09,837 --> 00:01:14,602
+Kyntlo now gives you a few DNS records
+to add where you bought your domain.
+
+20
+00:01:14,602 --> 00:01:18,478
+You don't need to understand
+them, just copy each one across.
+
+21
+00:01:18,478 --> 00:01:21,655
+SPF and DKIM prove the
+email really came from you,
+
+22
+00:01:21,655 --> 00:01:25,213
+and DMARC tells inbox providers
+what to do if it didn't.
+
+23
+00:01:26,063 --> 00:01:29,297
+Once the records are in,
+come back and click Verify.
+
+24
+00:01:29,297 --> 00:01:33,961
+Changes can take a few hours to spread,
+so if it isn't green straight away,
+
+25
+00:01:33,961 --> 00:01:34,956
+try again later.
+
+26
+00:01:34,956 --> 00:01:38,999
+When it says verified, every
+campaign sends from your own domain.
+
+27
+00:01:39,848 --> 00:01:42,074
+Next, turn on email verification.
+
+28
+00:01:42,074 --> 00:01:47,336
+Kyntlo checks each new address before
+you send, and rechecks it every 90 days.
+
+29
+00:01:47,336 --> 00:01:52,126
+Addresses that fail are skipped, so
+you stop bouncing off dead inboxes.
+
+30
+00:01:52,126 --> 00:01:54,690
+Each check costs a fraction of a cent.
+
+31
+00:01:55,539 --> 00:01:59,187
+A brand-new domain has no
+reputation yet, so warm it up.
+
+32
+00:01:59,187 --> 00:02:02,834
+For your first sends, choose
+your most engaged contacts,
+
+33
+00:02:02,834 --> 00:02:04,853
+like recent and loyal patients.
+
+34
+00:02:04,853 --> 00:02:10,325
+People who know you open your emails, and
+that teaches inbox providers to trust you.
+
+35
+00:02:11,174 --> 00:02:12,929
+Then use Send in batches.
+
+36
+00:02:12,929 --> 00:02:16,369
+Set a small batch, like
+100, repeating every day.
+
+37
+00:02:16,369 --> 00:02:21,072
+Over 2–4 weeks, increase the batch
+size as your opens stay healthy.
+
+38
+00:02:21,072 --> 00:02:22,897
+Slow and steady wins here.
+
+39
+00:02:23,748 --> 00:02:25,387
+Your content matters too.
+
+40
+00:02:25,387 --> 00:02:28,074
+Keep the unsubscribe link in your footer.
+
+41
+00:02:28,074 --> 00:02:31,810
+It's required, and it's far
+better than a spam complaint.
+
+42
+00:02:31,810 --> 00:02:35,218
+Avoid shouty capitals and
+lots of exclamation marks,
+
+43
+00:02:35,218 --> 00:02:37,447
+and balance images with real text.
+
+44
+00:02:38,299 --> 00:02:40,451
+Finally, keep your list healthy.
+
+45
+00:02:40,451 --> 00:02:44,756
+After each campaign, glance at
+who bounced and who unsubscribed.
+
+46
+00:02:44,756 --> 00:02:50,069
+And every few months, stop emailing
+contacts who haven't opened anything in six
+
+47
+00:02:50,069 --> 00:02:50,540
+months.
+
+48
+00:02:50,540 --> 00:02:53,768
+A smaller, engaged list
+beats a big, silent one.
+
+49
+00:02:54,618 --> 00:02:55,746
+Here's a pro tip.
+
+50
+00:02:55,746 --> 00:02:58,001
+Never buy or borrow an email list.
+
+51
+00:02:58,001 --> 00:03:02,710
+Those people never asked to hear from
+you, so they bounce and complain,
+
+52
+00:03:02,710 --> 00:03:05,827
+and your reputation can
+take months to recover.
+
+53
+00:03:05,827 --> 00:03:08,812
+Grow your list with
+forms and offers instead.
+
+54
+00:03:09,663 --> 00:03:12,740
+Now your emails are set
+up to reach the inbox.
+
+55
+00:03:12,740 --> 00:03:17,290
+Next, we'll move to text messages,
+with SMS and WhatsApp broadcasts,
+
+56
+00:03:17,290 --> 00:03:19,899
+and the rules that keep them compliant.
+
+57
+00:03:19,899 --> 00:03:20,835
+See you there.

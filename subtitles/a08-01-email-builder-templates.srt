@@ -1,0 +1,250 @@
+1
+00:00:00,500 --> 00:00:03,509
+Welcome to Module eight,
+all about marketing!
+
+2
+00:00:03,509 --> 00:00:06,318
+In this lesson, you'll design a beautiful,
+
+3
+00:00:06,318 --> 00:00:09,528
+branded email in Kyntlo's
+drag and drop builder.
+
+4
+00:00:09,528 --> 00:00:11,735
+No code, no design skills needed.
+
+5
+00:00:12,599 --> 00:00:16,056
+Email campaigns live under
+Marketing, in the Emails tab.
+
+6
+00:00:16,056 --> 00:00:20,315
+Here you can see every campaign
+you've created, whether it's a draft,
+
+7
+00:00:20,315 --> 00:00:25,006
+scheduled or already sent, along with
+how many people opened and clicked it.
+
+8
+00:00:25,855 --> 00:00:28,407
+To create a new one, click New campaign.
+
+9
+00:00:28,407 --> 00:00:31,981
+You can start from a blank
+canvas, a pre-built template,
+
+10
+00:00:31,981 --> 00:00:34,214
+or one of your own saved templates.
+
+11
+00:00:34,214 --> 00:00:36,703
+Saved templates are the secret to fast,
+
+12
+00:00:36,703 --> 00:00:41,106
+consistent emails: build your branding
+once, and reuse it every time.
+
+13
+00:00:41,956 --> 00:00:43,587
+Let's pick the event invite.
+
+14
+00:00:43,587 --> 00:00:45,219
+The builder has three parts.
+
+15
+00:00:45,219 --> 00:00:47,608
+On the left are the elements you can add.
+
+16
+00:00:47,608 --> 00:00:51,046
+In the middle is your email,
+exactly as people will see it.
+
+17
+00:00:51,046 --> 00:00:54,833
+And on the right are the settings
+for whatever you've clicked on.
+
+18
+00:00:55,682 --> 00:00:58,668
+First, give your campaign
+a clear name at the top.
+
+19
+00:00:58,668 --> 00:01:02,311
+Only your team sees this name,
+so make it easy to find later,
+
+20
+00:01:02,311 --> 00:01:04,043
+like the event and the month.
+
+21
+00:01:04,893 --> 00:01:07,067
+Now click the heading to edit it.
+
+22
+00:01:07,067 --> 00:01:09,175
+Let's greet each person by name.
+
+23
+00:01:09,175 --> 00:01:12,733
+Type Hi, then open Merge
+fields and choose First name.
+
+24
+00:01:12,733 --> 00:01:17,872
+When the email goes out, Kyntlo swaps
+that placeholder for each contact's real
+
+25
+00:01:17,872 --> 00:01:18,597
+first name.
+
+26
+00:01:19,447 --> 00:01:20,510
+Next, the button.
+
+27
+00:01:20,510 --> 00:01:25,262
+Click it, and change the text to something
+specific about what happens next.
+
+28
+00:01:25,262 --> 00:01:27,950
+Below that is the
+website address it opens.
+
+29
+00:01:27,950 --> 00:01:32,265
+A clear button is the single biggest
+thing that gets people to click.
+
+30
+00:01:33,114 --> 00:01:37,295
+To add something new, drag an element
+from the left onto your email.
+
+31
+00:01:37,295 --> 00:01:40,061
+Let's drop in a video,
+just under the button.
+
+32
+00:01:40,061 --> 00:01:42,828
+Email apps can't play
+video inside the email,
+
+33
+00:01:42,828 --> 00:01:47,070
+so Kyntlo shows a thumbnail with a
+play button that opens your video.
+
+34
+00:01:47,921 --> 00:01:52,654
+Most people will read your email on their
+phone, so always check the mobile view.
+
+35
+00:01:52,654 --> 00:01:54,056
+Click Mobile at the top.
+
+36
+00:01:54,056 --> 00:01:56,451
+Everything stacks neatly into one column,
+
+37
+00:01:56,451 --> 00:01:59,665
+and the button is still big
+enough to tap with a thumb.
+
+38
+00:02:00,519 --> 00:02:04,080
+Before any real customer sees
+it, send a test to yourself.
+
+39
+00:02:04,080 --> 00:02:06,597
+Click Send test email, check the address,
+
+40
+00:02:06,597 --> 00:02:09,482
+and pick a contact to
+fill in the merge fields.
+
+41
+00:02:09,482 --> 00:02:12,674
+Then open it on your own
+phone and click every link.
+
+42
+00:02:13,525 --> 00:02:14,422
+Happy with it?
+
+43
+00:02:14,422 --> 00:02:15,127
+Click Save.
+
+44
+00:02:15,127 --> 00:02:19,421
+Your campaign is stored as a draft,
+ready to send whenever you are.
+
+45
+00:02:19,421 --> 00:02:23,971
+If you'll reuse this design, open
+the menu and choose Save as template.
+
+46
+00:02:23,971 --> 00:02:27,111
+Next month's email then
+takes minutes, not hours.
+
+47
+00:02:27,961 --> 00:02:29,013
+Here's a pro tip.
+
+48
+00:02:29,013 --> 00:02:31,922
+Give every email one
+goal, and one main button.
+
+49
+00:02:31,922 --> 00:02:36,440
+When you offer five different things,
+people usually choose none of them.
+
+50
+00:02:36,440 --> 00:02:38,669
+Keep it short, friendly and focused.
+
+51
+00:02:39,518 --> 00:02:40,180
+Great work!
+
+52
+00:02:40,180 --> 00:02:42,647
+You've designed your first branded email.
+
+53
+00:02:42,647 --> 00:02:46,378
+In the next lesson, we'll choose
+who receives it, schedule it,
+
+54
+00:02:46,378 --> 00:02:47,822
+and see how it performs.
+
+55
+00:02:47,822 --> 00:02:48,665
+See you there.

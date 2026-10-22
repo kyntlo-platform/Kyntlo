@@ -1,0 +1,245 @@
+1
+00:00:00,500 --> 00:00:05,536
+In this lesson, you'll learn to run your
+diary day to day: booking appointments by
+
+2
+00:00:05,536 --> 00:00:09,712
+hand, rescheduling, cancelling, and
+keeping every status up to date,
+
+3
+00:00:09,712 --> 00:00:10,879
+including no-shows.
+
+4
+00:00:11,753 --> 00:00:13,418
+This is the Calendar View.
+
+5
+00:00:13,418 --> 00:00:16,940
+Each block is an appointment,
+coloured by its calendar,
+
+6
+00:00:16,940 --> 00:00:19,373
+so you can read your week at a glance.
+
+7
+00:00:19,373 --> 00:00:23,215
+The dot in the corner shows the
+status: green for confirmed,
+
+8
+00:00:23,215 --> 00:00:26,161
+orange for unconfirmed,
+and red for a no-show.
+
+9
+00:00:27,213 --> 00:00:30,179
+Switch between day, week
+and month at the top.
+
+10
+00:00:30,179 --> 00:00:33,468
+On the right, filter by
+calendar or by team member.
+
+11
+00:00:33,468 --> 00:00:37,595
+Untick James, and you only see
+Sarah's and Priya's appointments.
+
+12
+00:00:37,595 --> 00:00:39,788
+Tick him again to bring them back.
+
+13
+00:00:39,788 --> 00:00:44,431
+Filters are handy for front-desk staff
+who manage one clinician's diary.
+
+14
+00:00:45,282 --> 00:00:50,631
+Most patients book online, but when someone
+phones or messages, book it yourself.
+
+15
+00:00:50,631 --> 00:00:54,462
+Olivia asked for Thursday, so
+click New, then Appointment.
+
+16
+00:00:54,462 --> 00:00:59,811
+Booking by hand works just like online
+booking: confirmations and reminders still
+
+17
+00:00:59,811 --> 00:01:00,273
+go out.
+
+18
+00:01:01,123 --> 00:01:03,861
+Choose the calendar,
+search for the contact,
+
+19
+00:01:03,861 --> 00:01:06,599
+then pick the day and
+one of the free times.
+
+20
+00:01:06,599 --> 00:01:09,897
+Kyntlo only shows slots that
+are genuinely available.
+
+21
+00:01:09,897 --> 00:01:14,315
+Click Book appointment, and Olivia
+gets her confirmation automatically.
+
+22
+00:01:15,166 --> 00:01:19,616
+Click any appointment to open its
+details: who it's with, when and where,
+
+23
+00:01:19,616 --> 00:01:24,310
+the patient's contact details, and the
+full history of what's happened to it.
+
+24
+00:01:24,310 --> 00:01:27,968
+You can also add internal notes
+that only your team can see.
+
+25
+00:01:28,817 --> 00:01:30,989
+Liam can't make Tuesday any more.
+
+26
+00:01:30,989 --> 00:01:34,742
+Click Reschedule, pick the
+new day and time, and confirm.
+
+27
+00:01:34,742 --> 00:01:39,416
+Liam is notified automatically, and
+his calendar invite is updated too.
+
+28
+00:01:39,416 --> 00:01:41,851
+There's no need to cancel and rebook.
+
+29
+00:01:42,704 --> 00:01:45,810
+The status tells everyone
+what actually happened.
+
+30
+00:01:45,810 --> 00:01:50,564
+Daniel came in for his check-up, so
+open his appointment, click the status,
+
+31
+00:01:50,564 --> 00:01:51,705
+and choose Showed.
+
+32
+00:01:51,705 --> 00:01:55,444
+Your reports, and your automations,
+rely on these statuses,
+
+33
+00:01:55,444 --> 00:01:58,106
+including the show rate on your dashboard.
+
+34
+00:01:58,956 --> 00:02:03,510
+If a patient doesn't turn up, open the
+appointment and click Mark no-show.
+
+35
+00:02:03,510 --> 00:02:06,771
+It's striped in red on the
+calendar, and in Module 9,
+
+36
+00:02:06,771 --> 00:02:10,525
+you'll send a friendly re-booking
+text whenever this happens.
+
+37
+00:02:11,374 --> 00:02:14,448
+To cancel, open the
+appointment and click Cancel.
+
+38
+00:02:14,448 --> 00:02:17,146
+The time opens up again
+for other patients,
+
+39
+00:02:17,146 --> 00:02:20,158
+and the patient receives
+a cancellation message.
+
+40
+00:02:20,158 --> 00:02:23,483
+If you'd rather keep the
+patient, reschedule instead,
+
+41
+00:02:23,483 --> 00:02:26,307
+so the booking and its
+history stay together.
+
+42
+00:02:27,156 --> 00:02:28,054
+Prefer a list?
+
+43
+00:02:28,054 --> 00:02:31,647
+The Appointment List tab shows
+every booking in a table.
+
+44
+00:02:31,647 --> 00:02:36,331
+Switch between upcoming and cancelled,
+filter by calendar or team member,
+
+45
+00:02:36,331 --> 00:02:38,384
+or search for a patient by name.
+
+46
+00:02:39,234 --> 00:02:40,268
+Here's a pro tip.
+
+47
+00:02:40,268 --> 00:02:44,405
+At the end of each day, mark every
+appointment as Showed or No-show.
+
+48
+00:02:44,405 --> 00:02:47,995
+It takes two minutes, and it
+powers your show-rate reports,
+
+49
+00:02:47,995 --> 00:02:51,037
+your no-show follow-ups,
+and your review requests.
+
+50
+00:02:51,892 --> 00:02:53,665
+Your diary is under control!
+
+51
+00:02:53,665 --> 00:02:58,667
+In the next lesson, we'll cut no-shows
+with automatic email and text reminders.
+
+52
+00:02:58,667 --> 00:02:59,553
+See you there.

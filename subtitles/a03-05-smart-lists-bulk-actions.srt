@@ -1,0 +1,225 @@
+1
+00:00:00,500 --> 00:00:04,513
+In this lesson, you'll learn to
+work with many contacts at once.
+
+2
+00:00:04,513 --> 00:00:09,089
+You'll pick out a group with a smart
+list or a filter, then tag, message,
+
+3
+00:00:09,089 --> 00:00:12,412
+enrol and export everyone
+in it in just a few clicks.
+
+4
+00:00:13,296 --> 00:00:15,104
+Bulk actions save you hours.
+
+5
+00:00:15,104 --> 00:00:17,623
+Instead of opening contacts one by one,
+
+6
+00:00:17,623 --> 00:00:20,917
+you select a group and act
+on all of them together.
+
+7
+00:00:20,917 --> 00:00:25,373
+Tag a group, message them, add them
+to an automation, or export them.
+
+8
+00:00:25,373 --> 00:00:28,861
+It all starts with getting
+the right people on screen.
+
+9
+00:00:29,711 --> 00:00:31,699
+Smart lists are perfect for this.
+
+10
+00:00:31,699 --> 00:00:35,676
+Here's our Reactivation list:
+patients we haven't seen in a while.
+
+11
+00:00:35,676 --> 00:00:39,351
+It updates itself whenever
+someone gets the reactivation tag.
+
+12
+00:00:40,202 --> 00:00:42,430
+You can also build a group on the fly.
+
+13
+00:00:42,430 --> 00:00:45,712
+Let's filter for everyone
+interested in teeth whitening,
+
+14
+00:00:45,712 --> 00:00:48,350
+because we're about to
+run a whitening offer.
+
+15
+00:00:50,032 --> 00:00:55,152
+Tick the box in the header to select everyone
+in the list, or tick individual rows.
+
+16
+00:00:55,152 --> 00:00:59,285
+A bulk action bar appears, showing
+how many people you've selected.
+
+17
+00:01:00,135 --> 00:01:03,889
+First, let's tag them, so we
+can track who got this offer.
+
+18
+00:01:03,889 --> 00:01:06,024
+Click Add tag and choose the tag.
+
+19
+00:01:06,024 --> 00:01:08,937
+It's added to every
+selected contact at once.
+
+20
+00:01:08,937 --> 00:01:13,596
+Later, you can filter by this tag to
+see exactly who received the offer,
+
+21
+00:01:13,596 --> 00:01:14,567
+and who booked.
+
+22
+00:01:15,418 --> 00:01:17,160
+Now let's send them a text.
+
+23
+00:01:17,160 --> 00:01:20,901
+Select them again, click Send
+SMS, and write your message.
+
+24
+00:01:20,901 --> 00:01:24,385
+Placeholders like first name
+make every text personal,
+
+25
+00:01:24,385 --> 00:01:26,965
+even when it goes to hundreds of people.
+
+26
+00:01:27,781 --> 00:01:30,477
+Choose drip mode to send in small batches,
+
+27
+00:01:30,477 --> 00:01:33,687
+so replies come in at a
+pace your team can handle.
+
+28
+00:01:33,687 --> 00:01:39,079
+And don't worry about opt-outs: Kyntlo skips
+anyone with Do Not Disturb switched on.
+
+29
+00:01:39,079 --> 00:01:40,106
+Then click Send.
+
+30
+00:01:40,956 --> 00:01:44,886
+A quick note: text messaging is
+included from the Growth plan.
+
+31
+00:01:44,886 --> 00:01:48,436
+On Starter, you can still
+send bulk emails the same way,
+
+32
+00:01:48,436 --> 00:01:51,288
+using the Send email
+button right next to it.
+
+33
+00:01:52,138 --> 00:01:57,430
+Add to workflow enrols everyone in an
+automation, which we'll build in module 9.
+
+34
+00:01:57,430 --> 00:02:01,267
+And Export downloads the
+selected contacts as a .csv file,
+
+35
+00:02:01,267 --> 00:02:03,384
+with the columns you're viewing.
+
+36
+00:02:03,384 --> 00:02:07,816
+It's handy for backups, or for
+sharing a list with your accountant.
+
+37
+00:02:08,665 --> 00:02:12,802
+Every bulk action is logged under
+Bulk Actions, with who started it,
+
+38
+00:02:12,802 --> 00:02:15,662
+how many contacts it
+touched, and its progress.
+
+39
+00:02:15,662 --> 00:02:19,677
+If something doesn't look right,
+this is the first place to check.
+
+40
+00:02:19,677 --> 00:02:24,301
+Long-running sends, like drip messages,
+show their progress here as they go.
+
+41
+00:02:25,152 --> 00:02:26,260
+Here's a pro tip.
+
+42
+00:02:26,260 --> 00:02:29,714
+Before you send a bulk
+message to hundreds of people,
+
+43
+00:02:29,714 --> 00:02:34,602
+add yourself as a contact with the same
+tag, and send it to just you first.
+
+44
+00:02:34,602 --> 00:02:38,056
+Check the wording, the links
+and the personalisation.
+
+45
+00:02:38,056 --> 00:02:39,685
+Then send it to everyone.
+
+46
+00:02:40,538 --> 00:02:41,269
+Great work!
+
+47
+00:02:41,269 --> 00:02:46,253
+In the last lesson of this module,
+we'll keep your database clean: grouping
+
+48
+00:02:46,253 --> 00:02:51,635
+contacts by company, merging duplicates,
+and restoring anyone deleted by mistake.

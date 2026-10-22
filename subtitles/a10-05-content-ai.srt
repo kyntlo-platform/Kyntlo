@@ -1,0 +1,247 @@
+1
+00:00:00,500 --> 00:00:01,358
+Welcome back!
+
+2
+00:00:01,358 --> 00:00:05,117
+Staring at a blank page is
+the slowest part of marketing.
+
+3
+00:00:05,117 --> 00:00:09,999
+In this lesson, you'll use Content AI
+to write an email and a social post,
+
+4
+00:00:09,999 --> 00:00:12,637
+and create images, in just a few clicks.
+
+5
+00:00:13,489 --> 00:00:15,909
+Go to AI Agents, then Content AI.
+
+6
+00:00:15,909 --> 00:00:19,723
+You'll also see Content AI
+inside the email builder,
+
+7
+00:00:19,723 --> 00:00:22,143
+the social planner and your blog.
+
+8
+00:00:22,143 --> 00:00:23,830
+On Pro, it's unlimited.
+
+9
+00:00:23,830 --> 00:00:27,717
+On other plans, it's billed
+at $0.18 per 1,000 words,
+
+10
+00:00:27,717 --> 00:00:30,797
+so a typical email costs less than a cent.
+
+11
+00:00:31,648 --> 00:00:36,378
+First, choose what you're writing:
+an email, a social post, a blog post,
+
+12
+00:00:36,378 --> 00:00:38,480
+website copy, or a text message.
+
+13
+00:00:38,480 --> 00:00:43,736
+Bloom wants to email past patients about
+a whitening offer, so we'll pick Email.
+
+14
+00:00:44,585 --> 00:00:46,236
+Now describe what you want.
+
+15
+00:00:46,236 --> 00:00:50,272
+Be specific: who it's for, the
+offer, the price, and the deadline.
+
+16
+00:00:50,272 --> 00:00:53,207
+The more detail you give,
+the better the result.
+
+17
+00:00:54,057 --> 00:00:55,470
+Pick a tone of voice.
+
+18
+00:00:55,470 --> 00:00:57,421
+Friendly suits Bloom's brand.
+
+19
+00:00:57,421 --> 00:00:58,834
+Then choose a length.
+
+20
+00:00:58,834 --> 00:01:00,987
+Medium is right for most emails.
+
+21
+00:01:00,987 --> 00:01:05,966
+Professional works well for clinical
+topics, and Playful for social media.
+
+22
+00:01:05,966 --> 00:01:06,975
+Click Generate.
+
+23
+00:01:07,826 --> 00:01:12,983
+And there it is, written in seconds: a
+subject line, a warm opening, the offer,
+
+24
+00:01:12,983 --> 00:01:14,746
+the deadline, and a button.
+
+25
+00:01:14,746 --> 00:01:19,381
+Notice the first name field, so every
+patient gets a personal greeting.
+
+26
+00:01:20,230 --> 00:01:24,799
+Content AI gives you a strong first
+draft, but you know your patients best.
+
+27
+00:01:24,799 --> 00:01:27,905
+Always read it through,
+and make it sound like you.
+
+28
+00:01:27,905 --> 00:01:28,880
+Not quite right?
+
+29
+00:01:28,880 --> 00:01:31,134
+Click Regenerate for a fresh version.
+
+30
+00:01:31,134 --> 00:01:36,068
+When you're happy, click Use in email
+campaign to drop it straight into the email
+
+31
+00:01:36,068 --> 00:01:36,555
+builder.
+
+32
+00:01:37,405 --> 00:01:38,929
+Let's try a social post.
+
+33
+00:01:38,929 --> 00:01:43,881
+Choose Social post, describe it, and
+pick Short, because short posts get read.
+
+34
+00:01:43,881 --> 00:01:48,960
+Click Generate, and you get a short post
+with emojis and a clear call to action.
+
+35
+00:01:49,809 --> 00:01:54,539
+Click Send to Social Planner, and you can
+schedule it to Instagram and Facebook.
+
+36
+00:01:54,539 --> 00:01:57,613
+We cover the social planner
+in the marketing module.
+
+37
+00:01:58,469 --> 00:02:00,590
+Content AI creates images, too.
+
+38
+00:02:00,590 --> 00:02:04,558
+Open the Image tab, and describe
+what you need: the scene,
+
+39
+00:02:04,558 --> 00:02:08,799
+the lighting and the mood, just
+as you'd brief a photographer.
+
+40
+00:02:08,799 --> 00:02:10,646
+Choose a style, and a size.
+
+41
+00:02:10,646 --> 00:02:12,767
+Portrait suits Instagram posts.
+
+42
+00:02:13,625 --> 00:02:16,120
+Click Generate, and you get four options.
+
+43
+00:02:16,120 --> 00:02:19,224
+Pick your favourite, then
+save it to Media Storage,
+
+44
+00:02:19,224 --> 00:02:21,414
+or add it straight to a social post.
+
+45
+00:02:25,310 --> 00:02:30,155
+Finally, the History tab keeps everything
+you've generated, and where you used it,
+
+46
+00:02:30,155 --> 00:02:33,286
+so you can always find that
+great subject line again.
+
+47
+00:02:33,286 --> 00:02:36,949
+It's also a quick way to see
+what worked before, and reuse it.
+
+48
+00:02:37,798 --> 00:02:38,939
+Here's a pro tip.
+
+49
+00:02:38,939 --> 00:02:41,893
+AI writes best when you
+give it the details.
+
+50
+00:02:41,893 --> 00:02:46,390
+Always include who it's for, the
+offer, the price and the deadline.
+
+51
+00:02:46,390 --> 00:02:50,484
+And only use AI images that
+honestly represent your business.
+
+52
+00:02:51,333 --> 00:02:53,427
+You're writing faster than ever!
+
+53
+00:02:53,427 --> 00:02:58,794
+In the final lesson of this module, we'll
+put AI inside your automations, to sort,
+
+54
+00:02:58,794 --> 00:03:01,412
+summarise and reply to messages for you.
+
+55
+00:03:01,412 --> 00:03:02,328
+See you there.

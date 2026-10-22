@@ -1,0 +1,245 @@
+1
+00:00:00,500 --> 00:00:05,837
+In this lesson, you'll learn to reply on
+any channel from one place: text, email,
+
+2
+00:00:05,837 --> 00:00:08,736
+WhatsApp, Facebook,
+Instagram and live chat.
+
+3
+00:00:08,736 --> 00:00:12,690
+One thread per customer, and
+no more switching between apps.
+
+4
+00:00:13,551 --> 00:00:14,409
+Here's Olivia.
+
+5
+00:00:14,409 --> 00:00:17,659
+She first messaged us on
+Facebook after seeing an ad.
+
+6
+00:00:17,659 --> 00:00:21,093
+We followed up by email, and
+this morning she's texting.
+
+7
+00:00:21,093 --> 00:00:26,121
+It's all one thread, in order, so anyone
+on your team can pick it up with the full
+
+8
+00:00:26,121 --> 00:00:26,489
+story.
+
+9
+00:00:27,341 --> 00:00:31,407
+Under every message, you can see
+which channel it came through.
+
+10
+00:00:31,407 --> 00:00:36,634
+Messages with the purple AI label were
+written by your AI agent, not by a person.
+
+11
+00:00:36,634 --> 00:00:38,699
+You'll set that up in Module 10.
+
+12
+00:00:39,548 --> 00:00:42,237
+To reply, use the composer at the bottom.
+
+13
+00:00:42,237 --> 00:00:44,860
+The row of tabs is the channel switcher.
+
+14
+00:00:44,860 --> 00:00:49,254
+Kyntlo picks the channel the customer
+used last, which is SMS here.
+
+15
+00:00:49,254 --> 00:00:54,238
+The From and To line shows exactly which
+number you're sending from, and to.
+
+16
+00:00:55,090 --> 00:00:58,572
+Olivia asked about Thursday,
+so let's text her back.
+
+17
+00:00:58,572 --> 00:01:03,258
+Type your reply, keep an eye on the
+character counter, and click Send.
+
+18
+00:01:03,258 --> 00:01:05,601
+One text segment is 160 characters.
+
+19
+00:01:05,601 --> 00:01:09,819
+When Olivia answers, her reply
+lands right back in this thread.
+
+20
+00:01:10,670 --> 00:01:11,663
+Prefer WhatsApp?
+
+21
+00:01:11,663 --> 00:01:16,691
+Click the WhatsApp tab, and the same box
+now sends through your WhatsApp Business
+
+22
+00:01:16,691 --> 00:01:17,126
+number.
+
+23
+00:01:17,126 --> 00:01:21,967
+A quick note on plans: texting and
+WhatsApp are included from the Growth plan,
+
+24
+00:01:21,967 --> 00:01:24,264
+and WhatsApp itself is a paid add-on.
+
+25
+00:01:24,264 --> 00:01:29,043
+One WhatsApp rule to know: if the customer
+hasn't messaged you in the last 24
+
+26
+00:01:29,043 --> 00:01:32,209
+hours, you start with an
+approved template message.
+
+27
+00:01:33,061 --> 00:01:35,373
+For something longer, switch to Email.
+
+28
+00:01:35,373 --> 00:01:39,693
+You get a subject line, and the reply
+comes from your business address.
+
+29
+00:01:39,693 --> 00:01:42,309
+Use email for treatment
+plans, attachments,
+
+30
+00:01:42,309 --> 00:01:44,986
+and anything the customer
+will want to keep.
+
+31
+00:01:47,636 --> 00:01:51,499
+Facebook and Instagram messages
+work exactly the same way.
+
+32
+00:01:51,499 --> 00:01:56,628
+Ava messaged our Instagram account, so
+the Instagram tab is already selected.
+
+33
+00:01:56,628 --> 00:02:00,092
+Your reply goes back as an
+Instagram direct message,
+
+34
+00:02:00,092 --> 00:02:02,424
+and she never has to leave the app.
+
+35
+00:02:03,277 --> 00:02:05,125
+Website chat is no different.
+
+36
+00:02:05,125 --> 00:02:09,077
+Mason asked a question through
+the chat widget on our website,
+
+37
+00:02:09,077 --> 00:02:14,239
+so the Live Chat tab is selected, and he
+sees your answer right there in the chat
+
+38
+00:02:14,239 --> 00:02:14,685
+window.
+
+39
+00:02:14,685 --> 00:02:17,872
+Live chat works on every
+plan, so even on Starter,
+
+40
+00:02:17,872 --> 00:02:20,166
+website visitors can reach you here.
+
+41
+00:02:21,018 --> 00:02:23,034
+One more tab: Internal Comment.
+
+42
+00:02:23,034 --> 00:02:25,311
+It's a note only your team can see.
+
+43
+00:02:25,311 --> 00:02:29,929
+Use it to hand over context, like
+"Mason prefers evening appointments",
+
+44
+00:02:29,929 --> 00:02:32,271
+without the customer ever seeing it.
+
+45
+00:02:33,123 --> 00:02:34,258
+Here's a pro tip.
+
+46
+00:02:34,258 --> 00:02:36,930
+Reply on the channel the customer chose.
+
+47
+00:02:36,930 --> 00:02:41,205
+If someone messages you on
+Instagram, answer on Instagram first.
+
+48
+00:02:41,205 --> 00:02:43,810
+Jumping to a phone call can feel pushy.
+
+49
+00:02:43,810 --> 00:02:47,416
+Once they're comfortable,
+ask for their mobile number,
+
+50
+00:02:47,416 --> 00:02:49,554
+so you can text reminders later.
+
+51
+00:02:50,407 --> 00:02:51,093
+Great work!
+
+52
+00:02:51,093 --> 00:02:55,397
+Next, you'll learn to reply even
+faster, with snippets and templates,
+
+53
+00:02:55,397 --> 00:02:57,580
+and to schedule messages for later.
+
+54
+00:02:57,580 --> 00:02:58,453
+See you there.

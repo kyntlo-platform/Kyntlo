@@ -1,0 +1,246 @@
+1
+00:00:00,500 --> 00:00:05,090
+In this lesson, you'll learn three
+time-savers: snippets for the questions you
+
+2
+00:00:05,090 --> 00:00:08,327
+answer every day, templates
+for emails, and scheduling,
+
+3
+00:00:08,327 --> 00:00:12,152
+so your messages go out at the
+right time, even when you're busy.
+
+4
+00:00:13,069 --> 00:00:17,715
+You probably answer the same questions
+every week: prices, opening hours,
+
+5
+00:00:17,715 --> 00:00:18,479
+how to book.
+
+6
+00:00:18,479 --> 00:00:22,743
+Snippets are saved replies your
+whole team can insert in one click.
+
+7
+00:00:22,743 --> 00:00:26,943
+You'll find them in the Snippets
+tab, at the top of Conversations.
+
+8
+00:00:27,792 --> 00:00:29,489
+Notice the curly brackets.
+
+9
+00:00:29,489 --> 00:00:31,055
+Those are custom values.
+
+10
+00:00:31,055 --> 00:00:36,405
+When you insert a snippet, {{contact.first_name}}
+is swapped for the person's real
+
+11
+00:00:36,405 --> 00:00:39,537
+first name, so every reply
+still feels personal.
+
+12
+00:00:40,393 --> 00:00:41,359
+Let's add one.
+
+13
+00:00:41,359 --> 00:00:45,635
+Click Add Snippet and give it a
+name your team will recognise.
+
+14
+00:00:45,635 --> 00:00:49,015
+Choose Text for SMS,
+WhatsApp and chat, or Email.
+
+15
+00:00:49,015 --> 00:00:50,601
+Then write the message.
+
+16
+00:00:50,601 --> 00:00:54,257
+The Custom values button
+adds the first name for you.
+
+17
+00:00:55,807 --> 00:00:58,767
+Pick a folder to keep
+things tidy, then save.
+
+18
+00:00:58,767 --> 00:01:02,976
+Good names matter: start with the
+topic, like parking or prices,
+
+19
+00:01:02,976 --> 00:01:04,686
+so they're easy to search.
+
+20
+00:01:04,686 --> 00:01:09,750
+The snippet is now available to everyone
+on your team, in every conversation.
+
+21
+00:01:10,601 --> 00:01:11,761
+Now let's use one.
+
+22
+00:01:11,761 --> 00:01:16,013
+Open a conversation and click the
+snippets button in the composer.
+
+23
+00:01:16,013 --> 00:01:18,976
+Search, or scroll, and
+click the one you need.
+
+24
+00:01:18,976 --> 00:01:23,293
+It drops into the message box with
+Olivia's name already filled in.
+
+25
+00:01:23,293 --> 00:01:25,290
+Check it reads well, then send.
+
+26
+00:01:27,253 --> 00:01:29,465
+For emails, you also get templates.
+
+27
+00:01:29,465 --> 00:01:31,615
+Daniel wants to move his check-up.
+
+28
+00:01:31,615 --> 00:01:36,482
+His conversation is on email, so open
+Templates and pick "Appointment moved".
+
+29
+00:01:36,482 --> 00:01:39,263
+The subject and the
+message fill in for you.
+
+30
+00:01:40,116 --> 00:01:43,655
+Say you only get to Daniel's
+email late in the evening.
+
+31
+00:01:43,655 --> 00:01:45,586
+A reply at midnight looks odd.
+
+32
+00:01:45,586 --> 00:01:49,576
+Instead of Send, click the clock
+icon to schedule the message.
+
+33
+00:01:49,576 --> 00:01:52,601
+Pick the date and the
+time, and click Schedule.
+
+34
+00:01:53,451 --> 00:01:58,282
+The message now waits in the thread, with
+a dashed outline and the time it will go
+
+35
+00:01:58,282 --> 00:01:58,518
+out.
+
+36
+00:01:58,518 --> 00:01:59,578
+Changed your mind?
+
+37
+00:01:59,578 --> 00:02:02,877
+Click Cancel any time before
+then, and it won't be sent.
+
+38
+00:02:03,731 --> 00:02:06,796
+Scheduling is perfect for
+follow-ups you've promised.
+
+39
+00:02:06,796 --> 00:02:09,456
+Write the message while
+the details are fresh,
+
+40
+00:02:09,456 --> 00:02:12,463
+schedule it for the morning
+you agreed, and move on.
+
+41
+00:02:12,463 --> 00:02:17,205
+Kyntlo sends it on time, from your business
+number, even if you're with a patient.
+
+42
+00:02:18,056 --> 00:02:20,232
+The composer has a few more helpers.
+
+43
+00:02:20,232 --> 00:02:24,945
+Add an emoji, attach a file like an
+aftercare guide, or insert a trigger link,
+
+44
+00:02:24,945 --> 00:02:26,577
+which tracks who clicks it.
+
+45
+00:02:26,577 --> 00:02:29,538
+You'll find those links
+in the Trigger Links tab.
+
+46
+00:02:30,387 --> 00:02:31,494
+Here's a pro tip.
+
+47
+00:02:31,494 --> 00:02:34,554
+Build your snippet library
+from real questions.
+
+48
+00:02:34,554 --> 00:02:39,632
+For one week, every time you type the
+same answer twice, save it as a snippet.
+
+49
+00:02:39,632 --> 00:02:43,344
+By Friday, most of your replies
+will take a single click.
+
+50
+00:02:44,195 --> 00:02:46,673
+That's snippets, templates and scheduling!
+
+51
+00:02:46,673 --> 00:02:49,446
+Next, you'll put a chat
+widget on your website,
+
+52
+00:02:49,446 --> 00:02:52,573
+so visitors can message you
+straight into this inbox.
+
+53
+00:02:52,573 --> 00:02:53,399
+See you there.

@@ -1,0 +1,230 @@
+1
+00:00:00,500 --> 00:00:02,779
+Welcome to Module 7, all about Sites.
+
+2
+00:00:02,779 --> 00:00:07,892
+Before we build anything, let's answer the
+most common question: should you build a
+
+3
+00:00:07,892 --> 00:00:09,186
+funnel, or a website?
+
+4
+00:00:09,186 --> 00:00:13,129
+By the end of this lesson, you'll
+know exactly when to use each.
+
+5
+00:00:13,982 --> 00:00:17,674
+Everything people see on the
+web lives here, under Sites.
+
+6
+00:00:17,674 --> 00:00:22,920
+Funnels, websites, forms, surveys, your
+chat widget, QR codes, blogs and domains.
+
+7
+00:00:22,920 --> 00:00:28,295
+They all share the same page builder, so
+once you learn it, you can build anything.
+
+8
+00:00:29,148 --> 00:00:30,776
+Let's start with funnels.
+
+9
+00:00:30,776 --> 00:00:36,115
+A funnel is a short series of pages that
+guides someone towards one single action,
+
+10
+00:00:36,115 --> 00:00:38,264
+like booking a free consultation.
+
+11
+00:00:38,264 --> 00:00:41,194
+There's no menu and
+nothing to wander off to.
+
+12
+00:00:41,194 --> 00:00:45,687
+Every page has one job, and the
+visitor always knows what to do next.
+
+13
+00:00:46,538 --> 00:00:49,152
+Each page in a funnel is called a step.
+
+14
+00:00:49,152 --> 00:00:51,566
+Bloom's Invisalign funnel has three.
+
+15
+00:00:51,566 --> 00:00:55,454
+First, an opt-in page that
+collects the visitor's details.
+
+16
+00:00:55,454 --> 00:00:57,867
+Then a booking page with a calendar.
+
+17
+00:00:57,867 --> 00:00:59,878
+And finally, a thank-you page.
+
+18
+00:01:00,728 --> 00:01:04,106
+Because a funnel is a fixed
+path, it's easy to measure.
+
+19
+00:01:04,106 --> 00:01:09,144
+You can see how many people reached each
+step, and exactly where they dropped off.
+
+20
+00:01:09,144 --> 00:01:13,198
+That makes funnels perfect for
+ads, special offers and promotions.
+
+21
+00:01:14,046 --> 00:01:14,957
+Now, websites.
+
+22
+00:01:14,957 --> 00:01:18,602
+A website is a set of pages
+joined by a navigation menu,
+
+23
+00:01:18,602 --> 00:01:21,336
+so visitors can explore at their own pace.
+
+24
+00:01:21,336 --> 00:01:23,679
+Home, treatments, about us, contact.
+
+25
+00:01:23,679 --> 00:01:29,081
+It's your online shop window, and the place
+people check before they trust you with
+
+26
+00:01:29,081 --> 00:01:29,862
+their teeth.
+
+27
+00:01:30,712 --> 00:01:33,323
+Notice the menu across
+the top of the page.
+
+28
+00:01:33,323 --> 00:01:36,237
+People who are still
+researching like to browse,
+
+29
+00:01:36,237 --> 00:01:38,605
+compare treatments and get to know you.
+
+30
+00:01:38,605 --> 00:01:43,584
+A website is also what Google shows when
+someone searches for a dentist near them.
+
+31
+00:01:44,434 --> 00:01:46,133
+So here's the rule of thumb.
+
+32
+00:01:46,133 --> 00:01:50,139
+If you're promoting one offer and
+want one action, build a funnel.
+
+33
+00:01:50,139 --> 00:01:55,054
+If you want to show your whole business
+and help people explore, build a website.
+
+34
+00:01:55,054 --> 00:01:56,571
+Most businesses use both.
+
+35
+00:01:57,422 --> 00:01:59,632
+And they work beautifully together.
+
+36
+00:01:59,632 --> 00:02:03,737
+Your website's Invisalign page
+can link to your free scan funnel.
+
+37
+00:02:03,737 --> 00:02:06,389
+Your ads can point straight at the funnel.
+
+38
+00:02:06,389 --> 00:02:09,736
+And every lead from either
+one lands in the same CRM,
+
+39
+00:02:09,736 --> 00:02:13,777
+triggers the same automations,
+and shows up in the same reports.
+
+40
+00:02:14,628 --> 00:02:18,518
+Best of all, you build both with
+the same drag and drop editor.
+
+41
+00:02:18,518 --> 00:02:22,160
+The same sections, the same
+elements, the same mobile view.
+
+42
+00:02:22,160 --> 00:02:25,865
+Learn it once, and you can build
+funnels, websites and more.
+
+43
+00:02:26,714 --> 00:02:27,781
+Here's a pro tip.
+
+44
+00:02:27,781 --> 00:02:30,165
+Don't try to build everything at once.
+
+45
+00:02:30,165 --> 00:02:34,745
+Start with one funnel for your most
+profitable offer, send traffic to it,
+
+46
+00:02:34,745 --> 00:02:36,878
+and improve it using real numbers.
+
+47
+00:02:36,878 --> 00:02:38,698
+Your full website can follow.
+
+48
+00:02:39,549 --> 00:02:41,477
+Now you know when to use each one.
+
+49
+00:02:41,477 --> 00:02:45,843
+In the next lesson, we'll build a complete
+funnel from a ready-made template,
+
+50
+00:02:45,843 --> 00:02:46,694
+and publish it.
+
+51
+00:02:46,694 --> 00:02:47,488
+See you there.

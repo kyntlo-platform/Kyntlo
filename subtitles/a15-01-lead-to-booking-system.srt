@@ -1,0 +1,272 @@
+1
+00:00:00,500 --> 00:00:02,047
+Welcome to the capstone!
+
+2
+00:00:02,047 --> 00:00:05,013
+You've learned each part
+of Kyntlo on its own.
+
+3
+00:00:05,013 --> 00:00:09,849
+Now we'll connect them into one system
+that turns a stranger into a booked,
+
+4
+00:00:09,849 --> 00:00:12,170
+happy customer, mostly on autopilot.
+
+5
+00:00:12,170 --> 00:00:15,781
+We'll follow one real lead,
+Olivia, all the way through.
+
+6
+00:00:16,635 --> 00:00:18,960
+Here's the whole system in one line.
+
+7
+00:00:18,960 --> 00:00:20,704
+A funnel attracts the lead.
+
+8
+00:00:20,704 --> 00:00:22,642
+A form captures their details.
+
+9
+00:00:22,642 --> 00:00:26,906
+A workflow replies instantly, and
+creates a deal in your pipeline.
+
+10
+00:00:26,906 --> 00:00:31,104
+The calendar takes the booking,
+reminders make sure they turn up,
+
+11
+00:00:31,104 --> 00:00:34,851
+and a review request turns a
+good visit into social proof.
+
+12
+00:00:35,700 --> 00:00:36,975
+It starts in Sites.
+
+13
+00:00:36,975 --> 00:00:40,600
+Bloom runs a funnel called
+Invisalign Free Scan Offer.
+
+14
+00:00:40,600 --> 00:00:43,016
+Their Facebook ads send people here.
+
+15
+00:00:43,016 --> 00:00:48,654
+The page explains the offer, and has one
+clear call to action: claim your free scan.
+
+16
+00:00:49,503 --> 00:00:52,999
+On that funnel sits the
+Invisalign Enquiry form.
+
+17
+00:00:52,999 --> 00:00:58,242
+Every submission creates or updates
+a contact in your CRM automatically.
+
+18
+00:00:58,242 --> 00:01:01,883
+This form has already
+captured over 400 enquiries.
+
+19
+00:01:02,734 --> 00:01:05,880
+The moment Olivia submits
+it, this workflow fires.
+
+20
+00:01:05,880 --> 00:01:07,831
+Its trigger is that exact form.
+
+21
+00:01:07,831 --> 00:01:12,990
+It creates her deal in the pipeline, texts
+her within seconds with a booking link,
+
+22
+00:01:12,990 --> 00:01:15,822
+and alerts the team
+member who owns the lead.
+
+23
+00:01:16,671 --> 00:01:20,716
+In Opportunities, Olivia's
+deal is waiting in New Enquiry,
+
+24
+00:01:20,716 --> 00:01:23,784
+with its value and
+source already filled in.
+
+25
+00:01:23,784 --> 00:01:25,318
+Nobody typed anything.
+
+26
+00:01:25,318 --> 00:01:30,828
+When she books, the pipeline workflow
+from lesson 9.5 moves her to Consultation
+
+27
+00:01:30,828 --> 00:01:31,316
+Booked.
+
+28
+00:01:32,166 --> 00:01:35,025
+The link in her text opens
+your booking calendar.
+
+29
+00:01:35,025 --> 00:01:38,351
+She picks a time that suits
+her, and it lands right here,
+
+30
+00:01:38,351 --> 00:01:41,968
+in the right person's calendar,
+with no back-and-forth emails.
+
+31
+00:01:42,822 --> 00:01:45,513
+Booking triggers the appointment workflow.
+
+32
+00:01:45,513 --> 00:01:50,638
+Olivia gets an instant confirmation, then
+reminders the day before and two hours
+
+33
+00:01:50,638 --> 00:01:51,087
+before.
+
+34
+00:01:51,087 --> 00:01:54,226
+This is the part that
+protects you from no-shows.
+
+35
+00:01:54,226 --> 00:01:58,583
+And if she does miss it, the no-show
+workflow offers her a new time.
+
+36
+00:01:59,433 --> 00:02:03,030
+After her visit, the team marks
+the appointment as showed.
+
+37
+00:02:03,030 --> 00:02:06,503
+Two hours later, this workflow
+asks Olivia for a review,
+
+38
+00:02:06,503 --> 00:02:08,736
+while the experience is still fresh.
+
+39
+00:02:09,586 --> 00:02:11,877
+Those reviews flow into Reputation.
+
+40
+00:02:11,877 --> 00:02:15,477
+More happy customers leave
+reviews, your rating climbs,
+
+41
+00:02:15,477 --> 00:02:19,077
+and your next ad brings in
+even more leads like Olivia.
+
+42
+00:02:19,077 --> 00:02:22,284
+That's the loop that makes
+the whole system grow.
+
+43
+00:02:23,133 --> 00:02:26,347
+Before you trust any system,
+test it as a customer.
+
+44
+00:02:26,347 --> 00:02:29,686
+Fill in your own form, then
+open your contact record.
+
+45
+00:02:29,686 --> 00:02:34,412
+The activity timeline should show every
+step: the form, the tags, the deal,
+
+46
+00:02:34,412 --> 00:02:36,744
+and every message the workflows sent.
+
+47
+00:02:37,595 --> 00:02:38,988
+Finally, watch it work.
+
+48
+00:02:38,988 --> 00:02:42,684
+Your dashboard shows how many
+leads came in, how many booked,
+
+49
+00:02:42,684 --> 00:02:45,168
+and how much revenue the system produced.
+
+50
+00:02:45,168 --> 00:02:49,045
+If one number dips, you now know
+exactly which piece to look at.
+
+51
+00:02:49,894 --> 00:02:50,969
+Here's a pro tip.
+
+52
+00:02:50,969 --> 00:02:53,500
+Don't build everything in one afternoon.
+
+53
+00:02:53,500 --> 00:02:57,105
+Add one link of the chain,
+test it with your own details,
+
+54
+00:02:57,105 --> 00:02:58,813
+and only then add the next.
+
+55
+00:02:58,813 --> 00:03:02,482
+A simple system that works
+beats a clever one that breaks.
+
+56
+00:03:03,333 --> 00:03:07,895
+That's a complete lead-to-booking system,
+built from everything you've learned.
+
+57
+00:03:07,895 --> 00:03:10,955
+In the final lesson, I'll
+give you a thirty-day plan,
+
+58
+00:03:10,955 --> 00:03:13,322
+so you know exactly what to set up first.
+
+59
+00:03:13,322 --> 00:03:14,131
+See you there!

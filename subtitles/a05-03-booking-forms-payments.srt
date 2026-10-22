@@ -1,0 +1,255 @@
+1
+00:00:00,500 --> 00:00:04,064
+In this lesson, you'll make your
+booking calendar work harder.
+
+2
+00:00:04,064 --> 00:00:08,261
+We'll collect the right details when
+people book, take a deposit by card,
+
+3
+00:00:08,261 --> 00:00:11,537
+and make sure everyone gets
+a confirmation straight away.
+
+4
+00:00:12,396 --> 00:00:15,070
+We'll set up Bloom's implant consultation,
+
+5
+00:00:15,070 --> 00:00:18,253
+a longer appointment where
+a no-show really hurts.
+
+6
+00:00:18,253 --> 00:00:22,646
+Open it from Calendar Settings, then
+go to the Forms and Payment tab.
+
+7
+00:00:22,646 --> 00:00:25,638
+The same steps work on
+any calendar you create.
+
+8
+00:00:26,489 --> 00:00:31,495
+By default, the booking form asks for
+four things: first name, last name,
+
+9
+00:00:31,495 --> 00:00:32,592
+phone and email.
+
+10
+00:00:32,592 --> 00:00:35,884
+That's enough to create
+the contact in your CRM,
+
+11
+00:00:35,884 --> 00:00:38,627
+and to send confirmations and reminders.
+
+12
+00:00:39,477 --> 00:00:41,416
+For new patients, we need more.
+
+13
+00:00:41,416 --> 00:00:45,170
+Choose Custom form, and select
+a form you've built in Sites,
+
+14
+00:00:45,170 --> 00:00:47,046
+like New Patient Registration.
+
+15
+00:00:47,046 --> 00:00:52,176
+Now patients give their date of birth,
+current dentist and any medical notes while
+
+16
+00:00:52,176 --> 00:00:52,801
+they book.
+
+17
+00:00:53,651 --> 00:00:57,806
+The form also asks for consent
+to text and email reminders.
+
+18
+00:00:57,806 --> 00:01:03,089
+You'll want that in place before you
+switch on the reminders in lesson 5.6.
+
+19
+00:01:03,940 --> 00:01:04,858
+Next, payments.
+
+20
+00:01:04,858 --> 00:01:06,448
+Switch on Accept payments.
+
+21
+00:01:06,448 --> 00:01:10,241
+Kyntlo charges the card through
+your connected Stripe account,
+
+22
+00:01:10,241 --> 00:01:12,933
+so the money goes
+straight to your business.
+
+23
+00:01:12,933 --> 00:01:17,521
+If Stripe isn't connected yet, you'll
+do that under Payments, in Module 12.
+
+24
+00:01:18,371 --> 00:01:19,478
+Enter the amount.
+
+25
+00:01:19,478 --> 00:01:23,581
+Bloom takes a £50 deposit, which
+comes off the treatment later.
+
+26
+00:01:23,581 --> 00:01:28,987
+Deposits cut no-shows dramatically, because
+people turn up for appointments they've
+
+27
+00:01:28,987 --> 00:01:30,094
+already paid for.
+
+28
+00:01:30,944 --> 00:01:32,398
+Add a short description.
+
+29
+00:01:32,398 --> 00:01:37,064
+It appears on the patient's receipt, so
+they know exactly what they paid for,
+
+30
+00:01:37,064 --> 00:01:39,669
+and that it counts
+towards their treatment.
+
+31
+00:01:39,669 --> 00:01:44,395
+Every payment is also recorded against
+the contact, and listed under Payments,
+
+32
+00:01:44,395 --> 00:01:45,971
+so your records stay tidy.
+
+33
+00:01:46,820 --> 00:01:51,328
+Under After booking, choose what people
+see once they've booked: a thank-you
+
+34
+00:01:51,328 --> 00:01:54,235
+message, or a redirect to
+a page on your website,
+
+35
+00:01:54,235 --> 00:01:57,735
+for example one that explains
+how to prepare for the visit.
+
+36
+00:01:58,586 --> 00:02:03,188
+Confirmations live in the next tab,
+Notifications and Additional Options.
+
+37
+00:02:03,188 --> 00:02:08,041
+The booking confirmation goes out by
+email and text the moment someone books,
+
+38
+00:02:08,041 --> 00:02:11,445
+to the patient, and to the
+team member they're seeing.
+
+39
+00:02:12,294 --> 00:02:16,917
+Further down, Auto-confirm marks new
+bookings as Confirmed straight away.
+
+40
+00:02:16,917 --> 00:02:21,033
+Switch it off if you'd rather
+review each booking yourself first.
+
+41
+00:02:21,033 --> 00:02:24,009
+With a deposit taken,
+auto-confirm makes sense,
+
+42
+00:02:24,009 --> 00:02:26,668
+because the patient has already committed.
+
+43
+00:02:26,668 --> 00:02:27,682
+Then click Save.
+
+44
+00:02:28,530 --> 00:02:29,428
+Now preview it.
+
+45
+00:02:29,428 --> 00:02:33,441
+Pick a time, and you'll see the
+longer form, then the card payment,
+
+46
+00:02:33,441 --> 00:02:36,195
+secured by Stripe, before
+the booking is made.
+
+47
+00:02:36,195 --> 00:02:38,770
+That's exactly what
+your patients will see.
+
+48
+00:02:39,620 --> 00:02:40,742
+Here's a pro tip.
+
+49
+00:02:40,742 --> 00:02:42,392
+Keep booking forms short.
+
+50
+00:02:42,392 --> 00:02:45,163
+Every extra question loses a few bookings.
+
+51
+00:02:45,163 --> 00:02:48,199
+Ask only what you truly
+need before the visit,
+
+52
+00:02:48,199 --> 00:02:51,234
+and collect the rest
+when the patient arrives.
+
+53
+00:02:52,188 --> 00:02:55,122
+Your calendar now collects
+details and deposits!
+
+54
+00:02:55,122 --> 00:03:00,257
+Next, we'll connect your Google or Outlook
+calendar, so you never get double-booked.
+
+55
+00:03:00,257 --> 00:03:01,113
+See you there.

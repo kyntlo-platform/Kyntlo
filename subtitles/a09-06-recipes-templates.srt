@@ -1,0 +1,215 @@
+1
+00:00:00,500 --> 00:00:03,837
+You don't have to build every
+workflow from a blank page.
+
+2
+00:00:03,837 --> 00:00:08,579
+In this lesson, you'll use a ready-made
+recipe to set up missed call text back in
+
+3
+00:00:08,579 --> 00:00:13,205
+about two minutes, and learn how to reuse
+your own best workflows as templates.
+
+4
+00:00:14,055 --> 00:00:15,429
+Click Create Workflow.
+
+5
+00:00:15,429 --> 00:00:20,364
+Below Start from Scratch, you'll find
+the recipes: ready-made workflows for the
+
+6
+00:00:20,364 --> 00:00:22,426
+jobs almost every business needs.
+
+7
+00:00:23,277 --> 00:00:26,845
+There's appointment confirmation
+and reminders, Fast Five,
+
+8
+00:00:26,845 --> 00:00:31,704
+which contacts new leads within five
+minutes, review requests, no-show nurture,
+
+9
+00:00:31,704 --> 00:00:36,010
+missed call text back, a birthday
+template, and customer reactivation.
+
+10
+00:00:36,010 --> 00:00:39,701
+Each one is a full workflow you
+can change however you like.
+
+11
+00:00:39,701 --> 00:00:42,223
+Think of them as a tested starting point,
+
+12
+00:00:42,223 --> 00:00:46,406
+built around the situations that
+cost businesses the most customers.
+
+13
+00:00:47,255 --> 00:00:49,038
+Let's use Missed Call Text Back.
+
+14
+00:00:49,038 --> 00:00:52,158
+When you miss a call, it texts
+the caller straight away,
+
+15
+00:00:52,158 --> 00:00:55,167
+so they don't just ring the
+next business on the list.
+
+16
+00:00:55,167 --> 00:00:58,844
+Click it to preview the trigger
+and the actions before you commit.
+
+17
+00:00:59,694 --> 00:01:01,123
+Click Use this recipe.
+
+18
+00:01:01,123 --> 00:01:06,383
+Kyntlo creates a new workflow with everything
+already in place, saved as a draft.
+
+19
+00:01:06,383 --> 00:01:10,538
+Nothing runs until you publish
+it, so you can explore it safely,
+
+20
+00:01:10,538 --> 00:01:12,811
+and change anything you like first.
+
+21
+00:01:13,660 --> 00:01:15,498
+Always check the trigger first.
+
+22
+00:01:15,498 --> 00:01:20,182
+It's Call Status, filtered to calls with
+no answer, coming in to your business.
+
+23
+00:01:20,182 --> 00:01:24,214
+That way it only texts people who
+called you and didn't get through.
+
+24
+00:01:25,127 --> 00:01:27,585
+Then make the message sound like you.
+
+25
+00:01:27,585 --> 00:01:31,638
+Open the SMS, replace the text
+with your own words, and save.
+
+26
+00:01:31,638 --> 00:01:36,288
+Mention your business name, so the
+caller knows exactly who's texting.
+
+27
+00:01:36,288 --> 00:01:41,337
+A short, warm message that invites a
+reply works far better than a long one.
+
+28
+00:01:42,152 --> 00:01:45,234
+Give it a clear name, switch
+it to Publish, and save.
+
+29
+00:01:45,234 --> 00:01:49,652
+That's a complete missed call text back
+system, set up in about two minutes.
+
+30
+00:01:50,501 --> 00:01:52,168
+Recipes are one shortcut.
+
+31
+00:01:52,168 --> 00:01:54,236
+Your own workflows are another.
+
+32
+00:01:54,236 --> 00:01:58,970
+Back in the list, open the menu next
+to any workflow, and choose Clone.
+
+33
+00:01:58,970 --> 00:02:04,572
+You get an exact copy as a draft, ready to
+adapt, for a new offer or a new location.
+
+34
+00:02:05,423 --> 00:02:09,238
+As your list grows, use Create
+Folder to keep things tidy.
+
+35
+00:02:09,238 --> 00:02:13,514
+Group workflows by purpose, like
+leads, appointments and reviews,
+
+36
+00:02:13,514 --> 00:02:16,868
+so you and your team can
+always find the right one.
+
+37
+00:02:16,868 --> 00:02:22,065
+A tidy list also makes it much easier to
+spot old workflows you no longer need.
+
+38
+00:02:22,964 --> 00:02:24,009
+Here's a pro tip.
+
+39
+00:02:24,009 --> 00:02:27,266
+A recipe is a starting point,
+not a finished product.
+
+40
+00:02:27,266 --> 00:02:31,199
+Before you publish one, check
+three things: the trigger filters,
+
+41
+00:02:31,199 --> 00:02:34,333
+the wording of every message,
+and the settings tab.
+
+42
+00:02:34,333 --> 00:02:36,422
+Then run a quick test on yourself.
+
+43
+00:02:37,271 --> 00:02:40,184
+You can now set up proven
+workflows in minutes.
+
+44
+00:02:40,184 --> 00:02:44,027
+Next, we'll connect Kyntlo to
+your other tools, with webhooks,
+
+45
+00:02:44,027 --> 00:02:46,134
+Google Sheets and premium actions.
+
+46
+00:02:46,134 --> 00:02:47,001
+See you there!

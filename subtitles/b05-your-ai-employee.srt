@@ -1,0 +1,136 @@
+1
+00:00:00,500 --> 00:00:04,896
+What if someone answered every message
+and every phone call, day and night,
+
+2
+00:00:04,896 --> 00:00:07,768
+and booked customers
+straight into your calendar?
+
+3
+00:00:07,768 --> 00:00:09,057
+Meet your AI employee.
+
+4
+00:00:09,916 --> 00:00:11,939
+It starts with Conversation AI.
+
+5
+00:00:11,939 --> 00:00:15,137
+This chatbot replies to
+your customers' messages,
+
+6
+00:00:15,137 --> 00:00:18,269
+using what you've taught
+it about your business.
+
+7
+00:00:18,269 --> 00:00:21,402
+Bloom Dental's front desk
+bot handles enquiries.
+
+8
+00:00:22,252 --> 00:00:25,575
+You give it a personality
+and a goal, in plain English.
+
+9
+00:00:25,575 --> 00:00:30,228
+Then you train it on your website,
+documents and FAQs, with a knowledge base.
+
+10
+00:00:31,079 --> 00:00:31,996
+Let's test it.
+
+11
+00:00:31,996 --> 00:00:34,745
+A customer asks, "How much is Invisalign?"
+
+12
+00:00:34,745 --> 00:00:38,674
+The bot answers from the price
+list, and offers a free scan.
+
+13
+00:00:39,522 --> 00:00:42,220
+The customer says yes,
+and asks for Thursday.
+
+14
+00:00:42,220 --> 00:00:46,956
+The bot offers two times, and books the
+free scan, straight into your calendar.
+
+15
+00:00:48,628 --> 00:00:49,669
+Now, your phone.
+
+16
+00:00:49,669 --> 00:00:54,225
+Voice AI is a receptionist that
+answers your calls in a natural voice,
+
+17
+00:00:54,225 --> 00:00:55,462
+whenever you can't.
+
+18
+00:00:56,339 --> 00:00:58,452
+Bloom's voice agent is called Rosie.
+
+19
+00:00:58,452 --> 00:01:02,914
+Up top, you can see the calls she's
+answered, the appointments she's booked,
+
+20
+00:01:02,914 --> 00:01:04,792
+and the calls she's transferred.
+
+21
+00:01:05,999 --> 00:01:07,694
+You decide what she can do.
+
+22
+00:01:07,694 --> 00:01:12,655
+Transfer emergencies to the right person,
+book appointments into your calendar,
+
+23
+00:01:12,655 --> 00:01:15,166
+and send every caller a text afterwards.
+
+24
+00:01:16,016 --> 00:01:20,121
+And every call is logged, with a
+summary, a transcript and the recording,
+
+25
+00:01:20,121 --> 00:01:22,426
+so you always know exactly what was said.
+
+26
+00:01:23,706 --> 00:01:26,367
+A basic AI chatbot comes with Growth.
+
+27
+00:01:26,367 --> 00:01:31,689
+The advanced chatbot that books
+appointments, and Voice AI, come with Pro,
+
+28
+00:01:31,689 --> 00:01:34,135
+which includes unlimited AI usage.
+
+29
+00:01:34,984 --> 00:01:38,553
+Hire an AI employee that
+never takes a day off.
+
+30
+00:01:38,553 --> 00:01:42,275
+Start your free 14-day
+trial today, at kyntlo.ai.

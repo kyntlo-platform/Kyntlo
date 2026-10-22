@@ -1,0 +1,275 @@
+1
+00:00:00,500 --> 00:00:04,180
+Sooner or later, someone will
+say: I never got your text.
+
+2
+00:00:04,180 --> 00:00:09,473
+In this lesson, you'll learn a simple
+four-step check that finds the reason almost
+
+3
+00:00:09,473 --> 00:00:13,088
+every time, using Enrollment
+History and Execution Logs.
+
+4
+00:00:13,949 --> 00:00:15,042
+Here's the order.
+
+5
+00:00:15,042 --> 00:00:17,035
+One, is the workflow published?
+
+6
+00:00:17,035 --> 00:00:19,349
+Two, did the contact actually enrol?
+
+7
+00:00:19,349 --> 00:00:24,235
+Three, if they didn't, does the trigger
+and its filters match what happened?
+
+8
+00:00:24,235 --> 00:00:27,900
+And four, what do the execution
+logs say about each step?
+
+9
+00:00:28,791 --> 00:00:30,110
+Start with the list.
+
+10
+00:00:30,110 --> 00:00:32,616
+Open the folder, and check the status.
+
+11
+00:00:32,616 --> 00:00:35,452
+Drafts never run, not
+even for one contact.
+
+12
+00:00:35,452 --> 00:00:40,728
+It sounds obvious, but a workflow left
+in draft after testing is the most common
+
+13
+00:00:40,728 --> 00:00:41,585
+cause of all.
+
+14
+00:00:42,437 --> 00:00:46,207
+Our first case: Grace Wright
+filled in a form on the website,
+
+15
+00:00:46,207 --> 00:00:48,309
+but never got the Invisalign text.
+
+16
+00:00:48,309 --> 00:00:51,152
+Open Enrollment History,
+and search for Grace.
+
+17
+00:00:51,152 --> 00:00:51,646
+Nothing.
+
+18
+00:00:51,646 --> 00:00:56,158
+She never entered the workflow at all,
+so no step could ever run for her.
+
+19
+00:00:57,009 --> 00:01:00,237
+When someone never enrolled,
+look at the trigger.
+
+20
+00:01:00,237 --> 00:01:03,135
+The filter says, form
+is Invisalign Enquiry.
+
+21
+00:01:03,135 --> 00:01:06,231
+Grace used the general
+Contact Us form instead.
+
+22
+00:01:06,231 --> 00:01:09,195
+So the workflow did
+exactly what it was told.
+
+23
+00:01:09,195 --> 00:01:13,938
+The fix is to add that form, or point
+her to a workflow that handles it.
+
+24
+00:01:14,788 --> 00:01:19,468
+Our second case: Mason Evans did
+enrol, but says he never got a text.
+
+25
+00:01:19,468 --> 00:01:20,825
+Open Execution Logs.
+
+26
+00:01:20,825 --> 00:01:25,030
+Every step, for every contact,
+is listed here with its status.
+
+27
+00:01:25,030 --> 00:01:28,286
+Search for Mason, and
+look at the status column.
+
+28
+00:01:29,137 --> 00:01:30,712
+Most steps say Executed.
+
+29
+00:01:30,712 --> 00:01:33,009
+But both text messages say Skipped.
+
+30
+00:01:33,009 --> 00:01:36,880
+Skipped means Kyntlo chose not
+to run that step on purpose.
+
+31
+00:01:36,880 --> 00:01:40,030
+Failed means it tried,
+and something went wrong.
+
+32
+00:01:40,030 --> 00:01:41,736
+They need different fixes.
+
+33
+00:01:42,586 --> 00:01:43,822
+Click View details.
+
+34
+00:01:43,822 --> 00:01:48,246
+Here's the reason: the contact has
+Do Not Disturb turned on for SMS.
+
+35
+00:01:48,246 --> 00:01:51,304
+Kyntlo respects that
+setting in every workflow,
+
+36
+00:01:51,304 --> 00:01:54,947
+which protects you from texting
+people who've opted out.
+
+37
+00:01:55,797 --> 00:01:59,277
+Click Open contact to check
+his Do not disturb settings.
+
+38
+00:01:59,277 --> 00:02:03,317
+Only switch it off if Mason has
+actually agreed to hear from you.
+
+39
+00:02:03,317 --> 00:02:05,803
+If he opted out, the workflow was right,
+
+40
+00:02:05,803 --> 00:02:09,345
+and email or a phone call is
+the better way to reach him.
+
+41
+00:02:10,195 --> 00:02:12,954
+Now filter by status, and choose Failed.
+
+42
+00:02:12,954 --> 00:02:16,196
+Ethan Walker's email
+failed because it bounced.
+
+43
+00:02:16,196 --> 00:02:17,645
+His mailbox was full.
+
+44
+00:02:17,645 --> 00:02:22,059
+The fix here is outside the
+workflow: confirm his email address,
+
+45
+00:02:22,059 --> 00:02:24,060
+or reach him by text instead.
+
+46
+00:02:24,911 --> 00:02:29,015
+Finally, a status that worries
+people but shouldn't: Waiting.
+
+47
+00:02:29,015 --> 00:02:31,975
+Olivia is simply paused
+on the one-day wait.
+
+48
+00:02:31,975 --> 00:02:35,339
+The details tell you exactly
+when she'll continue.
+
+49
+00:02:35,339 --> 00:02:36,549
+Nothing is broken.
+
+50
+00:02:36,549 --> 00:02:38,568
+The workflow is doing its job.
+
+51
+00:02:39,417 --> 00:02:40,547
+Here's a pro tip.
+
+52
+00:02:40,547 --> 00:02:42,274
+Don't wait for complaints.
+
+53
+00:02:42,274 --> 00:02:47,590
+Once a week, open your busiest workflows,
+filter the logs by Skipped and Failed,
+
+54
+00:02:47,590 --> 00:02:49,051
+and look for patterns.
+
+55
+00:02:49,051 --> 00:02:54,500
+A wrong form, a bad number, or a missing
+custom value is much easier to fix early.
+
+56
+00:02:55,368 --> 00:02:58,002
+That's the end of the automation module.
+
+57
+00:02:58,002 --> 00:03:01,822
+You can now build, test and
+fix workflows with confidence.
+
+58
+00:03:01,822 --> 00:03:04,918
+Next, in Module 10, we'll
+explore AI in Kyntlo,
+
+59
+00:03:04,918 --> 00:03:09,660
+from chatbots that answer your leads,
+to AI steps inside your workflows.
+
+60
+00:03:09,660 --> 00:03:10,582
+See you there!

@@ -1,0 +1,264 @@
+1
+00:00:00,500 --> 00:00:01,281
+Welcome back!
+
+2
+00:00:01,281 --> 00:00:05,904
+In this lesson, you'll learn to shape
+your dashboard around the way you work.
+
+3
+00:00:05,904 --> 00:00:08,846
+We'll resize and rearrange
+widgets, add new ones,
+
+4
+00:00:08,846 --> 00:00:12,329
+and build a separate dashboard
+for each role in your team.
+
+5
+00:00:13,192 --> 00:00:16,978
+The default dashboard is built
+around your sales pipeline.
+
+6
+00:00:16,978 --> 00:00:18,806
+That's perfect for an owner.
+
+7
+00:00:18,806 --> 00:00:23,897
+But your receptionist cares about today's
+appointments and tasks, not revenue.
+
+8
+00:00:23,897 --> 00:00:28,140
+A good dashboard answers the
+questions one person asks every day.
+
+9
+00:00:28,992 --> 00:00:32,801
+To change a dashboard, click the
+pencil icon at the top right.
+
+10
+00:00:32,801 --> 00:00:37,838
+Each widget now shows a grip on the left
+for moving it, a pencil for its settings,
+
+11
+00:00:37,838 --> 00:00:40,910
+and a handle in the bottom
+corner for resizing it.
+
+12
+00:00:41,759 --> 00:00:45,732
+Let's make the funnel wider, so
+the stage names have more room.
+
+13
+00:00:45,732 --> 00:00:48,003
+Drag its corner handle to the right.
+
+14
+00:00:48,003 --> 00:00:52,606
+The width snaps to a 12-column grid,
+so everything stays neatly lined up.
+
+15
+00:00:53,457 --> 00:00:54,444
+Next, rearrange.
+
+16
+00:00:54,444 --> 00:00:57,283
+Put the number you check
+most in the top left,
+
+17
+00:00:57,283 --> 00:00:59,875
+because that's where your eye lands first.
+
+18
+00:00:59,875 --> 00:01:04,936
+I'll drag conversion rate by its grip, and
+drop it in front of opportunity status.
+
+19
+00:01:05,786 --> 00:01:08,007
+Every widget has its own settings.
+
+20
+00:01:08,007 --> 00:01:12,385
+Click its pencil to rename it,
+choose which pipeline it reports on,
+
+21
+00:01:12,385 --> 00:01:14,149
+or override the date range.
+
+22
+00:01:14,149 --> 00:01:17,743
+I'll point conversion rate
+at all pipelines, then save.
+
+23
+00:01:19,036 --> 00:01:21,508
+To add something new, click Add widget.
+
+24
+00:01:21,508 --> 00:01:25,756
+Widgets are grouped by area:
+opportunities, appointments, contacts,
+
+25
+00:01:25,756 --> 00:01:27,087
+tasks and reputation.
+
+26
+00:01:27,087 --> 00:01:31,778
+I'll add the appointments widget, which
+shows bookings and your show rate.
+
+27
+00:01:32,629 --> 00:01:33,478
+Happy with it?
+
+28
+00:01:33,478 --> 00:01:34,145
+Click Save.
+
+29
+00:01:34,145 --> 00:01:39,119
+If you change your mind while editing,
+Cancel puts everything back the way it was.
+
+30
+00:01:39,119 --> 00:01:43,971
+Remember that changes to a shared dashboard
+show up for everyone who can see it,
+
+31
+00:01:43,971 --> 00:01:49,005
+so if you just want to experiment, duplicate
+it first, and play with your own copy.
+
+32
+00:01:49,856 --> 00:01:52,510
+Now let's build a dashboard
+for the front desk.
+
+33
+00:01:52,510 --> 00:01:54,203
+Click New, and give it a name.
+
+34
+00:01:54,203 --> 00:01:57,365
+Start from a blank dashboard,
+and choose who can see it.
+
+35
+00:01:57,365 --> 00:01:59,285
+I'll share this one with everyone.
+
+36
+00:02:01,289 --> 00:02:03,441
+It opens empty, and ready to edit.
+
+37
+00:02:03,441 --> 00:02:06,543
+I'll add appointments,
+tasks, and manual actions,
+
+38
+00:02:06,543 --> 00:02:11,608
+which lists the calls and texts your
+workflows have queued for a person to make.
+
+39
+00:02:12,423 --> 00:02:13,861
+Save it, and it's ready.
+
+40
+00:02:13,861 --> 00:02:18,115
+Anyone can now switch between dashboards
+from the menu at the top left,
+
+41
+00:02:18,115 --> 00:02:21,950
+and you can set the one you see
+first, from the three dots menu.
+
+42
+00:02:25,075 --> 00:02:26,526
+Not sure where to start?
+
+43
+00:02:26,526 --> 00:02:27,736
+Here are some ideas.
+
+44
+00:02:27,736 --> 00:02:31,667
+For the owner: opportunity value,
+conversion rate and the funnel.
+
+45
+00:02:31,667 --> 00:02:35,236
+For the front desk: appointments,
+tasks and manual actions.
+
+46
+00:02:35,236 --> 00:02:38,865
+And for whoever runs your
+marketing: the lead source report,
+
+47
+00:02:38,865 --> 00:02:43,340
+next to conversion rate, so they can
+see which channels bring in patients,
+
+48
+00:02:43,340 --> 00:02:44,489
+not just enquiries.
+
+49
+00:02:45,339 --> 00:02:46,405
+Here's a pro tip.
+
+50
+00:02:46,405 --> 00:02:51,173
+Keep each dashboard to about five
+widgets, and build it around one question,
+
+51
+00:02:51,173 --> 00:02:53,368
+like: are we busy enough this week?
+
+52
+00:02:53,368 --> 00:02:56,756
+If a widget never changes
+what anyone does, remove it.
+
+53
+00:02:56,756 --> 00:02:58,826
+A short dashboard gets looked at.
+
+54
+00:02:58,826 --> 00:03:00,331
+A long one gets ignored.
+
+55
+00:03:01,195 --> 00:03:01,906
+Great work!
+
+56
+00:03:01,906 --> 00:03:07,207
+Next, we'll connect your ad accounts, and
+see which campaigns turn into real leads
+
+57
+00:03:07,207 --> 00:03:08,307
+and real revenue.
+
+58
+00:03:08,307 --> 00:03:10,052
+See you in the next lesson.

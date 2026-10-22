@@ -1,0 +1,250 @@
+1
+00:00:00,500 --> 00:00:04,235
+In this lesson, you'll build
+your first workflow from scratch.
+
+2
+00:00:04,235 --> 00:00:08,873
+When someone fills in your contact form,
+Kyntlo will text them straight away,
+
+3
+00:00:08,873 --> 00:00:12,246
+tell your team, and send a
+follow-up email the next day.
+
+4
+00:00:12,246 --> 00:00:14,414
+Then we'll test it and switch it on.
+
+5
+00:00:15,267 --> 00:00:16,229
+Why start here?
+
+6
+00:00:16,229 --> 00:00:17,448
+Because speed wins.
+
+7
+00:00:17,448 --> 00:00:21,811
+People who fill in a form are often
+contacting other businesses too.
+
+8
+00:00:21,811 --> 00:00:25,019
+An instant, friendly reply,
+even an automated one,
+
+9
+00:00:25,019 --> 00:00:28,804
+keeps you first in line while
+your team gets ready to call.
+
+10
+00:00:29,662 --> 00:00:33,289
+Go to Automation, then Workflows,
+and click Create Workflow.
+
+11
+00:00:33,289 --> 00:00:36,493
+You can start from a recipe,
+which we'll cover later,
+
+12
+00:00:36,493 --> 00:00:41,449
+but this time choose Start from Scratch,
+so you see how every piece fits together.
+
+13
+00:00:42,298 --> 00:00:44,040
+First, give it a clear name.
+
+14
+00:00:44,040 --> 00:00:49,204
+Click the title at the top and type something
+you'll recognise in six months' time,
+
+15
+00:00:49,204 --> 00:00:51,257
+like Contact Form, Instant Reply.
+
+16
+00:00:52,109 --> 00:00:53,138
+Now the trigger.
+
+17
+00:00:53,138 --> 00:00:55,905
+Click Add New Trigger,
+and search for form.
+
+18
+00:00:55,905 --> 00:00:57,321
+Choose Form Submitted.
+
+19
+00:00:57,321 --> 00:01:01,696
+Then add a filter, so only the
+Contact Us form starts this workflow,
+
+20
+00:01:01,696 --> 00:01:03,176
+and click Save Trigger.
+
+21
+00:01:06,417 --> 00:01:10,647
+Next, click the plus button under
+the trigger to add an action.
+
+22
+00:01:10,647 --> 00:01:14,004
+Every action lives in this
+panel, grouped by type.
+
+23
+00:01:14,004 --> 00:01:16,489
+Under Communication, choose Send SMS.
+
+24
+00:01:17,342 --> 00:01:18,554
+Write your message.
+
+25
+00:01:18,554 --> 00:01:23,020
+To greet each person by name, click
+Custom Values and pick First Name.
+
+26
+00:01:23,020 --> 00:01:28,061
+Kyntlo swaps that placeholder for each
+contact's real first name when it sends.
+
+27
+00:01:28,061 --> 00:01:31,187
+Keep it short and friendly,
+then save the action.
+
+28
+00:01:32,037 --> 00:01:33,566
+Now let your team know.
+
+29
+00:01:33,566 --> 00:01:35,626
+Add Send Internal Notification.
+
+30
+00:01:35,626 --> 00:01:40,212
+By default it alerts the user assigned
+to the contact, inside Kyntlo,
+
+31
+00:01:40,212 --> 00:01:43,336
+so the right person can
+call them back quickly.
+
+32
+00:01:44,188 --> 00:01:48,517
+If they haven't heard from you by
+tomorrow, a follow-up email helps.
+
+33
+00:01:48,517 --> 00:01:51,508
+Add a Wait action, set
+it to one day, and save.
+
+34
+00:01:51,508 --> 00:01:55,392
+Then add Send Email underneath,
+with a friendly subject line.
+
+35
+00:02:01,102 --> 00:02:03,810
+Before going live, check the Settings tab.
+
+36
+00:02:03,810 --> 00:02:08,904
+Stop on response is on, so anyone who
+replies stops getting automated messages,
+
+37
+00:02:08,904 --> 00:02:10,967
+and a real person can take over.
+
+38
+00:02:10,967 --> 00:02:16,190
+You can also set a time window, so texts
+never go out in the middle of the night.
+
+39
+00:02:17,043 --> 00:02:21,016
+Back in the builder, click Test
+Workflow, and choose a contact.
+
+40
+00:02:21,016 --> 00:02:24,485
+Test on yourself, because
+the messages are really sent.
+
+41
+00:02:24,485 --> 00:02:27,891
+Run the test, and you'll see
+each step as it executes.
+
+42
+00:02:27,891 --> 00:02:31,108
+It stops at the wait,
+exactly as a real lead would.
+
+43
+00:02:32,773 --> 00:02:35,308
+Everything works, so let's switch it on.
+
+44
+00:02:35,308 --> 00:02:38,730
+Flip the toggle from Draft
+to Publish, and click Save.
+
+45
+00:02:38,730 --> 00:02:43,610
+From now on, every Contact Us submission
+gets an instant reply, day or night.
+
+46
+00:02:44,460 --> 00:02:45,507
+Here's a pro tip.
+
+47
+00:02:45,507 --> 00:02:48,401
+Read your messages as if
+you were the customer.
+
+48
+00:02:48,401 --> 00:02:51,973
+Would this text make sense on
+its own, at any time of day?
+
+49
+00:02:51,973 --> 00:02:53,574
+Does it say who it's from?
+
+50
+00:02:53,574 --> 00:02:54,744
+If not, rewrite it.
+
+51
+00:02:54,744 --> 00:02:57,946
+Workflows are only as good
+as the words inside them.
+
+52
+00:02:58,799 --> 00:03:02,929
+Congratulations, you've built and
+published your first workflow!
+
+53
+00:03:02,929 --> 00:03:07,705
+Next, we'll make workflows smarter
+with If/Else branches, waits and goals.
+
+54
+00:03:07,705 --> 00:03:09,448
+See you in the next lesson.

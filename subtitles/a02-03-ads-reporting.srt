@@ -1,0 +1,264 @@
+1
+00:00:00,500 --> 00:00:01,295
+Welcome back!
+
+2
+00:00:01,295 --> 00:00:04,351
+If you spend money on ads,
+this lesson is for you.
+
+3
+00:00:04,351 --> 00:00:08,569
+We'll connect your ad accounts, read
+the Google and Facebook reports,
+
+4
+00:00:08,569 --> 00:00:13,582
+and then use attribution to see which
+sources actually turn into paying customers.
+
+5
+00:00:14,433 --> 00:00:17,631
+Everything lives under
+Reporting, in the sidebar.
+
+6
+00:00:17,631 --> 00:00:20,763
+These advanced reports
+are part of the Pro plan.
+
+7
+00:00:20,763 --> 00:00:26,114
+Across the top, you'll find tabs for Google
+Ads, Facebook Ads, attribution, calls,
+
+8
+00:00:26,114 --> 00:00:27,876
+appointments and your team.
+
+9
+00:00:28,734 --> 00:00:31,449
+The first time, you'll
+see a connect button.
+
+10
+00:00:31,449 --> 00:00:35,212
+Click it, sign in with the Google
+account that runs your ads,
+
+11
+00:00:35,212 --> 00:00:37,926
+and choose the ad account
+for this business.
+
+12
+00:00:37,926 --> 00:00:38,543
+Then save.
+
+13
+00:00:38,543 --> 00:00:41,011
+New data can take up to a day to appear.
+
+14
+00:00:41,862 --> 00:00:43,531
+Here's the last 30 days.
+
+15
+00:00:43,531 --> 00:00:46,660
+Impressions is how often
+your ads were shown.
+
+16
+00:00:46,660 --> 00:00:49,025
+Clicks is how many people visited.
+
+17
+00:00:49,025 --> 00:00:52,711
+Click-through rate, or CTR,
+is the share who clicked,
+
+18
+00:00:52,711 --> 00:00:55,771
+and average CPC is what
+each click cost you.
+
+19
+00:00:56,622 --> 00:00:59,014
+The second row is about money.
+
+20
+00:00:59,014 --> 00:01:03,799
+This month, Google cost £844.56,
+and brought 11 conversions.
+
+21
+00:01:03,799 --> 00:01:06,191
+That’s about £77 for each one.
+
+22
+00:01:06,191 --> 00:01:11,215
+Cost per conversion is the number
+to compare between campaigns.
+
+23
+00:01:12,065 --> 00:01:13,944
+Scroll down for each campaign.
+
+24
+00:01:13,944 --> 00:01:19,018
+Invisalign brings the most conversions,
+while the brand campaign is the cheapest,
+
+25
+00:01:19,018 --> 00:01:21,398
+because those people already know you.
+
+26
+00:01:21,398 --> 00:01:25,094
+Switch to Keywords to see
+exactly what people searched for.
+
+27
+00:01:25,943 --> 00:01:32,250
+Facebook Ads works the same way, once
+you've connected your Facebook page and ad
+
+28
+00:01:32,250 --> 00:01:32,881
+account.
+
+29
+00:01:32,881 --> 00:01:36,034
+Here we spent £612.40, and got 14 leads.
+
+30
+00:01:36,034 --> 00:01:38,872
+That's a cost per lead of about £44.
+
+31
+00:01:39,724 --> 00:01:42,732
+The donut shows where
+those leads came from.
+
+32
+00:01:42,732 --> 00:01:46,492
+The Invisalign free scan
+campaign brought 10 of the 14.
+
+33
+00:01:46,492 --> 00:01:51,552
+Below, you can drill down from campaigns,
+into ad sets and individual ads,
+
+34
+00:01:51,552 --> 00:01:54,013
+to find the creative that’s working.
+
+35
+00:01:54,862 --> 00:01:58,105
+Clicks and leads are only half the story.
+
+36
+00:01:58,105 --> 00:02:03,168
+The Attribution Report follows
+each lead all the way to revenue.
+
+37
+00:02:03,168 --> 00:02:08,864
+In the last 30 days, 46 leads came
+in, 4 became won deals, worth £7,100.
+
+38
+00:02:09,713 --> 00:02:11,237
+Each row is a source.
+
+39
+00:02:11,237 --> 00:02:15,009
+Paid Social brought 14
+leads, and £3,800 of revenue.
+
+40
+00:02:15,009 --> 00:02:18,129
+Click a row to see the
+campaigns inside it,
+
+41
+00:02:18,129 --> 00:02:21,539
+so you know exactly which
+ad earned that money.
+
+42
+00:02:22,391 --> 00:02:25,633
+At the top, switch between
+first and last attribution.
+
+43
+00:02:25,633 --> 00:02:29,056
+First gives credit to the
+source that brought someone in.
+
+44
+00:02:29,056 --> 00:02:32,118
+Last credits the final
+touch before they converted.
+
+45
+00:02:32,118 --> 00:02:36,922
+Looking at both tells you which channels
+find people, and which ones close them.
+
+46
+00:02:37,778 --> 00:02:39,169
+So how do you use this?
+
+47
+00:02:39,169 --> 00:02:43,888
+Compare cost per lead between channels,
+but judge them on revenue, not clicks.
+
+48
+00:02:43,888 --> 00:02:48,304
+And give each campaign at least a
+month of data before you switch it off.
+
+49
+00:02:48,304 --> 00:02:51,631
+A single good patient can
+pay for a whole month of ads.
+
+50
+00:02:52,482 --> 00:02:53,707
+Here’s a pro tip.
+
+51
+00:02:53,707 --> 00:02:58,752
+Add UTM parameters to every link in
+your ads, emails and social posts,
+
+52
+00:02:58,752 --> 00:03:00,553
+like utm_source=facebook.
+
+53
+00:03:00,553 --> 00:03:03,940
+Kyntlo reads them when
+someone fills in a form,
+
+54
+00:03:03,940 --> 00:03:08,048
+so your attribution report
+can tell every campaign apart.
+
+55
+00:03:08,898 --> 00:03:11,282
+Now you know what your
+ads really bring in.
+
+56
+00:03:11,282 --> 00:03:15,051
+Next, we'll look at calls, appointments
+and your team's performance.
+
+57
+00:03:15,051 --> 00:03:15,827
+See you there!

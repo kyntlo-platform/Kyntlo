@@ -1,0 +1,241 @@
+1
+00:00:00,500 --> 00:00:05,465
+In this lesson, you'll set up automatic
+appointment reminders by email and text.
+
+2
+00:00:05,465 --> 00:00:08,320
+It's one of the simplest
+changes you can make,
+
+3
+00:00:08,320 --> 00:00:11,423
+and one of the most effective
+at cutting no-shows.
+
+4
+00:00:12,275 --> 00:00:13,984
+Most no-shows aren't rude.
+
+5
+00:00:13,984 --> 00:00:15,364
+People simply forget.
+
+6
+00:00:15,364 --> 00:00:19,899
+A reminder the day before, and a
+short text a couple of hours before,
+
+7
+00:00:19,899 --> 00:00:21,148
+fixes most of that.
+
+8
+00:00:21,148 --> 00:00:24,040
+Reminders are included
+from the Growth plan.
+
+9
+00:00:24,040 --> 00:00:26,800
+Open your calendar from Calendar Settings.
+
+10
+00:00:27,649 --> 00:00:30,435
+Go to Notifications
+and Additional Options.
+
+11
+00:00:30,435 --> 00:00:35,554
+At the top are the notifications that go
+out when something happens: a booking,
+
+12
+00:00:35,554 --> 00:00:37,627
+a reschedule, or a cancellation.
+
+13
+00:00:37,627 --> 00:00:40,089
+Each one uses a template you can edit.
+
+14
+00:00:40,089 --> 00:00:44,431
+Keep them short and friendly, and
+always include your phone number.
+
+15
+00:00:45,281 --> 00:00:50,186
+Below those are reminders, which are
+sent a set time before the appointment.
+
+16
+00:00:50,186 --> 00:00:53,607
+This calendar already sends
+an email 24 hours before,
+
+17
+00:00:53,607 --> 00:00:55,801
+and a text message 2 hours before.
+
+18
+00:00:55,801 --> 00:01:00,255
+Each one goes out automatically,
+timed to that patient's appointment.
+
+19
+00:01:01,105 --> 00:01:05,032
+New patients often need to bring
+forms and their medical history,
+
+20
+00:01:05,032 --> 00:01:07,993
+so let's add one more
+reminder, a little earlier.
+
+21
+00:01:07,993 --> 00:01:10,772
+Click Add reminder, and
+choose how to send it.
+
+22
+00:01:10,772 --> 00:01:13,854
+We'll use email, because
+there's a bit more to say.
+
+23
+00:01:14,705 --> 00:01:17,498
+Choose when it goes out: 48 hours before.
+
+24
+00:01:17,498 --> 00:01:19,065
+Then write the message.
+
+25
+00:01:19,065 --> 00:01:23,835
+The words in curly brackets are
+custom values, so each patient's name,
+
+26
+00:01:23,835 --> 00:01:26,764
+appointment and time
+fill in automatically.
+
+27
+00:01:26,764 --> 00:01:30,920
+Mention what to bring, and how
+to reschedule if plans change.
+
+28
+00:01:31,770 --> 00:01:35,965
+Click Add reminder, and the
+calendar now sends three reminders.
+
+29
+00:01:35,965 --> 00:01:41,492
+If the patient cancels or reschedules,
+Kyntlo stops or moves the reminders for you,
+
+30
+00:01:41,492 --> 00:01:45,821
+so nobody is reminded about an
+appointment that no longer exists.
+
+31
+00:01:46,670 --> 00:01:51,420
+One important rule: only text people
+who've agreed to receive messages.
+
+32
+00:01:51,420 --> 00:01:55,501
+That's why the booking form from
+lesson 5.3 asks for consent.
+
+33
+00:01:55,501 --> 00:01:59,648
+And contacts marked Do Not Disturb
+never receive texts at all.
+
+34
+00:01:59,648 --> 00:02:04,666
+Respecting that keeps your number in
+good standing with the phone networks.
+
+35
+00:02:05,518 --> 00:02:10,103
+Click Save, and every future booking
+on this calendar gets these reminders
+
+36
+00:02:10,103 --> 00:02:10,970
+automatically.
+
+37
+00:02:10,970 --> 00:02:14,006
+Repeat the same steps for
+each of your calendars.
+
+38
+00:02:14,006 --> 00:02:18,901
+Reminders work for appointments you book
+by hand too, not just online bookings.
+
+39
+00:02:19,750 --> 00:02:24,204
+Want more control, like a different
+message for first-time patients,
+
+40
+00:02:24,204 --> 00:02:26,496
+or a text asking people to confirm?
+
+41
+00:02:26,496 --> 00:02:28,985
+Build reminders as a workflow instead.
+
+42
+00:02:28,985 --> 00:02:33,438
+Bloom already has one called
+"Appointment Confirmation & Reminders",
+
+43
+00:02:33,438 --> 00:02:36,124
+and you'll learn to build it in Module 9.
+
+44
+00:02:36,984 --> 00:02:38,086
+Here's a pro tip.
+
+45
+00:02:38,086 --> 00:02:40,291
+Two or three reminders are plenty.
+
+46
+00:02:40,291 --> 00:02:45,348
+One the day before, so people can
+rearrange, and one a couple of hours before,
+
+47
+00:02:45,348 --> 00:02:46,061
+as a nudge.
+
+48
+00:02:46,061 --> 00:02:49,822
+Any more starts to feel like
+nagging, and people tune out.
+
+49
+00:02:50,672 --> 00:02:52,478
+That's the end of Module 5!
+
+50
+00:02:52,478 --> 00:02:56,692
+You can now take bookings, deposits
+and reminders on autopilot.
+
+51
+00:02:56,692 --> 00:03:00,505
+Next, in Module 6, we'll track
+every deal with pipelines.
+
+52
+00:03:00,505 --> 00:03:01,442
+See you there.

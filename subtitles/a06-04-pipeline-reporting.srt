@@ -1,0 +1,248 @@
+1
+00:00:00,500 --> 00:00:02,744
+Welcome to the last lesson of Module 6.
+
+2
+00:00:02,744 --> 00:00:06,945
+Now that your deals are on the board,
+let's read the numbers behind them.
+
+3
+00:00:06,945 --> 00:00:09,649
+You'll learn where to
+see your conversion rate,
+
+4
+00:00:09,649 --> 00:00:13,619
+how to spot the stage where deals
+get stuck, and what to do about it.
+
+5
+00:00:14,493 --> 00:00:17,213
+Your pipeline reports
+live on the dashboard.
+
+6
+00:00:17,213 --> 00:00:20,119
+Every opportunity widget
+has a pipeline filter,
+
+7
+00:00:20,119 --> 00:00:23,520
+so check that it's showing
+the pipeline you care about.
+
+8
+00:00:23,520 --> 00:00:25,807
+Here, they're all on Patient Journey.
+
+9
+00:00:26,658 --> 00:00:29,814
+Opportunity status tells
+you how many deals you have,
+
+10
+00:00:29,814 --> 00:00:32,850
+and opportunity value tells
+you what they're worth.
+
+11
+00:00:32,850 --> 00:00:34,756
+Watch the open number over time.
+
+12
+00:00:34,756 --> 00:00:39,043
+If it shrinks week after week, you
+need more leads coming in at the top.
+
+13
+00:00:39,893 --> 00:00:43,457
+Conversion rate is the
+share of deals you've won.
+
+14
+00:00:43,457 --> 00:00:45,494
+In Patient Journey it's 25%.
+
+15
+00:00:45,494 --> 00:00:49,567
+Switch the filter to all
+pipelines, and it drops to 19%,
+
+16
+00:00:49,567 --> 00:00:55,532
+because the Invisalign and reactivation
+pipelines haven't closed anything yet this
+
+17
+00:00:55,532 --> 00:00:55,969
+month.
+
+18
+00:00:56,819 --> 00:00:59,444
+The funnel is where you find the leak.
+
+19
+00:00:59,444 --> 00:01:01,930
+16 deals entered, and 4 reached Won.
+
+20
+00:01:01,930 --> 00:01:06,420
+The percentages show how many made
+it from one stage to the next.
+
+21
+00:01:06,420 --> 00:01:09,183
+Most stages keep three quarters or more.
+
+22
+00:01:09,183 --> 00:01:12,498
+But only 57% of treatment
+plans turn into a yes.
+
+23
+00:01:13,348 --> 00:01:15,796
+That tells you exactly where to focus.
+
+24
+00:01:15,796 --> 00:01:18,051
+Patients get a plan, then go quiet.
+
+25
+00:01:18,051 --> 00:01:22,948
+A follow-up call two days after the
+plan is sent, and a simple payment plan,
+
+26
+00:01:22,948 --> 00:01:24,430
+could lift that number.
+
+27
+00:01:24,430 --> 00:01:27,201
+You'll automate that
+follow-up in Module 9.
+
+28
+00:01:28,051 --> 00:01:32,240
+Stage distribution shows where your
+open deals are sitting right now.
+
+29
+00:01:32,240 --> 00:01:36,428
+Three are still new enquiries, so
+those people need contacting today.
+
+30
+00:01:36,428 --> 00:01:41,042
+Remember, you can hide a stage from
+these charts in the pipeline's settings.
+
+31
+00:01:41,896 --> 00:01:46,144
+For a quick check without the
+dashboard, the board itself is a report.
+
+32
+00:01:46,144 --> 00:01:51,182
+Each column shows its count and value, and
+the total for the whole pipeline sits at
+
+33
+00:01:51,182 --> 00:01:52,031
+the top right.
+
+34
+00:01:52,031 --> 00:01:55,734
+In list view, the same total
+sits at the bottom of the table.
+
+35
+00:01:56,583 --> 00:01:58,820
+Next, look at why deals are lost.
+
+36
+00:01:58,820 --> 00:02:02,683
+Open Advanced Filters, set
+the status to lost, and apply.
+
+37
+00:02:02,683 --> 00:02:04,852
+Each lost card shows its reason.
+
+38
+00:02:04,852 --> 00:02:09,665
+If price keeps coming up, review your
+pricing, or offer a payment plan.
+
+39
+00:02:10,517 --> 00:02:14,707
+On the Pro plan, Reporting also
+shows each team member's pipeline.
+
+40
+00:02:14,707 --> 00:02:19,215
+Agent Reporting lists the deals each
+person owns, how many they've won,
+
+41
+00:02:19,215 --> 00:02:20,993
+and the value of those wins.
+
+42
+00:02:20,993 --> 00:02:22,771
+Use it alongside the funnel.
+
+43
+00:02:22,771 --> 00:02:26,199
+If one person's deals keep
+stalling at the same stage,
+
+44
+00:02:26,199 --> 00:02:29,882
+a little coaching on that step
+can make a real difference.
+
+45
+00:02:30,732 --> 00:02:31,822
+Here's a pro tip.
+
+46
+00:02:31,822 --> 00:02:34,772
+Pick the one stage with
+the lowest percentage,
+
+47
+00:02:34,772 --> 00:02:37,978
+and change just one thing
+about how you handle it.
+
+48
+00:02:37,978 --> 00:02:40,094
+Then measure it again in a month.
+
+49
+00:02:40,094 --> 00:02:43,365
+Small, focused fixes beat
+big overhauls every time.
+
+50
+00:02:44,216 --> 00:02:45,833
+That's Module 6 complete!
+
+51
+00:02:45,833 --> 00:02:50,359
+You can now build a pipeline, work
+it every day, and read its numbers.
+
+52
+00:02:50,359 --> 00:02:54,498
+In Module 7, we'll start building
+pages that bring new leads in,
+
+53
+00:02:54,498 --> 00:02:57,020
+beginning with funnels versus websites.
+
+54
+00:02:57,020 --> 00:02:57,925
+See you there!

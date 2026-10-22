@@ -1,0 +1,225 @@
+1
+00:00:00,500 --> 00:00:05,441
+In this lesson, we'll invite a new team
+member, choose what they can see and do,
+
+2
+00:00:05,441 --> 00:00:07,603
+and add them to a booking calendar.
+
+3
+00:00:07,603 --> 00:00:10,939
+By the end, your whole team
+can work in Kyntlo safely.
+
+4
+00:00:11,789 --> 00:00:13,815
+Go to Settings, then My Staff.
+
+5
+00:00:13,815 --> 00:00:16,989
+Here's everyone who can
+log in to this account.
+
+6
+00:00:16,989 --> 00:00:22,189
+Your plan sets how many users you can
+have: up to 3 on Starter, 10 on Growth,
+
+7
+00:00:22,189 --> 00:00:23,134
+and 25 on Pro.
+
+8
+00:00:23,134 --> 00:00:25,160
+Give everyone their own login.
+
+9
+00:00:25,160 --> 00:00:28,739
+Shared logins make it
+impossible to see who did what.
+
+10
+00:00:29,590 --> 00:00:31,584
+Bloom has a new hygienist, Tom.
+
+11
+00:00:31,584 --> 00:00:36,152
+Click Add Employee, and enter his
+first name, last name and work email.
+
+12
+00:00:36,152 --> 00:00:40,012
+Add his mobile number too, so
+calls can be forwarded to him.
+
+13
+00:00:40,862 --> 00:00:43,264
+Now the important part: permissions.
+
+14
+00:00:43,264 --> 00:00:47,334
+Each switch turns a part of
+Kyntlo on or off for this person.
+
+15
+00:00:47,334 --> 00:00:52,338
+Tom needs conversations, calendars and
+contacts to look after his patients,
+
+16
+00:00:52,338 --> 00:00:55,741
+but he doesn't need sales
+opportunities or reviews.
+
+17
+00:00:56,592 --> 00:01:00,065
+Payments, marketing, automation
+and settings stay off.
+
+18
+00:01:00,065 --> 00:01:05,210
+And Bulk Actions stays off too, because
+it includes exporting your contact list.
+
+19
+00:01:05,210 --> 00:01:08,040
+Only give that to people
+who really need it.
+
+20
+00:01:08,040 --> 00:01:11,577
+Tom will only ever see the
+areas you switch on for him.
+
+21
+00:01:12,427 --> 00:01:15,158
+Under User Roles, choose Admin or User.
+
+22
+00:01:15,158 --> 00:01:20,831
+Admins can manage settings and other users,
+so keep that for owners and managers.
+
+23
+00:01:20,831 --> 00:01:21,812
+Tom is a User.
+
+24
+00:01:21,812 --> 00:01:24,543
+Then switch on Only show assigned data,
+
+25
+00:01:24,543 --> 00:01:27,765
+so Tom sees just the
+patients assigned to him.
+
+26
+00:01:28,614 --> 00:01:32,884
+Under Call & Voicemail, choose which
+business number Tom calls from,
+
+27
+00:01:32,884 --> 00:01:37,279
+so patients always see the practice
+number, never his personal mobile.
+
+28
+00:01:37,279 --> 00:01:38,283
+Then click Save.
+
+29
+00:01:39,135 --> 00:01:42,422
+Tom now appears in the list,
+with an invitation sent.
+
+30
+00:01:42,422 --> 00:01:47,259
+He'll get an email to set his own password,
+so you never need to share logins.
+
+31
+00:01:47,259 --> 00:01:50,670
+To change his access later,
+just click the pencil icon.
+
+32
+00:01:50,670 --> 00:01:54,081
+And if someone leaves, delete
+their user straight away,
+
+33
+00:01:54,081 --> 00:01:56,748
+and reassign their
+contacts to a colleague.
+
+34
+00:01:57,597 --> 00:02:00,284
+Finally, let's let patients book with Tom.
+
+35
+00:02:00,284 --> 00:02:02,586
+Open Calendars in the settings menu.
+
+36
+00:02:02,586 --> 00:02:06,360
+Each calendar lists the team
+members who take its bookings.
+
+37
+00:02:06,360 --> 00:02:08,855
+Click Team members on Check-up & Clean.
+
+38
+00:02:09,705 --> 00:02:11,306
+Tick Tom, and click Save.
+
+39
+00:02:11,306 --> 00:02:16,303
+This is a round robin calendar, so new
+check-ups are now shared between James,
+
+40
+00:02:16,303 --> 00:02:19,890
+Priya and Tom, and only booked
+when each person is free.
+
+41
+00:02:20,742 --> 00:02:21,800
+Here's a pro tip.
+
+42
+00:02:21,800 --> 00:02:25,532
+Start every new team member
+with the least access they need.
+
+43
+00:02:25,532 --> 00:02:30,322
+It's easy to switch a permission on
+later, but much harder to undo a mistake,
+
+44
+00:02:30,322 --> 00:02:32,997
+like a bulk message
+sent to the wrong list.
+
+45
+00:02:33,847 --> 00:02:35,050
+Your team is set up!
+
+46
+00:02:35,050 --> 00:02:36,553
+That wraps up Module one.
+
+47
+00:02:36,553 --> 00:02:39,018
+Next, we'll learn to read your dashboard,
+
+48
+00:02:39,018 --> 00:02:41,784
+so you always know how
+your business is doing.
+
+49
+00:02:41,784 --> 00:02:42,626
+See you there.
