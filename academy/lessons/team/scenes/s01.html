@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>s01 The 30-second pitch</title>
+<link rel="stylesheet" href="../kit/team.css">
+<style>
+  /* s01 "The 30-second pitch" - Spotlight Stage: plum black, hot magenta, sunny yellow. Anton. */
+  :root { --plum: #12041a; --plum2: #1f0a2b; --mag: #ff2e93; --sun: #ffd23f; --ink: #fff6fb; --muted: #c9a9c8; }
+  body { background: var(--plum); color: var(--ink); }
+  .stage { position: absolute; inset: 0; background: radial-gradient(120vmin 80vmin at 50% -10%, #3a1150 0%, #1f0a2b 45%, #12041a 75%); }
+  .cone { position: absolute; left: 50%; top: -10vmin; width: 90vmin; height: 120vmin; margin-left: -45vmin; background: radial-gradient(ellipse at 50% 0%, #ffd23f2e, transparent 65%);
+    clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%); opacity: 0; }
+  .play .cone { animation: cone 1.2s ease-out forwards; }
+  @keyframes cone { to { opacity: 1; } }
+  .floor { position: absolute; left: 10%; right: 10%; bottom: 8vmin; height: 10vmin; border-radius: 50%; background: radial-gradient(ellipse, #ff2e9333, transparent 70%); }
+  .anton { font-family: 'Anton', Impact, sans-serif; text-transform: uppercase; letter-spacing: .01em; line-height: .92; }
+  .kick { font: 700 2vmin Inter, sans-serif; letter-spacing: .34em; color: var(--sun); }
+  .stamp { opacity: 0; transform: scale(1.8) rotate(-4deg); }
+  .play .stamp { animation: stamp .45s cubic-bezier(.2,.9,.3,1.1) forwards; }
+  @keyframes stamp { 60% { opacity: 1; transform: scale(.94) rotate(0); } to { opacity: 1; transform: none; } }
+
+  /* intro */
+  [data-scene="intro"] .stack { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.4vmin; text-align: center; }
+  [data-scene="intro"] .wordmark { height: 10vmin; }
+  [data-scene="intro"] h1 { font-size: 17vmin; }
+  [data-scene="intro"] h1 span { color: var(--mag); }
+  [data-scene="intro"] .watch { width: 9vmin; height: 9vmin; border-radius: 50%; border: .8vmin solid var(--sun); position: relative; display: inline-block; vertical-align: middle; margin-right: 2vmin; }
+  [data-scene="intro"] .watch::before { content: ''; position: absolute; left: 50%; top: -2.2vmin; width: 2.4vmin; height: 1.4vmin; margin-left: -1.2vmin; background: var(--sun); border-radius: .4vmin; }
+  [data-scene="intro"] .watch i { position: absolute; left: 50%; bottom: 50%; width: .7vmin; height: 3vmin; margin-left: -.35vmin; background: var(--mag); transform-origin: 50% 100%; border-radius: 1vmin; }
+  .play [data-scene="intro"] .watch i { animation: sweep 3s linear forwards; }
+  @keyframes sweep { to { transform: rotate(180deg); } }
+  [data-scene="intro"] .sub { font: 500 3vmin Inter, sans-serif; color: var(--muted); }
+  [data-scene="intro"] .ep { position: absolute; right: 5vmin; bottom: 4vmin; font: 700 2vmin Inter; letter-spacing: .3em; color: var(--muted); }
+  .portrait [data-scene="intro"] h1 { font-size: 14.5vmin; padding: 0 4vmin; }
+
+  /* hook: the owner juggling everything */
+  [data-scene="hook"] .juggle { position: absolute; left: 12vmin; top: 50%; width: 46vmin; height: 46vmin; margin-top: -23vmin; }
+  [data-scene="hook"] .orbit { position: absolute; inset: 0; border-radius: 50%; border: .3vmin dashed #ff2e9366; }
+  .play [data-scene="hook"] .orbit { animation: spin 6s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  [data-scene="hook"] .ball { position: absolute; width: 13vmin; height: 13vmin; margin: -6.5vmin; border-radius: 50%; display: grid; place-items: center; font-size: 6vmin; box-shadow: 0 2vmin 4vmin #0006; }
+  [data-scene="hook"] .ring { position: absolute; inset: 0; }
+  .play [data-scene="hook"] .ring { animation: spin 6s linear infinite; }
+  .play [data-scene="hook"] .ball span { display: inline-block; animation: counter 6s linear infinite; }
+  @keyframes counter { to { transform: rotate(-360deg); } }
+  [data-scene="hook"] .owner { position: absolute; left: 50%; top: 50%; width: 16vmin; height: 16vmin; margin: -8vmin; border-radius: 50%; background: var(--plum2); border: .6vmin solid var(--sun); display: grid; place-items: center; font-size: 8vmin; }
+  [data-scene="hook"] .q { position: absolute; left: 66vmin; right: 7vmin; top: 50%; transform: translateY(-50%); }
+  [data-scene="hook"] .q p { font: 600 5.6vmin/1.15 Inter, sans-serif; letter-spacing: -.01em; }
+  [data-scene="hook"] .q p b { color: var(--sun); font-weight: 800; }
+  [data-scene="hook"] .q .who { margin-top: 3vmin; font: 700 2.2vmin Inter; letter-spacing: .24em; color: var(--mag); }
+  .portrait [data-scene="hook"] .juggle { left: 50%; margin-left: -23vmin; top: 10vh; margin-top: 0; }
+  .portrait [data-scene="hook"] .q { left: 7vmin; right: 7vmin; top: auto; bottom: 22vh; transform: none; } .portrait [data-scene="hook"] .q p { font-size: 6.6vmin; }
+
+  /* chaos: ten tools that don't talk to each other */
+  [data-scene="chaos"] .title, [data-scene="merge"] .title { position: absolute; left: 0; right: 0; top: 9vmin; text-align: center; font-size: 10vmin; }
+  [data-scene="chaos"] .title span { color: var(--mag); }
+  .tile { position: absolute; width: 17vmin; padding: 1.8vmin 1.2vmin 1.4vmin; border-radius: 2.6vmin; background: #fff; color: #1a0820; text-align: center; font: 700 1.8vmin Inter, sans-serif; box-shadow: 0 2vmin 4vmin #0007;
+    transition: all 1.1s cubic-bezier(.6,-.1,.2,1); }
+  .tile .ic { width: 8vmin; height: 8vmin; border-radius: 2vmin; margin: 0 auto 1.2vmin; display: grid; place-items: center; color: #fff; }
+  .tile .ic svg { width: 4.6vmin; height: 4.6vmin; }
+  .play [data-scene="chaos"] .tile .ic { animation: jitter .35s ease-in-out infinite alternate; }
+  @keyframes jitter { from { margin-top: -.5vmin; } to { margin-top: .5vmin; } }
+  .wire { position: absolute; height: .45vmin; background: repeating-linear-gradient(90deg, #ff4d6d 0 1.4vmin, transparent 1.4vmin 2.4vmin); transform-origin: 0 50%; opacity: .8; }
+  .wire::after { content: '\2715'; position: absolute; left: 50%; top: -1.8vmin; font: 700 2.6vmin Inter; color: #ff4d6d; }
+  .crack { position: absolute; left: 50%; bottom: 0; width: 70vmin; margin-left: -35vmin; height: 7vmin; background: #000; clip-path: polygon(0 100%, 8% 30%, 18% 70%, 30% 10%, 42% 60%, 55% 0, 66% 55%, 78% 15%, 90% 65%, 100% 100%); opacity: .9; }
+  .fall { position: absolute; bottom: 10vmin; width: 5vmin; height: 5vmin; border-radius: 50%; background: var(--sun); display: grid; place-items: center; font-size: 2.6vmin; opacity: 0; }
+  .play .fall { animation: fall 1.4s ease-in forwards; }
+  @keyframes fall { 0% { opacity: 0; transform: translateY(-20vmin); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(14vmin) scale(.4); } }
+  .portrait [data-scene="chaos"] .title, .portrait [data-scene="merge"] .title { top: 12vh; font-size: 11vmin; padding: 0 6vmin; }
+
+  /* merge: the tools fly into one sidebar */
+  [data-scene="merge"] .bar { position: absolute; left: 8vmin; top: 50%; width: 30vmin; height: 74vmin; margin-top: -37vmin; border-radius: 3vmin; background: #2b3245; box-shadow: 0 0 0 .5vmin var(--mag), 0 0 6vmin #ff2e9366; opacity: 0; }
+  .play [data-scene="merge"] .bar { animation: fade .5s .9s forwards; }
+  [data-scene="merge"] .row { position: absolute; left: 11vmin; width: 24vmin; height: 7.6vmin; border-radius: 1.6vmin; display: flex; align-items: center; gap: 1.6vmin; padding-left: 1.4vmin; color: #fff; font: 700 2.4vmin Inter; opacity: 0; }
+  .play [data-scene="merge"] .row { animation: fade .4s forwards; }
+  [data-scene="merge"] .row i { width: 4.4vmin; height: 4.4vmin; border-radius: 1.2vmin; display: grid; place-items: center; }
+  [data-scene="merge"] .row i svg { width: 2.8vmin; height: 2.8vmin; }
+  [data-scene="merge"] .title { left: 46vmin; text-align: left; top: 50%; transform: translateY(-50%); font-size: 13vmin; }
+  [data-scene="merge"] .title span { color: var(--sun); display: block; }
+  .portrait [data-scene="merge"] .bar { left: 50%; margin-left: -15vmin; top: 30vh; margin-top: 0; }
+  .portrait [data-scene="merge"] .title { left: 0; text-align: center; top: 8vh; transform: none; }
+
+  /* one platform / login / invoice */
+  [data-scene="one"] .lines { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding-left: 14vmin; gap: 1vmin; }
+  [data-scene="one"] .lines div { font-size: 15vmin; }
+  [data-scene="one"] .lines span { color: var(--mag); }
+  [data-scene="one"] .lines div:nth-child(2) span { color: var(--sun); }
+  [data-scene="one"] .lines div:nth-child(3) span { color: #fff; text-decoration: underline; text-decoration-color: var(--mag); text-decoration-thickness: 1.4vmin; text-underline-offset: 1.6vmin; }
+  .portrait [data-scene="one"] .lines { padding-left: 7vmin; } .portrait [data-scene="one"] .lines div { font-size: 16vmin; }
+
+  /* break: three sentences in thirty seconds */
+  [data-scene="break"] .watch { position: absolute; left: 14vmin; top: 50%; width: 44vmin; height: 44vmin; margin-top: -22vmin; border-radius: 50%; border: 1.6vmin solid var(--sun); display: grid; place-items: center; box-shadow: 0 0 6vmin #ffd23f44; }
+  [data-scene="break"] .watch b { font: 400 13vmin 'Anton'; }
+  [data-scene="break"] .watch::before { content: ''; position: absolute; top: -5vmin; left: 50%; width: 8vmin; height: 4vmin; margin-left: -4vmin; border-radius: 1vmin; background: var(--sun); }
+  [data-scene="break"] .slots { position: absolute; left: 70vmin; right: 8vmin; top: 50%; transform: translateY(-50%); display: grid; gap: 2.4vmin; }
+  [data-scene="break"] .slot { height: 11vmin; border-radius: 2vmin; border: .4vmin dashed #ff2e9388; display: flex; align-items: center; gap: 3vmin; padding: 0 3vmin; font: 400 6vmin 'Anton'; color: var(--mag); }
+  [data-scene="break"] .slot i { font-style: normal; color: var(--muted); font: 600 2.6vmin Inter; letter-spacing: .1em; }
+  .portrait [data-scene="break"] .watch { left: 50%; margin-left: -22vmin; top: 9vh; margin-top: 0; }
+  .portrait [data-scene="break"] .slots { left: 8vmin; top: auto; bottom: 22vh; transform: none; }
+
+  /* the three sentences */
+  .big { position: absolute; inset: 0; display: flex; align-items: center; gap: 6vmin; padding: 0 12vmin; }
+  .big .n { font: 400 40vmin/0.8 'Anton'; color: var(--mag); text-shadow: 0 0 6vmin #ff2e9355; }
+  .big .t { font-size: 15vmin; }
+  .big .t small { display: block; font: 600 2.8vmin Inter; letter-spacing: .2em; color: var(--muted); margin-top: 2.4vmin; text-transform: uppercase; }
+  [data-scene="c2"] .big .n { color: var(--sun); text-shadow: 0 0 6vmin #ffd23f55; }
+  [data-scene="c3"] .big .n { color: #fff; text-shadow: 0 0 6vmin #ffffff44; }
+  .portrait .big { flex-direction: column; align-items: flex-start; justify-content: center; padding: 0 7vmin; gap: 2vmin; } .portrait .big .t { font-size: 13.5vmin; }
+
+  /* ask */
+  [data-scene="ask"] .chipsrow { position: absolute; left: 0; right: 0; top: 18vmin; display: flex; justify-content: center; gap: 2.4vmin; flex-wrap: wrap; padding: 0 6vmin; }
+  [data-scene="ask"] .chipsrow span { font: 700 2.6vmin Inter; padding: 1.6vmin 2.8vmin; border-radius: 99vmin; border: .35vmin solid var(--mag); }
+  [data-scene="ask"] .chipsrow span:nth-child(2) { border-color: var(--sun); } [data-scene="ask"] .chipsrow span:nth-child(3) { border-color: #fff; }
+  [data-scene="ask"] h2 { position: absolute; left: 8vmin; right: 8vmin; top: 0; bottom: 0; margin: auto 0; height: max-content; padding-top: 8vmin; text-align: center; font-size: 15vmin; }
+  [data-scene="ask"] h2 span { color: var(--sun); }
+  .portrait [data-scene="ask"] .chipsrow { top: 14vh; flex-direction: column; align-items: center; } .portrait [data-scene="ask"] h2 { font-size: 16vmin; }
+
+  /* recap: the whole pitch on one card */
+  [data-scene="recap"] .sheet { position: absolute; left: 0; right: 0; width: 116vmin; top: 0; bottom: 0; margin: auto; height: max-content; background: #fff; color: #1a0820; border-radius: 2.4vmin; padding: 4vmin 6vmin; box-shadow: 1.4vmin 1.4vmin 0 var(--sun); }
+  [data-scene="recap"] .sheet h3 { font: 400 6vmin 'Anton'; letter-spacing: .02em; color: var(--mag); }
+  [data-scene="recap"] .sheet h3 small { font: 700 2vmin Inter; letter-spacing: .2em; color: #8a6b88; margin-left: 2vmin; }
+  [data-scene="recap"] .ln { display: flex; align-items: center; gap: 2.6vmin; margin-top: 1.8vmin; font: 600 3.8vmin Inter; }
+  [data-scene="recap"] .ln b { flex: none; width: 6vmin; height: 6vmin; border-radius: 50%; display: grid; place-items: center; background: #1a0820; color: var(--sun); font: 400 4.4vmin 'Anton'; }
+  [data-scene="recap"] .ln.q { margin-top: 2.6vmin; padding-top: 2.4vmin; border-top: .3vmin dashed #e6c7e0; color: var(--mag); font-weight: 800; }
+  [data-scene="recap"] .ln.q b { background: var(--mag); color: #fff; }
+  .portrait [data-scene="recap"] .sheet { width: 90vmin; padding: 6vmin 5vmin; } .portrait [data-scene="recap"] .ln { font-size: 4.6vmin; }
+
+  /* tip */
+  [data-scene="tip"] .card { position: absolute; left: 10vmin; right: 10vmin; top: 0; bottom: 0; margin: auto 0; height: max-content; background: #fff; color: #1a0820; border-radius: 3vmin; padding: 7vmin 8vmin; box-shadow: 1.6vmin 1.6vmin 0 var(--mag); }
+  [data-scene="tip"] .lbl { display: inline-block; font: 400 4vmin 'Anton'; letter-spacing: .06em; background: var(--sun); padding: .6vmin 2.4vmin; border-radius: .8vmin; }
+  [data-scene="tip"] .card p { margin-top: 3.4vmin; font: 600 4.6vmin/1.25 Inter; }
+  [data-scene="tip"] .card p.q { font: 400 7vmin/1.05 'Anton'; color: var(--mag); text-transform: uppercase; }
+  .portrait [data-scene="tip"] .card { left: 6vmin; right: 6vmin; padding: 7vmin 6vmin; } .portrait [data-scene="tip"] .card p { font-size: 5.4vmin; } .portrait [data-scene="tip"] .card p.q { font-size: 9vmin; }
+
+  /* outro */
+  [data-scene="outro"] .stack { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3vmin; text-align: center; }
+  [data-scene="outro"] .wordmark { height: 15vmin; }
+  [data-scene="outro"] .tag { font-size: 11vmin; } [data-scene="outro"] .tag span { color: var(--mag); }
+  [data-scene="outro"] .links { display: flex; gap: 3vmin; font: 700 3vmin Inter; }
+  [data-scene="outro"] .links div { background: var(--sun); color: #1a0820; padding: 1.6vmin 3vmin; border-radius: 1vmin; transform: rotate(-1.5deg); }
+  [data-scene="outro"] .links div:nth-child(2) { background: #fff; transform: rotate(1.5deg); }
+  .portrait [data-scene="outro"] .links { flex-direction: column; } .portrait [data-scene="outro"] .stack { justify-content: flex-start; padding-top: 24vh; }
+
+  /* portrait frame */
+  body.frame-mode { background: transparent; }
+  [data-scene="frame"] .band { position: absolute; background: #1a0820; }
+  [data-scene="frame"] .win { position: absolute; left: 40px; top: 310px; width: 1000px; height: 1290px; border-radius: 30px; box-shadow: 0 0 0 5px #ff2e93, 14px 14px 0 5px #ffd23f; }
+  [data-scene="frame"] .corner { position: absolute; width: 30px; height: 30px; }
+  [data-scene="frame"] .rays { position: absolute; left: 0; right: 0; top: 0; height: 310px; background: radial-gradient(420px 260px at 50% -20%, #ff2e9340, transparent 70%); }
+</style>
+</head>
+<body>
+
+<section data-scene="intro">
+  <div class="stage"></div><div class="cone"></div><div class="floor"></div>
+  <div class="stack">
+    <img class="wordmark pop" src="../kit/wordmark-white.png" alt="Kyntlo">
+    <div class="kick rise" style="animation-delay:.3s">KYNTLO TEAM ACADEMY &middot; BATCH 1</div>
+    <h1 class="anton stamp" style="animation-delay:.55s"><span class="watch"><i></i></span>THE <span>30-SECOND</span> PITCH</h1>
+    <div class="sub rise" style="animation-delay:1.1s">Explain Kyntlo to any owner, before the kettle boils.</div>
+  </div>
+  <div class="ep fade" style="animation-delay:1.3s">01 / 05</div>
+</section>
+
+<section data-scene="hook">
+  <div class="stage"></div><div class="cone"></div>
+  <div class="juggle">
+    <div class="orbit"></div>
+    <div class="owner pop">&#129489;</div>
+    <div class="ring">
+      <div class="ball pop" style="left:50%;top:0;background:#22c55e;animation-delay:.2s"><span>&#128222;</span></div>
+      <div class="ball pop" style="left:93%;top:72%;background:#3b82f6;animation-delay:.4s"><span>&#129534;</span></div>
+      <div class="ball pop" style="left:7%;top:72%;background:var(--mag);animation-delay:.6s"><span>&#128694;</span></div>
+    </div>
+  </div>
+  <div class="q">
+    <p class="rise" style="animation-delay:.25s">&ldquo;I run the business, answer the phone, chase invoices, and <b>still lose customers.</b> There has to be a better way.&rdquo;</p>
+    <div class="who fade" style="animation-delay:1.2s">EVERY OWNER YOU'LL MEET</div>
+  </div>
+</section>
+
+<section data-scene="chaos">
+  <div class="stage"></div>
+  <div class="title anton stamp">TEN TOOLS. <span>ZERO TEAMWORK.</span></div>
+  <div id="tiles"></div>
+  <div class="crack"></div>
+  <div class="fall" style="left:44%;animation-delay:2.2s">&#128100;</div>
+  <div class="fall" style="left:52%;animation-delay:3.4s">&#128100;</div>
+  <div class="fall" style="left:58%;animation-delay:4.6s">&#128100;</div>
+</section>
+
+<section data-scene="merge">
+  <div class="stage"></div>
+  <div class="bar"></div>
+  <div id="mtiles"></div>
+  <div class="title anton rise" style="animation-delay:1.3s">ALL OF IT. <span>ONE PLACE.</span></div>
+</section>
+
+<section data-scene="one">
+  <div class="stage"></div><div class="cone"></div>
+  <div class="lines anton">
+    <div class="stamp" style="animation-delay:.05s">ONE <span>PLATFORM.</span></div>
+    <div class="stamp" style="animation-delay:.75s">ONE <span>LOGIN.</span></div>
+    <div class="stamp" style="animation-delay:1.45s">ONE <span>INVOICE.</span></div>
+  </div>
+</section>
+
+<section data-scene="break">
+  <div class="stage"></div>
+  <div class="watch pop"><b id="secs">0:30</b></div>
+  <div class="slots">
+    <div class="slot rise" style="animation-delay:.6s">1 <i>SENTENCE</i></div>
+    <div class="slot rise" style="animation-delay:.9s">2 <i>SENTENCE</i></div>
+    <div class="slot rise" style="animation-delay:1.2s">3 <i>SENTENCE</i></div>
+  </div>
+</section>
+
+<section data-scene="c1"><div class="stage"></div><div class="big"><div class="n stamp">1</div><div class="t anton rise" style="animation-delay:.25s">CATCH<br>EVERY LEAD<small>Calls, texts, chats, forms</small></div></div></section>
+<section data-scene="c2"><div class="stage"></div><div class="big"><div class="n stamp">2</div><div class="t anton rise" style="animation-delay:.25s">FOLLOW UP<br>AUTOMATICALLY<small>Replies, reminders, check-ins</small></div></div></section>
+<section data-scene="c3"><div class="stage"></div><div class="big"><div class="n stamp">3</div><div class="t anton rise" style="animation-delay:.25s">SEE WHAT<br>WORKS<small>Leads, bookings, revenue</small></div></div></section>
+
+<section data-scene="ask">
+  <div class="stage"></div><div class="cone"></div>
+  <div class="chipsrow"><span class="pop" style="animation-delay:.1s">Catch every lead</span><span class="pop" style="animation-delay:.3s">Follow up automatically</span><span class="pop" style="animation-delay:.5s">See what works</span></div>
+  <h2 class="anton stamp" style="animation-delay:1.2s">WHICH ONE <span>HURTS MOST</span> TODAY?</h2>
+</section>
+
+<section data-scene="recap">
+  <div class="stage"></div><div class="cone"></div>
+  <div class="sheet rise">
+    <h3>YOUR 30 SECONDS <small>SAY IT LIKE THIS</small></h3>
+    <div class="ln rise" style="animation-delay:.4s"><b>1</b>Kyntlo catches every lead.</div>
+    <div class="ln rise" style="animation-delay:.9s"><b>2</b>It follows up for you.</div>
+    <div class="ln rise" style="animation-delay:1.4s"><b>3</b>It shows you what is working.</div>
+    <div class="ln q rise" style="animation-delay:2.2s"><b>?</b>&ldquo;Which one hurts most today?&rdquo;</div>
+  </div>
+</section>
+
+<section data-scene="tip">
+  <div class="stage"></div>
+  <div class="card rise">
+    <div class="lbl">SELLING TIP</div>
+    <p>End every pitch with a question, not a feature list:</p>
+    <p class="q fade" style="animation-delay:1.4s">&ldquo;Which of those three hurts most right now?&rdquo;</p>
+  </div>
+</section>
+
+<section data-scene="outro">
+  <div class="stage"></div><div class="cone"></div><div class="floor"></div>
+  <div class="stack">
+    <img class="wordmark pop" src="../kit/wordmark-white.png" alt="Kyntlo">
+    <div class="tag anton stamp" style="animation-delay:.35s">Kyntlo, <span>Own Tomorrow</span></div>
+    <div class="links rise" style="animation-delay:.7s"><div>www.kyntlo.ai</div><div>Support@kyntlo.ai</div></div>
+  </div>
+</section>
+
+<section data-scene="frame">
+  <div class="band" style="left:0;top:0;width:1080px;height:310px"></div>
+  <div class="band" style="left:0;top:1600px;width:1080px;height:320px"></div>
+  <div class="band" style="left:0;top:310px;width:40px;height:1290px"></div>
+  <div class="band" style="left:1040px;top:310px;width:40px;height:1290px"></div>
+  <div class="corner" style="left:40px;top:310px;background:radial-gradient(circle at 100% 100%, transparent 29px, #1a0820 30px)"></div>
+  <div class="corner" style="left:1010px;top:310px;background:radial-gradient(circle at 0 100%, transparent 29px, #1a0820 30px)"></div>
+  <div class="corner" style="left:40px;top:1570px;background:radial-gradient(circle at 100% 0, transparent 29px, #1a0820 30px)"></div>
+  <div class="corner" style="left:1010px;top:1570px;background:radial-gradient(circle at 0 0, transparent 29px, #1a0820 30px)"></div>
+  <div class="rays"></div>
+  <div class="win"></div>
+</section>
+
+<script src="../kit/team.js"></script>
+<script>
+  if (TEAM.scene === 'frame') document.body.classList.add('frame-mode');
+  // Ten made-up tools (no real brands), each with a simple icon.
+  const P = {
+    chat: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+    cal: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+    card: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>',
+    form: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+    sms: '<path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/>',
+    chart: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    star: '<path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1 6.2L12 17.4 6.5 20.3l1-6.2L3 9.7l6.2-.9z"/>',
+    phone: '<path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/>',
+    grid: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>',
+  };
+  const svg = (k) => `<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">${P[k]}</svg>`;
+  const TOOLS = [['ChatterBox', 'chat', '#22c55e'], ['BookIt', 'cal', '#3b82f6'], ['PostPigeon', 'mail', '#f59e0b'], ['PayPocket', 'card', '#8b5cf6'], ['FormFlow', 'form', '#ec4899'],
+    ['TextBlast', 'sms', '#14b8a6'], ['AdCounter', 'chart', '#ef4444'], ['StarBoard', 'star', '#eab308'], ['CallTrackr', 'phone', '#06b6d4'], ['SheetStack', 'grid', '#10b981']];
+  const land = [[8, 26, -8], [27, 40, 6], [46, 24, -4], [64, 38, 9], [82, 25, -7], [12, 60, 5], [31, 70, -6], [52, 56, 8], [70, 68, -5], [86, 56, 6]];
+  const port = [[10, 26, -8], [55, 24, 6], [8, 40, -4], [52, 39, 9], [12, 54, -7], [58, 53, 5], [6, 68, -6], [50, 67, 8], [20, 81, -5], [62, 80, 6]];
+  const spots = TEAM.portrait ? port : land;
+  const tile = ([name, ic, col], [x, y, r], i) => `<div class="tile fade" style="left:${x}vw;top:${y}vh;transform:rotate(${r}deg);animation-delay:${0.15 * i}s" data-i="${i}"><div class="ic" style="background:${col}">${svg(ic)}</div>${name}</div>`;
+  if (TEAM.scene === 'chaos') {
+    TEAM.root.querySelector('#tiles').innerHTML = TOOLS.map((t, i) => tile(t, spots[i], i)).join('') +
+      [[0, 1], [2, 3], [5, 6], [7, 8], [3, 4]].map(([a, b], k) => {
+        const [x1, y1] = spots[a], [x2, y2] = spots[b];
+        const ax = x1 * innerWidth / 100 + 90, ay = y1 * innerHeight / 100 + 70, bx = x2 * innerWidth / 100 + 90, by = y2 * innerHeight / 100 + 70;
+        const len = Math.hypot(bx - ax, by - ay) - 160, ang = Math.atan2(by - ay, bx - ax);
+        return `<div class="wire fade" style="left:${ax + 80 * Math.cos(ang)}px;top:${ay + 80 * Math.sin(ang)}px;width:${len}px;transform:rotate(${ang}rad);animation-delay:${1.6 + 0.2 * k}s"></div>`;
+      }).join('');
+  }
+  if (TEAM.scene === 'merge') {
+    // The same tiles start where they were, then fly into one sidebar and become its rows.
+    const rows = [['Leads', 'grid', '#10b981'], ['Messages', 'chat', '#22c55e'], ['Calendar', 'cal', '#3b82f6'], ['Follow-ups', 'sms', '#14b8a6'], ['Payments', 'card', '#8b5cf6'], ['Reports', 'chart', '#ef4444']];
+    const box = TEAM.root.querySelector('#mtiles');
+    box.innerHTML = TOOLS.map((t, i) => tile(t, spots[i], i).replace('tile fade', 'tile')).join('') +
+      rows.map(([n, ic, col], i) => `<div class="row" style="top:calc(50% - 31vmin + ${i * 10}vmin);animation-delay:${1.2 + i * 0.08}s"><i style="background:${col}">${svg(ic)}</i>${n}</div>`).join('');
+    if (TEAM.portrait) box.querySelectorAll('.row').forEach((r) => { r.style.left = 'calc(50% - 12vmin)'; r.style.top = `calc(30vh + ${3 + Array.from(r.parentNode.querySelectorAll('.row')).indexOf(r) * 10}vmin)`; });
+    SCENES.merge = () => {
+      const bar = TEAM.root.querySelector('.bar').getBoundingClientRect();
+      box.querySelectorAll('.tile').forEach((t, i) => {
+        setTimeout(() => {
+          t.style.left = bar.left + bar.width / 2 - t.offsetWidth / 2 + 'px';
+          t.style.top = bar.top + bar.height / 2 - t.offsetHeight / 2 + 'px';
+          t.style.transform = 'rotate(0) scale(.2)';
+          t.style.opacity = '0';
+        }, 40 * i);
+      });
+    };
+  }
+  SCENES.break = async () => {
+    for (let s = 30; s >= 26; s--) { TEAM.root.querySelector('#secs').textContent = `0:${String(s).padStart(2, '0')}`; await TEAM.wait(900); }
+  };
+</script>
+</body>
+</html>

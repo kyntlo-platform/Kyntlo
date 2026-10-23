@@ -41,14 +41,15 @@ async function gemini(text, wav) {
 }
 
 // Kokoro loads its model once per process, so a whole lesson is voiced in one batch.
+// A job may name its own voice and speed (e.g. a customer's line in a different voice).
 async function kokoro(jobs) {
-  const items = jobs.map(({ text, wav }) => ({ text, out: wav.replace(/\.wav$/, '.k.wav'), wav }));
+  const items = jobs.map(({ text, wav, voice, speed }) => ({ text, voice, speed, out: wav.replace(/\.wav$/, '.k.wav'), wav }));
   await new Promise((resolve, reject) => {
     const p = spawn('python3', ['-I', KOKORO, MODELS], { stdio: ['pipe', 'ignore', 'pipe'] });
     let err = '';
     p.stderr.on('data', (d) => (err += d));
     p.on('close', (c) => (c ? reject(new Error(`Kokoro TTS failed: ${err.slice(-1500)}`)) : resolve()));
-    p.stdin.end(JSON.stringify(items.map(({ text, out }) => ({ text, out }))));
+    p.stdin.end(JSON.stringify(items.map(({ text, out, voice, speed }) => ({ text, out, voice, speed }))));
   });
   for (const { out, wav } of items) {
     await ffmpeg(['-i', out, '-af', TRIM, '-ar', '48000', '-ac', '2', wav]);
@@ -77,19 +78,27 @@ async function draft(text, wav) {
   await ffmpeg(['-f', 'lavfi', '-i', `anullsrc=r=48000:cl=stereo`, '-t', secs.toFixed(2), wav]);
 }
 
-// Voices every text (cached by content), returning { file, seconds, draft, engine } per text.
-export async function narrateAll(texts) {
+// Voices every line (cached by content), returning { file, seconds, draft, engine } per line.
+// A line is a string, or { text, voice, speed } to override the Kokoro voice for that line.
+// An empty line becomes a short silence, so scenes without narration can still be timed.
+export async function narrateAll(lines) {
   const { name, make } = await engine();
   const dir = path.join(CACHE, 'tts');
   await fs.mkdir(dir, { recursive: true });
-  const wavs = texts.map((text) => {
-    const key = crypto.createHash('sha1').update(`${name}\n${VOICE.style}\n${text}`).digest('hex');
-    return path.join(dir, `${key.slice(0, 16)}.wav`);
+  const jobs = lines.map((line) => {
+    const { text = '', voice, speed } = typeof line === 'string' ? { text: line } : line;
+    const custom = voice || speed ? `\n${voice || ''}@${speed || ''}` : '';
+    const key = crypto.createHash('sha1').update(`${name}\n${VOICE.style}\n${text}${custom}`).digest('hex');
+    return { text, voice, speed, wav: path.join(dir, `${key.slice(0, 16)}.wav`) };
   });
   const missing = [];
-  for (const [i, wav] of wavs.entries()) {
-    if (!(await fs.access(wav).then(() => true, () => false)) && !missing.some((m) => m.wav === wav)) missing.push({ text: texts[i], wav });
+  for (const job of jobs) {
+    if (await fs.access(job.wav).then(() => true, () => false)) continue;
+    if (missing.some((m) => m.wav === job.wav)) continue;
+    if (!job.text.trim()) await ffmpeg(['-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo', '-t', '0.1', job.wav]);
+    else missing.push(job);
   }
   if (missing.length) await make(missing);
+  const wavs = jobs.map((j) => j.wav);
   return Promise.all(wavs.map(async (file) => ({ file, seconds: await duration(file), draft: name === 'draft', engine: name })));
 }

@@ -116,6 +116,25 @@ per scene, numbers spelled the way they should be spoken ("fourteen-day",
 "kyntlo dot A I"). Subtitles convert these back to their written form using
 `WRITTEN` in `pipeline/lib/config.mjs`; a scene can also set `caption` to override its subtitle text.
 
+## Team Academy videos (`lessons/team/`)
+
+Short, ad-style training videos for the sales and support team (Batch 1: `s01`–`s05`).
+They use the same recorder and demo workspace, plus a few lesson options:
+
+| Option | What it does |
+|---|---|
+| `formats: ['landscape', 'portrait']` | Also renders `name-portrait.mp4` (1080×1920). Designed scenes are recorded again at portrait size; app scenes become a framed crop of the landscape recording that follows the action (clicks, highlights, zooms, or a `focus` action). |
+| `page: { src, scene }` | A designed scene from `lessons/team/scenes/sNN.html` (intro, hook, motion graphics, tip, outro). `cursor: true` shows the cursor for scenes the lesson clicks through. |
+| `voice: { voice, speed }` | Kokoro voice for the lesson or a single scene (the customer's hook uses its own voice). |
+| `init: [...]` | Scripts injected into every page: `kit/themes/sNN.js` (colours and fonts) and `kit/demo-patch.js` (each video's fictional data, plain hyphens only, `example.com` emails, live helpers such as a message arriving or a booking landing). |
+| `transitions`, `music: { preset }`, `watermark` | Per-video transitions, an original track from `pipeline/team_music.py`, and the white wordmark in the corner. |
+| `lead`, `tail`, `xfade`, scene `tail` / `duration` | Pacing. |
+
+```bash
+node render.mjs ../lessons/team/s02-losing-leads.mjs --check   # every action, no video
+node render.mjs ../lessons/team                                # all five, landscape + portrait
+```
+
 ## Publishing checklist
 
 - [ ] Watch the full video once at 1×, with sound

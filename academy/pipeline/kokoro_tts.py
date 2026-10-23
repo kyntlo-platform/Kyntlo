@@ -16,5 +16,6 @@ speed = float(os.environ.get("KOKORO_SPEED", "0.95"))
 
 kokoro = Kokoro(os.path.join(models, "kokoro-v1.0.onnx"), os.path.join(models, "voices-v1.0.bin"))
 for item in json.load(sys.stdin):
-    audio, rate = kokoro.create(item["text"], voice=voice, speed=speed, lang="en-us")
+    # A line may set its own voice and speed; otherwise the defaults above apply.
+    audio, rate = kokoro.create(item["text"], voice=item.get("voice") or voice, speed=float(item.get("speed") or speed), lang="en-us")
     sf.write(item["out"], audio, rate)

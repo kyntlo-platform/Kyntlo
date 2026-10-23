@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>s02 I'm losing leads</title>
+<link rel="stylesheet" href="../kit/team.css">
+<style>
+  /* s02 "I'm losing leads" - Night Shift: navy, electric cyan, lime. Space Grotesk. */
+  :root { --navy: #070d1f; --navy2: #0b1630; --cyan: #22d3ee; --lime: #a3e635; --ink: #e6f6ff; --muted: #8aa4c3; }
+  body { background: var(--navy); color: var(--ink); font-family: 'Space Grotesk', Inter, sans-serif; }
+  .night { position: absolute; inset: 0; background:
+      radial-gradient(70vmin 50vmin at 85% 10%, #22d3ee22, transparent 70%),
+      radial-gradient(80vmin 60vmin at 10% 95%, #a3e63518, transparent 70%),
+      linear-gradient(160deg, #0b1630 0%, #070d1f 60%, #050914 100%); }
+  .grid { position: absolute; inset: 0; background-image: linear-gradient(#22d3ee0d 1px, transparent 1px), linear-gradient(90deg, #22d3ee0d 1px, transparent 1px); background-size: 6vmin 6vmin;
+    mask-image: radial-gradient(ellipse at 50% 50%, #000 30%, transparent 80%); }
+  .scan { position: absolute; left: 0; right: 0; height: 18vmin; top: -20vmin; background: linear-gradient(180deg, transparent, #22d3ee14, transparent); }
+  .play .scan { animation: scan 3.5s linear infinite; }
+  @keyframes scan { to { top: 110%; } }
+  .neon { color: var(--cyan); text-shadow: 0 0 2vmin #22d3ee88; }
+  .lime { color: var(--lime); }
+  .kick { font-weight: 700; letter-spacing: .32em; font-size: 2.1vmin; color: var(--cyan); }
+
+  /* ---- intro ---- */
+  [data-scene="intro"] .stack { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 2.6vmin; }
+  [data-scene="intro"] .wordmark { height: 11vmin; }
+  [data-scene="intro"] h1 { font-size: 13vmin; line-height: .95; font-weight: 700; letter-spacing: -.02em; }
+  [data-scene="intro"] .sub { font-size: 3vmin; color: var(--muted); }
+  [data-scene="intro"] .ep { position: absolute; right: 5vmin; bottom: 4vmin; font-size: 2vmin; letter-spacing: .3em; color: var(--muted); }
+  [data-scene="intro"] .line { width: 0; height: .5vmin; border-radius: 1vmin; background: linear-gradient(90deg, var(--cyan), var(--lime)); box-shadow: 0 0 2vmin #22d3ee; }
+  .play [data-scene="intro"] .line { animation: grow-line 1.2s .6s cubic-bezier(.2,.8,.2,1) forwards; }
+  @keyframes grow-line { to { width: 44vmin; } }
+  .portrait [data-scene="intro"] h1 { font-size: 15vmin; }
+
+  /* ---- hook + race: lock screen with three unread messages and a ticking clock ---- */
+  .lock { left: 14vmin; top: 50%; margin-top: -35vmin; }
+  .lock .scr { background: linear-gradient(170deg, #1e2a4a, #0b1226); }
+  .lock .time { text-align: center; color: #fff; margin: 6vmin 0 4vmin; }
+  .lock .time b { display: block; font: 300 10vmin/1 'Space Grotesk'; letter-spacing: -.03em; }
+  .lock .time small { font-size: 1.9vmin; opacity: .8; }
+  .lock .notif { position: relative; transition: filter .4s, opacity .4s; }
+  .lock .notif .stamp { position: absolute; right: 1.4vmin; top: 50%; transform: translateY(-50%) rotate(-8deg) scale(1.6); opacity: 0; border: .35vmin solid #f04438; color: #f04438;
+    font: 700 1.5vmin 'Space Grotesk'; letter-spacing: .08em; padding: .4vmin .9vmin; border-radius: .6vmin; background: #fff; transition: all .35s cubic-bezier(.2,.9,.3,1.4); }
+  .lock .notif.lost { filter: grayscale(1); opacity: .75; }
+  .lock .notif.lost .stamp { opacity: 1; transform: translateY(-50%) rotate(-8deg) scale(1); }
+  .clock { position: absolute; width: 16vmin; height: 16vmin; border-radius: 50%; border: .6vmin solid var(--cyan); box-shadow: 0 0 3vmin #22d3ee66, inset 0 0 2vmin #22d3ee33; left: 46vmin; top: 50%; margin-top: -30vmin; background: #0b1630; }
+  .clock i { position: absolute; left: 50%; bottom: 50%; transform-origin: 50% 100%; border-radius: 1vmin; background: #fff; }
+  .clock .h { width: .9vmin; height: 4vmin; margin-left: -.45vmin; transform: rotate(-60deg); }
+  .clock .m { width: .6vmin; height: 6vmin; margin-left: -.3vmin; background: var(--cyan); }
+  .clock .dot { position: absolute; left: 50%; top: 50%; width: 1.6vmin; height: 1.6vmin; margin: -.8vmin; border-radius: 50%; background: var(--lime); }
+  .play [data-scene="hook"] .clock .m { animation: tick 6s steps(6) infinite; }
+  .play [data-scene="race"] .clock .m { animation: spin .5s linear infinite; }
+  .play [data-scene="race"] .clock .h { animation: spin 6s linear infinite; }
+  @keyframes tick { to { transform: rotate(360deg); } }
+  @keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+  .quote { position: absolute; left: 70vmin; right: 7vmin; top: 50%; transform: translateY(-50%); }
+  .quote p { font-size: 6.4vmin; line-height: 1.12; font-weight: 600; letter-spacing: -.01em; }
+  .quote p em { font-style: normal; color: var(--cyan); }
+  .quote .who { margin-top: 3vmin; font-size: 2.4vmin; color: var(--muted); letter-spacing: .12em; }
+  .quote .mark { font: 700 16vmin/0.6 'Space Grotesk'; color: var(--lime); opacity: .9; display: block; margin-bottom: 1vmin; }
+  .race-title { position: absolute; left: 70vmin; right: 6vmin; top: 0; bottom: 0; margin: auto 0; height: max-content; font-size: 11vmin; font-weight: 700; line-height: .95; letter-spacing: -.02em; }
+  .race-title small { display: block; font-size: 2.6vmin; font-weight: 500; color: var(--muted); letter-spacing: .14em; margin-top: 3vmin; }
+  .portrait .lock { left: 50%; margin-left: -17vmin; top: 8vh; margin-top: 0; }
+  .portrait .clock { left: auto; right: 6vmin; top: 9vh; margin-top: 0; width: 18vmin; height: 18vmin; }
+  .portrait .quote, .portrait .race-title { left: 7vmin; right: 7vmin; top: auto; bottom: 22vh; transform: none; margin: 0; }
+  .portrait .quote p { font-size: 7.4vmin; }
+  .portrait .race-title { font-size: 13vmin; bottom: 24vh; }
+
+  /* ---- website mock (chat widget + form) ---- */
+  .site { position: absolute; inset: 0; background: #fbf8f4; color: #1d2433; font-family: Inter, sans-serif; }
+  .chrome { height: 7vmin; background: #e9ecf3; display: flex; align-items: center; gap: 1.2vmin; padding-left: 26vmin; border-bottom: 1px solid #d6dbe6; }
+  .chrome i { width: 1.4vmin; height: 1.4vmin; border-radius: 50%; display: inline-block; }
+  .chrome .url { margin-left: 2vmin; background: #fff; border-radius: 1vmin; height: 4.2vmin; display: flex; align-items: center; padding: 0 2vmin; font-size: 1.9vmin; color: #475467; flex: 0 1 60vmin; }
+  .chrome .when { margin-left: auto; margin-right: 3vmin; font: 700 1.9vmin 'Space Grotesk'; color: #fff; background: #0b1630; padding: .8vmin 1.6vmin; border-radius: 99vmin; }
+  .nav { display: flex; align-items: center; gap: 4vmin; padding: 2.6vmin 6vmin; font-size: 2vmin; }
+  .nav .logo { display: flex; align-items: center; gap: 1.2vmin; font-weight: 800; font-size: 2.6vmin; color: #0f5d63; margin-right: auto; }
+  .nav .logo span { width: 4vmin; height: 4vmin; border-radius: 1.2vmin; background: linear-gradient(135deg, #2dd4bf, #0f766e); display: grid; place-items: center; color: #fff; font-size: 2.4vmin; }
+  .nav a { color: #344054; text-decoration: none; }
+  .nav .cta { background: #0f766e; color: #fff; padding: 1.4vmin 2.4vmin; border-radius: 99vmin; font-weight: 700; }
+  .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 6vmin; padding: 4vmin 6vmin; align-items: center; }
+  .hero h2 { font-size: 7vmin; line-height: 1.02; letter-spacing: -.02em; color: #12313a; font-weight: 800; }
+  .hero p { margin-top: 2.4vmin; font-size: 2.4vmin; color: #475467; line-height: 1.5; }
+  .hero .art { height: 46vmin; border-radius: 3vmin; background: radial-gradient(circle at 30% 30%, #99f6e4, #14b8a6 60%, #0f766e); position: relative; overflow: hidden; }
+  .hero .art::after { content: ''; position: absolute; width: 30vmin; height: 30vmin; border-radius: 50%; background: #fff6; right: -6vmin; bottom: -8vmin; }
+  .launcher { position: absolute; right: 5vmin; bottom: 5vmin; width: 9vmin; height: 9vmin; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #4f46e5); box-shadow: 0 1.6vmin 4vmin #4f46e566;
+    display: grid; place-items: center; cursor: pointer; z-index: 6; }
+  .launcher svg { width: 4.4vmin; height: 4.4vmin; }
+  .launcher .badge { position: absolute; top: .4vmin; right: .4vmin; width: 2.6vmin; height: 2.6vmin; border-radius: 50%; background: #ef4444; color: #fff; font: 700 1.5vmin Inter; display: grid; place-items: center; }
+  .panel { position: absolute; right: 5vmin; bottom: 16vmin; width: 48vmin; height: 62vmin; border-radius: 2.6vmin; background: #fff; box-shadow: 0 3vmin 8vmin rgba(16,24,40,.28); overflow: hidden; z-index: 6;
+    display: flex; flex-direction: column; transform-origin: 100% 100%; transform: scale(.4); opacity: 0; transition: all .45s cubic-bezier(.2,.9,.3,1.2); }
+  .panel.open { transform: none; opacity: 1; }
+  .panel .ph { background: linear-gradient(135deg, #7c3aed, #4f46e5); color: #fff; padding: 2.4vmin 2.6vmin; }
+  .panel .ph b { display: block; font-size: 2.3vmin; } .panel .ph small { font-size: 1.6vmin; opacity: .85; }
+  .panel .pm { flex: 1; padding: 2vmin; display: flex; flex-direction: column; gap: 1.2vmin; background: #f8f7fc; }
+  .panel .pm .bubble.out { background: #6d28d9; }
+  .panel .pf { display: flex; gap: 1vmin; padding: 1.6vmin; border-top: 1px solid #eaecf0; }
+  .panel input { flex: 1; border: 1px solid #d0d5dd; border-radius: 1.4vmin; padding: 0 1.6vmin; font: 1.9vmin Inter; height: 5.4vmin; outline: none; }
+  .panel input:focus { border-color: #7c3aed; box-shadow: 0 0 0 .4vmin #7c3aed22; }
+  .panel button { width: 5.4vmin; height: 5.4vmin; border: 0; border-radius: 1.4vmin; background: #6d28d9; color: #fff; display: grid; place-items: center; }
+  .panel .powered { text-align: center; font-size: 1.3vmin; color: #98a2b3; padding-bottom: 1.2vmin; }
+  .portrait .site { top: 11vh; border-radius: 4vmin 4vmin 0 0; overflow: hidden; }
+  .portrait .chrome { padding-left: 4vmin; } .portrait .chrome .url { flex-basis: 40vmin; }
+  .portrait .nav a:not(.cta) { display: none; }
+  .portrait .hero { grid-template-columns: 1fr; padding-top: 2vmin; } .portrait .hero h2 { font-size: 9vmin; } .portrait .hero p { font-size: 3vmin; }
+  .portrait .hero .art { height: 40vmin; }
+  .portrait .panel { left: 4vmin; right: 4vmin; width: auto; bottom: 16vmin; height: 92vmin; }
+  .portrait .panel .ph b { font-size: 3.4vmin; } .portrait .panel .ph small { font-size: 2.4vmin; }
+  .portrait .panel .bubble { font-size: 2.8vmin; } .portrait .panel input { font-size: 2.8vmin; height: 7.4vmin; } .portrait .panel button { width: 7.4vmin; height: 7.4vmin; }
+  .portrait .launcher { width: 12vmin; height: 12vmin; }
+
+  .book { display: grid; grid-template-columns: 1fr 1.05fr; gap: 6vmin; padding: 3vmin 6vmin; align-items: start; }
+  .book h3 { font-size: 5.6vmin; line-height: 1.05; color: #12313a; letter-spacing: -.02em; }
+  .book .perks { margin-top: 3vmin; display: grid; gap: 1.6vmin; font-size: 2.3vmin; color: #475467; }
+  .book .perks span::before { content: '\2713'; color: #0f766e; font-weight: 800; margin-right: 1.2vmin; }
+  .card { background: #fff; border-radius: 2.6vmin; box-shadow: 0 2vmin 6vmin rgba(16,24,40,.12); padding: 3.4vmin; position: relative; overflow: hidden; }
+  .card label { display: block; font-size: 1.8vmin; font-weight: 700; color: #344054; margin: 1.8vmin 0 .8vmin; }
+  .card input { width: 100%; height: 6vmin; border: 1px solid #d0d5dd; border-radius: 1.4vmin; padding: 0 1.8vmin; font: 2.2vmin Inter; outline: none; }
+  .card input:focus { border-color: #0f766e; box-shadow: 0 0 0 .4vmin #0f766e22; }
+  .chips { display: flex; gap: 1.2vmin; flex-wrap: wrap; }
+  .chips button { border: 1px solid #d0d5dd; background: #fff; border-radius: 99vmin; padding: 1.2vmin 2.2vmin; font: 600 2vmin Inter; color: #344054; }
+  .chips button.on { background: #0f766e; color: #fff; border-color: #0f766e; }
+  .submit { margin-top: 3vmin; width: 100%; height: 6.6vmin; border: 0; border-radius: 1.6vmin; background: #0f766e; color: #fff; font: 700 2.4vmin Inter; }
+  .done { position: absolute; inset: 0; background: #fff; display: grid; place-items: center; text-align: center; opacity: 0; transform: scale(1.05); transition: all .5s; pointer-events: none; }
+  .done.on { opacity: 1; transform: none; }
+  .done .ok { width: 10vmin; height: 10vmin; border-radius: 50%; background: #dcfce7; color: #16a34a; font-size: 6vmin; display: grid; place-items: center; margin: 0 auto 2vmin; }
+  .done b { font-size: 3.4vmin; color: #12313a; } .done p { font-size: 2.2vmin; color: #475467; margin-top: 1vmin; }
+  .sent { position: absolute; left: 50%; bottom: 6vmin; transform: translate(-50%, 4vmin); opacity: 0; background: #0b1630; color: #a5f3fc; font: 700 2.4vmin 'Space Grotesk'; padding: 1.8vmin 3vmin; border-radius: 99vmin;
+    box-shadow: 0 0 0 .3vmin var(--cyan), 0 2vmin 5vmin #0b163066; transition: all .6s cubic-bezier(.2,.9,.3,1.3); white-space: nowrap; }
+  .sent.on { opacity: 1; transform: translate(-50%, 0); }
+  .portrait .book { grid-template-columns: 1fr; } .portrait .book h3 { font-size: 7.4vmin; } .portrait .book .perks { display: none; }
+  .portrait .card label { font-size: 2.8vmin; } .portrait .card input { height: 8vmin; font-size: 3vmin; } .portrait .chips button { font-size: 2.8vmin; } .portrait .submit { height: 8.4vmin; font-size: 3.2vmin; }
+  .portrait .sent { font-size: 3.2vmin; bottom: 22vh; }
+
+  /* ---- missed call: desk phone rings out, customer's phone gets the text ---- */
+  [data-scene="missed"] .desk { left: 22vmin; top: 50%; margin-top: -35vmin; }
+  [data-scene="missed"] .cust { right: 22vmin; top: 50%; margin-top: -35vmin; }
+  .desk .scr { background: #0f172a; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.6vmin; }
+  .desk .ring { width: 12vmin; height: 12vmin; border-radius: 50%; background: #16a34a; display: grid; place-items: center; }
+  .play [data-scene="missed"] .desk .ring { animation: ring .9s ease-in-out 3; }
+  @keyframes ring { 0%, 100% { transform: rotate(0); box-shadow: 0 0 0 0 #16a34a88; } 25% { transform: rotate(-14deg); } 75% { transform: rotate(14deg); box-shadow: 0 0 0 3vmin #16a34a00; } }
+  .desk .who { font-size: 2.4vmin; font-weight: 700; } .desk small { font-size: 1.7vmin; color: #94a3b8; }
+  .desk .missed { position: absolute; left: 1.6vmin; right: 1.6vmin; top: 5vmin; background: #fef2f2; color: #b91c1c; border-radius: 2vmin; padding: 1.6vmin; font-size: 1.8vmin; font-weight: 700;
+    display: flex; gap: 1.2vmin; align-items: center; transform: translateY(-14vmin); transition: transform .5s cubic-bezier(.2,.9,.3,1.3); text-align: left; }
+  .desk .missed.on { transform: none; }
+  .desk .missed i { width: 4vmin; height: 4vmin; border-radius: 50%; background: #ef4444; color: #fff; display: grid; place-items: center; font-style: normal; }
+  .arrow { position: absolute; left: 50%; top: 50%; width: 26vmin; margin: -2vmin 0 0 -13vmin; height: .5vmin; background: linear-gradient(90deg, transparent, var(--cyan)); opacity: 0; }
+  .arrow.on { opacity: 1; animation: zip 1s ease-out both; }
+  .arrow::after { content: 'AUTO TEXT'; position: absolute; left: 50%; top: -4vmin; transform: translateX(-50%); font: 700 1.8vmin 'Space Grotesk'; letter-spacing: .2em; color: var(--cyan); }
+  @keyframes zip { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  .cust .bubble { opacity: 0; transform: translateY(1.6vmin); transition: all .45s cubic-bezier(.2,.9,.3,1.3); }
+  .cust .bubble.on { opacity: 1; transform: none; }
+  .portrait [data-scene="missed"] .desk { left: 50%; margin-left: -17vmin; top: 4vh; margin-top: 0; transform: scale(.8); transform-origin: 50% 0; }
+  .portrait [data-scene="missed"] .cust { right: auto; left: 50%; margin-left: -17vmin; top: auto; margin-top: 0; bottom: 21vh; transform: scale(.95); transform-origin: 50% 100%; }
+  .portrait .arrow { display: none; }
+  .portrait .arrow::after { transform: translateX(-50%) rotate(-90deg); left: 50%; top: -12vmin; }
+
+  /* ---- tip ---- */
+  [data-scene="tip"] .box { position: absolute; left: 12vmin; right: 12vmin; top: 0; bottom: 0; margin: auto 0; height: max-content; border: .35vmin solid #22d3ee55; border-radius: 4vmin; padding: 7vmin 8vmin;
+    background: linear-gradient(160deg, #0b1630ee, #070d1fee); box-shadow: 0 0 6vmin #22d3ee22; }
+  [data-scene="tip"] .badge { display: inline-flex; align-items: center; gap: 1.4vmin; font-weight: 700; letter-spacing: .3em; font-size: 2.2vmin; color: #070d1f; background: var(--lime); padding: 1.2vmin 2.4vmin; border-radius: 99vmin; }
+  [data-scene="tip"] .ask { margin-top: 4vmin; font-size: 6.2vmin; line-height: 1.12; font-weight: 600; }
+  [data-scene="tip"] .ask em { font-style: normal; color: var(--cyan); }
+  [data-scene="tip"] .then { margin-top: 3vmin; font-size: 3.2vmin; color: var(--muted); }
+  [data-scene="tip"] .moon { position: absolute; right: 6vmin; top: -6vmin; width: 14vmin; height: 14vmin; border-radius: 50%; box-shadow: -3vmin 2vmin 0 0 #fde68a; transform: rotate(-20deg); }
+  .portrait [data-scene="tip"] .box { left: 5vmin; right: 5vmin; padding: 7vmin 6vmin; bottom: 12vh; } .portrait [data-scene="tip"] .ask { font-size: 7.4vmin; }
+
+  /* ---- outro ---- */
+  [data-scene="outro"] .stack { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3vmin; text-align: center; }
+  [data-scene="outro"] .wordmark { height: 14vmin; }
+  [data-scene="outro"] .tag { font-size: 7vmin; font-weight: 700; letter-spacing: -.01em; }
+  [data-scene="outro"] .tag span { color: var(--cyan); text-shadow: 0 0 2vmin #22d3ee88; }
+  [data-scene="outro"] .links { display: flex; gap: 3vmin; margin-top: 1vmin; }
+  [data-scene="outro"] .links div { display: flex; align-items: center; gap: 1.4vmin; font-size: 3vmin; padding: 1.6vmin 3vmin; border-radius: 99vmin; border: .3vmin solid #22d3ee55; background: #0b163099; }
+  [data-scene="outro"] .links i { width: 1.6vmin; height: 1.6vmin; border-radius: 50%; background: var(--lime); box-shadow: 0 0 1.6vmin var(--lime); }
+  .portrait [data-scene="outro"] .links { flex-direction: column; }
+  .portrait [data-scene="outro"] .stack { justify-content: flex-start; padding-top: 26vh; }
+
+  /* ---- portrait frame around app screens (window is transparent) ---- */
+  body.frame-mode { background: transparent; }
+  [data-scene="frame"] .band { position: absolute; background: #0a1328; }
+  [data-scene="frame"] .win { position: absolute; left: 40px; top: 310px; width: 1000px; height: 1290px; border-radius: 30px; box-shadow: 0 0 0 4px #22d3ee, 0 0 40px 6px #22d3ee66; }
+  [data-scene="frame"] .corner { position: absolute; width: 30px; height: 30px; }
+  [data-scene="frame"] .glow { position: absolute; left: 0; right: 0; top: 0; height: 310px; background: radial-gradient(500px 200px at 85% 0%, #22d3ee33, transparent 70%); }
+  [data-scene="frame"] .dots { position: absolute; right: 60px; top: 70px; display: flex; gap: 12px; }
+  [data-scene="frame"] .dots i { width: 14px; height: 14px; border-radius: 50%; background: #22d3ee; box-shadow: 0 0 12px #22d3ee; }
+  [data-scene="frame"] .dots i:nth-child(2) { background: #a3e635; box-shadow: 0 0 12px #a3e635; }
+</style>
+</head>
+<body>
+
+<section data-scene="intro">
+  <div class="night"></div><div class="grid"></div><div class="scan"></div>
+  <div class="stack">
+    <img class="wordmark pop" style="animation-delay:.05s" src="../kit/wordmark-white.png" alt="Kyntlo">
+    <div class="kick rise" style="animation-delay:.35s">KYNTLO TEAM ACADEMY &middot; BATCH 1</div>
+    <h1 class="slide" style="animation-delay:.5s">I'M LOSING <span class="neon">LEADS</span></h1>
+    <div class="line"></div>
+    <div class="sub rise" style="animation-delay:1s">Catch every enquiry. Every channel. Even at night.</div>
+  </div>
+  <div class="ep fade" style="animation-delay:1.2s">02 / 05</div>
+</section>
+
+<section data-scene="hook">
+  <div class="night"></div><div class="grid"></div>
+  <div class="phone lock rise">
+    <div class="scr"><div class="notch"></div>
+      <div class="time"><b>21:47</b><small>Saturday 24 October</small></div>
+      <div class="notif slide" style="animation-delay:.6s"><b>Messages <span>now</span></b>Hi, are you open on Monday morning?<div class="stamp">BOOKED ELSEWHERE</div></div>
+      <div class="notif slide" style="animation-delay:1.3s"><b>Instagram <span>now</span></b>Do you do whitening for sensitive teeth?<div class="stamp">BOOKED ELSEWHERE</div></div>
+      <div class="notif slide" style="animation-delay:2s"><b>Website chat <span>now</span></b>Can I book a check-up for next week?<div class="stamp">BOOKED ELSEWHERE</div></div>
+    </div>
+  </div>
+  <div class="clock pop" style="animation-delay:.3s"><i class="h"></i><i class="m"></i><span class="dot"></span></div>
+  <div class="quote">
+    <span class="mark fade" style="animation-delay:.2s">&ldquo;</span>
+    <p class="rise" style="animation-delay:.3s">Three people asked about my service this weekend. I saw <em>one</em> of them on Monday.</p>
+    <div class="who fade" style="animation-delay:1.4s">A BUSY BUSINESS OWNER</div>
+  </div>
+</section>
+
+<section data-scene="race">
+  <div class="night"></div><div class="grid"></div>
+  <div class="phone lock">
+    <div class="scr"><div class="notch"></div>
+      <div class="time"><b id="clk">21:47</b><small id="day">Saturday 24 October</small></div>
+      <div class="notif"><b>Messages <span>2d ago</span></b>Hi, are you open on Monday morning?<div class="stamp">BOOKED ELSEWHERE</div></div>
+      <div class="notif"><b>Instagram <span>2d ago</span></b>Do you do whitening for sensitive teeth?<div class="stamp">BOOKED ELSEWHERE</div></div>
+      <div class="notif"><b>Website chat <span>2d ago</span></b>Can I book a check-up for next week?<div class="stamp">BOOKED ELSEWHERE</div></div>
+    </div>
+  </div>
+  <div class="clock"><i class="h"></i><i class="m"></i><span class="dot"></span></div>
+  <div class="race-title rise" style="animation-delay:.2s">FIRST TO REPLY <span class="lime">WINS.</span><small>THE LEAD WON'T WAIT FOR MONDAY</small></div>
+</section>
+
+<section data-scene="widget">
+  <div class="site">
+    <div class="chrome"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><div class="url">bloomdental.co.uk</div><div class="when">Sat &middot; 22:13</div></div>
+    <div class="nav"><div class="logo"><span>B</span>Bloom Dental Studio</div><a>Treatments</a><a>Fees</a><a>Our team</a><a class="cta">Book a visit</a></div>
+    <div class="hero">
+      <div><h2>Gentle dentistry in the heart of Marylebone</h2><p>Check-ups, whitening and Invisalign, with a team that makes every visit easy.</p></div>
+      <div class="art"></div>
+    </div>
+    <div class="panel" id="cw_panel">
+      <div class="ph"><b>Bloom Dental Studio</b><small>We usually reply in seconds</small></div>
+      <div class="pm" id="cw_msgs"><div class="bubble in">Hi there! How can we help today?</div></div>
+      <div class="pf"><input id="cw_input" placeholder="Type your message..." autocomplete="off"><button id="cw_send" aria-label="Send"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></button></div>
+      <div class="powered">Powered by Kyntlo</div>
+    </div>
+    <div class="launcher pop" style="animation-delay:.4s" id="cw_launch"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="badge">1</span></div>
+  </div>
+</section>
+
+<section data-scene="form">
+  <div class="site">
+    <div class="chrome"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><div class="url">bloomdental.co.uk/book</div></div>
+    <div class="nav"><div class="logo"><span>B</span>Bloom Dental Studio</div><a>Treatments</a><a>Fees</a><a>Our team</a><a class="cta">Book a visit</a></div>
+    <div class="book">
+      <div><h3>Book your free consultation</h3><div class="perks"><span>Same-week appointments</span><span>A friendly text to confirm</span><span>No obligation, no pressure</span></div></div>
+      <div class="card" id="bf_card">
+        <label>Your name</label><input id="bf_name" autocomplete="off">
+        <label>Mobile number</label><input id="bf_phone" autocomplete="off">
+        <label>What can we help with?</label>
+        <div class="chips"><button id="bf_t_checkup">Check-up</button><button id="bf_t_white">Whitening</button><button id="bf_t_inv">Invisalign</button></div>
+        <button class="submit" id="bf_submit">Request my visit</button>
+        <div class="done" id="bf_done"><div><div class="ok">&#10003;</div><b>Thanks, Leo!</b><p>We'll text you within minutes.</p></div></div>
+      </div>
+    </div>
+    <div class="sent" id="bf_sent">&#9889; In Kyntlo: new contact + new opportunity</div>
+  </div>
+</section>
+
+<section data-scene="missed">
+  <div class="night"></div><div class="grid"></div>
+  <div class="phone desk rise">
+    <div class="scr"><div class="notch"></div>
+      <div class="missed" id="ms_banner"><i>&#10005;</i><div>Missed call<br><span style="font-weight:500">+44 7700 900456</span></div></div>
+      <div class="ring"><svg viewBox="0 0 24 24" width="40" height="40" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></div>
+      <div class="who">Incoming call</div><small>Bloom Dental front desk</small><small>Everyone is with a patient</small>
+    </div>
+  </div>
+  <div class="arrow" id="ms_arrow"></div>
+  <div class="phone cust rise" style="animation-delay:.2s">
+    <div class="scr"><div class="notch"></div>
+      <div class="bar"><span>12:41</span><span>5G</span></div>
+      <div class="head"><b>Bloom Dental Studio</b><small>+44 20 7946 0321</small></div>
+      <div class="msgs">
+        <div class="bubble in" id="ms_text">Hi, it's Bloom Dental. Sorry we missed you, how can we help?<small>Text message &middot; just now</small></div>
+        <div class="bubble out" id="ms_reply">Can I book a check-up for Tuesday?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-scene="tip">
+  <div class="night"></div><div class="grid"></div>
+  <div class="box rise">
+    <div class="moon"></div>
+    <div class="badge">SELLING TIP</div>
+    <div class="ask">Ask the owner: &ldquo;What happens to a message that arrives at <em>9 pm on a Saturday</em>?&rdquo;</div>
+    <div class="then fade" style="animation-delay:1.6s">Their answer is your opening.</div>
+  </div>
+</section>
+
+<section data-scene="outro">
+  <div class="night"></div><div class="grid"></div><div class="scan"></div>
+  <div class="stack">
+    <img class="wordmark pop" src="../kit/wordmark-white.png" alt="Kyntlo">
+    <div class="tag rise" style="animation-delay:.3s">Kyntlo, <span>Own Tomorrow</span></div>
+    <div class="links rise" style="animation-delay:.6s"><div><i></i>www.kyntlo.ai</div><div><i></i>Support@kyntlo.ai</div></div>
+  </div>
+</section>
+
+<section data-scene="frame">
+  <div class="band" style="left:0;top:0;width:1080px;height:310px"></div>
+  <div class="band" style="left:0;top:1600px;width:1080px;height:320px"></div>
+  <div class="band" style="left:0;top:310px;width:40px;height:1290px"></div>
+  <div class="band" style="left:1040px;top:310px;width:40px;height:1290px"></div>
+  <div class="corner" style="left:40px;top:310px;background:radial-gradient(circle at 100% 100%, transparent 29px, #0a1328 30px)"></div>
+  <div class="corner" style="left:1010px;top:310px;background:radial-gradient(circle at 0 100%, transparent 29px, #0a1328 30px)"></div>
+  <div class="corner" style="left:40px;top:1570px;background:radial-gradient(circle at 100% 0, transparent 29px, #0a1328 30px)"></div>
+  <div class="corner" style="left:1010px;top:1570px;background:radial-gradient(circle at 0 0, transparent 29px, #0a1328 30px)"></div>
+  <div class="glow"></div>
+  <div class="win"></div>
+  <div class="dots"><i></i><i></i></div>
+</section>
+
+<script src="../kit/team.js"></script>
+<script>
+  if (TEAM.scene === 'frame') document.body.classList.add('frame-mode');
+  const $ = (s) => TEAM.root.querySelector(s);
+  SCENES.race = async () => {
+    // Time passes: the weekend slips by and each enquiry goes elsewhere.
+    const times = [['22:30', 'Saturday 24 October'], ['10:05', 'Sunday 25 October'], ['18:40', 'Sunday 25 October'], ['09:12', 'Monday 26 October']];
+    const notes = TEAM.root.querySelectorAll('.notif');
+    for (let i = 0; i < times.length; i++) {
+      await TEAM.wait(700);
+      $('#clk').textContent = times[i][0];
+      $('#day').textContent = times[i][1];
+      if (notes[i]) notes[i].classList.add('lost');
+    }
+  };
+  // Chat widget: opening and replying are driven by the lesson's clicks; the reply is automatic.
+  $('#cw_launch')?.addEventListener('click', () => { $('#cw_panel').classList.add('open'); $('#cw_launch .badge').remove(); });
+  $('#cw_send')?.addEventListener('click', async () => {
+    const box = $('#cw_msgs');
+    const text = $('#cw_input').value.trim();
+    if (!text) return;
+    box.insertAdjacentHTML('beforeend', `<div class="bubble out">${text}</div>`);
+    $('#cw_input').value = '';
+    await TEAM.wait(500);
+    box.insertAdjacentHTML('beforeend', '<div class="typing" id="cw_typing"><i></i><i></i><i></i></div>');
+    await TEAM.wait(1500);
+    $('#cw_typing').remove();
+    box.insertAdjacentHTML('beforeend', '<div class="bubble in">We do! Saturday mornings, 9 to 1. Shall I book you in?<small>Sent automatically &middot; 22:13</small></div>');
+    await TEAM.wait(1200);
+    box.insertAdjacentHTML('beforeend', '<div class="bubble in" style="background:#ede9fe">Leave your mobile and we will text you a time.</div>');
+  });
+  // Booking form: pick a treatment, submit, and the lead lands in Kyntlo.
+  TEAM.root.querySelectorAll('.chips button').forEach((b) => b.addEventListener('click', () => {
+    TEAM.root.querySelectorAll('.chips button').forEach((x) => x.classList.toggle('on', x === b));
+  }));
+  $('#bf_submit')?.addEventListener('click', async () => {
+    $('#bf_done').classList.add('on');
+    await TEAM.wait(900);
+    $('#bf_sent').classList.add('on');
+  });
+  SCENES.missed = async () => {
+    await TEAM.wait(2600);
+    $('#ms_banner').classList.add('on');
+    await TEAM.wait(900);
+    $('#ms_arrow').classList.add('on');
+    await TEAM.wait(900);
+    $('#ms_text').classList.add('on');
+    await TEAM.wait(2600);
+    $('#ms_reply').classList.add('on');
+  };
+</script>
+</body>
+</html>

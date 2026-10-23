@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>s05 I don't know which ads work</title>
+<link rel="stylesheet" href="../kit/team.css">
+<style>
+  /* s05 "I don't know which ads work" - Money Grid: deep green-black, gold, mint. Bebas Neue + JetBrains Mono. */
+  :root { --ink: #07140f; --ink2: #0d221a; --gold: #f5c542; --mint: #34d399; --paper: #eafff5; --muted: #8fb3a3; --red: #f87171; }
+  body { background: var(--ink); color: var(--paper); font-family: 'JetBrains Mono', monospace; }
+  .vault { position: absolute; inset: 0; background: radial-gradient(90vmin 70vmin at 80% 15%, #34d39922, transparent 70%), radial-gradient(90vmin 70vmin at 10% 90%, #f5c54218, transparent 70%), linear-gradient(160deg, #0d221a, #07140f 60%, #040c08); }
+  .ledger { position: absolute; inset: 0; background-image: linear-gradient(#34d3990f 1px, transparent 1px), linear-gradient(90deg, #34d3990f 1px, transparent 1px); background-size: 8vmin 4vmin; }
+  .bebas { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: .02em; line-height: .9; }
+  .ticker { position: absolute; left: 0; right: 0; bottom: 0; height: 6vmin; background: #0d221a; border-top: 1px solid #34d39933; overflow: hidden; white-space: nowrap; font-size: 2vmin; line-height: 6vmin; color: var(--muted); }
+  .ticker span { display: inline-block; padding-left: 100%; }
+  .play .ticker span { animation: tick 18s linear infinite; }
+  @keyframes tick { to { transform: translateX(-100%); } }
+  .ticker b { color: var(--mint); font-weight: 600; } .ticker i { color: var(--red); font-style: normal; }
+
+  /* intro */
+  [data-scene="intro"] .stack { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding-left: 12vmin; gap: 2vmin; }
+  [data-scene="intro"] .wordmark { height: 9vmin; align-self: flex-start; }
+  [data-scene="intro"] .kick { font-size: 2.2vmin; letter-spacing: .3em; color: var(--mint); }
+  [data-scene="intro"] h1 { font-size: 16vmin; } [data-scene="intro"] h1 span { color: var(--gold); }
+  [data-scene="intro"] .sub { font-size: 2.8vmin; color: var(--muted); }
+  [data-scene="intro"] .ep { position: absolute; right: 5vmin; top: 5vmin; font-size: 2vmin; letter-spacing: .3em; color: var(--muted); }
+  [data-scene="intro"] .chart { position: absolute; right: 8vmin; bottom: 12vmin; display: flex; align-items: flex-end; gap: 1.6vmin; height: 40vmin; }
+  [data-scene="intro"] .chart i { width: 5vmin; border-radius: .8vmin .8vmin 0 0; background: linear-gradient(var(--gold), #b8891a); height: 0; }
+  .play [data-scene="intro"] .chart i { animation: bar .9s cubic-bezier(.2,.8,.2,1) forwards; }
+  @keyframes bar { to { height: var(--h); } }
+  .portrait [data-scene="intro"] .stack { padding: 0 7vmin; justify-content: flex-start; padding-top: 20vh; } .portrait [data-scene="intro"] h1 { font-size: 19vmin; }
+  .portrait [data-scene="intro"] .chart { left: 7vmin; right: auto; bottom: 7vh; height: 26vmin; }
+
+  /* hook: the monthly ad bill */
+  .receipt { position: absolute; left: 12vmin; top: 50%; width: 52vmin; margin-top: -36vmin; background: #fdfdf7; color: #1c1c1c; padding: 4vmin 4vmin 6vmin; font-size: 2.2vmin; box-shadow: 0 3vmin 6vmin #0008;
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 95% 100%, 90% 96%, 85% 100%, 80% 96%, 75% 100%, 70% 96%, 65% 100%, 60% 96%, 55% 100%, 50% 96%, 45% 100%, 40% 96%, 35% 100%, 30% 96%, 25% 100%, 20% 96%, 15% 100%, 10% 96%, 5% 100%, 0 96%); }
+  .play [data-scene="hook"] .receipt { animation: print 1.6s steps(12) both; }
+  @keyframes print { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+  .receipt h4 { font: 400 5vmin 'Bebas Neue'; text-align: center; letter-spacing: .08em; }
+  .receipt .r { display: flex; justify-content: space-between; padding: 1.2vmin 0; border-bottom: 1px dashed #bbb; }
+  .receipt .r.t { border: 0; font-weight: 800; font-size: 2.6vmin; padding-top: 2vmin; }
+  .receipt .r.unk { color: #b42318; font-weight: 800; font-size: 2.6vmin; border: 0; }
+  [data-scene="hook"] .q { position: absolute; left: 76vmin; right: 7vmin; top: 50%; transform: translateY(-50%); }
+  [data-scene="hook"] .q p { font: 600 5.4vmin/1.18 Inter, sans-serif; }
+  [data-scene="hook"] .q p span { color: var(--gold); }
+  [data-scene="hook"] .q .who { margin-top: 3vmin; font-size: 2vmin; letter-spacing: .24em; color: var(--mint); }
+  .portrait .receipt { left: 50%; margin-left: -30vmin; width: 60vmin; top: 9vh; margin-top: 0; }
+  .portrait [data-scene="hook"] .q { left: 7vmin; right: 7vmin; top: auto; bottom: 21vh; transform: none; } .portrait [data-scene="hook"] .q p { font-size: 6.4vmin; }
+
+  /* coins: the pile shrinks, the question grows */
+  [data-scene="coins"] .pile { position: absolute; left: 22vmin; bottom: 16vmin; width: 30vmin; height: 60vmin; }
+  .coin { position: absolute; left: 0; width: 30vmin; height: 6vmin; border-radius: 50%; background: linear-gradient(#ffe08a, #d4a017); box-shadow: inset 0 -1.2vmin 0 #a87c0e, 0 .6vmin 1vmin #0006; transition: transform .7s cubic-bezier(.5,0,.75,0), opacity .7s; }
+  .coin.gone { transform: translate(60vmin, -50vmin) rotate(40deg) scale(.3); opacity: 0; }
+  [data-scene="coins"] .qmark { position: absolute; left: 33vmin; bottom: 22vmin; font: 400 40vmin/1 'Bebas Neue'; color: var(--gold); opacity: 0; transform: scale(.4); transition: all .8s cubic-bezier(.2,.9,.3,1.3); text-shadow: 0 0 6vmin #f5c54255; }
+  [data-scene="coins"] .qmark.on { opacity: 1; transform: none; }
+  [data-scene="coins"] .vs { position: absolute; right: 9vmin; top: 50%; transform: translateY(-50%); display: grid; gap: 3vmin; width: 74vmin; }
+  [data-scene="coins"] .vs div { display: flex; justify-content: space-between; align-items: center; padding: 2.6vmin 3.4vmin; border-radius: 1.6vmin; background: #0d221a; border: .3vmin solid #34d39944; font: 400 7vmin 'Bebas Neue'; letter-spacing: .04em; }
+  [data-scene="coins"] .vs div b { font: 600 3.4vmin 'JetBrains Mono'; color: var(--mint); }
+  [data-scene="coins"] .vs div.c { border-color: var(--gold); } [data-scene="coins"] .vs div.c b { color: var(--gold); }
+  .portrait [data-scene="coins"] .pile { left: 50%; margin-left: -15vmin; bottom: auto; top: 12vh; }
+  .portrait [data-scene="coins"] .qmark { left: 50%; margin-left: -10vmin; bottom: auto; top: 10vh; }
+  .portrait [data-scene="coins"] .vs { right: 7vmin; left: 7vmin; width: auto; top: auto; bottom: 21vh; transform: none; }
+
+  /* decide: double down, switch off */
+  [data-scene="decide"] .board { position: absolute; left: 10vmin; right: 10vmin; top: 50%; transform: translateY(-50%); display: grid; gap: 2.4vmin; }
+  [data-scene="decide"] h2 { font-size: 9vmin; margin-bottom: 1vmin; } [data-scene="decide"] h2 span { color: var(--gold); }
+  .camp { display: grid; grid-template-columns: 1fr 30vmin 26vmin; align-items: center; gap: 3vmin; padding: 2.4vmin 3vmin; border-radius: 1.6vmin; background: #0d221a; border: .3vmin solid #34d39933; font-size: 2.6vmin; transition: all .5s; }
+  .camp b { font-family: Inter, sans-serif; font-size: 3vmin; }
+  .camp .cpc { color: var(--muted); } .camp .cpc strong { color: var(--paper); font-size: 3.4vmin; }
+  .camp .act { justify-self: end; font: 400 4vmin 'Bebas Neue'; letter-spacing: .06em; padding: 1vmin 2.4vmin; border-radius: 99vmin; opacity: 0; transform: scale(.6); transition: all .45s cubic-bezier(.2,.9,.3,1.4); }
+  .camp.up { border-color: var(--mint); box-shadow: 0 0 3vmin #34d39933; } .camp.up .act { background: var(--mint); color: var(--ink); opacity: 1; transform: none; }
+  .camp.off { opacity: .55; border-color: var(--red); } .camp.off .act { background: var(--red); color: var(--ink); opacity: 1; transform: none; }
+  .portrait [data-scene="decide"] .board { left: 5vmin; right: 5vmin; top: 46%; } .portrait .camp { grid-template-columns: 1fr; gap: 1.2vmin; } .portrait .camp .act { justify-self: start; }
+
+  /* trail: one lead, followed from the ad to the paid invoice */
+  [data-scene="trail"] h2 { position: absolute; left: 0; right: 0; top: 10vmin; text-align: center; font-size: 9vmin; }
+  [data-scene="trail"] h2 span { color: var(--gold); }
+  [data-scene="trail"] .chain { position: absolute; left: 6vmin; right: 6vmin; top: 50%; transform: translateY(-35%); display: flex; align-items: center; justify-content: space-between; }
+  [data-scene="trail"] .chain::before { content: ''; position: absolute; left: 8vmin; right: 8vmin; top: 50%; height: .5vmin; background: linear-gradient(90deg, var(--mint), var(--gold)); transform-origin: 0 50%; transform: scaleX(0); }
+  .play [data-scene="trail"] .chain::before { animation: draw-x 2.6s .3s ease-out forwards; }
+  @keyframes draw-x { to { transform: scaleX(1); } }
+  [data-scene="trail"] .st { position: relative; width: 30vmin; padding: 3vmin 2vmin; text-align: center; background: #0d221a; border: .3vmin solid #34d39955; border-radius: 1.6vmin; }
+  [data-scene="trail"] .st small { display: block; font-size: 1.8vmin; letter-spacing: .2em; color: var(--muted); }
+  [data-scene="trail"] .st b { display: block; font: 400 5.4vmin 'Bebas Neue'; letter-spacing: .03em; margin-top: 1vmin; }
+  [data-scene="trail"] .st em { font-style: normal; display: block; margin-top: .8vmin; font-size: 2.2vmin; color: var(--mint); }
+  [data-scene="trail"] .st.paid { border-color: var(--gold); box-shadow: 0 0 4vmin #f5c54233; } [data-scene="trail"] .st.paid em { color: var(--gold); }
+  .portrait [data-scene="trail"] .chain { flex-direction: column; gap: 2.4vmin; top: 22vh; transform: none; }
+  .portrait [data-scene="trail"] .chain::before { left: 50%; right: auto; top: 4vmin; bottom: 4vmin; width: .5vmin; height: auto; transform-origin: 50% 0; transform: scaleY(0); }
+  .play.portrait [data-scene="trail"] .chain::before { animation: draw-y 2.6s .3s ease-out forwards; }
+  @keyframes draw-y { to { transform: scaleY(1); } }
+  .portrait [data-scene="trail"] .st { width: 60vmin; } .portrait [data-scene="trail"] h2 { top: 8vh; padding: 0 5vmin; }
+
+  /* tip */
+  [data-scene="tip"] .box { position: absolute; left: 10vmin; right: 10vmin; top: 0; bottom: 0; margin: auto 0; height: max-content; border-radius: 2vmin; padding: 6vmin 7vmin; background: #0d221a; border: .4vmin solid var(--gold); }
+  [data-scene="tip"] .lbl { font: 400 4.4vmin 'Bebas Neue'; letter-spacing: .1em; color: var(--ink); background: var(--gold); display: inline-block; padding: .4vmin 2.2vmin; border-radius: .8vmin; }
+  [data-scene="tip"] p { margin-top: 3vmin; font: 600 4.8vmin/1.2 Inter, sans-serif; }
+  [data-scene="tip"] .then { margin-top: 3vmin; font-size: 3vmin; color: var(--mint); }
+  .portrait [data-scene="tip"] .box { left: 5vmin; right: 5vmin; padding: 7vmin 6vmin; } .portrait [data-scene="tip"] p { font-size: 5.6vmin; }
+
+  /* outro */
+  [data-scene="outro"] .stack { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3vmin; text-align: center; padding-bottom: 6vmin; }
+  [data-scene="outro"] .wordmark { height: 14vmin; }
+  [data-scene="outro"] .tag { font-size: 12vmin; } [data-scene="outro"] .tag span { color: var(--gold); }
+  [data-scene="outro"] .links { display: flex; gap: 3vmin; font-size: 3vmin; }
+  [data-scene="outro"] .links div { padding: 1.6vmin 3vmin; border: .3vmin solid var(--mint); border-radius: 1vmin; color: var(--mint); }
+  .portrait [data-scene="outro"] .links { flex-direction: column; } .portrait [data-scene="outro"] .stack { justify-content: flex-start; padding-top: 24vh; }
+
+  /* portrait frame */
+  body.frame-mode { background: transparent; }
+  [data-scene="frame"] .band { position: absolute; background: #07140f; }
+  [data-scene="frame"] .win { position: absolute; left: 40px; top: 310px; width: 1000px; height: 1290px; border-radius: 30px; box-shadow: 0 0 0 4px #f5c542, 0 0 0 10px #07140f, 0 0 0 12px #34d39966; }
+  [data-scene="frame"] .corner { position: absolute; width: 30px; height: 30px; }
+  [data-scene="frame"] .grid { position: absolute; left: 0; right: 0; top: 0; height: 310px; background-image: linear-gradient(#34d39914 1px, transparent 1px), linear-gradient(90deg, #34d39914 1px, transparent 1px); background-size: 60px 30px; }
+</style>
+</head>
+<body>
+
+<section data-scene="intro">
+  <div class="vault"></div><div class="ledger"></div>
+  <div class="stack">
+    <img class="wordmark pop" src="../kit/wordmark-white.png" alt="Kyntlo">
+    <div class="kick rise" style="animation-delay:.3s">KYNTLO TEAM ACADEMY &middot; BATCH 1</div>
+    <h1 class="bebas rise" style="animation-delay:.45s">&ldquo;I DON'T KNOW WHICH <span>ADS WORK</span>&rdquo;</h1>
+    <div class="sub rise" style="animation-delay:1s">Every lead, booking and sale, traced back to its source.</div>
+  </div>
+  <div class="chart"><i style="--h:12vmin;animation-delay:.6s"></i><i style="--h:20vmin;animation-delay:.7s"></i><i style="--h:16vmin;animation-delay:.8s"></i><i style="--h:28vmin;animation-delay:.9s"></i><i style="--h:38vmin;animation-delay:1s"></i></div>
+  <div class="ep fade" style="animation-delay:1.2s">05 / 05</div>
+</section>
+
+<section data-scene="hook">
+  <div class="vault"></div><div class="ledger"></div>
+  <div class="receipt">
+    <h4>AD SPEND &middot; OCTOBER</h4>
+    <div class="r"><span>Search ads</span><span>&pound;1,200.00</span></div>
+    <div class="r"><span>Social ads</span><span>&pound;900.00</span></div>
+    <div class="r"><span>Boosted posts</span><span>&pound;300.00</span></div>
+    <div class="r t"><span>TOTAL</span><span>&pound;2,400.00</span></div>
+    <div class="r unk"><span>NEW CUSTOMERS</span><span>???</span></div>
+  </div>
+  <div class="q">
+    <p class="rise" style="animation-delay:.5s">&ldquo;I spend money on ads every month. Honestly, I just <span>hope they work</span>.&rdquo;</p>
+    <div class="who fade" style="animation-delay:1.5s">AN OWNER WHO PAYS FOR CLICKS</div>
+  </div>
+</section>
+
+<section data-scene="coins">
+  <div class="vault"></div><div class="ledger"></div>
+  <div class="pile" id="pile"></div>
+  <div class="qmark" id="qm">?</div>
+  <div class="vs">
+    <div class="rise" style="animation-delay:.4s">CLICKS <b>612</b></div>
+    <div class="rise" style="animation-delay:.7s">IMPRESSIONS <b>18,420</b></div>
+    <div class="c rise" style="animation-delay:1.6s">CUSTOMERS <b>?</b></div>
+  </div>
+  <div class="ticker"><span>CLICKS <b>+8.1%</b> &middot; CTR <b>3.32%</b> &middot; CPC <i>&pound;1.38</i> &middot; IMPRESSIONS <b>18,420</b> &middot; REACH <b>41,200</b> &middot; CUSTOMERS ??? &middot; CLICKS <b>+8.1%</b> &middot; CTR <b>3.32%</b> &middot; CUSTOMERS ???</span></div>
+</section>
+
+<section data-scene="decide">
+  <div class="vault"></div><div class="ledger"></div>
+  <div class="board">
+    <h2 class="bebas rise">KNOW THE COST OF <span>EACH CUSTOMER</span></h2>
+    <div class="camp rise" style="animation-delay:.3s" id="c1"><b>Brand - Bloom Dental</b><span class="cpc"><strong>&pound;15.80</strong> per customer</span><span class="act">DOUBLE DOWN &#9650;</span></div>
+    <div class="camp rise" style="animation-delay:.5s" id="c2"><b>Invisalign - London</b><span class="cpc"><strong>&pound;86.44</strong> per customer</span><span class="act">KEEP IT RUNNING</span></div>
+    <div class="camp rise" style="animation-delay:.7s" id="c3"><b>Emergency Dentist</b><span class="cpc"><strong>&pound;112.36</strong> per customer</span><span class="act">SWITCH OFF &#9632;</span></div>
+  </div>
+</section>
+
+<section data-scene="trail">
+  <div class="vault"></div><div class="ledger"></div>
+  <h2 class="bebas rise">ONE LEAD, <span>FOLLOWED ALL THE WAY</span></h2>
+  <div class="chain">
+    <div class="st pop" style="animation-delay:.3s"><small>SOURCE</small><b>REFERRAL</b><em>Henry Adams</em></div>
+    <div class="st pop" style="animation-delay:.9s"><small>BOOKED</small><b>IMPLANT CONSULT</b><em>Showed</em></div>
+    <div class="st pop" style="animation-delay:1.5s"><small>PIPELINE</small><b>WON</b><em>Implant treatment</em></div>
+    <div class="st paid pop" style="animation-delay:2.1s"><small>INVOICE</small><b>&pound;2,400 PAID</b><em>INV-1043</em></div>
+  </div>
+</section>
+
+<section data-scene="tip">
+  <div class="vault"></div><div class="ledger"></div>
+  <div class="box rise">
+    <div class="lbl">SELLING TIP</div>
+    <p>&ldquo;If I gave you last month's ad spend and the number of customers it brought, could you tell me which ad did it?&rdquo;</p>
+    <div class="then fade" style="animation-delay:2s">Most owners cannot.</div>
+  </div>
+</section>
+
+<section data-scene="outro">
+  <div class="vault"></div><div class="ledger"></div>
+  <div class="stack">
+    <img class="wordmark pop" src="../kit/wordmark-white.png" alt="Kyntlo">
+    <div class="tag bebas rise" style="animation-delay:.3s">Kyntlo, <span>Own Tomorrow</span></div>
+    <div class="links rise" style="animation-delay:.6s"><div>www.kyntlo.ai</div><div>Support@kyntlo.ai</div></div>
+  </div>
+</section>
+
+<section data-scene="frame">
+  <div class="band" style="left:0;top:0;width:1080px;height:310px"></div>
+  <div class="band" style="left:0;top:1600px;width:1080px;height:320px"></div>
+  <div class="band" style="left:0;top:310px;width:40px;height:1290px"></div>
+  <div class="band" style="left:1040px;top:310px;width:40px;height:1290px"></div>
+  <div class="corner" style="left:40px;top:310px;background:radial-gradient(circle at 100% 100%, transparent 29px, #07140f 30px)"></div>
+  <div class="corner" style="left:1010px;top:310px;background:radial-gradient(circle at 0 100%, transparent 29px, #07140f 30px)"></div>
+  <div class="corner" style="left:40px;top:1570px;background:radial-gradient(circle at 100% 0, transparent 29px, #07140f 30px)"></div>
+  <div class="corner" style="left:1010px;top:1570px;background:radial-gradient(circle at 0 0, transparent 29px, #07140f 30px)"></div>
+  <div class="grid"></div>
+  <div class="win"></div>
+</section>
+
+<script src="../kit/team.js"></script>
+<script>
+  if (TEAM.scene === 'frame') document.body.classList.add('frame-mode');
+  const $ = (s) => TEAM.root.querySelector(s);
+  if (TEAM.scene === 'coins') {
+    $('#pile').innerHTML = Array.from({ length: 12 }, (_, i) => `<div class="coin" style="bottom:${i * 3.4}vmin"></div>`).join('');
+    SCENES.coins = () => {
+      const coins = [...TEAM.root.querySelectorAll('.coin')].reverse();
+      coins.slice(0, 10).forEach((c, i) => setTimeout(() => c.classList.add('gone'), 500 + i * 330));
+      TEAM.at(3300, '#qm');
+    };
+  }
+  SCENES.decide = () => { TEAM.at(1600, '#c1', 'up'); TEAM.at(2300, '#c2', 'up'); TEAM.at(3100, '#c3', 'off'); };
+</script>
+</body>
+</html>

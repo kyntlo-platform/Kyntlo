@@ -105,6 +105,8 @@
       .op-g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
       .op-money { position: relative; } .op-money .input { padding-left: 28px; } .op-money i { position: absolute; left: 12px; top: 10px; font-style: normal; color: var(--muted); }
       .op-modal { width: 760px; }
+      .op-age { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 4px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; background: #f2f4f7; color: #475467; }
+      .op-age.late { background: #fef3f2; color: #b42318; box-shadow: inset 0 0 0 1px #fecdca; }
       .pl-row { display: grid; grid-template-columns: 34px 1fr 110px 110px 44px; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--line-soft); border-radius: 8px; background: #fff; margin-bottom: 8px; }
       .pl-row.lift { box-shadow: 0 14px 28px rgba(16,24,40,.22); border-color: #84adff; position: relative; z-index: 3; }
       .pl-grip { color: var(--faint); cursor: grab; display: grid; place-items: center; height: 34px; border-radius: 6px; }
@@ -137,6 +139,7 @@
       ${f.value ? `<div class="kv"><span>Opportunity value:</span><span>${m2(o.value)}</span></div>` : ''}
       ${f.tags && c.tags.length ? `<div class="tags">${c.tags.slice(0, 2).map((t) => `<span class="chip ${t.includes('lead') ? 'blue' : t === 'vip' ? 'purple' : ''}">${esc(t)}</span>`).join('')}</div>` : ''}
       ${o.status !== 'open' ? `<div class="st">${statusChip(o.status)}${o.lostReason ? ` <span class="muted" style="font-size:13px">${esc(o.lostReason)}</span>` : ''}</div>` : ''}
+      ${o.stageDays ? `<div class="op-age ${o.stageDays > 7 ? 'late' : ''}" id="op_age_${o.id}">${icon('clock', 14)} ${o.stageDays} ${o.stageDays === 1 ? 'day' : 'days'} in stage</div>` : ''}
       <div class="acts"><span title="Call">${icon('phone', 16)}</span><span title="SMS">${icon('sms', 16)}</span><span title="Email">${icon('mail', 16)}</span>
         <span title="Tasks">${icon('task', 16)}</span><span title="Notes">${icon('note', 16)}</span><span title="Appointments">${icon('calendar', 16)}</span>
         <span style="margin-left:auto;width:auto;font-size:12.5px">${esc(o.added)}</span></div>
