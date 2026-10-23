@@ -57,3 +57,8 @@ section[data-scene].on { display: block; }
 
 /* Hidden helper used by scenes that type into fields. */
 .caret::after { content: ''; display: inline-block; width: .25vmin; height: 1em; background: currentColor; margin-left: .2vmin; vertical-align: -.15em; animation: blink 1s infinite; }
+
+/* Light designs: a dark corner tab under the white corner wordmark (same spot as the app's
+   dark sidebar header), so the watermark stays readable. Sizes are in video pixels. */
+.wmtab { position: absolute; left: 0; top: 0; width: 280px; height: 84px; border-bottom-right-radius: 26px; background: var(--wmtab, #1f2937); z-index: 50; }
+.portrait .wmtab { width: 300px; height: 168px; border-bottom-right-radius: 34px; }
