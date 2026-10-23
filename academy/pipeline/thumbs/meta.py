@@ -113,6 +113,15 @@ TEAM = {
  'c09-plan-changes-cancellations': ('PLAN *CHANGES*', '#/settings/billing/subscription'),
  'c10-escalation-ticket-handling': ('ESCALATE *RIGHT*', '#/settings/audit-logs'),
 }
+# Kyntlo Team Academy, Batch 1: internal sales & support videos (uploaded as Private).
+# stem -> (hook, demo route, accent colour of the video's own design)
+ACADEMY = {
+ 's01-30-second-pitch': ('THE *30-SECOND* PITCH', '#/dashboard', '#ff2e93'),
+ 's02-losing-leads': ("I'M LOSING *LEADS*", '#/conversations/conversations/v1', '#22d3ee'),
+ 's03-follow-up': ('I FORGET TO *FOLLOW UP*', '#/automation/workflows/w20', '#ff6b6b'),
+ 's04-empty-calendar': ('EMPTY *CALENDAR?*', '#/calendars/calendar', '#14b8a6'),
+ 's05-which-ads-work': ('WHICH ADS *WORK?*', '#/reporting/google-ads', '#f5c542'),
+}
 
 def build():
     out, n = {}, 0
@@ -130,6 +139,9 @@ def build():
         out[stem] = dict(kind='promo', pill=pill, label=label, hook=hook, route=route)
     for stem, (hook, route) in TEAM.items():
         out[stem] = dict(kind='team', pill=f'SUPPORT PLAYBOOK C{int(stem[1:3])}', label='INTERNAL · SUPPORT TEAM', hook=hook, route=route)
+    for stem, (hook, route, accent) in ACADEMY.items():
+        out[stem] = dict(kind='academy', video=stem[:3], pill=f'TEAM ACADEMY {stem[1:3]}', label='SALES & SUPPORT · BATCH 1', hook=hook, route=route,
+                         accent=accent, brand='TEAM ACADEMY', tagline='INTERNAL TRAINING', wordmark='/academy/lessons/team/kit/wordmark-white.png')
     return out, per_module
 
 if __name__ == '__main__':

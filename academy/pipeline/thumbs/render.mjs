@@ -21,10 +21,20 @@ const url = (route) => (route.startsWith('SITE:') ? ENV.siteUrl + route.slice(5)
 
 const browser = await chromium.launch();
 const app = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+// Team Academy screenshots use that video's demo data and on-screen rules (no K monogram, plain hyphens).
+const KIT = path.join(ACADEMY, 'lessons', 'team', 'kit');
+async function pageFor(v) {
+  if (!v.video) return app;
+  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await ctx.addInitScript({ path: path.join(KIT, 'themes', `${v.video}.js`) });
+  await ctx.addInitScript({ path: path.join(KIT, 'demo-patch.js') });
+  return ctx.newPage();
+}
 for (const stem of stems) {
-  await app.goto(url(meta.videos[stem].route), { waitUntil: 'networkidle' });
-  await app.waitForTimeout(700);
-  await app.screenshot({ path: path.join(SHOTS, `${stem}.png`) });
+  const page = await pageFor(meta.videos[stem]);
+  await page.goto(url(meta.videos[stem].route), { waitUntil: 'networkidle' });
+  await page.waitForTimeout(700);
+  await page.screenshot({ path: path.join(SHOTS, `${stem}.png`) });
 }
 
 const card = await browser.newPage({ viewport: { width: 1280, height: 720 } });

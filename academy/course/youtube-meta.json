@@ -1087,6 +1087,66 @@
    "label": "INTERNAL · SUPPORT TEAM",
    "hook": "ESCALATE *RIGHT*",
    "route": "#/settings/audit-logs"
+  },
+  "s01-30-second-pitch": {
+   "kind": "academy",
+   "video": "s01",
+   "pill": "TEAM ACADEMY 01",
+   "label": "SALES & SUPPORT · BATCH 1",
+   "hook": "THE *30-SECOND* PITCH",
+   "route": "#/dashboard",
+   "accent": "#ff2e93",
+   "brand": "TEAM ACADEMY",
+   "tagline": "INTERNAL TRAINING",
+   "wordmark": "/academy/lessons/team/kit/wordmark-white.png"
+  },
+  "s02-losing-leads": {
+   "kind": "academy",
+   "video": "s02",
+   "pill": "TEAM ACADEMY 02",
+   "label": "SALES & SUPPORT · BATCH 1",
+   "hook": "I'M LOSING *LEADS*",
+   "route": "#/conversations/conversations/v1",
+   "accent": "#22d3ee",
+   "brand": "TEAM ACADEMY",
+   "tagline": "INTERNAL TRAINING",
+   "wordmark": "/academy/lessons/team/kit/wordmark-white.png"
+  },
+  "s03-follow-up": {
+   "kind": "academy",
+   "video": "s03",
+   "pill": "TEAM ACADEMY 03",
+   "label": "SALES & SUPPORT · BATCH 1",
+   "hook": "I FORGET TO *FOLLOW UP*",
+   "route": "#/automation/workflows/w20",
+   "accent": "#ff6b6b",
+   "brand": "TEAM ACADEMY",
+   "tagline": "INTERNAL TRAINING",
+   "wordmark": "/academy/lessons/team/kit/wordmark-white.png"
+  },
+  "s04-empty-calendar": {
+   "kind": "academy",
+   "video": "s04",
+   "pill": "TEAM ACADEMY 04",
+   "label": "SALES & SUPPORT · BATCH 1",
+   "hook": "EMPTY *CALENDAR?*",
+   "route": "#/calendars/calendar",
+   "accent": "#14b8a6",
+   "brand": "TEAM ACADEMY",
+   "tagline": "INTERNAL TRAINING",
+   "wordmark": "/academy/lessons/team/kit/wordmark-white.png"
+  },
+  "s05-which-ads-work": {
+   "kind": "academy",
+   "video": "s05",
+   "pill": "TEAM ACADEMY 05",
+   "label": "SALES & SUPPORT · BATCH 1",
+   "hook": "WHICH ADS *WORK?*",
+   "route": "#/reporting/google-ads",
+   "accent": "#f5c542",
+   "brand": "TEAM ACADEMY",
+   "tagline": "INTERNAL TRAINING",
+   "wordmark": "/academy/lessons/team/kit/wordmark-white.png"
   }
  }
 }
