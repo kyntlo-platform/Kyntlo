@@ -134,7 +134,9 @@ async function perform(page, cursor, a, scene, sceneStart) {
     await page.evaluate(([dy, ms]) => window.__ky.scroll(dy, ms), [a.scroll, (a.ms ?? 900) * scene.speed]);
   } else if (a.highlight) {
     const r = await rectOf(page, a.highlight);
-    if (!a.nofocus) attend(scene, sceneStart, r);
+    // Aim the portrait crop so the label beside the spotlight stays in view too.
+    const labelled = { ...r, width: Math.max(r.width, (a.label || '').length * 14 + 40) };
+    if (!a.nofocus) attend(scene, sceneStart, labelled);
     await page.evaluate(([r, l, ms]) => window.__ky.spotlight(r, l, ms), [r, a.label || '', (a.for ?? 2.8) * 1000 * scene.speed]);
   } else if (a.title) {
     // The portrait version shows titles in its own top band, so their text and timing are kept.

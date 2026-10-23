@@ -76,7 +76,7 @@ export default {
         { at: 5.2, run: booking({ id: 'n1', contact: 'c40', calendar: 'k3', day: 3, start: '10:30', end: '11:00', status: 'confirmed', with: 'Priya Shah' }) },
         { at: 5.3, highlight: '#cal_appt_n1', label: 'Booked: Thursday 10:30', for: 2.2 },
         { at: 7.6, click: '#sb_automation' },
-        { at: 8.6, click: '#wf_row_w2' },
+        { at: 8.6, run: (p) => p.evaluate(() => window.KY.go('#/automation/workflows/w2')) },
         { at: 9.8, highlight: '#wf_node_s4', label: 'Reminder the day before', for: 2.2 },
         { at: 12.2, click: '#sb_reporting' },
         { at: 13.2, highlight: '#rp_g_kpis > :nth-child(7)', label: 'Cost to win a customer', for: 2.6 },
@@ -119,7 +119,7 @@ export default {
       duration: 6.2,
       actions: [
         { at: 0.2, highlight: '#rp_attr_table', label: 'Revenue by source', for: 2.8 },
-        { at: 3.2, highlight: '[data-src="Paid Social"]', label: 'Social ads: top revenue', for: 2.6 },
+        { at: 3.2, highlight: '#rp_attr_row_paid-social', label: 'Social ads: top revenue', for: 2.6 },
       ],
     },
     { page: page('ask'), tail: 1.4, say: "Say those three, then ask, 'Which one hurts most today?'" },
