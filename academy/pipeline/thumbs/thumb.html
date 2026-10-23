@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kyntlo Academy thumbnail</title>
+<style>
+  :root { --pink:#ff3ea5; --pink2:#f20089; --purple:#8b2cff; --ink:#0f0618; }
+  * { box-sizing:border-box; margin:0; }
+  html, body { width:1280px; height:720px; overflow:hidden; }
+  body {
+    font-family:'Inter Display', Inter, system-ui, sans-serif; color:#fff; position:relative;
+    background:
+      radial-gradient(700px 520px at 8% 0%, rgba(242,0,137,.55), transparent 70%),
+      radial-gradient(760px 620px at 100% 100%, rgba(139,44,255,.65), transparent 70%),
+      linear-gradient(135deg, #1d0833 0%, #0f0618 55%, #150726 100%);
+  }
+  .grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px); background-size:48px 48px; }
+
+  /* The feature itself, as a tilted app window bleeding off the right edge. */
+  .shot { position:absolute; left:640px; top:92px; width:780px; height:488px; border-radius:22px; overflow:hidden;
+    transform:perspective(1700px) rotateY(-14deg) rotateX(3deg) rotateZ(-1.5deg); transform-origin:left center;
+    border:5px solid rgba(255,255,255,.9); box-shadow:0 40px 90px rgba(0,0,0,.65), 0 0 0 10px rgba(255,62,165,.25), 0 0 80px rgba(255,62,165,.45); background:#fff; }
+  .shot img { width:100%; height:100%; object-fit:cover; object-position:left top; display:block; }
+
+  .left { position:absolute; left:58px; top:54px; width:540px; height:540px; display:flex; flex-direction:column; }
+  .pill { align-self:flex-start; display:inline-flex; align-items:baseline; gap:10px; font-weight:900; font-size:46px; letter-spacing:.02em; line-height:1;
+    padding:14px 26px 12px; border-radius:18px; background:linear-gradient(90deg,var(--pink2),var(--purple)); box-shadow:0 12px 30px rgba(242,0,137,.45); }
+  .pill small { font-size:30px; font-weight:800; opacity:.8; }
+  .team .pill { background:linear-gradient(90deg,#2b1748,#5b2a99); box-shadow:0 12px 30px rgba(0,0,0,.4); border:2px solid rgba(255,255,255,.35); font-size:34px; }
+  .label { margin-top:18px; font-family:Inter, system-ui, sans-serif; font-weight:800; font-size:25px; letter-spacing:.14em; color:#ffc1e3; }
+  .hookwrap { flex:1; display:flex; align-items:center; }
+  .hook { font-weight:900; text-transform:uppercase; line-height:.94; letter-spacing:-.01em; text-shadow:0 8px 34px rgba(0,0,0,.55); }
+  .hook em { font-style:normal; color:var(--pink); text-shadow:0 0 40px rgba(255,62,165,.55), 0 8px 34px rgba(0,0,0,.5); }
+
+  .foot { position:absolute; left:58px; right:56px; bottom:38px; height:64px; display:flex; align-items:flex-end; gap:30px; }
+  .brand { display:flex; align-items:center; gap:12px; flex:none; }
+  .brand img { height:42px; background:#fff; padding:7px 14px; border-radius:12px; box-sizing:content-box; }
+  .brand span { font-family:Inter, system-ui, sans-serif; font-weight:800; font-size:20px; letter-spacing:.18em; color:#fff; opacity:.9; }
+  .progress { flex:1; display:flex; flex-direction:column; gap:10px; }
+  .progress .cap { font-family:Inter, system-ui, sans-serif; font-weight:800; font-size:19px; letter-spacing:.12em; color:rgba(255,255,255,.75); text-align:right; }
+  .bar { display:flex; gap:5px; height:14px; }
+  .seg { position:relative; border-radius:7px; background:rgba(255,255,255,.17); overflow:hidden; }
+  .seg i { position:absolute; inset:0 auto 0 0; background:linear-gradient(90deg,var(--pink2),var(--pink)); }
+  .seg.now { outline:3px solid #fff; outline-offset:1px; box-shadow:0 0 18px rgba(255,255,255,.7); }
+  .tagline { flex:1; text-align:right; font-family:Inter, system-ui, sans-serif; font-weight:800; font-size:22px; letter-spacing:.06em; color:rgba(255,255,255,.85); }
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="shot"><img id="shot" alt=""></div>
+<div class="left">
+  <div class="pill" id="pill"></div>
+  <div class="label" id="label"></div>
+  <div class="hookwrap"><div class="hook" id="hook"></div></div>
+</div>
+<div class="foot">
+  <div class="brand"><img src="/assets/kyntlo-logo-cropped.png" alt="Kyntlo"><span id="brandtext">ACADEMY</span></div>
+  <div class="progress" id="progress"><div class="cap" id="cap"></div><div class="bar" id="bar"></div></div>
+  <div class="tagline" id="tagline"></div>
+</div>
+<script>
+  const d = JSON.parse(decodeURIComponent(location.hash.slice(1)));
+  const esc = (v) => String(v).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+  document.body.classList.add(d.kind);
+  document.getElementById('shot').src = d.shot;
+  const pill = document.getElementById('pill');
+  if (d.kind === 'lesson') pill.innerHTML = `LESSON ${d.n}<small>/ ${d.total}</small>`;
+  else pill.textContent = d.pill;
+  document.getElementById('label').textContent = d.kind === 'lesson' ? `MODULE ${d.module} · ${d.moduleName.toUpperCase()}` : d.label;
+  document.getElementById('hook').innerHTML = esc(d.hook).replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+  // Course map: one segment per module, sized by its lesson count, filled up to this lesson.
+  const progress = document.getElementById('progress');
+  const tagline = document.getElementById('tagline');
+  if (d.kind === 'lesson' || d.pill === 'FREE COURSE') {
+    const per = d.lessonsPerModule;
+    let before = 0;
+    document.getElementById('bar').innerHTML = Object.keys(per).map((m) => {
+      const k = per[m];
+      let fill = 1;
+      if (d.kind === 'lesson') fill = Math.max(0, Math.min(1, (d.n - before) / k));
+      before += k;
+      const now = d.kind === 'lesson' && Number(m) === d.module;
+      return `<div class="seg${now ? ' now' : ''}" style="flex:${k}"><i style="width:${(fill * 100).toFixed(1)}%"></i></div>`;
+    }).join('');
+    document.getElementById('cap').textContent = d.kind === 'lesson' ? `MODULE ${d.module} OF 15` : '15 MODULES · 75 LESSONS';
+    tagline.remove();
+  } else {
+    progress.remove();
+    tagline.textContent = d.kind === 'team' ? 'SUPPORT TEAM ONLY' : 'FREE 14-DAY TRIAL · KYNTLO.AI';
+    if (d.kind === 'team') document.getElementById('brandtext').textContent = 'SUPPORT';
+  }
+
+  // Keep the module label on one line.
+  const label = document.getElementById('label');
+  label.style.whiteSpace = 'nowrap';
+  for (let size = 25; size > 16 && label.scrollWidth > label.clientWidth; size -= 1) label.style.fontSize = size + 'px';
+
+  // Fit the hook: as large as possible within its box, at most three lines.
+  const hook = document.getElementById('hook');
+  const box = hook.parentElement;
+  for (let size = 140; size >= 60; size -= 2) {
+    hook.style.fontSize = size + 'px';
+    const lines = Math.round(hook.getBoundingClientRect().height / (size * 0.94));
+    if (hook.scrollWidth <= box.clientWidth && hook.getBoundingClientRect().height <= box.clientHeight && lines <= 3) break;
+  }
+  document.fonts.ready.then(() => { document.body.dataset.ready = '1'; });
+</script>
+</body>
+</html>
