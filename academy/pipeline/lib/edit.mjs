@@ -220,8 +220,9 @@ export async function assemble({ lesson, raw, scenes, narrations, timeline, work
   let next = 2 * n;
   const mark = lesson.watermark && lesson.watermark[format];
   if (mark) {
-    // The corner wordmark shows on every scene except those that carry the wordmark themselves.
-    const shown = timeline.starts.map((st, i) => [st + (i ? xfade : 0), st + durations[i]]).filter((_, i) => lesson.scenes[i]?.watermark !== false);
+    // The corner wordmark shows on every scene except those that carry the wordmark themselves,
+    // and stays on through the transitions between them.
+    const shown = timeline.starts.map((st, i) => [st, st + durations[i]]).filter((_, i) => lesson.scenes[i]?.watermark !== false);
     extra.push('-loop', '1', '-i', lesson.watermark.file);
     graph += `[${next}:v]scale=${mark.w}:-1,format=rgba,colorchannelmixer=aa=${lesson.watermark.opacity ?? 0.92}[wm];`;
     graph += `${v}[wm]overlay=${mark.x}:${mark.y}:enable='${windows(shown)}':shortest=1[vm];`;

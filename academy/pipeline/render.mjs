@@ -93,8 +93,11 @@ async function render(file, opts) {
   const draft = narrations.some((n) => n.draft);
   console.log(`  ♪ narration ready (${draft ? 'DRAFT: silent, no voice engine' : narrations[0].engine})`);
 
+  // Recordings and their scene timings are kept, so `--edit` can re-cut without re-recording.
   const raw = path.join(work, 'raw.mp4');
-  const scenes = await record(lesson, narrations, raw, opts);
+  const saved = path.join(work, 'scenes.json');
+  const scenes = opts.edit ? JSON.parse(await fs.readFile(saved, 'utf8')) : await record(lesson, narrations, raw, opts);
+  if (!opts.edit) await fs.writeFile(saved, JSON.stringify(scenes));
   const tl = timeline(scenes, narrations, lesson);
   const lead = lesson.lead ?? LEAD;
 
@@ -112,7 +115,10 @@ async function render(file, opts) {
     // Designed scenes are recorded again at 1080x1920; app scenes reuse the landscape recording.
     console.log('  ▶ portrait version');
     const pRaw = path.join(work, 'raw-portrait.mp4');
-    const pScenes = await record(lesson, narrations, pRaw, { ...opts, size: PORTRAIT, only: (s) => !!(s.card || s.page) });
+    const pSaved = path.join(work, 'scenes-portrait.json');
+    const pScenes = opts.edit ? JSON.parse(await fs.readFile(pSaved, 'utf8'))
+      : await record(lesson, narrations, pRaw, { ...opts, size: PORTRAIT, only: (s) => !!(s.card || s.page) });
+    if (!opts.edit) await fs.writeFile(pSaved, JSON.stringify(pScenes));
     const frame = path.join(work, 'portrait-frame.png');
     await portraitFrame(lesson.portraitFrame, frame);
     // App scenes show their chapter (or on-screen title) in the band above the window.
@@ -167,7 +173,7 @@ const args = process.argv.slice(2);
 const headed = args.includes('--headed');
 const files = await lessonFiles(args.filter((a) => !a.startsWith('--')));
 if (!files.length) {
-  console.error('Usage: node render.mjs <lesson.mjs | lessons-folder> [...] [--headed]');
+  console.error('Usage: node render.mjs <lesson.mjs | lessons-folder> [...] [--headed] [--check | --voice | --edit]');
   process.exit(1);
 }
 const checking = args.includes('--check');
@@ -175,7 +181,7 @@ const voicing = args.includes('--voice');
 let failed = 0;
 for (const f of files) {
   try {
-    await (checking ? check(f) : voicing ? voice(f) : render(f, { headed }));
+    await (checking ? check(f) : voicing ? voice(f) : render(f, { headed, edit: args.includes('--edit') }));
   } catch (e) {
     failed++;
     console.error(`  ✘ ${path.basename(f)}: ${e.message}`);
